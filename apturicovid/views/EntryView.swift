@@ -8,9 +8,8 @@ class EntryStackView: UIStackView {
     }
 }
 
-class EntryView: UIView, UITextFieldDelegate {
-    
-    let numberOfDigits = 8
+class EntryView: UIView {
+    let numberOfDigits = 6
     
     var textFields = [UITextField]()
     var stackView: EntryStackView?
@@ -32,22 +31,38 @@ class EntryView: UIView, UITextFieldDelegate {
     init() {
         super.init(frame: .zero)
         
-        backgroundColor = .secondarySystemBackground
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        setup()
+    }
+    
+    override func resignFirstResponder() -> Bool {
+        textFields.reduce(false) { (acc, textField) -> Bool in
+            acc || textField.resignFirstResponder()
+        }
+    }
+    
+    private func setup() {
+        backgroundColor = .clear
         layer.cornerRadius = 20.0
         layer.cornerCurve = .continuous
         
         let label = UILabel()
-        label.text = NSLocalizedString("VERIFICATION_IDENTIFIER_ENTRY_LABEL", comment: "Label")
+        label.text = "VERIFICATION_IDENTIFIER_ENTRY_LABEL".translated
         label.font = .preferredFont(forTextStyle: .body)
         label.adjustsFontForContentSizeCategory = true
         
         for _ in 0..<numberOfDigits {
-            let textField = UITextField()
+            let textField = UITextField2()
             textField.adjustsFontForContentSizeCategory = true
             textField.font = UIFont.preferredFont(forTextStyle: .largeTitle)
             textField.textAlignment = .center
             textField.borderStyle = .none
-            textField.backgroundColor = .tertiarySystemBackground
+            textField.backgroundColor = Colors.gray
             textField.layer.cornerRadius = 8.0
             textField.layer.cornerCurve = .continuous
             textField.delegate = self
@@ -85,11 +100,9 @@ class EntryView: UIView, UITextFieldDelegate {
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12.0)
         ])
     }
+}
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+extension EntryView: UITextFieldDelegate2 {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
     }
@@ -113,5 +126,16 @@ class EntryView: UIView, UITextFieldDelegate {
         textDidChange?()
         stackView?.accessibilityValue = combinedAccessibilityTextFieldValues()
         return false
+    }
+    
+    func deletePressed(_ textField: UITextField2) {
+        guard textField.text?.isEmpty ?? true else { return }
+        
+        let index = textFields.firstIndex(of: textField)!
+        
+        if index > 0 {
+            textFields[index - 1].text = ""
+            textFields[index - 1].becomeFirstResponder()
+        }
     }
 }

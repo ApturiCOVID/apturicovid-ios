@@ -28,7 +28,7 @@ class HomeBottomView: UIView {
         let path = createPath()
         let shape = CAShapeLayer()
         shape.path = path.cgPath
-        shape.fillColor = UIColor.darkGreen.cgColor
+        shape.fillColor = Colors.mintGreen.cgColor
         
         layer.addSublayer(shape)
     }

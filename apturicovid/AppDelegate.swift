@@ -12,11 +12,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         DDLog.add(DDOSLogger.sharedInstance)
         DDLog.add(CrashlyticsLogger.sharedInstance)
-
+        
         setAppearance()
 
         BGTaskScheduler.shared.register(forTaskWithIdentifier: AppDelegate.backgroundTaskIdentifier, using: .main) { task in
-            
             // Perform the exposure detection
             let progress = ExposureManager.shared.detectExposures { success in
                 task.setTaskCompleted(success: success)
@@ -52,8 +51,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    // MARK: Private
+    
     func setAppearance() {
-        UITabBar.appearance().tintColor = Colors.orange
+        UITabBar.appearance().tintColor = UIColor(hex: "#F48645")
     }
 }
 

@@ -17,4 +17,8 @@ extension UIColor {
             self.init(rgb: 0xFFFFFF, alpha: 1.0)
         }
     }
+    
+    static var darkGreen: UIColor {
+        return UIColor(red: 0.13, green: 0.44, blue: 0.35, alpha: 1)
+    }
 }

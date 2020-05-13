@@ -16,6 +16,14 @@ extension UIView {
         layer.mask = mask
     }
     
+    public func addSubviewWithInsets(_ view: UIView, insets: UIEdgeInsets = UIEdgeInsets.zero) {
+        view.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(view)
+        
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-(\(insets.top))-[view]-(\(insets.bottom))-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: ["view": view]))
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-(\(insets.left))-[view]-(\(insets.right))-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: ["view": view]))
+    }
+    
     @discardableResult
     func fromNib<T : UIView>() -> T? {
         guard let contentView = Bundle(for: type(of: self)).loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)?.first as? T else {

@@ -13,7 +13,7 @@
 		7528B106246C13F8007D0260 /* language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528B105246C13F8007D0260 /* language.swift */; };
 		7528B10A246C27A0007D0260 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528B109246C27A0007D0260 /* Colors.swift */; };
 		75B1DAA1246BE91100601F69 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B1DAA0246BE91100601F69 /* SettingsVC.swift */; };
-		75B1DAA5246BF63E00601F69 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		75B1DAA5246BF63E00601F69 /* BuildFile in Resources */ = {isa = PBXBuildFile; };
 		AADBCE0EFA7F339E0ED4EC6C /* Pods_apturicovid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D51F675FDD0F615AD5BFBDCB /* Pods_apturicovid.framework */; };
 		BA11213F2469DDC900D975D5 /* DiagnosisKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11213E2469DDC900D975D5 /* DiagnosisKey.swift */; };
 		BA1121412469E27100D975D5 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1121402469E27100D975D5 /* EntryView.swift */; };
@@ -54,7 +54,6 @@
 		7528B103246C1338007D0260 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		7528B105246C13F8007D0260 /* language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = language.swift; sourceTree = "<group>"; };
 		7528B109246C27A0007D0260 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		7528B10B246C27B3007D0260 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		75B1DAA0246BE91100601F69 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		8B05DEA3D1AD8165B5FED2F3 /* Pods-apturicovid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apturicovid.debug.xcconfig"; path = "Target Support Files/Pods-apturicovid/Pods-apturicovid.debug.xcconfig"; sourceTree = "<group>"; };
 		B89B433B39A6ECD9E5E3DEE3 /* Pods-apturicovid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apturicovid.release.xcconfig"; path = "Target Support Files/Pods-apturicovid/Pods-apturicovid.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,14 +111,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7528B10E246C2846007D0260 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				7528B10B246C27B3007D0260 /* UIColor.swift */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		8FDBA0C6C4BB4E19B88C1614 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,7 +128,6 @@
 				BA366CBD2465AC3D00A35CA8 /* Products */,
 				BA366CBE2465AC3D00A35CA8 /* apturicovid */,
 				BAFA8308246AB87400E121B4 /* environments */,
-				7528B10E246C2846007D0260 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -335,7 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BABEEC2424686B7E009D8307 /* Welcome.storyboard in Resources */,
-				75B1DAA5246BF63E00601F69 /* (null) in Resources */,
+				75B1DAA5246BF63E00601F69 /* BuildFile in Resources */,
 				BAFA830B246AB88700E121B4 /* GoogleService-Info.plist in Resources */,
 				BA366CCC2465AC3E00A35CA8 /* LaunchScreen.storyboard in Resources */,
 				7528B0FB246C016D007D0260 /* Translations.strings in Resources */,

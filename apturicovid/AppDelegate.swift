@@ -54,7 +54,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: Private
     
     func setAppearance() {
-        UITabBar.appearance().tintColor = UIColor(hex: "#F48645")
+        UITabBar.appearance().tintColor = Colors.orange
     }
 }
-

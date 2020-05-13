@@ -8,20 +8,24 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
-    @IBOutlet weak var topHolder: UIView!
-    @IBOutlet weak var shareHolder: UIView!
+class HomeVC: BaseViewController {
+    @IBOutlet weak var bottomBackgroundView: UIView!
+    @IBOutlet weak var exposureSwitch: UISwitch!
+    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var statsStackView: UIStackView!
     
-    @IBAction func onToggle(_ sender: UISwitch) {
-        ExposureManager.shared.enabled = sender.isOn
+    @IBOutlet weak var contactTracingTitle: UILabel!
+    @IBOutlet weak var tracingStateLabel: UILabel!
+    @IBOutlet weak var exposureTitleLabel: UILabel!
+    @IBOutlet weak var exposureDescriptionLabel: UILabel!
+    @IBOutlet weak var statsTitleLabel: UILabel!
+    
+    
+    @IBAction func onShareButtonTap(_ sender: Any) {
+        presentShareController()
     }
     
-    @IBAction func onSettingsTap(_ sender: Any) {
-        let vc = UIStoryboard(name: "ExposureSettings", bundle: nil).instantiateViewController(identifier: "ExposureSettings")
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    @objc private func presentShareController() {
+    private func presentShareController() {
         let someText = "Dalies ar lietotni"
         let objectsToShare = URL(string: "http://www.apturicovid.lv")!
         let sharedObjects:[AnyObject] = [objectsToShare as AnyObject, someText as AnyObject]
@@ -34,28 +38,27 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        topHolder.layer.shadowColor = UIColor.black.cgColor
-        topHolder.layer.shadowOpacity = 0.2
-        topHolder.layer.shadowOffset = .zero
-        topHolder.layer.shadowRadius = 10
+        exposureSwitch.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+        shareButton.layer.cornerRadius = 5
         
-        topHolder.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 50)
-        shareHolder.roundCorners(corners: .allCorners, radius: 20)
+        let backgroundView = HomeBottomView()
+        bottomBackgroundView.addSubviewWithInsets(backgroundView)
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(presentShareController))
-        shareHolder.addGestureRecognizer(tapGesture)
-        
-//        if let onboarding = UIStoryboard(name: "Welcome", bundle: nil).instantiateInitialViewController() {
-//            onboarding.modalPresentationStyle = .overFullScreen
-//            self.present(onboarding, animated: true, completion: nil)
-//        }
-        
-        RestClient.shared.getDiagnosisKeyFileURLs(startingAt: 1, completion: { (result) in
-            switch result {
-            case .success(let urls):
-                print(urls)
-            default: break
-            }
-        })
+        [("600", "Testēti"), ("600", "Testēti"), ("600", "Testēti")].forEach { (arg0) in
+            let (value, title) = arg0
+            
+            let stat = StatCell().fromNib() as! StatCell
+            stat.fill(item: title, value: value)
+            statsStackView.addArrangedSubview(stat)
+        }
+    }
+    
+    override func translate() {
+        contactTracingTitle.text = "contact_tracing".translated
+        tracingStateLabel.text = "currently_active".translated
+        exposureTitleLabel.text = "exposure_detected_title".translated
+        exposureDescriptionLabel.text = "exposure_detected_subtitle".translated
+        statsTitleLabel.text = "stats_title".translated
+        shareButton.setTitle("share".translated, for: .normal)
     }
 }

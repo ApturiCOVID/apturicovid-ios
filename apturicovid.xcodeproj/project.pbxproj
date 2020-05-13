@@ -13,7 +13,7 @@
 		7528B106246C13F8007D0260 /* language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528B105246C13F8007D0260 /* language.swift */; };
 		7528B10A246C27A0007D0260 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528B109246C27A0007D0260 /* Colors.swift */; };
 		75B1DAA1246BE91100601F69 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B1DAA0246BE91100601F69 /* SettingsVC.swift */; };
-		75B1DAA5246BF63E00601F69 /* BuildFile in Resources */ = {isa = PBXBuildFile; };
+		75B1DAA5246BF63E00601F69 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		AADBCE0EFA7F339E0ED4EC6C /* Pods_apturicovid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D51F675FDD0F615AD5BFBDCB /* Pods_apturicovid.framework */; };
 		BA11213F2469DDC900D975D5 /* DiagnosisKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11213E2469DDC900D975D5 /* DiagnosisKey.swift */; };
 		BA1121412469E27100D975D5 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1121402469E27100D975D5 /* EntryView.swift */; };
@@ -31,6 +31,9 @@
 		BA50D3572469E84E0091DF0E /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50D3562469E84E0091DF0E /* RestClient.swift */; };
 		BA50D3592469E9A10091DF0E /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50D3582469E9A10091DF0E /* NSError.swift */; };
 		BA50D35B2469EEB90091DF0E /* DiagnosisUploadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50D35A2469EEB90091DF0E /* DiagnosisUploadRequest.swift */; };
+		BAAED839246C309D004C77A6 /* StatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAED838246C309D004C77A6 /* StatCell.swift */; };
+		BAAED83B246C30BD004C77A6 /* StatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAED83A246C30BD004C77A6 /* StatCell.xib */; };
+		BAAED83F246C403D004C77A6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAED83E246C403D004C77A6 /* BaseViewController.swift */; };
 		BABEEC1D2467DF2E009D8307 /* ExposureSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BABEEC1C2467DF2E009D8307 /* ExposureSettings.storyboard */; };
 		BABEEC1F24680A98009D8307 /* ExposureSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABEEC1E24680A98009D8307 /* ExposureSettingsVC.swift */; };
 		BABEEC2424686B7E009D8307 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BABEEC2324686B7D009D8307 /* Welcome.storyboard */; };
@@ -44,6 +47,7 @@
 		BAFA8310246AD14600E121B4 /* printers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA830F246AD14600E121B4 /* printers.swift */; };
 		BAFA8313246AD42D00E121B4 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA8312246AD42D00E121B4 /* UserDefault.swift */; };
 		BAFA8315246AD48F00E121B4 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA8314246AD48F00E121B4 /* LocalStore.swift */; };
+		BAFA8319246BF3B400E121B4 /* HomeBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA8318246BF3B400E121B4 /* HomeBottomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +79,9 @@
 		BA50D3562469E84E0091DF0E /* RestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
 		BA50D3582469E9A10091DF0E /* NSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSError.swift; sourceTree = "<group>"; };
 		BA50D35A2469EEB90091DF0E /* DiagnosisUploadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisUploadRequest.swift; sourceTree = "<group>"; };
+		BAAED838246C309D004C77A6 /* StatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCell.swift; sourceTree = "<group>"; };
+		BAAED83A246C30BD004C77A6 /* StatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatCell.xib; sourceTree = "<group>"; };
+		BAAED83E246C403D004C77A6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BABEEC1C2467DF2E009D8307 /* ExposureSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExposureSettings.storyboard; sourceTree = "<group>"; };
 		BABEEC1E24680A98009D8307 /* ExposureSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureSettingsVC.swift; sourceTree = "<group>"; };
 		BABEEC2324686B7D009D8307 /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
@@ -88,6 +95,7 @@
 		BAFA830F246AD14600E121B4 /* printers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = printers.swift; sourceTree = "<group>"; };
 		BAFA8312246AD42D00E121B4 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		BAFA8314246AD48F00E121B4 /* LocalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
+		BAFA8318246BF3B400E121B4 /* HomeBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomView.swift; sourceTree = "<group>"; };
 		D51F675FDD0F615AD5BFBDCB /* Pods_apturicovid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_apturicovid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -182,6 +190,7 @@
 				BA366CDA2465F85200A35CA8 /* HomeVC.swift */,
 				7528B101246C122F007D0260 /* MainTabController.swift */,
 				75B1DAA0246BE91100601F69 /* SettingsVC.swift */,
+				BAAED83E246C403D004C77A6 /* BaseViewController.swift */,
 			);
 			path = viewController;
 			sourceTree = "<group>";
@@ -224,6 +233,9 @@
 				BA1121402469E27100D975D5 /* EntryView.swift */,
 				BABEEC3024687A98009D8307 /* LanguageView.swift */,
 				BABEEC2E246879C8009D8307 /* LanguageView.xib */,
+				BAFA8318246BF3B400E121B4 /* HomeBottomView.swift */,
+				BAAED838246C309D004C77A6 /* StatCell.swift */,
+				BAAED83A246C30BD004C77A6 /* StatCell.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -325,7 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BABEEC2424686B7E009D8307 /* Welcome.storyboard in Resources */,
-				75B1DAA5246BF63E00601F69 /* BuildFile in Resources */,
+				75B1DAA5246BF63E00601F69 /* (null) in Resources */,
 				BAFA830B246AB88700E121B4 /* GoogleService-Info.plist in Resources */,
 				BA366CCC2465AC3E00A35CA8 /* LaunchScreen.storyboard in Resources */,
 				7528B0FB246C016D007D0260 /* Translations.strings in Resources */,
@@ -333,6 +345,7 @@
 				BA366CC92465AC3E00A35CA8 /* Assets.xcassets in Resources */,
 				BABEEC1D2467DF2E009D8307 /* ExposureSettings.storyboard in Resources */,
 				BA366CC72465AC3D00A35CA8 /* Main.storyboard in Resources */,
+				BAAED83B246C30BD004C77A6 /* StatCell.xib in Resources */,
 				BABEEC2B24687397009D8307 /* CheckboxView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,6 +432,7 @@
 				BA1121432469E2E600D975D5 /* CodeEntryVC.swift in Sources */,
 				BAFA8315246AD48F00E121B4 /* LocalStore.swift in Sources */,
 				BA50D35B2469EEB90091DF0E /* DiagnosisUploadRequest.swift in Sources */,
+				BAFA8319246BF3B400E121B4 /* HomeBottomView.swift in Sources */,
 				BA366CDB2465F85200A35CA8 /* HomeVC.swift in Sources */,
 				75B1DAA1246BE91100601F69 /* SettingsVC.swift in Sources */,
 				BABEEC3124687A98009D8307 /* LanguageView.swift in Sources */,
@@ -430,8 +444,10 @@
 				BA366CC22465AC3D00A35CA8 /* SceneDelegate.swift in Sources */,
 				BABEEC272468718C009D8307 /* CheckboxView.swift in Sources */,
 				BAFA830E246ABA1600E121B4 /* CrashlyticsLogger.swift in Sources */,
+				BAAED839246C309D004C77A6 /* StatCell.swift in Sources */,
 				BA50D3572469E84E0091DF0E /* RestClient.swift in Sources */,
 				BA1121412469E27100D975D5 /* EntryView.swift in Sources */,
+				BAAED83F246C403D004C77A6 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

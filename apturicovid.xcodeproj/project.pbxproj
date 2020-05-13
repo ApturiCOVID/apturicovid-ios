@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		60122E7C246BFC8900911963 /* WelcomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60122E7B246BFC8900911963 /* WelcomeHeaderView.swift */; };
+		60122E7E246C178500911963 /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60122E7D246C178500911963 /* Theme.xcassets */; };
+		602C1838246C633A00903458 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C1837246C633900903458 /* RoundedButton.swift */; };
+		602C183A246C662100903458 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C1839246C662100903458 /* Language.swift */; };
 		AADBCE0EFA7F339E0ED4EC6C /* Pods_apturicovid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D51F675FDD0F615AD5BFBDCB /* Pods_apturicovid.framework */; };
 		BA11213F2469DDC900D975D5 /* DiagnosisKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11213E2469DDC900D975D5 /* DiagnosisKey.swift */; };
 		BA1121412469E27100D975D5 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1121402469E27100D975D5 /* EntryView.swift */; };
@@ -40,6 +44,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		60122E7B246BFC8900911963 /* WelcomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeHeaderView.swift; sourceTree = "<group>"; };
+		60122E7D246C178500911963 /* Theme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Theme.xcassets; sourceTree = "<group>"; };
+		602C1837246C633900903458 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		602C1839246C662100903458 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		8B05DEA3D1AD8165B5FED2F3 /* Pods-apturicovid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apturicovid.debug.xcconfig"; path = "Target Support Files/Pods-apturicovid/Pods-apturicovid.debug.xcconfig"; sourceTree = "<group>"; };
 		B89B433B39A6ECD9E5E3DEE3 /* Pods-apturicovid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apturicovid.release.xcconfig"; path = "Target Support Files/Pods-apturicovid/Pods-apturicovid.release.xcconfig"; sourceTree = "<group>"; };
 		BA11213E2469DDC900D975D5 /* DiagnosisKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisKey.swift; sourceTree = "<group>"; };
@@ -141,6 +149,7 @@
 				BA366CC52465AC3D00A35CA8 /* Main.storyboard */,
 				BA366CC82465AC3E00A35CA8 /* Assets.xcassets */,
 				BA366CCA2465AC3E00A35CA8 /* LaunchScreen.storyboard */,
+				60122E7D246C178500911963 /* Theme.xcassets */,
 				BA366CCD2465AC3E00A35CA8 /* Info.plist */,
 				BA50D3562469E84E0091DF0E /* RestClient.swift */,
 			);
@@ -197,11 +206,13 @@
 		BABEEC2524687162009D8307 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				BABEEC262468718C009D8307 /* CheckboxView.swift */,
 				BABEEC2A24687397009D8307 /* CheckboxView.xib */,
+				BABEEC262468718C009D8307 /* CheckboxView.swift */,
 				BABEEC2E246879C8009D8307 /* LanguageView.xib */,
 				BABEEC3024687A98009D8307 /* LanguageView.swift */,
 				BA1121402469E27100D975D5 /* EntryView.swift */,
+				60122E7B246BFC8900911963 /* WelcomeHeaderView.swift */,
+				602C1837246C633900903458 /* RoundedButton.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -234,6 +245,7 @@
 		BAFA8311246AD3E000E121B4 /* storage */ = {
 			isa = PBXGroup;
 			children = (
+				602C1839246C662100903458 /* Language.swift */,
 				BAFA8312246AD42D00E121B4 /* UserDefault.swift */,
 				BAFA8314246AD48F00E121B4 /* LocalStore.swift */,
 			);
@@ -307,6 +319,7 @@
 				BABEEC2F246879C8009D8307 /* LanguageView.xib in Resources */,
 				BA366CC92465AC3E00A35CA8 /* Assets.xcassets in Resources */,
 				BABEEC1D2467DF2E009D8307 /* ExposureSettings.storyboard in Resources */,
+				60122E7E246C178500911963 /* Theme.xcassets in Resources */,
 				BA366CC72465AC3D00A35CA8 /* Main.storyboard in Resources */,
 				BABEEC2B24687397009D8307 /* CheckboxView.xib in Resources */,
 			);
@@ -386,8 +399,10 @@
 				BABEEC1F24680A98009D8307 /* ExposureSettingsVC.swift in Sources */,
 				BA50D3592469E9A10091DF0E /* NSError.swift in Sources */,
 				BA11213F2469DDC900D975D5 /* DiagnosisKey.swift in Sources */,
+				602C1838246C633A00903458 /* RoundedButton.swift in Sources */,
 				BAFA8310246AD14600E121B4 /* printers.swift in Sources */,
 				BA366CC42465AC3D00A35CA8 /* ViewController.swift in Sources */,
+				60122E7C246BFC8900911963 /* WelcomeHeaderView.swift in Sources */,
 				BA1121432469E2E600D975D5 /* CodeEntryVC.swift in Sources */,
 				BAFA8315246AD48F00E121B4 /* LocalStore.swift in Sources */,
 				BA50D35B2469EEB90091DF0E /* DiagnosisUploadRequest.swift in Sources */,
@@ -400,6 +415,7 @@
 				BA366CC22465AC3D00A35CA8 /* SceneDelegate.swift in Sources */,
 				BABEEC272468718C009D8307 /* CheckboxView.swift in Sources */,
 				BAFA830E246ABA1600E121B4 /* CrashlyticsLogger.swift in Sources */,
+				602C183A246C662100903458 /* Language.swift in Sources */,
 				BA50D3572469E84E0091DF0E /* RestClient.swift in Sources */,
 				BA1121412469E27100D975D5 /* EntryView.swift in Sources */,
 			);
@@ -547,7 +563,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 655Q6EPK26;
+				DEVELOPMENT_TEAM = RZ7DFJNR7Y;
 				INFOPLIST_FILE = apturicovid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -566,7 +582,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 655Q6EPK26;
+				DEVELOPMENT_TEAM = RZ7DFJNR7Y;
 				INFOPLIST_FILE = apturicovid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -16,8 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DDLog.add(DDOSLogger.sharedInstance)
         DDLog.add(CrashlyticsLogger.sharedInstance)
         
+        setAppearance()
+
         BGTaskScheduler.shared.register(forTaskWithIdentifier: AppDelegate.backgroundTaskIdentifier, using: .main) { task in
-            
             // Perform the exposure detection
             let progress = ExposureManager.shared.detectExposures { success in
                 task.setTaskCompleted(success: success)
@@ -39,16 +40,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: UISceneSession Lifecycle
     
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
+
         let storyboard: Storyboard = isFirstLaunch ? .Welcome : .Main
         return storyboard.sceneConfiguration(for: connectingSceneSession)
-    }
-    
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+
     }
     
     func scheduleBackgroundTaskIfNeeded() {
@@ -60,6 +55,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             print("Unable to schedule background task: \(error)")
         }
+    }
+    
+    // MARK: Private
+    
+    func setAppearance() {
+        UITabBar.appearance().tintColor = Colors.orange
     }
 }
 

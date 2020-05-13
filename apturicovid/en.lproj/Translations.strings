@@ -1,0 +1,11 @@
+// Home
+"contact_tracing" = "Contact tracing";
+"currently_active" = "Currently active";
+"currently_inactive" = "Currently inactive";
+"exposure_detected_title" = "COVID-19 contact detected";
+"exposure_detected_subtitle" = "Click here to find out about the actions required";
+"stats_title" = "Yesterday";
+"share" = "Share";
+
+"settings_title" = "Settings";
+"settings_enter_code" = "Enter code";

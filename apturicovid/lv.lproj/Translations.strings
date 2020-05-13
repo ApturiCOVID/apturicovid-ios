@@ -1,0 +1,11 @@
+// Home
+"contact_tracing" = "Kontaktu meklēšana";
+"currently_active" = "Šobrīd darbojās";
+"currently_inactive" = "Šobrīd nedarbojās";
+"exposure_detected_title" = "Ir bijis kontakts ar COVID-19";
+"exposure_detected_subtitle" = "Spied šeit lai uzzinātu kā rīkoties";
+"stats_title" = "Iepriekšējā diennaktī";
+"share" = "Dalies";
+
+"settings_title" = "Iestatījumi";
+"settings_enter_code" = "Ievadi kodu";

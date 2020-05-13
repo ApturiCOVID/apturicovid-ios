@@ -47,7 +47,6 @@
 		BAFA8313246AD42D00E121B4 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA8312246AD42D00E121B4 /* UserDefault.swift */; };
 		BAFA8315246AD48F00E121B4 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA8314246AD48F00E121B4 /* LocalStore.swift */; };
 		BAFA8319246BF3B400E121B4 /* HomeBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA8318246BF3B400E121B4 /* HomeBottomView.swift */; };
-		BAFA831B246C1D8E00E121B4 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA831A246C1D8E00E121B4 /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */

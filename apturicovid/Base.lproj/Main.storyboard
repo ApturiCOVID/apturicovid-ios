@@ -234,9 +234,14 @@
                     <tabBarItem key="tabBarItem" title="Item" image="home" id="0FY-OL-10H"/>
                     <connections>
                         <outlet property="bottomBackgroundView" destination="R2U-sP-JiI" id="wRu-qi-BOK"/>
+                        <outlet property="contactTracingTitle" destination="5UA-a0-5b6" id="5nz-RC-qsW"/>
+                        <outlet property="exposureDescriptionLabel" destination="NAl-FB-D6Z" id="UeM-bY-q3w"/>
                         <outlet property="exposureSwitch" destination="nyo-WV-M78" id="b2b-2q-dPL"/>
+                        <outlet property="exposureTitleLabel" destination="QbU-l1-EKf" id="c7t-mZ-uCl"/>
                         <outlet property="shareButton" destination="hIF-uf-7e0" id="c2b-qO-hmG"/>
                         <outlet property="statsStackView" destination="2hr-vA-xw9" id="kSE-iw-L35"/>
+                        <outlet property="statsTitleLabel" destination="yib-ha-2dX" id="4f5-eH-b0Y"/>
+                        <outlet property="tracingStateLabel" destination="Qr5-2d-GVo" id="bhl-nd-JFS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -262,14 +267,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="1xo-FN-pvY">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="41.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="40.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1xo-FN-pvY" id="U7V-fF-0sf">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="41.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="40.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2a-Yc-hOu">
-                                                    <rect key="frame" x="30" y="10.000000000000002" width="42" height="21.666666666666671"/>
+                                                    <rect key="frame" x="30" y="10.000000000000002" width="42" height="20.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -464,11 +469,11 @@
     </scenes>
     <resources>
         <image name="exposure-icon" width="86" height="86"/>
-        <image name="faq" width="30" height="30"/>
-        <image name="home" width="30" height="30"/>
+        <image name="faq" width="22" height="22"/>
+        <image name="home" width="24" height="24"/>
         <image name="home-illustration" width="346" height="346"/>
         <image name="next-button" width="30" height="30"/>
-        <image name="setting-toolbar" width="30" height="30"/>
+        <image name="setting-toolbar" width="24" height="24"/>
         <image name="share-1" width="30" height="30"/>
     </resources>
 </document>

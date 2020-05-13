@@ -3,7 +3,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: BaseViewController {
     private let languageToTagMap = [
         "lv": 0,
         "en": 1,
@@ -59,28 +59,11 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    private var notificationDisposable: Disposable?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        notificationDisposable = NotificationCenter.default.rx
-            .notification(languageChangeNotification).subscribe(onNext: { [weak self] (_) in
-                self?.translate()
-            }, onError: justPrintError)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-     
-        translate()
-    }
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
     
-    private func translate() {
+    override func translate() {
         titleLabel.text = "settings_title".translated
         submitButton.setTitle("settings_enter_code".translated, for: .normal)
         

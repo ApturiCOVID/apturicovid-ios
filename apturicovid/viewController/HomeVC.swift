@@ -8,11 +8,18 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
+class HomeVC: BaseViewController {
     @IBOutlet weak var bottomBackgroundView: UIView!
     @IBOutlet weak var exposureSwitch: UISwitch!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var statsStackView: UIStackView!
+    
+    @IBOutlet weak var contactTracingTitle: UILabel!
+    @IBOutlet weak var tracingStateLabel: UILabel!
+    @IBOutlet weak var exposureTitleLabel: UILabel!
+    @IBOutlet weak var exposureDescriptionLabel: UILabel!
+    @IBOutlet weak var statsTitleLabel: UILabel!
+    
     
     @IBAction func onShareButtonTap(_ sender: Any) {
         presentShareController()
@@ -44,5 +51,14 @@ class HomeVC: UIViewController {
             stat.fill(item: title, value: value)
             statsStackView.addArrangedSubview(stat)
         }
+    }
+    
+    override func translate() {
+        contactTracingTitle.text = "contact_tracing".translated
+        tracingStateLabel.text = "currently_active".translated
+        exposureTitleLabel.text = "exposure_detected_title".translated
+        exposureDescriptionLabel.text = "exposure_detected_subtitle".translated
+        statsTitleLabel.text = "stats_title".translated
+        shareButton.setTitle("share".translated, for: .normal)
     }
 }

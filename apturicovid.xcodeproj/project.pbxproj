@@ -11,6 +11,9 @@
 		602C1840246C745900903458 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C183E246C745900903458 /* RoundedButton.swift */; };
 		602C1841246C745900903458 /* WelcomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C183F246C745900903458 /* WelcomeHeaderView.swift */; };
 		60A3349B246D0C16007BE791 /* NotificationNameEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3349A246D0C16007BE791 /* NotificationNameEx.swift */; };
+		60A334A2246D2116007BE791 /* UITextField2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A334A1246D2116007BE791 /* UITextField2.swift */; };
+		60A334A7246D22E7007BE791 /* SubmitCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A334A5246D22E7007BE791 /* SubmitCodeVC.swift */; };
+		60A334A8246D22E7007BE791 /* SubmitExposureKeys.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60A334A6246D22E7007BE791 /* SubmitExposureKeys.storyboard */; };
 		7528B0FB246C016D007D0260 /* Translations.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7528B0FD246C016D007D0260 /* Translations.strings */; };
 		7528B100246C02BC007D0260 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528B0FF246C02BC007D0260 /* String.swift */; };
 		7528B104246C1338007D0260 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528B103246C1338007D0260 /* UIColor.swift */; };
@@ -61,6 +64,9 @@
 		60A3349C246D1CB2007BE791 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		60A3349D246D1CB2007BE791 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		60A3349E246D1CB2007BE791 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Translations.strings; sourceTree = "<group>"; };
+		60A334A1246D2116007BE791 /* UITextField2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField2.swift; sourceTree = "<group>"; };
+		60A334A5246D22E7007BE791 /* SubmitCodeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitCodeVC.swift; sourceTree = "<group>"; };
+		60A334A6246D22E7007BE791 /* SubmitExposureKeys.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SubmitExposureKeys.storyboard; sourceTree = "<group>"; };
 		7528B0FC246C016D007D0260 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Translations.strings; sourceTree = "<group>"; };
 		7528B0FE246C016E007D0260 /* lv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = lv; path = lv.lproj/Translations.strings; sourceTree = "<group>"; };
 		7528B0FF246C02BC007D0260 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -128,6 +134,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		60A334A4246D22E7007BE791 /* submit */ = {
+			isa = PBXGroup;
+			children = (
+				60A334A5246D22E7007BE791 /* SubmitCodeVC.swift */,
+				60A334A6246D22E7007BE791 /* SubmitExposureKeys.storyboard */,
+			);
+			path = submit;
+			sourceTree = "<group>";
+		};
 		8FDBA0C6C4BB4E19B88C1614 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +174,7 @@
 		BA366CBE2465AC3D00A35CA8 /* apturicovid */ = {
 			isa = PBXGroup;
 			children = (
+				60A334A4246D22E7007BE791 /* submit */,
 				BABEEC1B2467DF05009D8307 /* exposureSettings */,
 				BA366CDC2465F98400A35CA8 /* extensions */,
 				BAFA830C246ABA0800E121B4 /* loggers */,
@@ -237,6 +253,7 @@
 		BABEEC2524687162009D8307 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				60A334A1246D2116007BE791 /* UITextField2.swift */,
 				BABEEC262468718C009D8307 /* CheckboxView.swift */,
 				602C183E246C745900903458 /* RoundedButton.swift */,
 				602C183F246C745900903458 /* WelcomeHeaderView.swift */,
@@ -360,6 +377,7 @@
 				BA366CC72465AC3D00A35CA8 /* Main.storyboard in Resources */,
 				BAAED83B246C30BD004C77A6 /* StatCell.xib in Resources */,
 				BABEEC2B24687397009D8307 /* CheckboxView.xib in Resources */,
+				60A334A8246D22E7007BE791 /* SubmitExposureKeys.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA50D3552469E6220091DF0E /* ExposureManager.swift in Sources */,
+				60A334A7246D22E7007BE791 /* SubmitCodeVC.swift in Sources */,
 				7528B10A246C27A0007D0260 /* Colors.swift in Sources */,
 				602C1841246C745900903458 /* WelcomeHeaderView.swift in Sources */,
 				BA366CDE2465F98F00A35CA8 /* View.swift in Sources */,
@@ -440,6 +459,7 @@
 				7528B100246C02BC007D0260 /* String.swift in Sources */,
 				BABEEC1F24680A98009D8307 /* ExposureSettingsVC.swift in Sources */,
 				BA50D3592469E9A10091DF0E /* NSError.swift in Sources */,
+				60A334A2246D2116007BE791 /* UITextField2.swift in Sources */,
 				BA11213F2469DDC900D975D5 /* DiagnosisKey.swift in Sources */,
 				BAFA8310246AD14600E121B4 /* printers.swift in Sources */,
 				BA366CC42465AC3D00A35CA8 /* ViewController.swift in Sources */,

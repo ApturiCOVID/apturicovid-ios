@@ -61,8 +61,6 @@
 		602C183E246C745900903458 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		602C183F246C745900903458 /* WelcomeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeHeaderView.swift; sourceTree = "<group>"; };
 		60A3349A246D0C16007BE791 /* NotificationNameEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameEx.swift; sourceTree = "<group>"; };
-		60A3349C246D1CB2007BE791 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		60A3349D246D1CB2007BE791 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		60A3349E246D1CB2007BE791 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Translations.strings; sourceTree = "<group>"; };
 		60A334A1246D2116007BE791 /* UITextField2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField2.swift; sourceTree = "<group>"; };
 		60A334A5246D22E7007BE791 /* SubmitCodeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitCodeVC.swift; sourceTree = "<group>"; };
@@ -505,7 +503,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				BA366CC62465AC3D00A35CA8 /* Base */,
-				60A3349D246D1CB2007BE791 /* ru */,
 			);
 			name = Main.storyboard;
 			path = .;
@@ -515,7 +512,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				BA366CCB2465AC3E00A35CA8 /* Base */,
-				60A3349C246D1CB2007BE791 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			path = .;

@@ -8,6 +8,9 @@ import BackgroundTasks
 class AppDelegate: UIResponder, UIApplicationDelegate {
     static let backgroundTaskIdentifier = Bundle.main.bundleIdentifier! + ".exposure-notification"
     
+    @UserDefault(.isFirstLaunch, defaultValue: true)
+    var isFirstLaunch
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         DDLog.add(DDOSLogger.sharedInstance)
@@ -37,7 +40,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: UISceneSession Lifecycle
     
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+
+        let storyboard: Storyboard = isFirstLaunch ? .Welcome : .Main
+        return storyboard.sceneConfiguration(for: connectingSceneSession)
+
     }
     
     func scheduleBackgroundTaskIfNeeded() {
@@ -55,5 +61,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setAppearance() {
         UITabBar.appearance().tintColor = Colors.orange
+    }
+}
+
+//MARK: - Storyboard
+enum Storyboard: String {
+    case Main, Welcome
+    
+    var instance: UIStoryboard {
+        UIStoryboard(name: self.rawValue, bundle: Bundle.main)
+    }
+    
+    func sceneConfiguration(for session: UISceneSession) -> UISceneConfiguration {
+        UISceneConfiguration(name: self.rawValue, sessionRole: session.role)
     }
 }

@@ -4,11 +4,7 @@ import RxSwift
 import RxCocoa
 
 class SettingsViewController: BaseViewController {
-    private let languageToTagMap = [
-        "lv": 0,
-        "en": 1,
-        "ru": 2
-    ]
+    private let languagees = Language.allCases
     
     @IBOutlet var languageButtons: [UIButton]! {
         didSet {
@@ -23,9 +19,9 @@ class SettingsViewController: BaseViewController {
                 button.tintColor = UIColor.clear
             }
             
-            let selectedTag = languageToTagMap[language]
-            let selectedButton = languageButtons.first { $0.tag == selectedTag } ?? languageButtons.first!
-            updateButtons(selectedButton)
+            let selectedTag = Language.primary.rawValue
+//            let selectedButton = languageButtons.first { $0.tag == selectedTag } ?? languageButtons.first!
+//            updateButtons(selectedButton)
         }
     }
     @IBOutlet weak var headerView: UIView! {
@@ -36,18 +32,15 @@ class SettingsViewController: BaseViewController {
     }
     @IBOutlet weak var titleLabel: UILabel!
     @IBAction func languageEn(_ sender: UIButton) {
-        language = "en"
-        
+        Language.primary = .EN
         updateButtons(sender)
     }
     @IBAction func languageLv(_ sender: UIButton) {
-        language = "lv"
-        
+        Language.primary = .LV
         updateButtons(sender)
     }
     @IBAction func languageRu(_ sender: UIButton) {
-        language = "ru"
-        
+        Language.primary = .RU
         updateButtons(sender)
     }
     

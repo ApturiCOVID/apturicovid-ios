@@ -267,14 +267,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="1xo-FN-pvY">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="40.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="41"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1xo-FN-pvY" id="U7V-fF-0sf">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="40.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="41"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2a-Yc-hOu">
-                                                    <rect key="frame" x="30" y="10.000000000000002" width="42" height="20.666666666666671"/>
+                                                    <rect key="frame" x="30" y="10" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -486,11 +486,5 @@
         <image name="next-button" width="30" height="30"/>
         <image name="setting-toolbar" width="24" height="24"/>
         <image name="share-1" width="30" height="30"/>
-        <image name="bluetooth" width="309" height="186"/>
-        <image name="faq" width="22" height="22"/>
-        <image name="home" width="24" height="24"/>
-        <image name="setting-toolbar" width="24" height="24"/>
-        <image name="settings" width="16" height="16"/>
-        <image name="share" width="34" height="34"/>
     </resources>
 </document>

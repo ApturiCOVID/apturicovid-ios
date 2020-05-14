@@ -1,0 +1,51 @@
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "0FY-OL-10H"; */
+"0FY-OL-10H.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "EN"; ObjectID = "35h-Rr-MY0"; */
+"35h-Rr-MY0.normalTitle" = "EN";
+
+/* Class = "UILabel"; text = "Kontaktu Meklēšana"; ObjectID = "5UA-a0-5b6"; */
+"5UA-a0-5b6.text" = "Kontaktu Meklēšana";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "J2a-Yc-hOu"; */
+"J2a-Yc-hOu.text" = "Label";
+
+/* Class = "UILabel"; text = "Pēc SPKC darbinieka lūguma, ievadiet norādīto kodu:"; ObjectID = "JaD-qN-Y2g"; */
+"JaD-qN-Y2g.text" = "Pēc SPKC darbinieka lūguma, ievadiet norādīto kodu:";
+
+/* Class = "UILabel"; text = "Spied šeit, lai uzzinātu kā rīkoties"; ObjectID = "NAl-FB-D6Z"; */
+"NAl-FB-D6Z.text" = "Spied šeit, lai uzzinātu kā rīkoties";
+
+/* Class = "UILabel"; text = "Ir bijis kontakts ar COVID-19"; ObjectID = "QbU-l1-EKf"; */
+"QbU-l1-EKf.text" = "Ir bijis kontakts ar COVID-19";
+
+/* Class = "UILabel"; text = "Šobrīd darbojās"; ObjectID = "Qr5-2d-GVo"; */
+"Qr5-2d-GVo.text" = "Šobrīd darbojās";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "WQo-Sr-9P3"; */
+"WQo-Sr-9P3.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Ievadīt SPKC kodu"; ObjectID = "cCl-2X-223"; */
+"cCl-2X-223.normalTitle" = "Ievadīt SPKC kodu";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "cOk-ug-bCP"; */
+"cOk-ug-bCP.title" = "Item";
+
+/* Class = "UILabel"; text = "Iestatījumi"; ObjectID = "h6E-N9-2F7"; */
+"h6E-N9-2F7.text" = "Iestatījumi";
+
+/* Class = "UIButton"; normalTitle = "Dalies"; ObjectID = "hIF-uf-7e0"; */
+"hIF-uf-7e0.normalTitle" = "Dalies";
+
+/* Class = "UIButton"; normalTitle = "RU"; ObjectID = "oep-yF-rsF"; */
+"oep-yF-rsF.normalTitle" = "RU";
+
+/* Class = "UIButton"; normalTitle = "LV"; ObjectID = "rMB-Iy-l4p"; */
+"rMB-Iy-l4p.normalTitle" = "LV";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "whh-By-mHs"; */
+"whh-By-mHs.title" = "Item";
+
+/* Class = "UILabel"; text = "Iepriekšējā diennaktī"; ObjectID = "yib-ha-2dX"; */
+"yib-ha-2dX.text" = "Iepriekšējā diennaktī";

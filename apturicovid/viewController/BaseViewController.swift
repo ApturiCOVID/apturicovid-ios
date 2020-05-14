@@ -7,7 +7,7 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         notificationDisposable = NotificationCenter.default.rx
-        .notification(languageChangeNotification).subscribe(onNext: { [weak self] (_) in
+            .notification(.languageDidChange).subscribe(onNext: { [weak self] (_) in
             self?.translate()
         }, onError: justPrintError)
     }

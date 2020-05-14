@@ -390,6 +390,9 @@
                                                                 <state key="normal" title="Ievadīt SPKC kodu">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <segue destination="7KW-gF-Qgs" kind="presentation" id="JTK-Kg-Ihr"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.95294117647058818" green="0.95686274509803915" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
@@ -466,6 +469,14 @@
             </objects>
             <point key="canvasLocation" x="-259.4202898550725" y="853.79464285714278"/>
         </scene>
+        <!--SubmitExposureKeys-->
+        <scene sceneID="fhy-YD-oQU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SubmitExposureKeys" id="7KW-gF-Qgs" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tb9-xq-N61" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="752" y="858"/>
+        </scene>
     </scenes>
     <resources>
         <image name="exposure-icon" width="86" height="86"/>
@@ -475,5 +486,11 @@
         <image name="next-button" width="30" height="30"/>
         <image name="setting-toolbar" width="24" height="24"/>
         <image name="share-1" width="30" height="30"/>
+        <image name="bluetooth" width="309" height="186"/>
+        <image name="faq" width="22" height="22"/>
+        <image name="home" width="24" height="24"/>
+        <image name="setting-toolbar" width="24" height="24"/>
+        <image name="settings" width="16" height="16"/>
+        <image name="share" width="34" height="34"/>
     </resources>
 </document>

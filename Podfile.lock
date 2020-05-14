@@ -1,4 +1,5 @@
 PODS:
+  - Anchorage (4.4.0)
   - CocoaLumberjack/Core (3.6.1)
   - CocoaLumberjack/Swift (3.6.1):
     - CocoaLumberjack/Core
@@ -60,6 +61,7 @@ PODS:
   - RxSwift (5.1.1)
 
 DEPENDENCIES:
+  - Anchorage
   - CocoaLumberjack/Swift
   - Firebase/Crashlytics
   - RxCocoa (~> 5.1)
@@ -68,6 +70,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Anchorage
     - CocoaLumberjack
     - Firebase
     - FirebaseAnalyticsInterop
@@ -87,6 +90,7 @@ SPEC REPOS:
     - RxSwift
 
 SPEC CHECKSUMS:
+  Anchorage: d7f02c4f9425b537053237aab11ae97e59b55f36
   CocoaLumberjack: b17ae15142558d08bbacf69775fa10c4abbebcc9
   Firebase: b28e55c60efd98963cd9011fe2fac5a10c2ba124
   FirebaseAnalyticsInterop: 3f86269c38ae41f47afeb43ebf32a001f58fcdae
@@ -105,6 +109,6 @@ SPEC CHECKSUMS:
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
-PODFILE CHECKSUM: 202a8c5e3219b61081d6809514b963db1c16ca84
+PODFILE CHECKSUM: f40f3185a12b66d61f7d5d0f75228f91fefba628
 
 COCOAPODS: 1.9.1

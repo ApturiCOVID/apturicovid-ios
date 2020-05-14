@@ -8,9 +8,6 @@ import BackgroundTasks
 class AppDelegate: UIResponder, UIApplicationDelegate {
     static let backgroundTaskIdentifier = Bundle.main.bundleIdentifier! + ".exposure-notification"
     
-    @UserDefault(.isFirstLaunch, defaultValue: true)
-    var isFirstLaunch
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         DDLog.add(DDOSLogger.sharedInstance)
@@ -41,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
 
-        let storyboard: Storyboard = isFirstLaunch ? .Welcome : .Main
+        let storyboard: Storyboard = LocalStore.shared.isFirstLaunch ? .Welcome : .Main
         return storyboard.sceneConfiguration(for: connectingSceneSession)
 
     }

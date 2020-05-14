@@ -8,4 +8,5 @@ target 'apturicovid' do
   pod 'RxGesture', '~> 3.0.1'
   pod 'Firebase/Crashlytics'
   pod 'CocoaLumberjack/Swift'
+  pod 'Anchorage'
 end

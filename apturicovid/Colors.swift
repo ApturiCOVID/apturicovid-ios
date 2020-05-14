@@ -7,4 +7,5 @@ struct Colors {
     static let darkOrange = UIColor(hex: "#F48645")
     static let mintGreen = UIColor(hex: "#22725A")
     static let gray = UIColor(hex: "#F2F3F0")
+    static let mainDark = UIColor(hex: "272727")
 }

@@ -25,4 +25,7 @@ class LocalStore {
     
     @UserDefault(.exposureNotificationsEnabled, defaultValue: false)
     var exposureNotificationsEnabled: Bool
+    
+    @UserDefault(.isFirstLaunch, defaultValue: true)
+    var isFirstLaunch
 }

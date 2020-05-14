@@ -22,4 +22,7 @@ class LocalStore {
     
     @UserDefault(.exposureDetectionErrorLocalizedDescription, defaultValue: nil)
     var exposureDetectionErrorLocalizedDescription: String?
+    
+    @UserDefault(.exposureNotificationsEnabled, defaultValue: false)
+    var exposureNotificationsEnabled: Bool
 }

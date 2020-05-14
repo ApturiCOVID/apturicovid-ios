@@ -12,15 +12,7 @@ class ExposureManager {
     
     let manager = ENManager()
     var detectingExposures = false
-    var enabled = true {
-        didSet {
-            manager.setExposureNotificationEnabled(detectingExposures) { (error) in
-                if let error = error {
-                    justPrintError(error)
-                }
-            }
-        }
-    }
+    var enabled = LocalStore.shared.exposureNotificationsEnabled
     
     init() {
         manager.activate { _ in
@@ -48,6 +40,21 @@ class ExposureManager {
         configuration.transmissionRiskLevelValues = [1,2,3,4,5,6,7,8]
         configuration.transmissionRiskWeight = 50
         return configuration
+    }
+    
+    func toggleExposureNotifications(enabled: Bool) -> Completable {
+        return Completable.create { (completable) -> Disposable in
+            self.manager.setExposureNotificationEnabled(enabled) { (error) in
+                guard error == nil else {
+                    completable(.error(error!))
+                    return
+                }
+                
+                self.enabled = enabled
+                completable(.completed)
+            }
+            return Disposables.create { }
+        }
     }
     
     func detectExposures(completionHandler: ((Bool) -> Void)? = nil) -> Progress {

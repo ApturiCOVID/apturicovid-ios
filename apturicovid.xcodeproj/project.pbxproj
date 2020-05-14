@@ -43,6 +43,8 @@
 		BAAED839246C309D004C77A6 /* StatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAED838246C309D004C77A6 /* StatCell.swift */; };
 		BAAED83B246C30BD004C77A6 /* StatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAED83A246C30BD004C77A6 /* StatCell.xib */; };
 		BAAED83F246C403D004C77A6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAED83E246C403D004C77A6 /* BaseViewController.swift */; };
+		BAAED842246C8283004C77A6 /* QuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAED841246C8283004C77A6 /* QuestionView.xib */; };
+		BAAED844246D42DA004C77A6 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAED843246D42DA004C77A6 /* QuestionView.swift */; };
 		BABEEC1D2467DF2E009D8307 /* ExposureSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BABEEC1C2467DF2E009D8307 /* ExposureSettings.storyboard */; };
 		BABEEC1F24680A98009D8307 /* ExposureSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABEEC1E24680A98009D8307 /* ExposureSettingsVC.swift */; };
 		BABEEC2424686B7E009D8307 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BABEEC2324686B7D009D8307 /* Welcome.storyboard */; };
@@ -101,6 +103,9 @@
 		BAAED838246C309D004C77A6 /* StatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCell.swift; sourceTree = "<group>"; };
 		BAAED83A246C30BD004C77A6 /* StatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatCell.xib; sourceTree = "<group>"; };
 		BAAED83E246C403D004C77A6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		BAAED840246C6826004C77A6 /* apturicovid.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = apturicovid.entitlements; sourceTree = "<group>"; };
+		BAAED841246C8283004C77A6 /* QuestionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionView.xib; sourceTree = "<group>"; };
+		BAAED843246D42DA004C77A6 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		BABEEC1C2467DF2E009D8307 /* ExposureSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExposureSettings.storyboard; sourceTree = "<group>"; };
 		BABEEC1E24680A98009D8307 /* ExposureSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureSettingsVC.swift; sourceTree = "<group>"; };
 		BABEEC2324686B7D009D8307 /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
@@ -179,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				60A334A4246D22E7007BE791 /* submit */,
+				BAAED840246C6826004C77A6 /* apturicovid.entitlements */,
 				BABEEC1B2467DF05009D8307 /* exposureSettings */,
 				BA366CDC2465F98400A35CA8 /* extensions */,
 				BAFA830C246ABA0800E121B4 /* loggers */,
@@ -271,6 +277,8 @@
 				BAFA8318246BF3B400E121B4 /* HomeBottomView.swift */,
 				BAAED838246C309D004C77A6 /* StatCell.swift */,
 				BAAED83A246C30BD004C77A6 /* StatCell.xib */,
+				BAAED841246C8283004C77A6 /* QuestionView.xib */,
+				BAAED843246D42DA004C77A6 /* QuestionView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -381,6 +389,7 @@
 				BABEEC2F246879C8009D8307 /* LanguageView.xib in Resources */,
 				BA366CC92465AC3E00A35CA8 /* Assets.xcassets in Resources */,
 				BABEEC1D2467DF2E009D8307 /* ExposureSettings.storyboard in Resources */,
+				BAAED842246C8283004C77A6 /* QuestionView.xib in Resources */,
 				BA366CC72465AC3D00A35CA8 /* Main.storyboard in Resources */,
 				BAAED83B246C30BD004C77A6 /* StatCell.xib in Resources */,
 				60A334AA246D2CCF007BE791 /* Theme.xcassets in Resources */,
@@ -473,6 +482,8 @@
 				BA11213F2469DDC900D975D5 /* DiagnosisKey.swift in Sources */,
 				BAFA8310246AD14600E121B4 /* printers.swift in Sources */,
 				BA366CC42465AC3D00A35CA8 /* ViewController.swift in Sources */,
+				7528B106246C13F8007D0260 /* language.swift in Sources */,
+				BAAED844246D42DA004C77A6 /* QuestionView.swift in Sources */,
 				BA1121432469E2E600D975D5 /* CodeEntryVC.swift in Sources */,
 				BAFA8315246AD48F00E121B4 /* LocalStore.swift in Sources */,
 				BA50D35B2469EEB90091DF0E /* DiagnosisUploadRequest.swift in Sources */,
@@ -653,14 +664,15 @@
 			baseConfigurationReference = 8B05DEA3D1AD8165B5FED2F3 /* Pods-apturicovid.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovid.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 655Q6EPK26;
+				DEVELOPMENT_TEAM = K673TD5NRS;
 				INFOPLIST_FILE = apturicovid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = lv.makit.apturicovid;
+				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -672,14 +684,15 @@
 			baseConfigurationReference = B89B433B39A6ECD9E5E3DEE3 /* Pods-apturicovid.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovid.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 655Q6EPK26;
+				DEVELOPMENT_TEAM = K673TD5NRS;
 				INFOPLIST_FILE = apturicovid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = lv.makit.apturicovid;
+				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

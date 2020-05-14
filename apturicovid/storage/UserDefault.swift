@@ -52,4 +52,6 @@ public enum UserDefaultKey: String {
     case exposures
     case dateLastPerformedExposureDetection
     case exposureDetectionErrorLocalizedDescription
+    case exposure
+    case exposureNotificationsEnabled
 }

@@ -1,6 +1,6 @@
 import UIKit
 
-class WelcomeVC: UIViewController {
+class WelcomeVC: BaseViewController {
     
     @IBOutlet weak var acceptancesStack: UIStackView!
     @IBOutlet weak var langaugesStack: UIStackView!
@@ -12,12 +12,12 @@ class WelcomeVC: UIViewController {
         
     }
     
-    let privacyAndTermsCheckboxView = CheckboxView().fromNib()
+    let privacyAndTermsCheckboxView = CheckboxView.create(text: "", isSelected: false)
     let langViews = Language.allCases.map{ LanguageView.create($0) }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        acceptancesStack.addArrangedSubview(privacyAndTermsCheckboxView!)
+        acceptancesStack.addArrangedSubview(privacyAndTermsCheckboxView)
         setupLanguageSelector()
         nextButton.isEnabled = false
     }
@@ -39,5 +39,12 @@ class WelcomeVC: UIViewController {
                     .forEach{ $0.isSelected = false }
             }
         }
+    }
+    
+    override func translate() {
+        headingLabel.text = "welcome_title".translated
+        bodyLabel.text = "welcome_app_description".translated
+        privacyAndTermsCheckboxView.text = "welcome_privacy_note".translated
+        nextButton.setTitle("welcome_continue".translated, for: .normal)
     }
 }

@@ -52,6 +52,7 @@
                                     <constraint firstItem="97s-0k-46e" firstAttribute="leading" secondItem="6Az-Ax-oeS" secondAttribute="leading" constant="35" id="Hcn-aN-LgJ"/>
                                     <constraint firstAttribute="trailing" secondItem="1td-mX-4dz" secondAttribute="trailing" constant="30" id="SCH-CX-cqJ"/>
                                     <constraint firstItem="1td-mX-4dz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Az-Ax-oeS" secondAttribute="leading" id="aS5-Qb-Eyn"/>
+                                    <constraint firstAttribute="height" constant="277" id="bBm-ib-ocF"/>
                                     <constraint firstItem="97s-0k-46e" firstAttribute="top" secondItem="1td-mX-4dz" secondAttribute="bottom" id="hrk-nb-0sJ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -95,7 +96,7 @@
                                     <constraint firstAttribute="width" constant="175" id="SkM-5v-5Qm"/>
                                     <constraint firstAttribute="height" constant="50" id="TB2-gI-IZa"/>
                                 </constraints>
-                                <state key="normal" title="Tālāk">
+                                <state key="normal" title="Next">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -133,7 +134,7 @@
                             <constraint firstItem="F1p-A0-bbS" firstAttribute="top" secondItem="6Az-Ax-oeS" secondAttribute="bottom" constant="45" id="hlL-px-IHL"/>
                             <constraint firstItem="m78-w4-XoL" firstAttribute="trailing" secondItem="5Ah-cd-Ag4" secondAttribute="trailing" constant="30" id="qq8-Dy-xw7"/>
                             <constraint firstItem="m78-w4-XoL" firstAttribute="trailing" secondItem="F1p-A0-bbS" secondAttribute="trailing" constant="30" id="x9f-Oa-9V2"/>
-                            <constraint firstItem="5Ah-cd-Ag4" firstAttribute="top" secondItem="bZ2-WK-Nae" secondAttribute="bottom" constant="20" id="z9R-w4-0HO"/>
+                            <constraint firstItem="5Ah-cd-Ag4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="bZ2-WK-Nae" secondAttribute="bottom" constant="20" id="z9R-w4-0HO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="m78-w4-XoL"/>
                     </view>
@@ -148,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oPB-aa-qy0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="147.82608695652175" y="145.98214285714286"/>
+            <point key="canvasLocation" x="146.40000000000001" y="145.56650246305421"/>
         </scene>
     </scenes>
     <resources>

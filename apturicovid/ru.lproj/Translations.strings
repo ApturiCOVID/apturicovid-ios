@@ -1,20 +1,21 @@
 // Home
-"contact_tracing" = "Kontaktu meklēšana";
-"currently_active" = "Šobrīd darbojās";
-"currently_inactive" = "Šobrīd nedarbojās";
-"exposure_detected_title" = "Ir bijis kontakts ar COVID-19";
-"exposure_detected_subtitle" = "Spied šeit lai uzzinātu kā rīkoties";
-"stats_title" = "Iepriekšējā diennaktī";
-"share" = "Dalies";
+"contact_tracing" = "Contact tracing";
+"currently_active" = "Currently active";
+"currently_inactive" = "Currently inactive";
+"exposure_detected_title" = "COVID-19 contact detected";
+"exposure_detected_subtitle" = "Click here to find out about the actions required";
+"stats_title" = "Yesterday";
+"share" = "Share";
 
-"settings_title" = "Iestatījumi";
-"settings_enter_code" = "Ievadi kodu";
+"settings_title" = "Settings";
+"settings_enter_code" = "Enter code";
 
 // Welcome
-"welcome_continue" = "Tālāk";
+"welcome_continue" = "Продолжить";
 "welcome_title" = "Help stop the spread of COVID-19";
 "welcome_app_description" = "If you had close contact with a COVID-19 case, we help the health authority call you more quickly to provide guidance and care";
 
 "welcome_privacy_link" = "Privātuma politiku";
 "welcome_terms_link" = "Lietošanas noteikumiem";
 "welcome_privacy_note" = "Esmu iepazinies ar Privātuma politiku un piekrītu lietotnes Lietošanas noteikumiem";
+

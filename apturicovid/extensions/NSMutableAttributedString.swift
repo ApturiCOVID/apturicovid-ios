@@ -8,6 +8,8 @@
 
 import UIKit
 
+typealias NSStringAttributes = [NSAttributedString.Key : Any]
+
 extension NSMutableAttributedString {
     
     @discardableResult
@@ -15,7 +17,7 @@ extension NSMutableAttributedString {
         let foundRange = mutableString.range(of: text)
         guard foundRange.location != NSNotFound else { return false }
         
-        var attributes: [NSAttributedString.Key : Any] = [
+        var attributes: NSStringAttributes = [
             .attachment : linkURL,
             .foregroundColor: UIColor(named: "linkColor")!,
             .underlineColor: UIColor(named: "linkColor")!,

@@ -8,45 +8,49 @@
 
 import UIKit
 
+//MARK: - LinkLabelDelegate
 public protocol LinkLabelDelegate: NSObjectProtocol {
     func linkLabel(_ label: LinkLabel, didTapUrl url: String, atRange range: NSRange)
 }
 
+//MARK: - LinkLabel
 public class LinkLabel: UILabel {
-
-    private var links: [String: NSRange] = [:]
+    
+    private struct TextLink: Equatable {
+        let link: String
+        let range: NSRange
+    }
+    
+    weak var delegate: LinkLabelDelegate?
+    
+    private var touchStartLink: TextLink?
+    private var links = [TextLink]()
+    private var activeLinkOriginalColor: UIColor?
+    
     private(set) var layoutManager = NSLayoutManager()
     private(set) var textContainer = NSTextContainer(size: CGSize.zero)
     private(set) var textStorage = NSTextStorage() {
-        didSet {
-            textStorage.addLayoutManager(layoutManager)
-        }
+        didSet { textStorage.addLayoutManager(layoutManager) }
     }
-
-    weak var delegate: LinkLabelDelegate?
-
+    
     public override var attributedText: NSAttributedString? {
         didSet {
             if let attributedText = attributedText {
                 textStorage = NSTextStorage(attributedString: attributedText)
-                findLinksAndRange(attributeString: attributedText)
+                links = getLinks(from: attributedText)
             } else {
                 textStorage = NSTextStorage()
-                links = [:]
+                links.removeAll()
             }
         }
     }
 
     public override var lineBreakMode: NSLineBreakMode {
-        didSet {
-            textContainer.lineBreakMode = lineBreakMode
-        }
+        didSet { textContainer.lineBreakMode = lineBreakMode }
     }
 
     public override var numberOfLines: Int {
-        didSet {
-            textContainer.maximumNumberOfLines = numberOfLines
-        }
+        didSet { textContainer.maximumNumberOfLines = numberOfLines }
     }
 
     override init(frame: CGRect) {
@@ -72,41 +76,92 @@ public class LinkLabel: UILabel {
         textContainer.size = bounds.size
     }
 
-    private func findLinksAndRange(attributeString: NSAttributedString) {
-        links = [:]
-        let enumerationBlock: (Any?, NSRange, UnsafeMutablePointer<ObjCBool>) -> Void = { [weak self] value, range, isStop in
-            guard let `self` = self else { return }
+    private func getLinks(from attributeString: NSAttributedString) -> [TextLink] {
+        
+        typealias EnumerationBlock = (Any?, NSRange, UnsafeMutablePointer<ObjCBool>) -> Void
+        
+        func enumerate(with key: NSAttributedString.Key, using block: EnumerationBlock ){
+            attributeString.enumerateAttribute(key,
+                                               in: NSRange(0..<attributeString.length),
+                                               options: [.longestEffectiveRangeNotRequired],
+                                               using: block)
+        }
+        
+        var links = [TextLink]()
+        
+         // Find links
+        let linkEnumerationBlock: EnumerationBlock = { value, range, _ in
             if let value = value {
-                let stringValue = "\(value)"
-                self.links[stringValue] = range
+                links.append(TextLink(link: "\(value)", range: range))
             }
         }
-        attributeString.enumerateAttribute(.link, in: NSRange(0..<attributeString.length), options: [.longestEffectiveRangeNotRequired], using: enumerationBlock)
         
-        attributeString.enumerateAttribute(.attachment, in: NSRange(0..<attributeString.length), options: [.longestEffectiveRangeNotRequired], using: enumerationBlock)
+        // Find link color attributes
+        let colorEnumerationBlock: EnumerationBlock = { [weak self] value, _, _ in
+            if self?.activeLinkOriginalColor == nil {
+                self?.activeLinkOriginalColor = value as? UIColor
+            }
+        }
+        
+        enumerate(with: .link, using: linkEnumerationBlock)
+        enumerate(with: .attachment, using: linkEnumerationBlock)
+        enumerate(with: .foregroundColor, using: colorEnumerationBlock)
+       
+        return links
+    }
+    
+    private func setLinkHovered(_ link: TextLink?, hovered: Bool){
+        guard let attributedText = attributedText, let link = link else { return }
+        
+        let color: UIColor = {
+            let defaultColor = activeLinkOriginalColor ?? .darkGray
+            let hoverColor = defaultColor.withAlphaComponent(0.7)
+            return hovered ? hoverColor : defaultColor
+        }()
+        
+        let mutableText = NSMutableAttributedString(attributedString: attributedText)
+        
+        let attributes: NSStringAttributes = [
+            .foregroundColor : color,
+            .underlineColor : color
+        ]
+        
+        mutableText.addAttributes(attributes, range: link.range)
+        
+        self.attributedText = mutableText
+    }
+    
+    private func linkAt(_ touches: Set<UITouch>) -> TextLink? {
+        guard let location = touches.first?.location(in: self), bounds.contains(location) else { return nil}
+        textContainer.size = bounds.size
+        let indexOfCharacter = layoutManager.glyphIndex(for: location, in: textContainer)
+        return links.first(where: { NSLocationInRange(indexOfCharacter, $0.range) })
     }
 
+    //MARK: Touch events:
+    
     public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let locationOfTouch = touches.first?.location(in: self) else {
-            return
-        }
-        textContainer.size = bounds.size
-        let indexOfCharacter = layoutManager.glyphIndex(for: locationOfTouch, in: textContainer)
-        for (urlString, range) in links where NSLocationInRange(indexOfCharacter, range) {
-            delegate?.linkLabel(self, didTapUrl: urlString, atRange: range)
-            return
-        }
+        touchStartLink = linkAt(touches)
+        setLinkHovered(touchStartLink, hovered: true)
     }
     
     public override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        setLinkHovered(touchStartLink, hovered: touchStartLink == linkAt(touches))
     }
     
     public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        defer {
+            setLinkHovered(touchStartLink, hovered: false)
+            touchStartLink = nil
+        }
         
+        if let activeLink = touchStartLink, activeLink == linkAt(touches) {
+            delegate?.linkLabel(self, didTapUrl: activeLink.link, atRange: activeLink.range)
+        }
     }
     
     public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        setLinkHovered(touchStartLink, hovered: false)
+        touchStartLink = nil
     }
 }

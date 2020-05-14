@@ -6,6 +6,10 @@ class WelcomeVC: BaseViewController {
     
     private enum Link: String {
         case Privacy, Terms
+        var url: String {
+            //TODO: return link for webview
+            return ""
+        }
     }
     
     @IBOutlet weak var acceptancesStack: UIStackView!
@@ -31,14 +35,14 @@ class WelcomeVC: BaseViewController {
         return p
     }()
     
-    lazy var bodyAttributes: [NSAttributedString.Key : Any] = {
+    lazy var bodyAttributes: NSStringAttributes = {
         [
             .font : UIFont.systemFont(ofSize: 15, weight: .thin),
             .paragraphStyle : paragraphStyle
         ]
     }()
     
-    lazy var privacyAndTermsAttributes: [NSAttributedString.Key : Any] = {
+    lazy var privacyAndTermsAttributes: NSStringAttributes = {
         [
             .font : UIFont.systemFont(ofSize: 14, weight: .light),
             .paragraphStyle : paragraphStyle

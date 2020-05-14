@@ -13,7 +13,7 @@ enum Language: String, Codable, CaseIterable {
     
     @UserDefault(.applicationLanguage, defaultValue: .LV)
     static var primary: Language {
-        didSet { NotificationCenter.default.post(name: .languageDidScange, object: primary) }
+        didSet { NotificationCenter.default.post(name: .languageDidChange, object: primary) }
     }
     
     var isPrimary: Bool { self == Language.primary }

@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
 
         let storyboard: Storyboard = isFirstLaunch ? .Welcome : .Main
-        return Storyboard.Main.sceneConfiguration(for: connectingSceneSession)
+        return storyboard.sceneConfiguration(for: connectingSceneSession)
 
     }
     

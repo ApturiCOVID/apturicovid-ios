@@ -9,5 +9,5 @@
 import Foundation
 
 extension Notification.Name {
-    static let languageDidScange = Notification.Name("LanguageDidChange")
+    static let languageDidChange = Notification.Name("LanguageDidChange")
 }

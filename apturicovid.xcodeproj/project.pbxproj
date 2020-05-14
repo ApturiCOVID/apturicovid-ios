@@ -14,6 +14,7 @@
 		60A334A2246D2116007BE791 /* UITextField2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A334A1246D2116007BE791 /* UITextField2.swift */; };
 		60A334A7246D22E7007BE791 /* SubmitCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A334A5246D22E7007BE791 /* SubmitCodeVC.swift */; };
 		60A334A8246D22E7007BE791 /* SubmitExposureKeys.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60A334A6246D22E7007BE791 /* SubmitExposureKeys.storyboard */; };
+		60A334AA246D2CCF007BE791 /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60A334A9246D2CCE007BE791 /* Theme.xcassets */; };
 		7528B0FB246C016D007D0260 /* Translations.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7528B0FD246C016D007D0260 /* Translations.strings */; };
 		7528B100246C02BC007D0260 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528B0FF246C02BC007D0260 /* String.swift */; };
 		7528B104246C1338007D0260 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528B103246C1338007D0260 /* UIColor.swift */; };
@@ -65,6 +66,7 @@
 		60A334A1246D2116007BE791 /* UITextField2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField2.swift; sourceTree = "<group>"; };
 		60A334A5246D22E7007BE791 /* SubmitCodeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitCodeVC.swift; sourceTree = "<group>"; };
 		60A334A6246D22E7007BE791 /* SubmitExposureKeys.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SubmitExposureKeys.storyboard; sourceTree = "<group>"; };
+		60A334A9246D2CCE007BE791 /* Theme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Theme.xcassets; sourceTree = "<group>"; };
 		7528B0FC246C016D007D0260 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Translations.strings; sourceTree = "<group>"; };
 		7528B0FE246C016E007D0260 /* lv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = lv; path = lv.lproj/Translations.strings; sourceTree = "<group>"; };
 		7528B0FF246C02BC007D0260 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				BABEEC2224686B70009D8307 /* welcome */,
 				BA366CBF2465AC3D00A35CA8 /* AppDelegate.swift */,
 				BA366CC82465AC3E00A35CA8 /* Assets.xcassets */,
+				60A334A9246D2CCE007BE791 /* Theme.xcassets */,
 				7528B109246C27A0007D0260 /* Colors.swift */,
 				BA366CCD2465AC3E00A35CA8 /* Info.plist */,
 				BA366CCA2465AC3E00A35CA8 /* LaunchScreen.storyboard */,
@@ -374,6 +377,7 @@
 				BABEEC1D2467DF2E009D8307 /* ExposureSettings.storyboard in Resources */,
 				BA366CC72465AC3D00A35CA8 /* Main.storyboard in Resources */,
 				BAAED83B246C30BD004C77A6 /* StatCell.xib in Resources */,
+				60A334AA246D2CCF007BE791 /* Theme.xcassets in Resources */,
 				BABEEC2B24687397009D8307 /* CheckboxView.xib in Resources */,
 				60A334A8246D22E7007BE791 /* SubmitExposureKeys.storyboard in Resources */,
 			);

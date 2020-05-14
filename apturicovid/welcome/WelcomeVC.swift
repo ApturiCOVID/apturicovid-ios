@@ -1,4 +1,6 @@
 import UIKit
+import RxSwift
+import RxCocoa
 
 class WelcomeVC: BaseViewController {
     
@@ -12,14 +14,14 @@ class WelcomeVC: BaseViewController {
         
     }
     
-    let privacyAndTermsCheckboxView = CheckboxView.create(text: "", isSelected: false)
+    let privacyAndTermsCheckboxView = CheckboxView.create(text: "", isChecked: false)
     let langViews = Language.allCases.map{ LanguageView.create($0) }
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        acceptancesStack.addArrangedSubview(privacyAndTermsCheckboxView)
         setupLanguageSelector()
-        nextButton.isEnabled = false
+        setupPrivacyAndTermsCheckBox()
     }
     
     private func setupLanguageSelector(){
@@ -39,6 +41,17 @@ class WelcomeVC: BaseViewController {
                     .forEach{ $0.isSelected = false }
             }
         }
+    }
+    
+    private func setupPrivacyAndTermsCheckBox(){
+        nextButton.isEnabled = false
+        acceptancesStack.addArrangedSubview(privacyAndTermsCheckboxView)
+        
+        // Enable next button when terms accepted
+        privacyAndTermsCheckboxView.checkBox.rx.tap
+            .map { self.privacyAndTermsCheckboxView.isChecked }
+            .bind(to: nextButton.rx.isEnabled)
+            .disposed(by: disposeBag)
     }
     
     override func translate() {

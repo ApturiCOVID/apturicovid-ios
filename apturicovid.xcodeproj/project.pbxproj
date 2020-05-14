@@ -10,6 +10,8 @@
 		602C183D246C740C00903458 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C183C246C740C00903458 /* Language.swift */; };
 		602C1840246C745900903458 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C183E246C745900903458 /* RoundedButton.swift */; };
 		602C1841246C745900903458 /* WelcomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C183F246C745900903458 /* WelcomeHeaderView.swift */; };
+		60701AFF246D422000BFA1F4 /* LinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60701AFE246D422000BFA1F4 /* LinkLabel.swift */; };
+		60701B01246D46F600BFA1F4 /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60701B00246D46F600BFA1F4 /* NSMutableAttributedString.swift */; };
 		60A3349B246D0C16007BE791 /* NotificationNameEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3349A246D0C16007BE791 /* NotificationNameEx.swift */; };
 		60A334A2246D2116007BE791 /* UITextField2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A334A1246D2116007BE791 /* UITextField2.swift */; };
 		60A334A7246D22E7007BE791 /* SubmitCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A334A5246D22E7007BE791 /* SubmitCodeVC.swift */; };
@@ -61,6 +63,8 @@
 		602C183C246C740C00903458 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		602C183E246C745900903458 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		602C183F246C745900903458 /* WelcomeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeHeaderView.swift; sourceTree = "<group>"; };
+		60701AFE246D422000BFA1F4 /* LinkLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkLabel.swift; sourceTree = "<group>"; };
+		60701B00246D46F600BFA1F4 /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
 		60A3349A246D0C16007BE791 /* NotificationNameEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameEx.swift; sourceTree = "<group>"; };
 		60A3349E246D1CB2007BE791 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Translations.strings; sourceTree = "<group>"; };
 		60A334A1246D2116007BE791 /* UITextField2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField2.swift; sourceTree = "<group>"; };
@@ -226,6 +230,7 @@
 				BA50D3582469E9A10091DF0E /* NSError.swift */,
 				7528B0FF246C02BC007D0260 /* String.swift */,
 				7528B103246C1338007D0260 /* UIColor.swift */,
+				60701B00246D46F600BFA1F4 /* NSMutableAttributedString.swift */,
 				60A3349A246D0C16007BE791 /* NotificationNameEx.swift */,
 				BA366CDD2465F98F00A35CA8 /* View.swift */,
 			);
@@ -257,6 +262,7 @@
 				60A334A1246D2116007BE791 /* UITextField2.swift */,
 				BABEEC262468718C009D8307 /* CheckboxView.swift */,
 				602C183E246C745900903458 /* RoundedButton.swift */,
+				60701AFE246D422000BFA1F4 /* LinkLabel.swift */,
 				602C183F246C745900903458 /* WelcomeHeaderView.swift */,
 				BABEEC2A24687397009D8307 /* CheckboxView.xib */,
 				BA1121402469E27100D975D5 /* EntryView.swift */,
@@ -460,8 +466,10 @@
 				602C1840246C745900903458 /* RoundedButton.swift in Sources */,
 				7528B100246C02BC007D0260 /* String.swift in Sources */,
 				BABEEC1F24680A98009D8307 /* ExposureSettingsVC.swift in Sources */,
+				60701B01246D46F600BFA1F4 /* NSMutableAttributedString.swift in Sources */,
 				BA50D3592469E9A10091DF0E /* NSError.swift in Sources */,
 				60A334A2246D2116007BE791 /* UITextField2.swift in Sources */,
+				60701AFF246D422000BFA1F4 /* LinkLabel.swift in Sources */,
 				BA11213F2469DDC900D975D5 /* DiagnosisKey.swift in Sources */,
 				BAFA8310246AD14600E121B4 /* printers.swift in Sources */,
 				BA366CC42465AC3D00A35CA8 /* ViewController.swift in Sources */,

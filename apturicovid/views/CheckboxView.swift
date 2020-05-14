@@ -3,12 +3,17 @@ import UIKit
 //MARK: - CheckboxView
 class CheckboxView: UIView {
     
-    @IBOutlet weak var bodyLabel: UILabel!
+    @IBOutlet weak var bodyLabel: LinkLabel!
     @IBOutlet weak var checkBox: CheckBox!
     
     var text: String? {
         get{ bodyLabel.text }
         set{ bodyLabel.text = newValue }
+    }
+    
+    var attributedText: NSAttributedString? {
+        get{ bodyLabel.attributedText }
+        set{ bodyLabel.attributedText = newValue }
     }
     
     var isChecked: Bool {

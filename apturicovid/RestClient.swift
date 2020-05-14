@@ -5,7 +5,7 @@ import ExposureNotification
 class RestClient {
     static let shared = RestClient()
     
-    let baseUrl = "https://apturicovid-backend.makit.lv/api/v1"
+    let baseUrl = "https://apturicovid-staging.spkc.gov.lv/api/v1"
     let exposureKeyS3url = "https://apturicovid-backend-minio.makit.lv/dkfs/"
     
     private func getRemoteExposureKeyBatchUrl(index: Int) -> URL? {
@@ -109,5 +109,44 @@ class RestClient {
         guard let data = try? encoder.encode(uploadBody) else { return Observable.error(NSError.make("Unable to make upload request body")) }
         
         return post(urlString: "/diagnosis_keys", body: data)
+    }
+    
+    func requestPhoneVerification(phoneNumber: String) -> Observable<PhoneVerificationRequestResponse?> {
+        let encoder = JSONEncoder()
+        let body = try? encoder.encode(PhoneVerificationRequest(phone_number: phoneNumber))
+        
+        guard body?.isEmpty == false else {
+            return Observable.error(NSError.make("Error creating request"))
+        }
+        
+        return post(urlString: "/phone_verifications", body: body!)
+            .map { (data) -> PhoneVerificationRequestResponse? in
+                return try? JSONDecoder().decode(PhoneVerificationRequestResponse.self, from: data)
+        }
+    }
+    
+    func requestPhoneConfirmation(token: String, code: String) -> Observable<PhoneConfirmationResponse?> {
+        let encoder = JSONEncoder()
+        let body = try? encoder.encode(PhoneConfirmationRequest(token: token, code: code))
+        
+        guard body?.isEmpty == false else {
+            return Observable.error(NSError.make("Error creating request"))
+        }
+        
+        return post(urlString: "/phone_verifications/verify", body: body!)
+            .map { (data) -> PhoneConfirmationResponse? in
+                return try? JSONDecoder().decode(PhoneConfirmationResponse.self, from: data)
+        }
+    }
+    
+    func requestDiagnosisUploadKey(code: String) -> Observable<Data> {
+        let encoder = JSONEncoder()
+        let body = try? encoder.encode(UploadKeyVerificationRequest(code: code))
+        
+        guard body?.isEmpty == false else {
+            return Observable.error(NSError.make("Error creating request"))
+        }
+        
+        return post(urlString: "/upload_keys/verify", body: body!)
     }
 }

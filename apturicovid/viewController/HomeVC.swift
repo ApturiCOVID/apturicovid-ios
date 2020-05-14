@@ -69,6 +69,13 @@ class HomeVC: BaseViewController {
         fullHeightBottomBorder.isActive = !visible
     }
     
+    private func presentWelcomeIfNeeded() {
+        guard !LocalStore.shared.isFirstLaunch else { return }
+        
+        let vc = UIStoryboard(name: "Welcome", bundle: nil).instantiateInitialViewController()
+        self.present(vc!, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -89,6 +96,7 @@ class HomeVC: BaseViewController {
         }
         
         setExposureNotification(visible: false)
+        presentWelcomeIfNeeded()
     }
     
     override func translate() {

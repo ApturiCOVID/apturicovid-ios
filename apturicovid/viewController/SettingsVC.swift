@@ -5,6 +5,9 @@ import RxCocoa
 
 class SettingsViewController: BaseViewController {
     private let languagees = Language.allCases
+    @IBOutlet weak var mainStackView: UIStackView!
+    
+    let phoneView = PhoneSetupView().fromNib() as! PhoneSetupView
     
     @IBOutlet var languageButtons: [UIButton]! {
         didSet {
@@ -26,7 +29,7 @@ class SettingsViewController: BaseViewController {
     }
     @IBOutlet weak var headerView: UIView! {
         didSet {
-            headerView.layer.cornerRadius = 22
+            headerView.roundCorners(corners: [.bottomRight, .bottomLeft], radius: 20)
             headerView.clipsToBounds = true
         }
     }
@@ -43,6 +46,13 @@ class SettingsViewController: BaseViewController {
         Language.primary = .RU
         updateButtons(sender)
     }
+   
+    @IBAction func onSubmitPress(_ sender: Any) {
+        guard let vc = UIStoryboard(name: "CodeEntry", bundle: nil).instantiateInitialViewController() as? CodeEntryVC else { return }
+        
+        vc.mode = .spkc
+        self.present(vc, animated: true, completion: nil)
+    }
     
     @IBOutlet weak var submitButton: UIButton! {
         didSet {
@@ -50,6 +60,12 @@ class SettingsViewController: BaseViewController {
             submitButton.layer.cornerRadius = 22
             submitButton.clipsToBounds = true
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        mainStackView.addArrangedSubview(phoneView)
     }
     
     override func viewDidLayoutSubviews() {

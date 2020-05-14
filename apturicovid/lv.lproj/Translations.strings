@@ -1,3 +1,6 @@
+// Common
+"next" = "Tālāk";
+
 // Home
 "contact_tracing" = "Kontaktu meklēšana";
 "currently_active" = "Šobrīd darbojās";
@@ -8,7 +11,7 @@
 "share" = "Dalies";
 
 "settings_title" = "Iestatījumi";
-"settings_enter_code" = "Ievadi kodu";
+"settings_enter_code" = "Ievadi SPKC kodu";
 
 // Welcome
 "welcome_continue" = "Tālāk";
@@ -18,3 +21,14 @@
 "welcome_privacy_link" = "Privātuma politiku";
 "welcome_terms_link" = "Lietošanas noteikumiem";
 "welcome_privacy_note" = "Esmu iepazinies ar Privātuma politiku un piekrītu lietotnes Lietošanas noteikumiem";
+
+// Code input
+"phone_confirmation" = "Numura apstiprinājums";
+"phone_confirmation_1" = "Uz jūsu norādīto telefona numuru";
+"phone_confirmation_2" = "tika nosūtīts kods. Ievadiet to zemāk";
+"input_code" = "Ievadi kodu";
+"didn_receive_code" = "Nesaņēmi kodu?";
+
+"spkc_data_send" = "Nosūtīt datus SPKC";
+"spkc_data_description" = "Instrukcijas par koda saņemšanu un ievadīšanu. Informācija, ka tikai SPKC var iedot šo kodu un lietot šos datus";
+

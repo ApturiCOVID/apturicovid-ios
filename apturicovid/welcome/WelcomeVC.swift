@@ -24,7 +24,6 @@ class WelcomeVC: BaseViewController {
     
     let privacyAndTermsCheckboxView = CheckboxView.create(text: "", isChecked: false)
     let langViews = Language.allCases.map{ LanguageView.create($0) }
-    let disposeBag = DisposeBag()
     
     //MARK: Text attributes:
     let linkFont = UIFont.systemFont(ofSize: 14, weight: .medium)

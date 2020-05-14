@@ -1,4 +1,6 @@
 import UIKit
+import RxSwift
+import RxCocoa
 
 class EntryStackView: UIStackView {
     var activate: (() -> Void)?
@@ -9,10 +11,18 @@ class EntryStackView: UIStackView {
 }
 
 class EntryView: UIView {
-    let numberOfDigits = 6
+    let numberOfDigits = 8
+    
+    var keyboardType: UIKeyboardType = .default {
+        didSet {
+            textFields.forEach{ $0.keyboardType = keyboardType }
+        }
+    }
     
     var textFields = [UITextField]()
     var stackView: EntryStackView?
+    
+    var disposeBag = DisposeBag()
     
     var text: String {
         textFields.map { $0.text ?? "" }.joined()
@@ -27,7 +37,7 @@ class EntryView: UIView {
         }
         return string
     }
- 
+    
     init() {
         super.init(frame: .zero)
         
@@ -46,15 +56,21 @@ class EntryView: UIView {
         }
     }
     
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        print(textField)
+    }
+    
+    private func autoFill(text: String) {
+        for (index, input) in textFields.enumerated() {
+            let charIndex = text.index(text.startIndex, offsetBy: index)
+            input.text = String(text[charIndex])
+        }
+    }
+    
     private func setup() {
         backgroundColor = .clear
         layer.cornerRadius = 20.0
         layer.cornerCurve = .continuous
-        
-        let label = UILabel()
-        label.text = "VERIFICATION_IDENTIFIER_ENTRY_LABEL".translated
-        label.font = .preferredFont(forTextStyle: .body)
-        label.adjustsFontForContentSizeCategory = true
         
         for _ in 0..<numberOfDigits {
             let textField = UITextField2()
@@ -67,6 +83,7 @@ class EntryView: UIView {
             textField.layer.cornerCurve = .continuous
             textField.delegate = self
             textField.isAccessibilityElement = false
+            textField.autocapitalizationType = .allCharacters
             textFields.append(textField)
         }
         
@@ -75,12 +92,11 @@ class EntryView: UIView {
         entryStackView.distribution = .fillEqually
         entryStackView.spacing = 8.0
         
-        let stackView = EntryStackView(arrangedSubviews: [label, entryStackView])
+        let stackView = EntryStackView(arrangedSubviews: [entryStackView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.alignment = .center
         stackView.spacing = 8.0
-        stackView.accessibilityLabel = label.accessibilityLabel
         stackView.accessibilityTraits = textFields[0].accessibilityTraits
         stackView.isAccessibilityElement = true
         
@@ -101,13 +117,25 @@ class EntryView: UIView {
         ])
     }
 }
-    
+
 extension EntryView: UITextFieldDelegate2 {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if range == NSRange(location: 0, length: 0) && string.isEmpty {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                let text = textField.text
+                if text?.count == 8 {
+                    self.autoFill(text: text ?? "")
+                }
+            }
+            
+            return false
+        }
+        
         textField.text = string
         let index = textFields.firstIndex(of: textField)!
         if string.isEmpty {

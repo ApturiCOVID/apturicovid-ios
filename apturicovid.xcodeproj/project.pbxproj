@@ -26,7 +26,6 @@
 		AADBCE0EFA7F339E0ED4EC6C /* Pods_apturicovid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D51F675FDD0F615AD5BFBDCB /* Pods_apturicovid.framework */; };
 		BA11213F2469DDC900D975D5 /* DiagnosisKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11213E2469DDC900D975D5 /* DiagnosisKey.swift */; };
 		BA1121412469E27100D975D5 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1121402469E27100D975D5 /* EntryView.swift */; };
-		BA1121432469E2E600D975D5 /* CodeEntryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1121422469E2E600D975D5 /* CodeEntryVC.swift */; };
 		BA366CC02465AC3D00A35CA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA366CBF2465AC3D00A35CA8 /* AppDelegate.swift */; };
 		BA366CC22465AC3D00A35CA8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA366CC12465AC3D00A35CA8 /* SceneDelegate.swift */; };
 		BA366CC42465AC3D00A35CA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA366CC32465AC3D00A35CA8 /* ViewController.swift */; };
@@ -45,14 +44,22 @@
 		BAAED83F246C403D004C77A6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAED83E246C403D004C77A6 /* BaseViewController.swift */; };
 		BAAED844246D42DA004C77A6 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAED843246D42DA004C77A6 /* QuestionView.swift */; };
 		BAAED846246D5ECD004C77A6 /* FAQVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAED845246D5ECD004C77A6 /* FAQVC.swift */; };
-		BABEEC1D2467DF2E009D8307 /* ExposureSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BABEEC1C2467DF2E009D8307 /* ExposureSettings.storyboard */; };
-		BABEEC1F24680A98009D8307 /* ExposureSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABEEC1E24680A98009D8307 /* ExposureSettingsVC.swift */; };
+		BAAED848246D9B4A004C77A6 /* PhoneSetupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAED847246D9B4A004C77A6 /* PhoneSetupView.xib */; };
+		BAAED84A246D9E7A004C77A6 /* PhoneSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAED849246D9E7A004C77A6 /* PhoneSetupView.swift */; };
+		BAAED84C246D9FB2004C77A6 /* ExposureSetupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAED84B246D9FB2004C77A6 /* ExposureSetupVC.swift */; };
+		BAAED852246DB04D004C77A6 /* PhoneVerificationRequestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAED851246DB04D004C77A6 /* PhoneVerificationRequestResponse.swift */; };
 		BABEEC2424686B7E009D8307 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BABEEC2324686B7D009D8307 /* Welcome.storyboard */; };
 		BABEEC272468718C009D8307 /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABEEC262468718C009D8307 /* CheckboxView.swift */; };
 		BABEEC2B24687397009D8307 /* CheckboxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BABEEC2A24687397009D8307 /* CheckboxView.xib */; };
 		BABEEC2D246876C0009D8307 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABEEC2C246876C0009D8307 /* WelcomeVC.swift */; };
 		BABEEC2F246879C8009D8307 /* LanguageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BABEEC2E246879C8009D8307 /* LanguageView.xib */; };
 		BABEEC3124687A98009D8307 /* LanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABEEC3024687A98009D8307 /* LanguageView.swift */; };
+		BACDE3B1246DB9640075B20E /* PhoneVerificationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDE3B0246DB9640075B20E /* PhoneVerificationRequest.swift */; };
+		BACDE3B3246DBABA0075B20E /* CodeEntry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BACDE3B2246DBABA0075B20E /* CodeEntry.storyboard */; };
+		BACDE3B5246DBC180075B20E /* CodeEntryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDE3B4246DBC180075B20E /* CodeEntryVC.swift */; };
+		BACDE3B7246DC2450075B20E /* PhoneConfirmationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDE3B6246DC2450075B20E /* PhoneConfirmationRequest.swift */; };
+		BACDE3B9246DC5EF0075B20E /* PhoneConfirmationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDE3B8246DC5EF0075B20E /* PhoneConfirmationResponse.swift */; };
+		BACDE3BB246DF0480075B20E /* UploadKeyVerificationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDE3BA246DF0480075B20E /* UploadKeyVerificationRequest.swift */; };
 		BAFA830B246AB88700E121B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAFA830A246AB88700E121B4 /* GoogleService-Info.plist */; };
 		BAFA830E246ABA1600E121B4 /* CrashlyticsLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA830D246ABA1600E121B4 /* CrashlyticsLogger.swift */; };
 		BAFA8310246AD14600E121B4 /* printers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA830F246AD14600E121B4 /* printers.swift */; };
@@ -84,7 +91,6 @@
 		B89B433B39A6ECD9E5E3DEE3 /* Pods-apturicovid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apturicovid.release.xcconfig"; path = "Target Support Files/Pods-apturicovid/Pods-apturicovid.release.xcconfig"; sourceTree = "<group>"; };
 		BA11213E2469DDC900D975D5 /* DiagnosisKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisKey.swift; sourceTree = "<group>"; };
 		BA1121402469E27100D975D5 /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
-		BA1121422469E2E600D975D5 /* CodeEntryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEntryVC.swift; sourceTree = "<group>"; };
 		BA366CBC2465AC3D00A35CA8 /* apturicovid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = apturicovid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA366CBF2465AC3D00A35CA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA366CC12465AC3D00A35CA8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,14 +112,22 @@
 		BAAED840246C6826004C77A6 /* apturicovid.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = apturicovid.entitlements; sourceTree = "<group>"; };
 		BAAED843246D42DA004C77A6 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		BAAED845246D5ECD004C77A6 /* FAQVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQVC.swift; sourceTree = "<group>"; };
-		BABEEC1C2467DF2E009D8307 /* ExposureSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExposureSettings.storyboard; sourceTree = "<group>"; };
-		BABEEC1E24680A98009D8307 /* ExposureSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureSettingsVC.swift; sourceTree = "<group>"; };
+		BAAED847246D9B4A004C77A6 /* PhoneSetupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneSetupView.xib; sourceTree = "<group>"; };
+		BAAED849246D9E7A004C77A6 /* PhoneSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSetupView.swift; sourceTree = "<group>"; };
+		BAAED84B246D9FB2004C77A6 /* ExposureSetupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureSetupVC.swift; sourceTree = "<group>"; };
+		BAAED851246DB04D004C77A6 /* PhoneVerificationRequestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationRequestResponse.swift; sourceTree = "<group>"; };
 		BABEEC2324686B7D009D8307 /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		BABEEC262468718C009D8307 /* CheckboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
 		BABEEC2A24687397009D8307 /* CheckboxView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckboxView.xib; sourceTree = "<group>"; };
 		BABEEC2C246876C0009D8307 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		BABEEC2E246879C8009D8307 /* LanguageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageView.xib; sourceTree = "<group>"; };
 		BABEEC3024687A98009D8307 /* LanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageView.swift; sourceTree = "<group>"; };
+		BACDE3B0246DB9640075B20E /* PhoneVerificationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationRequest.swift; sourceTree = "<group>"; };
+		BACDE3B2246DBABA0075B20E /* CodeEntry.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CodeEntry.storyboard; sourceTree = "<group>"; };
+		BACDE3B4246DBC180075B20E /* CodeEntryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEntryVC.swift; sourceTree = "<group>"; };
+		BACDE3B6246DC2450075B20E /* PhoneConfirmationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConfirmationRequest.swift; sourceTree = "<group>"; };
+		BACDE3B8246DC5EF0075B20E /* PhoneConfirmationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConfirmationResponse.swift; sourceTree = "<group>"; };
+		BACDE3BA246DF0480075B20E /* UploadKeyVerificationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadKeyVerificationRequest.swift; sourceTree = "<group>"; };
 		BAFA830A246AB88700E121B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BAFA830D246ABA1600E121B4 /* CrashlyticsLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsLogger.swift; sourceTree = "<group>"; };
 		BAFA830F246AD14600E121B4 /* printers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = printers.swift; sourceTree = "<group>"; };
@@ -185,7 +199,6 @@
 			children = (
 				60A334A4246D22E7007BE791 /* submit */,
 				BAAED840246C6826004C77A6 /* apturicovid.entitlements */,
-				BABEEC1B2467DF05009D8307 /* exposureSettings */,
 				BA366CDC2465F98400A35CA8 /* extensions */,
 				BAFA830C246ABA0800E121B4 /* loggers */,
 				BA366CD32465B51F00A35CA8 /* model */,
@@ -215,6 +228,11 @@
 				BA50D35A2469EEB90091DF0E /* DiagnosisUploadRequest.swift */,
 				BA50D3542469E6220091DF0E /* ExposureManager.swift */,
 				BA366CD72465F57200A35CA8 /* FAQ.swift */,
+				BAAED851246DB04D004C77A6 /* PhoneVerificationRequestResponse.swift */,
+				BACDE3B0246DB9640075B20E /* PhoneVerificationRequest.swift */,
+				BACDE3B6246DC2450075B20E /* PhoneConfirmationRequest.swift */,
+				BACDE3B8246DC5EF0075B20E /* PhoneConfirmationResponse.swift */,
+				BACDE3BA246DF0480075B20E /* UploadKeyVerificationRequest.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -244,21 +262,14 @@
 			path = extensions;
 			sourceTree = "<group>";
 		};
-		BABEEC1B2467DF05009D8307 /* exposureSettings */ = {
-			isa = PBXGroup;
-			children = (
-				BA1121422469E2E600D975D5 /* CodeEntryVC.swift */,
-				BABEEC1C2467DF2E009D8307 /* ExposureSettings.storyboard */,
-				BABEEC1E24680A98009D8307 /* ExposureSettingsVC.swift */,
-			);
-			path = exposureSettings;
-			sourceTree = "<group>";
-		};
 		BABEEC2224686B70009D8307 /* welcome */ = {
 			isa = PBXGroup;
 			children = (
 				BABEEC2324686B7D009D8307 /* Welcome.storyboard */,
 				BABEEC2C246876C0009D8307 /* WelcomeVC.swift */,
+				BAAED84B246D9FB2004C77A6 /* ExposureSetupVC.swift */,
+				BACDE3B2246DBABA0075B20E /* CodeEntry.storyboard */,
+				BACDE3B4246DBC180075B20E /* CodeEntryVC.swift */,
 			);
 			path = welcome;
 			sourceTree = "<group>";
@@ -279,6 +290,8 @@
 				BAAED838246C309D004C77A6 /* StatCell.swift */,
 				BAAED83A246C30BD004C77A6 /* StatCell.xib */,
 				BAAED843246D42DA004C77A6 /* QuestionView.swift */,
+				BAAED847246D9B4A004C77A6 /* PhoneSetupView.xib */,
+				BAAED849246D9E7A004C77A6 /* PhoneSetupView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -382,13 +395,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BABEEC2424686B7E009D8307 /* Welcome.storyboard in Resources */,
+				BAAED848246D9B4A004C77A6 /* PhoneSetupView.xib in Resources */,
 				75B1DAA5246BF63E00601F69 /* (null) in Resources */,
 				BAFA830B246AB88700E121B4 /* GoogleService-Info.plist in Resources */,
+				BACDE3B3246DBABA0075B20E /* CodeEntry.storyboard in Resources */,
 				BA366CCC2465AC3E00A35CA8 /* LaunchScreen.storyboard in Resources */,
 				7528B0FB246C016D007D0260 /* Translations.strings in Resources */,
 				BABEEC2F246879C8009D8307 /* LanguageView.xib in Resources */,
 				BA366CC92465AC3E00A35CA8 /* Assets.xcassets in Resources */,
-				BABEEC1D2467DF2E009D8307 /* ExposureSettings.storyboard in Resources */,
 				BA366CC72465AC3D00A35CA8 /* Main.storyboard in Resources */,
 				BAAED83B246C30BD004C77A6 /* StatCell.xib in Resources */,
 				60A334AA246D2CCF007BE791 /* Theme.xcassets in Resources */,
@@ -473,20 +487,24 @@
 				602C1841246C745900903458 /* WelcomeHeaderView.swift in Sources */,
 				BA366CDE2465F98F00A35CA8 /* View.swift in Sources */,
 				602C1840246C745900903458 /* RoundedButton.swift in Sources */,
+				BACDE3B1246DB9640075B20E /* PhoneVerificationRequest.swift in Sources */,
+				BAAED852246DB04D004C77A6 /* PhoneVerificationRequestResponse.swift in Sources */,
+				BAAED84A246D9E7A004C77A6 /* PhoneSetupView.swift in Sources */,
 				7528B100246C02BC007D0260 /* String.swift in Sources */,
-				BABEEC1F24680A98009D8307 /* ExposureSettingsVC.swift in Sources */,
 				60701B01246D46F600BFA1F4 /* NSMutableAttributedString.swift in Sources */,
 				BA50D3592469E9A10091DF0E /* NSError.swift in Sources */,
 				60A334A2246D2116007BE791 /* UITextField2.swift in Sources */,
+				BACDE3B5246DBC180075B20E /* CodeEntryVC.swift in Sources */,
 				60701AFF246D422000BFA1F4 /* LinkLabel.swift in Sources */,
 				BA11213F2469DDC900D975D5 /* DiagnosisKey.swift in Sources */,
 				BAFA8310246AD14600E121B4 /* printers.swift in Sources */,
 				BA366CC42465AC3D00A35CA8 /* ViewController.swift in Sources */,
 				BAAED844246D42DA004C77A6 /* QuestionView.swift in Sources */,
-				BA1121432469E2E600D975D5 /* CodeEntryVC.swift in Sources */,
 				BAFA8315246AD48F00E121B4 /* LocalStore.swift in Sources */,
+				BACDE3B9246DC5EF0075B20E /* PhoneConfirmationResponse.swift in Sources */,
 				BA50D35B2469EEB90091DF0E /* DiagnosisUploadRequest.swift in Sources */,
 				BAFA8319246BF3B400E121B4 /* HomeBottomView.swift in Sources */,
+				BACDE3B7246DC2450075B20E /* PhoneConfirmationRequest.swift in Sources */,
 				BA366CDB2465F85200A35CA8 /* HomeVC.swift in Sources */,
 				75B1DAA1246BE91100601F69 /* SettingsVC.swift in Sources */,
 				BABEEC3124687A98009D8307 /* LanguageView.swift in Sources */,
@@ -497,11 +515,13 @@
 				602C183D246C740C00903458 /* Language.swift in Sources */,
 				60A3349B246D0C16007BE791 /* NotificationNameEx.swift in Sources */,
 				7528B104246C1338007D0260 /* UIColor.swift in Sources */,
+				BACDE3BB246DF0480075B20E /* UploadKeyVerificationRequest.swift in Sources */,
 				BA366CC22465AC3D00A35CA8 /* SceneDelegate.swift in Sources */,
 				BABEEC272468718C009D8307 /* CheckboxView.swift in Sources */,
 				BAFA830E246ABA1600E121B4 /* CrashlyticsLogger.swift in Sources */,
 				BAAED839246C309D004C77A6 /* StatCell.swift in Sources */,
 				BA50D3572469E84E0091DF0E /* RestClient.swift in Sources */,
+				BAAED84C246D9FB2004C77A6 /* ExposureSetupVC.swift in Sources */,
 				BA1121412469E27100D975D5 /* EntryView.swift in Sources */,
 				BAAED83F246C403D004C77A6 /* BaseViewController.swift in Sources */,
 			);

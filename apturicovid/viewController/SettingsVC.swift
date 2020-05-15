@@ -10,6 +10,9 @@ class SettingsViewController: BaseViewController {
     @IBOutlet weak var setupPhoneView: UIView!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var reminderSwitch: UISwitch!
+    @IBOutlet weak var languagesStack: UIStackView!
+    
+    let langViews = Language.allCases.map{ LanguageView.create($0) }
     
     @IBAction func onReminderSet(_ sender: UISwitch) {
         LocalStore.shared.exposureStateReminderEnabled = sender.isOn
@@ -25,24 +28,6 @@ class SettingsViewController: BaseViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    @IBOutlet var languageButtons: [UIButton]! {
-        didSet {
-            languageButtons.forEach { button in
-                button.layer.borderWidth = 2
-                button.layer.borderColor = Colors.darkGreen.cgColor
-                button.layer.cornerRadius = 5
-                
-                button.setTitleColor(Colors.darkGreen, for: .selected)
-                button.setTitleColor(Colors.lightGreen, for: .normal)
-                
-                button.tintColor = UIColor.clear
-            }
-            
-            let selectedTag = Language.primary.rawValue
-//            let selectedButton = languageButtons.first { $0.tag == selectedTag } ?? languageButtons.first!
-//            updateButtons(selectedButton)
-        }
-    }
     @IBOutlet weak var headerView: UIView! {
         didSet {
             headerView.roundCorners(corners: [.bottomRight, .bottomLeft], radius: 20)
@@ -50,18 +35,6 @@ class SettingsViewController: BaseViewController {
         }
     }
     @IBOutlet weak var titleLabel: UILabel!
-    @IBAction func languageEn(_ sender: UIButton) {
-        Language.primary = .EN
-        updateButtons(sender)
-    }
-    @IBAction func languageLv(_ sender: UIButton) {
-        Language.primary = .LV
-        updateButtons(sender)
-    }
-    @IBAction func languageRu(_ sender: UIButton) {
-        Language.primary = .RU
-        updateButtons(sender)
-    }
    
     @IBAction func onSubmitPress(_ sender: Any) {
         guard let vc = UIStoryboard(name: "CodeEntry", bundle: nil).instantiateInitialViewController() as? CodeEntryVC else { return }
@@ -78,6 +51,25 @@ class SettingsViewController: BaseViewController {
         }
     }
     
+    private func setupLanguageSelector(){
+        langViews.forEach { langView in
+            
+            languagesStack.addArrangedSubview(langView)
+            
+            langView.translatesAutoresizingMaskIntoConstraints = false
+            langView.widthAnchor.constraint(equalTo:languagesStack.heightAnchor).isActive = true
+            langView.heightAnchor.constraint(equalTo:languagesStack.heightAnchor).isActive = true
+           
+            langView.onSelected(){ [weak self] selected in
+                guard selected else { return }
+                Language.primary = langView.language
+                self?.langViews
+                    .filter{ $0.language != langView.language }
+                    .forEach{ $0.isSelected = false }
+            }
+        }
+    }
+    
     private func setupPhoneViews() {
         guard let phoneNumber = LocalStore.shared.phoneNumber else {
             phoneView.isHidden = true
@@ -86,6 +78,11 @@ class SettingsViewController: BaseViewController {
         
         setupPhoneView.isHidden = true
         phoneLabel.text = phoneNumber.number
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupLanguageSelector()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -103,13 +100,5 @@ class SettingsViewController: BaseViewController {
         submitButton.setTitle("settings_enter_code".translated, for: .normal)
         
         submitButton.sizeToFit()
-    }
-    
-    private func updateButtons(_ selectedButton: UIButton) {
-        languageButtons.forEach {
-            let selected = $0 == selectedButton
-            $0.isSelected = selected
-            $0.layer.borderColor = (selected ? Colors.darkGreen : UIColor.clear).cgColor
-        }
     }
 }

@@ -15,92 +15,39 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PhoneSetupView" customModule="apturicovid" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="283"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="182"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="buT-C0-ccM">
-                    <rect key="frame" x="30" y="0.0" width="354" height="283"/>
+                    <rect key="frame" x="30" y="20" width="354" height="162"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uce-tj-0An">
-                            <rect key="frame" x="0.0" y="0.0" width="354" height="80"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pa7-tG-XTx">
-                                    <rect key="frame" x="0.0" y="0.0" width="177" height="80"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radio-selected" translatesAutoresizingMaskIntoConstraints="NO" id="040-0Z-ipB">
-                                            <rect key="frame" x="0.0" y="27.5" width="25" height="25"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="25" id="f6U-cf-VWr"/>
-                                                <constraint firstAttribute="height" constant="25" id="qVh-zx-Dz1"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Norādīt kontaktu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="piP-J8-dpH">
-                                            <rect key="frame" x="35" y="0.0" width="142" height="80"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    <constraints>
-                                        <constraint firstItem="040-0Z-ipB" firstAttribute="leading" secondItem="pa7-tG-XTx" secondAttribute="leading" id="55D-jY-wMv"/>
-                                        <constraint firstAttribute="bottom" secondItem="piP-J8-dpH" secondAttribute="bottom" id="8jk-00-wXW"/>
-                                        <constraint firstItem="piP-J8-dpH" firstAttribute="top" secondItem="pa7-tG-XTx" secondAttribute="top" id="Heq-FU-khl"/>
-                                        <constraint firstAttribute="trailing" secondItem="piP-J8-dpH" secondAttribute="trailing" id="LY0-3x-Cnk"/>
-                                        <constraint firstItem="piP-J8-dpH" firstAttribute="leading" secondItem="040-0Z-ipB" secondAttribute="trailing" constant="10" id="Zjs-Ow-zoG"/>
-                                        <constraint firstItem="040-0Z-ipB" firstAttribute="centerY" secondItem="pa7-tG-XTx" secondAttribute="centerY" id="d6n-x6-cut"/>
-                                    </constraints>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fg-ML-Ubq">
-                                    <rect key="frame" x="177" y="0.0" width="177" height="80"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radio-empty" translatesAutoresizingMaskIntoConstraints="NO" id="6FQ-GS-EOc">
-                                            <rect key="frame" x="0.0" y="27.5" width="25" height="25"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="25" id="4hA-Ur-JCq"/>
-                                                <constraint firstAttribute="width" constant="25" id="ygT-WZ-76k"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Palikt anonīmam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TzF-UR-gGq">
-                                            <rect key="frame" x="35" y="0.0" width="142" height="80"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    <constraints>
-                                        <constraint firstItem="6FQ-GS-EOc" firstAttribute="centerY" secondItem="3fg-ML-Ubq" secondAttribute="centerY" id="Q1I-0V-Uo7"/>
-                                        <constraint firstItem="TzF-UR-gGq" firstAttribute="top" secondItem="3fg-ML-Ubq" secondAttribute="top" id="QBZ-72-KTU"/>
-                                        <constraint firstItem="TzF-UR-gGq" firstAttribute="leading" secondItem="6FQ-GS-EOc" secondAttribute="trailing" constant="10" id="dcV-LG-R3G"/>
-                                        <constraint firstAttribute="trailing" secondItem="TzF-UR-gGq" secondAttribute="trailing" id="j6U-Gg-PXl"/>
-                                        <constraint firstAttribute="bottom" secondItem="TzF-UR-gGq" secondAttribute="bottom" id="lE1-G4-a4d"/>
-                                        <constraint firstItem="6FQ-GS-EOc" firstAttribute="leading" secondItem="3fg-ML-Ubq" secondAttribute="leading" id="t7t-0U-Lrh"/>
-                                    </constraints>
-                                </view>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            <constraints>
-                                <constraint firstItem="3fg-ML-Ubq" firstAttribute="leading" secondItem="pa7-tG-XTx" secondAttribute="trailing" id="0q5-SR-8d2"/>
-                                <constraint firstItem="3fg-ML-Ubq" firstAttribute="width" secondItem="pa7-tG-XTx" secondAttribute="width" id="BjY-XM-3xO"/>
-                                <constraint firstAttribute="bottom" secondItem="3fg-ML-Ubq" secondAttribute="bottom" id="CSw-7C-lPN"/>
-                                <constraint firstAttribute="height" constant="80" id="FVp-M8-ooc"/>
-                                <constraint firstItem="3fg-ML-Ubq" firstAttribute="top" secondItem="Uce-tj-0An" secondAttribute="top" id="H8q-Rm-owr"/>
-                                <constraint firstItem="pa7-tG-XTx" firstAttribute="leading" secondItem="Uce-tj-0An" secondAttribute="leading" id="KJt-ml-E7g"/>
-                                <constraint firstItem="3fg-ML-Ubq" firstAttribute="leading" secondItem="pa7-tG-XTx" secondAttribute="trailing" id="PWP-zI-26j"/>
-                                <constraint firstItem="pa7-tG-XTx" firstAttribute="top" secondItem="Uce-tj-0An" secondAttribute="top" id="T13-X7-rxY"/>
-                                <constraint firstAttribute="trailing" secondItem="3fg-ML-Ubq" secondAttribute="trailing" id="oha-x1-0kA"/>
-                                <constraint firstAttribute="bottom" secondItem="pa7-tG-XTx" secondAttribute="bottom" id="vP9-ws-6BY"/>
-                            </constraints>
-                        </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Norādiet kontakttālruni, uz kuru ar Jums sazināties COVID-19 kontakta gadījumā" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMC-a8-BtJ">
-                            <rect key="frame" x="0.0" y="80" width="354" height="163"/>
+                            <rect key="frame" x="0.0" y="0.0" width="354" height="52"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" name="descriptionText"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1F2-hs-pz6">
+                            <rect key="frame" x="0.0" y="52" width="354" height="40"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nrp-uD-E6r">
+                                    <rect key="frame" x="0.0" y="5" width="225" height="20"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                    <state key="normal" title="Kāpēc ievadīt telefona numuru?">
+                                        <color key="titleColor" red="0.96078431372549022" green="0.46666666666666667" blue="0.1764705882352941" alpha="0.9409936179577465" colorSpace="calibratedRGB"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="2A3-5k-zFW"/>
+                                <constraint firstItem="Nrp-uD-E6r" firstAttribute="top" secondItem="1F2-hs-pz6" secondAttribute="top" constant="5" id="sdG-KD-TW7"/>
+                                <constraint firstAttribute="bottom" secondItem="Nrp-uD-E6r" secondAttribute="bottom" constant="15" id="vH4-xN-dy7"/>
+                                <constraint firstItem="Nrp-uD-E6r" firstAttribute="leading" secondItem="1F2-hs-pz6" secondAttribute="leading" id="vX1-lo-kEV"/>
+                            </constraints>
+                        </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cc7-lP-GiG">
-                            <rect key="frame" x="0.0" y="243" width="354" height="40"/>
+                            <rect key="frame" x="0.0" y="92" width="354" height="40"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ool-BV-ezS">
                                     <rect key="frame" x="0.0" y="0.0" width="64" height="40"/>
@@ -148,12 +95,39 @@
                                 <constraint firstAttribute="trailing" secondItem="Axo-97-MFn" secondAttribute="trailing" id="uqz-CJ-vAN"/>
                             </constraints>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rej-Pr-jhU">
+                            <rect key="frame" x="0.0" y="132" width="354" height="30"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Palikt anonīmam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWu-PV-DP0">
+                                    <rect key="frame" x="0.0" y="0.0" width="106" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" red="0.38039215686274508" green="0.40000000000000002" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron-right" translatesAutoresizingMaskIntoConstraints="NO" id="v5h-8t-PNd">
+                                    <rect key="frame" x="116" y="10" width="10" height="10"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="v5h-8t-PNd" secondAttribute="height" id="Zae-Sy-sqQ"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="pWu-PV-DP0" firstAttribute="top" secondItem="rej-Pr-jhU" secondAttribute="top" id="KtC-Hl-3LB"/>
+                                <constraint firstAttribute="bottom" secondItem="v5h-8t-PNd" secondAttribute="bottom" constant="10" id="M5p-fG-zeQ"/>
+                                <constraint firstItem="v5h-8t-PNd" firstAttribute="leading" secondItem="pWu-PV-DP0" secondAttribute="trailing" constant="10" id="MkI-Ym-GXU"/>
+                                <constraint firstAttribute="height" constant="30" id="aVc-cA-bw5"/>
+                                <constraint firstItem="pWu-PV-DP0" firstAttribute="leading" secondItem="rej-Pr-jhU" secondAttribute="leading" id="h0P-0t-ccL"/>
+                                <constraint firstAttribute="bottom" secondItem="pWu-PV-DP0" secondAttribute="bottom" id="j1g-ay-43D"/>
+                                <constraint firstItem="v5h-8t-PNd" firstAttribute="top" secondItem="rej-Pr-jhU" secondAttribute="top" constant="10" id="oWg-1L-Sud"/>
+                            </constraints>
+                        </view>
                     </subviews>
                 </stackView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="buT-C0-ccM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6pn-n7-Xwf"/>
+                <constraint firstItem="buT-C0-ccM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="6pn-n7-Xwf"/>
                 <constraint firstItem="buT-C0-ccM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="Zto-Yh-cCj"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="buT-C0-ccM" secondAttribute="trailing" constant="30" id="knP-0z-zgf"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="buT-C0-ccM" secondAttribute="bottom" id="rN5-z7-IWw"/>
@@ -161,23 +135,18 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="anonymousLabel" destination="TzF-UR-gGq" id="hYx-PZ-OQr"/>
-                <outlet property="anonymousSelectionImage" destination="6FQ-GS-EOc" id="BVq-p1-t7h"/>
-                <outlet property="anonymousView" destination="3fg-ML-Ubq" id="mOW-U3-LG5"/>
+                <outlet property="anonymousButtonView" destination="rej-Pr-jhU" id="cK8-L0-dWl"/>
                 <outlet property="descriptionLabel" destination="yMC-a8-BtJ" id="hjg-7J-NB7"/>
+                <outlet property="phoneExplanationButton" destination="Nrp-uD-E6r" id="vDT-YR-QLN"/>
                 <outlet property="phoneInput" destination="Axo-97-MFn" id="Txj-xM-lhD"/>
                 <outlet property="phoneInputView" destination="cc7-lP-GiG" id="2x6-eB-wGg"/>
-                <outlet property="phoneSelectionImage" destination="040-0Z-ipB" id="9un-OT-Jyx"/>
                 <outlet property="stackView" destination="buT-C0-ccM" id="nAt-bd-TkO"/>
-                <outlet property="withPhoneLabel" destination="piP-J8-dpH" id="4aO-Ym-SwA"/>
-                <outlet property="withPhoneView" destination="pa7-tG-XTx" id="4zW-dk-knI"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="-52.566964285714285"/>
+            <point key="canvasLocation" x="137.68115942028987" y="-109.82142857142857"/>
         </view>
     </objects>
     <resources>
-        <image name="radio-empty" width="24" height="24"/>
-        <image name="radio-selected" width="24" height="24"/>
+        <image name="chevron-right" width="6" height="9"/>
         <namedColor name="descriptionText">
             <color red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

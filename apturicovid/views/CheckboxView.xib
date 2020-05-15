@@ -15,7 +15,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6p-0i-xsG" customClass="LinkLabel" customModule="apturicovid" customModuleProvider="target">
-                    <rect key="frame" x="46" y="16.5" width="313" height="17"/>
+                    <rect key="frame" x="38" y="16.5" width="321" height="17"/>
                     <attributedString key="attributedText">
                         <fragment content="checkbox text">
                             <attributes>
@@ -28,7 +28,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXX-Cx-hOE" userLabel="checkBox" customClass="CheckBox" customModule="apturicovid" customModuleProvider="target">
-                    <rect key="frame" x="8" y="10" width="30" height="30"/>
+                    <rect key="frame" x="0.0" y="10" width="30" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Afc-so-M9g"/>
                         <constraint firstAttribute="width" constant="30" id="aiS-oH-2nP"/>
@@ -47,7 +47,7 @@
                 <constraint firstItem="UXX-Cx-hOE" firstAttribute="centerY" secondItem="X7d-ej-bkK" secondAttribute="centerY" id="VTJ-bd-r2d"/>
                 <constraint firstItem="A6p-0i-xsG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="X7d-ej-bkK" secondAttribute="top" constant="5" id="fPJ-cr-Esg"/>
                 <constraint firstItem="A6p-0i-xsG" firstAttribute="leading" secondItem="UXX-Cx-hOE" secondAttribute="trailing" constant="8" id="wVX-bt-HLj"/>
-                <constraint firstItem="UXX-Cx-hOE" firstAttribute="leading" secondItem="X7d-ej-bkK" secondAttribute="leading" constant="8" id="xUH-Zd-GwS"/>
+                <constraint firstItem="UXX-Cx-hOE" firstAttribute="leading" secondItem="X7d-ej-bkK" secondAttribute="leading" id="xUH-Zd-GwS"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="joa-Nf-HtP"/>

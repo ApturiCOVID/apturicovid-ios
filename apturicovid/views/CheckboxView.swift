@@ -6,6 +6,12 @@ class CheckboxView: UIView {
     @IBOutlet weak var bodyLabel: LinkLabel!
     @IBOutlet weak var checkBox: CheckBox!
     
+    var alignment: NSTextAlignment = .left {
+        didSet {
+            bodyLabel.textAlignment = alignment
+        }
+    }
+    
     var text: String? {
         get{ bodyLabel.text }
         set{ bodyLabel.text = newValue }

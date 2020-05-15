@@ -63,6 +63,13 @@
 		BACDE3BD246E72DE0075B20E /* UploadKeyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDE3BC246E72DE0075B20E /* UploadKeyResponse.swift */; };
 		BACDE3BF246E9A5F0075B20E /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDE3BE246E9A5F0075B20E /* PhoneNumber.swift */; };
 		BACDE3C1246EA4400075B20E /* NotificationsScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDE3C0246EA4400075B20E /* NotificationsScheduler.swift */; };
+		BAE35751246F2EB4004C59A9 /* PhoneSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAE35750246F2EB4004C59A9 /* PhoneSettings.storyboard */; };
+		BAE35753246F3034004C59A9 /* PhoneSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE35752246F3034004C59A9 /* PhoneSettingsVC.swift */; };
+		BAE35755246F410B004C59A9 /* ExposureAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE35754246F410B004C59A9 /* ExposureAlertVC.swift */; };
+		BAE35757246F4444004C59A9 /* PhoneInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE35756246F4444004C59A9 /* PhoneInfoVC.swift */; };
+		BAE3575A246F48A6004C59A9 /* StatView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE35759246F48A6004C59A9 /* StatView.xib */; };
+		BAE3575C246F4A6E004C59A9 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE3575B246F4A6E004C59A9 /* StatView.swift */; };
+		BAE3575E246F4B28004C59A9 /* StatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE3575D246F4B28004C59A9 /* StatsVC.swift */; };
 		BAFA830B246AB88700E121B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAFA830A246AB88700E121B4 /* GoogleService-Info.plist */; };
 		BAFA830E246ABA1600E121B4 /* CrashlyticsLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA830D246ABA1600E121B4 /* CrashlyticsLogger.swift */; };
 		BAFA8310246AD14600E121B4 /* printers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA830F246AD14600E121B4 /* printers.swift */; };
@@ -134,6 +141,13 @@
 		BACDE3BC246E72DE0075B20E /* UploadKeyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadKeyResponse.swift; sourceTree = "<group>"; };
 		BACDE3BE246E9A5F0075B20E /* PhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
 		BACDE3C0246EA4400075B20E /* NotificationsScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsScheduler.swift; sourceTree = "<group>"; };
+		BAE35750246F2EB4004C59A9 /* PhoneSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhoneSettings.storyboard; sourceTree = "<group>"; };
+		BAE35752246F3034004C59A9 /* PhoneSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSettingsVC.swift; sourceTree = "<group>"; };
+		BAE35754246F410B004C59A9 /* ExposureAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureAlertVC.swift; sourceTree = "<group>"; };
+		BAE35756246F4444004C59A9 /* PhoneInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneInfoVC.swift; sourceTree = "<group>"; };
+		BAE35759246F48A6004C59A9 /* StatView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatView.xib; sourceTree = "<group>"; };
+		BAE3575B246F4A6E004C59A9 /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
+		BAE3575D246F4B28004C59A9 /* StatsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsVC.swift; sourceTree = "<group>"; };
 		BAFA830A246AB88700E121B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BAFA830D246ABA1600E121B4 /* CrashlyticsLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsLogger.swift; sourceTree = "<group>"; };
 		BAFA830F246AD14600E121B4 /* printers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = printers.swift; sourceTree = "<group>"; };
@@ -203,6 +217,7 @@
 		BA366CBE2465AC3D00A35CA8 /* apturicovid */ = {
 			isa = PBXGroup;
 			children = (
+				BAE3574F246F2EA6004C59A9 /* phoneSettings */,
 				60A334A4246D22E7007BE791 /* submit */,
 				BAAED840246C6826004C77A6 /* apturicovid.entitlements */,
 				BA366CDC2465F98400A35CA8 /* extensions */,
@@ -254,6 +269,8 @@
 				75B1DAA0246BE91100601F69 /* SettingsVC.swift */,
 				BAAED83E246C403D004C77A6 /* BaseViewController.swift */,
 				BAAED845246D5ECD004C77A6 /* FAQVC.swift */,
+				BAE35754246F410B004C59A9 /* ExposureAlertVC.swift */,
+				BAE3575D246F4B28004C59A9 /* StatsVC.swift */,
 			);
 			path = viewController;
 			sourceTree = "<group>";
@@ -301,8 +318,20 @@
 				BAAED843246D42DA004C77A6 /* QuestionView.swift */,
 				BAAED847246D9B4A004C77A6 /* PhoneSetupView.xib */,
 				BAAED849246D9E7A004C77A6 /* PhoneSetupView.swift */,
+				BAE35759246F48A6004C59A9 /* StatView.xib */,
+				BAE3575B246F4A6E004C59A9 /* StatView.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		BAE3574F246F2EA6004C59A9 /* phoneSettings */ = {
+			isa = PBXGroup;
+			children = (
+				BAE35750246F2EB4004C59A9 /* PhoneSettings.storyboard */,
+				BAE35752246F3034004C59A9 /* PhoneSettingsVC.swift */,
+				BAE35756246F4444004C59A9 /* PhoneInfoVC.swift */,
+			);
+			path = phoneSettings;
 			sourceTree = "<group>";
 		};
 		BAFA8308246AB87400E121B4 /* environments */ = {
@@ -403,9 +432,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAE35751246F2EB4004C59A9 /* PhoneSettings.storyboard in Resources */,
 				BABEEC2424686B7E009D8307 /* Welcome.storyboard in Resources */,
 				BAAED848246D9B4A004C77A6 /* PhoneSetupView.xib in Resources */,
 				75B1DAA5246BF63E00601F69 /* (null) in Resources */,
+				BAE3575A246F48A6004C59A9 /* StatView.xib in Resources */,
 				BAFA830B246AB88700E121B4 /* GoogleService-Info.plist in Resources */,
 				BACDE3B3246DBABA0075B20E /* CodeEntry.storyboard in Resources */,
 				BA366CCC2465AC3E00A35CA8 /* LaunchScreen.storyboard in Resources */,
@@ -489,10 +520,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAE35755246F410B004C59A9 /* ExposureAlertVC.swift in Sources */,
 				BA50D3552469E6220091DF0E /* ExposureManager.swift in Sources */,
 				60A334A7246D22E7007BE791 /* SubmitCodeVC.swift in Sources */,
 				7528B10A246C27A0007D0260 /* Colors.swift in Sources */,
 				BAAED846246D5ECD004C77A6 /* FAQVC.swift in Sources */,
+				BAE35753246F3034004C59A9 /* PhoneSettingsVC.swift in Sources */,
+				BAE3575C246F4A6E004C59A9 /* StatView.swift in Sources */,
 				602C1841246C745900903458 /* WelcomeHeaderView.swift in Sources */,
 				BA366CDE2465F98F00A35CA8 /* View.swift in Sources */,
 				602C1840246C745900903458 /* RoundedButton.swift in Sources */,
@@ -502,6 +536,7 @@
 				7528B100246C02BC007D0260 /* String.swift in Sources */,
 				60701B01246D46F600BFA1F4 /* NSMutableAttributedString.swift in Sources */,
 				BA50D3592469E9A10091DF0E /* NSError.swift in Sources */,
+				BAE3575E246F4B28004C59A9 /* StatsVC.swift in Sources */,
 				60A334A2246D2116007BE791 /* UITextField2.swift in Sources */,
 				BACDE3B5246DBC180075B20E /* CodeEntryVC.swift in Sources */,
 				60701AFF246D422000BFA1F4 /* LinkLabel.swift in Sources */,
@@ -528,6 +563,7 @@
 				7528B104246C1338007D0260 /* UIColor.swift in Sources */,
 				BACDE3BB246DF0480075B20E /* UploadKeyVerificationRequest.swift in Sources */,
 				BACDE3BF246E9A5F0075B20E /* PhoneNumber.swift in Sources */,
+				BAE35757246F4444004C59A9 /* PhoneInfoVC.swift in Sources */,
 				BA366CC22465AC3D00A35CA8 /* SceneDelegate.swift in Sources */,
 				BABEEC272468718C009D8307 /* CheckboxView.swift in Sources */,
 				BAFA830E246ABA1600E121B4 /* CrashlyticsLogger.swift in Sources */,

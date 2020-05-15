@@ -24,6 +24,7 @@ class HomeVC: BaseViewController {
     
     @IBOutlet var smallSizeBottomBackground: NSLayoutConstraint!
     @IBOutlet var fullHeightBottomBorder: NSLayoutConstraint!
+    @IBOutlet weak var exposureViewButton: UIButton!
     
     private var exposureNotificationVisible = false {
         didSet {
@@ -34,7 +35,7 @@ class HomeVC: BaseViewController {
     @IBAction func onShareButtonTap(_ sender: Any) {
         exposureNotificationVisible = !exposureNotificationVisible
         NoticationsScheduler.shared.sendExposureDiscoveredNotification()
-//        presentShareController()
+        //        presentShareController()
     }
     
     @IBAction func onSwitchTap(_ sender: UISwitch) {
@@ -53,7 +54,7 @@ class HomeVC: BaseViewController {
         let sharedObjects:[AnyObject] = [objectsToShare as AnyObject, someText as AnyObject]
         let activityViewController = UIActivityViewController(activityItems : sharedObjects, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
-
+        
         self.present(activityViewController, animated: true, completion: nil)
     }
     
@@ -71,11 +72,16 @@ class HomeVC: BaseViewController {
     }
     
     private func presentWelcomeIfNeeded() {
-        guard !LocalStore.shared.isFirstLaunch else { return }
+        guard !LocalStore.shared.hasSeenIntro else { return }
         
         let vc = UIStoryboard(name: "Welcome", bundle: nil).instantiateInitialViewController()
         vc?.isModalInPresentation = true
         self.present(vc!, animated: true, completion: nil)
+    }
+    
+    private func presentExposureAlertVC() {
+        guard let vc = self.storyboard?.instantiateViewController(identifier: "ExposureAlertVC") else { return }
+        present(vc, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -99,6 +105,24 @@ class HomeVC: BaseViewController {
         
         setExposureNotification(visible: false)
         presentWelcomeIfNeeded()
+        
+        exposureNotificationView
+            .rx
+            .tapGesture()
+            .when(.recognized)
+            .subscribe(onNext: { (_) in
+                self.presentExposureAlertVC()
+            })
+            .disposed(by: disposeBag)
+        
+        exposureViewButton
+            .rx
+            .tapGesture()
+            .when(.recognized)
+            .subscribe(onNext: { (_) in
+                self.presentExposureAlertVC()
+            })
+            .disposed(by: disposeBag)
     }
     
     override func translate() {

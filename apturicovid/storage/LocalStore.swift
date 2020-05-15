@@ -26,9 +26,12 @@ class LocalStore {
     @UserDefault(.exposureNotificationsEnabled, defaultValue: false)
     var exposureNotificationsEnabled: Bool
     
-    @UserDefault(.isFirstLaunch, defaultValue: false)
-    var isFirstLaunch
+    @UserDefault(.hasSeenIntro, defaultValue: false)
+    var hasSeenIntro: Bool
     
     @UserDefault(.phoneNumber, defaultValue: nil)
     var phoneNumber: PhoneNumber?
+    
+    @UserDefault(.exposureStateReminderEnabled, defaultValue: false)
+    var exposureStateReminderEnabled: Bool
 }

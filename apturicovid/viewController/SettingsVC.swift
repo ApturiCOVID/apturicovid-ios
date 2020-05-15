@@ -6,8 +6,24 @@ import RxCocoa
 class SettingsViewController: BaseViewController {
     private let languagees = Language.allCases
     @IBOutlet weak var mainStackView: UIStackView!
+    @IBOutlet weak var phoneView: UIView!
+    @IBOutlet weak var setupPhoneView: UIView!
+    @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var reminderSwitch: UISwitch!
     
-    let phoneView = PhoneSetupView().fromNib() as! PhoneSetupView
+    @IBAction func onReminderSet(_ sender: UISwitch) {
+        LocalStore.shared.exposureStateReminderEnabled = sender.isOn
+        if sender.isOn {
+            NoticationsScheduler.shared.scheduleExposureStateNotification()
+        } else {
+            NoticationsScheduler.shared.removeExposureStateReminder()
+        }
+    }
+    
+    @IBAction func changePhone(_ sender: Any) {
+        guard let vc = UIStoryboard(name: "PhoneSettings", bundle: nil).instantiateInitialViewController() else { return }
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
     @IBOutlet var languageButtons: [UIButton]! {
         didSet {
@@ -62,10 +78,20 @@ class SettingsViewController: BaseViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    private func setupPhoneViews() {
+        guard let phoneNumber = LocalStore.shared.phoneNumber else {
+            phoneView.isHidden = true
+            return
+        }
         
-        mainStackView.addArrangedSubview(phoneView)
+        setupPhoneView.isHidden = true
+        phoneLabel.text = phoneNumber.number
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupPhoneViews()
+        reminderSwitch.isOn = LocalStore.shared.exposureNotificationsEnabled
     }
     
     override func viewDidLayoutSubviews() {

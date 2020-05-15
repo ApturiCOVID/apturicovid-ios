@@ -1,5 +1,7 @@
 // Common
 "next" = "Tālāk";
+"ack" = "Sapratu";
+"cancel" = "Atcelt";
 
 // Home
 "contact_tracing" = "Kontaktu meklēšana";
@@ -15,12 +17,16 @@
 
 // Welcome
 "welcome_continue" = "Tālāk";
-"welcome_title" = "Help stop the spread of COVID-19";
-"welcome_app_description" = "If you had close contact with a COVID-19 case, we help the health authority call you more quickly to provide guidance and care";
+"welcome_title" = "Palīdzi pārraut vīrusa ķēdi!";
+"welcome_app_description" = "Ātrākais veids, kā vari uzzināt, ka tev bijusi saskare ar Covid-19. Un rīkoties, lai to apturētu.";
 
 "welcome_privacy_link" = "Privātuma politiku";
 "welcome_terms_link" = "Lietošanas noteikumiem";
 "welcome_privacy_note" = "Esmu iepazinies ar Privātuma politiku un piekrītu lietotnes Lietošanas noteikumiem";
+
+"anonymous_prompt_title" = "Vai tiešām vēlies palikt anonīms?";
+"anonymous_prompt_description" = "Iesakām norādīt savu numuru, lasi vairāk kāpēc jānorāda numurs";
+"remain_anonymous" = "Palikt anonīmam";
 
 // Code input
 "phone_confirmation" = "Numura apstiprinājums";

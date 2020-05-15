@@ -17,6 +17,7 @@ class WelcomeVC: BaseViewController {
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
     @IBOutlet weak var nextButton: RoundedButton!
+    @IBOutlet weak var mainStack: UIStackView!
     
     @IBAction func nextTap(_ sender: Any) {
         
@@ -52,6 +53,12 @@ class WelcomeVC: BaseViewController {
         super.viewDidLoad()
         setupLanguageSelector()
         setupPrivacyAndTermsCheckBox()
+        
+        mainStack.setCustomSpacing(10, after: headingLabel)
+        mainStack.setCustomSpacing(20, after: bodyLabel)
+        mainStack.setCustomSpacing(45, after: acceptancesStack)
+        
+        bodyLabel.textAlignment = .center
     }
     
     private func setupLanguageSelector(){
@@ -83,6 +90,7 @@ class WelcomeVC: BaseViewController {
             .bind(to: nextButton.rx.isEnabled)
             .disposed(by: disposeBag)
         privacyAndTermsCheckboxView.bodyLabel.delegate = self
+        privacyAndTermsCheckboxView.alignment = .center
         
     }
     

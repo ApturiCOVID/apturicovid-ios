@@ -59,6 +59,7 @@ PODS:
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
+  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - Anchorage
@@ -67,6 +68,7 @@ DEPENDENCIES:
   - RxCocoa (~> 5.1)
   - RxGesture (~> 3.0.1)
   - RxSwift (~> 5.1)
+  - SVProgressHUD
 
 SPEC REPOS:
   trunk:
@@ -88,6 +90,7 @@ SPEC REPOS:
     - RxGesture
     - RxRelay
     - RxSwift
+    - SVProgressHUD
 
 SPEC CHECKSUMS:
   Anchorage: d7f02c4f9425b537053237aab11ae97e59b55f36
@@ -108,7 +111,8 @@ SPEC CHECKSUMS:
   RxGesture: d6bd7447ca3a596c7a9702a6a2b6a2bb5d8bae54
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: f40f3185a12b66d61f7d5d0f75228f91fefba628
+PODFILE CHECKSUM: 59aadc7c51061a98817484d3e7c43d13721efb86
 
 COCOAPODS: 1.9.1

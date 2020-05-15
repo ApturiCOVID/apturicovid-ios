@@ -9,4 +9,5 @@ target 'apturicovid' do
   pod 'Firebase/Crashlytics'
   pod 'CocoaLumberjack/Swift'
   pod 'Anchorage'
+  pod 'SVProgressHUD'
 end

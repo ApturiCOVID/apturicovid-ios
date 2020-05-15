@@ -30,6 +30,10 @@ class NoticationsScheduler {
         }
     }
     
+    func removeExposureStateReminder() {
+        notificationCenter.removeAllPendingNotificationRequests()
+    }
+    
     func sendExposureDiscoveredNotification() {
         let content = UNMutableNotificationContent()
         content.title = "Oupsie! You've been exposed"

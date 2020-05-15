@@ -15,7 +15,7 @@ class RestClient {
     func post(urlString: String, body: Data) -> Observable<Data> {
         return Observable.create({ (observer) -> Disposable in
             guard
-                let url = URL(string: "\(self.baseUrl)/\(urlString)") else {
+                let url = URL(string: "\(self.baseUrl)\(urlString)") else {
                     observer.onError(NSError.make("Error creating url"))
                     return Disposables.create()
             }

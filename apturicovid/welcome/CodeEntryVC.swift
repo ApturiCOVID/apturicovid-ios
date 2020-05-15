@@ -1,5 +1,6 @@
 import UIKit
 import RxSwift
+import SVProgressHUD
 
 enum CodeEntryMode {
     case sms
@@ -30,17 +31,22 @@ class CodeEntryVC: BaseViewController {
     
     private func performSMSVerification() {
         guard let response = requestResponse else { return }
+        SVProgressHUD.show()
         
         RestClient.shared.requestPhoneConfirmation(token: response.token, code: codeEntryView.text)
             .subscribe(onNext: { (result) in
+                SVProgressHUD.dismiss()
                 if result?.status == true {
                     DispatchQueue.main.async {
                         self.dismiss(animated: true, completion: nil)
                     }
-                    LocalStore.shared.isFirstLaunch = false
+                    LocalStore.shared.hasSeenIntro = true
                     LocalStore.shared.phoneNumber = self.phoneNumber
                 }
-            }, onError: justPrintError)
+            }, onError: { error in
+                SVProgressHUD.dismiss()
+                justPrintError(error)
+            })
             .disposed(by: disposeBag)
     }
     

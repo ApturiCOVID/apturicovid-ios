@@ -160,17 +160,17 @@ class ExposureManager {
         }
     }
     
-    func getAndPostDiagnosisKeys(code: String) -> Observable<Data> {
+    func getAndPostDiagnosisKeys(token: String) -> Observable<Data> {
         return self.getDiagnosisKeys()
             .flatMap { (keys) -> Observable<Data> in
-                return RestClient.shared.uploadDiagnosis(code: code, keys: keys)
+                return RestClient.shared.uploadDiagnosis(token: token, keys: keys)
             }
     }
     
-    func getAndPostTestDiagnosisKeys(code: String) -> Observable<Data> {
+    func getAndPostTestDiagnosisKeys(token: String) -> Observable<Data> {
         return self.getTestDiagnosisKeys()
             .flatMap { (keys) -> Observable<Data> in
-                return RestClient.shared.uploadDiagnosis(code: code, keys: keys)
+                return RestClient.shared.uploadDiagnosis(token: token, keys: keys)
         }
     }
 }

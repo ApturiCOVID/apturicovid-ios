@@ -1,4 +1,5 @@
 import UIKit
+import RxSwift
 
 enum CodeEntryMode {
     case sms
@@ -22,7 +23,7 @@ class CodeEntryVC: BaseViewController {
     }
     
     var requestResponse: PhoneVerificationRequestResponse?
-    var phoneNumber: String?
+    var phoneNumber: PhoneNumber?
     
     var codeEntryView: EntryView!
     var mode: CodeEntryMode!
@@ -36,6 +37,8 @@ class CodeEntryVC: BaseViewController {
                     DispatchQueue.main.async {
                         self.dismiss(animated: true, completion: nil)
                     }
+                    LocalStore.shared.isFirstLaunch = false
+                    LocalStore.shared.phoneNumber = self.phoneNumber
                 }
             }, onError: justPrintError)
             .disposed(by: disposeBag)
@@ -43,6 +46,11 @@ class CodeEntryVC: BaseViewController {
     
     private func performExposureKeyUpload() {
         RestClient.shared.requestDiagnosisUploadKey(code: codeEntryView.text)
+            .flatMap({ (response) -> Observable<Data> in
+                guard let response = response else { return Observable.error(NSError.make("Unable to obtain upload token")) }
+                
+                return ExposureManager.shared.getAndPostTestDiagnosisKeys(token: response.token)
+            })
             .subscribe(onNext: { (data) in
                 print(data)
             }, onError: justPrintError)
@@ -63,7 +71,7 @@ class CodeEntryVC: BaseViewController {
         titleLabel.text = isSMS ? "phone_confirmation".translated : "spkc_data_send".translated
         
         descriptionLabel.text = isSMS ?
-            "phone_confirmation_1".translated + " \(phoneNumber ?? "") " + "phone_confirmation_2".translated : "spkc_data_description".translated
+            "phone_confirmation_1".translated + " \(phoneNumber?.number ?? "") " + "phone_confirmation_2".translated : "spkc_data_description".translated
         
         inputCodeLabel.text = "input_code".translated
         codeMissingLabel.text = "didn_receive_code".translated

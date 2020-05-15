@@ -6,6 +6,12 @@ class ExposureSetupVC: BaseViewController {
     @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
     
+    var exposureEnabled = false {
+        didSet {
+            phoneView.isHidden = !exposureEnabled
+        }
+    }
+    
     let phoneView = PhoneSetupView().fromNib() as! PhoneSetupView
     
     @IBAction func onSwitchChange(_ sender: UISwitch) {
@@ -16,7 +22,7 @@ class ExposureSetupVC: BaseViewController {
 //                justPrintError(error)
 //                sender.isOn = ExposureManager.shared.enabled
 //            })
-        phoneView.isHidden = !sender.isOn
+        exposureEnabled = sender.isOn
     }
     
     @IBAction func onBackTap(_ sender: Any) {
@@ -24,7 +30,8 @@ class ExposureSetupVC: BaseViewController {
     }
     
     @IBAction func onNextTap(_ sender: Any) {
-        RestClient.shared.requestPhoneVerification(phoneNumber: phoneView.getPhoneNumber())
+        if exposureEnabled && phoneView.mode == .withPhone {
+            RestClient.shared.requestPhoneVerification(phoneNumber: phoneView.getPhoneNumber().number)
             .subscribe(onNext: { (response) in
                 if let response = response {
                     DispatchQueue.main.async {
@@ -37,6 +44,10 @@ class ExposureSetupVC: BaseViewController {
                 }
             })
             .disposed(by: disposeBag)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+            LocalStore.shared.isFirstLaunch = false
+        }
     }
     
     override func viewDidLoad() {

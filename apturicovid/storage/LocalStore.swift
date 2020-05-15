@@ -28,4 +28,7 @@ class LocalStore {
     
     @UserDefault(.isFirstLaunch, defaultValue: false)
     var isFirstLaunch
+    
+    @UserDefault(.phoneNumber, defaultValue: nil)
+    var phoneNumber: PhoneNumber?
 }

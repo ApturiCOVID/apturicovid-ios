@@ -54,4 +54,5 @@ public enum UserDefaultKey: String {
     case exposureDetectionErrorLocalizedDescription
     case exposure
     case exposureNotificationsEnabled
+    case phoneNumber
 }

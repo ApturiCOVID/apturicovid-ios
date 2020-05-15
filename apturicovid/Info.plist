@@ -71,5 +71,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>BGTaskSchedulerPermittedIdentifiers</key>
+        <array>
+            <string>lv.spkc.gov.apturicovid.exposure-notification</string>
+        </array>
 </dict>
 </plist>

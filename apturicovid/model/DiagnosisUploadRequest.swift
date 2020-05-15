@@ -1,11 +1,11 @@
 import Foundation
 
 struct DiagnosisUploadRequest: Codable {
-    let uploadCode: String
+    let token: String
     let diagnosisKeys: [DiagnosisKey]
     
     enum CodingKeys: String, CodingKey {
-        case uploadCode = "upload_code"
+        case token
         case diagnosisKeys = "diagnosis_keys"
     }
 }

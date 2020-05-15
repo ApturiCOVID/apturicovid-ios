@@ -28,8 +28,8 @@ class PhoneSetupView: UIView {
         }
     }
     
-    func getPhoneNumber() -> String {
-        return phoneInput.text ?? ""
+    func getPhoneNumber() -> PhoneNumber {
+        return PhoneNumber(number: phoneInput.text ?? "", otherParty: checkboxView.isChecked)
     }
     
     var disposeBag = DisposeBag()

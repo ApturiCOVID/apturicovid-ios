@@ -14,7 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DDLog.add(CrashlyticsLogger.sharedInstance)
         
         setAppearance()
-
+        
+        UNUserNotificationCenter.current().delegate = self
+        
         BGTaskScheduler.shared.register(forTaskWithIdentifier: AppDelegate.backgroundTaskIdentifier, using: .main) { task in
             // Perform the exposure detection
             let progress = ExposureManager.shared.detectExposures { success in
@@ -58,6 +60,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setAppearance() {
         UITabBar.appearance().tintColor = Colors.orange
+    }
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
     }
 }
 

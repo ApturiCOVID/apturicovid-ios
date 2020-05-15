@@ -102,8 +102,8 @@ class RestClient {
             })
     }
     
-    func uploadDiagnosis(code: String, keys: [ENTemporaryExposureKey]) -> Observable<Data> {
-        let uploadBody = DiagnosisUploadRequest(uploadCode: code, diagnosisKeys: keys.map{ DiagnosisKey(from: $0) })
+    func uploadDiagnosis(token: String, keys: [ENTemporaryExposureKey]) -> Observable<Data> {
+        let uploadBody = DiagnosisUploadRequest(token: token, diagnosisKeys: keys.map{ DiagnosisKey(from: $0) })
         
         let encoder = JSONEncoder.init()
         guard let data = try? encoder.encode(uploadBody) else { return Observable.error(NSError.make("Unable to make upload request body")) }
@@ -139,7 +139,7 @@ class RestClient {
         }
     }
     
-    func requestDiagnosisUploadKey(code: String) -> Observable<Data> {
+    func requestDiagnosisUploadKey(code: String) -> Observable<UploadKeyResponse?> {
         let encoder = JSONEncoder()
         let body = try? encoder.encode(UploadKeyVerificationRequest(code: code))
         
@@ -148,5 +148,8 @@ class RestClient {
         }
         
         return post(urlString: "/upload_keys/verify", body: body!)
+            .map { (data) -> UploadKeyResponse? in
+                return try? JSONDecoder().decode(UploadKeyResponse.self, from: data)
+        }
     }
 }

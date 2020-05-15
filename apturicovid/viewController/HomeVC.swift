@@ -33,6 +33,7 @@ class HomeVC: BaseViewController {
     
     @IBAction func onShareButtonTap(_ sender: Any) {
         exposureNotificationVisible = !exposureNotificationVisible
+        NoticationsScheduler.shared.sendExposureDiscoveredNotification()
 //        presentShareController()
     }
     
@@ -73,6 +74,7 @@ class HomeVC: BaseViewController {
         guard !LocalStore.shared.isFirstLaunch else { return }
         
         let vc = UIStoryboard(name: "Welcome", bundle: nil).instantiateInitialViewController()
+        vc?.isModalInPresentation = true
         self.present(vc!, animated: true, completion: nil)
     }
     

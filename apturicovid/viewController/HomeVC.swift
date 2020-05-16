@@ -33,7 +33,8 @@ class HomeVC: BaseViewController {
     }
     
     @IBAction func onShareButtonTap(_ sender: Any) {
-        presentShareController()
+//        presentShareController()
+//        testExposureDetection()
     }
     
     @IBAction func onSwitchTap(_ sender: UISwitch) {
@@ -124,6 +125,13 @@ class HomeVC: BaseViewController {
                 self.presentExposureAlertVC()
             })
             .disposed(by: disposeBag)
+    }
+    
+    private func testExposureDetection() {
+        ExposureManager.shared.detectExposures()
+            .subscribe(onNext: { (exposures) in
+                print(exposures.count)
+            }, onError: justPrintError)
     }
     
     override func translate() {

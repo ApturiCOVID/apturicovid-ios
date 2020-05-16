@@ -10,8 +10,8 @@ class ExposureManager {
     
     static let shared = ExposureManager()
     
-    let manager = ENManager()
-    var detectingExposures = false
+    var manager = ENManager()
+    var exposureDetectionProgress: Progress?
     var enabled = LocalStore.shared.exposureNotificationsEnabled
     
     init() {
@@ -58,24 +58,31 @@ class ExposureManager {
         }
     }
     
-    func detectExposuresTest() -> Observable<[ENExposureInfo]> {
+    func detectExposures() -> Observable<[ENExposureInfo]> {
         let nextDiagnosisKeyFileIndex = 6
         
         return RestClient.shared.downloadDiagnosisBatches(startAt: nextDiagnosisKeyFileIndex)
             .flatMap({ (urls) -> Observable<ENExposureDetectionSummary?> in
                 return self.performDetection(urls: urls)
             })
+            
             .flatMap { (summary) -> Observable<[ENExposureInfo]> in
                 guard let summary = summary else {
                     return Observable.error(NSError.make("Exposure summary is empty"))
                 }
                 return self.getExposurySummaryInfo(summary: summary)
-        }
+        }.do(onNext: { (_) in
+            self.manager.invalidate()
+            self.manager = ENManager()
+        }, onError: { error in
+            self.manager.invalidate()
+            self.manager = ENManager()
+        })
     }
     
     func performDetection(urls: [URL]) -> Observable<ENExposureDetectionSummary?> {
         return Observable.create { (observer) -> Disposable in
-            self.manager.detectExposures(configuration: Self.getDefaultConfiguration(), diagnosisKeyURLs: urls) { (summary, error) in
+            self.exposureDetectionProgress = self.manager.detectExposures(configuration: Self.getDefaultConfiguration(), diagnosisKeyURLs: urls) { (summary, error) in
                 if let error = error {
                     observer.onError(error)
                 } else {
@@ -99,81 +106,6 @@ class ExposureManager {
             
             return Disposables.create()
         }
-    }
-    
-    func detectExposures(completionHandler: ((Bool) -> Void)? = nil) -> Progress {
-        
-        let progress = Progress()
-        
-        // Disallow concurrent exposure detection, because if allowed we might try to detect the same diagnosis keys more than once
-        guard !detectingExposures else {
-            completionHandler?(false)
-            return progress
-        }
-        detectingExposures = true
-        
-        func finish(_ result: Result<([Exposure], Int), Error>) {
-            
-            let success: Bool
-            
-            if progress.isCancelled {
-                success = false
-            } else {
-                switch result {
-                case let .success((newExposures, nextDiagnosisKeyFileIndex)):
-                    LocalStore.shared.nextDiagnosisKeyFileIndex = nextDiagnosisKeyFileIndex
-                    LocalStore.shared.exposures.append(contentsOf: newExposures)
-                    LocalStore.shared.exposures.sort { $0.date < $1.date }
-                    LocalStore.shared.dateLastPerformedExposureDetection = Date()
-                    LocalStore.shared.exposureDetectionErrorLocalizedDescription = nil
-                    success = true
-                case let .failure(error):
-                    LocalStore.shared.exposureDetectionErrorLocalizedDescription = error.localizedDescription
-                    // Consider posting a user notification that an error occured
-                    success = false
-                }
-            }
-            
-            detectingExposures = false
-            completionHandler?(success)
-        }
-        
-        let nextDiagnosisKeyFileIndex = LocalStore.shared.nextDiagnosisKeyFileIndex
-        
-        RestClient.shared.getDiagnosisKeyFileURLs(startingAt: nextDiagnosisKeyFileIndex) { result in
-            
-            var localURLs: [URL] = []
-            
-            switch result {
-            case let .success(urls):
-                localURLs = urls
-            case let .failure(error):
-                finish(.failure(error))
-            }
-            
-            ExposureManager.shared.manager.detectExposures(configuration: ExposureManager.getDefaultConfiguration(), diagnosisKeyURLs: localURLs) { (summary, error) in
-                if let error = error {
-                    finish(.failure(error))
-                    return
-                }
-                let userExplanation = NSLocalizedString("USER_NOTIFICATION_EXPLANATION", comment: "User notification")
-                ExposureManager.shared.manager.getExposureInfo(summary: summary!, userExplanation: userExplanation) { exposures, error in
-                        if let error = error {
-                            finish(.failure(error))
-                            return
-                        }
-                        let newExposures = exposures!.map { exposure in
-                            Exposure(date: exposure.date,
-                                     duration: exposure.duration,
-                                     totalRiskScore: exposure.totalRiskScore,
-                                     transmissionRiskLevel: exposure.transmissionRiskLevel)
-                        }
-                        finish(.success((newExposures, nextDiagnosisKeyFileIndex + localURLs.count)))
-                }
-            }
-        }
-        
-        return progress
     }
     
     func getDiagnosisKeys() -> Observable<[ENTemporaryExposureKey]> {

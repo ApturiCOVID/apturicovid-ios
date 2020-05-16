@@ -19,23 +19,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UNUserNotificationCenter.current().delegate = self
         
-        BGTaskScheduler.shared.register(forTaskWithIdentifier: AppDelegate.backgroundTaskIdentifier, using: .main) { task in
-            // Perform the exposure detection
-            let progress = ExposureManager.shared.detectExposures { success in
-                task.setTaskCompleted(success: success)
-            }
+        BGTaskScheduler.shared.register(forTaskWithIdentifier: AppDelegate.backgroundTaskIdentifier, using: .main) { (task) in
+            print(task)
+            _ = ExposureManager.shared.detectExposures()
+                .subscribe(onNext: { (exposures) in
+                    task.setTaskCompleted(success: true)
+                    if exposures.count > 0 {
+                        NoticationsScheduler.shared.sendExposureDiscoveredNotification()
+                    }
+                }, onError: { error in
+                    justPrintError(error)
+                    task.setTaskCompleted(success: false)
+                })
             
-            // Handle running out of time
-            task.expirationHandler = {
-                progress.cancel()
-                LocalStore.shared.exposureDetectionErrorLocalizedDescription = NSLocalizedString("BACKGROUND_TIMEOUT", comment: "Error")
-            }
-            
-            // Schedule the next background task
             self.scheduleBackgroundTaskIfNeeded()
         }
         
+        scheduleBackgroundTaskIfNeeded()
+        
         return true
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        self.scheduleBackgroundTaskIfNeeded()
     }
     
     // MARK: UISceneSession Lifecycle
@@ -49,9 +55,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func scheduleBackgroundTaskIfNeeded() {
         guard ENManager.authorizationStatus == .authorized else { return }
         let taskRequest = BGProcessingTaskRequest(identifier: AppDelegate.backgroundTaskIdentifier)
+        taskRequest.earliestBeginDate = nil
         taskRequest.requiresNetworkConnectivity = true
         do {
             try BGTaskScheduler.shared.submit(taskRequest)
+            print("did schedule task")
         } catch {
             print("Unable to schedule background task: \(error)")
         }

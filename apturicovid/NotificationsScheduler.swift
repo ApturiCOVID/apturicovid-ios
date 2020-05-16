@@ -40,7 +40,7 @@ class NoticationsScheduler {
         content.body = "Ko darīt! Ar katru gadās!"
         content.sound = UNNotificationSound.default
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
         let request = UNNotificationRequest(identifier: "ExposureNotification", content: content, trigger: trigger)
         
         notificationCenter.add(request) { (err) in

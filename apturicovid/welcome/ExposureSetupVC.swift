@@ -11,20 +11,25 @@ class ExposureSetupVC: BaseViewController {
     var exposureEnabled = false {
         didSet {
             phoneView.isHidden = !exposureEnabled
+            if !exposureEnabled {
+                nextButton.isEnabled = true
+                phoneView.phoneInput.text = ""
+            }
         }
     }
     
     let phoneView = PhoneSetupView().fromNib() as! PhoneSetupView
     
     @IBAction func onSwitchChange(_ sender: UISwitch) {
-        //        ExposureManager.shared.toggleExposureNotifications(enabled: sender.isOn)
-        //            .subscribe(onCompleted: {
-        //                self.phoneView.isHidden = !sender.isOn
-        //            }, onError: { error in
-        //                justPrintError(error)
-        //                sender.isOn = ExposureManager.shared.enabled
-        //            })
-        exposureEnabled = sender.isOn
+        ExposureManager.shared.toggleExposureNotifications(enabled: sender.isOn)
+            .subscribe(onCompleted: {
+                self.exposureEnabled = sender.isOn
+            }, onError: { error in
+                justPrintError(error)
+                sender.isOn = ExposureManager.shared.enabled
+                self.exposureEnabled = ExposureManager.shared.enabled
+            })
+            .disposed(by: disposeBag)
     }
     
     @IBAction func onBackTap(_ sender: Any) {
@@ -37,7 +42,7 @@ class ExposureSetupVC: BaseViewController {
     }
     
     @IBAction func onNextTap(_ sender: Any) {
-        if exposureEnabled && !phoneView.getPhoneNumber().number.isEmpty {
+        if exposureEnabled {
             SVProgressHUD.show()
             RestClient.shared.requestPhoneVerification(phoneNumber: phoneView.getPhoneNumber().number)
                 .subscribe(onNext: { (response) in
@@ -77,7 +82,8 @@ class ExposureSetupVC: BaseViewController {
         
         mainStackView.addArrangedSubview(phoneView)
         phoneView.isHidden = true
-        nextButton.isEnabled = false
+        
+        exposureEnabled = false
         
         NotificationCenter.default.rx
             .notification(UIResponder.keyboardWillShowNotification)
@@ -108,7 +114,9 @@ class ExposureSetupVC: BaseViewController {
         
         phoneView.phoneValidObservable
             .subscribe(onNext: { (valid) in
-                self.nextButton.isEnabled = valid
+                if self.exposureEnabled {
+                    self.nextButton.isEnabled = valid
+                }
             })
             .disposed(by: disposeBag)
         

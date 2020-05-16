@@ -11,6 +11,7 @@ class BaseViewController: UIViewController {
             .notification(.languageDidChange).subscribe(onNext: { [weak self] (_) in
             self?.translate()
         }, onError: justPrintError)
+        overrideUserInterfaceStyle = .light
     }
     
     override func viewWillAppear(_ animated: Bool) {

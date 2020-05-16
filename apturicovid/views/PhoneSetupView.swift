@@ -17,14 +17,14 @@ class PhoneSetupView: UIView {
     }
     
     var disposeBag = DisposeBag()
+    var phoneNumber: PhoneNumber?
     
     var anonymousTapObservable = PublishSubject<Bool>()
     var phoneValidObservable = PublishSubject<Bool>()
     var phoneInfoTapObservable = PublishSubject<Bool>()
     
     func fill(with phone: PhoneNumber) {
-        phoneInput.text = phone.number
-        checkboxView.isChecked = phone.otherParty
+        self.phoneNumber = phone
     }
     
     override func draw(_ rect: CGRect) {
@@ -35,6 +35,11 @@ class PhoneSetupView: UIView {
         stackView.setCustomSpacing(10, after: descriptionLabel)
         stackView.setCustomSpacing(20, after: checkboxView)
         phoneInputView.layer.cornerRadius = 5
+        
+        if let phone = phoneNumber {
+            phoneInput.text = phone.number
+            checkboxView.isChecked = phone.otherParty
+        }
         
         anonymousButtonView
             .rx

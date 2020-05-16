@@ -33,14 +33,14 @@ class HomeVC: BaseViewController {
     }
     
     @IBAction func onShareButtonTap(_ sender: Any) {
-        exposureNotificationVisible = !exposureNotificationVisible
-        NoticationsScheduler.shared.sendExposureDiscoveredNotification()
-        //        presentShareController()
+        presentShareController()
     }
     
     @IBAction func onSwitchTap(_ sender: UISwitch) {
         ExposureManager.shared.toggleExposureNotifications(enabled: sender.isOn)
-            .subscribe(onError: { error in
+            .subscribe(onCompleted: {
+                self.setExposureStateVisual()
+            }, onError: { (error) in
                 justPrintError(error)
                 sender.isOn = ExposureManager.shared.enabled
                 self.setExposureStateVisual()
@@ -60,6 +60,7 @@ class HomeVC: BaseViewController {
     
     private func setExposureStateVisual() {
         let exposureEnabled = ExposureManager.shared.enabled
+        exposureSwitch.isOn = exposureEnabled
         tracingStateLabel.text = exposureEnabled ? "currently_active".translated : "currently_inactive".translated
         tracingStateLabel.textColor = exposureEnabled ? Colors.darkGreen : Colors.darkOrange
         exposureIcon.image = exposureEnabled ? UIImage(named: "exposure-icon") : UIImage(named: "exposure-disabled")

@@ -71,13 +71,11 @@ class SettingsViewController: BaseViewController {
     }
     
     private func setupPhoneViews() {
-        guard let phoneNumber = LocalStore.shared.phoneNumber else {
-            phoneView.isHidden = true
-            return
-        }
+        let phoneNumberAbscent = LocalStore.shared.phoneNumber == nil
         
-        setupPhoneView.isHidden = true
-        phoneLabel.text = phoneNumber.number
+        phoneView.isHidden = phoneNumberAbscent
+        setupPhoneView.isHidden = !phoneNumberAbscent
+        phoneLabel.text = LocalStore.shared.phoneNumber?.number
     }
     
     override func viewDidLoad() {

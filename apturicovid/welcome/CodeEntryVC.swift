@@ -1,6 +1,7 @@
 import UIKit
 import RxSwift
 import SVProgressHUD
+import KAPinField
 
 enum CodeEntryMode {
     case sms
@@ -10,65 +11,78 @@ enum CodeEntryMode {
 class CodeEntryVC: BaseViewController {
     @IBOutlet weak var codeInputHolder: UIView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var nextButtonBottomContraint: NSLayoutConstraint!
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var inputCodeLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var codeMissingLabel: UILabel!
-    @IBOutlet weak var nextButton: RoundedButton!
     
+    var pinInput = KAPinField()
     
     @IBAction func onBackTap(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        if let navigationController = self.navigationController {
+            navigationController.popViewController(animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     var requestResponse: PhoneVerificationRequestResponse?
     var phoneNumber: PhoneNumber?
     
-    var codeEntryView: EntryView!
     var mode: CodeEntryMode!
+    var presentedFromSettings = false
     
-    private func performSMSVerification() {
+    private func close() {
+        LocalStore.shared.hasSeenIntro = true
+        LocalStore.shared.phoneNumber = phoneNumber
+        
+        DispatchQueue.main.async {
+            if self.presentedFromSettings {
+                self.navigationController?.popToRootViewController(animated: true)
+            } else {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+    
+    private func performSMSVerification(pin: String) {
         guard let response = requestResponse else { return }
         SVProgressHUD.show()
         
-        RestClient.shared.requestPhoneConfirmation(token: response.token, code: codeEntryView.text)
+        RestClient.shared.requestPhoneConfirmation(token: response.token, code: pin)
             .subscribe(onNext: { (result) in
                 SVProgressHUD.dismiss()
                 if result?.status == true {
-                    DispatchQueue.main.async {
-                        self.dismiss(animated: true, completion: nil)
-                    }
-                    LocalStore.shared.hasSeenIntro = true
-                    LocalStore.shared.phoneNumber = self.phoneNumber
+                    self.close()
                 }
             }, onError: { error in
                 SVProgressHUD.dismiss()
+                self.pinInput.animateFailure()
                 justPrintError(error)
             })
             .disposed(by: disposeBag)
     }
     
-    private func performExposureKeyUpload() {
-        RestClient.shared.requestDiagnosisUploadKey(code: codeEntryView.text)
+    private func performExposureKeyUpload(pin: String) {
+        SVProgressHUD.show()
+        RestClient.shared.requestDiagnosisUploadKey(code: pin)
             .flatMap({ (response) -> Observable<Data> in
                 guard let response = response else { return Observable.error(NSError.make("Unable to obtain upload token")) }
-                
+
                 return ExposureManager.shared.getAndPostTestDiagnosisKeys(token: response.token)
             })
             .subscribe(onNext: { (data) in
-                print(data)
-            }, onError: justPrintError)
+                SVProgressHUD.dismiss()
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }, onError: { error in
+                SVProgressHUD.dismiss()
+                self.pinInput.animateFailure()
+                justPrintError(error)
+            })
             .disposed(by: disposeBag)
-    }
-    
-    @IBAction func onNextTap(_ sender: Any) {
-        if mode == .sms {
-            performSMSVerification()
-        } else {
-            performExposureKeyUpload()
-        }
     }
     
     override func translate() {
@@ -81,14 +95,23 @@ class CodeEntryVC: BaseViewController {
         
         inputCodeLabel.text = "input_code".translated
         codeMissingLabel.text = "didn_receive_code".translated
-        nextButton.setTitle("next".translated, for: .normal)
+    }
+    
+    func stylePinInput() {
+        pinInput.autocapitalizationType = .allCharacters
+        pinInput.properties.delegate = self
+        pinInput.properties.numberOfCharacters = 8
+        pinInput.properties.validCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+#"
+        pinInput.properties.animateFocus = true
+        pinInput.properties.isSecure = false
+        pinInput.appearance.textColor = UIColor(hex: "#161B28")
+        pinInput.appearance.backColor = UIColor(hex: "#F2F3F0")
+        pinInput.appearance.backBorderWidth = 5
+        pinInput.appearance.font = .courier(15)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        codeEntryView = EntryView()
-        codeInputHolder.addSubviewWithInsets(codeEntryView)
         
         codeMissingLabel.isHidden = mode == .spkc
         
@@ -101,7 +124,6 @@ class CodeEntryVC: BaseViewController {
                     else { return }
                 
                 self.bottomConstraint.constant = keyboardFrame.height
-                self.nextButtonBottomContraint.constant = keyboardFrame.height + 20
                 }, onError: justPrintError)
             .disposed(by: disposeBag)
         
@@ -109,8 +131,25 @@ class CodeEntryVC: BaseViewController {
             .notification(UIResponder.keyboardDidHideNotification)
             .subscribe(onNext: { [weak self] (_) in
                 self?.bottomConstraint.constant = 0
-                self?.nextButtonBottomContraint.constant = 20
                 }, onError: justPrintError)
             .disposed(by: disposeBag)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        codeInputHolder.addSubviewWithInsets(pinInput)
+        stylePinInput()
+        
+        pinInput.becomeFirstResponder()
+    }
+}
+
+extension CodeEntryVC: KAPinFieldDelegate {
+    func pinField(_ field: KAPinField, didFinishWith code: String) {
+        if mode == .sms {
+            performSMSVerification(pin: code)
+        } else {
+            performExposureKeyUpload(pin: code)
+        }
     }
 }

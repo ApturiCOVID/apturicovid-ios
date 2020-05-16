@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q60-eJ-jP6">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -13,42 +13,42 @@
             <objects>
                 <viewController id="q60-eJ-jP6" customClass="CodeEntryVC" customModule="apturicovid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jgQ-JW-TPe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edd-h7-uXx">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fZU-rr-RCG">
-                                        <rect key="frame" x="30" y="326.5" width="354" height="243.5"/>
+                                        <rect key="frame" x="30" y="172.5" width="260" height="223.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numura apstiprinājums" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFU-nU-ec0">
-                                                <rect key="frame" x="0.0" y="0.0" width="354" height="21.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="260" height="21.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                 <color key="textColor" name="darkLabel"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uz jūsu norādīto telefona numuru 28 345 678 tika nosūtīts kods. Ievadiet to zemāk" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tae-Le-ZCh">
-                                                <rect key="frame" x="0.0" y="31.5" width="354" height="41"/>
+                                                <rect key="frame" x="0.0" y="31.5" width="260" height="61"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" name="descriptionText"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ievadi kodu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKX-2e-lzK">
-                                                <rect key="frame" x="0.0" y="102.5" width="354" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="122.5" width="260" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" name="darkLabel"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eLc-WH-NSA">
-                                                <rect key="frame" x="0.0" y="133" width="354" height="80"/>
+                                                <rect key="frame" x="0.0" y="153" width="260" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="80" id="W2X-0J-DwF"/>
+                                                    <constraint firstAttribute="height" constant="40" id="uha-Xc-grd"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nesaņēmi kodu?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRK-kz-bFp">
-                                                <rect key="frame" x="0.0" y="223" width="354" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="203" width="260" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -83,7 +83,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mv3-du-raa">
-                                <rect key="frame" x="30" y="74" width="50" height="50"/>
+                                <rect key="frame" x="30" y="30" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ZBR-mU-2l7"/>
                                     <constraint firstAttribute="width" constant="50" id="btQ-6U-Zyi"/>
@@ -93,39 +93,12 @@
                                     <action selector="onBackTap:" destination="q60-eJ-jP6" eventType="touchUpInside" id="7Z7-tH-utR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4YG-fh-n5m" customClass="RoundedButton" customModule="apturicovid" customModuleProvider="target">
-                                <rect key="frame" x="119.5" y="792" width="175" height="50"/>
-                                <color key="backgroundColor" name="primaryButton"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="e1M-4M-h0c"/>
-                                    <constraint firstAttribute="width" constant="175" id="qws-Lf-xRu"/>
-                                </constraints>
-                                <state key="normal" title="Next">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="enabledColor">
-                                        <color key="value" name="primaryButton"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledColor">
-                                        <color key="value" name="primaryButtonDisabled"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="onNextTap:" destination="q60-eJ-jP6" eventType="touchUpInside" id="Qdn-k5-2o3"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="edd-h7-uXx" firstAttribute="leading" secondItem="Z0Q-Ta-gYK" secondAttribute="leading" id="ETb-78-meG"/>
                             <constraint firstItem="mv3-du-raa" firstAttribute="leading" secondItem="Z0Q-Ta-gYK" secondAttribute="leading" constant="30" id="QbV-Tj-TvR"/>
                             <constraint firstItem="edd-h7-uXx" firstAttribute="trailing" secondItem="Z0Q-Ta-gYK" secondAttribute="trailing" id="asd-g1-75O"/>
-                            <constraint firstItem="4YG-fh-n5m" firstAttribute="centerX" secondItem="Z0Q-Ta-gYK" secondAttribute="centerX" id="b7S-zt-gQY"/>
-                            <constraint firstItem="Z0Q-Ta-gYK" firstAttribute="bottom" secondItem="4YG-fh-n5m" secondAttribute="bottom" constant="20" id="bFS-lw-Qob"/>
                             <constraint firstItem="edd-h7-uXx" firstAttribute="top" secondItem="jgQ-JW-TPe" secondAttribute="top" id="n39-bs-hi6"/>
                             <constraint firstAttribute="bottom" secondItem="edd-h7-uXx" secondAttribute="bottom" id="ugB-JF-8Fy"/>
                             <constraint firstItem="mv3-du-raa" firstAttribute="top" secondItem="Z0Q-Ta-gYK" secondAttribute="top" constant="30" id="y0c-Rd-ufH"/>
@@ -138,8 +111,6 @@
                         <outlet property="codeMissingLabel" destination="FRK-kz-bFp" id="AvR-l8-nSa"/>
                         <outlet property="descriptionLabel" destination="tae-Le-ZCh" id="Gm1-Eo-NBf"/>
                         <outlet property="inputCodeLabel" destination="IKX-2e-lzK" id="X3h-2m-YgZ"/>
-                        <outlet property="nextButton" destination="4YG-fh-n5m" id="5XE-ol-dnY"/>
-                        <outlet property="nextButtonBottomContraint" destination="bFS-lw-Qob" id="di3-zt-6mr"/>
                         <outlet property="titleLabel" destination="eFU-nU-ec0" id="8yx-UF-mCC"/>
                     </connections>
                 </viewController>
@@ -155,12 +126,6 @@
         </namedColor>
         <namedColor name="descriptionText">
             <color red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="primaryButton">
-            <color red="0.0" green="0.38039215686274508" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="primaryButtonDisabled">
-            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

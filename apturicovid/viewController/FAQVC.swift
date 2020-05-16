@@ -1,6 +1,6 @@
 import UIKit
 
-class FAQViewController: UIViewController {
+class FAQViewController: BaseViewController {
     @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var infoHolder: UIView!
     @IBOutlet weak var mainScrollView: UIScrollView!

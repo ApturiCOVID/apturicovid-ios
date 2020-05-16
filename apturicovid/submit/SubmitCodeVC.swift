@@ -3,14 +3,12 @@ import RxCocoa
 import RxSwift
 import RxGesture
 
-class SubmitCodeVC: UIViewController {
+class SubmitCodeVC: BaseViewController {
     @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var scrollContainerView: UIView!
     @IBOutlet weak var codeInputField: EntryView!
     @IBOutlet weak var enterCodeButton: UIButton!
-    
-    private var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()

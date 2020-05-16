@@ -6,7 +6,7 @@ class RestClient {
     static let shared = RestClient()
     
     let baseUrl = "https://apturicovid-staging.spkc.gov.lv/api/v1"
-    let exposureKeyS3url = "https://apturicovid-backend-minio.makit.lv/dkfs/"
+    let exposureKeyS3url = "https://s3.lvdc.gov.lv/apturicovid-staging-dkfs/"
     
     private func getRemoteExposureKeyBatchUrl(index: Int) -> URL? {
         return URL(string: "\(exposureKeyS3url)\(index).bin")

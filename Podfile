@@ -10,4 +10,5 @@ target 'apturicovid' do
   pod 'CocoaLumberjack/Swift'
   pod 'Anchorage'
   pod 'SVProgressHUD'
+  pod 'KAPinField'
 end

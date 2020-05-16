@@ -23,6 +23,7 @@ class PhoneSettingsVC: BaseViewController {
                         vc.requestResponse = response
                         vc.phoneNumber = self.phoneView.getPhoneNumber()
                         vc.mode = .sms
+                        vc.presentedFromSettings = true
                         self.navigationController?.pushViewController(vc, animated: true)
                     }
                 }

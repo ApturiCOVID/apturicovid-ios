@@ -1,6 +1,6 @@
 import UIKit
 
-class PhoneInfoVC: UIViewController {
+class PhoneInfoVC: BaseViewController {
     @IBAction func onBackTap(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

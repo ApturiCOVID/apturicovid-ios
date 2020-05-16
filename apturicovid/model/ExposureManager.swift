@@ -51,9 +51,53 @@ class ExposureManager {
                 }
                 
                 self.enabled = enabled
+                LocalStore.shared.exposureNotificationsEnabled = enabled
                 completable(.completed)
             }
             return Disposables.create { }
+        }
+    }
+    
+    func detectExposuresTest() -> Observable<[ENExposureInfo]> {
+        let nextDiagnosisKeyFileIndex = 6
+        
+        return RestClient.shared.downloadDiagnosisBatches(startAt: nextDiagnosisKeyFileIndex)
+            .flatMap({ (urls) -> Observable<ENExposureDetectionSummary?> in
+                return self.performDetection(urls: urls)
+            })
+            .flatMap { (summary) -> Observable<[ENExposureInfo]> in
+                guard let summary = summary else {
+                    return Observable.error(NSError.make("Exposure summary is empty"))
+                }
+                return self.getExposurySummaryInfo(summary: summary)
+        }
+    }
+    
+    func performDetection(urls: [URL]) -> Observable<ENExposureDetectionSummary?> {
+        return Observable.create { (observer) -> Disposable in
+            self.manager.detectExposures(configuration: Self.getDefaultConfiguration(), diagnosisKeyURLs: urls) { (summary, error) in
+                if let error = error {
+                    observer.onError(error)
+                } else {
+                    observer.onNext(summary)
+                }
+            }
+            
+            return Disposables.create()
+        }
+    }
+    
+    func getExposurySummaryInfo(summary: ENExposureDetectionSummary) -> Observable<[ENExposureInfo]> {
+        return Observable.create { (observer) -> Disposable in
+            self.manager.getExposureInfo(summary: summary, userExplanation: "USER EXPLANATION") { (exposures, error) in
+                if let error = error {
+                    observer.onError(error)
+                } else {
+                    observer.onNext(exposures ?? [])
+                }
+            }
+            
+            return Disposables.create()
         }
     }
     

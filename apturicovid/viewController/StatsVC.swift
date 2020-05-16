@@ -1,6 +1,6 @@
 import UIKit
 
-class StatsVC: UIViewController {
+class StatsVC: BaseViewController {
     @IBOutlet weak var stat1: UIView!
     @IBOutlet weak var stat2: UIView!
     @IBOutlet weak var stat3: UIView!

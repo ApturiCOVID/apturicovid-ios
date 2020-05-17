@@ -30,6 +30,11 @@ class ExposureManager {
         manager.invalidate()
     }
     
+    func refresh() {
+        enabled = ENManager.authorizationStatus == .authorized && LocalStore.shared.exposureNotificationsEnabled
+        LocalStore.shared.exposureNotificationsEnabled = enabled
+    }
+    
     static func getDefaultConfiguration() -> ENExposureConfiguration {
         let configuration = ENExposureConfiguration()
         configuration.minimumRiskScore = 0

@@ -54,6 +54,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setAppearance() {
         UITabBar.appearance().tintColor = Colors.orange
     }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        ExposureManager.shared.refresh()
+    }
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {

@@ -718,7 +718,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OhX-mr-Q9m">
-                                                        <rect key="frame" x="0.0" y="582.66666666666663" width="414" height="50"/>
+                                                        <rect key="frame" x="0.0" y="565.66666666666663" width="414" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Versija nr.:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZR-Sr-M6T">
                                                                 <rect key="frame" x="30" y="18" width="354" height="17"/>

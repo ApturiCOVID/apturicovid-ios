@@ -43,7 +43,9 @@ class HomeVC: BaseViewController {
                 self.setExposureStateVisual()
             }, onError: { (error) in
                 justPrintError(error)
-                sender.isOn = ExposureManager.shared.enabled
+                if error.localizedDescription == "ENErrorCodeNotAuthorized (User denied)" {
+                    UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
+                }
                 self.setExposureStateVisual()
             })
             .disposed(by: disposeBag)
@@ -123,6 +125,13 @@ class HomeVC: BaseViewController {
             .when(.recognized)
             .subscribe(onNext: { (_) in
                 self.presentExposureAlertVC()
+            })
+            .disposed(by: disposeBag)
+        
+        NotificationCenter.default.rx
+            .notification(UIApplication.didBecomeActiveNotification)
+            .subscribe(onNext: { (_) in
+                self.setExposureStateVisual()
             })
             .disposed(by: disposeBag)
     }

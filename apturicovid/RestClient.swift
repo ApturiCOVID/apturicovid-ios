@@ -24,8 +24,12 @@ class RestClient {
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             request.httpMethod = "POST"
             request.httpBody = body
+            print("Curl: \(request.curlString)")
             
             let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, urlResponse, error) in
+                data.map {
+                    print("Response: \(String(data: $0, encoding: .utf8) ?? "")")
+                }
                 if let data = data, error == nil {
                     observer.onNext(data)
                 } else {

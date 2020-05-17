@@ -18,15 +18,25 @@
 // Welcome
 "welcome_continue" = "Tālāk";
 "welcome_title" = "Palīdzi pārraut vīrusa ķēdi!";
-"welcome_app_description" = "Ātrākais veids, kā vari uzzināt, ka tev bijusi saskare ar Covid-19. Un rīkoties, lai to apturētu.";
+"welcome_app_description" = "Šis ir ātrākais veids, kā vari uzzināt, ka tev bijusi saskare ar Covid-19. Un rīkoties, lai to apturētu.";
 
 "welcome_privacy_link" = "Privātuma politiku";
-"welcome_terms_link" = "Lietošanas noteikumiem";
-"welcome_privacy_note" = "Esmu iepazinies ar Privātuma politiku un piekrītu lietotnes Lietošanas noteikumiem";
+"welcome_terms_link" = "Lietotnes noteikumiem";
+"welcome_privacy_note" = "Piekrītu Lietotnes noteikumiem, ar Privātuma politiku iepazinos";
+
+"welcome_contact_enable" = "Ieslēgt";
+"welcome_contact_title" = "Kontakta fiksēšana";
+"welcome_contact_description" = "Kontakts: 15+ minūšu klātbūtne 2–4 m tuvumā.
+
+Fiksēšana: šifrs, ko tālrunis glabā 14 dienas, tad dzēš.";
+
+"welcome_phone_description" = "Norādi kontakttālruni, pa kuru Covid-19 saskares gadījumā SPKC ar tevi sazināties.";
+"welcome_phone_usage_description" = "Kāpēc ir vērts norādīt tālruni?";
+"welcome_phone_own_prompt" = "Norādīts tuvinieka tālrunis";
 
 "anonymous_prompt_title" = "Vai tiešām vēlies palikt anonīms?";
 "anonymous_prompt_description" = "Iesakām norādīt savu numuru, lasi vairāk kāpēc jānorāda numurs";
-"remain_anonymous" = "Palikt anonīmam";
+"remain_anonymous" = "Nevēlos norādīt tālruni";
 
 // Code input
 "phone_confirmation" = "Numura apstiprinājums";

@@ -6,22 +6,22 @@ class WelcomeVC: BaseViewController {
     
     private enum Link: String {
         case Privacy, Terms
-        var url: String {
-            //TODO: return link for webview
-            return ""
+        var url: URL {
+            switch self {
+            case .Privacy:
+                return URL(string: "https://apturicovid.lv/privatuma-politika")!
+            case .Terms:
+                return URL(string: "https://apturicovid.lv/lietosanas-noteikumi")!
+            }
         }
     }
     
-    @IBOutlet weak var acceptancesStack: UIStackView!
+    @IBOutlet weak var spkcHeightConstaint: NSLayoutConstraint!
     @IBOutlet weak var langaugesStack: UIStackView!
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
     @IBOutlet weak var nextButton: RoundedButton!
     @IBOutlet weak var mainStack: UIStackView!
-    
-    @IBAction func nextTap(_ sender: Any) {
-        
-    }
     
     let privacyAndTermsCheckboxView = CheckboxView.create(text: "", isChecked: false)
     let langViews = Language.allCases.map{ LanguageView.create($0) }
@@ -29,7 +29,14 @@ class WelcomeVC: BaseViewController {
     //MARK: Text attributes:
     let linkFont = UIFont.systemFont(ofSize: 14, weight: .medium)
     
-    let paragraphStyle: NSMutableParagraphStyle = {
+    let paragraphStyleBody: NSMutableParagraphStyle = {
+        let p = NSMutableParagraphStyle()
+        p.lineHeightMultiple = 1.4
+        p.alignment = .center
+        return p
+    }()
+    
+    let paragraphStylePrivacy: NSMutableParagraphStyle = {
         let p = NSMutableParagraphStyle()
         p.lineHeightMultiple = 1.4
         return p
@@ -38,14 +45,14 @@ class WelcomeVC: BaseViewController {
     lazy var bodyAttributes: NSStringAttributes = {
         [
             .font : UIFont.systemFont(ofSize: 15, weight: .thin),
-            .paragraphStyle : paragraphStyle
+            .paragraphStyle : paragraphStyleBody
         ]
     }()
     
     lazy var privacyAndTermsAttributes: NSStringAttributes = {
         [
             .font : UIFont.systemFont(ofSize: 14, weight: .light),
-            .paragraphStyle : paragraphStyle
+            .paragraphStyle : paragraphStylePrivacy
         ]
     }()
     
@@ -54,9 +61,19 @@ class WelcomeVC: BaseViewController {
         setupLanguageSelector()
         setupPrivacyAndTermsCheckBox()
         
-        mainStack.setCustomSpacing(10, after: headingLabel)
-        mainStack.setCustomSpacing(20, after: bodyLabel)
-        mainStack.setCustomSpacing(45, after: acceptancesStack)
+       
+        
+        if UIDevice.current.type == .iPhoneSE {
+            spkcHeightConstaint.constant = 0
+            privacyAndTermsCheckboxView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        } else {
+            mainStack.setCustomSpacing(10, after: headingLabel)
+            mainStack.setCustomSpacing(20, after: bodyLabel)
+            mainStack.setCustomSpacing(45, after: privacyAndTermsCheckboxView)
+        }
+        
+        mainStack.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        nextButton.setContentHuggingPriority(.defaultLow, for: .vertical)
         
         bodyLabel.textAlignment = .center
     }
@@ -82,7 +99,7 @@ class WelcomeVC: BaseViewController {
     
     private func setupPrivacyAndTermsCheckBox(){
         nextButton.isEnabled = false
-        acceptancesStack.addArrangedSubview(privacyAndTermsCheckboxView)
+        mainStack.addArrangedSubview(privacyAndTermsCheckboxView)
         
         // Enable next button when terms accepted
         privacyAndTermsCheckboxView.checkBox.rx.tap
@@ -127,8 +144,9 @@ class WelcomeVC: BaseViewController {
 extension WelcomeVC: LinkLabelDelegate {
     func linkLabel(_ label: LinkLabel, didTapUrl url: String, atRange range: NSRange) {
         guard let link = Link(rawValue: url) else { return }
-        print(link)
-        //TODO: open link
+        if UIApplication.shared.canOpenURL(link.url){
+            UIApplication.shared.open(link.url, options: [:], completionHandler: nil)
+        }
     }
 }
 

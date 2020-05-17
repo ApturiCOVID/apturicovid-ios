@@ -11,11 +11,21 @@
 "settings_enter_code" = "Enter code";
 
 // Welcome
-"welcome_continue" = "Продолжить";
-"welcome_title" = "Help stop the spread of COVID-19";
-"welcome_app_description" = "If you had close contact with a COVID-19 case, we help the health authority call you more quickly to provide guidance and care";
+"welcome_continue" = "Далее";
+"welcome_title" = "Помоги разорвать цепь вируса!";
+"welcome_app_description" = "Это самый быстрый способ узнать, был ли у тебя контакт с Covid-19. И действовать, чтобы его остановить.";
 
-"welcome_privacy_link" = "Privātuma politiku";
-"welcome_terms_link" = "Lietošanas noteikumiem";
-"welcome_privacy_note" = "Esmu iepazinies ar Privātuma politiku un piekrītu lietotnes Lietošanas noteikumiem";
+"welcome_privacy_link" = "Политикой конфиденциальности";
+"welcome_terms_link" = "Правилами пользования";
+"welcome_privacy_note" = "Я согласен(-а) с Правилами пользования приложением и ознакомился(-ась) с Политикой конфиденциальности";
 
+"welcome_phone_description" = "Укажи номер телефона, по которому ЦПКЗ сможет с тобой связаться в случае контакта с Covid-19.";
+"welcome_phone_usage_description" = "Почему нужно указать номер телефона?";
+"welcome_phone_own_prompt" = "Указан номер близкого человека";
+"remain_anonymous" = "Не желаю указывать номер телефона";
+
+"welcome_contact_enable" = "Включить";
+"welcome_contact_title" = "Фиксирование контакта";
+"welcome_contact_description" = "Контакт: присутствие в течение 15+ минут на расстоянии 2 - 4 м.
+
+Фиксирование: шифр, который сохраняется в телефоне 14 дней, а затем удаляется.";

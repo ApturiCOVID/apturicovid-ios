@@ -9,8 +9,9 @@ class PhoneSetupView: UIView {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var anonymousButtonView: UIView!
     @IBOutlet weak var phoneExplanationButton: UIButton!
+    @IBOutlet weak var stayAnonymousLabel: UILabel!
     
-    var checkboxView: CheckboxView!
+    let checkboxView = CheckboxView.create(text: "Norādīts citas kontaktpersonas numurs", isChecked: false)
     
     func getPhoneNumber() -> PhoneNumber {
         return PhoneNumber(number: phoneInput.text ?? "", otherParty: checkboxView.isChecked)
@@ -27,10 +28,10 @@ class PhoneSetupView: UIView {
         self.phoneNumber = phone
     }
     
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        checkboxView = CheckboxView.create(text: "Norādīts citas kontaktpersonas numurs", isChecked: false)
-        stackView.insertArrangedSubview(checkboxView, at: stackView.subviews.count - 1)
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        
+        stackView.insertArrangedSubview(checkboxView, at: stackView.subviews.count - 2)
         stackView.setCustomSpacing(20, after: phoneInputView)
         stackView.setCustomSpacing(10, after: descriptionLabel)
         stackView.setCustomSpacing(20, after: checkboxView)

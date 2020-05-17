@@ -8,6 +8,10 @@ class ExposureSetupVC: BaseViewController {
     @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var nextButton: RoundedButton!
     
+    @IBOutlet weak var contactTitle: UILabel!
+    @IBOutlet weak var contactDescription: UILabel!
+    @IBOutlet weak var activateSwitchTitle: UILabel!
+    
     var exposureEnabled = false {
         didSet {
             phoneView.isHidden = !exposureEnabled
@@ -22,8 +26,11 @@ class ExposureSetupVC: BaseViewController {
     
     @IBAction func onSwitchChange(_ sender: UISwitch) {
         ExposureManager.shared.toggleExposureNotifications(enabled: sender.isOn)
+            .observeOn(MainScheduler.instance)
             .subscribe(onCompleted: {
                 self.exposureEnabled = sender.isOn
+                self.scrollToBottom(after: 0.3)
+
             }, onError: { error in
                 justPrintError(error)
                 sender.isOn = ExposureManager.shared.enabled
@@ -66,6 +73,17 @@ class ExposureSetupVC: BaseViewController {
         }
     }
     
+    private func scrollToBottom(after delay: TimeInterval){
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [weak self] in
+            guard let `self` = self else { return }
+            
+            let bottom = CGPoint(x: 0,
+                                 y: self.scrollview.contentSize.height - self.scrollview.bounds.height )
+            self.scrollview.setContentOffset(bottom, animated: true)
+        }
+    }
+    
     private func presentAnonymousPrompt() {
         let alert = UIAlertController(title: "anonymous_prompt_title".translated, message: "anonymous_prompt_description".translated, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "remain_anonymous".translated, style: .default, handler: { (_) in
@@ -78,10 +96,11 @@ class ExposureSetupVC: BaseViewController {
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         
         mainStackView.addArrangedSubview(phoneView)
         phoneView.isHidden = true
+        
+        super.viewDidLoad()
         
         exposureEnabled = false
         
@@ -127,5 +146,17 @@ class ExposureSetupVC: BaseViewController {
                 self.navigationController?.pushViewController(vc, animated: true)
             })
             .disposed(by: disposeBag)
+    }
+    
+    override func translate() {
+        contactTitle.text  = "welcome_contact_title".translated
+        contactDescription.text = "welcome_contact_description".translated
+        activateSwitchTitle.text = "welcome_contact_enable".translated
+        
+        phoneView.descriptionLabel.text = "welcome_phone_description".translated
+        phoneView.stayAnonymousLabel.text = "remain_anonymous".translated
+        phoneView.phoneExplanationButton.setTitle("welcome_phone_usage_description".translated, for: .normal)
+        phoneView.checkboxView.text = "welcome_phone_own_prompt".translated
+        nextButton.setTitle("welcome_continue".translated, for: .normal)
     }
 }

@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="364" height="50"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6p-0i-xsG" customClass="LinkLabel" customModule="apturicovid" customModuleProvider="target">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6p-0i-xsG" customClass="LinkLabel" customModule="apturicovid" customModuleProvider="target">
                     <rect key="frame" x="38" y="16.5" width="321" height="17"/>
                     <attributedString key="attributedText">
                         <fragment content="checkbox text">
@@ -41,7 +41,7 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="joa-Nf-HtP" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="A6p-0i-xsG" secondAttribute="bottom" constant="5" id="Bnc-hV-rTE"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="A6p-0i-xsG" secondAttribute="bottom" constant="5" id="Bnc-hV-rTE"/>
                 <constraint firstItem="A6p-0i-xsG" firstAttribute="centerY" secondItem="X7d-ej-bkK" secondAttribute="centerY" id="EUb-pK-03e"/>
                 <constraint firstAttribute="trailing" secondItem="A6p-0i-xsG" secondAttribute="trailing" constant="5" id="HdO-J1-ALT"/>
                 <constraint firstItem="UXX-Cx-hOE" firstAttribute="centerY" secondItem="X7d-ej-bkK" secondAttribute="centerY" id="VTJ-bd-r2d"/>

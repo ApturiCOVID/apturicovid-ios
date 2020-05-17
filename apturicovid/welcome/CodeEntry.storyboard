@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q60-eJ-jP6">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Code EntryVC-->
+        <scene sceneID="FvD-MK-ggr">
+            <objects>
+                <viewController id="q60-eJ-jP6" customClass="CodeEntryVC" customModule="apturicovid" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jgQ-JW-TPe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edd-h7-uXx">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fZU-rr-RCG">
+                                        <rect key="frame" x="30" y="172.5" width="260" height="223.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numura apstiprinājums" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFU-nU-ec0">
+                                                <rect key="frame" x="0.0" y="0.0" width="260" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                <color key="textColor" name="darkLabel"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uz jūsu norādīto telefona numuru 28 345 678 tika nosūtīts kods. Ievadiet to zemāk" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tae-Le-ZCh">
+                                                <rect key="frame" x="0.0" y="31.5" width="260" height="61"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="descriptionText"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ievadi kodu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKX-2e-lzK">
+                                                <rect key="frame" x="0.0" y="122.5" width="260" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="darkLabel"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eLc-WH-NSA">
+                                                <rect key="frame" x="0.0" y="153" width="260" height="40"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="uha-Xc-grd"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nesaņēmi kodu?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRK-kz-bFp">
+                                                <rect key="frame" x="0.0" y="203" width="260" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="IKX-2e-lzK" secondAttribute="trailing" id="6tt-Rc-wk6"/>
+                                            <constraint firstItem="tae-Le-ZCh" firstAttribute="top" secondItem="eFU-nU-ec0" secondAttribute="bottom" constant="10" id="7Eq-vV-5mU"/>
+                                            <constraint firstAttribute="trailing" secondItem="FRK-kz-bFp" secondAttribute="trailing" id="Aib-pg-i2V"/>
+                                            <constraint firstAttribute="bottom" secondItem="FRK-kz-bFp" secondAttribute="bottom" id="B4s-xv-P2R"/>
+                                            <constraint firstAttribute="trailing" secondItem="eFU-nU-ec0" secondAttribute="trailing" id="CR7-Yr-tP7"/>
+                                            <constraint firstItem="eLc-WH-NSA" firstAttribute="top" secondItem="IKX-2e-lzK" secondAttribute="bottom" constant="10" id="DK4-75-CHw"/>
+                                            <constraint firstAttribute="trailing" secondItem="tae-Le-ZCh" secondAttribute="trailing" id="GtU-1M-C4a"/>
+                                            <constraint firstAttribute="trailing" secondItem="eLc-WH-NSA" secondAttribute="trailing" id="INZ-p4-LoV"/>
+                                            <constraint firstItem="eFU-nU-ec0" firstAttribute="leading" secondItem="fZU-rr-RCG" secondAttribute="leading" id="Qfh-fr-oJ1"/>
+                                            <constraint firstItem="eLc-WH-NSA" firstAttribute="leading" secondItem="fZU-rr-RCG" secondAttribute="leading" id="UC4-aB-nfy"/>
+                                            <constraint firstItem="tae-Le-ZCh" firstAttribute="leading" secondItem="fZU-rr-RCG" secondAttribute="leading" id="XWQ-g6-9qh"/>
+                                            <constraint firstItem="eFU-nU-ec0" firstAttribute="top" secondItem="fZU-rr-RCG" secondAttribute="top" id="Yee-DW-Dqq"/>
+                                            <constraint firstItem="IKX-2e-lzK" firstAttribute="top" secondItem="tae-Le-ZCh" secondAttribute="bottom" constant="30" id="aAg-NA-3VG"/>
+                                            <constraint firstItem="FRK-kz-bFp" firstAttribute="top" secondItem="eLc-WH-NSA" secondAttribute="bottom" constant="10" id="bdZ-hu-yN0"/>
+                                            <constraint firstItem="IKX-2e-lzK" firstAttribute="leading" secondItem="fZU-rr-RCG" secondAttribute="leading" id="dxS-Rd-a7p"/>
+                                            <constraint firstItem="FRK-kz-bFp" firstAttribute="leading" secondItem="fZU-rr-RCG" secondAttribute="leading" id="y0x-Zm-gns"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="fZU-rr-RCG" firstAttribute="leading" secondItem="edd-h7-uXx" secondAttribute="leading" constant="30" id="4lE-JI-MgK"/>
+                                    <constraint firstItem="fZU-rr-RCG" firstAttribute="centerY" secondItem="edd-h7-uXx" secondAttribute="centerY" id="8SD-R7-zYu"/>
+                                    <constraint firstAttribute="trailing" secondItem="fZU-rr-RCG" secondAttribute="trailing" constant="30" id="h5e-Pu-amx"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mv3-du-raa">
+                                <rect key="frame" x="30" y="30" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ZBR-mU-2l7"/>
+                                    <constraint firstAttribute="width" constant="50" id="btQ-6U-Zyi"/>
+                                </constraints>
+                                <state key="normal" image="arrow-back"/>
+                                <connections>
+                                    <action selector="onBackTap:" destination="q60-eJ-jP6" eventType="touchUpInside" id="7Z7-tH-utR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="edd-h7-uXx" firstAttribute="leading" secondItem="Z0Q-Ta-gYK" secondAttribute="leading" id="ETb-78-meG"/>
+                            <constraint firstItem="mv3-du-raa" firstAttribute="leading" secondItem="Z0Q-Ta-gYK" secondAttribute="leading" constant="30" id="QbV-Tj-TvR"/>
+                            <constraint firstItem="edd-h7-uXx" firstAttribute="trailing" secondItem="Z0Q-Ta-gYK" secondAttribute="trailing" id="asd-g1-75O"/>
+                            <constraint firstItem="edd-h7-uXx" firstAttribute="top" secondItem="jgQ-JW-TPe" secondAttribute="top" id="n39-bs-hi6"/>
+                            <constraint firstAttribute="bottom" secondItem="edd-h7-uXx" secondAttribute="bottom" id="ugB-JF-8Fy"/>
+                            <constraint firstItem="mv3-du-raa" firstAttribute="top" secondItem="Z0Q-Ta-gYK" secondAttribute="top" constant="30" id="y0c-Rd-ufH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Z0Q-Ta-gYK"/>
+                    </view>
+                    <connections>
+                        <outlet property="bottomConstraint" destination="ugB-JF-8Fy" id="SaS-Ie-ucQ"/>
+                        <outlet property="codeInputHolder" destination="eLc-WH-NSA" id="WLX-Lw-Qlz"/>
+                        <outlet property="codeMissingLabel" destination="FRK-kz-bFp" id="AvR-l8-nSa"/>
+                        <outlet property="descriptionLabel" destination="tae-Le-ZCh" id="Gm1-Eo-NBf"/>
+                        <outlet property="inputCodeLabel" destination="IKX-2e-lzK" id="X3h-2m-YgZ"/>
+                        <outlet property="titleLabel" destination="eFU-nU-ec0" id="8yx-UF-mCC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vap-yl-xlb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="102.89855072463769" y="124.55357142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow-back" width="20" height="16"/>
+        <namedColor name="darkLabel">
+            <color red="0.0" green="0.23921568627450981" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="descriptionText">
+            <color red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

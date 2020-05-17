@@ -8,8 +8,7 @@ import BackgroundTasks
 class AppDelegate: UIResponder, UIApplicationDelegate {
     static let backgroundTaskIdentifier = Bundle.main.bundleIdentifier! + ".exposure-notification"
     
-    @UserDefault(.isFirstLaunch, defaultValue: true)
-    var isFirstLaunch
+    var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
@@ -17,33 +16,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DDLog.add(CrashlyticsLogger.sharedInstance)
         
         setAppearance()
-
+        
+        UNUserNotificationCenter.current().delegate = self
+        
         BGTaskScheduler.shared.register(forTaskWithIdentifier: AppDelegate.backgroundTaskIdentifier, using: .main) { task in
-            // Perform the exposure detection
-            let progress = ExposureManager.shared.detectExposures { success in
+            
+            let progress = ExposureManager.shared.backgroundDetection { success in
                 task.setTaskCompleted(success: success)
             }
             
-            // Handle running out of time
             task.expirationHandler = {
                 progress.cancel()
                 LocalStore.shared.exposureDetectionErrorLocalizedDescription = NSLocalizedString("BACKGROUND_TIMEOUT", comment: "Error")
             }
             
-            // Schedule the next background task
             self.scheduleBackgroundTaskIfNeeded()
         }
         
+        self.scheduleBackgroundTaskIfNeeded()
+        
         return true
-    }
-    
-    // MARK: UISceneSession Lifecycle
-    
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-
-        let storyboard: Storyboard = isFirstLaunch ? .Welcome : .Main
-        return storyboard.sceneConfiguration(for: connectingSceneSession)
-
     }
     
     func scheduleBackgroundTaskIfNeeded() {
@@ -64,15 +56,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-//MARK: - Storyboard
-enum Storyboard: String {
-    case Main, Welcome
-    
-    var instance: UIStoryboard {
-        UIStoryboard(name: self.rawValue, bundle: Bundle.main)
-    }
-    
-    func sceneConfiguration(for session: UISceneSession) -> UISceneConfiguration {
-        UISceneConfiguration(name: self.rawValue, sessionRole: session.role)
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
     }
 }

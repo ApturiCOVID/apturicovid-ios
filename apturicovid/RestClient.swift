@@ -70,6 +70,59 @@ class RestClient {
         }
     }
     
+    func getDiagnosisKeyFileUrls(startingAt index: Int, completion: @escaping (Result<[(URL, Int)], Error>) -> Void) {
+        guard let url = URL(string: "\(self.exposureKeyS3url)/index.txt") else {
+            completion(.failure(NSError.make("Error creating url")))
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if let data = data,
+                let urlsString = String(data: data, encoding: .utf8),
+                error == nil {
+                
+                let urls = urlsString
+                    .components(separatedBy: "\n")
+                    .compactMap { URL(string: $0) }
+                    .map { (url) -> (URL, Int) in
+                        let pathIndex = url.pathComponents.last?.components(separatedBy: ".").first ?? "0"
+                        return (url, Int(pathIndex) ?? 0)
+                    }
+                
+                let nextUrls = urls.filter { (url, i) -> Bool in
+                    return i > index
+                }
+                
+                completion(.success(nextUrls))
+                
+            } else {
+                completion(.failure(NSError.make("Error request batch urls")))
+            }
+        }
+        
+        task.resume()
+    }
+    
+    func downloadDiagnosisKeyFile(at remoteURL: URL, index: Int, completion: @escaping (Result<URL, Error>) -> Void) {
+        let task = URLSession.shared.dataTask(with: remoteURL) { (data, _, error) in
+            if let data = data, error == nil {
+                do {
+                    let uuid = UUID().uuidString
+                    let localUrl = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!.appendingPathComponent("diagnosisKeys-\(uuid)")
+                    try data.write(to: localUrl)
+                    
+                    LocalStore.shared.lastDownloadedBatchIndex = index
+                    completion(.success(localUrl))
+                } catch {
+                    completion(.failure(error))
+                }
+            } else {
+                completion(.failure(NSError.make("Error downloading batch")))
+            }
+        }
+        task.resume()
+    }
+    
     func getExposureKeyBatchUrls() -> Observable<[(url: URL, index: String)]> {
         return Observable.create { (observer) -> Disposable in
             guard let url = URL(string: "\(self.exposureKeyS3url)/index.txt") else {
@@ -87,7 +140,7 @@ class RestClient {
                         .map { (url) -> (url: URL, index: String) in
                             let index = url.pathComponents.last?.components(separatedBy: ".").first ?? "0"
                             return (url, index)
-                        }
+                    }
                     observer.onNext(urls)
                     observer.onCompleted()
                 } else {

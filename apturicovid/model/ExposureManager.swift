@@ -14,6 +14,8 @@ class ExposureManager {
     var exposureDetectionProgress: Progress?
     var enabled = LocalStore.shared.exposureNotificationsEnabled
     
+    var detectingExposures = false
+    
     init() {
         manager.activate { _ in
             if ENManager.authorizationStatus == .authorized && !self.manager.exposureNotificationEnabled {
@@ -58,62 +60,6 @@ class ExposureManager {
         }
     }
     
-    func resetManager() {
-        self.manager.invalidate()
-        self.manager = ENManager()
-    }
-    
-    func detectExposures() -> Observable<[ENExposureInfo]> {
-        let nextDiagnosisKeyFileIndex = LocalStore.shared.lastDownloadedBatchIndex
-        
-        return RestClient.shared.downloadDiagnosisBatches(startAt: nextDiagnosisKeyFileIndex)
-            .flatMap({ (urls) -> Observable<ENExposureDetectionSummary?> in
-                return self.performDetection(urls: urls.compactMap{$0})
-            })
-            .flatMap { (summary) -> Observable<[ENExposureInfo]> in
-                guard let summary = summary else {
-                    return Observable.error(NSError.make("Exposure summary is empty"))
-                }
-                return self.getExposurySummaryInfo(summary: summary)
-        }.do(onNext: { (exposures) in
-            LocalStore.shared.exposures += exposures.map({ Exposure(from: $0) })
-            if exposures.count > 0 {
-                NoticationsScheduler.shared.sendExposureDiscoveredNotification()
-            }
-            self.resetManager()
-        }, onError: { error in
-            self.resetManager()
-        })
-    }
-    
-    func performDetection(urls: [URL]) -> Observable<ENExposureDetectionSummary?> {
-        return Observable.create { (observer) -> Disposable in
-            self.exposureDetectionProgress = self.manager.detectExposures(configuration: Self.getDefaultConfiguration(), diagnosisKeyURLs: urls) { (summary, error) in
-                if let error = error {
-                    observer.onError(error)
-                } else {
-                    observer.onNext(summary)
-                }
-            }
-            
-            return Disposables.create()
-        }
-    }
-    
-    func getExposurySummaryInfo(summary: ENExposureDetectionSummary) -> Observable<[ENExposureInfo]> {
-        return Observable.create { (observer) -> Disposable in
-            self.manager.getExposureInfo(summary: summary, userExplanation: "USER EXPLANATION") { (exposures, error) in
-                if let error = error {
-                    observer.onError(error)
-                } else {
-                    observer.onNext(exposures ?? [])
-                }
-            }
-            
-            return Disposables.create()
-        }
-    }
-    
     func getDiagnosisKeys() -> Observable<[ENTemporaryExposureKey]> {
         return Observable.create { (observer) -> Disposable in
             self.manager.getDiagnosisKeys { (keys, error) in
@@ -146,7 +92,7 @@ class ExposureManager {
         return self.getDiagnosisKeys()
             .flatMap { (keys) -> Observable<Data> in
                 return RestClient.shared.uploadDiagnosis(token: token, keys: keys)
-            }
+        }
     }
     
     func getAndPostTestDiagnosisKeys(token: String) -> Observable<Data> {
@@ -154,5 +100,95 @@ class ExposureManager {
             .flatMap { (keys) -> Observable<Data> in
                 return RestClient.shared.uploadDiagnosis(token: token, keys: keys)
         }
+    }
+    
+    func backgroundDetection(completionHandler: ((Bool) -> Void)? = nil) -> Progress {
+        
+        let progress = Progress()
+        
+        guard !detectingExposures else {
+            completionHandler?(false)
+            return progress
+        }
+        detectingExposures = true
+        
+        var localURLs = [URL]()
+        
+        func finish(_ result: Result<[Exposure], Error>) {
+            var success = false
+            
+            if progress.isCancelled {
+                success = false
+            } else {
+                switch result {
+                case let .success(newExposures):
+                    LocalStore.shared.exposures.append(contentsOf: newExposures)
+                    LocalStore.shared.exposures.sort { $0.date < $1.date }
+                    success = true
+                case let .failure(error):
+                    LocalStore.shared.exposureDetectionErrorLocalizedDescription = error.localizedDescription
+                    success = false
+                }
+            }
+            
+            detectingExposures = false
+            completionHandler?(success)
+        }
+        
+        RestClient.shared.getDiagnosisKeyFileUrls(startingAt: LocalStore.shared.lastDownloadedBatchIndex) { result in
+            let dispatchGroup = DispatchGroup()
+            var localURLResults = [Result<URL, Error>]()
+            
+            switch result {
+            case let .success(remoteUrls):
+                for remoteUrl in remoteUrls {
+                    dispatchGroup.enter()
+                    RestClient.shared.downloadDiagnosisKeyFile(at: remoteUrl.0, index: remoteUrl.1) { result in
+                        localURLResults.append(result)
+                        dispatchGroup.leave()
+                    }
+                }
+            case let .failure(error):
+                finish(.failure(error))
+                return
+            }
+            
+            dispatchGroup.notify(queue: .main) {
+                for result in localURLResults {
+                    switch result {
+                    case let .success(localURL):
+                        localURLs.append(localURL)
+                    case let .failure(error):
+                        finish(.failure(error))
+                        return
+                    }
+                }
+                
+                ExposureManager.shared.manager.detectExposures(configuration: ExposureManager.getDefaultConfiguration(), diagnosisKeyURLs: localURLs) { (summary, error) in
+                    if let error = error {
+                        finish(.failure(error))
+                        return
+                    }
+                    
+                    guard let summary = summary else {
+                        finish(.failure(NSError.make("Summary missing")))
+                        return
+                    }
+                    
+                    let userExplanation = "exposure_notification_exaplanation".translated
+                    ExposureManager.shared.manager.getExposureInfo(summary: summary, userExplanation: userExplanation) { (exposures, error) in
+                        if let error = error {
+                            finish(.failure(error))
+                            return
+                        }
+                        
+                        let newExposures = exposures?.map { Exposure(from: $0) } ?? []
+                        finish(.success(newExposures))
+                    }
+                }
+            }
+        }
+        
+        return progress
     }
 }

@@ -29,6 +29,8 @@
 		BA11213F2469DDC900D975D5 /* DiagnosisKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11213E2469DDC900D975D5 /* DiagnosisKey.swift */; };
 		BA1121412469E27100D975D5 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1121402469E27100D975D5 /* EntryView.swift */; };
 		BA19B89824709EEB003C5025 /* Exposure.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19B89724709EEB003C5025 /* Exposure.swift */; };
+		BA19B89A24715F9F003C5025 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19B89924715F9F003C5025 /* Data.swift */; };
+		BA19B89C247173BA003C5025 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA19B89B247173B9003C5025 /* GoogleService-Info.plist */; };
 		BA366CC02465AC3D00A35CA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA366CBF2465AC3D00A35CA8 /* AppDelegate.swift */; };
 		BA366CC22465AC3D00A35CA8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA366CC12465AC3D00A35CA8 /* SceneDelegate.swift */; };
 		BA366CC42465AC3D00A35CA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA366CC32465AC3D00A35CA8 /* ViewController.swift */; };
@@ -73,7 +75,6 @@
 		BAE3575A246F48A6004C59A9 /* StatView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE35759246F48A6004C59A9 /* StatView.xib */; };
 		BAE3575C246F4A6E004C59A9 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE3575B246F4A6E004C59A9 /* StatView.swift */; };
 		BAE3575E246F4B28004C59A9 /* StatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE3575D246F4B28004C59A9 /* StatsVC.swift */; };
-		BAFA830B246AB88700E121B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAFA830A246AB88700E121B4 /* GoogleService-Info.plist */; };
 		BAFA830E246ABA1600E121B4 /* CrashlyticsLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA830D246ABA1600E121B4 /* CrashlyticsLogger.swift */; };
 		BAFA8310246AD14600E121B4 /* printers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA830F246AD14600E121B4 /* printers.swift */; };
 		BAFA8313246AD42D00E121B4 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA8312246AD42D00E121B4 /* UserDefault.swift */; };
@@ -107,7 +108,9 @@
 		BA11213E2469DDC900D975D5 /* DiagnosisKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisKey.swift; sourceTree = "<group>"; };
 		BA1121402469E27100D975D5 /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
 		BA19B89724709EEB003C5025 /* Exposure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exposure.swift; sourceTree = "<group>"; };
-		BA366CBC2465AC3D00A35CA8 /* apturicovid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = apturicovid.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA19B89924715F9F003C5025 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		BA19B89B247173B9003C5025 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BA366CBC2465AC3D00A35CA8 /* Apturi Covid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apturi Covid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA366CBF2465AC3D00A35CA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA366CC12465AC3D00A35CA8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BA366CC32465AC3D00A35CA8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -154,7 +157,6 @@
 		BAE35759246F48A6004C59A9 /* StatView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatView.xib; sourceTree = "<group>"; };
 		BAE3575B246F4A6E004C59A9 /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
 		BAE3575D246F4B28004C59A9 /* StatsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsVC.swift; sourceTree = "<group>"; };
-		BAFA830A246AB88700E121B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BAFA830D246ABA1600E121B4 /* CrashlyticsLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsLogger.swift; sourceTree = "<group>"; };
 		BAFA830F246AD14600E121B4 /* printers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = printers.swift; sourceTree = "<group>"; };
 		BAFA8312246AD42D00E121B4 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
@@ -215,7 +217,7 @@
 		BA366CBD2465AC3D00A35CA8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BA366CBC2465AC3D00A35CA8 /* apturicovid.app */,
+				BA366CBC2465AC3D00A35CA8 /* Apturi Covid.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -293,6 +295,7 @@
 				60A3349A246D0C16007BE791 /* NotificationNameEx.swift */,
 				603DC220247130A700AD6217 /* CGPointEx.swift */,
 				BA366CDD2465F98F00A35CA8 /* View.swift */,
+				BA19B89924715F9F003C5025 /* Data.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -354,7 +357,7 @@
 		BAFA8309246AB87C00E121B4 /* demo */ = {
 			isa = PBXGroup;
 			children = (
-				BAFA830A246AB88700E121B4 /* GoogleService-Info.plist */,
+				BA19B89B247173B9003C5025 /* GoogleService-Info.plist */,
 			);
 			path = demo;
 			sourceTree = "<group>";
@@ -398,7 +401,7 @@
 			);
 			name = apturicovid;
 			productName = apturicovid;
-			productReference = BA366CBC2465AC3D00A35CA8 /* apturicovid.app */;
+			productReference = BA366CBC2465AC3D00A35CA8 /* Apturi Covid.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -446,11 +449,11 @@
 				BAAED848246D9B4A004C77A6 /* PhoneSetupView.xib in Resources */,
 				75B1DAA5246BF63E00601F69 /* (null) in Resources */,
 				BAE3575A246F48A6004C59A9 /* StatView.xib in Resources */,
-				BAFA830B246AB88700E121B4 /* GoogleService-Info.plist in Resources */,
 				BACDE3B3246DBABA0075B20E /* CodeEntry.storyboard in Resources */,
 				BA366CCC2465AC3E00A35CA8 /* LaunchScreen.storyboard in Resources */,
 				7528B0FB246C016D007D0260 /* Translations.strings in Resources */,
 				BABEEC2F246879C8009D8307 /* LanguageView.xib in Resources */,
+				BA19B89C247173BA003C5025 /* GoogleService-Info.plist in Resources */,
 				BA366CC92465AC3E00A35CA8 /* Assets.xcassets in Resources */,
 				BA366CC72465AC3D00A35CA8 /* Main.storyboard in Resources */,
 				BAAED83B246C30BD004C77A6 /* StatCell.xib in Resources */,
@@ -555,6 +558,7 @@
 				BACDE3BD246E72DE0075B20E /* UploadKeyResponse.swift in Sources */,
 				BA366CC42465AC3D00A35CA8 /* ViewController.swift in Sources */,
 				BAAED844246D42DA004C77A6 /* QuestionView.swift in Sources */,
+				BA19B89A24715F9F003C5025 /* Data.swift in Sources */,
 				BAFA8315246AD48F00E121B4 /* LocalStore.swift in Sources */,
 				BACDE3B9246DC5EF0075B20E /* PhoneConfirmationResponse.swift in Sources */,
 				603DC22424715A3C00AD6217 /* UIDeviceEx.swift in Sources */,
@@ -755,8 +759,8 @@
 				);
 				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Artjoms DEV";
+				PRODUCT_NAME = "Apturi Covid";
+				PROVISIONING_PROFILE_SPECIFIER = "MZI Development";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -779,8 +783,8 @@
 				);
 				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Artjoms DEV";
+				PRODUCT_NAME = "Apturi Covid";
+				PROVISIONING_PROFILE_SPECIFIER = "MZI Development";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

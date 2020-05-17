@@ -132,6 +132,7 @@ class HomeVC: BaseViewController {
             .notification(UIApplication.didBecomeActiveNotification)
             .subscribe(onNext: { (_) in
                 self.setExposureStateVisual()
+                self.exposureNotificationVisible = LocalStore.shared.exposures.count > 0
             })
             .disposed(by: disposeBag)
     }

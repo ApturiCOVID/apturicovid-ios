@@ -1,5 +1,6 @@
 import Foundation
 import NotificationCenter
+import CocoaLumberjack
 
 class NoticationsScheduler {
     static let shared = NoticationsScheduler()
@@ -11,53 +12,70 @@ class NoticationsScheduler {
         
         let options: UNAuthorizationOptions = [.alert, .sound, .badge]
         notificationCenter.requestAuthorization(options: options) { (allowed, error) in
-            print(allowed)
-            print(error)
+            if let error = error { justPrintError(error) }
         }
     }
     
     func scheduleExposureStateNotification() {
+        guard !LocalStore.shared.exposureNotificationsEnabled && LocalStore.shared.exposureStateReminderEnabled else { return }
+        
         let content = UNMutableNotificationContent()
-        content.title = "Es nesapratu?"
-        content.body = "Kurš tad ieslēgs covid exposure paziņojumus?"
+        content.title = "Ieslēdz Exposure notifications"
+        content.body = "Šis ir atgādinājums par to, ka jāieslēdz exposure notifications"
         content.sound = UNNotificationSound.default
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+        var dateComponents = DateComponents()
+        dateComponents.calendar = Calendar.current
+        dateComponents.hour = 10
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         let request = UNNotificationRequest(identifier: "ExposureStateNotification", content: content, trigger: trigger)
         
         notificationCenter.add(request) { (error) in
-            print(error)
+            if let error = error {
+                justPrintError(error)
+                return
+            }
+            DDLogInfo("Exposure State Notification scheduled")
         }
     }
     
     func removeExposureStateReminder() {
         notificationCenter.removeAllPendingNotificationRequests()
-    }
-    
-    func scheduleExposureCheckSilent() {
-        let content = UNMutableNotificationContent()
-        content.title = "test"
-        content.body = "test"
-        
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
-        let request = UNNotificationRequest(identifier: "SilentPush", content: content, trigger: trigger)
-        
-        notificationCenter.add(request) { (error) in
-            print(error)
-        }
+        DDLogInfo("Pending notification requests removed")
     }
     
     func sendExposureDiscoveredNotification() {
         let content = UNMutableNotificationContent()
-        content.title = "Oupsie! You've been exposed"
-        content.body = "Ko darīt! Ar katru gadās!"
+        content.title = "Exposure detected!"
+        content.body = "We have detected you have been exposed to COVID-19"
         content.sound = UNNotificationSound.default
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
         let request = UNNotificationRequest(identifier: "ExposureNotification", content: content, trigger: trigger)
         
-        notificationCenter.add(request) { (err) in
-            print(err)
+        notificationCenter.add(request) { (error) in
+            if let error = error {
+                justPrintError(error)
+                return
+            }
+            DDLogInfo("Scheduled exposure notification")
         }
+    }
+    
+    class func registerBackgroundTask() -> UIBackgroundTaskIdentifier{
+      var backgroundTask :UIBackgroundTaskIdentifier!
+      backgroundTask = UIApplication.shared.beginBackgroundTask {
+        NoticationsScheduler.endBackgroundTask(&backgroundTask)
+      }
+      assert(backgroundTask != .invalid)
+      return backgroundTask
+    }
+
+    class func endBackgroundTask(_ backgroundTask: inout UIBackgroundTaskIdentifier) {
+      UIApplication.shared.endBackgroundTask(backgroundTask)
+      let log = "End background task \(backgroundTask)"
+      backgroundTask = .invalid
+      DDLogInfo(log)
     }
 }

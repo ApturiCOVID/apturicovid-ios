@@ -8,7 +8,11 @@ import RxSwift
 class ExposureManager {
     static let authorizationStatusChangeNotification = Notification.Name("ExposureManagerAuthorizationStatusChangedNotification")
     
-    static let shared = ExposureManager()
+    static var shared = ExposureManager()
+    
+    static func reset() {
+        Self.shared = ExposureManager()
+    }
     
     var manager = ENManager()
     var exposureDetectionProgress: Progress?
@@ -59,6 +63,11 @@ class ExposureManager {
                 
                 self.enabled = enabled
                 LocalStore.shared.exposureNotificationsEnabled = enabled
+                if !self.enabled {
+                    NoticationsScheduler.shared.scheduleExposureStateNotification()
+                } else {
+                    NoticationsScheduler.shared.removeExposureStateReminder()
+                }
                 completable(.completed)
             }
             return Disposables.create { }
@@ -128,10 +137,14 @@ class ExposureManager {
             } else {
                 switch result {
                 case let .success(newExposures):
+                    if newExposures.count > 0 {
+                        NoticationsScheduler.shared.sendExposureDiscoveredNotification()
+                    }
                     LocalStore.shared.exposures.append(contentsOf: newExposures)
                     LocalStore.shared.exposures.sort { $0.date < $1.date }
                     success = true
                 case let .failure(error):
+                    justPrintError(error)
                     LocalStore.shared.exposureDetectionErrorLocalizedDescription = error.localizedDescription
                     success = false
                 }

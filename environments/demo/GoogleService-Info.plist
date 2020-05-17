@@ -3,9 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>503076402814-47o7qgiv32btgq0aaa3it1eoeno16bg3.apps.googleusercontent.com</string>
+	<string>503076402814-97gu7a281bmds75fbulkdtom5frfno9b.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.503076402814-47o7qgiv32btgq0aaa3it1eoeno16bg3</string>
+	<string>com.googleusercontent.apps.503076402814-97gu7a281bmds75fbulkdtom5frfno9b</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>503076402814-sc2l974hqhi55tae7pe2ca92p26buq3h.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAzFYgUFf7VfnqlFfUpCLiYXC5SRyo80cA</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>lv.makit.apturicovid</string>
+	<string>lv.spkc.gov.apturicovid</string>
 	<key>PROJECT_ID</key>
 	<string>apturicovid</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +31,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:503076402814:ios:4fc6b4e59db1b66c1aca2f</string>
+	<string>1:503076402814:ios:78f4d413b7bc52b51aca2f</string>
 	<key>DATABASE_URL</key>
 	<string>https://apturicovid.firebaseio.com</string>
 </dict>

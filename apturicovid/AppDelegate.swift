@@ -17,8 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         setAppearance()
         
-        UNUserNotificationCenter.current().delegate = self
-        
         BGTaskScheduler.shared.register(forTaskWithIdentifier: AppDelegate.backgroundTaskIdentifier, using: .main) { task in
             
             let progress = ExposureManager.shared.backgroundDetection { success in
@@ -34,6 +32,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         self.scheduleBackgroundTaskIfNeeded()
+        
+        UIApplication.shared.registerForRemoteNotifications()
+        
+        Messaging.messaging().subscribe(toTopic: "exposure-refresh") { error in
+            if let error = error {
+                justPrintError(error)
+                return
+            }
+            DDLogInfo("Subscribed to exposure-refresh topic")
+        }
         
         return true
     }
@@ -58,10 +66,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
         ExposureManager.shared.refresh()
     }
-}
 
-extension AppDelegate: UNUserNotificationCenterDelegate {
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert, .sound])
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        var task = NoticationsScheduler.registerBackgroundTask()
+        _ = ExposureManager.shared.backgroundDetection { (success) in
+            ExposureManager.reset()
+            NoticationsScheduler.endBackgroundTask(&task)
+        }
     }
 }

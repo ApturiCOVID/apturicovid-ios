@@ -88,7 +88,8 @@ class SettingsViewController: BaseViewController {
         super.viewWillAppear(animated)
         
         setupPhoneViews()
-        reminderSwitch.isOn = LocalStore.shared.exposureNotificationsEnabled
+        
+        reminderSwitch.isOn = LocalStore.shared.exposureStateReminderEnabled
         
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String, let bundleV = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
                versionLabel.text = "Versijas nr.: \(version) (\(bundleV))"

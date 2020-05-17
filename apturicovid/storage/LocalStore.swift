@@ -27,4 +27,7 @@ class LocalStore {
     
     @UserDefault(.exposureStateReminderEnabled, defaultValue: false)
     var exposureStateReminderEnabled: Bool
+    
+    @UserDefault(.notificationIdentifier, defaultValue: nil)
+    var notificationIdentifier: String?
 }

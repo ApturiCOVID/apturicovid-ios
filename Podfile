@@ -11,4 +11,5 @@ target 'apturicovid' do
   pod 'Anchorage'
   pod 'SVProgressHUD'
   pod 'KAPinField'
+  pod 'Firebase/Messaging'
 end

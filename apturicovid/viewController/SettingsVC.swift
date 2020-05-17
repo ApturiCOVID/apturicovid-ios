@@ -4,13 +4,14 @@ import RxSwift
 import RxCocoa
 
 class SettingsViewController: BaseViewController {
-    private let languagees = Language.allCases
+    private let languages = Language.allCases
     @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var phoneView: UIView!
     @IBOutlet weak var setupPhoneView: UIView!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var reminderSwitch: UISwitch!
     @IBOutlet weak var languagesStack: UIStackView!
+    @IBOutlet weak var versionLabel: UILabel!
     
     let langViews = Language.allCases.map{ LanguageView.create($0) }
     
@@ -71,10 +72,10 @@ class SettingsViewController: BaseViewController {
     }
     
     private func setupPhoneViews() {
-        let phoneNumberAbscent = LocalStore.shared.phoneNumber == nil
+        let phoneNumberAbsent = LocalStore.shared.phoneNumber == nil
         
-        phoneView.isHidden = phoneNumberAbscent
-        setupPhoneView.isHidden = !phoneNumberAbscent
+        phoneView.isHidden = phoneNumberAbsent
+        setupPhoneView.isHidden = !phoneNumberAbsent
         phoneLabel.text = LocalStore.shared.phoneNumber?.number
     }
     
@@ -85,8 +86,13 @@ class SettingsViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         setupPhoneViews()
         reminderSwitch.isOn = LocalStore.shared.exposureNotificationsEnabled
+        
+        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String, let bundleV = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
+               versionLabel.text = "Versijas nr.: \(version) (\(bundleV))"
+           }
     }
     
     override func viewDidLayoutSubviews() {

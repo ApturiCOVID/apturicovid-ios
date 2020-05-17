@@ -473,7 +473,7 @@
                                         <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5am-yJ-TDy">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="565.66666666666663"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="615.66666666666663"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiC-yq-fa0" customClass="WelcomeHeaderView" customModule="apturicovid" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="196"/>
@@ -717,6 +717,24 @@
                                                             <constraint firstAttribute="bottom" secondItem="mLe-fB-KTg" secondAttribute="bottom" constant="10" id="yHG-5T-oil"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OhX-mr-Q9m">
+                                                        <rect key="frame" x="0.0" y="582.66666666666663" width="414" height="50"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Versija nr.:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZR-Sr-M6T">
+                                                                <rect key="frame" x="30" y="18" width="354" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="YZR-Sr-M6T" firstAttribute="leading" secondItem="OhX-mr-Q9m" secondAttribute="leading" constant="30" id="Ndc-lA-P2H"/>
+                                                            <constraint firstAttribute="trailing" secondItem="YZR-Sr-M6T" secondAttribute="trailing" constant="30" id="efF-78-Mnj"/>
+                                                            <constraint firstAttribute="bottom" secondItem="YZR-Sr-M6T" secondAttribute="bottom" constant="15" id="rfP-XZ-3mx"/>
+                                                            <constraint firstAttribute="height" constant="50" id="w2D-xe-5Ge"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -767,6 +785,7 @@
                         <outlet property="setupPhoneView" destination="zXS-2v-k73" id="3SF-OR-lHj"/>
                         <outlet property="submitButton" destination="cCl-2X-223" id="QDo-uU-RsM"/>
                         <outlet property="titleLabel" destination="h6E-N9-2F7" id="d0V-NR-vGc"/>
+                        <outlet property="versionLabel" destination="YZR-Sr-M6T" id="mmk-gX-kJB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L7p-wu-b0J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -54,6 +54,7 @@ class CodeEntryVC: BaseViewController {
             .subscribe(onNext: { (result) in
                 SVProgressHUD.dismiss()
                 if result?.status == true {
+                    self.phoneNumber?.token = response.token
                     self.close()
                 }
             }, onError: { error in
@@ -101,7 +102,7 @@ class CodeEntryVC: BaseViewController {
         pinInput.autocapitalizationType = .allCharacters
         pinInput.properties.delegate = self
         pinInput.properties.numberOfCharacters = 8
-        pinInput.properties.validCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+#"
+        pinInput.properties.validCharacters = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789+#"
         pinInput.properties.animateFocus = true
         pinInput.properties.isSecure = false
         pinInput.appearance.textColor = UIColor(hex: "#161B28")
@@ -145,6 +146,11 @@ class CodeEntryVC: BaseViewController {
 }
 
 extension CodeEntryVC: KAPinFieldDelegate {
+    func pinField(_ field: KAPinField, didChangeTo string: String, isValid: Bool) {
+        guard pinInput.text != field.text?.uppercased() else { return }
+        pinInput.text = string.uppercased()
+        pinInput.reloadAppearance()
+    }
     func pinField(_ field: KAPinField, didFinishWith code: String) {
         if mode == .sms {
             performSMSVerification(pin: code)

@@ -14,7 +14,7 @@ class PhoneSetupView: UIView {
     let checkboxView = CheckboxView.create(text: "Norādīts citas kontaktpersonas numurs", isChecked: false)
     
     func getPhoneNumber() -> PhoneNumber {
-        return PhoneNumber(number: phoneInput.text ?? "", otherParty: checkboxView.isChecked)
+        return PhoneNumber(number: phoneInput.text ?? "", otherParty: checkboxView.isChecked, token: nil)
     }
     
     var disposeBag = DisposeBag()

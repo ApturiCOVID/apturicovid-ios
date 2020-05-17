@@ -27,11 +27,23 @@ class RestClient {
             print("Curl: \(request.curlString)")
             
             let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, urlResponse, error) in
+
                 data.map {
                     print("Response: \(String(data: $0, encoding: .utf8) ?? "")")
                 }
-                if let data = data, error == nil {
-                    observer.onNext(data)
+
+                guard let response = urlResponse as? HTTPURLResponse else {
+                    observer.onError(NSError.make("Error parsing response"))
+                    return
+                }
+                
+                if response.statusCode != 200 {
+                    observer.onError(NSError.make("\(response.statusCode) : \(urlString)"))
+                    return
+                }
+                
+                if let responseData = data, error == nil {
+                    observer.onNext(responseData)
                 } else {
                     observer.onError(error ?? NSError.make("No Data Received"))
                 }
@@ -102,6 +114,54 @@ class RestClient {
             } else {
                 completion(.failure(NSError.make("Error request batch urls")))
             }
+        }
+        
+        task.resume()
+    }
+    
+    func uploadExposures(completion: @escaping (Result<Bool, Error>) -> Void) {
+        guard
+            let phone = LocalStore.shared.phoneNumber,
+            let exposureToken = phone.token else {
+            completion(.failure(NSError.make("Cannot upload exposures without phone number")))
+            return
+        }
+        
+        var pendingExposures = LocalStore.shared.exposures.filter { $0.uploadetAt == nil }
+        
+        guard let bodyData = try? JSONEncoder().encode(ExposureUploadRequest(exposure_token: exposureToken, exposures: pendingExposures.map { $0.exposure })) else {
+            completion(.failure(NSError.make("Enable to encode exposures")))
+            return
+        }
+        
+        guard let url = URL(string: "\(baseUrl)/exposure_summaries") else {
+            completion(.failure(NSError.make("Unable to make exposure upload url")))
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpBody = bodyData
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data, error == nil else {
+                if let error = error {
+                    completion(.failure(error))
+                }
+                completion(.failure(NSError.make("Upload task failed")))
+                return
+            }
+            
+            print(data)
+            
+            for i in 0...pendingExposures.count - 1 {
+                pendingExposures[i].markUploaded()
+            }
+            
+            print(pendingExposures)
+            
+            completion(.success(true))
         }
         
         task.resume()

@@ -70,8 +70,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         var task = NoticationsScheduler.registerBackgroundTask()
         _ = ExposureManager.shared.backgroundDetection { (success) in
-            ExposureManager.reset()
-            NoticationsScheduler.endBackgroundTask(&task)
+            RestClient.shared.uploadExposures { (_) in
+                ExposureManager.reset()
+                NoticationsScheduler.endBackgroundTask(&task)
+            }
         }
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        print(deviceToken.hexString)
     }
 }

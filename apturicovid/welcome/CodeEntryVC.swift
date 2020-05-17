@@ -19,6 +19,8 @@ class CodeEntryVC: BaseViewController {
     
     var pinInput = KAPinField()
     
+    var uploadInprogress = false
+    
     @IBAction func onBackTap(_ sender: Any) {
         if let navigationController = self.navigationController {
             navigationController.popViewController(animated: true)
@@ -35,7 +37,7 @@ class CodeEntryVC: BaseViewController {
     
     private func close() {
         LocalStore.shared.hasSeenIntro = true
-        LocalStore.shared.phoneNumber = phoneNumber
+        LocalStore.shared.setMobilephoneAndScheduleUpload(phone: phoneNumber)
         
         DispatchQueue.main.async {
             if self.presentedFromSettings {
@@ -66,21 +68,29 @@ class CodeEntryVC: BaseViewController {
     }
     
     private func performExposureKeyUpload(pin: String) {
+        uploadInprogress = true
         SVProgressHUD.show()
         RestClient.shared.requestDiagnosisUploadKey(code: pin)
+            .do(onError: { _ in
+                self.pinInput.animateFailure()
+            })
             .flatMap({ (response) -> Observable<Data> in
                 guard let response = response else { return Observable.error(NSError.make("Unable to obtain upload token")) }
 
                 return ExposureManager.shared.getAndPostDiagnosisKeys(token: response.token)
+                    .do(onError: { (err) in
+                        self.showBasicAlert(message: "diagnosis_key_upload_error".translated)
+                    })
             })
             .subscribe(onNext: { (data) in
+                self.uploadInprogress = false
                 SVProgressHUD.dismiss()
                 DispatchQueue.main.async {
                     self.dismiss(animated: true, completion: nil)
                 }
             }, onError: { error in
+                self.uploadInprogress = false
                 SVProgressHUD.dismiss()
-                self.pinInput.animateFailure()
                 justPrintError(error)
             })
             .disposed(by: disposeBag)
@@ -152,6 +162,9 @@ extension CodeEntryVC: KAPinFieldDelegate {
         pinInput.reloadAppearance()
     }
     func pinField(_ field: KAPinField, didFinishWith code: String) {
+        // Called twice
+        guard !uploadInprogress else { return }
+        
         if mode == .sms {
             performSMSVerification(pin: code)
         } else {

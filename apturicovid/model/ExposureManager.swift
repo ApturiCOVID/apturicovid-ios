@@ -75,11 +75,13 @@ class ExposureManager {
     }
     
     func getDiagnosisKeys() -> Observable<[ENTemporaryExposureKey]> {
+        var observable: Observable<[ENTemporaryExposureKey]>
         #if DEBUG
-            return getReleaseDiagnosisKeys()
+            observable = getTestDiagnosisKeys()
         #else
-            return getTestDiagnosisKeys()
+            observable = getReleaseDiagnosisKeys()
         #endif
+        return observable
     }
     
     func getReleaseDiagnosisKeys() -> Observable<[ENTemporaryExposureKey]> {
@@ -140,8 +142,8 @@ class ExposureManager {
                     if newExposures.count > 0 {
                         NoticationsScheduler.shared.sendExposureDiscoveredNotification()
                     }
-                    LocalStore.shared.exposures.append(contentsOf: newExposures)
-                    LocalStore.shared.exposures.sort { $0.date < $1.date }
+                    LocalStore.shared.exposures.append(contentsOf: newExposures.map { ExposureWrapper(uuid: UUID().uuidString, exposure: $0, uploadetAt: nil) })
+                    LocalStore.shared.exposures.sort { $0.exposure.date < $1.exposure.date }
                     success = true
                 case let .failure(error):
                     justPrintError(error)

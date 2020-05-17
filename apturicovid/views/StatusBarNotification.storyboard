@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iDS-7f-n7e">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Status Bar Notification-->
+        <scene sceneID="6K9-Hd-c4g">
+            <objects>
+                <viewController storyboardIdentifier="StatusBarNotification" id="iDS-7f-n7e" customClass="StatusBarNotification" customModule="Apturi_Covid" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EK1-73-5wJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQb-Ph-72u">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onErrorCloseTap:" destination="iDS-7f-n7e" eventType="touchUpInside" id="Jv9-Nn-nj4"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XQl-zr-hN0">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kļūdas paziņojums!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQ7-IA-Mff">
+                                        <rect key="frame" x="30" y="64" width="354" height="16"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.73725490199999999" green="0.36862745099999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="eQ7-IA-Mff" firstAttribute="leading" secondItem="XQl-zr-hN0" secondAttribute="leading" constant="30" id="MaN-h5-e8m"/>
+                                    <constraint firstAttribute="bottom" secondItem="eQ7-IA-Mff" secondAttribute="bottom" constant="20" id="c8I-2w-KNH"/>
+                                    <constraint firstAttribute="trailing" secondItem="eQ7-IA-Mff" secondAttribute="trailing" constant="30" id="iFy-bO-7Ii"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="XQl-zr-hN0" secondAttribute="trailing" id="IT9-1o-6V1"/>
+                            <constraint firstAttribute="right" secondItem="lQb-Ph-72u" secondAttribute="right" id="KkP-e8-GXC"/>
+                            <constraint firstItem="XQl-zr-hN0" firstAttribute="top" secondItem="EK1-73-5wJ" secondAttribute="top" id="Nnk-Bc-fIN"/>
+                            <constraint firstItem="lQb-Ph-72u" firstAttribute="top" secondItem="EK1-73-5wJ" secondAttribute="top" id="S6j-yI-MbE"/>
+                            <constraint firstItem="v5d-Zp-zDM" firstAttribute="top" secondItem="eQ7-IA-Mff" secondAttribute="top" constant="-20" id="hBr-OF-0QQ"/>
+                            <constraint firstItem="lQb-Ph-72u" firstAttribute="leading" secondItem="EK1-73-5wJ" secondAttribute="leading" id="lJ4-AL-nbL"/>
+                            <constraint firstItem="XQl-zr-hN0" firstAttribute="leading" secondItem="v5d-Zp-zDM" secondAttribute="leading" id="pgu-5r-r4r"/>
+                            <constraint firstAttribute="bottom" secondItem="lQb-Ph-72u" secondAttribute="bottom" id="vk4-oX-2MZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="v5d-Zp-zDM"/>
+                    </view>
+                    <connections>
+                        <outlet property="errorLabel" destination="eQ7-IA-Mff" id="Q64-U0-A1W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rix-k4-YF9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4603" y="73"/>
+        </scene>
+    </scenes>
+</document>

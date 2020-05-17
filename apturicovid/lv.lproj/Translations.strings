@@ -27,9 +27,8 @@
 "welcome_contact_enable" = "Ieslēgt";
 "welcome_contact_title" = "Kontakta fiksēšana";
 "welcome_contact_description" = "Kontakts: 15+ minūšu klātbūtne 2–4 m tuvumā.
-Fiksēšana: šifrs, ko tālrunis glabā 14 dienas, tad dzēš.
 
-Kontakta fiksēšana nav izsekošana.";
+Fiksēšana: šifrs, ko tālrunis glabā 14 dienas, tad dzēš.";
 
 "anonymous_prompt_title" = "Vai tiešām vēlies palikt anonīms?";
 "anonymous_prompt_description" = "Iesakām norādīt savu numuru, lasi vairāk kāpēc jānorāda numurs";

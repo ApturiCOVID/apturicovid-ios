@@ -23,10 +23,6 @@ class WelcomeVC: BaseViewController {
     @IBOutlet weak var nextButton: RoundedButton!
     @IBOutlet weak var mainStack: UIStackView!
     
-    @IBAction func nextTap(_ sender: Any) {
-        
-    }
-    
     let privacyAndTermsCheckboxView = CheckboxView.create(text: "", isChecked: false)
     let langViews = Language.allCases.map{ LanguageView.create($0) }
     

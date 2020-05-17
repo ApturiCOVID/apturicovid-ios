@@ -82,7 +82,7 @@
                                 <rect key="frame" x="0.0" y="250" width="375" height="418"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Vgx-A4-Hbx">
-                                        <rect key="frame" x="30" y="51" width="315" height="316.33333333333331"/>
+                                        <rect key="frame" x="30" y="47" width="315" height="324.33333333333331"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help stop the spread of COVID-19" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1p-A0-bbS">
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="65.333333333333329"/>
@@ -123,10 +123,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d4z-Ot-kdK">
-                                                <rect key="frame" x="0.0" y="266.33333333333337" width="315" height="50"/>
+                                                <rect key="frame" x="0.0" y="266.33333333333337" width="315" height="58"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTq-EC-gPP" customClass="RoundedButton" customModule="apturicovid" customModuleProvider="target">
-                                                        <rect key="frame" x="70" y="0.0" width="175" height="50"/>
+                                                        <rect key="frame" x="70" y="8" width="175" height="50"/>
                                                         <color key="backgroundColor" name="primaryButtonColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="175" id="SkM-5v-5Qm"/>
@@ -147,14 +147,13 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="nextTap:" destination="K37-K7-ayu" eventType="touchUpInside" id="oGw-Ln-Jqh"/>
                                                             <segue destination="Wx0-rH-Fu9" kind="show" id="nLy-4b-KGo"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="dTq-EC-gPP" firstAttribute="top" secondItem="d4z-Ot-kdK" secondAttribute="top" id="9hp-t4-z5Y"/>
+                                                    <constraint firstItem="dTq-EC-gPP" firstAttribute="top" secondItem="d4z-Ot-kdK" secondAttribute="top" constant="8" id="9hp-t4-z5Y"/>
                                                     <constraint firstAttribute="bottom" secondItem="dTq-EC-gPP" secondAttribute="bottom" id="LSv-rc-kHF"/>
                                                     <constraint firstItem="dTq-EC-gPP" firstAttribute="centerX" secondItem="d4z-Ot-kdK" secondAttribute="centerX" id="Piu-DW-g0D"/>
                                                 </constraints>

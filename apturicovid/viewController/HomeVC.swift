@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class HomeVC: BaseViewController {
     @IBOutlet weak var bottomBackgroundView: UIView!
@@ -33,8 +34,7 @@ class HomeVC: BaseViewController {
     }
     
     @IBAction func onShareButtonTap(_ sender: Any) {
-//        presentShareController()
-//        testExposureDetection()
+        presentShareController()
     }
     
     @IBAction func onSwitchTap(_ sender: UISwitch) {
@@ -127,11 +127,9 @@ class HomeVC: BaseViewController {
             .disposed(by: disposeBag)
     }
     
-    private func testExposureDetection() {
-        ExposureManager.shared.detectExposures()
-            .subscribe(onNext: { (exposures) in
-                print(exposures.count)
-            }, onError: justPrintError)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        exposureNotificationVisible = LocalStore.shared.exposures.count > 0
     }
     
     override func translate() {

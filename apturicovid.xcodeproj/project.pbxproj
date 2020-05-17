@@ -26,6 +26,7 @@
 		AADBCE0EFA7F339E0ED4EC6C /* Pods_apturicovid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D51F675FDD0F615AD5BFBDCB /* Pods_apturicovid.framework */; };
 		BA11213F2469DDC900D975D5 /* DiagnosisKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11213E2469DDC900D975D5 /* DiagnosisKey.swift */; };
 		BA1121412469E27100D975D5 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1121402469E27100D975D5 /* EntryView.swift */; };
+		BA19B89824709EEB003C5025 /* Exposure.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19B89724709EEB003C5025 /* Exposure.swift */; };
 		BA366CC02465AC3D00A35CA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA366CBF2465AC3D00A35CA8 /* AppDelegate.swift */; };
 		BA366CC22465AC3D00A35CA8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA366CC12465AC3D00A35CA8 /* SceneDelegate.swift */; };
 		BA366CC42465AC3D00A35CA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA366CC32465AC3D00A35CA8 /* ViewController.swift */; };
@@ -101,6 +102,7 @@
 		B89B433B39A6ECD9E5E3DEE3 /* Pods-apturicovid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apturicovid.release.xcconfig"; path = "Target Support Files/Pods-apturicovid/Pods-apturicovid.release.xcconfig"; sourceTree = "<group>"; };
 		BA11213E2469DDC900D975D5 /* DiagnosisKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisKey.swift; sourceTree = "<group>"; };
 		BA1121402469E27100D975D5 /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
+		BA19B89724709EEB003C5025 /* Exposure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exposure.swift; sourceTree = "<group>"; };
 		BA366CBC2465AC3D00A35CA8 /* apturicovid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = apturicovid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA366CBF2465AC3D00A35CA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA366CC12465AC3D00A35CA8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				BACDE3BA246DF0480075B20E /* UploadKeyVerificationRequest.swift */,
 				BACDE3BC246E72DE0075B20E /* UploadKeyResponse.swift */,
 				BACDE3BE246E9A5F0075B20E /* PhoneNumber.swift */,
+				BA19B89724709EEB003C5025 /* Exposure.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 				75B1DAA1246BE91100601F69 /* SettingsVC.swift in Sources */,
 				BABEEC3124687A98009D8307 /* LanguageView.swift in Sources */,
 				BA366CC02465AC3D00A35CA8 /* AppDelegate.swift in Sources */,
+				BA19B89824709EEB003C5025 /* Exposure.swift in Sources */,
 				BAFA8313246AD42D00E121B4 /* UserDefault.swift in Sources */,
 				BA366CD82465F57200A35CA8 /* FAQ.swift in Sources */,
 				BACDE3C1246EA4400075B20E /* NotificationsScheduler.swift in Sources */,

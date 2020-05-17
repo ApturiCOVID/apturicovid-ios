@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UNUserNotificationCenter.current().delegate = self
         
         BGTaskScheduler.shared.register(forTaskWithIdentifier: AppDelegate.backgroundTaskIdentifier, using: .main) { (task) in
-            print(task)
             _ = ExposureManager.shared.detectExposures()
                 .subscribe(onNext: { (exposures) in
                     task.setTaskCompleted(success: true)
@@ -35,21 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.scheduleBackgroundTaskIfNeeded()
         }
         
-        scheduleBackgroundTaskIfNeeded()
+        self.scheduleBackgroundTaskIfNeeded()
+        
+        NoticationsScheduler.shared.scheduleExposureCheckSilent()
         
         return true
-    }
-    
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        self.scheduleBackgroundTaskIfNeeded()
-    }
-    
-    // MARK: UISceneSession Lifecycle
-    
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        let storyboard: Storyboard = .Main
-        return storyboard.sceneConfiguration(for: connectingSceneSession)
-
     }
     
     func scheduleBackgroundTaskIfNeeded() {
@@ -59,7 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         taskRequest.requiresNetworkConnectivity = true
         do {
             try BGTaskScheduler.shared.submit(taskRequest)
-            print("did schedule task")
         } catch {
             print("Unable to schedule background task: \(error)")
         }
@@ -74,19 +62,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert, .sound])
-    }
-}
-
-//MARK: - Storyboard
-enum Storyboard: String {
-    case Main, Welcome
-    
-    var instance: UIStoryboard {
-        UIStoryboard(name: self.rawValue, bundle: Bundle.main)
-    }
-    
-    func sceneConfiguration(for session: UISceneSession) -> UISceneConfiguration {
-        UISceneConfiguration(name: self.rawValue, sessionRole: session.role)
+        if notification.request.identifier == "SilentPush" {
+            _ = ExposureManager.shared.detectExposures()
+                .subscribe(onNext: { (_) in
+                    completionHandler([])
+                }, onError: justPrintError)
+        } else {
+            completionHandler([.alert, .sound])
+        }
     }
 }

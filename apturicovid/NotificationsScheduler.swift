@@ -34,6 +34,19 @@ class NoticationsScheduler {
         notificationCenter.removeAllPendingNotificationRequests()
     }
     
+    func scheduleExposureCheckSilent() {
+        let content = UNMutableNotificationContent()
+        content.title = "test"
+        content.body = "test"
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+        let request = UNNotificationRequest(identifier: "SilentPush", content: content, trigger: trigger)
+        
+        notificationCenter.add(request) { (error) in
+            print(error)
+        }
+    }
+    
     func sendExposureDiscoveredNotification() {
         let content = UNMutableNotificationContent()
         content.title = "Oupsie! You've been exposed"

@@ -1,18 +1,11 @@
 import Foundation
 import ExposureNotification
 
-struct Exposure: Codable {
-    let date: Date
-    let duration: TimeInterval
-    let totalRiskScore: ENRiskScore
-    let transmissionRiskLevel: ENRiskLevel
-}
-
 class LocalStore {
     static let shared = LocalStore()
     
-    @UserDefault(.nextDiagnosisKeyFileIndex, defaultValue: 0)
-    var nextDiagnosisKeyFileIndex: Int
+    @UserDefault(.lastDownloadedBatchIndex, defaultValue: 0)
+    var lastDownloadedBatchIndex: Int
     
     @UserDefault(.exposures, defaultValue: [])
     var exposures: [Exposure]

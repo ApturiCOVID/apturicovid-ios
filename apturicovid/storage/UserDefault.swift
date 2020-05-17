@@ -48,7 +48,7 @@ public struct UserDefault<T> where T: Codable {
 public enum UserDefaultKey: String {
     case hasSeenIntro
     case applicationLanguage
-    case nextDiagnosisKeyFileIndex
+    case lastDownloadedBatchIndex
     case exposures
     case dateLastPerformedExposureDetection
     case exposureDetectionErrorLocalizedDescription

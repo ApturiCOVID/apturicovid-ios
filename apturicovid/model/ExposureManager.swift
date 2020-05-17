@@ -58,25 +58,31 @@ class ExposureManager {
         }
     }
     
+    func resetManager() {
+        self.manager.invalidate()
+        self.manager = ENManager()
+    }
+    
     func detectExposures() -> Observable<[ENExposureInfo]> {
-        let nextDiagnosisKeyFileIndex = 6
+        let nextDiagnosisKeyFileIndex = LocalStore.shared.lastDownloadedBatchIndex
         
         return RestClient.shared.downloadDiagnosisBatches(startAt: nextDiagnosisKeyFileIndex)
             .flatMap({ (urls) -> Observable<ENExposureDetectionSummary?> in
-                return self.performDetection(urls: urls)
+                return self.performDetection(urls: urls.compactMap{$0})
             })
-            
             .flatMap { (summary) -> Observable<[ENExposureInfo]> in
                 guard let summary = summary else {
                     return Observable.error(NSError.make("Exposure summary is empty"))
                 }
                 return self.getExposurySummaryInfo(summary: summary)
-        }.do(onNext: { (_) in
-            self.manager.invalidate()
-            self.manager = ENManager()
+        }.do(onNext: { (exposures) in
+            LocalStore.shared.exposures += exposures.map({ Exposure(from: $0) })
+            if exposures.count > 0 {
+                NoticationsScheduler.shared.sendExposureDiscoveredNotification()
+            }
+            self.resetManager()
         }, onError: { error in
-            self.manager.invalidate()
-            self.manager = ENManager()
+            self.resetManager()
         })
     }
     

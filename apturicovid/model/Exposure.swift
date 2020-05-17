@@ -2,7 +2,7 @@ import Foundation
 import ExposureNotification
 
 struct Exposure: Codable {
-    let date: Date
+    let date: TimeInterval
     let duration: TimeInterval
     let totalRiskScore: ENRiskScore
     let transmissionRiskLevel: ENRiskLevel
@@ -19,7 +19,7 @@ struct Exposure: Codable {
 
 extension Exposure {
     init(from exposure: ENExposureInfo) {
-        date = exposure.date
+        date = exposure.date.timeIntervalSince1970
         duration = exposure.duration
         totalRiskScore = exposure.totalRiskScore
         transmissionRiskLevel = exposure.transmissionRiskLevel

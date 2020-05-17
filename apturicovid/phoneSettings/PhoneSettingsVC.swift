@@ -26,6 +26,10 @@ class PhoneSettingsVC: BaseViewController {
                         vc.presentedFromSettings = true
                         self.navigationController?.pushViewController(vc, animated: true)
                     }
+                } else {
+                    DispatchQueue.main.async {
+                        self.presentErrorAlert(with: "invalid_phone_number_error")
+                    }
                 }
             }, onError: { error in
                 SVProgressHUD.dismiss()

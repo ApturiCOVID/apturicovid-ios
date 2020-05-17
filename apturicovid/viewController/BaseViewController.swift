@@ -9,8 +9,8 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         notificationDisposable = NotificationCenter.default.rx
             .notification(.languageDidChange).subscribe(onNext: { [weak self] (_) in
-            self?.translate()
-        }, onError: justPrintError)
+                self?.translate()
+                }, onError: justPrintError)
         overrideUserInterfaceStyle = .light
     }
     
@@ -54,5 +54,13 @@ class BaseViewController: UIViewController {
         UIView.animate(withDuration: 0.2, animations: { () -> Void in
             slideVC.view.frame = CGRect(x: 0, y: 0, width: screenSize.width, height: screenSize.height)
         })
+    }
+    
+    func presentErrorAlert(with message: String) {
+        let alert = UIAlertController(title: "error".translated, message: message.translated, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "continue".translated, style: .cancel, handler: { (_) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 }

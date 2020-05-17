@@ -49,3 +49,7 @@ Fiksēšana: šifrs, ko tālrunis glabā 14 dienas, tad dzēš.";
 "spkc_data_send" = "Nosūtīt datus SPKC";
 "spkc_data_description" = "Instrukcijas par koda saņemšanu un ievadīšanu. Informācija, ka tikai SPKC var iedot šo kodu un lietot šos datus";
 
+// Error
+"error" = "Kļūda";
+"continue" = "Turpināt";
+"invalid_phone_number_error" = "Ievadīts nederīgs telefona numurs";

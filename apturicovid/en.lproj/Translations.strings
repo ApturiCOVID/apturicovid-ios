@@ -29,3 +29,9 @@
 "welcome_contact_description" = "Contact: being 2-4 m away from someone for 15+ minutes.
 
 Discovering: a code kept by a phone for 14 days, and then deleted.";
+
+// Error
+"error" = "Error";
+"continue" = "Continue";
+"invalid_phone_number_error" = "The entered phone number is invalid";
+

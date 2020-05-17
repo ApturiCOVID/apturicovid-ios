@@ -31,7 +31,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nYa-kZ-T5k">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="wRc-Jc-YDF"/>
@@ -171,7 +172,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nyo-WV-M78">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nyo-WV-M78">
                                         <rect key="frame" x="182.66666666666666" y="442" width="51" height="31"/>
                                         <color key="onTintColor" red="0.12156862745098039" green="0.52941176470588236" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
@@ -473,10 +474,10 @@
                                         <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5am-yJ-TDy">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="615.66666666666663"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="617.66666666666663"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiC-yq-fa0" customClass="WelcomeHeaderView" customModule="apturicovid" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="196"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiC-yq-fa0" customClass="WelcomeHeaderView" customModule="Apturi_Covid" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="198"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OGA-4g-0m3">
                                                                 <rect key="frame" x="384" y="10" width="0.0" height="43"/>
@@ -487,21 +488,21 @@
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Iestatījumi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6E-N9-2F7">
                                                                 <rect key="frame" x="30.000000000000007" y="16" width="92.666666666666686" height="25"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="25" id="Y8G-Nm-N9m"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                                                 <color key="textColor" red="0.0" green="0.23921568630000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <color key="highlightedColor" red="0.0" green="0.23921568630000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pēc SPKC darbinieka lūguma, ievadiet norādīto kodu:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaD-qN-Y2g">
-                                                                <rect key="frame" x="30" y="73" width="368" height="15"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="15" id="utE-VY-cpO"/>
-                                                                </constraints>
+                                                                <rect key="frame" x="30" y="73" width="368" height="17"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCl-2X-223" customClass="RoundedButton" customModule="apturicovid" customModuleProvider="target">
-                                                                <rect key="frame" x="30" y="120" width="126" height="44"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCl-2X-223" customClass="RoundedButton" customModule="Apturi_Covid" customModuleProvider="target">
+                                                                <rect key="frame" x="30" y="122" width="126" height="44"/>
                                                                 <color key="backgroundColor" red="0.0" green="0.23921568630000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="44" id="0q2-Pm-NGR"/>
@@ -546,7 +547,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XP2-1x-fjw">
-                                                        <rect key="frame" x="0.0" y="196" width="414" height="50"/>
+                                                        <rect key="frame" x="0.0" y="198" width="414" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kontakts saziņai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6a-yE-IpD">
                                                                 <rect key="frame" x="30" y="15" width="354" height="30"/>
@@ -565,7 +566,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eMi-QW-8n0">
-                                                        <rect key="frame" x="0.0" y="246" width="414" height="60"/>
+                                                        <rect key="frame" x="0.0" y="248" width="414" height="60"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SqM-yR-Efk">
                                                                 <rect key="frame" x="29.999999999999996" y="15" width="41.666666666666657" height="30"/>
@@ -605,7 +606,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zXS-2v-k73">
-                                                        <rect key="frame" x="0.0" y="306" width="414" height="121.33333333333331"/>
+                                                        <rect key="frame" x="0.0" y="308" width="414" height="121.33333333333331"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nav norādīts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xR3-LL-bZr">
                                                                 <rect key="frame" x="30" y="0.0" width="99" height="35"/>
@@ -655,7 +656,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ckp-UG-RBC">
-                                                        <rect key="frame" x="0.0" y="427.33333333333331" width="414" height="78.333333333333314"/>
+                                                        <rect key="frame" x="0.0" y="429.33333333333331" width="414" height="78.333333333333314"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paziņot, ja kontaktu meklēšana šobrīd nedarbojās" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjk-w5-EJV">
                                                                 <rect key="frame" x="30" y="20.000000000000004" width="275" height="38.333333333333343"/>
@@ -694,7 +695,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x3K-cp-y1H">
-                                                        <rect key="frame" x="0.0" y="505.66666666666663" width="414" height="60"/>
+                                                        <rect key="frame" x="0.0" y="507.66666666666663" width="414" height="60"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bin" translatesAutoresizingMaskIntoConstraints="NO" id="mLe-fB-KTg">
                                                                 <rect key="frame" x="30" y="30" width="20" height="20"/>
@@ -721,7 +722,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OhX-mr-Q9m">
-                                                        <rect key="frame" x="0.0" y="565.66666666666663" width="414" height="50"/>
+                                                        <rect key="frame" x="0.0" y="567.66666666666663" width="414" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Versija nr.:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZR-Sr-M6T">
                                                                 <rect key="frame" x="30" y="18" width="354" height="17"/>

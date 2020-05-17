@@ -44,6 +44,7 @@ Fiksēšana: šifrs, ko tālrunis glabā 14 dienas, tad dzēš.";
 "phone_confirmation_2" = "tika nosūtīts kods. Ievadiet to zemāk";
 "input_code" = "Ievadi kodu";
 "didn_receive_code" = "Nesaņēmi kodu?";
+"input_code_invalid" = "Ievadīts nepareizs kods";
 
 "spkc_data_send" = "Nosūtīt datus SPKC";
 "spkc_data_description" = "Instrukcijas par koda saņemšanu un ievadīšanu. Informācija, ka tikai SPKC var iedot šo kodu un lietot šos datus";

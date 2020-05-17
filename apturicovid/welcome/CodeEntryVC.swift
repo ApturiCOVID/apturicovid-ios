@@ -9,14 +9,17 @@ enum CodeEntryMode {
 }
 
 class CodeEntryVC: BaseViewController {
-    @IBOutlet weak var codeInputHolder: UIView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-    
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var inputCodeLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var codeMissingLabel: UILabel!
-    
+    @IBOutlet weak var inputCodeLabel: UILabel!
+    @IBOutlet weak var errorView: UIView!
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var codeInputHolder: UIView!
+    @IBOutlet weak var resendCodeView: UIView!
+    @IBOutlet weak var resendCodeLabel: UILabel!
+        
     var pinInput = KAPinField()
     
     var uploadInprogress = false
@@ -58,6 +61,8 @@ class CodeEntryVC: BaseViewController {
                 if result?.status == true {
                     self.phoneNumber?.token = response.token
                     self.close()
+                } else  {
+                    self.showError(true, with: "input_code_invalid")
                 }
             }, onError: { error in
                 SVProgressHUD.dismiss()
@@ -65,6 +70,13 @@ class CodeEntryVC: BaseViewController {
                 justPrintError(error)
             })
             .disposed(by: disposeBag)
+    }
+    
+    private func showError(_ show: Bool, with message: String) {
+        DispatchQueue.main.async {
+            self.errorView.isHidden = !show
+            self.errorLabel.text = message.translated
+        }
     }
     
     private func performExposureKeyUpload(pin: String) {
@@ -105,7 +117,7 @@ class CodeEntryVC: BaseViewController {
             "phone_confirmation_1".translated + " \(phoneNumber?.number ?? "") " + "phone_confirmation_2".translated : "spkc_data_description".translated
         
         inputCodeLabel.text = "input_code".translated
-        codeMissingLabel.text = "didn_receive_code".translated
+        resendCodeLabel.text = "didn_receive_code".translated
     }
     
     func stylePinInput() {
@@ -124,7 +136,7 @@ class CodeEntryVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        codeMissingLabel.isHidden = mode == .spkc
+        resendCodeLabel.isHidden = mode == .spkc
         
         NotificationCenter.default.rx
             .notification(UIResponder.keyboardWillShowNotification)
@@ -157,6 +169,9 @@ class CodeEntryVC: BaseViewController {
 
 extension CodeEntryVC: KAPinFieldDelegate {
     func pinField(_ field: KAPinField, didChangeTo string: String, isValid: Bool) {
+        if string.count < field.properties.numberOfCharacters {
+            errorView.isHidden = true
+        }
         guard pinInput.text != field.text?.uppercased() else { return }
         pinInput.text = string.uppercased()
         pinInput.reloadAppearance()

@@ -75,7 +75,7 @@
                                         <constraint firstAttribute="width" constant="1" id="7g2-GU-tin"/>
                                     </constraints>
                                 </view>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Axo-97-MFn">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Axo-97-MFn" customClass="PhoneTextField" customModule="Apturi_Covid" customModuleProvider="target">
                                     <rect key="frame" x="75" y="0.0" width="279" height="40"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
@@ -139,7 +139,7 @@
                 <outlet property="anonymousButtonView" destination="rej-Pr-jhU" id="cK8-L0-dWl"/>
                 <outlet property="descriptionLabel" destination="yMC-a8-BtJ" id="hjg-7J-NB7"/>
                 <outlet property="phoneExplanationButton" destination="Nrp-uD-E6r" id="vDT-YR-QLN"/>
-                <outlet property="phoneInput" destination="Axo-97-MFn" id="Txj-xM-lhD"/>
+                <outlet property="phoneInput" destination="Axo-97-MFn" id="4ev-Bd-s3i"/>
                 <outlet property="phoneInputView" destination="cc7-lP-GiG" id="2x6-eB-wGg"/>
                 <outlet property="stackView" destination="buT-C0-ccM" id="nAt-bd-TkO"/>
                 <outlet property="stayAnonymousLabel" destination="pWu-PV-DP0" id="Leq-CS-2Ol"/>

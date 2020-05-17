@@ -61,6 +61,14 @@ class ExposureManager {
     }
     
     func getDiagnosisKeys() -> Observable<[ENTemporaryExposureKey]> {
+        #if DEBUG
+            return getReleaseDiagnosisKeys()
+        #else
+            return getTestDiagnosisKeys()
+        #endif
+    }
+    
+    func getReleaseDiagnosisKeys() -> Observable<[ENTemporaryExposureKey]> {
         return Observable.create { (observer) -> Disposable in
             self.manager.getDiagnosisKeys { (keys, error) in
                 if let err = error {
@@ -90,13 +98,6 @@ class ExposureManager {
     
     func getAndPostDiagnosisKeys(token: String) -> Observable<Data> {
         return self.getDiagnosisKeys()
-            .flatMap { (keys) -> Observable<Data> in
-                return RestClient.shared.uploadDiagnosis(token: token, keys: keys)
-        }
-    }
-    
-    func getAndPostTestDiagnosisKeys(token: String) -> Observable<Data> {
-        return self.getTestDiagnosisKeys()
             .flatMap { (keys) -> Observable<Data> in
                 return RestClient.shared.uploadDiagnosis(token: token, keys: keys)
         }

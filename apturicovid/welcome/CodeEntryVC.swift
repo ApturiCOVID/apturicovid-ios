@@ -71,7 +71,7 @@ class CodeEntryVC: BaseViewController {
             .flatMap({ (response) -> Observable<Data> in
                 guard let response = response else { return Observable.error(NSError.make("Unable to obtain upload token")) }
 
-                return ExposureManager.shared.getAndPostTestDiagnosisKeys(token: response.token)
+                return ExposureManager.shared.getAndPostDiagnosisKeys(token: response.token)
             })
             .subscribe(onNext: { (data) in
                 SVProgressHUD.dismiss()

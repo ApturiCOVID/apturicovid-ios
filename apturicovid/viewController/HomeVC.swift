@@ -17,6 +17,7 @@ class HomeVC: BaseViewController {
     @IBOutlet weak var statsStackView: UIStackView!
     @IBOutlet weak var exposureIcon: UIImageView!
     @IBOutlet weak var exposureNotificationView: UIView!
+    @IBOutlet weak var statsView: UIView!
     
     @IBOutlet weak var contactTracingTitle: UILabel!
     @IBOutlet weak var tracingStateLabel: UILabel!
@@ -27,6 +28,8 @@ class HomeVC: BaseViewController {
     @IBOutlet var smallSizeBottomBackground: NSLayoutConstraint!
     @IBOutlet var fullHeightBottomBorder: NSLayoutConstraint!
     @IBOutlet weak var exposureViewButton: UIButton!
+    
+    @IBOutlet var defaultExposureBottomConstraint: NSLayoutConstraint!
     
     private var exposureNotificationVisible = false {
         didSet {
@@ -74,6 +77,7 @@ class HomeVC: BaseViewController {
         exposureNotificationView.isHidden = !visible
         smallSizeBottomBackground.isActive = visible
         fullHeightBottomBorder.isActive = !visible
+        minimizeLayoutIfNeeded()
     }
     
     private func presentWelcomeIfNeeded() {
@@ -150,5 +154,13 @@ class HomeVC: BaseViewController {
         statsTitleLabel.text = "stats_title".translated
         shareButton.setTitle("share".translated, for: .normal)
         setExposureStateVisual()
+    }
+    
+    private func minimizeLayoutIfNeeded() {
+        guard UIDevice().isIphoneSE else { return }
+
+        bottomBackgroundView.isHidden = !exposureNotificationView.isHidden
+        statsView.isHidden = !exposureNotificationView.isHidden
+        defaultExposureBottomConstraint.isActive = exposureNotificationView.isHidden
     }
 }

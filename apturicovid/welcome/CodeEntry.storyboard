@@ -100,8 +100,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SlT-Fx-zDs">
                                                 <rect key="frame" x="0.0" y="205" width="320" height="105"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nosūtīt kodu atkārtoti" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wm6-YX-ibS">
-                                                        <rect key="frame" x="30" y="44" width="260" height="17"/>
+                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nosūtīt kodu atkārtoti" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wm6-YX-ibS">
+                                                        <rect key="frame" x="30" y="0.0" width="260" height="105"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.18823529410000001" green="0.62745098040000002" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
@@ -109,9 +109,10 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="Wm6-YX-ibS" firstAttribute="top" secondItem="SlT-Fx-zDs" secondAttribute="top" id="2KL-JA-dnD"/>
                                                     <constraint firstItem="Wm6-YX-ibS" firstAttribute="leading" secondItem="SlT-Fx-zDs" secondAttribute="leading" constant="30" id="DCj-uR-jn8"/>
                                                     <constraint firstAttribute="trailing" secondItem="Wm6-YX-ibS" secondAttribute="trailing" constant="30" id="Uul-oz-1cx"/>
-                                                    <constraint firstItem="Wm6-YX-ibS" firstAttribute="centerY" secondItem="SlT-Fx-zDs" secondAttribute="centerY" id="xYw-67-Z13"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Wm6-YX-ibS" secondAttribute="bottom" id="Y1i-3W-oEe"/>
                                                 </constraints>
                                             </view>
                                         </subviews>

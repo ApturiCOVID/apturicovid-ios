@@ -133,11 +133,26 @@ class CodeEntryVC: BaseViewController {
         pinInput.appearance.font = .courier(15)
     }
     
+    @objc private func resendCode() {
+        guard let phoneNo = phoneNumber?.number else { return }
+        SVProgressHUD.show()
+        
+        RestClient.shared.requestPhoneVerification(phoneNumber: phoneNo)
+            .subscribe(onNext: { _ in
+                SVProgressHUD.dismiss()
+            },onError: { error in
+                SVProgressHUD.dismiss()
+                justPrintError(error)
+            })
+            .disposed(by: disposeBag)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         resendCodeLabel.isHidden = mode == .spkc
-        
+        resendCodeLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(resendCode)))
+
         NotificationCenter.default.rx
             .notification(UIResponder.keyboardWillShowNotification)
             .subscribe(onNext: { [weak self] notification in

@@ -101,6 +101,7 @@
                                     <constraint firstAttribute="trailing" secondItem="pQ8-KT-HD7" secondAttribute="trailing" constant="30" id="06c-4M-4aB"/>
                                     <constraint firstItem="pQ8-KT-HD7" firstAttribute="top" secondItem="dfs-tu-Zua" secondAttribute="top" constant="30" id="BsF-N3-zLP"/>
                                     <constraint firstItem="pQ8-KT-HD7" firstAttribute="leading" secondItem="dfs-tu-Zua" secondAttribute="leading" constant="30" id="cpo-2L-owh"/>
+                                    <constraint firstAttribute="bottom" secondItem="pQ8-KT-HD7" secondAttribute="bottom" priority="250" constant="30" id="e0M-Im-sj5"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R2U-sP-JiI">
@@ -242,6 +243,7 @@
                     <connections>
                         <outlet property="bottomBackgroundView" destination="R2U-sP-JiI" id="wRu-qi-BOK"/>
                         <outlet property="contactTracingTitle" destination="5UA-a0-5b6" id="5nz-RC-qsW"/>
+                        <outlet property="defaultExposureBottomConstraint" destination="0XU-qF-mG5" id="Emc-WK-TSg"/>
                         <outlet property="exposureDescriptionLabel" destination="NAl-FB-D6Z" id="UeM-bY-q3w"/>
                         <outlet property="exposureIcon" destination="Ck9-8q-2TR" id="0dz-a6-SsI"/>
                         <outlet property="exposureNotificationView" destination="dfs-tu-Zua" id="G1G-fD-wGZ"/>
@@ -253,6 +255,7 @@
                         <outlet property="smallSizeBottomBackground" destination="VTE-TN-Yee" id="ED3-Ea-UCl"/>
                         <outlet property="statsStackView" destination="2hr-vA-xw9" id="kSE-iw-L35"/>
                         <outlet property="statsTitleLabel" destination="yib-ha-2dX" id="4f5-eH-b0Y"/>
+                        <outlet property="statsView" destination="fML-nx-pw3" id="xPi-Pg-vLM"/>
                         <outlet property="tracingStateLabel" destination="Qr5-2d-GVo" id="bhl-nd-JFS"/>
                     </connections>
                 </viewController>

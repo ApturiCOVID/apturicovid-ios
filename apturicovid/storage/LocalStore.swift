@@ -8,7 +8,7 @@ class LocalStore {
     var lastDownloadedBatchIndex: Int
     
     @UserDefault(.exposures, defaultValue: [])
-    var exposures: [Exposure]
+    var exposures: [ExposureWrapper]
     
     @UserDefault(.dateLastPerformedExposureDetection, defaultValue: nil)
     var dateLastPerformedExposureDetection: Date?
@@ -30,4 +30,14 @@ class LocalStore {
     
     @UserDefault(.notificationIdentifier, defaultValue: nil)
     var notificationIdentifier: String?
+    
+    func setMobilephoneAndScheduleUpload(phone: PhoneNumber?) {
+        guard phone != nil else {
+            phoneNumber = nil
+            return
+        }
+        
+        phoneNumber = phone
+        BackgroundManager.shared.scheduleExposureUploadTask()
+    }
 }

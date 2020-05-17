@@ -12,10 +12,13 @@
 
 // Welcome
 "welcome_continue" = "Продолжить";
-"welcome_title" = "Help stop the spread of COVID-19";
+"welcome_title" = "Помоги разорвать цепь вируса!";
 "welcome_app_description" = "If you had close contact with a COVID-19 case, we help the health authority call you more quickly to provide guidance and care";
 
 "welcome_privacy_link" = "Privātuma politiku";
 "welcome_terms_link" = "Lietošanas noteikumiem";
 "welcome_privacy_note" = "Esmu iepazinies ar Privātuma politiku un piekrītu lietotnes Lietošanas noteikumiem";
 
+"welcome_contact_enable" = "Включить";
+"welcome_contact_description" = "Kontakts: 15+ minūšu klātbūtne 2–4 m tuvumā.
+Fiksēšana: šifrs, ko tālrunis glabā 14 dienas, tad dzēš.";

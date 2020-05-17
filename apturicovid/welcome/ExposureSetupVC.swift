@@ -8,6 +8,10 @@ class ExposureSetupVC: BaseViewController {
     @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var nextButton: RoundedButton!
     
+    @IBOutlet weak var contactTitle: UILabel!
+    @IBOutlet weak var contactDescription: UILabel!
+    @IBOutlet weak var activateSwitchTitle: UILabel!
+    
     var exposureEnabled = false {
         didSet {
             phoneView.isHidden = !exposureEnabled
@@ -127,5 +131,12 @@ class ExposureSetupVC: BaseViewController {
                 self.navigationController?.pushViewController(vc, animated: true)
             })
             .disposed(by: disposeBag)
+    }
+    
+    override func translate() {
+        contactTitle.text  = "welcome_contact_title".translated
+        contactDescription.text = "welcome_contact_description".translated
+        activateSwitchTitle.text = "welcome_contact_enable".translated
+        nextButton.setTitle("welcome_continue".translated, for: .normal)
     }
 }

@@ -473,10 +473,10 @@
                                         <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5am-yJ-TDy">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="582.66666666666663"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="565.66666666666663"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiC-yq-fa0">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="213"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiC-yq-fa0" customClass="WelcomeHeaderView" customModule="apturicovid" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="196"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OGA-4g-0m3">
                                                                 <rect key="frame" x="384" y="10" width="0.0" height="43"/>
@@ -500,21 +500,26 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCl-2X-223">
-                                                                <rect key="frame" x="30" y="120" width="126" height="61"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCl-2X-223" customClass="RoundedButton" customModule="apturicovid" customModuleProvider="target">
+                                                                <rect key="frame" x="30" y="120" width="126" height="44"/>
                                                                 <color key="backgroundColor" red="0.0" green="0.23921568630000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="0q2-Pm-NGR"/>
+                                                                    <constraint firstAttribute="height" constant="44" id="0q2-Pm-NGR"/>
                                                                 </constraints>
                                                                 <state key="normal" title="Ievadīt SPKC kodu">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="22"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <action selector="onSubmitPress:" destination="68n-zD-fXe" eventType="touchUpInside" id="2i2-GZ-mQr"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.95294117647058818" green="0.95686274509803915" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="OGA-4g-0m3" secondAttribute="trailing" constant="30" id="4LC-GX-Rkz"/>
                                                             <constraint firstItem="JaD-qN-Y2g" firstAttribute="top" secondItem="OGA-4g-0m3" secondAttribute="bottom" constant="20" id="5Bj-Cf-6tv"/>
@@ -528,9 +533,20 @@
                                                             <constraint firstItem="JaD-qN-Y2g" firstAttribute="top" secondItem="h6E-N9-2F7" secondAttribute="bottom" constant="32" id="mw2-UW-vRB"/>
                                                             <constraint firstItem="cCl-2X-223" firstAttribute="top" secondItem="JaD-qN-Y2g" secondAttribute="bottom" constant="32" id="w6I-ja-P0Z"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="bottomCurveInset">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                <color key="value" name="headerColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XP2-1x-fjw">
-                                                        <rect key="frame" x="0.0" y="213" width="414" height="50"/>
+                                                        <rect key="frame" x="0.0" y="196" width="414" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kontakts saziņai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6a-yE-IpD">
                                                                 <rect key="frame" x="30" y="15" width="354" height="30"/>
@@ -549,7 +565,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eMi-QW-8n0">
-                                                        <rect key="frame" x="0.0" y="263" width="414" height="60"/>
+                                                        <rect key="frame" x="0.0" y="246" width="414" height="60"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SqM-yR-Efk">
                                                                 <rect key="frame" x="29.999999999999996" y="15" width="41.666666666666657" height="30"/>
@@ -589,7 +605,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zXS-2v-k73">
-                                                        <rect key="frame" x="0.0" y="323" width="414" height="121.33333333333331"/>
+                                                        <rect key="frame" x="0.0" y="306" width="414" height="121.33333333333331"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nav norādīts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xR3-LL-bZr">
                                                                 <rect key="frame" x="30" y="0.0" width="99" height="35"/>
@@ -639,7 +655,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ckp-UG-RBC">
-                                                        <rect key="frame" x="0.0" y="444.33333333333331" width="414" height="78.333333333333314"/>
+                                                        <rect key="frame" x="0.0" y="427.33333333333331" width="414" height="78.333333333333314"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paziņot, ja kontaktu meklēšana šobrīd nedarbojās" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjk-w5-EJV">
                                                                 <rect key="frame" x="30" y="20.000000000000004" width="275" height="38.333333333333343"/>
@@ -675,7 +691,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x3K-cp-y1H">
-                                                        <rect key="frame" x="0.0" y="522.66666666666663" width="414" height="60"/>
+                                                        <rect key="frame" x="0.0" y="505.66666666666663" width="414" height="60"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bin" translatesAutoresizingMaskIntoConstraints="NO" id="mLe-fB-KTg">
                                                                 <rect key="frame" x="30" y="30" width="20" height="20"/>
@@ -966,12 +982,6 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="enabledColor">
-                                        <color key="value" name="primaryButton"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledColor">
-                                        <color key="value" name="primaryButtonDisabled"/>
-                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="onContinueTap:" destination="n0E-B4-lil" eventType="touchUpInside" id="WZU-oi-CJ3"/>
@@ -1119,11 +1129,11 @@
         <namedColor name="descriptionText">
             <color red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <namedColor name="headerColor">
+            <color red="0.94901960784313721" green="0.95294117647058818" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="primaryButton">
             <color red="0.0" green="0.38039215686274508" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="primaryButtonDisabled">
-            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="separator">
             <color red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

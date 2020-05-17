@@ -19,9 +19,8 @@ extension NSMutableAttributedString {
         
         var attributes: NSStringAttributes = [
             .attachment : linkURL,
-            .foregroundColor: UIColor(named: "linkColor")!,
-            .underlineColor: UIColor(named: "linkColor")!,
-            .underlineStyle: NSUnderlineStyle.single.rawValue
+            .foregroundColor: UIColor(named: "linkColor")!
+            
         ]
         
         if let font = font {

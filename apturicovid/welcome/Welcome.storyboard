@@ -58,10 +58,16 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="bottomCornerRadius">
-                                        <real key="value" value="40"/>
+                                        <real key="value" value="16"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                        <color key="value" red="0.94901960780000005" green="0.95294117649999999" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="value" name="headerColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="bottomCurveInset">
+                                        <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -366,6 +372,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="9l0-T4-7kE"/>
                     <connections>
+                        <outlet property="activateSwitchTitle" destination="dSG-0A-HKx" id="3WL-wY-YYZ"/>
+                        <outlet property="contactDescription" destination="J91-SW-O4J" id="1qT-tb-6CF"/>
+                        <outlet property="contactTitle" destination="bd2-cG-x0S" id="aQI-zS-tUQ"/>
                         <outlet property="mainStackView" destination="qv6-Xg-4Qt" id="4rA-CP-YhT"/>
                         <outlet property="nextButton" destination="tJZ-3g-hia" id="dhQ-hv-nqR"/>
                         <outlet property="scrollViewBottomConstraint" destination="Jgf-lF-HVe" id="Hbq-qI-Nz6"/>
@@ -387,6 +396,9 @@
         </namedColor>
         <namedColor name="descriptionText">
             <color red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="headerColor">
+            <color red="0.94901960784313721" green="0.95294117647058818" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="primaryButton">
             <color red="0.0" green="0.38039215686274508" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

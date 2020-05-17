@@ -30,9 +30,13 @@
 
 Fiksēšana: šifrs, ko tālrunis glabā 14 dienas, tad dzēš.";
 
+"welcome_phone_description" = "Norādi kontakttālruni, pa kuru Covid-19 saskares gadījumā SPKC ar tevi sazināties.";
+"welcome_phone_usage_description" = "Kāpēc ir vērts norādīt tālruni?";
+"welcome_phone_own_prompt" = "Norādīts tuvinieka tālrunis";
+
 "anonymous_prompt_title" = "Vai tiešām vēlies palikt anonīms?";
 "anonymous_prompt_description" = "Iesakām norādīt savu numuru, lasi vairāk kāpēc jānorāda numurs";
-"remain_anonymous" = "Palikt anonīmam";
+"remain_anonymous" = "Nevēlos norādīt tālruni";
 
 // Code input
 "phone_confirmation" = "Numura apstiprinājums";

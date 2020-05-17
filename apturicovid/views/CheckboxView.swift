@@ -29,6 +29,7 @@ class CheckboxView: UIView {
     
     class func create(text: String, isChecked: Bool = false) -> CheckboxView {
         let view: CheckboxView = CheckboxView().fromNib() as! CheckboxView
+        view.backgroundColor = .clear
         view.bodyLabel.text = text
         view.checkBox.isChecked = isChecked
         return view

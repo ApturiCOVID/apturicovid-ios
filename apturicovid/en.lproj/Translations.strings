@@ -19,6 +19,11 @@
 "welcome_terms_link" = "App Terms of Use";
 "welcome_privacy_note" = "I accept App Terms of Use, and have read the Privacy policy";
 
+"welcome_phone_description" = "Provide a contact phone for the DPCC to call you if you have been in contact with Covid-19.";
+"welcome_phone_usage_description" = "Why a phone number is needed?";
+"welcome_phone_own_prompt" = "Relative’s number provided";
+"remain_anonymous" = "I do not want to provide a phone number";
+
 "welcome_contact_enable" = "Activate";
 "welcome_contact_title" = "Discovering contacts";
 "welcome_contact_description" = "Contact: being 2-4 m away from someone for 15+ minutes.

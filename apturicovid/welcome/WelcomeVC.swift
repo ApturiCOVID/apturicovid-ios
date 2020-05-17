@@ -16,7 +16,7 @@ class WelcomeVC: BaseViewController {
         }
     }
     
-    @IBOutlet weak var acceptancesStack: UIStackView!
+    @IBOutlet weak var spkcHeightConstaint: NSLayoutConstraint!
     @IBOutlet weak var langaugesStack: UIStackView!
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
@@ -61,9 +61,19 @@ class WelcomeVC: BaseViewController {
         setupLanguageSelector()
         setupPrivacyAndTermsCheckBox()
         
-        mainStack.setCustomSpacing(10, after: headingLabel)
-        mainStack.setCustomSpacing(20, after: bodyLabel)
-        mainStack.setCustomSpacing(45, after: acceptancesStack)
+       
+        
+        if UIDevice.current.type == .iPhoneSE {
+            spkcHeightConstaint.constant = 0
+            privacyAndTermsCheckboxView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        } else {
+            mainStack.setCustomSpacing(10, after: headingLabel)
+            mainStack.setCustomSpacing(20, after: bodyLabel)
+            mainStack.setCustomSpacing(45, after: privacyAndTermsCheckboxView)
+        }
+        
+        mainStack.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        nextButton.setContentHuggingPriority(.defaultLow, for: .vertical)
         
         bodyLabel.textAlignment = .center
     }
@@ -89,7 +99,7 @@ class WelcomeVC: BaseViewController {
     
     private func setupPrivacyAndTermsCheckBox(){
         nextButton.isEnabled = false
-        acceptancesStack.addArrangedSubview(privacyAndTermsCheckboxView)
+        mainStack.addArrangedSubview(privacyAndTermsCheckboxView)
         
         // Enable next button when terms accepted
         privacyAndTermsCheckboxView.checkBox.rx.tap

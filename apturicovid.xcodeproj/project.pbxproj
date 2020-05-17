@@ -11,6 +11,7 @@
 		602C1840246C745900903458 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C183E246C745900903458 /* RoundedButton.swift */; };
 		602C1841246C745900903458 /* WelcomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C183F246C745900903458 /* WelcomeHeaderView.swift */; };
 		603DC221247130A700AD6217 /* CGPointEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603DC220247130A700AD6217 /* CGPointEx.swift */; };
+		603DC22424715A3C00AD6217 /* UIDeviceEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603DC22324715A3C00AD6217 /* UIDeviceEx.swift */; };
 		60701AFF246D422000BFA1F4 /* LinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60701AFE246D422000BFA1F4 /* LinkLabel.swift */; };
 		60701B01246D46F600BFA1F4 /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60701B00246D46F600BFA1F4 /* NSMutableAttributedString.swift */; };
 		60A3349B246D0C16007BE791 /* NotificationNameEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3349A246D0C16007BE791 /* NotificationNameEx.swift */; };
@@ -84,8 +85,8 @@
 		602C183C246C740C00903458 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		602C183E246C745900903458 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		602C183F246C745900903458 /* WelcomeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeHeaderView.swift; sourceTree = "<group>"; };
-		603DC21F247125B500AD6217 /* apturicovidDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = apturicovidDebug.entitlements; sourceTree = "<group>"; };
 		603DC220247130A700AD6217 /* CGPointEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointEx.swift; sourceTree = "<group>"; };
+		603DC22324715A3C00AD6217 /* UIDeviceEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceEx.swift; sourceTree = "<group>"; };
 		60701AFE246D422000BFA1F4 /* LinkLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkLabel.swift; sourceTree = "<group>"; };
 		60701B00246D46F600BFA1F4 /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
 		60A3349A246D0C16007BE791 /* NotificationNameEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameEx.swift; sourceTree = "<group>"; };
@@ -222,7 +223,6 @@
 		BA366CBE2465AC3D00A35CA8 /* apturicovid */ = {
 			isa = PBXGroup;
 			children = (
-				603DC21F247125B500AD6217 /* apturicovidDebug.entitlements */,
 				BAE3574F246F2EA6004C59A9 /* phoneSettings */,
 				60A334A4246D22E7007BE791 /* submit */,
 				BAAED840246C6826004C77A6 /* apturicovid.entitlements */,
@@ -289,6 +289,7 @@
 				7528B0FF246C02BC007D0260 /* String.swift */,
 				7528B103246C1338007D0260 /* UIColor.swift */,
 				60701B00246D46F600BFA1F4 /* NSMutableAttributedString.swift */,
+				603DC22324715A3C00AD6217 /* UIDeviceEx.swift */,
 				60A3349A246D0C16007BE791 /* NotificationNameEx.swift */,
 				603DC220247130A700AD6217 /* CGPointEx.swift */,
 				BA366CDD2465F98F00A35CA8 /* View.swift */,
@@ -556,6 +557,7 @@
 				BAAED844246D42DA004C77A6 /* QuestionView.swift in Sources */,
 				BAFA8315246AD48F00E121B4 /* LocalStore.swift in Sources */,
 				BACDE3B9246DC5EF0075B20E /* PhoneConfirmationResponse.swift in Sources */,
+				603DC22424715A3C00AD6217 /* UIDeviceEx.swift in Sources */,
 				BA50D35B2469EEB90091DF0E /* DiagnosisUploadRequest.swift in Sources */,
 				BAFA8319246BF3B400E121B4 /* HomeBottomView.swift in Sources */,
 				BACDE3B7246DC2450075B20E /* PhoneConfirmationRequest.swift in Sources */,
@@ -741,7 +743,7 @@
 			baseConfigurationReference = 8B05DEA3D1AD8165B5FED2F3 /* Pods-apturicovid.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovidDebug.entitlements;
+				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovid.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 4;
@@ -754,7 +756,7 @@
 				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "MZI Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Artjoms DEV";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -778,7 +780,7 @@
 				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "MZI Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Artjoms DEV";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

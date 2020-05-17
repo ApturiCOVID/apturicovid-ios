@@ -17,6 +17,7 @@ class PhoneSetupView: UIView {
         return PhoneNumber(number: phoneInput.text ?? "", otherParty: checkboxView.isChecked, token: nil)
     }
     
+    var phoneExplanationTapDisposable: Disposable?
     var disposeBag = DisposeBag()
     var phoneNumber: PhoneNumber?
     
@@ -59,14 +60,13 @@ class PhoneSetupView: UIView {
             })
             .disposed(by: disposeBag)
         
-        phoneExplanationButton
+        phoneExplanationTapDisposable?.dispose()
+        phoneExplanationTapDisposable = phoneExplanationButton
             .rx
             .tapGesture()
             .when(.recognized)
-            .subscribe(onNext: { (_) in
-                self.phoneInfoTapObservable.onNext(true)
-            })
-            .disposed(by: disposeBag)
-        
+            .subscribe(onNext: { [weak self] (_) in
+                self?.phoneInfoTapObservable.onNext(true)
+            }, onError: justPrintError)
     }
 }

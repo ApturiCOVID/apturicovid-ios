@@ -90,7 +90,7 @@ class PhoneSettingsVC: BaseViewController {
                     let keyboardFrame: CGRect = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect
                     else { return }
                 
-                self.bottomConstraint.constant = keyboardFrame.height - 15
+                self.bottomConstraint.constant = keyboardFrame.height + 2
                 
                 }, onError: justPrintError)
             .disposed(by: disposeBag)

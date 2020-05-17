@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import ExposureNotification
 
 class HomeVC: BaseViewController {
     @IBOutlet weak var bottomBackgroundView: UIView!
@@ -43,7 +44,7 @@ class HomeVC: BaseViewController {
                 self.setExposureStateVisual()
             }, onError: { (error) in
                 justPrintError(error)
-                if error.localizedDescription == "ENErrorCodeNotAuthorized (User denied)" {
+                if let enError = error as? ENError, enError.code == ENError.Code.notAuthorized {
                     UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
                 }
                 self.setExposureStateVisual()

@@ -665,6 +665,9 @@
                                                             </label>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JML-81-jPv">
                                                                 <rect key="frame" x="335" y="23.666666666666686" width="51" height="31"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="49" id="Kd1-EU-HHC"/>
+                                                                </constraints>
                                                                 <connections>
                                                                     <action selector="onReminderSet:" destination="68n-zD-fXe" eventType="valueChanged" id="ovN-yd-CFM"/>
                                                                 </connections>

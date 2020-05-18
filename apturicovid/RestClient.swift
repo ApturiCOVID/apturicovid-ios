@@ -6,17 +6,14 @@ import DeviceCheck
 class RestClient {
     static let shared = RestClient()
     
-    let baseUrl = "https://apturicovid-staging.spkc.gov.lv/api/v1"
-    let exposureKeyS3url = "https://s3.lvdc.gov.lv/apturicovid-staging-dkfs/v0"
-    
     private func getRemoteExposureKeyBatchUrl(index: Int) -> URL? {
-        return URL(string: "\(exposureKeyS3url)\(index).bin")
+        return URL(string: "\(exposureFilesUrl)\(index).bin")
     }
     
     func post(urlString: String, body: Data) -> Observable<Data> {
         return Observable.create({ (observer) -> Disposable in
             guard
-                let url = URL(string: "\(self.baseUrl)\(urlString)") else {
+                let url = URL(string: "\(baseUrl)\(urlString)") else {
                     observer.onError(NSError.make("Error creating url"))
                     return Disposables.create()
             }
@@ -88,7 +85,7 @@ class RestClient {
     }
     
     func getDiagnosisKeyFileUrls(startingAt index: Int, completion: @escaping (Result<[(URL, Int)], Error>) -> Void) {
-        guard let url = URL(string: "\(self.exposureKeyS3url)/index.txt") else {
+        guard let url = URL(string: "\(exposureFilesUrl)/index.txt") else {
             completion(.failure(NSError.make("Error creating url")))
             return
         }
@@ -193,7 +190,7 @@ class RestClient {
     
     func getExposureKeyBatchUrls() -> Observable<[(url: URL, index: String)]> {
         return Observable.create { (observer) -> Disposable in
-            guard let url = URL(string: "\(self.exposureKeyS3url)/index.txt") else {
+            guard let url = URL(string: "\(exposureFilesUrl)/index.txt") else {
                 observer.onError(NSError.make("Error creating url"))
                 return Disposables.create()
             }

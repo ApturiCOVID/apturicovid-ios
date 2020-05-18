@@ -28,7 +28,8 @@ Fiksēšana: šifrs, ko tālrunis glabā 14 dienas, tad dzēš.
 Kontakta fiksēšana nav izsekošana.";
 // TODO: Add phone number input in vc?
 
-// TODO: do alerts
+// ExposureSetup Validations
+"exposure_off_setup_prompt" = " Vai tiešām turpināt, neieslēdzot kontakta fiksēšanu?";
 
 // PhoneInfoVC
 "why_submit_a_phone_number" = "Kāpēc norādīt tālruni?";

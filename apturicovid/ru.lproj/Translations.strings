@@ -26,7 +26,8 @@
 Фиксирование: шифр, который сохраняется в телефоне 14 дней, а затем удаляется.";
 // TODO: Add phone number input in vc?
 
-// TODO: do alerts
+// ExposureSetup Validations
+"exposure_off_setup_prompt" = "Действительно желаешь продолжить, не активизируя фиксирование контакта?";
 
 // PhoneInfoVC
 "why_submit_a_phone_number" = "Зачем указывать номер телефона?";

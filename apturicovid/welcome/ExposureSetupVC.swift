@@ -48,6 +48,12 @@ class ExposureSetupVC: BaseViewController {
         LocalStore.shared.hasSeenIntro = true
     }
     
+    private func promptExposureOffAndClose() {
+        showBasicPrompt(with: "exposure_off_setup_prompt".translated) {
+            self.closeAndMarkSeen()
+        }
+    }
+    
     @IBAction func onNextTap(_ sender: Any) {
         if exposureEnabled {
             SVProgressHUD.show()
@@ -69,7 +75,7 @@ class ExposureSetupVC: BaseViewController {
                 })
                 .disposed(by: disposeBag)
         } else {
-            closeAndMarkSeen()
+            promptExposureOffAndClose()
         }
     }
     

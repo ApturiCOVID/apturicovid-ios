@@ -28,7 +28,8 @@ Detection: a code kept on phone for 14 days, then deleted.
 Contact detection is not tracking.";
 // TODO: Add phone number input in vc?
 
-// TODO: do alerts
+// ExposureSetup Validations
+"exposure_off_setup_prompt" = " Continue without switching on contact detection?";
 
 // PhoneInfoVC
 "why_submit_a_phone_number" = "Reasons to provide a number";

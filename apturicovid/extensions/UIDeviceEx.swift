@@ -56,6 +56,7 @@ public enum Model : String, CaseIterable {
     iPhone11           = "iPhone 11",
     iPhone11Pro        = "iPhone 11 Pro",
     iPhone11ProMax     = "iPhone 11 Pro Max",
+    iPhoneSE2          = "iPhone SE 2nd gen",
     //Apple TV
     AppleTV            = "Apple TV",
     AppleTV_4K         = "Apple TV 4K",
@@ -67,6 +68,27 @@ public extension UIDevice {
     var isIpad: Bool{
         return type.rawValue.contains("iPad")
     }
+    
+    static let smallScreenSizeModels: [Model] =
+        [
+            .iPhone4,
+            .iPhone4,
+            .iPhone4,
+            .iPhone4S,
+            .iPhone5,
+            .iPhone5,
+            .iPhone5C,
+            .iPhone5C,
+            .iPhone5S,
+            .iPhone5S,
+            .iPhone6,
+            .iPhone6S,
+            .iPhoneSE,
+            .iPhone7,
+            .iPhone8,
+            .iPhone8,
+            .iPhoneSE2
+        ]
     
     var type: Model {
         var systemInfo = utsname()
@@ -160,6 +182,7 @@ public extension UIDevice {
             "iPhone12,1" : .iPhone11,
             "iPhone12,3" : .iPhone11Pro,
             "iPhone12,5" : .iPhone11ProMax,
+            "iPhone12,8" : .iPhoneSE2,
             
             //AppleTV
             "AppleTV5,3" : .AppleTV,

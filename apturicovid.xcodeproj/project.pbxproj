@@ -798,7 +798,7 @@
 				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid;
 				PRODUCT_NAME = "Apturi Covid";
-				PROVISIONING_PROFILE_SPECIFIER = "MZI Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Artjoms DEV";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

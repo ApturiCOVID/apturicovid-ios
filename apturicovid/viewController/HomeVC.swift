@@ -11,25 +11,20 @@ import RxSwift
 import ExposureNotification
 
 class HomeVC: BaseViewController {
-    @IBOutlet weak var bottomBackgroundView: UIView!
+    
+    @IBOutlet weak var bottomBackgroundView: HomeBottomView!
     @IBOutlet weak var exposureSwitch: UISwitch!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var statsStackView: UIStackView!
     @IBOutlet weak var exposureIcon: UIImageView!
     @IBOutlet weak var exposureNotificationView: UIView!
     @IBOutlet weak var statsView: UIView!
-    
     @IBOutlet weak var contactTracingTitle: UILabel!
     @IBOutlet weak var tracingStateLabel: UILabel!
     @IBOutlet weak var exposureTitleLabel: UILabel!
     @IBOutlet weak var exposureDescriptionLabel: UILabel!
     @IBOutlet weak var statsTitleLabel: UILabel!
-    
-    @IBOutlet var smallSizeBottomBackground: NSLayoutConstraint!
-    @IBOutlet var fullHeightBottomBorder: NSLayoutConstraint!
     @IBOutlet weak var exposureViewButton: UIButton!
-    
-    @IBOutlet var defaultExposureBottomConstraint: NSLayoutConstraint!
     
     private var exposureNotificationVisible = false {
         didSet {
@@ -75,9 +70,7 @@ class HomeVC: BaseViewController {
     
     private func setExposureNotification(visible: Bool) {
         exposureNotificationView.isHidden = !visible
-        smallSizeBottomBackground.isActive = visible
-        fullHeightBottomBorder.isActive = !visible
-        minimizeLayoutIfNeeded()
+        layoutRequiresSetup(for: UIDevice.smallScreenSizeModels, backgroudVisible: !visible)
     }
     
     private func presentWelcomeIfNeeded() {
@@ -97,10 +90,6 @@ class HomeVC: BaseViewController {
         super.viewDidLoad()
         
         exposureSwitch.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-        shareButton.layer.cornerRadius = 5
-        
-        let backgroundView = HomeBottomView()
-        bottomBackgroundView.addSubviewWithInsets(backgroundView)
         
         exposureSwitch.isOn = ExposureManager.shared.enabled
         
@@ -150,17 +139,22 @@ class HomeVC: BaseViewController {
     override func translate() {
         contactTracingTitle.text = "contact_tracing".translated
         tracingStateLabel.text = "currently_active".translated
+        exposureTitleLabel.text  = "exposure_detected_title".translated
         exposureDescriptionLabel.text = "exposure_detected_subtitle".translated
         statsTitleLabel.text = "stats_title".translated
         shareButton.setTitle("share".translated, for: .normal)
         setExposureStateVisual()
     }
     
-    private func minimizeLayoutIfNeeded() {
-        guard UIDevice().isIphoneSE else { return }
+    private func layoutRequiresSetup(for models: [Model], backgroudVisible: Bool) {
+        guard models.contains(UIDevice.current.type) else { return }
 
-        bottomBackgroundView.isHidden = !exposureNotificationView.isHidden
-        statsView.isHidden = !exposureNotificationView.isHidden
-        defaultExposureBottomConstraint.isActive = exposureNotificationView.isHidden
+        let bestBackgroundHeight: CGFloat = UIDevice.current.type == .iPhoneSE ? 30 : 50
+        
+        bottomBackgroundView.heightAnchor
+            .constraint(equalToConstant: bestBackgroundHeight)
+            .isActive = !backgroudVisible
+     
+        statsView.isHidden = !backgroudVisible
     }
 }

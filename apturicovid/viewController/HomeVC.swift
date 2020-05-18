@@ -28,7 +28,7 @@ class HomeVC: BaseViewController {
     
     private var exposureNotificationVisible = false {
         didSet {
-            setExposureNotification(visible: exposureNotificationVisible)
+            setExposureNotification(visible: !exposureNotificationVisible)
         }
     }
     
@@ -65,10 +65,11 @@ class HomeVC: BaseViewController {
         exposureSwitch.isOn = exposureEnabled
         tracingStateLabel.text = exposureEnabled ? "currently_active".translated : "currently_inactive".translated
         tracingStateLabel.textColor = exposureEnabled ? Colors.darkGreen : Colors.darkOrange
-        exposureIcon.image = exposureEnabled ? UIImage(named: "exposure-icon") : UIImage(named: "exposure-disabled")
+        exposureIcon.image = exposureEnabled ? UIImage(named: "detection-on-home") : UIImage(named: "detection-off-home")
     }
     
     private func setExposureNotification(visible: Bool) {
+        
         exposureNotificationView.isHidden = !visible
         layoutRequiresSetup(for: UIDevice.smallScreenSizeModels, backgroudVisible: !visible)
     }

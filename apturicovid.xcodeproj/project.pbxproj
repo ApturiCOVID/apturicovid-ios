@@ -788,14 +788,14 @@
 				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovidDebug.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = K673TD5NRS;
 				INFOPLIST_FILE = apturicovid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid;
 				PRODUCT_NAME = "Apturi Covid";
 				PROVISIONING_PROFILE_SPECIFIER = "MZI Development";
@@ -812,17 +812,17 @@
 				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovid.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = K673TD5NRS;
 				INFOPLIST_FILE = apturicovid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid;
 				PRODUCT_NAME = "Apturi Covid";
-				PROVISIONING_PROFILE_SPECIFIER = "ULA Development";
+				PROVISIONING_PROFILE_SPECIFIER = "MZI Development";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

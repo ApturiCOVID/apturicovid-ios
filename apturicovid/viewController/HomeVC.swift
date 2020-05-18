@@ -11,7 +11,6 @@ import RxSwift
 import ExposureNotification
 
 class HomeVC: BaseViewController {
-    
     @IBOutlet weak var bottomBackgroundView: HomeBottomView!
     @IBOutlet weak var exposureSwitch: UISwitch!
     @IBOutlet weak var shareButton: UIButton!
@@ -93,11 +92,11 @@ class HomeVC: BaseViewController {
         
         exposureSwitch.isOn = ExposureManager.shared.enabled
         
-        [("600", "Testēti"), ("600", "Testēti"), ("600", "Testēti")].forEach { (arg0) in
+        [("683", "tested"), ("2", "new_cases"), ("0", "deceased")].forEach { (arg0) in
             let (value, title) = arg0
             
             let stat = StatCell().fromNib() as! StatCell
-            stat.fill(item: title, value: value)
+            stat.fill(item: title.translated, value: value)
             statsStackView.addArrangedSubview(stat)
         }
         

@@ -111,13 +111,11 @@ class CodeEntryVC: BaseViewController {
     override func translate() {
         let isSMS = mode == .sms
         
-        titleLabel.text = isSMS ? "phone_confirmation".translated : "spkc_data_send".translated
-        
-        descriptionLabel.text = isSMS ?
-            "phone_confirmation_1".translated + " \(phoneNumber?.number ?? "") " + "phone_confirmation_2".translated : "spkc_data_description".translated
-        
-        inputCodeLabel.text = "input_code".translated
-        resendCodeLabel.text = "didn_receive_code".translated
+        titleLabel.text = isSMS ? "phone_confirmation_title".translated : "spkc_data_send".translated
+        descriptionLabel.text = isSMS ? String(format: "phone_confirmation_description".translated, phoneNumber?.number ?? "") : "spkc_data_description".translated
+        errorLabel.text = "input_code_invalid".translated
+        inputCodeLabel.text = "enter_code".translated
+        resendCodeLabel.text = errorView.isHidden ? "didnt_receive_code".translated : "resend_code".translated
     }
     
     func stylePinInput() {

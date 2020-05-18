@@ -29,6 +29,15 @@ class PhoneSetupView: UIView {
         self.phoneNumber = phone
     }
     
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
+        if let phone = phoneNumber {
+            phoneInput.text = phone.number
+            checkboxView.isChecked = phone.otherParty
+        }
+    }
+    
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
         
@@ -37,11 +46,6 @@ class PhoneSetupView: UIView {
         stackView.setCustomSpacing(10, after: descriptionLabel)
         stackView.setCustomSpacing(20, after: checkboxView)
         phoneInputView.layer.cornerRadius = 5
-        
-        if let phone = phoneNumber {
-            phoneInput.text = phone.number
-            checkboxView.isChecked = phone.otherParty
-        }
         
         anonymousButtonView
             .rx

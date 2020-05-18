@@ -1,6 +1,7 @@
 import Foundation
 import RxSwift
 import ExposureNotification
+import DeviceCheck
 
 class RestClient {
     static let shared = RestClient()
@@ -153,7 +154,10 @@ class RestClient {
                 return
             }
             
-            print(data)
+            guard pendingExposures.count > 0 else {
+                completion(.success(true))
+                return
+            }
             
             for i in 0...pendingExposures.count - 1 {
                 pendingExposures[i].markUploaded()
@@ -244,9 +248,30 @@ class RestClient {
         return post(urlString: "/diagnosis_keys", body: data)
     }
     
-    func requestPhoneVerification(phoneNumber: String) -> Observable<PhoneVerificationRequestResponse?> {
+    private func obtainDeviceToken() -> Observable<String> {
+        return Observable.create { (observer) -> Disposable in
+            let currentDevice = DCDevice.current
+            guard currentDevice.isSupported else {
+                observer.onError(NSError.make("DC: Device unsupported"))
+                return Disposables.create()
+            }
+            
+            currentDevice.generateToken { (data, error) in
+                if let error = error {
+                    observer.onError(error)
+                } else {
+                    data.map {
+                        observer.onNext($0.base64EncodedString())
+                    }
+                }
+            }
+            return Disposables.create()
+        }
+    }
+    
+    private func makePhoneVerificationCall(phoneNumber: String, deviceToken: String) -> Observable<PhoneVerificationRequestResponse?> {
         let encoder = JSONEncoder()
-        let body = try? encoder.encode(PhoneVerificationRequest(phone_number: phoneNumber))
+        let body = try? encoder.encode(PhoneVerificationRequest(phone_number: phoneNumber, device_check_token: deviceToken))
         
         guard body?.isEmpty == false else {
             return Observable.error(NSError.make("Error creating request"))
@@ -255,6 +280,13 @@ class RestClient {
         return post(urlString: "/phone_verifications", body: body!)
             .map { (data) -> PhoneVerificationRequestResponse? in
                 return try? JSONDecoder().decode(PhoneVerificationRequestResponse.self, from: data)
+        }
+    }
+    
+    func requestPhoneVerification(phoneNumber: String) -> Observable<PhoneVerificationRequestResponse?> {
+        return obtainDeviceToken()
+            .flatMap { (deviceToken) -> Observable<PhoneVerificationRequestResponse?> in
+                return self.makePhoneVerificationCall(phoneNumber: phoneNumber, deviceToken: deviceToken)
         }
     }
     

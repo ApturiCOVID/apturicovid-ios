@@ -81,7 +81,17 @@ Contact detection is not tracking.";
 "notification_sent_title" = "Thank you! Notification sent!";
 "notification_sent_description" = "Thank you for your contribution to public health! The small step that you just made will help protect others and break the virus chain more efficiently.";
 
-//////////////////////
+// SettingsVC
+"enter_spkc_code" = "If you get a code from SPKC, enter it here:";
+"go_to_spkc_code_entry" = "Enter SPKC code";
+"communication_contact" = "Your contact number";
+"not_specified" = "Not provided";
+"specify" = "Provide";
+"change" = "Change";
+"not_specified_phone_number_limitations" = "In case of contact you will only get a notification in the app, and support options available to you will be limited.";
+"notify_if_tracking_isnt_working" = "Notify me if contact detection gets switched off";
+
+////////////////////// below not from KAI
 
 // PhoneSettingsVC
 "specify_a_phone_number_title" = "Norādīt kontaktu";
@@ -93,7 +103,7 @@ Contact detection is not tracking.";
 "anonymous_prompt_description" = "We suggest you provide your number, read more about why you need to provide the number";
 
 // Common
-"understood" = "Sapratu"; 
+"understood" = "Sapratu";
 "cancel" = "Atcelt";
 
 // Error
@@ -101,20 +111,12 @@ Contact detection is not tracking.";
 "continue" = "Continue";
 "invalid_phone_number_error" = "The entered phone number is invalid";
 
-"settings_title" = "Iestatījumi";
-"settings_enter_code" = "Ievadi SPKC kodu";
-
 // StatsVC
 "data_renewed" = "Dati atjaunoti: %@";
 "latvia_covid_statistics" = "COVID-19 statistika Latvijā";
 "together" = "kopā";
 "yesterday" = "vakar";
 
-// SettingsVC
-"enter_spkc_code" = "Pēc SPKC darbinieka lūguma, ievadiet norādīto kodu:";
-"communication_contact" = "Kontakts saziņai";
-"not_specified" = "Nav norādīts";
-"specify" = "Norādīt";
+// TODO: SettingVC below - not in KAI
 "if_preferred_specify_phone_number" = "COVID-19 kontakta gadījumā, uz aplikāciju atnāks paziņojums ar norādēm. Ja labāk vēlieties lai ar Jums sazinās pa telefonu, norādiet kontaktu";
-"notify_if_tracking_isnt_working" = "Paziņot, ja kontaktu meklēšana šobrīd nedarbojas";
-"delete_all_stored_data" = "Dzēst visus uzkrātos datus";
+"delete_all_stored_data" = "Delete all stored data";

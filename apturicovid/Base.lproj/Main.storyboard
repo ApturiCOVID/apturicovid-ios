@@ -556,8 +556,8 @@
                                                                 <color key="textColor" red="0.0" green="0.23921568630000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <color key="highlightedColor" red="0.0" green="0.23921568630000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pēc SPKC darbinieka lūguma, ievadiet norādīto kodu:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaD-qN-Y2g">
-                                                                <rect key="frame" x="36.666666666666657" y="73" width="341" height="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pēc SPKC darbinieka lūguma, ievadiet norādīto kodu:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaD-qN-Y2g">
+                                                                <rect key="frame" x="30" y="73" width="341" height="17"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -586,12 +586,11 @@
                                                             <constraint firstAttribute="trailing" secondItem="OGA-4g-0m3" secondAttribute="trailing" constant="30" id="4LC-GX-Rkz"/>
                                                             <constraint firstItem="JaD-qN-Y2g" firstAttribute="top" secondItem="OGA-4g-0m3" secondAttribute="bottom" constant="20" id="5Bj-Cf-6tv"/>
                                                             <constraint firstItem="h6E-N9-2F7" firstAttribute="top" secondItem="MiC-yq-fa0" secondAttribute="top" constant="16" id="6RD-L8-jqy"/>
-                                                            <constraint firstItem="JaD-qN-Y2g" firstAttribute="centerX" secondItem="MiC-yq-fa0" secondAttribute="centerX" id="HNf-iO-5KT"/>
                                                             <constraint firstItem="cCl-2X-223" firstAttribute="leading" secondItem="MiC-yq-fa0" secondAttribute="leading" constant="30" id="ImX-BP-mE1"/>
                                                             <constraint firstAttribute="bottom" secondItem="cCl-2X-223" secondAttribute="bottom" constant="32" id="Taw-aC-SbM"/>
                                                             <constraint firstItem="h6E-N9-2F7" firstAttribute="leading" secondItem="MiC-yq-fa0" secondAttribute="leading" constant="30" id="VOC-VI-KCP"/>
                                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JaD-qN-Y2g" secondAttribute="trailing" constant="16" id="Xa8-qj-hEX"/>
-                                                            <constraint firstItem="JaD-qN-Y2g" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MiC-yq-fa0" secondAttribute="leading" constant="30" id="cA6-do-krG"/>
+                                                            <constraint firstItem="JaD-qN-Y2g" firstAttribute="leading" secondItem="MiC-yq-fa0" secondAttribute="leading" constant="30" id="cA6-do-krG"/>
                                                             <constraint firstItem="OGA-4g-0m3" firstAttribute="top" secondItem="MiC-yq-fa0" secondAttribute="top" constant="10" id="g6A-h3-Lwe"/>
                                                             <constraint firstItem="JaD-qN-Y2g" firstAttribute="top" secondItem="h6E-N9-2F7" secondAttribute="bottom" constant="32" id="mw2-UW-vRB"/>
                                                             <constraint firstItem="cCl-2X-223" firstAttribute="top" secondItem="JaD-qN-Y2g" secondAttribute="bottom" constant="32" id="w6I-ja-P0Z"/>
@@ -643,6 +642,7 @@
                                                                     <color key="titleColor" red="0.96078431372549022" green="0.46666666666666667" blue="0.1764705882352941" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                                 <connections>
+                                                                    <action selector="changeButton:" destination="68n-zD-fXe" eventType="touchUpInside" id="SbF-ks-M6v"/>
                                                                     <action selector="changePhone:" destination="68n-zD-fXe" eventType="touchUpInside" id="9YA-2i-yHg"/>
                                                                 </connections>
                                                             </button>
@@ -847,12 +847,20 @@
                     <tabBarItem key="tabBarItem" title="Iestatījumi" image="setting-toolbar" id="whh-By-mHs"/>
                     <connections>
                         <outlet property="deleteDataView" destination="x3K-cp-y1H" id="jNb-HX-Rkh"/>
+                        <outlet property="changeButton" destination="NIZ-HV-Nq1" id="tp8-YU-wX6"/>
+                        <outlet property="communicationContactLabel" destination="A6a-yE-IpD" id="LNs-UC-LAi"/>
+                        <outlet property="contactDescriptionLabel" destination="nEz-kk-eNU" id="sBy-au-C5S"/>
+                        <outlet property="deleteDataLabel" destination="BQV-SD-ppm" id="Bee-TR-z8N"/>
                         <outlet property="languagesStack" destination="OGA-4g-0m3" id="ZZX-sN-zTh"/>
                         <outlet property="mainStackView" destination="5am-yJ-TDy" id="PHi-7A-AqV"/>
+                        <outlet property="notSpecifiedLabel" destination="xR3-LL-bZr" id="uKe-jb-SWq"/>
+                        <outlet property="notifyMeLabel" destination="tjk-w5-EJV" id="k1M-jH-tS6"/>
                         <outlet property="phoneLabel" destination="SqM-yR-Efk" id="TR0-P2-JwI"/>
                         <outlet property="phoneView" destination="eMi-QW-8n0" id="NPL-oV-GKQ"/>
                         <outlet property="reminderSwitch" destination="JML-81-jPv" id="PKL-4n-qUn"/>
                         <outlet property="setupPhoneView" destination="zXS-2v-k73" id="3SF-OR-lHj"/>
+                        <outlet property="specifyButton" destination="CfR-FX-rHz" id="wmr-zv-PU6"/>
+                        <outlet property="spkcCodeDescriptionLabel" destination="JaD-qN-Y2g" id="7hO-lW-eV2"/>
                         <outlet property="submitButton" destination="cCl-2X-223" id="QDo-uU-RsM"/>
                         <outlet property="titleLabel" destination="h6E-N9-2F7" id="d0V-NR-vGc"/>
                         <outlet property="versionLabel" destination="YZR-Sr-M6T" id="mmk-gX-kJB"/>

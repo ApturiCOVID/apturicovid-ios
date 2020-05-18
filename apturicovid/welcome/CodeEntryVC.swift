@@ -10,6 +10,7 @@ enum CodeEntryMode {
 
 class CodeEntryVC: BaseViewController {
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -160,7 +161,9 @@ class CodeEntryVC: BaseViewController {
                     let keyboardFrame: CGRect = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect
                     else { return }
                 
-                self.bottomConstraint.constant = keyboardFrame.height
+                self.bottomConstraint.constant = keyboardFrame.height + 5
+                
+                self.scrollView.scrollRectToVisible(self.stackView.bounds, animated: true)
                 }, onError: justPrintError)
             .disposed(by: disposeBag)
         

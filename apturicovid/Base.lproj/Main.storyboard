@@ -887,7 +887,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVc-gO-rBp" userLabel="end">
-                                        <rect key="frame" x="0.0" y="1018.3333333333333" width="414" height="128"/>
+                                        <rect key="frame" x="0.0" y="1053.6666666666667" width="414" height="128"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exposure-view-corner" translatesAutoresizingMaskIntoConstraints="NO" id="YVr-cc-uYK">
                                                 <rect key="frame" x="181" y="-2" width="233" height="130"/>
@@ -926,7 +926,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="pWu-Yn-6Ki">
-                                        <rect key="frame" x="41.333333333333343" y="284.66666666666669" width="331.33333333333326" height="717.66666666666652"/>
+                                        <rect key="frame" x="41.333333333333343" y="284.66666666666674" width="331.33333333333326" height="753"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jums nesen ir bijs kontakts ar COVID-19 inficētu personu" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmt-5q-Mc4">
                                                 <rect key="frame" x="0.0" y="0.0" width="331.33333333333331" height="36"/>
@@ -934,11 +934,17 @@
                                                 <color key="textColor" red="0.1529411765" green="0.1529411765" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kā rīkoties tālāk?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Rf-6l-WUp">
+                                                <rect key="frame" x="0.0" y="52" width="331.33333333333331" height="19.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                <color key="textColor" red="0.1529411765" green="0.1529411765" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kFO-eD-KW4">
-                                                <rect key="frame" x="0.0" y="52" width="331.33333333333331" height="128"/>
+                                                <rect key="frame" x="0.0" y="87.333333333333314" width="331.33333333333331" height="128"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="REc-FH-7F0">
-                                                        <rect key="frame" x="10" y="61.666666666666629" width="5" height="5"/>
+                                                        <rect key="frame" x="10" y="61.666666666666686" width="5" height="5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="5" id="103-jt-wjq"/>
                                                             <constraint firstAttribute="height" constant="5" id="m8I-Ck-CjF"/>
@@ -963,10 +969,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3mF-Wa-U7M">
-                                                <rect key="frame" x="0.0" y="195.99999999999994" width="331.33333333333331" height="128"/>
+                                                <rect key="frame" x="0.0" y="231.33333333333331" width="331.33333333333331" height="128"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="Clh-ts-NKb">
-                                                        <rect key="frame" x="10" y="61.666666666666742" width="5" height="5"/>
+                                                        <rect key="frame" x="10" y="61.666666666666629" width="5" height="5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="5" id="3iG-hU-JV4"/>
                                                             <constraint firstAttribute="width" constant="5" id="gCg-kf-dzI"/>
@@ -991,10 +997,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMv-aY-mbQ">
-                                                <rect key="frame" x="0.0" y="339.99999999999994" width="331.33333333333331" height="128"/>
+                                                <rect key="frame" x="0.0" y="375.33333333333331" width="331.33333333333331" height="128"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="bTL-7Y-2iV">
-                                                        <rect key="frame" x="10" y="61.666666666666742" width="5" height="5"/>
+                                                        <rect key="frame" x="10" y="61.666666666666629" width="5" height="5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="5" id="MEd-KY-qar"/>
                                                             <constraint firstAttribute="width" constant="5" id="oXf-RU-hIb"/>
@@ -1019,10 +1025,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGR-p5-tbK">
-                                                <rect key="frame" x="0.0" y="484" width="331.33333333333331" height="128"/>
+                                                <rect key="frame" x="0.0" y="519.33333333333326" width="331.33333333333331" height="128"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="nEJ-p6-bCf">
-                                                        <rect key="frame" x="10" y="61.666666666666742" width="5" height="5"/>
+                                                        <rect key="frame" x="10" y="61.666666666666629" width="5" height="5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="5" id="h66-Dd-OCs"/>
                                                             <constraint firstAttribute="height" constant="5" id="y4s-XJ-KlP"/>
@@ -1047,7 +1053,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aY0-D4-LEh">
-                                                <rect key="frame" x="0.0" y="628" width="331.33333333333331" height="89.666666666666629"/>
+                                                <rect key="frame" x="0.0" y="663.33333333333326" width="331.33333333333331" height="89.666666666666629"/>
                                                 <string key="text">Saglabājiet mieru, kontakts ar COVID-19 nenozīmē, ka esiet inficēts. Ievērojiet piesardzības pasākumus, sazinieties ar ārstu u.t.t. paskaidrojošais teksts, kas var būt salīdzinoši garāks.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" red="0.1529411765" green="0.1529411765" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
@@ -1064,7 +1070,7 @@
                                     <constraint firstItem="KVc-gO-rBp" firstAttribute="top" secondItem="pWu-Yn-6Ki" secondAttribute="bottom" constant="16" id="D5e-O9-7vh"/>
                                     <constraint firstItem="C0a-wB-cEp" firstAttribute="leading" secondItem="veF-lx-kuH" secondAttribute="leading" constant="26" id="Pde-aP-CZS"/>
                                     <constraint firstItem="KVc-gO-rBp" firstAttribute="centerX" secondItem="veF-lx-kuH" secondAttribute="centerX" id="VKn-Cq-Zht"/>
-                                    <constraint firstAttribute="trailing" secondItem="C0a-wB-cEp" secondAttribute="trailing" constant="16" id="Zml-kc-t4K"/>
+                                    <constraint firstAttribute="trailing" secondItem="C0a-wB-cEp" secondAttribute="trailing" constant="26" id="Zml-kc-t4K"/>
                                     <constraint firstAttribute="bottom" secondItem="KVc-gO-rBp" secondAttribute="bottom" id="iqb-l7-fnm"/>
                                     <constraint firstItem="pWu-Yn-6Ki" firstAttribute="centerX" secondItem="veF-lx-kuH" secondAttribute="centerX" id="oAA-wR-nax"/>
                                     <constraint firstItem="aw7-Te-grS" firstAttribute="top" secondItem="veF-lx-kuH" secondAttribute="top" constant="75" id="ppN-hd-qKC"/>
@@ -1083,6 +1089,17 @@
                         <viewLayoutGuide key="safeArea" id="Dq0-aQ-MDe"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="faq" id="AUx-s6-aPa"/>
+                    <connections>
+                        <outlet property="continueButton" destination="RvG-R6-97x" id="Qjv-dh-vYJ"/>
+                        <outlet property="exposedLabel" destination="fmt-5q-Mc4" id="hp1-Un-Jml"/>
+                        <outlet property="familyDoctorLabel" destination="IHm-iR-eQQ" id="bUQ-0L-JIE"/>
+                        <outlet property="handlingDescription" destination="aY0-D4-LEh" id="Jl6-lG-mwn"/>
+                        <outlet property="howToProceedLabel" destination="9Rf-6l-WUp" id="fqa-Yk-uwB"/>
+                        <outlet property="selfIsolateLabel" destination="dWu-fb-3F0" id="WKU-DM-E2P"/>
+                        <outlet property="spkcCallLabel" destination="jEz-Di-5hH" id="PKT-VU-XLQ"/>
+                        <outlet property="symptomsLabel" destination="vPS-jo-ypV" id="mFp-Lz-3qZ"/>
+                        <outlet property="titleLabel" destination="C0a-wB-cEp" id="Ljx-ba-rCz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yhm-c2-CgJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

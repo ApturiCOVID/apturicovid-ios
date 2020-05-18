@@ -28,7 +28,8 @@ class HomeVC: BaseViewController {
     
     private var exposureNotificationVisible = false {
         didSet {
-            setExposureNotification(visible: !exposureNotificationVisible)
+            setExposureNotification(visible:
+                exposureNotificationVisible)
         }
     }
     
@@ -68,11 +69,6 @@ class HomeVC: BaseViewController {
         exposureIcon.image = exposureEnabled ? UIImage(named: "detection-on-home") : UIImage(named: "detection-off-home")
     }
     
-    private func setExposureNotification(visible: Bool) {
-        
-        exposureNotificationView.isHidden = !visible
-        layoutRequiresSetup(for: UIDevice.smallScreenSizeModels, backgroudVisible: !visible)
-    }
     
     private func presentWelcomeIfNeeded() {
         guard !LocalStore.shared.hasSeenIntro else { return }
@@ -147,15 +143,37 @@ class HomeVC: BaseViewController {
         setExposureStateVisual()
     }
     
-    private func layoutRequiresSetup(for models: [Model], backgroudVisible: Bool) {
-        guard models.contains(UIDevice.current.type) else { return }
+    private func setExposureNotification(visible: Bool) {
+ 
+        minimizeLayout(for: UIDevice.smallScreenSizeModels,
+                       backgroudVisible: !visible)
 
-        let bestBackgroundHeight: CGFloat = UIDevice.current.type == .iPhoneSE ? 30 : 50
+        exposureNotificationView.alpha = visible ? 1 : 0
+        exposureNotificationView.topAnchor.constraint(equalTo: bottomBackgroundView.topAnchor,
+                                                      constant: visible ? -70 : 0).isActive = true
+            
         
-        bottomBackgroundView.heightAnchor
-            .constraint(equalToConstant: bestBackgroundHeight)
-            .isActive = !backgroudVisible
-     
-        statsView.isHidden = !backgroudVisible
+    }
+    
+    private func minimizeLayout(for models: [Model], backgroudVisible: Bool) {
+
+        if models.contains(UIDevice.current.type) && !backgroudVisible {
+            
+            let bestBackgroundHeight: CGFloat = UIDevice.current.type == .iPhoneSE ? 30 : 50
+            bottomBackgroundView.heightAnchor
+                .constraint(equalToConstant: bestBackgroundHeight)
+                .isActive = true
+            
+            statsView.isHidden = true
+        } else {
+            
+            bottomBackgroundView.heightAnchor
+                .constraint(equalToConstant: 180)
+                .isActive = true
+            
+            statsView.isHidden = false
+        }
+        
+        
     }
 }

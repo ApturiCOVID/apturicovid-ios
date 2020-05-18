@@ -91,11 +91,11 @@ class ExposureSetupVC: BaseViewController {
     }
     
     private func presentAnonymousPrompt() {
-        let alert = UIAlertController(title: "anonymous_prompt_title".translated, message: "anonymous_prompt_description".translated, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "remain_anonymous".translated, style: .default, handler: { (_) in
+        let alert = UIAlertController(title: "", message: "anonymous_prompt".translated, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "yes".translated, style: .default, handler: { (_) in
             self.closeAndMarkSeen()
         }))
-        alert.addAction(UIAlertAction(title: "cancel".translated, style: .cancel, handler: { (_) in
+        alert.addAction(UIAlertAction(title: "no".translated, style: .cancel, handler: { (_) in
             alert.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)
@@ -155,14 +155,9 @@ class ExposureSetupVC: BaseViewController {
     }
     
     override func translate() {
-        contactTitle.text  = "welcome_contact_title".translated
-        contactDescription.text = "welcome_contact_description".translated
-        activateSwitchTitle.text = "welcome_contact_enable".translated
-        
-        phoneView.descriptionLabel.text = "welcome_phone_description".translated
-        phoneView.stayAnonymousLabel.text = "remain_anonymous".translated
-        phoneView.phoneExplanationButton.setTitle("welcome_phone_usage_description".translated, for: .normal)
-        phoneView.checkboxView.text = "welcome_phone_own_prompt".translated
-        nextButton.setTitle("welcome_continue".translated, for: .normal)
+        contactTitle.text  = "contact_detection".translated
+        contactDescription.text = "exposure_setup_description".translated
+        activateSwitchTitle.text = "activate".translated
+        nextButton.setTitle("continue".translated, for: .normal)
     }
 }

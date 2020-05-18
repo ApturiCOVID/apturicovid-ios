@@ -14,9 +14,13 @@ class FAQViewController: BaseViewController {
     @IBOutlet weak var faqTitleLabel: UILabel!
     
     let faqs = [
-        FAQ(title: "Kā tiek apstrādāti mani dati?", description: "Viss ir super droši, neviens pie taviem datiem netiek, kaut kāds apraksts par šo tēmu."),
-        FAQ(title: "Test", description: "Viss ir super droši, neviens pie taviem datiem netiek, kaut kāds apraksts par šo tēmu."),
-        FAQ(title: "Test", description: "Viss ir super droši, neviens pie taviem datiem netiek, kaut kāds apraksts par šo tēmu.Viss ir super droši, neviens pie taviem datiem netiek, kaut kāds apraksts par šo tēmu.Viss ir super droši, neviens pie taviem datiem netiek, kaut kāds apraksts par šo tēmu.Viss ir super droši, neviens pie taviem datiem netiek, kaut kāds apraksts par šo tēmu.Viss ir super droši, neviens pie taviem datiem netiek, kaut kāds apraksts par šo tēmu.Viss ir super droši, neviens pie taviem datiem netiek, kaut kāds apraksts par šo tēmu.Viss ir super droši, neviens pie taviem datiem netiek, kaut kāds apraksts par šo tēmu.Viss ir super droši, neviens pie taviem datiem netiek, kaut kāds apraksts par šo tēmu.Viss ir super droši, neviens pie taviem datiem netiek, kaut kāds apraksts par šo tēmu.Viss ir super droši, neviens pie taviem datiem netiek, kaut kāds apraksts par šo tēmu.Viss ir super droši, neviens pie taviem datiem netiek, kaut kāds apraksts par šo tēmu.Viss ir super droši, neviens pie taviem datiem netiek, kaut kāds apraksts par šo tēmu.Viss ir super droši, neviens pie taviem datiem netiek, kaut kāds apraksts par šo tēmu.")
+        FAQ(title: "faq_question_1", description: "faq_answer_1"),
+        FAQ(title: "faq_question_2", description: "faq_answer_2"),
+        FAQ(title: "faq_question_3", description: "faq_answer_3"),
+        FAQ(title: "faq_question_4", description: "faq_answer_4"),
+        FAQ(title: "faq_question_5", description: "faq_answer_5"),
+        FAQ(title: "faq_question_6", description: "faq_answer_6"),
+        FAQ(title: "faq_question_7", description: "faq_answer_7")
     ]
     
     override func viewDidLoad() {

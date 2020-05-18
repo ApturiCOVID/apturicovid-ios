@@ -90,6 +90,7 @@
 		E95CD9FE2471BD8C00DAC588 /* PhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95CD9FD2471BD8C00DAC588 /* PhoneTextField.swift */; };
 		E99BFA6B24720404004D779F /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99BFA6A24720404004D779F /* UIDevice.swift */; };
 		E99BFA6D2472E749004D779F /* NotificationSentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99BFA6C2472E749004D779F /* NotificationSentVC.swift */; };
+		E99BFA722472FEE1004D779F /* FaqLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E99BFA742472FEE1004D779F /* FaqLocalizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -184,6 +185,9 @@
 		E95CD9FD2471BD8C00DAC588 /* PhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextField.swift; sourceTree = "<group>"; };
 		E99BFA6A24720404004D779F /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
 		E99BFA6C2472E749004D779F /* NotificationSentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSentVC.swift; sourceTree = "<group>"; };
+		E99BFA732472FEE1004D779F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/FaqLocalizable.strings; sourceTree = "<group>"; };
+		E99BFA752472FEE6004D779F /* lv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = lv; path = lv.lproj/FaqLocalizable.strings; sourceTree = "<group>"; };
+		E99BFA762472FEEA004D779F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/FaqLocalizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +273,7 @@
 				7528B0FD246C016D007D0260 /* Translations.strings */,
 				BA366CC32465AC3D00A35CA8 /* ViewController.swift */,
 				BACDE3C0246EA4400075B20E /* NotificationsScheduler.swift */,
+				E99BFA742472FEE1004D779F /* FaqLocalizable.strings */,
 			);
 			path = apturicovid;
 			sourceTree = "<group>";
@@ -482,6 +487,7 @@
 				75B1DAA5246BF63E00601F69 /* (null) in Resources */,
 				BA38FFEE2471E83900577DB2 /* StatusBarNotification.storyboard in Resources */,
 				BAE3575A246F48A6004C59A9 /* StatView.xib in Resources */,
+				E99BFA722472FEE1004D779F /* FaqLocalizable.strings in Resources */,
 				BACDE3B3246DBABA0075B20E /* CodeEntry.storyboard in Resources */,
 				BA366CCC2465AC3E00A35CA8 /* LaunchScreen.storyboard in Resources */,
 				7528B0FB246C016D007D0260 /* Translations.strings in Resources */,
@@ -663,6 +669,16 @@
 			);
 			name = LaunchScreen.storyboard;
 			path = .;
+			sourceTree = "<group>";
+		};
+		E99BFA742472FEE1004D779F /* FaqLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E99BFA732472FEE1004D779F /* en */,
+				E99BFA752472FEE6004D779F /* lv */,
+				E99BFA762472FEEA004D779F /* ru */,
+			);
+			name = FaqLocalizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

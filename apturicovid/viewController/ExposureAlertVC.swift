@@ -21,7 +21,7 @@ class ExposureAlertVC: BaseViewController {
         titleLabel.text = "exposure_with_covid".translated
         exposedLabel.text = "you_had_exposure".translated
         howToProceedLabel.text = "how_to_proceed".translated
-        selfIsolateLabel.text = "how_to_proceed".translated
+        selfIsolateLabel.text = "self_isolate".translated
         spkcCallLabel.text = "wait_for_a_call_from_spkc".translated
         familyDoctorLabel.text = "contact_your_family_doctor".translated
         symptomsLabel.text = "observe_symptoms".translated

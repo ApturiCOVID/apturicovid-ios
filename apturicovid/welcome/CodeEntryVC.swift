@@ -61,11 +61,10 @@ class CodeEntryVC: BaseViewController {
                 if result?.status == true {
                     self.phoneNumber?.token = response.token
                     self.close()
-                } else  {
-                    self.showError(true, with: "input_code_invalid")
                 }
             }, onError: { error in
                 SVProgressHUD.dismiss()
+                self.showError(true, with: "input_code_invalid")
                 self.pinInput.animateFailure()
                 justPrintError(error)
             })

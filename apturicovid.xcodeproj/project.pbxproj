@@ -136,6 +136,7 @@
 		BA50D3572469E84E0091DF0E /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50D3562469E84E0091DF0E /* RestClient.swift */; };
 		BA50D3592469E9A10091DF0E /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50D3582469E9A10091DF0E /* NSError.swift */; };
 		BA50D35B2469EEB90091DF0E /* DiagnosisUploadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50D35A2469EEB90091DF0E /* DiagnosisUploadRequest.swift */; };
+		BAAC0D1E24730C9A00D898EF /* FaqLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E99BFA742472FEE1004D779F /* FaqLocalizable.strings */; };
 		BAAED839246C309D004C77A6 /* StatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAED838246C309D004C77A6 /* StatCell.swift */; };
 		BAAED83B246C30BD004C77A6 /* StatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAED83A246C30BD004C77A6 /* StatCell.xib */; };
 		BAAED83F246C403D004C77A6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAED83E246C403D004C77A6 /* BaseViewController.swift */; };
@@ -642,6 +643,7 @@
 				BA38003B2473072700577DB2 /* (null) in Resources */,
 				BA38003C2473072700577DB2 /* StatusBarNotification.storyboard in Resources */,
 				BA38003D2473072700577DB2 /* StatView.xib in Resources */,
+				BAAC0D1E24730C9A00D898EF /* FaqLocalizable.strings in Resources */,
 				BA38003E2473072700577DB2 /* CodeEntry.storyboard in Resources */,
 				BA38003F2473072700577DB2 /* LaunchScreen.storyboard in Resources */,
 				BA3800402473072700577DB2 /* Translations.strings in Resources */,

@@ -4,7 +4,7 @@ import RxSwift
 import RxCocoa
 
 class SettingsViewController: BaseViewController {
-    private let languages = Language.allCases
+
     @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var phoneView: UIView!
     @IBOutlet weak var setupPhoneView: UIView!
@@ -12,7 +12,9 @@ class SettingsViewController: BaseViewController {
     @IBOutlet weak var reminderSwitch: UISwitch!
     @IBOutlet weak var languagesStack: UIStackView!
     @IBOutlet weak var versionLabel: UILabel!
-    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var submitButton: RoundedButton!
+
     let langViews = Language.allCases.map{ LanguageView.create($0) }
     
     @IBAction func onReminderSet(_ sender: UISwitch) {
@@ -28,14 +30,6 @@ class SettingsViewController: BaseViewController {
         guard let vc = UIStoryboard(name: "PhoneSettings", bundle: nil).instantiateInitialViewController() else { return }
         navigationController?.pushViewController(vc, animated: true)
     }
-    
-    @IBOutlet weak var headerView: UIView! {
-        didSet {
-            headerView.roundCorners(corners: [.bottomRight, .bottomLeft], radius: 20)
-            headerView.clipsToBounds = true
-        }
-    }
-    @IBOutlet weak var titleLabel: UILabel!
    
     @IBAction func onSubmitPress(_ sender: Any) {
         guard let vc = UIStoryboard(name: "CodeEntry", bundle: nil).instantiateInitialViewController() as? CodeEntryVC else { return }
@@ -44,13 +38,7 @@ class SettingsViewController: BaseViewController {
         self.present(vc, animated: true, completion: nil)
     }
     
-    @IBOutlet weak var submitButton: UIButton! {
-        didSet {
-            submitButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-            submitButton.layer.cornerRadius = 22
-            submitButton.clipsToBounds = true
-        }
-    }
+    
     
     private func setupLanguageSelector(){
         langViews.forEach { langView in
@@ -96,14 +84,10 @@ class SettingsViewController: BaseViewController {
            }
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-    }
-    
     override func translate() {
         titleLabel.text = "settings_title".translated
         submitButton.setTitle("settings_enter_code".translated, for: .normal)
-        
+        submitButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         submitButton.sizeToFit()
     }
 }

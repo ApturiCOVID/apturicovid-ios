@@ -1,3 +1,17 @@
+// Common
+"understood" = "Sapratu";
+"cancel" = "Atcelt";
+"yes" = "Yes";
+"no" = "No";
+"close" = "Close";
+"next" = "Next";
+
+// TabBar
+"home" = "Home";
+"statistics" = "Statistics";
+"information" = "Information";
+"settings" = "Settings";
+
 // WelcomeVC
 "welcome_title" = "Help break the virus chain!";
 "welcome_app_description" = "This is the fastest way to find out if you have been exposed to Covid-19. And take action to stop it.";
@@ -20,7 +34,6 @@ Contact detection is not tracking.";
 "why_submit_a_phone_number" = "Reasons to provide a number";
 "why_submit_a_phone_number_explanation" = "If SPKC is able to contact you, a full range of support options will be available to you: from municipal social support to sick leave, depending on your symptoms.";
 "data_privacy_and_protection_policy" = "SPKC will receive your number only if and when it is established that you have been exposed to Covid-19. Noone else will find out anything about you.";
-"close" = "Close";
 
 // CodeEntryVC Phone validation
 "phone_confirmation_title" = "Number verification";
@@ -29,7 +42,6 @@ Contact detection is not tracking.";
 "didnt_receive_code" = "Did not receive the code?";
 "resend_code" = "Nosūtīt kodu atkārtoti";
 "input_code_invalid" = "Ievadīts nepareizs kods";
-"next" = "Next";
 
 // HomeVC
 "contact_tracing" = "Contact detection";
@@ -42,12 +54,6 @@ Contact detection is not tracking.";
 "tested" = "Tested";
 "new_cases" = "New cases";
 "deceased" = "Deceased";
-
-// TabBar
-"home" = "Home";
-"statistics" = "Statistics";
-"information" = "Information";
-"settings" = "Settings";
 
 // ExposureAlertVC
 "exposure_with_covid" = "Covid-19 contact detected";
@@ -91,20 +97,15 @@ Contact detection is not tracking.";
 "not_specified_phone_number_limitations" = "In case of contact you will only get a notification in the app, and support options available to you will be limited.";
 "notify_if_tracking_isnt_working" = "Notify me if contact detection gets switched off";
 
-////////////////////// below not from KAI
-
 // PhoneSettingsVC
-"specify_a_phone_number_title" = "Norādīt kontaktu";
-"specify_a_phone_number_description" = "Provide a contact phone for the DPCC to call you if you have been in contact with Covid-19.";
-"why_specify_a_phone_number" = "Why specify a phone number?";
-"specified_phone_number_is_of_another_person" = "The number of another person is specified";
-"remain_anonymous" = "Remain anonymou";
-"anonymous_prompt_title" = "Are you sure you want to remain anonymous?";
-"anonymous_prompt_description" = "We suggest you provide your number, read more about why you need to provide the number";
+"specify_a_phone_number_title" = "Provide a contact number";
+"specify_a_phone_number_description" = "Provide a contact number for SPKC to call you if you have been exposed to Covid-19.";
+"why_specify_a_phone_number" = "Reasons to provide a number";
+"specified_phone_number_is_of_another_person" = "Number belongs to someone close to me";
+"remain_anonymous" = "I will not provide a number";
+"anonymous_prompt" = "In case of contact you will only get a notification in the app, and support options available to you will be limited. Continue without phone number?";
 
-// Common
-"understood" = "Sapratu";
-"cancel" = "Atcelt";
+////////////////////// below not from KAI
 
 // Error
 "error" = "Error";

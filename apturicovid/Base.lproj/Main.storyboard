@@ -846,11 +846,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Iestatījumi" image="setting-toolbar" id="whh-By-mHs"/>
                     <connections>
-                        <outlet property="deleteDataView" destination="x3K-cp-y1H" id="jNb-HX-Rkh"/>
                         <outlet property="changeButton" destination="NIZ-HV-Nq1" id="tp8-YU-wX6"/>
                         <outlet property="communicationContactLabel" destination="A6a-yE-IpD" id="LNs-UC-LAi"/>
                         <outlet property="contactDescriptionLabel" destination="nEz-kk-eNU" id="sBy-au-C5S"/>
                         <outlet property="deleteDataLabel" destination="BQV-SD-ppm" id="Bee-TR-z8N"/>
+                        <outlet property="deleteDataView" destination="x3K-cp-y1H" id="jNb-HX-Rkh"/>
                         <outlet property="languagesStack" destination="OGA-4g-0m3" id="ZZX-sN-zTh"/>
                         <outlet property="mainStackView" destination="5am-yJ-TDy" id="PHi-7A-AqV"/>
                         <outlet property="notSpecifiedLabel" destination="xR3-LL-bZr" id="uKe-jb-SWq"/>

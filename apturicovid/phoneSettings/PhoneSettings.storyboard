@@ -127,6 +127,7 @@
                         <outlet property="bottomConstraint" destination="yQ5-Lj-fZC" id="QAe-fH-oaF"/>
                         <outlet property="mainStackView" destination="S3n-mh-Q2P" id="zht-QM-Xex"/>
                         <outlet property="nextButton" destination="bp0-oE-RFU" id="Aki-ii-mtk"/>
+                        <outlet property="titleLabel" destination="LY9-QA-sGG" id="OiC-rA-ngD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="th3-cg-Pzh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -163,7 +164,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="et4-NR-VKi">
-                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
+                                <rect key="frame" x="0.0" y="104" width="414" height="668"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="5xq-tm-uCX">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="360.5"/>
@@ -225,6 +226,31 @@
                                     <constraint firstItem="5xq-tm-uCX" firstAttribute="top" secondItem="et4-NR-VKi" secondAttribute="top" id="ijS-UH-Z7X"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUV-WX-1We" customClass="RoundedButton" customModule="Apturi_Covid" customModuleProvider="target">
+                                <rect key="frame" x="119.5" y="782" width="175" height="50"/>
+                                <color key="backgroundColor" name="primaryButton"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hji-Hm-Kme"/>
+                                    <constraint firstAttribute="width" constant="175" id="ybZ-8O-S7m"/>
+                                </constraints>
+                                <state key="normal" title="Aizvērt">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="enabledColor">
+                                        <color key="value" name="primaryButton"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledColor">
+                                        <color key="value" name="primaryButtonDisabled"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onBackTap:" destination="HVJ-Jp-qFG" eventType="touchUpInside" id="hSc-Wj-6re"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -233,13 +259,21 @@
                             <constraint firstItem="Tba-aN-3hL" firstAttribute="top" secondItem="z4f-bb-4b0" secondAttribute="top" id="BvE-Qf-6tn"/>
                             <constraint firstItem="Tba-aN-3hL" firstAttribute="leading" secondItem="z4f-bb-4b0" secondAttribute="leading" id="Bwf-YS-7n2"/>
                             <constraint firstItem="et4-NR-VKi" firstAttribute="top" secondItem="Tba-aN-3hL" secondAttribute="bottom" id="Eim-yl-Xry"/>
-                            <constraint firstItem="Ocm-m1-9eP" firstAttribute="bottom" secondItem="et4-NR-VKi" secondAttribute="bottom" id="ccy-lP-PjK"/>
+                            <constraint firstItem="QUV-WX-1We" firstAttribute="centerX" secondItem="z4f-bb-4b0" secondAttribute="centerX" id="MPN-DB-U2p"/>
+                            <constraint firstItem="QUV-WX-1We" firstAttribute="top" secondItem="et4-NR-VKi" secondAttribute="bottom" constant="10" id="cgG-KM-Svi"/>
+                            <constraint firstItem="Ocm-m1-9eP" firstAttribute="bottom" secondItem="QUV-WX-1We" secondAttribute="bottom" constant="30" id="dy2-hq-Dp2"/>
                             <constraint firstAttribute="trailing" secondItem="Tba-aN-3hL" secondAttribute="trailing" id="eel-Jc-FJv"/>
                             <constraint firstItem="et4-NR-VKi" firstAttribute="trailing" secondItem="Ocm-m1-9eP" secondAttribute="trailing" id="oeU-uQ-1Lg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ocm-m1-9eP"/>
                     </view>
                     <navigationItem key="navigationItem" id="faA-zj-WH0"/>
+                    <connections>
+                        <outlet property="closeButton" destination="QUV-WX-1We" id="kz7-1z-nM8"/>
+                        <outlet property="descriptionLabel" destination="1AV-xa-ILL" id="4Ka-QA-xLm"/>
+                        <outlet property="privacyProtectionLabel" destination="Bh1-n4-Bkg" id="Bbj-36-f9s"/>
+                        <outlet property="titleLabel" destination="Kvw-vF-XhJ" id="48n-ap-mGZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93e-7u-6lD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

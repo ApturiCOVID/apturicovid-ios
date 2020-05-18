@@ -1,3 +1,17 @@
+// Common
+"understood" = "Sapratu";
+"cancel" = "Atcelt";
+"yes" = "Jā";
+"no" = "Nē";
+"close" = "Aizvērt";
+"next" = "Tālāk";
+
+// TabBar
+"home" = "Sākums";
+"statistics" = "Statistika";
+"information" = "Informācija";
+"settings" = "Iestatījumi";
+
 // WelcomeVC
 "welcome_title" = "Palīdzi pārraut vīrusa ķēdi!";
 "welcome_app_description" = "Šis ir ātrākais veids, kā vari uzzināt, ka tev bijusi saskare ar Covid-19. Un rīkoties, lai to apturētu.";
@@ -20,7 +34,6 @@ Kontakta fiksēšana nav izsekošana.";
 "why_submit_a_phone_number" = "Kāpēc norādīt tālruni?";
 "why_submit_a_phone_number_explanation" = "Ja SPKC varēs ar tevi sazināties, tevi varēs oficiāli atzīt par kontaktpersonu, un tev kļūs pieejams atbalsta iespēju tīkls – no pašvaldības sociālā atbalsta līdz slimības lapai, atbilstoši taviem simptomiem.";
 "data_privacy_and_protection_policy" = "SPKC tavu kontakttālruni saņems tikai tad, ja tev tiks konstatēta saskare ar Covid-19, un ne mirkli agrāk. Nevienam citam nekādi dati par tevi zināmi nebūs vispār.";
-"close" = "Aizvērt";
 
 // CodeEntryVC Phone validation
 "phone_confirmation_title" = "Numura apstiprinājums";
@@ -29,7 +42,6 @@ Kontakta fiksēšana nav izsekošana.";
 "didnt_receive_code" = "Nesaņēmi kodu?";
 "resend_code" = "Nosūtīt kodu atkārtoti";
 "input_code_invalid" = "Ievadīts nepareizs kods";
-"next" = "Tālāk";
 
 // HomeVC
 "contact_tracing" = "Kontakta fiksēšana";
@@ -42,12 +54,6 @@ Kontakta fiksēšana nav izsekošana.";
 "tested" = "Testēti";
 "new_cases" = "Saslimuši";
 "deceased" = "Miruši";
-
-// TabBar
-"home" = "Sākums";
-"statistics" = "Statistika";
-"information" = "Informācija";
-"settings" = "Iestatījumi";
 
 // ExposureAlertVC
 "exposure_with_covid" = "Fiksēts kontakts ar Covid-19";
@@ -91,20 +97,15 @@ Kontakta fiksēšana nav izsekošana.";
 "not_specified_phone_number_limitations" = "Saskares gadījumā saņemsi tikai paziņojumu tepat lietotnē, un atbalsta iespējas būs ierobežotas. ";
 "notify_if_tracking_isnt_working" = "Rādīt man paziņojumu, ja kontakta fiksēšana izslēdzas";
 
-////////////////////// below not from KAI
-
 // PhoneSettingsVC
 "specify_a_phone_number_title" = "Norādīt kontaktu";
-"specify_a_phone_number_description" = "Provide a contact phone for the DPCC to call you if you have been in contact with Covid-19.";
-"why_specify_a_phone_number" = "Why specify a phone number?";
-"specified_phone_number_is_of_another_person" = "The number of another person is specified";
-"remain_anonymous" = "Remain anonymou";
-"anonymous_prompt_title" = "Are you sure you want to remain anonymous?";
-"anonymous_prompt_description" = "We suggest you provide your number, read more about why you need to provide the number";
+"specify_a_phone_number_description" = "Norādi kontakttālruni, pa kuru Covid-19 saskares gadījumā SPKC ar tevi sazināties. ";
+"why_specify_a_phone_number" = "Kāpēc ir vērts norādīt tālruni?";
+"specified_phone_number_is_of_another_person" = "Norādīts tuvinieka tālrunis";
+"remain_anonymous" = "Nevēlos norādīt tālruni";
+"anonymous_prompt" = "Saskares gadījumā saņemsi tikai paziņojumu tepat lietotnē, un atbalsta iespējas būs ierobežotas. Vai tiešām turpināt bez tālruņa norādīšanas?";
 
-// Common
-"understood" = "Sapratu";
-"cancel" = "Atcelt";
+////////////////////// below not from KAI
 
 // Error
 "error" = "Error";

@@ -1,3 +1,17 @@
+// Common
+"understood" = "Sapratu";
+"cancel" = "Atcelt";
+"yes" = "Да";
+"no" = "Нет";
+"close" = "Закрыть";
+"next" = "Далее";
+
+// TabBar
+"home" = "Начало";
+"statistics" = "Статистика";
+"information" = "Информация";
+"settings" = "Настройки";
+
 // WelcomeVC
 "welcome_title" = "Помоги разорвать цепь вируса!";
 "welcome_app_description" = "Это самый быстрый способ узнать, был ли у тебя контакт с Covid-19. И действовать, чтобы его остановить.";
@@ -18,7 +32,6 @@
 "why_submit_a_phone_number" = "Зачем указывать номер телефона?";
 "why_submit_a_phone_number_explanation" = "Если SPKC сможет с тобой связаться, то для тебя будет доступен полный спектр возможностей поддержки – от социальной поддержки самоуправления до больничного, согласно твоим симптомам.";
 "data_privacy_and_protection_policy" = "SPKC получит твой номер телефона, только если у тебя будет констатирован контакт с Covid-19, и ни минутой раньше. Никаким другим лицам никакая информация о тебе не будет доступна.";
-"close" = "Закрыть";
 
 // CodeEntryVC Phone validation
 "phone_confirmation_title" = "Подтверждение номера";
@@ -27,7 +40,6 @@
 "didnt_receive_code" = "Не получил код?";
 "resend_code" = "Выслать код повторно";
 "input_code_invalid" = "Введен неправильный код";
-"next" = "Далее";
 
 // HomeVC
 "contact_tracing" = "Фиксирование контакта";
@@ -40,12 +52,6 @@
 "tested" = "Протестированы";
 "new_cases" = "Заболели";
 "deceased" = "Умерли";
-
-// TabBar
-"home" = "Начало";
-"statistics" = "Статистика";
-"information" = "Информация";
-"settings" = "Настройки";
 
 // ExposureAlertVC
 "exposure_with_covid" = "Зафиксирован контакт с Covid-19";
@@ -89,20 +95,15 @@
 "not_specified_phone_number_limitations" = "В случае контакта ты получишь уведомление только в этом приложении, и возможности поддержки для тебя будут ограничены.";
 "notify_if_tracking_isnt_working" = "Показать мне уведомление, если фиксирование контакта выключено";
 
-////////////////////// below not from KAI
-
 // PhoneSettingsVC
-"specify_a_phone_number_title" = "Norādīt kontaktu";
-"specify_a_phone_number_description" = "Provide a contact phone for the DPCC to call you if you have been in contact with Covid-19.";
-"why_specify_a_phone_number" = "Why specify a phone number?";
-"specified_phone_number_is_of_another_person" = "The number of another person is specified";
-"remain_anonymous" = "Remain anonymou";
-"anonymous_prompt_title" = "Are you sure you want to remain anonymous?";
-"anonymous_prompt_description" = "We suggest you provide your number, read more about why you need to provide the number";
+"specify_a_phone_number_title" = "Укажи номер телефона";
+"specify_a_phone_number_description" = "Укажи номер телефона, по которому SPKC сможет с тобой связаться в случае контакта с Covid-19.";
+"why_specify_a_phone_number" = "Почему нужно указать номер телефона?";
+"specified_phone_number_is_of_another_person" = "Указан номер близкого человека";
+"remain_anonymous" = "Не желаю указывать номер телефона";
+"anonymous_prompt" = "В случае контакта ты получишь уведомление только в этом приложении, и возможности поддержки для тебя будут ограничены. Действительно желаешь продолжить, не указывая номер телефона?";
 
-// Common
-"understood" = "Sapratu";
-"cancel" = "Atcelt";
+////////////////////// below not from KAI
 
 // Error
 "error" = "Error";

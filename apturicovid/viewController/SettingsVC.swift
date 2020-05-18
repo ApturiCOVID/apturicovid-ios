@@ -43,10 +43,8 @@ class SettingsViewController: BaseViewController {
         guard let vc = UIStoryboard(name: "CodeEntry", bundle: nil).instantiateInitialViewController() as? CodeEntryVC else { return }
         
         vc.mode = .spkc
-        self.present(vc, animated: true, completion: nil)
+        navigationController?.pushViewController(vc, animated: true)
     }
-    
-    
     
     private func setupLanguageSelector(){
         langViews.forEach { langView in
@@ -116,7 +114,6 @@ class SettingsViewController: BaseViewController {
         contactDescriptionLabel.text = "not_specified_phone_number_limitations".translated
         notifyMeLabel.text = "notify_if_tracking_isnt_working".translated
         deleteDataLabel.text = "delete_all_stored_data".translated
-        phoneLabel.text = "SKALFNS"
         submitButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         submitButton.sizeToFit()
     }

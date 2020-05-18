@@ -24,7 +24,6 @@
 "contact_detection" = "Фиксирование контакта";
 "exposure_setup_description" = "Контакт: присутствие в течение 15+ минут на расстоянии 2 - 4 м.
 Фиксирование: шифр, который сохраняется в телефоне 14 дней, а затем удаляется.";
-// TODO: Add phone number input in vc?
 
 // ExposureSetup Validations
 "exposure_off_setup_prompt" = "Действительно желаешь продолжить, не активизируя фиксирование контакта?";

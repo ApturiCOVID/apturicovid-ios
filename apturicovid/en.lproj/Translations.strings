@@ -26,7 +26,6 @@
 Detection: a code kept on phone for 14 days, then deleted.
 
 Contact detection is not tracking.";
-// TODO: Add phone number input in vc?
 
 // ExposureSetup Validations
 "exposure_off_setup_prompt" = " Continue without switching on contact detection?";

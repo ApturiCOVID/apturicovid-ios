@@ -89,6 +89,7 @@
 		BAFA8319246BF3B400E121B4 /* HomeBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA8318246BF3B400E121B4 /* HomeBottomView.swift */; };
 		E95CD9FE2471BD8C00DAC588 /* PhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95CD9FD2471BD8C00DAC588 /* PhoneTextField.swift */; };
 		E99BFA6B24720404004D779F /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99BFA6A24720404004D779F /* UIDevice.swift */; };
+		E99BFA6D2472E749004D779F /* NotificationSentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99BFA6C2472E749004D779F /* NotificationSentVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -182,6 +183,7 @@
 		D51F675FDD0F615AD5BFBDCB /* Pods_apturicovid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_apturicovid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95CD9FD2471BD8C00DAC588 /* PhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextField.swift; sourceTree = "<group>"; };
 		E99BFA6A24720404004D779F /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
+		E99BFA6C2472E749004D779F /* NotificationSentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSentVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +307,7 @@
 				BAE3575D246F4B28004C59A9 /* StatsVC.swift */,
 				BA38FFEB2471E81300577DB2 /* StatusBarNotification.swift */,
 				BA38FFEF2471E91E00577DB2 /* SlideViewController.swift */,
+				E99BFA6C2472E749004D779F /* NotificationSentVC.swift */,
 			);
 			path = viewController;
 			sourceTree = "<group>";
@@ -578,6 +581,7 @@
 				BAAED852246DB04D004C77A6 /* PhoneVerificationRequestResponse.swift in Sources */,
 				BA38FFEC2471E81300577DB2 /* StatusBarNotification.swift in Sources */,
 				BAAED84A246D9E7A004C77A6 /* PhoneSetupView.swift in Sources */,
+				E99BFA6D2472E749004D779F /* NotificationSentVC.swift in Sources */,
 				7528B100246C02BC007D0260 /* String.swift in Sources */,
 				60701B01246D46F600BFA1F4 /* NSMutableAttributedString.swift in Sources */,
 				BA38FFF02471E91E00577DB2 /* SlideViewController.swift in Sources */,

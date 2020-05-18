@@ -98,7 +98,8 @@ class CodeEntryVC: BaseViewController {
                 self.uploadInprogress = false
                 SVProgressHUD.dismiss()
                 DispatchQueue.main.async {
-                    self.dismiss(animated: true, completion: nil)
+                    guard let vc = self.storyboard?.instantiateViewController(identifier: "NotificationSentVC") else { return }
+                    self.navigationController?.pushViewController(vc, animated: true)
                 }
             }, onError: { error in
                 self.uploadInprogress = false

@@ -149,7 +149,3 @@ extension WelcomeVC: LinkLabelDelegate {
         }
     }
 }
-
-
-
-

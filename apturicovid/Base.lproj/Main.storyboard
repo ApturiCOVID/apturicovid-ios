@@ -642,7 +642,6 @@
                                                                     <color key="titleColor" red="0.96078431372549022" green="0.46666666666666667" blue="0.1764705882352941" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="changeButton:" destination="68n-zD-fXe" eventType="touchUpInside" id="SbF-ks-M6v"/>
                                                                     <action selector="changePhone:" destination="68n-zD-fXe" eventType="touchUpInside" id="9YA-2i-yHg"/>
                                                                 </connections>
                                                             </button>

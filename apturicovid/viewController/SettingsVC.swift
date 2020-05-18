@@ -14,7 +14,8 @@ class SettingsViewController: BaseViewController {
     @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var submitButton: RoundedButton!
-
+    @IBOutlet weak var deleteDataView: UIView!
+    
     let langViews = Language.allCases.map{ LanguageView.create($0) }
     
     @IBAction func onReminderSet(_ sender: UISwitch) {
@@ -67,6 +68,11 @@ class SettingsViewController: BaseViewController {
         phoneLabel.text = LocalStore.shared.phoneNumber?.number
     }
     
+    private func deleteData() {
+        LocalStore.shared.exposures = []
+        LocalStore.shared.lastDownloadedBatchIndex = 0
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLanguageSelector()
@@ -82,6 +88,14 @@ class SettingsViewController: BaseViewController {
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String, let bundleV = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
                versionLabel.text = "Versijas nr.: \(version) (\(bundleV))"
            }
+        
+        deleteDataView.rx
+            .tapGesture()
+            .when(.recognized)
+            .subscribe(onNext: { _ in
+                self.deleteData()
+            })
+            .disposed(by: disposeBag)
     }
     
     override func translate() {

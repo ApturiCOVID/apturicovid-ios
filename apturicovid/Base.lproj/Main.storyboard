@@ -513,7 +513,7 @@
                                                                 <color key="highlightedColor" red="0.0" green="0.23921568630000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pēc SPKC darbinieka lūguma, ievadiet norādīto kodu:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaD-qN-Y2g">
-                                                                <rect key="frame" x="30" y="73" width="368" height="17"/>
+                                                                <rect key="frame" x="36.666666666666657" y="73" width="341" height="17"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -537,16 +537,17 @@
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="OGA-4g-0m3" secondAttribute="trailing" constant="30" id="4LC-GX-Rkz"/>
                                                             <constraint firstItem="JaD-qN-Y2g" firstAttribute="top" secondItem="OGA-4g-0m3" secondAttribute="bottom" constant="20" id="5Bj-Cf-6tv"/>
                                                             <constraint firstItem="h6E-N9-2F7" firstAttribute="top" secondItem="MiC-yq-fa0" secondAttribute="top" constant="16" id="6RD-L8-jqy"/>
+                                                            <constraint firstItem="JaD-qN-Y2g" firstAttribute="centerX" secondItem="MiC-yq-fa0" secondAttribute="centerX" id="HNf-iO-5KT"/>
                                                             <constraint firstItem="cCl-2X-223" firstAttribute="leading" secondItem="MiC-yq-fa0" secondAttribute="leading" constant="30" id="ImX-BP-mE1"/>
                                                             <constraint firstAttribute="bottom" secondItem="cCl-2X-223" secondAttribute="bottom" constant="32" id="Taw-aC-SbM"/>
                                                             <constraint firstItem="h6E-N9-2F7" firstAttribute="leading" secondItem="MiC-yq-fa0" secondAttribute="leading" constant="30" id="VOC-VI-KCP"/>
-                                                            <constraint firstAttribute="trailing" secondItem="JaD-qN-Y2g" secondAttribute="trailing" constant="16" id="Xa8-qj-hEX"/>
-                                                            <constraint firstItem="JaD-qN-Y2g" firstAttribute="leading" secondItem="MiC-yq-fa0" secondAttribute="leading" constant="30" id="cA6-do-krG"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JaD-qN-Y2g" secondAttribute="trailing" constant="16" id="Xa8-qj-hEX"/>
+                                                            <constraint firstItem="JaD-qN-Y2g" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MiC-yq-fa0" secondAttribute="leading" constant="30" id="cA6-do-krG"/>
                                                             <constraint firstItem="OGA-4g-0m3" firstAttribute="top" secondItem="MiC-yq-fa0" secondAttribute="top" constant="10" id="g6A-h3-Lwe"/>
                                                             <constraint firstItem="JaD-qN-Y2g" firstAttribute="top" secondItem="h6E-N9-2F7" secondAttribute="bottom" constant="32" id="mw2-UW-vRB"/>
                                                             <constraint firstItem="cCl-2X-223" firstAttribute="top" secondItem="JaD-qN-Y2g" secondAttribute="bottom" constant="32" id="w6I-ja-P0Z"/>
@@ -757,6 +758,10 @@
                                                         </constraints>
                                                     </view>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="MiC-yq-fa0" firstAttribute="leading" secondItem="5am-yJ-TDy" secondAttribute="leading" id="Lho-Xl-STk"/>
+                                                    <constraint firstAttribute="trailing" secondItem="MiC-yq-fa0" secondAttribute="trailing" id="wQ2-02-GRZ"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -770,7 +775,7 @@
                                     </scrollView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1c-o1-EcG">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                        <color key="backgroundColor" red="0.95294117647058818" green="0.95686274509803915" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" name="headerColor"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -797,7 +802,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Iestatījumi" image="setting-toolbar" id="whh-By-mHs"/>
                     <connections>
-                        <outlet property="headerView" destination="MiC-yq-fa0" id="f2k-U4-BFg"/>
                         <outlet property="languagesStack" destination="OGA-4g-0m3" id="ZZX-sN-zTh"/>
                         <outlet property="mainStackView" destination="5am-yJ-TDy" id="PHi-7A-AqV"/>
                         <outlet property="phoneLabel" destination="SqM-yR-Efk" id="TR0-P2-JwI"/>

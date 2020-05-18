@@ -26,7 +26,7 @@
         <!--WelcomeVC-->
         <scene sceneID="6q1-QL-JjL">
             <objects>
-                <viewController id="K37-K7-ayu" customClass="WelcomeVC" customModule="apturicovid" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="K37-K7-ayu" customClass="WelcomeVC" customModule="Apturi_Covid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dpV-1H-kuG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,7 +41,7 @@
                             <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="BKg-Ih-cha">
                                 <rect key="frame" x="0.0" y="410" width="320" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTq-EC-gPP" customClass="RoundedButton" customModule="apturicovid" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTq-EC-gPP" customClass="RoundedButton" customModule="Apturi_Covid" customModuleProvider="target">
                                         <rect key="frame" x="75" y="0.0" width="170" height="50"/>
                                         <color key="backgroundColor" name="primaryButtonColor"/>
                                         <constraints>
@@ -68,7 +68,7 @@
                                     <constraint firstAttribute="height" priority="250" constant="50" id="dae-vY-sjD"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Az-Ax-oeS" customClass="WelcomeHeaderView" customModule="apturicovid" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Az-Ax-oeS" customClass="WelcomeHeaderView" customModule="Apturi_Covid" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="191"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="97s-0k-46e">
@@ -187,7 +187,7 @@
         <!--Exposure SetupVC-->
         <scene sceneID="IXm-SY-Xor">
             <objects>
-                <viewController id="Wx0-rH-Fu9" customClass="ExposureSetupVC" customModule="apturicovid" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Wx0-rH-Fu9" customClass="ExposureSetupVC" customModule="Apturi_Covid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="neA-lW-KwZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -314,7 +314,7 @@
                                     <constraint firstItem="qv6-Xg-4Qt" firstAttribute="leading" secondItem="PUQ-sc-lkh" secondAttribute="leading" id="imS-Q5-KVv"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJZ-3g-hia" customClass="RoundedButton" customModule="apturicovid" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJZ-3g-hia" customClass="RoundedButton" customModule="Apturi_Covid" customModuleProvider="target">
                                 <rect key="frame" x="72.5" y="488" width="175" height="50"/>
                                 <color key="backgroundColor" name="primaryButtonColor"/>
                                 <constraints>

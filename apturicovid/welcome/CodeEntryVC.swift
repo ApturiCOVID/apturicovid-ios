@@ -128,7 +128,8 @@ class CodeEntryVC: BaseViewController {
         pinInput.appearance.textColor = UIColor(hex: "#161B28")
         pinInput.appearance.backColor = UIColor(hex: "#F2F3F0")
         pinInput.appearance.backBorderWidth = 5
-        pinInput.appearance.font = .courier(15)
+        pinInput.appearance.kerning = UIScreen.main.bounds.width * 0.08
+        pinInput.appearance.font = .menlo(20)
     }
     
     @objc private func resendCode() {
@@ -175,8 +176,6 @@ class CodeEntryVC: BaseViewController {
         super.viewWillAppear(animated)
         codeInputHolder.addSubviewWithInsets(pinInput)
         stylePinInput()
-        
-        pinInput.becomeFirstResponder()
     }
 }
 

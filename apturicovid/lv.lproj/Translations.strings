@@ -108,9 +108,9 @@ Kontakta fiksēšana nav izsekošana.";
 ////////////////////// below not from KAI
 
 // Error
-"error" = "Error";
-"continue" = "Continue";
-"invalid_phone_number_error" = "The entered phone number is invalid";
+"error" = "Kļūda";
+"continue" = "Turpināt";
+"invalid_phone_number_error" = "Ievadītais telefona numurs nav derīgs";
 
 // StatsVC
 "data_renewed" = "Dati atjaunoti: %@";

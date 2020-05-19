@@ -164,6 +164,7 @@
 		BACDE3C1246EA4400075B20E /* NotificationsScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDE3C0246EA4400075B20E /* NotificationsScheduler.swift */; };
 		BAD4221B2473B3820047E85D /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD422192473B37F0047E85D /* Stats.swift */; };
 		BAD4221C2473B3820047E85D /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD422192473B37F0047E85D /* Stats.swift */; };
+		BAD4221D2473E9460047E85D /* UISwitchEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602AE9B52473E152008E42F3 /* UISwitchEx.swift */; };
 		BAE35751246F2EB4004C59A9 /* PhoneSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAE35750246F2EB4004C59A9 /* PhoneSettings.storyboard */; };
 		BAE35753246F3034004C59A9 /* PhoneSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE35752246F3034004C59A9 /* PhoneSettingsVC.swift */; };
 		BAE35755246F410B004C59A9 /* ExposureAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE35754246F410B004C59A9 /* ExposureAlertVC.swift */; };
@@ -904,6 +905,7 @@
 				BA3800132473072700577DB2 /* Data.swift in Sources */,
 				BA3800142473072700577DB2 /* LocalStore.swift in Sources */,
 				BA3800152473072700577DB2 /* PhoneConfirmationResponse.swift in Sources */,
+				BAD4221D2473E9460047E85D /* UISwitchEx.swift in Sources */,
 				BA3800162473072700577DB2 /* UIDeviceEx.swift in Sources */,
 				BA3800172473072700577DB2 /* DiagnosisUploadRequest.swift in Sources */,
 				BA3800182473072700577DB2 /* HomeBottomView.swift in Sources */,

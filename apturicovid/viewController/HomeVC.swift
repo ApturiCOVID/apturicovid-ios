@@ -60,12 +60,24 @@ class HomeVC: BaseViewController {
         self.present(activityViewController, animated: true, completion: nil)
     }
     
-    private func setExposureStateVisual() {
+    private func setExposureStateVisual(animated: Bool = true) {
+        
+        func setExposureImage(in duration: TimeInterval){
+            UIView.animate(withDuration: duration/2, animations: {
+                self.exposureIcon.alpha = 0
+            }) { (_) in
+                self.exposureIcon.image = exposureEnabled ? UIImage(named: "detection-on-home") : UIImage(named: "detection-off-home")
+                UIView.animate(withDuration: duration/2){
+                    self.exposureIcon.alpha = 1
+                }
+            }
+        }
+        
         let exposureEnabled = ExposureManager.shared.enabled
         exposureSwitch.isOn = exposureEnabled
         tracingStateLabel.text = exposureEnabled ? "currently_active".translated : "currently_inactive".translated
         tracingStateLabel.textColor = exposureEnabled ? Colors.darkGreen : Colors.disabled
-        exposureIcon.image = exposureEnabled ? UIImage(named: "detection-on-home") : UIImage(named: "detection-off-home")
+        setExposureImage(in: animated ? 0.3 : 0)
     }
     
     
@@ -121,7 +133,7 @@ class HomeVC: BaseViewController {
         NotificationCenter.default.rx
             .notification(UIApplication.didBecomeActiveNotification)
             .subscribe(onNext: { (_) in
-                self.setExposureStateVisual()
+                self.setExposureStateVisual(animated: false)
                 self.exposureNotificationVisible = LocalStore.shared.exposures.count > 0
             })
             .disposed(by: disposeBag)
@@ -141,11 +153,9 @@ class HomeVC: BaseViewController {
         statsTitleLabel.text = "stats_title".translated
         
         shareButton.setTitle("share".translated, for: .normal)
-        shareButton.titleLabel?.numberOfLines = 1
-        shareButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        shareButton.titleLabel?.lineBreakMode = .byWordWrapping
+        shareButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 6, bottom: 0, right: 10)
+        shareButton.sizeToFit()
  
-        
         setExposureStateVisual()
     }
     

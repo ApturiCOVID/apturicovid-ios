@@ -63,32 +63,11 @@
                                             <constraint firstAttribute="height" priority="250" constant="250" id="i3H-6p-ROM"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hIF-uf-7e0" customClass="RoundedButton" customModule="Apturi_Covid">
-                                        <rect key="frame" x="294" y="64" width="100" height="30"/>
-                                        <color key="backgroundColor" red="0.98039215686274506" green="0.45882352941176469" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Aig-Hc-7ld"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Twk-RD-o9m"/>
-                                        </constraints>
-                                        <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
-                                        <state key="normal" title="Dalies" image="share-1">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="onShareButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P08-Rt-AnK"/>
-                                        </connections>
-                                    </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wtf-bd-JBm" userLabel="container">
                                         <rect key="frame" x="0.0" y="385.66666666666669" width="414" height="125"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Kontaktu Meklēšana" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5UA-a0-5b6">
-                                                <rect key="frame" x="8" y="0.0" width="398" height="36"/>
+                                                <rect key="frame" x="76.333333333333343" y="0.0" width="261.66666666666663" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -111,8 +90,8 @@
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="nyo-WV-M78" secondAttribute="bottom" id="9FB-LL-OAt"/>
                                             <constraint firstItem="5UA-a0-5b6" firstAttribute="top" secondItem="wtf-bd-JBm" secondAttribute="top" id="Kj6-ic-8Ki"/>
-                                            <constraint firstAttribute="trailing" secondItem="5UA-a0-5b6" secondAttribute="trailing" constant="8" id="KnW-xo-Lsi"/>
-                                            <constraint firstItem="5UA-a0-5b6" firstAttribute="leading" secondItem="wtf-bd-JBm" secondAttribute="leading" constant="8" id="Oht-dd-6ra"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5UA-a0-5b6" secondAttribute="trailing" constant="8" id="KnW-xo-Lsi"/>
+                                            <constraint firstItem="5UA-a0-5b6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wtf-bd-JBm" secondAttribute="leading" constant="8" id="Oht-dd-6ra"/>
                                             <constraint firstItem="nyo-WV-M78" firstAttribute="centerX" secondItem="wtf-bd-JBm" secondAttribute="centerX" id="SBG-Qk-MmJ"/>
                                             <constraint firstAttribute="height" constant="125" id="UAK-Xl-ntt"/>
                                             <constraint firstItem="Qr5-2d-GVo" firstAttribute="centerX" secondItem="wtf-bd-JBm" secondAttribute="centerX" id="ZkE-tS-hpj"/>
@@ -120,15 +99,31 @@
                                             <constraint firstItem="5UA-a0-5b6" firstAttribute="centerX" secondItem="wtf-bd-JBm" secondAttribute="centerX" id="o7J-MT-8JO"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6W-7p-lgY" customClass="RoundedButton" customModule="AC_Demo" customModuleProvider="target">
+                                        <rect key="frame" x="321" y="60" width="77" height="30"/>
+                                        <color key="backgroundColor" name="shareColor"/>
+                                        <state key="normal" title="Share" image="share-1">
+                                            <color key="titleColor" name="headerColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onShareButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3kH-Do-dkR"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ck9-8q-2TR" secondAttribute="trailing" constant="16" id="C5h-f1-whn"/>
+                                    <constraint firstAttribute="trailing" secondItem="v6W-7p-lgY" secondAttribute="trailing" constant="16" id="Dyu-Ta-SsT"/>
                                     <constraint firstItem="wtf-bd-JBm" firstAttribute="centerY" secondItem="6ud-65-msF" secondAttribute="centerY" priority="250" id="I5O-5C-0i2"/>
-                                    <constraint firstAttribute="trailing" secondItem="hIF-uf-7e0" secondAttribute="trailing" constant="20" id="LSv-8B-CF3"/>
-                                    <constraint firstItem="Ck9-8q-2TR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hIF-uf-7e0" secondAttribute="bottom" id="OeA-fF-pmN"/>
+                                    <constraint firstItem="Ck9-8q-2TR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="v6W-7p-lgY" secondAttribute="bottom" id="Rxc-wU-F0l"/>
                                     <constraint firstItem="wtf-bd-JBm" firstAttribute="leading" secondItem="6ud-65-msF" secondAttribute="leading" id="mL9-ZV-qui"/>
                                     <constraint firstItem="wtf-bd-JBm" firstAttribute="centerX" secondItem="6ud-65-msF" secondAttribute="centerX" id="sOI-ED-EC3"/>
+                                    <constraint firstItem="v6W-7p-lgY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6ud-65-msF" secondAttribute="leading" constant="16" id="sZr-E2-8a6"/>
                                     <constraint firstItem="Ck9-8q-2TR" firstAttribute="centerX" secondItem="6ud-65-msF" secondAttribute="centerX" id="v5w-8y-tTp"/>
                                     <constraint firstItem="wtf-bd-JBm" firstAttribute="top" secondItem="Ck9-8q-2TR" secondAttribute="bottom" constant="16" id="vnM-tj-Brc"/>
                                     <constraint firstAttribute="trailing" secondItem="wtf-bd-JBm" secondAttribute="trailing" id="wHY-J0-OXS"/>
@@ -236,9 +231,9 @@
                         <constraints>
                             <constraint firstItem="R2U-sP-JiI" firstAttribute="top" secondItem="pQ8-KT-HD7" secondAttribute="bottom" priority="999" constant="20" id="0XU-qF-mG5"/>
                             <constraint firstItem="R2U-sP-JiI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1Fe-Wj-GVd"/>
-                            <constraint firstItem="hIF-uf-7e0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="2Uc-0A-9vx"/>
                             <constraint firstItem="R2U-sP-JiI" firstAttribute="top" relation="greaterThanOrEqual" secondItem="wtf-bd-JBm" secondAttribute="bottom" id="2bm-RB-D9A"/>
                             <constraint firstItem="6ud-65-msF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CdJ-6H-CSY"/>
+                            <constraint firstItem="v6W-7p-lgY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="FWg-e9-cqD"/>
                             <constraint firstItem="R2U-sP-JiI" firstAttribute="top" secondItem="dfs-tu-Zua" secondAttribute="top" constant="80" placeholder="YES" id="Juq-1c-eiB"/>
                             <constraint firstItem="R2U-sP-JiI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="K11-dq-rYY"/>
                             <constraint firstAttribute="bottom" secondItem="6ud-65-msF" secondAttribute="bottom" id="Kwi-lr-Clu"/>
@@ -262,7 +257,7 @@
                         <outlet property="exposureSwitch" destination="nyo-WV-M78" id="b2b-2q-dPL"/>
                         <outlet property="exposureTitleLabel" destination="QbU-l1-EKf" id="c7t-mZ-uCl"/>
                         <outlet property="exposureViewButton" destination="ufh-6M-cKo" id="Qhx-s1-4I5"/>
-                        <outlet property="shareButton" destination="hIF-uf-7e0" id="c2b-qO-hmG"/>
+                        <outlet property="shareButton" destination="v6W-7p-lgY" id="xqY-r3-DSX"/>
                         <outlet property="statsStackView" destination="2hr-vA-xw9" id="kSE-iw-L35"/>
                         <outlet property="statsTitleLabel" destination="yib-ha-2dX" id="4f5-eH-b0Y"/>
                         <outlet property="statsView" destination="fML-nx-pw3" id="xPi-Pg-vLM"/>
@@ -271,7 +266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-258.39999999999998" y="-518.7192118226601"/>
+            <point key="canvasLocation" x="-259.4202898550725" y="-518.97321428571422"/>
         </scene>
         <!--Informācija-->
         <scene sceneID="X17-mq-Fw7">
@@ -558,8 +553,8 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCl-2X-223" customClass="RoundedButton" customModule="AC_Demo" customModuleProvider="target">
-                                                                <rect key="frame" x="30" y="122" width="126" height="44"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCl-2X-223" customClass="RoundedButton" customModule="AC_Demo" customModuleProvider="target">
+                                                                <rect key="frame" x="30" y="122" width="148" height="44"/>
                                                                 <color key="backgroundColor" red="0.0" green="0.23921568630000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="44" id="0q2-Pm-NGR"/>
@@ -1257,6 +1252,9 @@
         </namedColor>
         <namedColor name="separator">
             <color red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="shareColor">
+            <color red="0.93333333330000001" green="0.56470588239999997" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

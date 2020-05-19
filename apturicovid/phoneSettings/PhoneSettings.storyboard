@@ -11,7 +11,7 @@
         <!--Phone SettingsVC-->
         <scene sceneID="hi6-YC-0s9">
             <objects>
-                <viewController id="Rhs-an-Jcy" customClass="PhoneSettingsVC" customModule="Apturi_Covid" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Rhs-an-Jcy" customClass="PhoneSettingsVC" customModule="AC_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Ty-ug-Wcw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,7 +81,7 @@
                                     <constraint firstAttribute="bottom" secondItem="S3n-mh-Q2P" secondAttribute="bottom" id="nOo-ao-wjA"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bp0-oE-RFU" customClass="RoundedButton" customModule="Apturi_Covid" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bp0-oE-RFU" customClass="RoundedButton" customModule="AC_Demo" customModuleProvider="target">
                                 <rect key="frame" x="119.5" y="782" width="175" height="50"/>
                                 <color key="backgroundColor" name="primaryButton"/>
                                 <constraints>
@@ -137,7 +137,7 @@
         <!--Phone InfoVC-->
         <scene sceneID="zYM-CP-zKa">
             <objects>
-                <viewController storyboardIdentifier="PhoneInfoVC" id="HVJ-Jp-qFG" customClass="PhoneInfoVC" customModule="Apturi_Covid" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhoneInfoVC" id="HVJ-Jp-qFG" customClass="PhoneInfoVC" customModule="AC_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z4f-bb-4b0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -226,7 +226,7 @@
                                     <constraint firstItem="5xq-tm-uCX" firstAttribute="top" secondItem="et4-NR-VKi" secondAttribute="top" id="ijS-UH-Z7X"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUV-WX-1We" customClass="RoundedButton" customModule="Apturi_Covid" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUV-WX-1We" customClass="RoundedButton" customModule="AC_Demo" customModuleProvider="target">
                                 <rect key="frame" x="119.5" y="782" width="175" height="50"/>
                                 <color key="backgroundColor" name="primaryButton"/>
                                 <constraints>

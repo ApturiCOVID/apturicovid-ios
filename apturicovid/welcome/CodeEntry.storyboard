@@ -11,7 +11,7 @@
         <!--Code EntryVC-->
         <scene sceneID="FvD-MK-ggr">
             <objects>
-                <viewController id="q60-eJ-jP6" customClass="CodeEntryVC" customModule="Apturi_Covid" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="q60-eJ-jP6" customClass="CodeEntryVC" customModule="AC_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jgQ-JW-TPe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,7 +194,7 @@
         <!--Notification SentVC-->
         <scene sceneID="wKI-lq-6Mg">
             <objects>
-                <viewController restorationIdentifier="NotificationSentVC" storyboardIdentifier="NotificationSentVC" id="iAU-aB-RWv" customClass="NotificationSentVC" customModule="Apturi_Covid" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="NotificationSentVC" storyboardIdentifier="NotificationSentVC" id="iAU-aB-RWv" customClass="NotificationSentVC" customModule="AC_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jwy-Tk-s7K">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -254,7 +254,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghq-DP-nYC">
                                                 <rect key="frame" x="0.0" y="340" width="414" height="60"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFs-Ov-7FP" customClass="RoundedButton" customModule="Apturi_Covid" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFs-Ov-7FP" customClass="RoundedButton" customModule="AC_Demo" customModuleProvider="target">
                                                         <rect key="frame" x="119.66666666666669" y="5" width="175" height="50"/>
                                                         <color key="backgroundColor" name="primaryButton"/>
                                                         <constraints>

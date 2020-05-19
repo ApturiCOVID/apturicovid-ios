@@ -64,7 +64,7 @@ class HomeVC: BaseViewController {
         let exposureEnabled = ExposureManager.shared.enabled
         exposureSwitch.isOn = exposureEnabled
         tracingStateLabel.text = exposureEnabled ? "currently_active".translated : "currently_inactive".translated
-        tracingStateLabel.textColor = exposureEnabled ? Colors.darkGreen : Colors.darkOrange
+        tracingStateLabel.textColor = exposureEnabled ? Colors.darkGreen : Colors.disabled
         exposureIcon.image = exposureEnabled ? UIImage(named: "detection-on-home") : UIImage(named: "detection-off-home")
     }
     
@@ -86,7 +86,7 @@ class HomeVC: BaseViewController {
         super.viewDidLoad()
         
         exposureSwitch.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-        
+        exposureSwitch.setOffColor(UIColor(named: "offColor")!)
         exposureSwitch.isOn = ExposureManager.shared.enabled
         
         [("683", "tested"), ("2", "new_cases"), ("0", "deceased")].forEach { (arg0) in
@@ -131,6 +131,7 @@ class HomeVC: BaseViewController {
         super.viewWillAppear(animated)
         exposureNotificationVisible = LocalStore.shared.exposures.count > 0
     }
+    
     
     override func translate() {
         contactTracingTitle.text = "contact_tracing".translated

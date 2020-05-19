@@ -144,36 +144,32 @@ class HomeVC: BaseViewController {
     }
     
     private func setExposureNotification(visible: Bool) {
- 
-        minimizeLayout(for: UIDevice.smallScreenSizeModels,
-                       backgroudVisible: !visible)
 
-        exposureNotificationView.alpha = visible ? 1 : 0
-        exposureNotificationView.topAnchor.constraint(equalTo: bottomBackgroundView.topAnchor,
-                                                      constant: visible ? -70 : 0).isActive = true
-            
-        
-    }
-    
-    private func minimizeLayout(for models: [Model], backgroudVisible: Bool) {
+        let thisIsSmallScreen = UIDevice.smallScreenSizeModels.contains(UIDevice.current.type)
 
-        if models.contains(UIDevice.current.type) && !backgroudVisible {
-            
-            let bestBackgroundHeight: CGFloat = UIDevice.current.type == .iPhoneSE ? 30 : 50
+        if thisIsSmallScreen && visible {
+            /// Adjust bottomBackgroundView height to fit content
+            let bestBackgroundHeight: CGFloat = UIDevice.current.type == .iPhoneSE ? 0 : 150
             bottomBackgroundView.heightAnchor
                 .constraint(equalToConstant: bestBackgroundHeight)
                 .isActive = true
-            
-            statsView.isHidden = true
+
+            /// Hide statsView for SE screen otherwise exposureIcon will not become too small
+            statsView.isHidden = UIDevice.current.type == .iPhoneSE
         } else {
-            
+
+            /// For large screens display both stats and exposure notification
             bottomBackgroundView.heightAnchor
                 .constraint(equalToConstant: 180)
                 .isActive = true
-            
+
             statsView.isHidden = false
         }
         
-        
+        /// Mover exposure notification over bottomBackgroundView
+        exposureNotificationView.topAnchor
+            .constraint(equalTo: bottomBackgroundView.topAnchor,
+                        constant:  visible ? -80 : bottomBackgroundView.curveOffset).isActive = true
+
     }
 }

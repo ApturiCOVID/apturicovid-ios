@@ -7,20 +7,20 @@ class RestClient {
     static let shared = RestClient()
     
     private func getRemoteExposureKeyBatchUrl(index: Int) -> URL? {
-        return URL(string: "\(exposureFilesUrl)\(index).bin")
+        return URL(string: "\(filesBaseUrl)\(index).bin")
     }
     
-    func post(urlString: String, body: Data) -> Observable<Data> {
+    func request(urlString: String, body: Data?, method: String = "POST") -> Observable<Data> {
         return Observable.create({ (observer) -> Disposable in
             guard
-                let url = URL(string: "\(baseUrl)\(urlString)") else {
+                let url = URL(string: urlString) else {
                     observer.onError(NSError.make("Error creating url"))
                     return Disposables.create()
             }
             
             var request = URLRequest(url: url)
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.httpMethod = "POST"
+            request.httpMethod = method
             request.httpBody = body
             print("Curl: \(request.curlString)")
             
@@ -85,7 +85,7 @@ class RestClient {
     }
     
     func getDiagnosisKeyFileUrls(startingAt index: Int, completion: @escaping (Result<[(URL, Int)], Error>) -> Void) {
-        guard let url = URL(string: "\(exposureFilesUrl)/index.txt") else {
+        guard let url = URL(string: "\(exposureFilesBaseUrl)/index.txt") else {
             completion(.failure(NSError.make("Error creating url")))
             return
         }
@@ -190,7 +190,7 @@ class RestClient {
     
     func getExposureKeyBatchUrls() -> Observable<[(url: URL, index: String)]> {
         return Observable.create { (observer) -> Disposable in
-            guard let url = URL(string: "\(exposureFilesUrl)/index.txt") else {
+            guard let url = URL(string: "\(exposureFilesBaseUrl)/index.txt") else {
                 observer.onError(NSError.make("Error creating url"))
                 return Disposables.create()
             }
@@ -242,7 +242,7 @@ class RestClient {
         let encoder = JSONEncoder.init()
         guard let data = try? encoder.encode(uploadBody) else { return Observable.error(NSError.make("Unable to make upload request body")) }
         
-        return post(urlString: "/diagnosis_keys", body: data)
+        return request(urlString: "\(baseUrl)/diagnosis_keys", body: data)
     }
     
     private func obtainDeviceToken() -> Observable<String> {
@@ -274,7 +274,7 @@ class RestClient {
             return Observable.error(NSError.make("Error creating request"))
         }
         
-        return post(urlString: "/phone_verifications", body: body!)
+        return request(urlString: "\(baseUrl)/phone_verifications", body: body!)
             .map { (data) -> PhoneVerificationRequestResponse? in
                 return try? JSONDecoder().decode(PhoneVerificationRequestResponse.self, from: data)
         }
@@ -295,7 +295,7 @@ class RestClient {
             return Observable.error(NSError.make("Error creating request"))
         }
         
-        return post(urlString: "/phone_verifications/verify", body: body!)
+        return request(urlString: "\(baseUrl)/phone_verifications/verify", body: body!)
             .map { (data) -> PhoneConfirmationResponse? in
                 return try? JSONDecoder().decode(PhoneConfirmationResponse.self, from: data)
         }
@@ -309,9 +309,20 @@ class RestClient {
             return Observable.error(NSError.make("Error creating request"))
         }
         
-        return post(urlString: "/upload_keys/verify", body: body!)
+        return request(urlString: "\(baseUrl)/upload_keys/verify", body: body!)
             .map { (data) -> UploadKeyResponse? in
                 return try? JSONDecoder().decode(UploadKeyResponse.self, from: data)
         }
+    }
+    
+    func fetchStats() -> Observable<Stats?> {
+        return request(urlString: "\(filesBaseUrl)/stats/v1/covid-stats.json", body: nil, method: "GET")
+            .map { (data) -> Stats? in
+                let decoder = JSONDecoder()
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "YYYY-MM-DD"
+                decoder.dateDecodingStrategy = .formatted(dateFormatter)
+                return try? JSONDecoder().decode(Stats.self, from: data)
+            }
     }
 }

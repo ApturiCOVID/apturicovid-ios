@@ -20,8 +20,10 @@ class StatView: UIView {
     }
     
     func setupView(kind: String, overallCount: Int, yesterdayCount: Int) {
-        kindLabel.text = kind.translated
-        overallValueLabel.text = "\(overallCount)"
-        yesterdayValueLabel.text = "\(yesterdayCount)"
+        DispatchQueue.main.async {
+            self.kindLabel.text = kind.translated
+            self.overallValueLabel.text = "\(overallCount)"
+            self.yesterdayValueLabel.text = "\(yesterdayCount)"
+        }
     }
 }

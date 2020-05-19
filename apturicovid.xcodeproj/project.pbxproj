@@ -161,6 +161,8 @@
 		BACDE3BD246E72DE0075B20E /* UploadKeyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDE3BC246E72DE0075B20E /* UploadKeyResponse.swift */; };
 		BACDE3BF246E9A5F0075B20E /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDE3BE246E9A5F0075B20E /* PhoneNumber.swift */; };
 		BACDE3C1246EA4400075B20E /* NotificationsScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDE3C0246EA4400075B20E /* NotificationsScheduler.swift */; };
+		BAD4221B2473B3820047E85D /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD422192473B37F0047E85D /* Stats.swift */; };
+		BAD4221C2473B3820047E85D /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD422192473B37F0047E85D /* Stats.swift */; };
 		BAE35751246F2EB4004C59A9 /* PhoneSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAE35750246F2EB4004C59A9 /* PhoneSettings.storyboard */; };
 		BAE35753246F3034004C59A9 /* PhoneSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE35752246F3034004C59A9 /* PhoneSettingsVC.swift */; };
 		BAE35755246F410B004C59A9 /* ExposureAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE35754246F410B004C59A9 /* ExposureAlertVC.swift */; };
@@ -259,6 +261,7 @@
 		BACDE3BC246E72DE0075B20E /* UploadKeyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadKeyResponse.swift; sourceTree = "<group>"; };
 		BACDE3BE246E9A5F0075B20E /* PhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
 		BACDE3C0246EA4400075B20E /* NotificationsScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsScheduler.swift; sourceTree = "<group>"; };
+		BAD422192473B37F0047E85D /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		BAE35750246F2EB4004C59A9 /* PhoneSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhoneSettings.storyboard; sourceTree = "<group>"; };
 		BAE35752246F3034004C59A9 /* PhoneSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSettingsVC.swift; sourceTree = "<group>"; };
 		BAE35754246F410B004C59A9 /* ExposureAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureAlertVC.swift; sourceTree = "<group>"; };
@@ -395,6 +398,7 @@
 				BA38FFE22471B3E300577DB2 /* ExposureWrapper.swift */,
 				BA38FFE42471BA5900577DB2 /* ExposureUploadRequest.swift */,
 				BA38FFE82471DFBD00577DB2 /* BackgroundManager.swift */,
+				BAD422192473B37F0047E85D /* Stats.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -801,6 +805,7 @@
 				602C1840246C745900903458 /* RoundedButton.swift in Sources */,
 				BACDE3B1246DB9640075B20E /* PhoneVerificationRequest.swift in Sources */,
 				BAAED852246DB04D004C77A6 /* PhoneVerificationRequestResponse.swift in Sources */,
+				BAD4221C2473B3820047E85D /* Stats.swift in Sources */,
 				BA38FFEC2471E81300577DB2 /* StatusBarNotification.swift in Sources */,
 				BAAED84A246D9E7A004C77A6 /* PhoneSetupView.swift in Sources */,
 				E99BFA6D2472E749004D779F /* NotificationSentVC.swift in Sources */,
@@ -874,6 +879,7 @@
 				BA3800002473072700577DB2 /* PhoneVerificationRequest.swift in Sources */,
 				BA3800012473072700577DB2 /* PhoneVerificationRequestResponse.swift in Sources */,
 				BA3800022473072700577DB2 /* StatusBarNotification.swift in Sources */,
+				BAD4221B2473B3820047E85D /* Stats.swift in Sources */,
 				BA3800032473072700577DB2 /* PhoneSetupView.swift in Sources */,
 				BA3800042473072700577DB2 /* NotificationSentVC.swift in Sources */,
 				BA3800052473072700577DB2 /* String.swift in Sources */,

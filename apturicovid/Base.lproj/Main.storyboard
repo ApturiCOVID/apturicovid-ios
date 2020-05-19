@@ -50,21 +50,21 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="AC_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ud-65-msF" userLabel="Main View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="exposure-landing" translatesAutoresizingMaskIntoConstraints="NO" id="Ck9-8q-2TR">
-                                        <rect key="frame" x="83.666666666666686" y="94" width="208" height="208"/>
+                                        <rect key="frame" x="82" y="119.66666666666669" width="250" height="250"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Ck9-8q-2TR" secondAttribute="height" id="BQQ-X0-z64"/>
                                             <constraint firstAttribute="height" priority="250" constant="250" id="i3H-6p-ROM"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hIF-uf-7e0" customClass="RoundedButton" customModule="Apturi_Covid">
-                                        <rect key="frame" x="255" y="64" width="100" height="30"/>
+                                        <rect key="frame" x="294" y="64" width="100" height="30"/>
                                         <color key="backgroundColor" red="0.98039215686274506" green="0.45882352941176469" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Aig-Hc-7ld"/>
@@ -85,22 +85,22 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wtf-bd-JBm" userLabel="container">
-                                        <rect key="frame" x="0.0" y="318" width="375" height="125"/>
+                                        <rect key="frame" x="0.0" y="385.66666666666669" width="414" height="125"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Kontaktu Meklēšana" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5UA-a0-5b6">
-                                                <rect key="frame" x="8" y="0.0" width="359" height="36"/>
+                                                <rect key="frame" x="8" y="0.0" width="398" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Šobrīd darbojās" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Qr5-2d-GVo">
-                                                <rect key="frame" x="117" y="51" width="141" height="23"/>
+                                                <rect key="frame" x="136.66666666666666" y="51" width="140.99999999999997" height="23"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nyo-WV-M78">
-                                                <rect key="frame" x="163" y="94" width="51" height="31"/>
+                                                <rect key="frame" x="182.66666666666666" y="94" width="51" height="31"/>
                                                 <color key="onTintColor" red="0.12156862745098039" green="0.52941176470588236" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                                                 <connections>
                                                     <action selector="onSwitchTap:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZaW-zM-YUe"/>
@@ -136,10 +136,10 @@
                                 </constraints>
                             </view>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dfs-tu-Zua">
-                                <rect key="frame" x="0.0" y="469" width="375" height="260"/>
+                                <rect key="frame" x="0.0" y="553" width="414" height="260"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQ8-KT-HD7" userLabel="Texts">
-                                        <rect key="frame" x="30" y="16" width="325" height="50"/>
+                                        <rect key="frame" x="30" y="16" width="364" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Ir bijis kontakts ar COVID-19" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QbU-l1-EKf">
                                                 <rect key="frame" x="0.0" y="0.0" width="213.66666666666666" height="25"/>
@@ -154,7 +154,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufh-6M-cKo">
-                                                <rect key="frame" x="295" y="10" width="30" height="30"/>
+                                                <rect key="frame" x="334" y="10" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="9zo-mW-ahX"/>
                                                     <constraint firstAttribute="height" constant="30" id="U0Z-GH-CMQ"/>
@@ -186,19 +186,19 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R2U-sP-JiI" customClass="HomeBottomView" customModule="Apturi_Covid">
-                                <rect key="frame" x="0.0" y="549" width="375" height="180"/>
+                                <rect key="frame" x="0.0" y="633" width="414" height="180"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fML-nx-pw3">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Iepriekšējā diennaktī" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yib-ha-2dX">
-                                                <rect key="frame" x="111.33333333333333" y="35" width="152.66666666666669" height="19.333333333333329"/>
+                                                <rect key="frame" x="130.66666666666669" y="35" width="152.66666666666669" height="19.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2hr-vA-xw9">
-                                                <rect key="frame" x="16" y="70.333333333333371" width="343" height="60"/>
+                                                <rect key="frame" x="16" y="70.333333333333371" width="382" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="u0e-tN-SxW"/>
                                                 </constraints>
@@ -1229,12 +1229,10 @@
         <image name="bin" width="12" height="16"/>
         <image name="dot" width="5" height="5"/>
         <image name="exposure-alert" width="129" height="117"/>
-        <image name="exposure-icon" width="86" height="86"/>
         <image name="exposure-landing" width="140" height="134"/>
         <image name="exposure-view-corner" width="242" height="133"/>
         <image name="faq" width="22" height="22"/>
         <image name="home" width="24" height="24"/>
-        <image name="home-illustration" width="346" height="346"/>
         <image name="next-button" width="30" height="30"/>
         <image name="setting-toolbar" width="24" height="24"/>
         <image name="share-1" width="30" height="30"/>
@@ -1244,6 +1242,9 @@
         </namedColor>
         <namedColor name="descriptionText">
             <color red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="exposureNotificationColor">
+            <color red="0.078431372549019607" green="0.13725490196078433" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="headerColor">
             <color red="0.94901960784313721" green="0.95294117647058818" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1259,4 +1260,3 @@
         </namedColor>
     </resources>
 </document>
-

@@ -5,6 +5,7 @@ class PhoneSettingsVC: BaseViewController {
     @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var nextButton: RoundedButton!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var titleLabel: UILabel!
     
     let phoneView = PhoneSetupView().fromNib() as! PhoneSetupView
     
@@ -44,11 +45,11 @@ class PhoneSettingsVC: BaseViewController {
     }
     
     private func presentAnonymousPrompt() {
-        let alert = UIAlertController(title: "anonymous_prompt_title".translated, message: "anonymous_prompt_description".translated, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "remain_anonymous".translated, style: .default, handler: { (_) in
+        let alert = UIAlertController(title: "", message: "anonymous_prompt".translated, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "yes".translated, style: .default, handler: { (_) in
             self.deletePhoneAndClose()
         }))
-        alert.addAction(UIAlertAction(title: "cancel".translated, style: .cancel, handler: { (_) in
+        alert.addAction(UIAlertAction(title: "no".translated, style: .cancel, handler: { (_) in
             alert.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)
@@ -105,5 +106,10 @@ class PhoneSettingsVC: BaseViewController {
                 self?.bottomConstraint.constant = 30
                 }, onError: justPrintError)
             .disposed(by: disposeBag)
+    }
+    
+    override func translate() {
+        titleLabel.text = "specify_a_phone_number_title".translated
+        nextButton.setTitle("next".translated, for: .normal)
     }
 }

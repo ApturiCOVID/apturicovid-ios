@@ -1,37 +1,123 @@
-// Home
-"contact_tracing" = "Contact tracing";
-"currently_active" = "Currently active";
-"currently_inactive" = "Currently inactive";
-"exposure_detected_title" = "COVID-19 contact detected";
-"exposure_detected_subtitle" = "Click here to find out about the actions required";
-"stats_title" = "Yesterday";
-"share" = "Share";
+// Common
+"understood" = "Sapratu";
+"cancel" = "Atcelt";
+"yes" = "Yes";
+"no" = "No";
+"close" = "Close";
+"next" = "Next";
 
-"settings_title" = "Settings";
-"settings_enter_code" = "Enter code";
+// TabBar
+"home" = "Home";
+"statistics" = "Statistics";
+"information" = "Information";
+"settings" = "Settings";
 
-// Welcome
-"welcome_continue" = "Next";
+// WelcomeVC
 "welcome_title" = "Help break the virus chain!";
-"welcome_app_description" = "This is the fastest way to find out if you have been in contact with Covid-19. And take action to stop it.";
-
+"welcome_app_description" = "This is the fastest way to find out if you have been exposed to Covid-19. And take action to stop it.";
 "welcome_privacy_link" = "Privacy policy";
 "welcome_terms_link" = "App Terms of Use";
 "welcome_privacy_note" = "I accept App Terms of Use, and have read the Privacy policy";
 
-"welcome_phone_description" = "Provide a contact phone for the DPCC to call you if you have been in contact with Covid-19.";
-"welcome_phone_usage_description" = "Why a phone number is needed?";
-"welcome_phone_own_prompt" = "Relative’s number provided";
-"remain_anonymous" = "I do not want to provide a phone number";
+// ExposureSetupVC
+"activate" = "Switch on";
+"contact_detection" = "Contact detection";
+"exposure_setup_description" = "Contact: 2-4 m proximity for 15+ minutes.
+Detection: a code kept on phone for 14 days, then deleted.
 
-"welcome_contact_enable" = "Activate";
-"welcome_contact_title" = "Discovering contacts";
-"welcome_contact_description" = "Contact: being 2-4 m away from someone for 15+ minutes.
+Contact detection is not tracking.";
 
-Discovering: a code kept by a phone for 14 days, and then deleted.";
+// ExposureSetup Validations
+"exposure_off_setup_prompt" = " Continue without switching on contact detection?";
+
+// PhoneInfoVC
+"why_submit_a_phone_number" = "Reasons to provide a number";
+"why_submit_a_phone_number_explanation" = "If SPKC is able to contact you, a full range of support options will be available to you: from municipal social support to sick leave, depending on your symptoms.";
+"data_privacy_and_protection_policy" = "SPKC will receive your number only if and when it is established that you have been exposed to Covid-19. Noone else will find out anything about you.";
+
+// CodeEntryVC Phone validation
+"phone_confirmation_title" = "Number verification";
+"phone_confirmation_description" = "A code has been sent to the provided number %@.";
+"enter_code" = "Enter code:";
+"didnt_receive_code" = "Did not receive the code?";
+"resend_code" = "Nosūtīt kodu atkārtoti";
+"input_code_invalid" = "Ievadīts nepareizs kods";
+
+// HomeVC
+"contact_tracing" = "Contact detection";
+"currently_active" = "Is switched on";
+"currently_inactive" = "Is switched off";
+"exposure_detected_title" = "COVID-19 contact detected"; // TODO: wasnt in KAI
+"exposure_detected_subtitle" = "Click here to find out about the actions required"; // TODO: wasnt in KAI
+"stats_title" = "In the last 24 hours";
+"share" = "Share app";
+"tested" = "Tested";
+"new_cases" = "New cases";
+"deceased" = "Deceased";
+
+// ExposureAlertVC
+"exposure_with_covid" = "Covid-19 contact detected";
+"you_had_exposure" = "In the last 14 days you have been in the proximity of someone infected with Covid-19.";
+"how_to_proceed" = "What’s next?";
+"self_isolate" = "Self-isolate";
+"wait_for_a_call_from_spkc" = "Wait for a call from SPKC";
+"contact_your_family_doctor" = "Contact your family doctor";
+"observe_symptoms" = "Monitor symptoms";
+"exposure_handling_description_phone_specified" = "Please note that being exposed does not mean you are infected. Please keep calm, be cautious and follow medics' directions. Waiting for that SPKC call can feel like eternity. Please be patient.";
+"exposure_handling_description_phone_not_specified" = "Please note that being exposed does not mean you are infected. Please stay calm and be cautious. Perhaps you would like to provide your phone number now for the SPKC to contact you?";
+
+// FaqVC
+"what_is_contact_tracing" = "How does contact detection work?";
+"contact_detection_explanation" = "When two smartphones are in 2-4 m proximity, they directly exchange a code, and each device keeps it for 14 days. If a phone user marks themselves as infected, all phones keeping the respective code receive a notification.";
+"what_about_my_privacy" = "What about my privacy?";
+"data_is_kept_on_device_only" = "Data is kept on device only";
+"data_is_automatically_deleted" = "It is automatically deleted";
+"anonymous_identity" = "No other user will know your identity";
+"gpc_tracking_not_performed" = "The app does not record GPS data even if GPS is switched on";
+
+"frequently_asked_questions" = "Frequently asked questions";
+"how_is_data_processed" = "";
+// TODO: šobrīd tiek apkopoti
+
+// CodeEntryVC SPKC
+"spkc_data_send" = "Notify detected contacts";
+"spkc_data_description" = "If you are infected, you can send an automatic notification to all contacts detected in the last 14 days. That will help warn your loved ones, coworkers, friends, neighbours and complete strangers that they may be exposed to COVID-19. The notification will not disclose any information about you. It can only be sent by entering a code provided by SPKC. The code is active for 30 minutes from issuing.";
+
+// NotificationSentVC
+"notification_sent_title" = "Thank you! Notification sent!";
+"notification_sent_description" = "Thank you for your contribution to public health! The small step that you just made will help protect others and break the virus chain more efficiently.";
+
+// SettingsVC
+"enter_spkc_code" = "If you get a code from SPKC, enter it here:";
+"go_to_spkc_code_entry" = "Enter SPKC code";
+"communication_contact" = "Your contact number";
+"not_specified" = "Not provided";
+"specify" = "Provide";
+"change" = "Change";
+"not_specified_phone_number_limitations" = "In case of contact you will only get a notification in the app, and support options available to you will be limited.";
+"notify_if_tracking_isnt_working" = "Notify me if contact detection gets switched off";
+
+// PhoneSettingsVC
+"specify_a_phone_number_title" = "Provide a contact number";
+"specify_a_phone_number_description" = "Provide a contact number for SPKC to call you if you have been exposed to Covid-19.";
+"why_specify_a_phone_number" = "Reasons to provide a number";
+"specified_phone_number_is_of_another_person" = "Number belongs to someone close to me";
+"remain_anonymous" = "I will not provide a number";
+"anonymous_prompt" = "In case of contact you will only get a notification in the app, and support options available to you will be limited. Continue without phone number?";
+
+////////////////////// below not from KAI
 
 // Error
 "error" = "Error";
 "continue" = "Continue";
 "invalid_phone_number_error" = "The entered phone number is invalid";
 
+// StatsVC
+"data_renewed" = "Dati atjaunoti: %@";
+"latvia_covid_statistics" = "COVID-19 statistika Latvijā";
+"together" = "kopā";
+"yesterday" = "vakar";
+
+// TODO: SettingVC below - not in KAI
+"if_preferred_specify_phone_number" = "COVID-19 kontakta gadījumā, uz aplikāciju atnāks paziņojums ar norādēm. Ja labāk vēlieties lai ar Jums sazinās pa telefonu, norādiet kontaktu";
+"delete_all_stored_data" = "Delete all stored data";

@@ -10,6 +10,7 @@ enum CodeEntryMode {
 
 class CodeEntryVC: BaseViewController {
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -61,11 +62,10 @@ class CodeEntryVC: BaseViewController {
                 if result?.status == true {
                     self.phoneNumber?.token = response.token
                     self.close()
-                } else  {
-                    self.showError(true, with: "input_code_invalid")
                 }
             }, onError: { error in
                 SVProgressHUD.dismiss()
+                self.showError(true, with: "input_code_invalid")
                 self.pinInput.animateFailure()
                 justPrintError(error)
             })
@@ -98,7 +98,8 @@ class CodeEntryVC: BaseViewController {
                 self.uploadInprogress = false
                 SVProgressHUD.dismiss()
                 DispatchQueue.main.async {
-                    self.dismiss(animated: true, completion: nil)
+                    guard let vc = self.storyboard?.instantiateViewController(identifier: "NotificationSentVC") else { return }
+                    self.navigationController?.pushViewController(vc, animated: true)
                 }
             }, onError: { error in
                 self.uploadInprogress = false
@@ -111,13 +112,11 @@ class CodeEntryVC: BaseViewController {
     override func translate() {
         let isSMS = mode == .sms
         
-        titleLabel.text = isSMS ? "phone_confirmation".translated : "spkc_data_send".translated
-        
-        descriptionLabel.text = isSMS ?
-            "phone_confirmation_1".translated + " \(phoneNumber?.number ?? "") " + "phone_confirmation_2".translated : "spkc_data_description".translated
-        
-        inputCodeLabel.text = "input_code".translated
-        resendCodeLabel.text = "didn_receive_code".translated
+        titleLabel.text = isSMS ? "phone_confirmation_title".translated : "spkc_data_send".translated
+        descriptionLabel.text = isSMS ? String(format: "phone_confirmation_description".translated, phoneNumber?.number ?? "") : "spkc_data_description".translated
+        errorLabel.text = "input_code_invalid".translated
+        inputCodeLabel.text = "enter_code".translated
+        resendCodeLabel.text = errorView.isHidden ? "didnt_receive_code".translated : "resend_code".translated
     }
     
     func stylePinInput() {
@@ -130,7 +129,8 @@ class CodeEntryVC: BaseViewController {
         pinInput.appearance.textColor = UIColor(hex: "#161B28")
         pinInput.appearance.backColor = UIColor(hex: "#F2F3F0")
         pinInput.appearance.backBorderWidth = 5
-        pinInput.appearance.font = .courier(15)
+        pinInput.appearance.kerning = UIScreen.main.bounds.width * 0.08
+        pinInput.appearance.font = .menlo(20)
     }
     
     @objc private func resendCode() {
@@ -161,7 +161,9 @@ class CodeEntryVC: BaseViewController {
                     let keyboardFrame: CGRect = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect
                     else { return }
                 
-                self.bottomConstraint.constant = keyboardFrame.height
+                self.bottomConstraint.constant = keyboardFrame.height + 5
+                
+                self.scrollView.scrollRectToVisible(self.stackView.bounds, animated: true)
                 }, onError: justPrintError)
             .disposed(by: disposeBag)
         
@@ -177,8 +179,6 @@ class CodeEntryVC: BaseViewController {
         super.viewWillAppear(animated)
         codeInputHolder.addSubviewWithInsets(pinInput)
         stylePinInput()
-        
-        pinInput.becomeFirstResponder()
     }
 }
 

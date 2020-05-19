@@ -21,7 +21,7 @@ class ExposureManager {
     var detectingExposures = false
     
     init() {
-        manager.activate { _ in
+        manager.activate { error in
             if ENManager.authorizationStatus == .authorized && !self.manager.exposureNotificationEnabled {
                 self.manager.setExposureNotificationEnabled(true) { error in
                     if let err = error { justPrintError(err) }

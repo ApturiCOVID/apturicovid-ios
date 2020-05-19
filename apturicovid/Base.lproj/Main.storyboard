@@ -48,7 +48,7 @@
         <!--Sākums-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="Apturi_Covid" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="AC_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,12 +63,12 @@
                                             <constraint firstAttribute="height" priority="250" constant="250" id="i3H-6p-ROM"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIF-uf-7e0" customClass="RoundedButton" customModule="Apturi_Covid">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hIF-uf-7e0" customClass="RoundedButton" customModule="Apturi_Covid">
                                         <rect key="frame" x="255" y="64" width="100" height="30"/>
                                         <color key="backgroundColor" red="0.98039215686274506" green="0.45882352941176469" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Aig-Hc-7ld"/>
-                                            <constraint firstAttribute="width" constant="100" id="eVt-S2-QL0"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Twk-RD-o9m"/>
                                         </constraints>
                                         <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
@@ -88,7 +88,7 @@
                                         <rect key="frame" x="0.0" y="318" width="375" height="125"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Kontaktu Meklēšana" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5UA-a0-5b6">
-                                                <rect key="frame" x="56.666666666666657" y="0.0" width="262" height="36"/>
+                                                <rect key="frame" x="8" y="0.0" width="359" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -111,6 +111,8 @@
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="nyo-WV-M78" secondAttribute="bottom" id="9FB-LL-OAt"/>
                                             <constraint firstItem="5UA-a0-5b6" firstAttribute="top" secondItem="wtf-bd-JBm" secondAttribute="top" id="Kj6-ic-8Ki"/>
+                                            <constraint firstAttribute="trailing" secondItem="5UA-a0-5b6" secondAttribute="trailing" constant="8" id="KnW-xo-Lsi"/>
+                                            <constraint firstItem="5UA-a0-5b6" firstAttribute="leading" secondItem="wtf-bd-JBm" secondAttribute="leading" constant="8" id="Oht-dd-6ra"/>
                                             <constraint firstItem="nyo-WV-M78" firstAttribute="centerX" secondItem="wtf-bd-JBm" secondAttribute="centerX" id="SBG-Qk-MmJ"/>
                                             <constraint firstAttribute="height" constant="125" id="UAK-Xl-ntt"/>
                                             <constraint firstItem="Qr5-2d-GVo" firstAttribute="centerX" secondItem="wtf-bd-JBm" secondAttribute="centerX" id="ZkE-tS-hpj"/>
@@ -274,7 +276,7 @@
         <!--Informācija-->
         <scene sceneID="X17-mq-Fw7">
             <objects>
-                <viewController id="8VB-bV-mZA" customClass="FAQViewController" customModule="Apturi_Covid" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8VB-bV-mZA" customClass="FAQViewController" customModule="AC_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4xU-YL-opf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -473,7 +475,7 @@
         <!--Iestatījumi-->
         <scene sceneID="epX-08-5eb">
             <objects>
-                <viewController id="68n-zD-fXe" customClass="SettingsViewController" customModule="Apturi_Covid" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="68n-zD-fXe" customClass="SettingsViewController" customModule="AC_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iOR-lt-DdO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -487,7 +489,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5am-yJ-TDy">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="670.33333333333337"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiC-yq-fa0" customClass="WelcomeHeaderView" customModule="Apturi_Covid" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiC-yq-fa0" customClass="WelcomeHeaderView" customModule="AC_Demo" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="214.66666666666666"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OGA-4g-0m3">
@@ -512,7 +514,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCl-2X-223" customClass="RoundedButton" customModule="Apturi_Covid" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCl-2X-223" customClass="RoundedButton" customModule="AC_Demo" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="138.66666666666666" width="126" height="44"/>
                                                                 <color key="backgroundColor" red="0.0" green="0.23921568630000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
@@ -814,7 +816,7 @@
         <!--Item-->
         <scene sceneID="BOE-SU-ZjC">
             <objects>
-                <viewController storyboardIdentifier="ExposureAlertVC" id="n0E-B4-lil" customClass="ExposureAlertVC" customModule="Apturi_Covid" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExposureAlertVC" id="n0E-B4-lil" customClass="ExposureAlertVC" customModule="AC_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yTC-Qb-xGK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -845,7 +847,7 @@
                                                     <constraint firstAttribute="width" secondItem="YVr-cc-uYK" secondAttribute="height" multiplier="242:135" id="fPz-a3-02J"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RvG-R6-97x" customClass="RoundedButton" customModule="Apturi_Covid" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RvG-R6-97x" customClass="RoundedButton" customModule="AC_Demo" customModuleProvider="target">
                                                 <rect key="frame" x="100" y="39" width="175" height="50"/>
                                                 <color key="backgroundColor" name="primaryButton"/>
                                                 <constraints>
@@ -1040,7 +1042,7 @@
         <!--Statistika-->
         <scene sceneID="6nM-8I-agp">
             <objects>
-                <viewController id="e6S-2V-BdZ" customClass="StatsVC" customModule="Apturi_Covid" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="e6S-2V-BdZ" customClass="StatsVC" customModule="AC_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5DB-zq-UUV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

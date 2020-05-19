@@ -73,6 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             RestClient.shared.uploadExposures { (_) in
                 ExposureManager.reset()
                 NoticationsScheduler.endBackgroundTask(&task)
+                completionHandler(.newData)
             }
         }
     }

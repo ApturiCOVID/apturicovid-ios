@@ -11,7 +11,7 @@ class PhoneSetupView: UIView {
     @IBOutlet weak var phoneExplanationButton: UIButton!
     @IBOutlet weak var stayAnonymousLabel: UILabel!
     
-    let checkboxView = CheckboxView.create(text: "Norādīts citas kontaktpersonas numurs", isChecked: false)
+    let checkboxView = CheckboxView.create(text: "specified_phone_number_is_of_another_person".translated, isChecked: false)
     
     func getPhoneNumber() -> PhoneNumber {
         return PhoneNumber(number: phoneInput.text ?? "", otherParty: checkboxView.isChecked, token: nil)
@@ -36,6 +36,7 @@ class PhoneSetupView: UIView {
             phoneInput.text = phone.number
             checkboxView.isChecked = phone.otherParty
         }
+        translate()
     }
     
     override func didMoveToSuperview() {
@@ -72,5 +73,11 @@ class PhoneSetupView: UIView {
             .subscribe(onNext: { [weak self] (_) in
                 self?.phoneInfoTapObservable.onNext(true)
             }, onError: justPrintError)
+    }
+    
+    private func translate() {
+        descriptionLabel.text = "specify_a_phone_number_description".translated
+        phoneExplanationButton.setTitle("why_specify_a_phone_number".translated, for: .normal)
+        stayAnonymousLabel.text = "remain_anonymous".translated
     }
 }

@@ -61,11 +61,9 @@ class WelcomeVC: BaseViewController {
         setupLanguageSelector()
         setupPrivacyAndTermsCheckBox()
         
-       
-        
+        privacyAndTermsCheckboxView.heightAnchor.constraint(equalToConstant: 120).isActive = true
         if UIDevice.current.type == .iPhoneSE {
             spkcHeightConstaint.constant = 0
-            privacyAndTermsCheckboxView.heightAnchor.constraint(equalToConstant: 120).isActive = true
         } else {
             mainStack.setCustomSpacing(10, after: headingLabel)
             mainStack.setCustomSpacing(20, after: bodyLabel)
@@ -137,6 +135,9 @@ class WelcomeVC: BaseViewController {
                                          
         
         privacyAndTermsCheckboxView.attributedText = privacyAttributedString
+        privacyAndTermsCheckboxView.bodyLabel.setNeedsLayout()
+        privacyAndTermsCheckboxView.bodyLabel.layoutIfNeeded()
+        
     }
 }
 

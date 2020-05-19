@@ -27,7 +27,8 @@ class HomeVC: BaseViewController {
     
     private var exposureNotificationVisible = false {
         didSet {
-            setExposureNotification(visible: exposureNotificationVisible)
+            setExposureNotification(visible:
+                exposureNotificationVisible)
         }
     }
     
@@ -64,13 +65,9 @@ class HomeVC: BaseViewController {
         exposureSwitch.isOn = exposureEnabled
         tracingStateLabel.text = exposureEnabled ? "currently_active".translated : "currently_inactive".translated
         tracingStateLabel.textColor = exposureEnabled ? Colors.darkGreen : Colors.darkOrange
-        exposureIcon.image = exposureEnabled ? UIImage(named: "exposure-icon") : UIImage(named: "exposure-disabled")
+        exposureIcon.image = exposureEnabled ? UIImage(named: "detection-on-home") : UIImage(named: "detection-off-home")
     }
     
-    private func setExposureNotification(visible: Bool) {
-        exposureNotificationView.isHidden = !visible
-        layoutRequiresSetup(for: UIDevice.smallScreenSizeModels, backgroudVisible: !visible)
-    }
     
     private func presentWelcomeIfNeeded() {
         guard !LocalStore.shared.hasSeenIntro else { return }
@@ -141,19 +138,43 @@ class HomeVC: BaseViewController {
         exposureTitleLabel.text  = "exposure_detected_title".translated
         exposureDescriptionLabel.text = "exposure_detected_subtitle".translated
         statsTitleLabel.text = "stats_title".translated
+        
         shareButton.setTitle("share".translated, for: .normal)
+        shareButton.titleLabel?.numberOfLines = 1
+        shareButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        shareButton.titleLabel?.lineBreakMode = .byWordWrapping
+ 
+        
         setExposureStateVisual()
     }
     
-    private func layoutRequiresSetup(for models: [Model], backgroudVisible: Bool) {
-        guard models.contains(UIDevice.current.type) else { return }
+    private func setExposureNotification(visible: Bool) {
 
-        let bestBackgroundHeight: CGFloat = UIDevice.current.type == .iPhoneSE ? 30 : 50
+        let thisIsSmallScreen = UIDevice.smallScreenSizeModels.contains(UIDevice.current.type)
+
+        if thisIsSmallScreen && visible {
+            /// Adjust bottomBackgroundView height to fit content
+            let bestBackgroundHeight: CGFloat = UIDevice.current.type == .iPhoneSE ? 0 : 150
+            bottomBackgroundView.heightAnchor
+                .constraint(equalToConstant: bestBackgroundHeight)
+                .isActive = true
+
+            /// Hide statsView for SE screen otherwise exposureIcon will not become too small
+            statsView.isHidden = UIDevice.current.type == .iPhoneSE
+        } else {
+
+            /// For large screens display both stats and exposure notification
+            bottomBackgroundView.heightAnchor
+                .constraint(equalToConstant: 180)
+                .isActive = true
+
+            statsView.isHidden = false
+        }
         
-        bottomBackgroundView.heightAnchor
-            .constraint(equalToConstant: bestBackgroundHeight)
-            .isActive = !backgroudVisible
-     
-        statsView.isHidden = !backgroudVisible
+        /// Mover exposure notification over bottomBackgroundView
+        exposureNotificationView.topAnchor
+            .constraint(equalTo: bottomBackgroundView.topAnchor,
+                        constant:  visible ? -80 : bottomBackgroundView.curveOffset).isActive = true
+
     }
 }

@@ -10,6 +10,9 @@ class LocalStore {
     @UserDefault(.exposures, defaultValue: [])
     var exposures: [ExposureWrapper]
     
+    @UserDefault(.stats, defaultValue: nil)
+    var stats: Stats?
+    
     @UserDefault(.dateLastPerformedExposureDetection, defaultValue: nil)
     var dateLastPerformedExposureDetection: Date?
     

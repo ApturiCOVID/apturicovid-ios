@@ -8,7 +8,7 @@ class Stats: Codable {
     let yesterdaysTestsCount: Int
     let yesterdaysInfectedCount: Int
     let yesterdayDeathCount: Int
-//    let updatedAt: Date
+    let updatedAt: Date
     
     enum CodingKeys: String, CodingKey {
         case totalTestsCount = "total_tests_count"
@@ -18,6 +18,6 @@ class Stats: Codable {
         case yesterdaysTestsCount = "yesterday_tests_count"
         case yesterdaysInfectedCount = "yesterday_infected_count"
         case yesterdayDeathCount = "yesterday_death_count"
-//        case updatedAt = "updated_at"
+        case updatedAt = "updated_at"
     }
 }

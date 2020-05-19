@@ -25,6 +25,12 @@ class HomeVC: BaseViewController {
     @IBOutlet weak var statsTitleLabel: UILabel!
     @IBOutlet weak var exposureViewButton: UIButton!
     
+    private let statTested   = StatCell.create(item: "tested".translated)
+    private let statNewCases = StatCell.create(item: "new_cases".translated)
+    private let statDeceased = StatCell.create(item: "deceased".translated)
+    
+    var stats: [StatCell] { [statTested,statNewCases,statDeceased] }
+    
     private var exposureNotificationVisible = false {
         didSet {
             setExposureNotification(visible:
@@ -39,7 +45,7 @@ class HomeVC: BaseViewController {
     @IBAction func onSwitchTap(_ sender: UISwitch) {
         ExposureManager.shared.toggleExposureNotifications(enabled: sender.isOn)
             .subscribe(onCompleted: {
-                self.setExposureStateVisual()
+                self.setExposureStateVisual(animated: true)
             }, onError: { (error) in
                 justPrintError(error)
                 if let enError = error as? ENError, enError.code == ENError.Code.notAuthorized {
@@ -60,12 +66,30 @@ class HomeVC: BaseViewController {
         self.present(activityViewController, animated: true, completion: nil)
     }
     
-    private func setExposureStateVisual() {
+    private func setExposureStateVisual(animated: Bool = false) {
+        
+        func setExposureImage(in duration: TimeInterval){
+            exposureIcon.layer.removeAllAnimations()
+            
+            UIView.animate(withDuration: duration/2, animations: {
+                self.exposureIcon.alpha = 0
+            }) { completed in
+
+                guard completed else { return }
+                
+                self.exposureIcon.image = exposureEnabled ? UIImage(named: "detection-on-home") : UIImage(named: "detection-off-home")
+                
+                UIView.animate(withDuration: duration/2){
+                    self.exposureIcon.alpha = 1
+                }
+            }
+        }
+        
         let exposureEnabled = ExposureManager.shared.enabled
         exposureSwitch.isOn = exposureEnabled
         tracingStateLabel.text = exposureEnabled ? "currently_active".translated : "currently_inactive".translated
         tracingStateLabel.textColor = exposureEnabled ? Colors.darkGreen : Colors.disabled
-        exposureIcon.image = exposureEnabled ? UIImage(named: "detection-on-home") : UIImage(named: "detection-off-home")
+        setExposureImage(in: animated ? 0.3 : 0)
     }
     
     
@@ -89,13 +113,7 @@ class HomeVC: BaseViewController {
         exposureSwitch.setOffColor(UIColor(named: "offColor")!)
         exposureSwitch.isOn = ExposureManager.shared.enabled
         
-        [("683", "tested"), ("2", "new_cases"), ("0", "deceased")].forEach { (arg0) in
-            let (value, title) = arg0
-            
-            let stat = StatCell().fromNib() as! StatCell
-            stat.fill(item: title.translated, value: value)
-            statsStackView.addArrangedSubview(stat)
-        }
+        stats.forEach{ statsStackView.addArrangedSubview($0) }
         
         setExposureNotification(visible: false)
         presentWelcomeIfNeeded()
@@ -125,6 +143,19 @@ class HomeVC: BaseViewController {
                 self.exposureNotificationVisible = LocalStore.shared.exposures.count > 0
             })
             .disposed(by: disposeBag)
+        
+        RestClient.shared.fetchStats()
+        .subscribeOn(SerialDispatchQueueScheduler(qos: .default))
+        .observeOn(MainScheduler.instance)
+        .subscribe(onNext: { [weak self] (stats) in
+            guard let `self` = self, let stats = stats else { return }
+            
+            self.statTested.updateValue(stats.totalTestsCount)
+            self.statNewCases.updateValue(stats.totalInfectedCount)
+            self.statDeceased.updateValue(stats.totalDeathCount)
+            
+        }, onError: justPrintError)
+        .disposed(by: disposeBag)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -140,12 +171,14 @@ class HomeVC: BaseViewController {
         exposureDescriptionLabel.text = "exposure_detected_subtitle".translated
         statsTitleLabel.text = "stats_title".translated
         
-        shareButton.setTitle("share".translated, for: .normal)
-        shareButton.titleLabel?.numberOfLines = 1
-        shareButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        shareButton.titleLabel?.lineBreakMode = .byWordWrapping
- 
+        statTested.updateTitle("tested".translated)
+        statNewCases.updateTitle("new_cases".translated)
+        statDeceased.updateTitle("deceased".translated)
         
+        shareButton.setTitle("share".translated, for: .normal)
+        shareButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 6, bottom: 0, right: 10)
+        shareButton.sizeToFit()
+ 
         setExposureStateVisual()
     }
     

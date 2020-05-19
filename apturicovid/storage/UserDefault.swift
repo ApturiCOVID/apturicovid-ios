@@ -50,6 +50,7 @@ public enum UserDefaultKey: String {
     case applicationLanguage
     case lastDownloadedBatchIndex
     case exposures
+    case stats
     case dateLastPerformedExposureDetection
     case exposureDetectionErrorLocalizedDescription
     case exposure

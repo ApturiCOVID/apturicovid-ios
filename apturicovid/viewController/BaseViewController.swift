@@ -65,13 +65,20 @@ class BaseViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func showBasicPrompt(with message: String, action: @escaping () -> Void) {
+    func showBasicPrompt(
+        with message: String,
+        action: @escaping () -> Void,
+        cancelAction: (() -> Void)? = nil,
+        confirmTitle: String? = nil,
+        cancelTitle: String? = nil
+    ) {
         let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
         alert.overrideUserInterfaceStyle = .light
-        alert.addAction(UIAlertAction(title: "no".translated, style: .cancel, handler: { (_) in
+        alert.addAction(UIAlertAction(title: cancelTitle ?? "no".translated, style: .cancel, handler: { (_) in
             alert.dismiss(animated: true, completion: nil)
+            cancelAction?()
         }))
-        alert.addAction(UIAlertAction(title: "yes".translated, style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: confirmTitle ?? "yes".translated, style: .default, handler: { _ in
             action()
         }))
         self.present(alert, animated: true, completion: nil)

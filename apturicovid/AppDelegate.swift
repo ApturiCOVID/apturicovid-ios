@@ -3,10 +3,11 @@ import Firebase
 import CocoaLumberjack
 import ExposureNotification
 import BackgroundTasks
+import RxSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    static let backgroundTaskIdentifier = Bundle.main.bundleIdentifier! + ".exposure-notification"
+    static let backgroundTaskIdentifier = "lv.spkc.gov.apturicovid.exposure-notification"
     
     var window: UIWindow?
     
@@ -19,12 +20,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         BGTaskScheduler.shared.register(forTaskWithIdentifier: AppDelegate.backgroundTaskIdentifier, using: .main) { task in
             
-            let progress = ExposureManager.shared.backgroundDetection { success in
-                task.setTaskCompleted(success: success)
-            }
+            LocalStore.shared.bgJobCounter += 1
+            
+            let disposable = ExposureManager.shared.performExposureDetection()
+                .observeOn(MainScheduler.instance)
+                .subscribe(onNext: { (exposures) in
+                    print(exposures)
+                    task.setTaskCompleted(success: true)
+                }, onError: { (error) in
+                    task.setTaskCompleted(success: false)
+                    justPrintError(error)
+                })
             
             task.expirationHandler = {
-                progress.cancel()
+                disposable.dispose()
                 LocalStore.shared.exposureDetectionErrorLocalizedDescription = NSLocalizedString("BACKGROUND_TIMEOUT", comment: "Error")
             }
             
@@ -32,17 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         self.scheduleBackgroundTaskIfNeeded()
-        
-        UIApplication.shared.registerForRemoteNotifications()
-        
-        Messaging.messaging().subscribe(toTopic: "exposure-refresh") { error in
-            if let error = error {
-                justPrintError(error)
-                return
-            }
-            DDLogInfo("Subscribed to exposure-refresh topic")
-        }
-        
         return true
     }
     
@@ -65,20 +63,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         ExposureManager.shared.refresh()
-    }
-
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        var task = NoticationsScheduler.registerBackgroundTask()
-        _ = ExposureManager.shared.backgroundDetection { (success) in
-            RestClient.shared.uploadExposures { (_) in
-                ExposureManager.reset()
-                NoticationsScheduler.endBackgroundTask(&task)
-                completionHandler(.newData)
-            }
-        }
-    }
-    
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        print(deviceToken.hexString)
     }
 }

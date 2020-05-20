@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import ExposureNotification
+import Anchorage
 
 class HomeVC: BaseViewController {
     @IBOutlet weak var bottomBackgroundView: HomeBottomView!
@@ -28,6 +29,8 @@ class HomeVC: BaseViewController {
     private let statTested   = StatCell.create(item: "tested".translated)
     private let statNewCases = StatCell.create(item: "new_cases".translated)
     private let statDeceased = StatCell.create(item: "deceased".translated)
+    
+    var exposureNotificationConstraint: NSLayoutConstraint!
     
     var stats: [StatCell] { [statTested,statNewCases,statDeceased] }
     
@@ -115,7 +118,6 @@ class HomeVC: BaseViewController {
         
         stats.forEach{ statsStackView.addArrangedSubview($0) }
         
-        setExposureNotification(visible: false)
         presentWelcomeIfNeeded()
         
         exposureNotificationView
@@ -144,7 +146,7 @@ class HomeVC: BaseViewController {
             })
             .disposed(by: disposeBag)
         
-        RestClient.shared.fetchStats()
+        ApiClient.shared.fetchStats()
         .subscribeOn(SerialDispatchQueueScheduler(qos: .default))
         .observeOn(MainScheduler.instance)
         .subscribe(onNext: { [weak self] (stats) in
@@ -156,6 +158,9 @@ class HomeVC: BaseViewController {
             
         }, onError: justPrintError)
         .disposed(by: disposeBag)
+        
+        exposureNotificationConstraint = exposureNotificationView.topAnchor == bottomBackgroundView.topAnchor
+        setExposureNotification(visible: false)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -206,9 +211,7 @@ class HomeVC: BaseViewController {
         }
         
         /// Mover exposure notification over bottomBackgroundView
-        exposureNotificationView.topAnchor
-            .constraint(equalTo: bottomBackgroundView.topAnchor,
-                        constant:  visible ? -80 : bottomBackgroundView.curveOffset).isActive = true
+        exposureNotificationConstraint.constant = visible ? -80 : bottomBackgroundView.curveOffset
 
     }
 }

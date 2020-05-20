@@ -28,9 +28,9 @@ class SettingsViewController: BaseViewController {
     @IBAction func onReminderSet(_ sender: UISwitch) {
         LocalStore.shared.exposureStateReminderEnabled = sender.isOn
         if sender.isOn {
-            NoticationsScheduler.shared.scheduleExposureStateNotification()
+            NotificationsScheduler.shared.scheduleExposureStateNotification()
         } else {
-            NoticationsScheduler.shared.removeExposureStateReminder()
+            NotificationsScheduler.shared.removeExposureStateReminder()
         }
     }
     

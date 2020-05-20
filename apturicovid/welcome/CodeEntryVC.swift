@@ -56,7 +56,7 @@ class CodeEntryVC: BaseViewController {
         guard let response = requestResponse else { return }
         SVProgressHUD.show()
         
-        RestClient.shared.requestPhoneConfirmation(token: response.token, code: pin)
+        ApiClient.shared.requestPhoneConfirmation(token: response.token, code: pin)
             .subscribe(onNext: { (result) in
                 SVProgressHUD.dismiss()
                 if result?.status == true {
@@ -82,7 +82,7 @@ class CodeEntryVC: BaseViewController {
     private func performExposureKeyUpload(pin: String) {
         uploadInprogress = true
         SVProgressHUD.show()
-        RestClient.shared.requestDiagnosisUploadKey(code: pin)
+        ExposuresClient.shared.requestDiagnosisUploadKey(code: pin)
             .do(onError: { _ in
                 self.pinInput.animateFailure()
             })
@@ -137,7 +137,7 @@ class CodeEntryVC: BaseViewController {
         guard let phoneNo = phoneNumber?.number else { return }
         SVProgressHUD.show()
         
-        RestClient.shared.requestPhoneVerification(phoneNumber: phoneNo)
+        ApiClient.shared.requestPhoneVerification(phoneNumber: phoneNo)
             .subscribe(onNext: { _ in
                 SVProgressHUD.dismiss()
             },onError: { error in

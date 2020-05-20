@@ -15,7 +15,7 @@ class PhoneSettingsVC: BaseViewController {
     
     @IBAction func onNextButtonTap(_ sender: Any) {
         SVProgressHUD.show()
-        RestClient.shared.requestPhoneVerification(phoneNumber: phoneView.getPhoneNumber().number)
+        ApiClient.shared.requestPhoneVerification(phoneNumber: phoneView.getPhoneNumber().number)
             .subscribe(onNext: { (response) in
                 SVProgressHUD.dismiss()
                 if let response = response {

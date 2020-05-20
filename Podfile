@@ -11,7 +11,6 @@ def common_pods
   pod 'Anchorage'
   pod 'SVProgressHUD'
   pod 'KAPinField'
-  pod 'Firebase/Messaging'
 end
 
 target 'apturicovid' do

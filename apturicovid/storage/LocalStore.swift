@@ -34,6 +34,9 @@ class LocalStore {
     @UserDefault(.notificationIdentifier, defaultValue: nil)
     var notificationIdentifier: String?
     
+    @UserDefault(.bgJobCounter, defaultValue: 0)
+    var bgJobCounter: Int
+    
     func setMobilephoneAndScheduleUpload(phone: PhoneNumber?) {
         guard phone != nil else {
             phoneNumber = nil

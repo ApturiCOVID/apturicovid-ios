@@ -91,7 +91,7 @@ class SettingsViewController: BaseViewController {
         reminderSwitch.isOn = LocalStore.shared.exposureStateReminderEnabled
         
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String, let bundleV = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
-               versionLabel.text = "Versijas nr.: \(version) (\(bundleV))"
+               versionLabel.text = "v\(version) (\(bundleV))"
            }
         
         deleteDataView.rx
@@ -104,6 +104,7 @@ class SettingsViewController: BaseViewController {
     }
     
     override func translate() {
+        self.tabBarItem.title = "settings".translated
         titleLabel.text = "settings".translated
         spkcCodeDescriptionLabel.text = "enter_spkc_code".translated
         submitButton.setTitle("go_to_spkc_code_entry".translated, for: .normal)

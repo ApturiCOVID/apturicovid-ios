@@ -26,20 +26,24 @@
 Fiksēšana: šifrs, ko tālrunis glabā 14 dienas, tad dzēš.
 
 Kontakta fiksēšana nav izsekošana.";
+"exposure_switch_subtitle" = "Šo funkciju vari ieslēgt arī vēlāk. Un izslēgt, kad vien vēlies.";
 
 // ExposureSetup Validations
 "exposure_off_setup_prompt" = " Vai tiešām turpināt, neieslēdzot kontakta fiksēšanu?";
 
 // PhoneInfoVC
 "why_submit_a_phone_number" = "Kāpēc norādīt tālruni?";
-"why_submit_a_phone_number_explanation" = "Ja SPKC varēs ar tevi sazināties, tevi varēs oficiāli atzīt par kontaktpersonu, un tev kļūs pieejams atbalsta iespēju tīkls – no pašvaldības sociālā atbalsta līdz slimības lapai, atbilstoši taviem simptomiem.";
+"why_submit_a_phone_number_explanation" = "Ja SPKC varēs ar tevi sazināties, būs iespējams novērtēt tavu risku, un, ja nepieciešams, atzīt tevi par kontaktpersonu. Tad tev kļūs pieejams atbalsta iespēju tīkls – piemēram, ģimenes ārsts varēs izrakstīt darba nespējas lapu.
+
+SPKC tavu kontakttālruni ar saskares informāciju saņems tikai tad, ja tev tiks konstatēta saskare ar Covid-19, un ne mirkli agrāk. Nevienam citam nekādi dati par tevi zināmi nebūs vispār.
+";
 "data_privacy_and_protection_policy" = "SPKC tavu kontakttālruni saņems tikai tad, ja tev tiks konstatēta saskare ar Covid-19, un ne mirkli agrāk. Nevienam citam nekādi dati par tevi zināmi nebūs vispār.";
 
 // CodeEntryVC Phone validation
 "phone_confirmation_title" = "Numura apstiprinājums";
 "phone_confirmation_description" = "Uz norādīto tālruņa numuru %@ ir nosūtīts kods.";
 "enter_code" = "Ievadi kodu šeit:";
-"didnt_receive_code" = "Nesaņēmi kodu?";
+"didnt_receive_code" = "Nesaņēmu kodu, sūtīt vēlreiz";
 "resend_code" = "Nosūtīt kodu atkārtoti";
 "input_code_invalid" = "Ievadīts nepareizs kods";
 
@@ -47,8 +51,8 @@ Kontakta fiksēšana nav izsekošana.";
 "contact_tracing" = "Kontakta fiksēšana";
 "currently_active" = "Šobrīd ieslēgta";
 "currently_inactive" = "Šobrīd izslēgta";
-"exposure_detected_title" = "COVID-19 contact detected"; // TODO: wasnt in KAI
-"exposure_detected_subtitle" = "Click here to find out about the actions required"; // TODO: wasnt in KAI
+"exposure_detected_subtitle" = "Mieru, tikai mieru. Tev konstatēta saskare ar Covid-19 saslimušo.";
+"exposure_off_prompt" = "Vai tiešām vēlies izslēgt kontakta fiksēšanu?";
 "stats_title" = "Iepriekšējā diennaktī";
 "share" = "Uzaicini";
 "tested" = "Testēti";
@@ -104,6 +108,12 @@ Kontakta fiksēšana nav izsekošana.";
 "specified_phone_number_is_of_another_person" = "Norādīts tuvinieka tālrunis";
 "remain_anonymous" = "Nevēlos norādīt tālruni";
 "anonymous_prompt" = "Saskares gadījumā saņemsi tikai paziņojumu tepat lietotnē, un atbalsta iespējas būs ierobežotas. Vai tiešām turpināt bez tālruņa norādīšanas?";
+
+// Notifications
+"exposure_disabled_notification_title" = "Kontakta fiksēšana izslēgusies";
+"exposure_disabled_notification_description" = "Kontakta fiksēšana Apturi Covid lietotnē šobrīd nedarbojas.";
+"exposure_detected_notification_title" = "Mieru, tikai mieru.";
+"exposure_detected_notification_description" = "Tev konstatēta saskare ar Covid-19 saslimušo.";
 
 ////////////////////// below not from KAI
 

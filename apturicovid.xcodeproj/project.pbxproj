@@ -174,6 +174,8 @@
 		BAD42226247402430047E85D /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD42221247401D10047E85D /* RestClient.swift */; };
 		BADFAD02247559BE006F61E7 /* ENExposureConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADFAD01247559BE006F61E7 /* ENExposureConfiguration.swift */; };
 		BADFAD0324755B95006F61E7 /* ENExposureConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADFAD01247559BE006F61E7 /* ENExposureConfiguration.swift */; };
+		BADFAD052475BF6A006F61E7 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADFAD042475BF6A006F61E7 /* MainTabController.swift */; };
+		BADFAD062475BFB8006F61E7 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADFAD042475BF6A006F61E7 /* MainTabController.swift */; };
 		BAE35751246F2EB4004C59A9 /* PhoneSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAE35750246F2EB4004C59A9 /* PhoneSettings.storyboard */; };
 		BAE35753246F3034004C59A9 /* PhoneSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE35752246F3034004C59A9 /* PhoneSettingsVC.swift */; };
 		BAE35755246F410B004C59A9 /* ExposureAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE35754246F410B004C59A9 /* ExposureAlertVC.swift */; };
@@ -214,7 +216,6 @@
 		7528B0FC246C016D007D0260 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Translations.strings; sourceTree = "<group>"; };
 		7528B0FE246C016E007D0260 /* lv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = lv; path = lv.lproj/Translations.strings; sourceTree = "<group>"; };
 		7528B0FF246C02BC007D0260 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		7528B101246C122F007D0260 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		7528B103246C1338007D0260 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		7528B109246C27A0007D0260 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		75B1DAA0246BE91100601F69 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
@@ -281,6 +282,7 @@
 		BAD42221247401D10047E85D /* RestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
 		BAD422232474023F0047E85D /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		BADFAD01247559BE006F61E7 /* ENExposureConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENExposureConfiguration.swift; sourceTree = "<group>"; };
+		BADFAD042475BF6A006F61E7 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		BAE35750246F2EB4004C59A9 /* PhoneSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhoneSettings.storyboard; sourceTree = "<group>"; };
 		BAE35752246F3034004C59A9 /* PhoneSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSettingsVC.swift; sourceTree = "<group>"; };
 		BAE35754246F410B004C59A9 /* ExposureAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureAlertVC.swift; sourceTree = "<group>"; };
@@ -433,7 +435,6 @@
 			isa = PBXGroup;
 			children = (
 				BA366CDA2465F85200A35CA8 /* HomeVC.swift */,
-				7528B101246C122F007D0260 /* MainTabController.swift */,
 				75B1DAA0246BE91100601F69 /* SettingsVC.swift */,
 				BAAED83E246C403D004C77A6 /* BaseViewController.swift */,
 				BAAED845246D5ECD004C77A6 /* FAQVC.swift */,
@@ -442,6 +443,7 @@
 				BA38FFEB2471E81300577DB2 /* StatusBarNotification.swift */,
 				BA38FFEF2471E91E00577DB2 /* SlideViewController.swift */,
 				E99BFA6C2472E749004D779F /* NotificationSentVC.swift */,
+				BADFAD042475BF6A006F61E7 /* MainTabController.swift */,
 			);
 			path = viewController;
 			sourceTree = "<group>";
@@ -866,6 +868,7 @@
 				BA8CD87A2475477C00B068A5 /* ExposureConfiguration.swift in Sources */,
 				BACDE3B9246DC5EF0075B20E /* PhoneConfirmationResponse.swift in Sources */,
 				602AE9B62473E152008E42F3 /* UISwitchEx.swift in Sources */,
+				BADFAD052475BF6A006F61E7 /* MainTabController.swift in Sources */,
 				BADFAD02247559BE006F61E7 /* ENExposureConfiguration.swift in Sources */,
 				603DC22424715A3C00AD6217 /* UIDeviceEx.swift in Sources */,
 				BA50D35B2469EEB90091DF0E /* DiagnosisUploadRequest.swift in Sources */,
@@ -945,6 +948,7 @@
 				BA8CD87B2475477C00B068A5 /* ExposureConfiguration.swift in Sources */,
 				BA3800152473072700577DB2 /* PhoneConfirmationResponse.swift in Sources */,
 				BAD4221D2473E9460047E85D /* UISwitchEx.swift in Sources */,
+				BADFAD062475BFB8006F61E7 /* MainTabController.swift in Sources */,
 				BADFAD0324755B95006F61E7 /* ENExposureConfiguration.swift in Sources */,
 				BA3800162473072700577DB2 /* UIDeviceEx.swift in Sources */,
 				BA3800172473072700577DB2 /* DiagnosisUploadRequest.swift in Sources */,

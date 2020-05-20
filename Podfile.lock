@@ -8,9 +8,6 @@ PODS:
   - Firebase/Crashlytics (6.24.0):
     - Firebase/CoreOnly
     - FirebaseCrashlytics (~> 4.1.0)
-  - Firebase/Messaging (6.24.0):
-    - Firebase/CoreOnly
-    - FirebaseMessaging (~> 4.4.0)
   - FirebaseAnalyticsInterop (1.5.0)
   - FirebaseCore (6.7.0):
     - FirebaseCoreDiagnostics (~> 1.3)
@@ -37,39 +34,14 @@ PODS:
     - GoogleUtilities/Environment (~> 6.6)
     - GoogleUtilities/UserDefaults (~> 6.6)
     - PromisesObjC (~> 1.2)
-  - FirebaseInstanceID (4.3.4):
-    - FirebaseCore (~> 6.6)
-    - FirebaseInstallations (~> 1.0)
-    - GoogleUtilities/Environment (~> 6.5)
-    - GoogleUtilities/UserDefaults (~> 6.5)
-  - FirebaseMessaging (4.4.0):
-    - FirebaseAnalyticsInterop (~> 1.5)
-    - FirebaseCore (~> 6.6)
-    - FirebaseInstanceID (~> 4.3)
-    - GoogleUtilities/AppDelegateSwizzler (~> 6.5)
-    - GoogleUtilities/Environment (~> 6.5)
-    - GoogleUtilities/Reachability (~> 6.5)
-    - GoogleUtilities/UserDefaults (~> 6.5)
-    - Protobuf (>= 3.9.2, ~> 3.9)
   - GoogleDataTransport (6.1.0)
   - GoogleDataTransportCCTSupport (3.1.0):
     - GoogleDataTransport (~> 6.1)
     - nanopb (~> 1.30905.0)
-  - GoogleUtilities/AppDelegateSwizzler (6.6.0):
-    - GoogleUtilities/Environment
-    - GoogleUtilities/Logger
-    - GoogleUtilities/Network
   - GoogleUtilities/Environment (6.6.0):
     - PromisesObjC (~> 1.2)
   - GoogleUtilities/Logger (6.6.0):
     - GoogleUtilities/Environment
-  - GoogleUtilities/Network (6.6.0):
-    - GoogleUtilities/Logger
-    - "GoogleUtilities/NSData+zlib"
-    - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (6.6.0)"
-  - GoogleUtilities/Reachability (6.6.0):
-    - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.6.0):
     - GoogleUtilities/Logger
   - KAPinField (5.0.1)
@@ -79,7 +51,6 @@ PODS:
   - nanopb/decode (1.30905.0)
   - nanopb/encode (1.30905.0)
   - PromisesObjC (1.2.8)
-  - Protobuf (3.11.4)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -95,7 +66,6 @@ DEPENDENCIES:
   - Anchorage
   - CocoaLumberjack/Swift
   - Firebase/Crashlytics
-  - Firebase/Messaging
   - KAPinField
   - RxCocoa (~> 5.1)
   - RxGesture (~> 3.0.1)
@@ -113,15 +83,12 @@ SPEC REPOS:
     - FirebaseCoreDiagnosticsInterop
     - FirebaseCrashlytics
     - FirebaseInstallations
-    - FirebaseInstanceID
-    - FirebaseMessaging
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
     - KAPinField
     - nanopb
     - PromisesObjC
-    - Protobuf
     - RxCocoa
     - RxGesture
     - RxRelay
@@ -138,21 +105,18 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnosticsInterop: 296e2c5f5314500a850ad0b83e9e7c10b011a850
   FirebaseCrashlytics: fff345f16a07f0b23cb342d8de5a42cec6de3492
   FirebaseInstallations: 2119fb3e46b0a88bfdbf12562f855ee3252462fa
-  FirebaseInstanceID: cef67c4967c7cecb56ea65d8acbb4834825c587b
-  FirebaseMessaging: 58cb17277641a0084d98d4951ba1f1fb0588c8c6
   GoogleDataTransport: f6f8eba931df03ebd2232ff4645aa85f8f47b5ab
   GoogleDataTransportCCTSupport: d70a561f7d236af529fee598835caad5e25f6d3d
   GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
   KAPinField: 24d85205115c1bb6aef8ff809944f41ac8c2785f
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
-  Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxGesture: d6bd7447ca3a596c7a9702a6a2b6a2bb5d8bae54
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: e4ad18b1dfa4fde78a5164347c9c013eb2410290
+PODFILE CHECKSUM: 543fbffb5afc2f8bac94a0213b16837622e40c0b
 
 COCOAPODS: 1.9.1

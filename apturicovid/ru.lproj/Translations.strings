@@ -111,7 +111,7 @@
 "invalid_phone_number_error" = "Введенный номер телефона недействителен";
 
 // StatsVC
-"data_renewed" = "Данные обновлены: %@";
+"data_renewed" = "Данные обновлены: ";
 "latvia_covid_statistics" = "Статистика COVID-19 в Латвии";
 "together" = "в целом";
 "yesterday" = "вчера";

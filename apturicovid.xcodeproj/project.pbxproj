@@ -14,6 +14,9 @@
 		602C1841246C745900903458 /* WelcomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C183F246C745900903458 /* WelcomeHeaderView.swift */; };
 		603DC221247130A700AD6217 /* CGPointEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603DC220247130A700AD6217 /* CGPointEx.swift */; };
 		603DC22424715A3C00AD6217 /* UIDeviceEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603DC22324715A3C00AD6217 /* UIDeviceEx.swift */; };
+		606715C02474858100B7D298 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606715BF2474858100B7D298 /* RoundedView.swift */; };
+		606715C22475007600B7D298 /* StatsCollectionViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606715C12475007600B7D298 /* StatsCollectionViewCells.swift */; };
+		606715C32475007600B7D298 /* StatsCollectionViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606715C12475007600B7D298 /* StatsCollectionViewCells.swift */; };
 		60701AFF246D422000BFA1F4 /* LinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60701AFE246D422000BFA1F4 /* LinkLabel.swift */; };
 		60701B01246D46F600BFA1F4 /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60701B00246D46F600BFA1F4 /* NSMutableAttributedString.swift */; };
 		60A3349B246D0C16007BE791 /* NotificationNameEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3349A246D0C16007BE791 /* NotificationNameEx.swift */; };
@@ -202,6 +205,8 @@
 		602C183F246C745900903458 /* WelcomeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeHeaderView.swift; sourceTree = "<group>"; };
 		603DC220247130A700AD6217 /* CGPointEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointEx.swift; sourceTree = "<group>"; };
 		603DC22324715A3C00AD6217 /* UIDeviceEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceEx.swift; sourceTree = "<group>"; };
+		606715BF2474858100B7D298 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		606715C12475007600B7D298 /* StatsCollectionViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCollectionViewCells.swift; sourceTree = "<group>"; };
 		60701AFE246D422000BFA1F4 /* LinkLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkLabel.swift; sourceTree = "<group>"; };
 		60701B00246D46F600BFA1F4 /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
 		60A3349A246D0C16007BE791 /* NotificationNameEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameEx.swift; sourceTree = "<group>"; };
@@ -334,6 +339,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		606715C42475008900B7D298 /* collection view cells */ = {
+			isa = PBXGroup;
+			children = (
+				606715C12475007600B7D298 /* StatsCollectionViewCells.swift */,
+			);
+			path = "collection view cells";
+			sourceTree = "<group>";
+		};
 		60A334A4246D22E7007BE791 /* submit */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,6 +452,7 @@
 				BAAED845246D5ECD004C77A6 /* FAQVC.swift */,
 				BAE35754246F410B004C59A9 /* ExposureAlertVC.swift */,
 				BAE3575D246F4B28004C59A9 /* StatsVC.swift */,
+				606715C42475008900B7D298 /* collection view cells */,
 				BA38FFEB2471E81300577DB2 /* StatusBarNotification.swift */,
 				BA38FFEF2471E91E00577DB2 /* SlideViewController.swift */,
 				E99BFA6C2472E749004D779F /* NotificationSentVC.swift */,
@@ -493,6 +507,7 @@
 				60A334A1246D2116007BE791 /* UITextField2.swift */,
 				BABEEC262468718C009D8307 /* CheckboxView.swift */,
 				602C183E246C745900903458 /* RoundedButton.swift */,
+				606715BF2474858100B7D298 /* RoundedView.swift */,
 				60701AFE246D422000BFA1F4 /* LinkLabel.swift */,
 				602C183F246C745900903458 /* WelcomeHeaderView.swift */,
 				BABEEC2A24687397009D8307 /* CheckboxView.xib */,
@@ -848,12 +863,14 @@
 				BAAED84A246D9E7A004C77A6 /* PhoneSetupView.swift in Sources */,
 				E99BFA6D2472E749004D779F /* NotificationSentVC.swift in Sources */,
 				7528B100246C02BC007D0260 /* String.swift in Sources */,
+				606715C22475007600B7D298 /* StatsCollectionViewCells.swift in Sources */,
 				60701B01246D46F600BFA1F4 /* NSMutableAttributedString.swift in Sources */,
 				BA38FFF02471E91E00577DB2 /* SlideViewController.swift in Sources */,
 				BA50D3592469E9A10091DF0E /* NSError.swift in Sources */,
 				BAE3575E246F4B28004C59A9 /* StatsVC.swift in Sources */,
 				60A334A2246D2116007BE791 /* UITextField2.swift in Sources */,
 				BACDE3B5246DBC180075B20E /* CodeEntryVC.swift in Sources */,
+				606715C02474858100B7D298 /* RoundedView.swift in Sources */,
 				BA38FFE32471B3E300577DB2 /* ExposureWrapper.swift in Sources */,
 				60701AFF246D422000BFA1F4 /* LinkLabel.swift in Sources */,
 				BA11213F2469DDC900D975D5 /* DiagnosisKey.swift in Sources */,
@@ -958,6 +975,7 @@
 				BA38001F2473072700577DB2 /* UserDefault.swift in Sources */,
 				BA3800202473072700577DB2 /* FAQ.swift in Sources */,
 				BA3800212473072700577DB2 /* ExposureUploadRequest.swift in Sources */,
+				606715C32475007600B7D298 /* StatsCollectionViewCells.swift in Sources */,
 				BA3800222473072700577DB2 /* NotificationsScheduler.swift in Sources */,
 				BAD422252474023F0047E85D /* ApiClient.swift in Sources */,
 				BA3800232473072700577DB2 /* WelcomeVC.swift in Sources */,

@@ -149,12 +149,12 @@ class HomeVC: BaseViewController {
         ApiClient.shared.fetchStats()
         .subscribeOn(SerialDispatchQueueScheduler(qos: .default))
         .observeOn(MainScheduler.instance)
+        .share()
         .subscribe(onNext: { [weak self] (stats) in
-            guard let `self` = self, let stats = stats else { return }
             
-            self.statTested.updateValue(stats.totalTestsCount)
-            self.statNewCases.updateValue(stats.totalInfectedCount)
-            self.statDeceased.updateValue(stats.totalDeathCount)
+            self?.statTested.updateValue(stats.totalTestsCount)
+            self?.statNewCases.updateValue(stats.totalInfectedCount)
+            self?.statDeceased.updateValue(stats.totalDeathCount)
             
         }, onError: justPrintError)
         .disposed(by: disposeBag)

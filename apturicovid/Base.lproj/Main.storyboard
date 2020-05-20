@@ -180,7 +180,7 @@
                                     <constraint firstItem="pQ8-KT-HD7" firstAttribute="leading" secondItem="dfs-tu-Zua" secondAttribute="leading" constant="30" id="cpo-2L-owh"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R2U-sP-JiI" customClass="HomeBottomView" customModule="Apturi_Covid">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R2U-sP-JiI" customClass="HomeBottomView" customModule="AC_Demo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="633" width="414" height="180"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fML-nx-pw3">
@@ -1254,7 +1254,7 @@
             <color red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="shareColor">
-            <color red="0.93333333330000001" green="0.56470588239999997" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.93300002813339233" green="0.56499999761581421" blue="0.28200000524520874" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

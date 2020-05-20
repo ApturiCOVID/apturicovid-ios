@@ -117,6 +117,7 @@ Contact detection is not tracking.";
 "latvia_covid_statistics" = "COVID-19 statistika Latvijā";
 "together" = "kopā";
 "yesterday" = "vakar";
+"proportion" = "Proportion";
 
 // TODO: SettingVC below - not in KAI
 "if_preferred_specify_phone_number" = "COVID-19 kontakta gadījumā, uz aplikāciju atnāks paziņojums ar norādēm. Ja labāk vēlieties lai ar Jums sazinās pa telefonu, norādiet kontaktu";

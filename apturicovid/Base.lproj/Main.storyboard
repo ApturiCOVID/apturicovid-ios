@@ -1146,18 +1146,36 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ISp-fv-wBQ">
                                     <size key="itemSize" width="196" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="72"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StatsSingleValueCollectionViewCell" id="hBc-JQ-MHZ" customClass="StatsSingleValueCollectionViewCell" customModule="AC_Demo" customModuleProvider="target">
-                                        <rect key="frame" x="99" y="50" width="200" height="150"/>
+                                        <rect key="frame" x="99" y="72" width="200" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lE8-0O-Dfd">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="150"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d7P-wY-k9p" userLabel="shadowView" customClass="RoundedView" customModule="Apturi_Covid">
+                                                    <rect key="frame" x="6" y="6" width="188" height="138"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="14"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                            <real key="value" value="0.5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NJ3-d7-1qt" userLabel="background" customClass="RoundedView" customModule="Apturi_Covid">
                                                     <rect key="frame" x="6" y="6" width="188" height="138"/>
                                                     <subviews>
@@ -1190,15 +1208,9 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="14"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                            <real key="value" value="2"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shadowEnabled" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                                             <color key="value" name="shareColor"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                            <real key="value" value="0.29999999999999999"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
@@ -1234,11 +1246,15 @@
                                                 <constraint firstAttribute="trailing" secondItem="NJ3-d7-1qt" secondAttribute="trailing" constant="6" id="0jf-OQ-dVP"/>
                                                 <constraint firstItem="IoS-z0-E6o" firstAttribute="top" secondItem="NHV-ws-6nj" secondAttribute="bottom" constant="16" id="6EK-2i-Aej"/>
                                                 <constraint firstAttribute="bottom" secondItem="IoS-z0-E6o" secondAttribute="bottom" constant="16" id="8si-qJ-z2l"/>
+                                                <constraint firstItem="d7P-wY-k9p" firstAttribute="height" secondItem="NJ3-d7-1qt" secondAttribute="height" id="Gq5-Vb-4th"/>
                                                 <constraint firstAttribute="bottom" secondItem="NJ3-d7-1qt" secondAttribute="bottom" constant="6" id="Htn-Ex-9Pr"/>
+                                                <constraint firstItem="d7P-wY-k9p" firstAttribute="width" secondItem="NJ3-d7-1qt" secondAttribute="width" id="LGo-U6-vhz"/>
                                                 <constraint firstItem="IoS-z0-E6o" firstAttribute="leading" secondItem="NJ3-d7-1qt" secondAttribute="leading" constant="16" id="PxS-NG-mwR"/>
                                                 <constraint firstAttribute="trailing" secondItem="IoS-z0-E6o" secondAttribute="trailing" constant="16" id="RwI-xq-L8t"/>
                                                 <constraint firstItem="NJ3-d7-1qt" firstAttribute="top" secondItem="lE8-0O-Dfd" secondAttribute="top" constant="6" id="VcV-Yo-Udg"/>
+                                                <constraint firstItem="d7P-wY-k9p" firstAttribute="centerY" secondItem="NJ3-d7-1qt" secondAttribute="centerY" id="Wih-wR-Eyd"/>
                                                 <constraint firstItem="NJ3-d7-1qt" firstAttribute="leading" secondItem="lE8-0O-Dfd" secondAttribute="leading" constant="6" id="Yry-Io-Ra7"/>
+                                                <constraint firstItem="d7P-wY-k9p" firstAttribute="centerX" secondItem="NJ3-d7-1qt" secondAttribute="centerX" id="geu-Ar-e3a"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1250,12 +1266,30 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StatsDoubleValueCollectionViewCell" id="1cg-FG-bVx" customClass="StatsDoubleValueCollectionViewCell" customModule="AC_Demo" customModuleProvider="target">
-                                        <rect key="frame" x="99" y="200" width="200" height="150"/>
+                                        <rect key="frame" x="99" y="222" width="200" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="THB-E5-qDz">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="150"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7nN-Tp-01G" userLabel="shadowView" customClass="RoundedView" customModule="Apturi_Covid">
+                                                    <rect key="frame" x="6" y="6" width="188" height="138"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="14"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                            <real key="value" value="0.29999999999999999"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcu-Fk-edE" userLabel="background" customClass="RoundedView" customModule="Apturi_Covid">
                                                     <rect key="frame" x="6" y="6" width="188" height="138"/>
                                                     <subviews>
@@ -1290,13 +1324,13 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nHS-cL-yzE">
                                                                     <rect key="frame" x="0.0" y="16.666666666666671" width="69.666666666666671" height="49"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="altogether" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bHr-An-Qjn">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="altogether" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bHr-An-Qjn">
                                                                             <rect key="frame" x="0.0" y="0.0" width="69.666666666666671" height="17"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7X-LH-w5y">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7X-LH-w5y">
                                                                             <rect key="frame" x="0.0" y="25" width="69.666666666666671" height="24"/>
                                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                                             <nil key="textColor"/>
@@ -1364,24 +1398,23 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="14"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                            <real key="value" value="2"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                            <real key="value" value="0.29999999999999999"/>
-                                                        </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="shadowEnabled" value="YES"/>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                                             <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="rcu-Fk-edE" secondAttribute="trailing" constant="6" id="1XA-hh-ypl"/>
+                                                <constraint firstItem="7nN-Tp-01G" firstAttribute="width" secondItem="rcu-Fk-edE" secondAttribute="width" id="IQS-fw-4QX"/>
                                                 <constraint firstItem="rcu-Fk-edE" firstAttribute="top" secondItem="THB-E5-qDz" secondAttribute="top" constant="6" id="LI5-gR-wSK"/>
+                                                <constraint firstItem="7nN-Tp-01G" firstAttribute="height" secondItem="rcu-Fk-edE" secondAttribute="height" id="MSo-D2-qs4"/>
                                                 <constraint firstAttribute="bottom" secondItem="rcu-Fk-edE" secondAttribute="bottom" constant="6" id="MW0-2H-7X5"/>
                                                 <constraint firstItem="rcu-Fk-edE" firstAttribute="leading" secondItem="THB-E5-qDz" secondAttribute="leading" constant="6" id="r5w-0y-wa3"/>
+                                                <constraint firstItem="7nN-Tp-01G" firstAttribute="centerY" secondItem="rcu-Fk-edE" secondAttribute="centerY" id="tP8-OB-dlT"/>
+                                                <constraint firstItem="7nN-Tp-01G" firstAttribute="centerX" secondItem="rcu-Fk-edE" secondAttribute="centerX" id="vg4-Rq-gj5"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1396,31 +1429,49 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StatsHeaderView" id="yAm-uv-j0G" customClass="StatsHeaderView" customModule="AC_Demo" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="398" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="398" height="72"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Gsd-Ps-qjn">
-                                            <rect key="frame" x="16" y="1" width="366" height="48.333333333333336"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Man-dw-LrL" userLabel="background" customClass="RoundedView" customModule="Apturi_Covid">
+                                            <rect key="frame" x="0.0" y="0.0" width="398" height="72"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COVID-19 statistika Latvijā" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKw-PG-0JT">
-                                                    <rect key="frame" x="0.0" y="0.0" width="366" height="25.333333333333332"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
-                                                    <color key="textColor" name="darkLabel"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dati atjaunoti: 12.04.2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBT-yE-ReY">
-                                                    <rect key="frame" x="0.0" y="30.333333333333329" width="366" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                                    <color key="textColor" name="descriptionText"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Gsd-Ps-qjn">
+                                                    <rect key="frame" x="16" y="12.000000000000004" width="366" height="48.333333333333343"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COVID-19 statistika Latvijā" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKw-PG-0JT">
+                                                            <rect key="frame" x="0.0" y="0.0" width="366" height="25.333333333333332"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                                            <color key="textColor" name="darkLabel"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dati atjaunoti: 12.04.2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBT-yE-ReY">
+                                                            <rect key="frame" x="0.0" y="30.333333333333336" width="366" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                                            <color key="textColor" name="descriptionText"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
-                                        </stackView>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="Gsd-Ps-qjn" firstAttribute="leading" secondItem="Man-dw-LrL" secondAttribute="leading" constant="16" id="EtG-wB-Qjp"/>
+                                                <constraint firstItem="Gsd-Ps-qjn" firstAttribute="centerY" secondItem="Man-dw-LrL" secondAttribute="centerY" id="ND3-Tt-OE6"/>
+                                                <constraint firstAttribute="trailing" secondItem="Gsd-Ps-qjn" secondAttribute="trailing" constant="16" id="UZw-h5-IF2"/>
+                                                <constraint firstItem="Gsd-Ps-qjn" firstAttribute="centerX" secondItem="Man-dw-LrL" secondAttribute="centerX" id="mkb-6B-tx9"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="14"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Gsd-Ps-qjn" firstAttribute="centerY" secondItem="yAm-uv-j0G" secondAttribute="centerY" id="6Yl-zC-sxb"/>
-                                        <constraint firstItem="Gsd-Ps-qjn" firstAttribute="leading" secondItem="yAm-uv-j0G" secondAttribute="leading" constant="16" id="XNq-f6-o5g"/>
-                                        <constraint firstAttribute="trailing" secondItem="Gsd-Ps-qjn" secondAttribute="trailing" constant="16" id="wg6-MB-7d6"/>
+                                        <constraint firstItem="Man-dw-LrL" firstAttribute="top" secondItem="yAm-uv-j0G" secondAttribute="top" id="DIY-1o-wOc"/>
+                                        <constraint firstAttribute="trailing" secondItem="Man-dw-LrL" secondAttribute="trailing" id="Je4-eU-Bb5"/>
+                                        <constraint firstAttribute="bottom" secondItem="Man-dw-LrL" secondAttribute="bottom" id="ZTB-Qd-ck4"/>
+                                        <constraint firstItem="Man-dw-LrL" firstAttribute="leading" secondItem="yAm-uv-j0G" secondAttribute="leading" id="oZy-6d-IcF"/>
                                     </constraints>
                                     <connections>
                                         <outlet property="descriptionLabel" destination="DBT-yE-ReY" id="pU4-Z7-Zo2"/>

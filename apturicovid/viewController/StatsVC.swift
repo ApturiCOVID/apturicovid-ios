@@ -17,6 +17,7 @@ class StatsVC: BaseViewController {
     @IBOutlet weak var statsCollectionView: UICollectionView!
 
     let params = LayoutParams()
+    private let refreshControl = UIRefreshControl()
     
     var stats: Stats? {
         didSet { statsCollectionView.reloadData() }
@@ -30,18 +31,30 @@ class StatsVC: BaseViewController {
         statsCollectionView.dataSource = self
         statsCollectionView.delegate = self
         statsCollectionView.contentInset.top = params.contentInset.top
-
+        statsCollectionView.refreshControl = refreshControl
+        
+        refreshControl.layer.zPosition = -1
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
     }
 
-    func getData(){
+    @objc func refreshData(){
+        getData(forceApi: true)
+    }
+    
+    func getData(forceApi: Bool = false){
         StatsClient.shared.getStats()
         .subscribeOn(SerialDispatchQueueScheduler(qos: .default))
         .observeOn(MainScheduler.instance)
-        .share()
-        .subscribe(onNext: { [weak self] (stats) in
-            self?.stats = stats
-        }, onError: justPrintError)
-        .disposed(by: disposeBag)
+            .share()
+            .subscribe(onNext: { [weak self] (stats) in
+                self?.stats = stats
+                },onError: {  [weak self] error in
+                    justPrintError(error)
+                    self?.refreshControl.endRefreshing()
+                }, onCompleted: { [weak self] in
+                    self?.refreshControl.endRefreshing()
+            })
+            .disposed(by: disposeBag)
     }
     
     override func translate() {
@@ -121,36 +134,36 @@ extension StatsVC: UICollectionViewDelegateFlowLayout {
 
 fileprivate extension Stats {
     
+    var totalItemCount: Int { singleValueFields.count + doubleValueFields.count }
+    
     static let defaultHeaderField = HeaderValueField(title: "latvia_covid_statistics".translated,
-                                                     description: "data_renewed".translated + " - ")
+                                                     description: "data_renewed".translated + "-")
     
     var headerField: HeaderValueField {
         HeaderValueField(title: "latvia_covid_statistics".translated,
                          description: "data_renewed".translated + dateString)
     }
     
-    var totalItemCount: Int { (singleValueFields+doubleValueFields).count }
-    
-    var singleValueFields: [SingleValueField] {
+    var singleValueFields: [SingleValueField<Double>] {
         [
             SingleValueField(title: "Last",
-                             field: ValueField(valueTitle: "all", value: 10))
+                             field: ValueField(valueTitle: "proportion".translated, value: infectedTestsProportion))
         ]
     }
-    
-    var doubleValueFields: [DoubleValueField] {
+
+    var doubleValueFields: [DoubleValueField<Int>] {
         [
-            DoubleValueField(title: "Last",
-                             field1: ValueField(valueTitle: "all", value: 10),
-                             field2: ValueField(valueTitle: "all", value: 10)),
+            DoubleValueField(title: "tested".translated,
+                             field1: ValueField(valueTitle: "together".translated, value: totalTestsCount),
+                             field2: ValueField(valueTitle: "yesterday".translated, value: yesterdaysTestsCount)),
             
-            DoubleValueField(title: "Last",
-                             field1: ValueField(valueTitle: "all", value: 10),
-                             field2: ValueField(valueTitle: "all", value: 10)),
+            DoubleValueField(title: "new_cases".translated,
+                             field1: ValueField(valueTitle: "together".translated, value: totalInfectedCount),
+                             field2: ValueField(valueTitle: "yesterday".translated, value: yesterdaysInfectedCount)),
             
-            DoubleValueField(title: "Last",
-                             field1: ValueField(valueTitle: "all", value: 10),
-                             field2: ValueField(valueTitle: "all", value: 10))
+            DoubleValueField(title: "deceased".translated,
+                             field1: ValueField(valueTitle: "together".translated, value: totalDeathCount),
+                             field2: ValueField(valueTitle: "yesterday".translated, value: yesterdayDeathCount))
         ]
     }
 }

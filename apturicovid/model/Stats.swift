@@ -24,7 +24,6 @@ class Stats: Codable {
     let yesterdaysInfectedCount: Int
     let yesterdayDeathCount: Int
     let updatedAt: Date
-    var statsLoadedAt: Date?
     
     var dateString: String {
         Stats.datePreviewFormater.string(from: updatedAt)

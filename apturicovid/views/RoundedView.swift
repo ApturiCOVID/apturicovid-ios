@@ -11,10 +11,11 @@ import UIKit
 @IBDesignable class RoundedView: UIView {
     
     @IBInspectable var cornerRadius: CGFloat = 0.0 {
-        didSet {
-            layer.cornerRadius = cornerRadius
-            layer.masksToBounds = cornerRadius > 0
-        }
+        didSet { layer.cornerRadius = cornerRadius }
+    }
+    
+    @IBInspectable var masksToBounds: Bool = false {
+        didSet { layer.masksToBounds = masksToBounds}
     }
     
     @IBInspectable var lineWidth: CGFloat = 0.0 {
@@ -25,25 +26,19 @@ import UIKit
         didSet{ layer.borderColor = lineColor.cgColor }
     }
     
-    @IBInspectable var shadowRadius  :CGFloat = 0 {
+    @IBInspectable var shadowRadius: CGFloat = 0 {
         didSet  { applyShadow(shadowEnabled) }
     }
     
-    @IBInspectable var shadowOpacity :Float   = 0.5 {
+    @IBInspectable var shadowOpacity: Float = 0 {
         didSet  { applyShadow(shadowEnabled) }
-    }
-    
-    @IBInspectable var shadowEnabled :Bool    = false {
-        didSet { applyShadow(shadowEnabled) }
     }
     
     @IBInspectable var shadowColor: UIColor = .lightGray {
         didSet{ layer.shadowColor = shadowColor.cgColor }
     }
     
-    override func awakeFromNib() {
-       // layer.masksToBounds = cornerRadius > 0
-    }
+    private var shadowEnabled: Bool {shadowOpacity != 0}
     
     private func applyShadow(_ enabled: Bool){
         if enabled{

@@ -28,7 +28,7 @@ class StatsHeaderView: UICollectionReusableView {
 }
 
 //MARK: - StatsSingleValueCollectionViewCell
-class StatsSingleValueCollectionViewCell: StatsCollectionViewCell<SingleValueField> {
+class StatsSingleValueCollectionViewCell: StatsCollectionViewCell<SingleValueField<Double>> {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var fieldTitleLabel: UILabel!
@@ -44,11 +44,11 @@ class StatsSingleValueCollectionViewCell: StatsCollectionViewCell<SingleValueFie
         ].forEach{ $0?.text = nil }
     }
     
-    override func setupData(with field: SingleValueField){
+    override func setupData(with field: SingleValueField<Double>){
         titleLabel.text = field.title
         fieldTitleLabel.text = field.field1.valueTitle
         if let value = field.field1.value {
-            self.fieldValueLabel.text = "\(value)"
+            self.fieldValueLabel.text = "\(value) %"
         } else {
             self.fieldValueLabel.text = "-"
         }
@@ -56,7 +56,7 @@ class StatsSingleValueCollectionViewCell: StatsCollectionViewCell<SingleValueFie
 }
 
 //MARK: - StatsDoubleValueCollectionViewCell
-class StatsDoubleValueCollectionViewCell: StatsCollectionViewCell<DoubleValueField> {
+class StatsDoubleValueCollectionViewCell: StatsCollectionViewCell<DoubleValueField<Int>> {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var field1TitleLabel: UILabel!
@@ -76,7 +76,8 @@ class StatsDoubleValueCollectionViewCell: StatsCollectionViewCell<DoubleValueFie
         ].forEach{ $0?.text = nil }
     }
     
-    override func setupData(with field: DoubleValueField){
+    
+    override func setupData(with field: DoubleValueField<Int>){
         
         self.titleLabel.text = field.title
         
@@ -107,26 +108,26 @@ class StatsCollectionViewCell<T> : UICollectionViewCell {
 }
 
 //MARK: - ValueField
-struct ValueField {
+struct ValueField<T> {
     let valueTitle: String
-    let value: Float?
+    let value: T?
 }
 
 //MARK: - SingleValueField
-class SingleValueField {
+class SingleValueField<T> {
     let title: String
-    let field1: ValueField
-    init(title: String, field: ValueField) {
+    let field1: ValueField<T>
+    init(title: String, field: ValueField<T>) {
         self.title = title
         self.field1 = field
     }
 }
 
 //MARK: - DoubleValueField
-class DoubleValueField: SingleValueField {
-    let field2: ValueField
+class DoubleValueField<T>: SingleValueField<T> {
+    let field2: ValueField<T>
     
-    init(title: String, field1: ValueField, field2: ValueField) {
+    init(title: String, field1: ValueField<T>, field2: ValueField<T>) {
         self.field2 = field2
         super.init(title: title, field: field1)
     }

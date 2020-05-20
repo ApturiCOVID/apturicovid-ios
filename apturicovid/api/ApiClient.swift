@@ -63,13 +63,36 @@ class ApiClient: RestClient {
     
     
     func fetchStats() -> Observable<Stats?> {
-        return request(urlString: "\(filesBaseUrl)/stats/v1/covid-stats.json", body: nil, method: "GET")
-            .map { (data) -> Stats? in
-                let decoder = JSONDecoder()
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "YYYY-MM-DD"
-                decoder.dateDecodingStrategy = .formatted(dateFormatter)
-                return try? JSONDecoder().decode(Stats.self, from: data)
+        
+        return Observable<Stats?>.create { observer -> Disposable in
+            
+            // Return stored data if it updated in last 24 hour
+            if let stats = LocalStore.shared.stats {
+                if stats.updatedAt.distance(to: Date()) < 24 * 60 {
+                    observer.onNext(stats)
+                }
             }
+            
+            // Fetch new data
+            let apiFetch = self.request(urlString: "\(filesBaseUrl)/stats/v1/covid-stats.json", body: nil, method: "GET")
+                .map { (data) -> Stats? in
+                    let decoder = JSONDecoder()
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd"
+                    decoder.dateDecodingStrategy = .formatted(dateFormatter)
+                    return try? JSONDecoder().decode(Stats.self, from: data)
+                }.subscribe(onNext: { stats in
+                    LocalStore.shared.stats = stats
+                    observer.onNext(stats)
+                }, onError: {
+                    observer.onError($0)
+                }, onCompleted: {
+                    observer.onCompleted()
+                })
+
+            return Disposables.create {
+                apiFetch.dispose()
+            }
+        }
     }
 }

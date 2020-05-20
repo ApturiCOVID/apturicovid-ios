@@ -5,15 +5,15 @@ class BackgroundManager {
     static let shared = BackgroundManager()
     
     func scheduleExposureUploadTask() {
-        var task = scheduleTask()
-        ExposuresClient.shared.uploadExposures { (result) in
-            switch result {
-            case let .failure(error):
-                DDLogError(error.localizedDescription)
-            default: break
-            }
-            self.invalidateTask(&task)
-        }
+//        var task = scheduleTask()
+//        ExposuresClient.shared.uploadExposures { (result) in
+//            switch result {
+//            case let .failure(error):
+//                DDLogError(error.localizedDescription)
+//            default: break
+//            }
+//            self.invalidateTask(&task)
+//        }
     }
     
     private func scheduleTask() -> UIBackgroundTaskIdentifier {

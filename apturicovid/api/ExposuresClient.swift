@@ -1,6 +1,7 @@
 import Foundation
 import RxSwift
 import ExposureNotification
+import CocoaLumberjack
 
 class ExposuresClient: RestClient {
     static let shared = ExposuresClient()
@@ -83,7 +84,7 @@ class ExposuresClient: RestClient {
         task.resume()
     }
     
-    func uploadExposures(completion: @escaping (Result<Bool, Error>) -> Void) {
+    func _uploadExposures(completion: @escaping (Result<Bool, Error>) -> Void) {
         guard
             let phone = LocalStore.shared.phoneNumber,
             let exposureToken = phone.token else {
@@ -134,6 +135,36 @@ class ExposuresClient: RestClient {
         task.resume()
     }
     
+    func uploadExposures() -> Observable<Bool> {
+        guard
+            let phone = LocalStore.shared.phoneNumber,
+            let exposureToken = phone.token else {
+                DDLogInfo("User is anonymous - skipping exposure upload")
+                return Observable.just(true)
+        }
+        
+        var pendingExposures = LocalStore.shared.exposures.filter { $0.uploadetAt == nil }
+        
+        guard pendingExposures.count > 0 else {
+            DDLogInfo("No new exposures to upload - skipping")
+            return Observable.just(true)
+        }
+        
+        guard let bodyData = try? JSONEncoder().encode(ExposureUploadRequest(exposure_token: exposureToken, exposures: pendingExposures.map { $0.exposure })) else {
+            return Observable.error(NSError.make("Enable to encode exposures"))
+        }
+        
+        return
+            request(urlString: "/exposure_summaries", body: bodyData, method: "POST")
+                .do(onNext: { (_) in
+                    for i in 0...pendingExposures.count - 1 {
+                        pendingExposures[i].markUploaded()
+                        print(pendingExposures)
+                    }
+                })
+                .map { _ in return true }
+    }
+    
     func downloadDiagnosisKeyFile(at remoteURL: URL, index: Int, completion: @escaping (Result<URL, Error>) -> Void) {
         let task = URLSession.shared.dataTask(with: remoteURL) { (data, _, error) in
             if let data = data, error == nil {
@@ -155,8 +186,7 @@ class ExposuresClient: RestClient {
     }
     
     func getExposureKeyBatchUrls() -> Observable<[(url: URL, index: String)]> {
-//        return request(urlString: "\(exposureFilesBaseUrl)/index.txt")
-        return request(urlString: "https://s3.us-east-1.amazonaws.com/apturicovid-development/dkfs/v1/index.txt")
+        return request(urlString: "\(exposureFilesBaseUrl)/index.txt")
             .map { (data) -> [(url: URL, index: String)] in
                 guard let urlsString = String(data: data, encoding: .utf8) else {
                     return []
@@ -218,4 +248,8 @@ class ExposuresClient: RestClient {
                 return try? JSONDecoder().decode(UploadKeyResponse.self, from: data)
         }
     }
+    
+//    func getExposuresConfiguration() -> Observable<ExposureConfiguration> {
+//        return request
+//    }
 }

@@ -138,6 +138,8 @@
 		BA50D3572469E84E0091DF0E /* ExposuresClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50D3562469E84E0091DF0E /* ExposuresClient.swift */; };
 		BA50D3592469E9A10091DF0E /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50D3582469E9A10091DF0E /* NSError.swift */; };
 		BA50D35B2469EEB90091DF0E /* DiagnosisUploadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50D35A2469EEB90091DF0E /* DiagnosisUploadRequest.swift */; };
+		BA8CD87A2475477C00B068A5 /* ExposureConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8CD8792475477C00B068A5 /* ExposureConfiguration.swift */; };
+		BA8CD87B2475477C00B068A5 /* ExposureConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8CD8792475477C00B068A5 /* ExposureConfiguration.swift */; };
 		BAAC0D1E24730C9A00D898EF /* FaqLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E99BFA742472FEE1004D779F /* FaqLocalizable.strings */; };
 		BAAED839246C309D004C77A6 /* StatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAED838246C309D004C77A6 /* StatCell.swift */; };
 		BAAED83B246C30BD004C77A6 /* StatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAED83A246C30BD004C77A6 /* StatCell.xib */; };
@@ -246,6 +248,7 @@
 		BA50D3562469E84E0091DF0E /* ExposuresClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposuresClient.swift; sourceTree = "<group>"; };
 		BA50D3582469E9A10091DF0E /* NSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSError.swift; sourceTree = "<group>"; };
 		BA50D35A2469EEB90091DF0E /* DiagnosisUploadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisUploadRequest.swift; sourceTree = "<group>"; };
+		BA8CD8792475477C00B068A5 /* ExposureConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureConfiguration.swift; sourceTree = "<group>"; };
 		BA9BEF4B24751CCF00D5D947 /* apturicovid.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = apturicovid.entitlements; sourceTree = "<group>"; };
 		BAAED838246C309D004C77A6 /* StatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCell.swift; sourceTree = "<group>"; };
 		BAAED83A246C30BD004C77A6 /* StatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatCell.xib; sourceTree = "<group>"; };
@@ -415,6 +418,7 @@
 				BA38FFE42471BA5900577DB2 /* ExposureUploadRequest.swift */,
 				BA38FFE82471DFBD00577DB2 /* BackgroundManager.swift */,
 				BAD422192473B37F0047E85D /* Stats.swift */,
+				BA8CD8792475477C00B068A5 /* ExposureConfiguration.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -871,6 +875,7 @@
 				BAAED844246D42DA004C77A6 /* QuestionView.swift in Sources */,
 				BA19B89A24715F9F003C5025 /* Data.swift in Sources */,
 				BAFA8315246AD48F00E121B4 /* LocalStore.swift in Sources */,
+				BA8CD87A2475477C00B068A5 /* ExposureConfiguration.swift in Sources */,
 				BACDE3B9246DC5EF0075B20E /* PhoneConfirmationResponse.swift in Sources */,
 				602AE9B62473E152008E42F3 /* UISwitchEx.swift in Sources */,
 				603DC22424715A3C00AD6217 /* UIDeviceEx.swift in Sources */,
@@ -948,6 +953,7 @@
 				BA380054247308A100577DB2 /* env-staging.swift in Sources */,
 				BA3800132473072700577DB2 /* Data.swift in Sources */,
 				BA3800142473072700577DB2 /* LocalStore.swift in Sources */,
+				BA8CD87B2475477C00B068A5 /* ExposureConfiguration.swift in Sources */,
 				BA3800152473072700577DB2 /* PhoneConfirmationResponse.swift in Sources */,
 				BAD4221D2473E9460047E85D /* UISwitchEx.swift in Sources */,
 				BA3800162473072700577DB2 /* UIDeviceEx.swift in Sources */,

@@ -39,7 +39,8 @@ class HomeVC: BaseViewController {
     }
     
     @IBAction func onShareButtonTap(_ sender: Any) {
-        presentShareController()
+//        presentShareController()
+        ExposureManager.shared.performTestDetection()
     }
     
     @IBAction func onSwitchTap(_ sender: UISwitch) {
@@ -144,7 +145,7 @@ class HomeVC: BaseViewController {
             })
             .disposed(by: disposeBag)
         
-        RestClient.shared.fetchStats()
+        ApiClient.shared.fetchStats()
         .subscribeOn(SerialDispatchQueueScheduler(qos: .default))
         .observeOn(MainScheduler.instance)
         .subscribe(onNext: { [weak self] (stats) in
@@ -206,9 +207,9 @@ class HomeVC: BaseViewController {
         }
         
         /// Mover exposure notification over bottomBackgroundView
-        exposureNotificationView.topAnchor
-            .constraint(equalTo: bottomBackgroundView.topAnchor,
-                        constant:  visible ? -80 : bottomBackgroundView.curveOffset).isActive = true
+//        exposureNotificationView.topAnchor
+//            .constraint(equalTo: bottomBackgroundView.topAnchor,
+//                        constant:  visible ? -80 : bottomBackgroundView.curveOffset).isActive = true
 
     }
 }

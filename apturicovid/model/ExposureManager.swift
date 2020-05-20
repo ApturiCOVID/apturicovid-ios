@@ -39,20 +39,6 @@ class ExposureManager {
         LocalStore.shared.exposureNotificationsEnabled = enabled
     }
     
-    static func getDefaultConfiguration() -> ENExposureConfiguration {
-        let configuration = ENExposureConfiguration()
-        configuration.minimumRiskScore = 0
-        configuration.attenuationLevelValues = [1,2,3,4,5,6,7,8]
-        configuration.attenuationWeight = 50
-        configuration.daysSinceLastExposureLevelValues = [1,2,3,4,5,6,7,8]
-        configuration.daysSinceLastExposureWeight = 50
-        configuration.durationLevelValues = [1,2,3,4,5,6,7,8]
-        configuration.durationWeight = 50
-        configuration.transmissionRiskLevelValues = [1,2,3,4,5,6,7,8]
-        configuration.transmissionRiskWeight = 50
-        return configuration
-    }
-    
     func toggleExposureNotifications(enabled: Bool) -> Completable {
         return Completable.create { (completable) -> Disposable in
             self.manager.setExposureNotificationEnabled(enabled) { (error) in
@@ -64,9 +50,9 @@ class ExposureManager {
                 self.enabled = enabled
                 LocalStore.shared.exposureNotificationsEnabled = enabled
                 if !self.enabled {
-                    NoticationsScheduler.shared.scheduleExposureStateNotification()
+                    NotificationsScheduler.shared.scheduleExposureStateNotification()
                 } else {
-                    NoticationsScheduler.shared.removeExposureStateReminder()
+                    NotificationsScheduler.shared.removeExposureStateReminder()
                 }
                 completable(.completed)
             }
@@ -119,9 +105,13 @@ class ExposureManager {
         }
     }
     
-    private func detectExposures(localUrls: [URL]) -> Observable<ENExposureDetectionSummary?> {
+    private func detectExposures(localUrls: [URL], configuration: ENExposureConfiguration) -> Observable<ENExposureDetectionSummary?> {
+        guard localUrls.count > 0 else {
+            return Observable.just(nil)
+        }
+        
         return Observable.create { (observer) -> Disposable in
-            let task = self.manager.detectExposures(configuration: ExposureManager.getDefaultConfiguration(), diagnosisKeyURLs: localUrls) { (summary, error) in
+            let task = self.manager.detectExposures(configuration: configuration, diagnosisKeyURLs: localUrls) { (summary, error) in
                 guard error == nil else {
                     observer.onError(error!)
                     return
@@ -135,7 +125,7 @@ class ExposureManager {
         }
     }
     
-    private func getExposureInfo(summary: ENExposureDetectionSummary) -> Observable<[ENExposureInfo]> {
+    private func getExposureInfo(summary: ENExposureDetectionSummary) -> Observable<[Exposure]> {
         return Observable.create { (observer) -> Disposable in
             let task = self.manager.getExposureInfo(summary: summary, userExplanation: "some explanation") { (exposures, error) in
                 guard error == nil else {
@@ -143,7 +133,7 @@ class ExposureManager {
                     return
                 }
                 
-                observer.onNext(exposures ?? [])
+                observer.onNext(exposures?.map{ Exposure(from: $0) } ?? [])
             }
             
             return Disposables.create {
@@ -152,18 +142,36 @@ class ExposureManager {
         }
     }
     
-    func performExposureDetection() -> Observable<[ENExposureInfo]> {
-        return ExposuresClient.shared.downloadDiagnosisBatches(startAt: 0)
+    func performExposureDetection() -> Observable<Bool> {
+        return ExposuresClient.shared.downloadDiagnosisBatches(startAt: LocalStore.shared.lastDownloadedBatchIndex)
             .flatMap { (urls) -> Observable<ENExposureDetectionSummary?> in
-                return self.detectExposures(localUrls: urls)
+                return ExposuresClient.shared.getExposuresConfiguration()
+                    .flatMap { (config) -> Observable<ENExposureDetectionSummary?> in
+                        guard let configuration = config else {
+                            return Observable.error(NSError.make("Unable to fetch exposure configuration"))
+                        }
+                        return self.detectExposures(localUrls: urls, configuration: configuration)
+                }
             }
-            .flatMap { (summary) -> Observable<[ENExposureInfo]> in
+            .flatMap { (summary) -> Observable<[Exposure]> in
                 guard let summary = summary else {
                     return Observable.just([])
                 }
                 
                 return self.getExposureInfo(summary: summary)
             }
+            .do(onNext: { exposures in
+                LocalStore.shared.exposures += exposures.map { ExposureWrapper(uuid: UUID().uuidString, exposure: $0, uploadetAt: nil) }
+                if exposures.count > 0 {
+                    NotificationsScheduler.shared.sendExposureDiscoveredNotification()
+                }
+                ExposureManager.reset()
+            }, onError: { (_) in
+                ExposureManager.reset()
+            })
+            .flatMap { (exposures) -> Observable<Bool> in
+                return ExposuresClient.shared.uploadExposures()
+        }
     }
     
     func performTestDetection() {
@@ -184,15 +192,15 @@ class ExposureManager {
 //        }, onError: justPrintError)
 //    }
         
-        Observable.zip(
-            ExposuresClient.shared.downloadFile(url: URL(string: "https://s3.us-east-1.amazonaws.com/apturicovid-development/dkfs/v1/2.bin")!),
-            ExposuresClient.shared.downloadFile(url: URL(string: "https://s3.us-east-1.amazonaws.com/apturicovid-development/dkfs/v1/2.sig")!)
-        )
-            .flatMap({ (urls) -> Observable<ENExposureDetectionSummary?> in
-                return ExposureManager.shared.detectExposures(localUrls: [urls.0])
-            })
-            .subscribe(onNext: { (summary) in
-                print(summary)
-            }, onError: justPrintError)
+//        Observable.zip(
+//            ExposuresClient.shared.downloadFile(url: URL(string: "https://s3.us-east-1.amazonaws.com/apturicovid-development/dkfs/v1/2.bin")!),
+//            ExposuresClient.shared.downloadFile(url: URL(string: "https://s3.us-east-1.amazonaws.com/apturicovid-development/dkfs/v1/2.sig")!)
+//        )
+//            .flatMap({ (urls) -> Observable<ENExposureDetectionSummary?> in
+//                return ExposureManager.shared.detectExposures(localUrls: [urls.0])
+//            })
+//            .subscribe(onNext: { (summary) in
+//                print(summary)
+//            }, onError: justPrintError)
     }
 }

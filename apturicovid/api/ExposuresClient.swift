@@ -51,90 +51,6 @@ class ExposuresClient: RestClient {
         }
     }
     
-    func getDiagnosisKeyFileUrls(startingAt index: Int, completion: @escaping (Result<[(URL, Int)], Error>) -> Void) {
-        guard let url = URL(string: "\(exposureFilesBaseUrl)/index.txt") else {
-            completion(.failure(NSError.make("Error creating url")))
-            return
-        }
-        
-        let task = URLSession.shared.dataTask(with: url) { (data, _, error) in
-            if let data = data,
-                let urlsString = String(data: data, encoding: .utf8),
-                error == nil {
-                
-                let urls = urlsString
-                    .components(separatedBy: "\n")
-                    .compactMap { URL(string: $0) }
-                    .map { (url) -> (URL, Int) in
-                        let pathIndex = url.pathComponents.last?.components(separatedBy: ".").first ?? "0"
-                        return (url, Int(pathIndex) ?? 0)
-                    }
-                
-                let nextUrls = urls.filter { (url, i) -> Bool in
-                    return i > index
-                }
-                
-                completion(.success(nextUrls))
-                
-            } else {
-                completion(.failure(NSError.make("Error request batch urls")))
-            }
-        }
-        
-        task.resume()
-    }
-    
-    func _uploadExposures(completion: @escaping (Result<Bool, Error>) -> Void) {
-        guard
-            let phone = LocalStore.shared.phoneNumber,
-            let exposureToken = phone.token else {
-            completion(.failure(NSError.make("Cannot upload exposures without phone number")))
-            return
-        }
-        
-        var pendingExposures = LocalStore.shared.exposures.filter { $0.uploadetAt == nil }
-        
-        guard let bodyData = try? JSONEncoder().encode(ExposureUploadRequest(exposure_token: exposureToken, exposures: pendingExposures.map { $0.exposure })) else {
-            completion(.failure(NSError.make("Enable to encode exposures")))
-            return
-        }
-        
-        guard let url = URL(string: "\(baseUrl)/exposure_summaries") else {
-            completion(.failure(NSError.make("Unable to make exposure upload url")))
-            return
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpBody = bodyData
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "POST"
-        
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let data = data, error == nil else {
-                if let error = error {
-                    completion(.failure(error))
-                }
-                completion(.failure(NSError.make("Upload task failed")))
-                return
-            }
-            
-            guard pendingExposures.count > 0 else {
-                completion(.success(true))
-                return
-            }
-            
-            for i in 0...pendingExposures.count - 1 {
-                pendingExposures[i].markUploaded()
-            }
-            
-            print(pendingExposures)
-            
-            completion(.success(true))
-        }
-        
-        task.resume()
-    }
-    
     func uploadExposures() -> Observable<Bool> {
         guard
             let phone = LocalStore.shared.phoneNumber,
@@ -155,37 +71,20 @@ class ExposuresClient: RestClient {
         }
         
         return
-            request(urlString: "/exposure_summaries", body: bodyData, method: "POST")
+            request(urlString: "\(baseUrl)/exposure_summaries", body: bodyData, method: "POST")
                 .do(onNext: { (_) in
                     for i in 0...pendingExposures.count - 1 {
                         pendingExposures[i].markUploaded()
-                        print(pendingExposures)
                     }
+                    
+                    let uuids = pendingExposures.map { $0.uuid }
+                    let previousExposures = LocalStore.shared.exposures.filter { !uuids.contains($0.uuid) }
+                    LocalStore.shared.exposures = previousExposures + pendingExposures
                 })
                 .map { _ in return true }
     }
     
-    func downloadDiagnosisKeyFile(at remoteURL: URL, index: Int, completion: @escaping (Result<URL, Error>) -> Void) {
-        let task = URLSession.shared.dataTask(with: remoteURL) { (data, _, error) in
-            if let data = data, error == nil {
-                do {
-                    let uuid = UUID().uuidString
-                    let localUrl = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!.appendingPathComponent("diagnosisKeys-\(uuid)")
-                    try data.write(to: localUrl)
-                    
-                    LocalStore.shared.lastDownloadedBatchIndex = index
-                    completion(.success(localUrl))
-                } catch {
-                    completion(.failure(error))
-                }
-            } else {
-                completion(.failure(NSError.make("Error downloading batch")))
-            }
-        }
-        task.resume()
-    }
-    
-    func getExposureKeyBatchUrls() -> Observable<[(url: URL, index: String)]> {
+    func getDiagnosisBatchUrls() -> Observable<[(url: URL, index: String)]> {
         return request(urlString: "\(exposureFilesBaseUrl)/index.txt")
             .map { (data) -> [(url: URL, index: String)] in
                 guard let urlsString = String(data: data, encoding: .utf8) else {
@@ -203,7 +102,7 @@ class ExposuresClient: RestClient {
     }
     
     func downloadDiagnosisBatches(startAt index: Int) -> Observable<[URL]> {
-        return getExposureKeyBatchUrls()
+        return getDiagnosisBatchUrls()
             .flatMap { (urls) -> Observable<[URL]> in
                 let lastIndex = index
                 
@@ -215,8 +114,9 @@ class ExposuresClient: RestClient {
                 
                 let urlsToDownload = nextUrls.map { (url, index) -> [URL] in
                     let binUrl = url.deletingLastPathComponent().appendingPathComponent("\(index).bin")
-                    let sigUrl = url.deletingLastPathComponent().appendingPathComponent("\(index).sig")
-                    return [binUrl, sigUrl]
+//                    let sigUrl = url.deletingLastPathComponent().appendingPathComponent("\(index).sig")
+//                    return [binUrl, sigUrl]
+                    return [binUrl]
                 }
                 .flatMap { $0 }
                 
@@ -249,7 +149,14 @@ class ExposuresClient: RestClient {
         }
     }
     
-//    func getExposuresConfiguration() -> Observable<ExposureConfiguration> {
-//        return request
-//    }
+    func getExposuresConfiguration() -> Observable<ENExposureConfiguration?> {
+        return request(urlString: "\(filesBaseUrl)/exposure_configurations/v1/ios.json")
+            .map { (data) -> ENExposureConfiguration? in
+                guard let exposureConfiguration = try? JSONDecoder().decode(ExposureConfiguration.self, from: data) else {
+                    return nil
+                }
+                
+                return ENExposureConfiguration(from: exposureConfiguration)
+        }
+    }
 }

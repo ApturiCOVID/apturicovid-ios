@@ -1,14 +1,15 @@
 import Foundation
 
-class ExposureConfiguration: Codable {
-    let minimumRiskScore: Int
+struct ExposureConfiguration: Codable {
     let attenuationScores: [Int]
-    let attenuationWeight: Int
     let daysSinceLastExposureScores: [Int]
-    let daysSinceLastExposureWeight: Int
     let durationScores: [Int]
-    let durationWeight: Int
     let transmissionRiskScores: [Int]
+    
+    let minimumRiskScore: Int
+    let attenuationWeight: Int
+    let daysSinceLastExposureWeight: Int
+    let durationWeight: Int
     let transmissionRiskWeight: Int
     
     enum CodingKeys: String, CodingKey {

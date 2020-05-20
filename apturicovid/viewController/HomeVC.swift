@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import ExposureNotification
+import Anchorage
 
 class HomeVC: BaseViewController {
     @IBOutlet weak var bottomBackgroundView: HomeBottomView!
@@ -29,6 +30,8 @@ class HomeVC: BaseViewController {
     private let statNewCases = StatCell.create(item: "new_cases".translated)
     private let statDeceased = StatCell.create(item: "deceased".translated)
     
+    var exposureNotificationConstraint: NSLayoutConstraint!
+    
     var stats: [StatCell] { [statTested,statNewCases,statDeceased] }
     
     private var exposureNotificationVisible = false {
@@ -39,8 +42,7 @@ class HomeVC: BaseViewController {
     }
     
     @IBAction func onShareButtonTap(_ sender: Any) {
-//        presentShareController()
-        ExposureManager.shared.performTestDetection()
+        presentShareController()
     }
     
     @IBAction func onSwitchTap(_ sender: UISwitch) {
@@ -116,7 +118,6 @@ class HomeVC: BaseViewController {
         
         stats.forEach{ statsStackView.addArrangedSubview($0) }
         
-        setExposureNotification(visible: false)
         presentWelcomeIfNeeded()
         
         exposureNotificationView
@@ -157,6 +158,9 @@ class HomeVC: BaseViewController {
             
         }, onError: justPrintError)
         .disposed(by: disposeBag)
+        
+        exposureNotificationConstraint = exposureNotificationView.topAnchor == bottomBackgroundView.topAnchor
+        setExposureNotification(visible: false)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -207,9 +211,7 @@ class HomeVC: BaseViewController {
         }
         
         /// Mover exposure notification over bottomBackgroundView
-//        exposureNotificationView.topAnchor
-//            .constraint(equalTo: bottomBackgroundView.topAnchor,
-//                        constant:  visible ? -80 : bottomBackgroundView.curveOffset).isActive = true
+        exposureNotificationConstraint.constant = visible ? -80 : bottomBackgroundView.curveOffset
 
     }
 }

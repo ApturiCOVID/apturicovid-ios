@@ -2,8 +2,8 @@ import Foundation
 import NotificationCenter
 import CocoaLumberjack
 
-class NoticationsScheduler {
-    static let shared = NoticationsScheduler()
+class NotificationsScheduler {
+    static let shared = NotificationsScheduler()
     
     let notificationCenter: UNUserNotificationCenter
     
@@ -51,7 +51,7 @@ class NoticationsScheduler {
         content.body = "We have detected you have been exposed to COVID-19"
         content.sound = UNNotificationSound.default
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
         let request = UNNotificationRequest(identifier: "ExposureNotification", content: content, trigger: trigger)
         
         notificationCenter.add(request) { (error) in
@@ -66,7 +66,7 @@ class NoticationsScheduler {
     class func registerBackgroundTask() -> UIBackgroundTaskIdentifier{
       var backgroundTask :UIBackgroundTaskIdentifier!
       backgroundTask = UIApplication.shared.beginBackgroundTask {
-        NoticationsScheduler.endBackgroundTask(&backgroundTask)
+        NotificationsScheduler.endBackgroundTask(&backgroundTask)
       }
       assert(backgroundTask != .invalid)
       return backgroundTask

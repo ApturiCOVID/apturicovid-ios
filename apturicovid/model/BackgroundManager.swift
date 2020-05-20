@@ -6,7 +6,7 @@ class BackgroundManager {
     
     func scheduleExposureUploadTask() {
         var task = scheduleTask()
-        RestClient.shared.uploadExposures { (result) in
+        ExposuresClient.shared.uploadExposures { (result) in
             switch result {
             case let .failure(error):
                 DDLogError(error.localizedDescription)

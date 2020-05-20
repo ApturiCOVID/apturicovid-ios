@@ -115,101 +115,84 @@ class ExposureManager {
     func getAndPostDiagnosisKeys(token: String) -> Observable<Data> {
         return self.getDiagnosisKeys()
             .flatMap { (keys) -> Observable<Data> in
-                return RestClient.shared.uploadDiagnosis(token: token, keys: keys)
+                return ExposuresClient.shared.uploadDiagnosis(token: token, keys: keys)
         }
     }
     
-    func backgroundDetection(completionHandler: ((Bool) -> Void)? = nil) -> Progress {
-        
-        let progress = Progress()
-        
-        guard !detectingExposures else {
-            completionHandler?(false)
-            return progress
-        }
-        detectingExposures = true
-        
-        var localURLs = [URL]()
-        
-        func finish(_ result: Result<[Exposure], Error>) {
-            var success = false
-            
-            if progress.isCancelled {
-                success = false
-            } else {
-                switch result {
-                case let .success(newExposures):
-                    if newExposures.count > 0 {
-                        NoticationsScheduler.shared.sendExposureDiscoveredNotification()
-                    }
-                    LocalStore.shared.exposures.append(contentsOf: newExposures.map { ExposureWrapper(uuid: UUID().uuidString, exposure: $0, uploadetAt: nil) })
-                    LocalStore.shared.exposures.sort { $0.exposure.date < $1.exposure.date }
-                    success = true
-                case let .failure(error):
-                    justPrintError(error)
-                    LocalStore.shared.exposureDetectionErrorLocalizedDescription = error.localizedDescription
-                    success = false
-                }
-            }
-            
-            detectingExposures = false
-            completionHandler?(success)
-        }
-        
-        RestClient.shared.getDiagnosisKeyFileUrls(startingAt: LocalStore.shared.lastDownloadedBatchIndex) { result in
-            let dispatchGroup = DispatchGroup()
-            var localURLResults = [Result<URL, Error>]()
-            
-            switch result {
-            case let .success(remoteUrls):
-                for remoteUrl in remoteUrls {
-                    dispatchGroup.enter()
-                    RestClient.shared.downloadDiagnosisKeyFile(at: remoteUrl.0, index: remoteUrl.1) { result in
-                        localURLResults.append(result)
-                        dispatchGroup.leave()
-                    }
-                }
-            case let .failure(error):
-                finish(.failure(error))
-                return
-            }
-            
-            dispatchGroup.notify(queue: .main) {
-                for result in localURLResults {
-                    switch result {
-                    case let .success(localURL):
-                        localURLs.append(localURL)
-                    case let .failure(error):
-                        finish(.failure(error))
-                        return
-                    }
+    private func detectExposures(localUrls: [URL]) -> Observable<ENExposureDetectionSummary?> {
+        return Observable.create { (observer) -> Disposable in
+            let task = self.manager.detectExposures(configuration: ExposureManager.getDefaultConfiguration(), diagnosisKeyURLs: localUrls) { (summary, error) in
+                guard error == nil else {
+                    observer.onError(error!)
+                    return
                 }
                 
-                ExposureManager.shared.manager.detectExposures(configuration: ExposureManager.getDefaultConfiguration(), diagnosisKeyURLs: localURLs) { (summary, error) in
-                    if let error = error {
-                        finish(.failure(error))
-                        return
-                    }
-                    
-                    guard let summary = summary else {
-                        finish(.failure(NSError.make("Summary missing")))
-                        return
-                    }
-                    
-                    let userExplanation = "exposure_notification_exaplanation".translated
-                    ExposureManager.shared.manager.getExposureInfo(summary: summary, userExplanation: userExplanation) { (exposures, error) in
-                        if let error = error {
-                            finish(.failure(error))
-                            return
-                        }
-                        
-                        let newExposures = exposures?.map { Exposure(from: $0) } ?? []
-                        finish(.success(newExposures))
-                    }
-                }
+                observer.onNext(summary)
+            }
+            return Disposables.create {
+                task.cancel()
             }
         }
+    }
+    
+    private func getExposureInfo(summary: ENExposureDetectionSummary) -> Observable<[ENExposureInfo]> {
+        return Observable.create { (observer) -> Disposable in
+            let task = self.manager.getExposureInfo(summary: summary, userExplanation: "some explanation") { (exposures, error) in
+                guard error == nil else {
+                    observer.onError(error!)
+                    return
+                }
+                
+                observer.onNext(exposures ?? [])
+            }
+            
+            return Disposables.create {
+                task.cancel()
+            }
+        }
+    }
+    
+    func performExposureDetection() -> Observable<[ENExposureInfo]> {
+        return ExposuresClient.shared.downloadDiagnosisBatches(startAt: 0)
+            .flatMap { (urls) -> Observable<ENExposureDetectionSummary?> in
+                return self.detectExposures(localUrls: urls)
+            }
+            .flatMap { (summary) -> Observable<[ENExposureInfo]> in
+                guard let summary = summary else {
+                    return Observable.just([])
+                }
+                
+                return self.getExposureInfo(summary: summary)
+            }
+    }
+    
+    func performTestDetection() {
+//        let binBase64 = "RUsgRXhwb3J0IHYxICAgIBoDMzEwIAEoATI7Ch9sdi5zcGtjLmdvdi5hcHR1cmljb3ZpZC5zdGFnaW5nGgJ2MSIDMzEwKg9TSEEyNTZ3aXRoRUNEU0E6HAoQlMC3Szc3u2qi0HTLQY5NYhAAGJDdoQEgkAE6HAoQd4WO3RUs+CWyYqOjnxKBGhAAGPDaoQEgkAE6HAoQOeRWKutEf2uR3OQBjK6NLBAAGIDcoQEgkAE="
+//
+//        let sigBase64 = "dGVzdA=="
+//
+//        let path = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
+//
+//        try? Data(base64Encoded: binBase64)!.write(to: path.appendingPathComponent("1.bin"))
+//        try? Data(base64Encoded: sigBase64)!.write(to: path.appendingPathComponent("1.sig"))
+//
+////        let binPath = Bundle.main.url(forResource: "1", withExtension: "bin")!
+////        let sigPath = Bundle.main.url(forResource: "1", withExtension: "sig")!
+////
+//        self.detectExposures(localUrls: [path.appendingPathComponent("1.bin"), path.appendingPathComponent("1.sig")]).subscribe(onNext: { exposures in
+//            print(exposures)
+//        }, onError: justPrintError)
+//    }
         
-        return progress
+        Observable.zip(
+            ExposuresClient.shared.downloadFile(url: URL(string: "https://s3.us-east-1.amazonaws.com/apturicovid-development/dkfs/v1/2.bin")!),
+            ExposuresClient.shared.downloadFile(url: URL(string: "https://s3.us-east-1.amazonaws.com/apturicovid-development/dkfs/v1/2.sig")!)
+        )
+            .flatMap({ (urls) -> Observable<ENExposureDetectionSummary?> in
+                return ExposureManager.shared.detectExposures(localUrls: [urls.0])
+            })
+            .subscribe(onNext: { (summary) in
+                print(summary)
+            }, onError: justPrintError)
     }
 }

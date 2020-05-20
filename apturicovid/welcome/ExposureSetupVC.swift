@@ -57,7 +57,7 @@ class ExposureSetupVC: BaseViewController {
     @IBAction func onNextTap(_ sender: Any) {
         if exposureEnabled {
             SVProgressHUD.show()
-            RestClient.shared.requestPhoneVerification(phoneNumber: phoneView.getPhoneNumber().number)
+            ApiClient.shared.requestPhoneVerification(phoneNumber: phoneView.getPhoneNumber().number)
                 .subscribe(onNext: { (response) in
                     SVProgressHUD.dismiss()
                     if let response = response {

@@ -21,6 +21,7 @@
 		60A334A7246D22E7007BE791 /* SubmitCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A334A5246D22E7007BE791 /* SubmitCodeVC.swift */; };
 		60A334A8246D22E7007BE791 /* SubmitExposureKeys.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60A334A6246D22E7007BE791 /* SubmitExposureKeys.storyboard */; };
 		60A334AA246D2CCF007BE791 /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60A334A9246D2CCE007BE791 /* Theme.xcassets */; };
+		676B41313D378B19A8AAA730 /* Pods_apturicovid_staging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3EE2EBB830B4B805947850 /* Pods_apturicovid_staging.framework */; };
 		752479BE2471B23800F9BCCB /* UrlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752479BD2471B23800F9BCCB /* UrlRequest.swift */; };
 		7528B0FB246C016D007D0260 /* Translations.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7528B0FD246C016D007D0260 /* Translations.strings */; };
 		7528B100246C02BC007D0260 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528B0FF246C02BC007D0260 /* String.swift */; };
@@ -91,7 +92,7 @@
 		BA38002D2473072700577DB2 /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABEEC262468718C009D8307 /* CheckboxView.swift */; };
 		BA38002E2473072700577DB2 /* CrashlyticsLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA830D246ABA1600E121B4 /* CrashlyticsLogger.swift */; };
 		BA38002F2473072700577DB2 /* StatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAED838246C309D004C77A6 /* StatCell.swift */; };
-		BA3800302473072700577DB2 /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50D3562469E84E0091DF0E /* RestClient.swift */; };
+		BA3800302473072700577DB2 /* ExposuresClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50D3562469E84E0091DF0E /* ExposuresClient.swift */; };
 		BA3800312473072700577DB2 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99BFA6A24720404004D779F /* UIDevice.swift */; };
 		BA3800322473072700577DB2 /* ExposureSetupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAED84B246D9FB2004C77A6 /* ExposureSetupVC.swift */; };
 		BA3800332473072700577DB2 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1121402469E27100D975D5 /* EntryView.swift */; };
@@ -134,7 +135,7 @@
 		BA38FFFE2473072700577DB2 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA366CDD2465F98F00A35CA8 /* View.swift */; };
 		BA38FFFF2473072700577DB2 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C183E246C745900903458 /* RoundedButton.swift */; };
 		BA50D3552469E6220091DF0E /* ExposureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50D3542469E6220091DF0E /* ExposureManager.swift */; };
-		BA50D3572469E84E0091DF0E /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50D3562469E84E0091DF0E /* RestClient.swift */; };
+		BA50D3572469E84E0091DF0E /* ExposuresClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50D3562469E84E0091DF0E /* ExposuresClient.swift */; };
 		BA50D3592469E9A10091DF0E /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50D3582469E9A10091DF0E /* NSError.swift */; };
 		BA50D35B2469EEB90091DF0E /* DiagnosisUploadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50D35A2469EEB90091DF0E /* DiagnosisUploadRequest.swift */; };
 		BAAC0D1E24730C9A00D898EF /* FaqLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E99BFA742472FEE1004D779F /* FaqLocalizable.strings */; };
@@ -165,6 +166,10 @@
 		BAD4221B2473B3820047E85D /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD422192473B37F0047E85D /* Stats.swift */; };
 		BAD4221C2473B3820047E85D /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD422192473B37F0047E85D /* Stats.swift */; };
 		BAD4221D2473E9460047E85D /* UISwitchEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602AE9B52473E152008E42F3 /* UISwitchEx.swift */; };
+		BAD42222247401D10047E85D /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD42221247401D10047E85D /* RestClient.swift */; };
+		BAD422242474023F0047E85D /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD422232474023F0047E85D /* ApiClient.swift */; };
+		BAD422252474023F0047E85D /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD422232474023F0047E85D /* ApiClient.swift */; };
+		BAD42226247402430047E85D /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD42221247401D10047E85D /* RestClient.swift */; };
 		BAE35751246F2EB4004C59A9 /* PhoneSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAE35750246F2EB4004C59A9 /* PhoneSettings.storyboard */; };
 		BAE35753246F3034004C59A9 /* PhoneSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE35752246F3034004C59A9 /* PhoneSettingsVC.swift */; };
 		BAE35755246F410B004C59A9 /* ExposureAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE35754246F410B004C59A9 /* ExposureAlertVC.swift */; };
@@ -177,6 +182,7 @@
 		BAFA8313246AD42D00E121B4 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA8312246AD42D00E121B4 /* UserDefault.swift */; };
 		BAFA8315246AD48F00E121B4 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA8314246AD48F00E121B4 /* LocalStore.swift */; };
 		BAFA8319246BF3B400E121B4 /* HomeBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA8318246BF3B400E121B4 /* HomeBottomView.swift */; };
+		C62F89D19CC198DF95E94E56 /* Pods_apturicovid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D51F675FDD0F615AD5BFBDCB /* Pods_apturicovid.framework */; };
 		E95CD9FE2471BD8C00DAC588 /* PhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95CD9FD2471BD8C00DAC588 /* PhoneTextField.swift */; };
 		E99BFA6B24720404004D779F /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99BFA6A24720404004D779F /* UIDevice.swift */; };
 		E99BFA6D2472E749004D779F /* NotificationSentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99BFA6C2472E749004D779F /* NotificationSentVC.swift */; };
@@ -184,6 +190,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26C4794B6D8AB4BBD85CFE16 /* Pods-apturicovid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apturicovid.debug.xcconfig"; path = "Target Support Files/Pods-apturicovid/Pods-apturicovid.debug.xcconfig"; sourceTree = "<group>"; };
 		602AE9B52473E152008E42F3 /* UISwitchEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISwitchEx.swift; sourceTree = "<group>"; };
 		602C183C246C740C00903458 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		602C183E246C745900903458 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -207,8 +214,7 @@
 		7528B103246C1338007D0260 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		7528B109246C27A0007D0260 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		75B1DAA0246BE91100601F69 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
-		8B05DEA3D1AD8165B5FED2F3 /* Pods-apturicovid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apturicovid.debug.xcconfig"; path = "Target Support Files/Pods-apturicovid/Pods-apturicovid.debug.xcconfig"; sourceTree = "<group>"; };
-		B89B433B39A6ECD9E5E3DEE3 /* Pods-apturicovid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apturicovid.release.xcconfig"; path = "Target Support Files/Pods-apturicovid/Pods-apturicovid.release.xcconfig"; sourceTree = "<group>"; };
+		7FDF026A04C1AEA59F87A5FC /* Pods-apturicovid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apturicovid.release.xcconfig"; path = "Target Support Files/Pods-apturicovid/Pods-apturicovid.release.xcconfig"; sourceTree = "<group>"; };
 		BA11213E2469DDC900D975D5 /* DiagnosisKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisKey.swift; sourceTree = "<group>"; };
 		BA1121402469E27100D975D5 /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
 		BA19B89724709EEB003C5025 /* Exposure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exposure.swift; sourceTree = "<group>"; };
@@ -230,7 +236,6 @@
 		BA380053247308A100577DB2 /* env-staging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "env-staging.swift"; sourceTree = "<group>"; };
 		BA380055247308B500577DB2 /* env-production.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "env-production.swift"; sourceTree = "<group>"; };
 		BA38FFE02471ACBA00577DB2 /* apturicovidDebug.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = apturicovidDebug.entitlements; sourceTree = "<group>"; };
-		BA38FFE12471ACBA00577DB2 /* apturicovid.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = apturicovid.entitlements; sourceTree = "<group>"; };
 		BA38FFE22471B3E300577DB2 /* ExposureWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureWrapper.swift; sourceTree = "<group>"; };
 		BA38FFE42471BA5900577DB2 /* ExposureUploadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureUploadRequest.swift; sourceTree = "<group>"; };
 		BA38FFE82471DFBD00577DB2 /* BackgroundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundManager.swift; sourceTree = "<group>"; };
@@ -238,9 +243,10 @@
 		BA38FFED2471E83900577DB2 /* StatusBarNotification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatusBarNotification.storyboard; sourceTree = "<group>"; };
 		BA38FFEF2471E91E00577DB2 /* SlideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
 		BA50D3542469E6220091DF0E /* ExposureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureManager.swift; sourceTree = "<group>"; };
-		BA50D3562469E84E0091DF0E /* RestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
+		BA50D3562469E84E0091DF0E /* ExposuresClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposuresClient.swift; sourceTree = "<group>"; };
 		BA50D3582469E9A10091DF0E /* NSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSError.swift; sourceTree = "<group>"; };
 		BA50D35A2469EEB90091DF0E /* DiagnosisUploadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisUploadRequest.swift; sourceTree = "<group>"; };
+		BA9BEF4B24751CCF00D5D947 /* apturicovid.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = apturicovid.entitlements; sourceTree = "<group>"; };
 		BAAED838246C309D004C77A6 /* StatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCell.swift; sourceTree = "<group>"; };
 		BAAED83A246C30BD004C77A6 /* StatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatCell.xib; sourceTree = "<group>"; };
 		BAAED83E246C403D004C77A6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +272,8 @@
 		BACDE3BE246E9A5F0075B20E /* PhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
 		BACDE3C0246EA4400075B20E /* NotificationsScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsScheduler.swift; sourceTree = "<group>"; };
 		BAD422192473B37F0047E85D /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
+		BAD42221247401D10047E85D /* RestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
+		BAD422232474023F0047E85D /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		BAE35750246F2EB4004C59A9 /* PhoneSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhoneSettings.storyboard; sourceTree = "<group>"; };
 		BAE35752246F3034004C59A9 /* PhoneSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSettingsVC.swift; sourceTree = "<group>"; };
 		BAE35754246F410B004C59A9 /* ExposureAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureAlertVC.swift; sourceTree = "<group>"; };
@@ -294,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AADBCE0EFA7F339E0ED4EC6C /* Pods_apturicovid.framework in Frameworks */,
+				C62F89D19CC198DF95E94E56 /* Pods_apturicovid.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,7 +368,8 @@
 		BA366CBE2465AC3D00A35CA8 /* apturicovid */ = {
 			isa = PBXGroup;
 			children = (
-				BA38FFE12471ACBA00577DB2 /* apturicovid.entitlements */,
+				BAD422202474017D0047E85D /* api */,
+				BA9BEF4B24751CCF00D5D947 /* apturicovid.entitlements */,
 				BA38FFE02471ACBA00577DB2 /* apturicovidDebug.entitlements */,
 				BAE3574F246F2EA6004C59A9 /* phoneSettings */,
 				60A334A4246D22E7007BE791 /* submit */,
@@ -377,7 +387,6 @@
 				BA366CCD2465AC3E00A35CA8 /* Info.plist */,
 				BA366CCA2465AC3E00A35CA8 /* LaunchScreen.storyboard */,
 				BA366CC52465AC3D00A35CA8 /* Main.storyboard */,
-				BA50D3562469E84E0091DF0E /* RestClient.swift */,
 				BA366CC12465AC3D00A35CA8 /* SceneDelegate.swift */,
 				7528B0FD246C016D007D0260 /* Translations.strings */,
 				BA366CC32465AC3D00A35CA8 /* ViewController.swift */,
@@ -493,6 +502,16 @@
 			path = views;
 			sourceTree = "<group>";
 		};
+		BAD422202474017D0047E85D /* api */ = {
+			isa = PBXGroup;
+			children = (
+				BAD42221247401D10047E85D /* RestClient.swift */,
+				BAD422232474023F0047E85D /* ApiClient.swift */,
+				BA50D3562469E84E0091DF0E /* ExposuresClient.swift */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
 		BAE3574F246F2EA6004C59A9 /* phoneSettings */ = {
 			isa = PBXGroup;
 			children = (
@@ -567,12 +586,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA38004B2473072700577DB2 /* Build configuration list for PBXNativeTarget "apturicovid-staging" */;
 			buildPhases = (
-				BA38FFF22473072700577DB2 /* [CP] Check Pods Manifest.lock */,
+				C5C7F0F8165F283FC42B1B66 /* [CP] Check Pods Manifest.lock */,
 				BA38FFF32473072700577DB2 /* Sources */,
 				BA3800352473072700577DB2 /* Frameworks */,
 				BA3800372473072700577DB2 /* Resources */,
-				BA3800492473072700577DB2 /* [CP] Embed Pods Frameworks */,
 				BA38004A2473072700577DB2 /* Initialize Crashlytics */,
+				BA9656B691DF8A265B2B6E57 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -727,18 +746,15 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
-		BA38FFF22473072700577DB2 /* [CP] Check Pods Manifest.lock */ = {
+		BA9656B691DF8A265B2B6E57 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-apturicovid-staging/Pods-apturicovid-staging-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -746,7 +762,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-apturicovid-staging/Pods-apturicovid-staging-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BAFA8307246AB5E500E121B4 /* Initialize Crashlytics */ = {
@@ -768,6 +784,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
+		C5C7F0F8165F283FC42B1B66 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-apturicovid-staging-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 		F171045253501DB3A265543E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -838,6 +876,7 @@
 				603DC22424715A3C00AD6217 /* UIDeviceEx.swift in Sources */,
 				BA50D35B2469EEB90091DF0E /* DiagnosisUploadRequest.swift in Sources */,
 				BAFA8319246BF3B400E121B4 /* HomeBottomView.swift in Sources */,
+				BAD422242474023F0047E85D /* ApiClient.swift in Sources */,
 				BACDE3B7246DC2450075B20E /* PhoneConfirmationRequest.swift in Sources */,
 				BA366CDB2465F85200A35CA8 /* HomeVC.swift in Sources */,
 				75B1DAA1246BE91100601F69 /* SettingsVC.swift in Sources */,
@@ -861,10 +900,11 @@
 				BABEEC272468718C009D8307 /* CheckboxView.swift in Sources */,
 				BAFA830E246ABA1600E121B4 /* CrashlyticsLogger.swift in Sources */,
 				BAAED839246C309D004C77A6 /* StatCell.swift in Sources */,
-				BA50D3572469E84E0091DF0E /* RestClient.swift in Sources */,
+				BA50D3572469E84E0091DF0E /* ExposuresClient.swift in Sources */,
 				E99BFA6B24720404004D779F /* UIDevice.swift in Sources */,
 				BAAED84C246D9FB2004C77A6 /* ExposureSetupVC.swift in Sources */,
 				BA1121412469E27100D975D5 /* EntryView.swift in Sources */,
+				BAD42222247401D10047E85D /* RestClient.swift in Sources */,
 				BAAED83F246C403D004C77A6 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -923,6 +963,7 @@
 				BA3800202473072700577DB2 /* FAQ.swift in Sources */,
 				BA3800212473072700577DB2 /* ExposureUploadRequest.swift in Sources */,
 				BA3800222473072700577DB2 /* NotificationsScheduler.swift in Sources */,
+				BAD422252474023F0047E85D /* ApiClient.swift in Sources */,
 				BA3800232473072700577DB2 /* WelcomeVC.swift in Sources */,
 				BA3800242473072700577DB2 /* Language.swift in Sources */,
 				BA3800252473072700577DB2 /* UrlRequest.swift in Sources */,
@@ -936,10 +977,11 @@
 				BA38002D2473072700577DB2 /* CheckboxView.swift in Sources */,
 				BA38002E2473072700577DB2 /* CrashlyticsLogger.swift in Sources */,
 				BA38002F2473072700577DB2 /* StatCell.swift in Sources */,
-				BA3800302473072700577DB2 /* RestClient.swift in Sources */,
+				BA3800302473072700577DB2 /* ExposuresClient.swift in Sources */,
 				BA3800312473072700577DB2 /* UIDevice.swift in Sources */,
 				BA3800322473072700577DB2 /* ExposureSetupVC.swift in Sources */,
 				BA3800332473072700577DB2 /* EntryView.swift in Sources */,
+				BAD42226247402430047E85D /* RestClient.swift in Sources */,
 				BA3800342473072700577DB2 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1107,7 +1149,7 @@
 		};
 		BA366CD12465AC3E00A35CA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8B05DEA3D1AD8165B5FED2F3 /* Pods-apturicovid.debug.xcconfig */;
+			baseConfigurationReference = 26C4794B6D8AB4BBD85CFE16 /* Pods-apturicovid.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovidDebug.entitlements;
@@ -1131,10 +1173,10 @@
 		};
 		BA366CD22465AC3E00A35CA8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B89B433B39A6ECD9E5E3DEE3 /* Pods-apturicovid.release.xcconfig */;
+			baseConfigurationReference = 7FDF026A04C1AEA59F87A5FC /* Pods-apturicovid.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovid.entitlements;
+				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovidDebug.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 10;

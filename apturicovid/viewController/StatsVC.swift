@@ -23,7 +23,7 @@ class StatsVC: BaseViewController {
         stat2.addSubviewWithInsets(statView2)
         stat3.addSubviewWithInsets(statView3)
         
-        RestClient.shared.fetchStats()
+        ApiClient.shared.fetchStats()
             .subscribe(onNext: { (stats) in
                 guard let stats = stats else { return }
                 

@@ -1147,7 +1147,7 @@
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ISp-fv-wBQ">
                                     <size key="itemSize" width="196" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="72"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="50" height="50"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
@@ -1353,13 +1353,13 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qfX-D7-num">
                                                                     <rect key="frame" x="0.0" y="16.000000000000004" width="69.333333333333329" height="50.333333333333343"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yesterday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Qc4-1h-nLR">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="yesterday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Qc4-1h-nLR">
                                                                             <rect key="frame" x="0.0" y="0.0" width="69.333333333333329" height="17"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6w8-mg-Rts">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6w8-mg-Rts">
                                                                             <rect key="frame" x="0.0" y="25" width="69.333333333333329" height="25.333333333333329"/>
                                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                                             <nil key="textColor"/>
@@ -1476,6 +1476,26 @@
                                     <connections>
                                         <outlet property="descriptionLabel" destination="DBT-yE-ReY" id="pU4-Z7-Zo2"/>
                                         <outlet property="titleLabel" destination="gKw-PG-0JT" id="oag-Nq-lSm"/>
+                                    </connections>
+                                </collectionReusableView>
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StatsFooterView" id="tsg-GJ-unh" customClass="StatsFooterView" customModule="AC_Demo" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="372" width="398" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detailed statistics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dju-Zp-gFG">
+                                            <rect key="frame" x="24" y="14.999999999999998" width="143.66666666666666" height="20.333333333333329"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <color key="textColor" name="shareColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="dju-Zp-gFG" firstAttribute="leading" secondItem="tsg-GJ-unh" secondAttribute="leadingMargin" constant="16" id="DjR-3e-Rdj"/>
+                                        <constraint firstItem="dju-Zp-gFG" firstAttribute="centerY" secondItem="tsg-GJ-unh" secondAttribute="centerY" id="keM-Pg-Zeb"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="dju-Zp-gFG" secondAttribute="trailing" constant="16" id="n2Z-dj-61U"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="textLabel" destination="dju-Zp-gFG" id="S9O-et-eux"/>
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>

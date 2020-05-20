@@ -5,8 +5,8 @@ import RxCocoa
 struct LayoutParams {
     let expectedCellCountInRow: Int = UIDevice.current.type == .iPhoneSE ? 1 : 2
     let cellHeightAspectRatio: CGFloat = 1/3*2
-    let contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
-    let sectionInset = UIEdgeInsets(top: 30, left: 0, bottom: 30, right: 0)
+    let contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 30, right: 0)
+    let sectionInset = UIEdgeInsets(top: 30, left: 0, bottom: 16, right: 0)
     var cellWidthToTotalWidthAspectRatio: CGFloat {
         expectedCellCountInRow == 1 ? 0.75 : 1 / CGFloat(expectedCellCountInRow)
     }
@@ -75,10 +75,11 @@ extension StatsVC : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-
-        if kind == UICollectionView.elementKindSectionHeader {
-
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind:  UICollectionView.elementKindSectionHeader,
+        
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                              withReuseIdentifier: StatsHeaderView.identifier,
                                                                              for: indexPath) as! StatsHeaderView
             
@@ -89,9 +90,18 @@ extension StatsVC : UICollectionViewDataSource {
             }
             
             return headerView
-        } else {
+            
+        case UICollectionView.elementKindSectionFooter:
+                
+            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                             withReuseIdentifier: StatsFooterView.identifier,
+                                                                             for: indexPath) as! StatsFooterView
+            footerView.textLabel.text = "detailed_stats".translated
+            return footerView
+        default:
             return UICollectionReusableView(frame: .zero)
         }
+
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

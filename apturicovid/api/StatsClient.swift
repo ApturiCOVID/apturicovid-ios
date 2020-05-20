@@ -38,7 +38,7 @@ class StatsClient: RestClient {
             }
             
             // Complete if recently got new stats
-            guard LocalStore.shared.lastStatsFetchTime.distance(to: Date()) < StatsClient.fetchThrottle else {
+            guard LocalStore.shared.lastStatsFetchTime.distance(to: Date()) > StatsClient.fetchThrottle else {
                 observer.onCompleted()
                 return disposable
             }

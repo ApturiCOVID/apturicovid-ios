@@ -27,6 +27,18 @@ class StatsHeaderView: UICollectionReusableView {
     }
 }
 
+//MARK: - StatsHeaderView
+class StatsFooterView: UICollectionReusableView {
+    
+    @IBOutlet weak var textLabel: UILabel!
+    
+    static var identifier: String { String(describing: self) }
+    
+    override func prepareForReuse() {
+        textLabel.text = nil
+    }
+}
+
 //MARK: - StatsSingleValueCollectionViewCell
 class StatsSingleValueCollectionViewCell: StatsCollectionViewCell<SingleValueField<Double>> {
     

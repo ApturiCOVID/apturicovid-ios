@@ -116,6 +116,7 @@
 "together" = "в целом";
 "yesterday" = "вчера";
 "proportion" = "Пропорция";
+"detailed_stats" = "Подробная статистика";
 
 // TODO: SettingVC below - not in KAI
 "if_preferred_specify_phone_number" = "COVID-19 kontakta gadījumā, uz aplikāciju atnāks paziņojums ar norādēm. Ja labāk vēlieties lai ar Jums sazinās pa telefonu, norādiet kontaktu";

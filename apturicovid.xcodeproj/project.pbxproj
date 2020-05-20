@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48D3A37DCFA6A705F13A1994 /* Pods_apturicovid_staging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 728D86A9C2B34EBA7272C1BB /* Pods_apturicovid_staging.framework */; };
 		602AE9B62473E152008E42F3 /* UISwitchEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602AE9B52473E152008E42F3 /* UISwitchEx.swift */; };
 		602C183D246C740C00903458 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C183C246C740C00903458 /* Language.swift */; };
 		602C1840246C745900903458 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C183E246C745900903458 /* RoundedButton.swift */; };
@@ -26,7 +27,7 @@
 		7528B104246C1338007D0260 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528B103246C1338007D0260 /* UIColor.swift */; };
 		7528B10A246C27A0007D0260 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528B109246C27A0007D0260 /* Colors.swift */; };
 		75B1DAA1246BE91100601F69 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B1DAA0246BE91100601F69 /* SettingsVC.swift */; };
-		75B1DAA5246BF63E00601F69 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		75B1DAA5246BF63E00601F69 /* BuildFile in Resources */ = {isa = PBXBuildFile; };
 		AADBCE0EFA7F339E0ED4EC6C /* Pods_apturicovid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D51F675FDD0F615AD5BFBDCB /* Pods_apturicovid.framework */; };
 		BA11213F2469DDC900D975D5 /* DiagnosisKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11213E2469DDC900D975D5 /* DiagnosisKey.swift */; };
 		BA1121412469E27100D975D5 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1121402469E27100D975D5 /* EntryView.swift */; };
@@ -95,11 +96,10 @@
 		BA3800322473072700577DB2 /* ExposureSetupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAED84B246D9FB2004C77A6 /* ExposureSetupVC.swift */; };
 		BA3800332473072700577DB2 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1121402469E27100D975D5 /* EntryView.swift */; };
 		BA3800342473072700577DB2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAED83E246C403D004C77A6 /* BaseViewController.swift */; };
-		BA3800362473072700577DB2 /* Pods_apturicovid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D51F675FDD0F615AD5BFBDCB /* Pods_apturicovid.framework */; };
 		BA3800382473072700577DB2 /* PhoneSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAE35750246F2EB4004C59A9 /* PhoneSettings.storyboard */; };
 		BA3800392473072700577DB2 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BABEEC2324686B7D009D8307 /* Welcome.storyboard */; };
 		BA38003A2473072700577DB2 /* PhoneSetupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAED847246D9B4A004C77A6 /* PhoneSetupView.xib */; };
-		BA38003B2473072700577DB2 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		BA38003B2473072700577DB2 /* BuildFile in Resources */ = {isa = PBXBuildFile; };
 		BA38003C2473072700577DB2 /* StatusBarNotification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA38FFED2471E83900577DB2 /* StatusBarNotification.storyboard */; };
 		BA38003D2473072700577DB2 /* StatView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE35759246F48A6004C59A9 /* StatView.xib */; };
 		BA38003E2473072700577DB2 /* CodeEntry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BACDE3B2246DBABA0075B20E /* CodeEntry.storyboard */; };
@@ -198,6 +198,7 @@
 		60A334A5246D22E7007BE791 /* SubmitCodeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitCodeVC.swift; sourceTree = "<group>"; };
 		60A334A6246D22E7007BE791 /* SubmitExposureKeys.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SubmitExposureKeys.storyboard; sourceTree = "<group>"; };
 		60A334A9246D2CCE007BE791 /* Theme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Theme.xcassets; sourceTree = "<group>"; };
+		728D86A9C2B34EBA7272C1BB /* Pods_apturicovid_staging.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_apturicovid_staging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		752479BD2471B23800F9BCCB /* UrlRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlRequest.swift; sourceTree = "<group>"; };
 		7528B0FC246C016D007D0260 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Translations.strings; sourceTree = "<group>"; };
 		7528B0FE246C016E007D0260 /* lv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = lv; path = lv.lproj/Translations.strings; sourceTree = "<group>"; };
@@ -277,13 +278,14 @@
 		BAFA8312246AD42D00E121B4 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		BAFA8314246AD48F00E121B4 /* LocalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
 		BAFA8318246BF3B400E121B4 /* HomeBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomView.swift; sourceTree = "<group>"; };
-		D51F675FDD0F615AD5BFBDCB /* Pods_apturicovid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_apturicovid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFE64DC72C349C6B8176A1A8 /* Pods-apturicovid-staging.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apturicovid-staging.debug.xcconfig"; path = "Target Support Files/Pods-apturicovid-staging/Pods-apturicovid-staging.debug.xcconfig"; sourceTree = "<group>"; };
 		E95CD9FD2471BD8C00DAC588 /* PhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextField.swift; sourceTree = "<group>"; };
 		E99BFA6A24720404004D779F /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
 		E99BFA6C2472E749004D779F /* NotificationSentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSentVC.swift; sourceTree = "<group>"; };
 		E99BFA732472FEE1004D779F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/FaqLocalizable.strings; sourceTree = "<group>"; };
 		E99BFA752472FEE6004D779F /* lv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = lv; path = lv.lproj/FaqLocalizable.strings; sourceTree = "<group>"; };
 		E99BFA762472FEEA004D779F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/FaqLocalizable.strings; sourceTree = "<group>"; };
+		FBD62765935E88284DE19271 /* Pods-apturicovid-staging.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apturicovid-staging.release.xcconfig"; path = "Target Support Files/Pods-apturicovid-staging/Pods-apturicovid-staging.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,7 +301,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA3800362473072700577DB2 /* Pods_apturicovid.framework in Frameworks */,
+				48D3A37DCFA6A705F13A1994 /* Pods_apturicovid_staging.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +311,7 @@
 		578F6E56552E072CEDE50042 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D51F675FDD0F615AD5BFBDCB /* Pods_apturicovid.framework */,
+				728D86A9C2B34EBA7272C1BB /* Pods_apturicovid_staging.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -328,6 +330,8 @@
 			children = (
 				8B05DEA3D1AD8165B5FED2F3 /* Pods-apturicovid.debug.xcconfig */,
 				B89B433B39A6ECD9E5E3DEE3 /* Pods-apturicovid.release.xcconfig */,
+				DFE64DC72C349C6B8176A1A8 /* Pods-apturicovid-staging.debug.xcconfig */,
+				FBD62765935E88284DE19271 /* Pods-apturicovid-staging.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -623,7 +627,7 @@
 				BAE35751246F2EB4004C59A9 /* PhoneSettings.storyboard in Resources */,
 				BABEEC2424686B7E009D8307 /* Welcome.storyboard in Resources */,
 				BAAED848246D9B4A004C77A6 /* PhoneSetupView.xib in Resources */,
-				75B1DAA5246BF63E00601F69 /* (null) in Resources */,
+				75B1DAA5246BF63E00601F69 /* BuildFile in Resources */,
 				BA38FFEE2471E83900577DB2 /* StatusBarNotification.storyboard in Resources */,
 				BAE3575A246F48A6004C59A9 /* StatView.xib in Resources */,
 				E99BFA722472FEE1004D779F /* FaqLocalizable.strings in Resources */,
@@ -648,7 +652,7 @@
 				BA3800382473072700577DB2 /* PhoneSettings.storyboard in Resources */,
 				BA3800392473072700577DB2 /* Welcome.storyboard in Resources */,
 				BA38003A2473072700577DB2 /* PhoneSetupView.xib in Resources */,
-				BA38003B2473072700577DB2 /* (null) in Resources */,
+				BA38003B2473072700577DB2 /* BuildFile in Resources */,
 				BA38003C2473072700577DB2 /* StatusBarNotification.storyboard in Resources */,
 				BA38003D2473072700577DB2 /* StatView.xib in Resources */,
 				BAAC0D1E24730C9A00D898EF /* FaqLocalizable.strings in Resources */,
@@ -692,15 +696,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-apturicovid/Pods-apturicovid-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-apturicovid-staging/Pods-apturicovid-staging-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-apturicovid/Pods-apturicovid-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-apturicovid-staging/Pods-apturicovid-staging-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-apturicovid/Pods-apturicovid-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-apturicovid-staging/Pods-apturicovid-staging-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BA38004A2473072700577DB2 /* Initialize Crashlytics */ = {
@@ -738,7 +742,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-apturicovid-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-apturicovid-staging-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1151,20 +1155,20 @@
 		};
 		BA38004C2473072700577DB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8B05DEA3D1AD8165B5FED2F3 /* Pods-apturicovid.debug.xcconfig */;
+			baseConfigurationReference = DFE64DC72C349C6B8176A1A8 /* Pods-apturicovid-staging.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovidDebug.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = K673TD5NRS;
 				INFOPLIST_FILE = "$(SRCROOT)/apturicovid/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid.staging;
 				PRODUCT_NAME = "AC Demo";
 				PROVISIONING_PROFILE_SPECIFIER = "DEV Staging";
@@ -1175,20 +1179,20 @@
 		};
 		BA38004D2473072700577DB2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B89B433B39A6ECD9E5E3DEE3 /* Pods-apturicovid.release.xcconfig */;
+			baseConfigurationReference = FBD62765935E88284DE19271 /* Pods-apturicovid-staging.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovid.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = K673TD5NRS;
 				INFOPLIST_FILE = "$(SRCROOT)/apturicovid/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid.staging;
 				PRODUCT_NAME = "AC Demo";
 				PROVISIONING_PROFILE_SPECIFIER = "DEV Staging";

@@ -2,7 +2,7 @@ platform :ios, '13.5'
 
 use_frameworks!
 
-target 'apturicovid' do
+def common_pods
   pod 'RxSwift', '~> 5.1'
   pod 'RxCocoa', '~> 5.1'
   pod 'RxGesture', '~> 3.0.1'
@@ -12,4 +12,12 @@ target 'apturicovid' do
   pod 'SVProgressHUD'
   pod 'KAPinField'
   pod 'Firebase/Messaging'
+end
+
+target 'apturicovid' do
+  common_pods
+end
+
+target 'apturicovid-staging' do
+  common_pods
 end

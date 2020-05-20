@@ -51,6 +51,7 @@ public enum UserDefaultKey: String {
     case lastDownloadedBatchIndex
     case exposures
     case stats
+    case statsLastFetchTime
     case dateLastPerformedExposureDetection
     case exposureDetectionErrorLocalizedDescription
     case exposure

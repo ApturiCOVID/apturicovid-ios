@@ -146,7 +146,7 @@ class HomeVC: BaseViewController {
             })
             .disposed(by: disposeBag)
         
-        ApiClient.shared.fetchStats()
+        StatsClient.shared.getStats(ignoreOutdated: true)
         .subscribeOn(SerialDispatchQueueScheduler(qos: .default))
         .observeOn(MainScheduler.instance)
         .share()

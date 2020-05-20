@@ -34,7 +34,7 @@ class StatsVC: BaseViewController {
     }
 
     func getData(){
-        ApiClient.shared.fetchStats(ignoreOutdated: false)
+        StatsClient.shared.getStats()
         .subscribeOn(SerialDispatchQueueScheduler(qos: .default))
         .observeOn(MainScheduler.instance)
         .share()

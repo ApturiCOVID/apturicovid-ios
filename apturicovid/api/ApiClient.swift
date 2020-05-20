@@ -60,43 +60,4 @@ class ApiClient: RestClient {
                 return try? JSONDecoder().decode(PhoneConfirmationResponse.self, from: data)
         }
     }
-    
-    
-    func fetchStats(ignoreOutdated: Bool = true) -> Observable<Stats> {
-        
-        return Observable<Stats>.create { observer -> Disposable in
-            
-            // Return stored data if it updated in last 24 hour
-            if let stats = LocalStore.shared.stats {
-                
-                if ignoreOutdated && stats.updatedAt.distance(to: Date()) < 24 * 60 {
-                    observer.onNext(stats)
-                } else {
-                    observer.onNext(stats)
-                }
-            }
-            
-            // Fetch new data
-            let apiFetch = self.request(urlString: "\(filesBaseUrl)/stats/v1/covid-stats.json", body: nil, method: "GET")
-                .compactMap{ (data) -> Stats? in
-                    do {
-                        return try Stats.decoder.decode(Stats.self, from: data)
-                    } catch {
-                        observer.onError(error)
-                        return nil
-                    }
-                }.subscribe(onNext: { stats in
-                    LocalStore.shared.stats = stats
-                    observer.onNext(stats)
-                }, onError: {
-                    observer.onError($0)
-                }, onCompleted: {
-                    observer.onCompleted()
-                })
-
-            return Disposables.create {
-                apiFetch.dispose()
-            }
-        }
-    }
 }

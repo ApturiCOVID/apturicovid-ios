@@ -19,6 +19,7 @@
 		606715C32475007600B7D298 /* StatsCollectionViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606715C12475007600B7D298 /* StatsCollectionViewCells.swift */; };
 		60701AFF246D422000BFA1F4 /* LinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60701AFE246D422000BFA1F4 /* LinkLabel.swift */; };
 		60701B01246D46F600BFA1F4 /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60701B00246D46F600BFA1F4 /* NSMutableAttributedString.swift */; };
+		60815F472476A9EC00580DCA /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606715BF2474858100B7D298 /* RoundedView.swift */; };
 		60A3349B246D0C16007BE791 /* NotificationNameEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3349A246D0C16007BE791 /* NotificationNameEx.swift */; };
 		60A334A2246D2116007BE791 /* UITextField2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A334A1246D2116007BE791 /* UITextField2.swift */; };
 		60A334A7246D22E7007BE791 /* SubmitCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A334A5246D22E7007BE791 /* SubmitCodeVC.swift */; };
@@ -225,7 +226,6 @@
 		7528B0FC246C016D007D0260 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Translations.strings; sourceTree = "<group>"; };
 		7528B0FE246C016E007D0260 /* lv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = lv; path = lv.lproj/Translations.strings; sourceTree = "<group>"; };
 		7528B0FF246C02BC007D0260 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		7528B101246C122F007D0260 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		7528B103246C1338007D0260 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		7528B109246C27A0007D0260 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		75B1DAA0246BE91100601F69 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
@@ -453,7 +453,6 @@
 			isa = PBXGroup;
 			children = (
 				BA366CDA2465F85200A35CA8 /* HomeVC.swift */,
-				7528B101246C122F007D0260 /* MainTabController.swift */,
 				75B1DAA0246BE91100601F69 /* SettingsVC.swift */,
 				BAAED83E246C403D004C77A6 /* BaseViewController.swift */,
 				BAAED845246D5ECD004C77A6 /* FAQVC.swift */,
@@ -934,6 +933,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60815F472476A9EC00580DCA /* RoundedView.swift in Sources */,
 				BA38FFF42473072700577DB2 /* ExposureAlertVC.swift in Sources */,
 				BA38FFF52473072700577DB2 /* ExposureManager.swift in Sources */,
 				BA38FFF62473072700577DB2 /* SubmitCodeVC.swift in Sources */,

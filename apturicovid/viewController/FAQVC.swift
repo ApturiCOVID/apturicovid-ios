@@ -29,7 +29,7 @@ class FAQViewController: BaseViewController {
         
         faqs.forEach { (faq) in
             let questionView = QuestionView()
-            questionView.backgroundColor = .white
+            questionView.backgroundColor = Colors.headerColor
             questionView.fillWith(faq: faq)
             mainStackView.addArrangedSubview(questionView)
         }

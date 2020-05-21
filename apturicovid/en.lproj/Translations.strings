@@ -26,24 +26,20 @@
 Detection: a code kept on phone for 14 days, then deleted.
 
 Contact detection is not tracking.";
-"exposure_switch_subtitle" = "This function can be switched on later. And switched off at any time.";
 
 // ExposureSetup Validations
 "exposure_off_setup_prompt" = " Continue without switching on contact detection?";
 
 // PhoneInfoVC
 "why_submit_a_phone_number" = "Reasons to provide a number";
-"why_submit_a_phone_number_explanation" = "If SPKC is able to contact you, they can assess your risk and officially recognize you as a COVID contact if applicable. That will give you access to a range of support options – like your family doctor providing a sick leave note.
-
-SPKC will receive your number with contact information only if and when it is established that you have been exposed to Covid-19. Noone else will find out anything about you.
-";
+"why_submit_a_phone_number_explanation" = "If SPKC is able to contact you, a full range of support options will be available to you: from municipal social support to sick leave, depending on your symptoms.";
 "data_privacy_and_protection_policy" = "SPKC will receive your number only if and when it is established that you have been exposed to Covid-19. Noone else will find out anything about you.";
 
 // CodeEntryVC Phone validation
 "phone_confirmation_title" = "Number verification";
 "phone_confirmation_description" = "A code has been sent to the provided number %@.";
 "enter_code" = "Enter code:";
-"didnt_receive_code" = "Code not received, resend";
+"didnt_receive_code" = "Did not receive the code?";
 "resend_code" = "Nosūtīt kodu atkārtoti";
 "input_code_invalid" = "Ievadīts nepareizs kods";
 
@@ -51,8 +47,8 @@ SPKC will receive your number with contact information only if and when it is es
 "contact_tracing" = "Contact detection";
 "currently_active" = "Is switched on";
 "currently_inactive" = "Is switched off";
-"exposure_detected_subtitle" = "Don’t panic. You have been exposed to Covid-19.";
-"exposure_off_prompt" = "Are you sure you want to disable exposure notifications?";
+"exposure_detected_title" = "COVID-19 contact detected"; // TODO: wasnt in KAI
+"exposure_detected_subtitle" = "Click here to find out about the actions required"; // TODO: wasnt in KAI
 "stats_title" = "In the last 24 hours";
 "share" = "Share app";
 "tested" = "Tested";
@@ -108,12 +104,6 @@ SPKC will receive your number with contact information only if and when it is es
 "specified_phone_number_is_of_another_person" = "Number belongs to someone close to me";
 "remain_anonymous" = "I will not provide a number";
 "anonymous_prompt" = "In case of contact you will only get a notification in the app, and support options available to you will be limited. Continue without phone number?";
-
-// Notifications
-"exposure_disabled_notification_title" = "Contact detection is switched off";
-"exposure_disabled_notification_description" = "Contact tracing with Apturi Covid app is currently off.";
-"exposure_detected_notification_title" = "Don’t panic";
-"exposure_detected_notification_description" = "You have been exposed a Covid-19 case.";
 
 ////////////////////// below not from KAI
 

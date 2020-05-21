@@ -1,6 +1,6 @@
 // Common
 "understood" = "Sapratu";
-"cancel" = "Отменить";
+"cancel" = "Atcelt";
 "yes" = "Да";
 "no" = "Нет";
 "close" = "Закрыть";
@@ -24,24 +24,20 @@
 "contact_detection" = "Фиксирование контакта";
 "exposure_setup_description" = "Контакт: присутствие в течение 15+ минут на расстоянии 2 - 4 м.
 Фиксирование: шифр, который сохраняется в телефоне 14 дней, а затем удаляется.";
-"exposure_switch_subtitle" = "Эту функцию можно включить позже, и выключить - когда пожелаешь.";
 
 // ExposureSetup Validations
 "exposure_off_setup_prompt" = "Действительно желаешь продолжить, не активизируя фиксирование контакта?";
 
 // PhoneInfoVC
 "why_submit_a_phone_number" = "Зачем указывать номер телефона?";
-"why_submit_a_phone_number_explanation" = "Если SPKC сможет с тобой связаться, то тебя официально признают контактным лицом и для тебя будет доступен ряд услуг – от социальной поддержки до больничного, согласно твоим симптомам.
-
-SPKC получит твой номер телефона, только если у тебя будет констатирован контакт с Covid-19, и ни минутой раньше. Никаким другим лицам никакая информация о тебе не будет доступна.
-";
+"why_submit_a_phone_number_explanation" = "Если SPKC сможет с тобой связаться, то для тебя будет доступен полный спектр возможностей поддержки – от социальной поддержки самоуправления до больничного, согласно твоим симптомам.";
 "data_privacy_and_protection_policy" = "SPKC получит твой номер телефона, только если у тебя будет констатирован контакт с Covid-19, и ни минутой раньше. Никаким другим лицам никакая информация о тебе не будет доступна.";
 
 // CodeEntryVC Phone validation
 "phone_confirmation_title" = "Подтверждение номера";
 "phone_confirmation_description" = "На указанный номер телефона %@ выслан код.";
 "enter_code" = "Введи код здесь:";
-"didnt_receive_code" = "Не получил код, выслать повторно";
+"didnt_receive_code" = "Не получил код?";
 "resend_code" = "Выслать код повторно";
 "input_code_invalid" = "Введен неправильный код";
 
@@ -49,8 +45,8 @@ SPKC получит твой номер телефона, только если 
 "contact_tracing" = "Фиксирование контакта";
 "currently_active" = "Сейчас включено";
 "currently_inactive" = "Сейчас выключено";
-"exposure_detected_subtitle" = "Спокойствие, только спокойствие! У тебя обнаружен контакт с Covid-19.";
-"exposure_off_prompt" = "Уверен, что хочешь выключить фиксирование контакта?";
+"exposure_detected_title" = "COVID-19 contact detected"; // TODO: wasnt in KAI
+"exposure_detected_subtitle" = "Click here to find out about the actions required"; // TODO: wasnt in KAI
 "stats_title" = "За прошлые сутки";
 "share" = "Пригласи";
 "tested" = "Протестированы";
@@ -106,12 +102,6 @@ SPKC получит твой номер телефона, только если 
 "specified_phone_number_is_of_another_person" = "Указан номер близкого человека";
 "remain_anonymous" = "Не желаю указывать номер телефона";
 "anonymous_prompt" = "В случае контакта ты получишь уведомление только в этом приложении, и возможности поддержки для тебя будут ограничены. Действительно желаешь продолжить, не указывая номер телефона?";
-
-// Notifications
-"exposure_disabled_notification_title" = "Фиксирование контакта выключено";
-"exposure_disabled_notification_description" = "Фиксирование контакта в приложении Apturi Covid сейчас не происходит.";
-"exposure_detected_notification_title" = "Спокойствие, только спокойствие! ";
-"exposure_detected_notification_description" = " У тебя обнаружен контакт с человеком, зараженным Covid-19.";
 
 ////////////////////// below not from KAI
 

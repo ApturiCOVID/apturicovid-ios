@@ -20,8 +20,8 @@ class NotificationsScheduler {
         guard !LocalStore.shared.exposureNotificationsEnabled && LocalStore.shared.exposureStateReminderEnabled else { return }
         
         let content = UNMutableNotificationContent()
-        content.title = "exposure_disabled_notification_title".translated
-        content.body = "exposure_disabled_notification_description".translated
+        content.title = "Ieslēdz Exposure notifications"
+        content.body = "Šis ir atgādinājums par to, ka jāieslēdz exposure notifications"
         content.sound = UNNotificationSound.default
         
         var dateComponents = DateComponents()
@@ -47,8 +47,8 @@ class NotificationsScheduler {
     
     func sendExposureDiscoveredNotification() {
         let content = UNMutableNotificationContent()
-        content.title = "exposure_detected_notification_title".translated
-        content.body = "exposure_detected_notification_description".translated
+        content.title = "Exposure detected!"
+        content.body = "We have detected you have been exposed to COVID-19"
         content.sound = UNNotificationSound.default
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)

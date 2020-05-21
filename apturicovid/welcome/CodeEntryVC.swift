@@ -66,7 +66,6 @@ class CodeEntryVC: BaseViewController {
             }, onError: { error in
                 SVProgressHUD.dismiss()
                 self.showError(true, with: "input_code_invalid")
-                self.styleErrorTextinput()
                 self.pinInput.animateFailure()
                 justPrintError(error)
             })
@@ -80,20 +79,12 @@ class CodeEntryVC: BaseViewController {
         }
     }
     
-    private func styleErrorTextinput() {
-        DispatchQueue.main.async {
-            self.pinInput.appearance.backColor = UIColor(hex: "#F6E1E1")
-        }
-    }
-    
     private func performExposureKeyUpload(pin: String) {
         uploadInprogress = true
         SVProgressHUD.show()
         ExposuresClient.shared.requestDiagnosisUploadKey(code: pin)
             .do(onError: { _ in
-                self.styleErrorTextinput()
                 self.pinInput.animateFailure()
-                self.showError(true, with: "input_code_invalid")
             })
             .flatMap({ (response) -> Observable<Data> in
                 guard let response = response else { return Observable.error(NSError.make("Unable to obtain upload token")) }
@@ -129,10 +120,10 @@ class CodeEntryVC: BaseViewController {
     }
     
     func stylePinInput() {
-        pinInput.keyboardType = .numberPad
+        pinInput.autocapitalizationType = .allCharacters
         pinInput.properties.delegate = self
         pinInput.properties.numberOfCharacters = 8
-        pinInput.properties.validCharacters = "0123456789+#"
+        pinInput.properties.validCharacters = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789+#"
         pinInput.properties.animateFocus = true
         pinInput.properties.isSecure = false
         pinInput.appearance.textColor = UIColor(hex: "#161B28")

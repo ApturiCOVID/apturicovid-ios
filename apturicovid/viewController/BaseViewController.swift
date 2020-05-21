@@ -58,6 +58,7 @@ class BaseViewController: UIViewController {
     
     func presentErrorAlert(with message: String) {
         let alert = UIAlertController(title: "error".translated, message: message.translated, preferredStyle: .alert)
+        alert.overrideUserInterfaceStyle = .light
         alert.addAction(UIAlertAction(title: "continue".translated, style: .cancel, handler: { (_) in
             alert.dismiss(animated: true, completion: nil)
         }))
@@ -66,6 +67,7 @@ class BaseViewController: UIViewController {
     
     func showBasicPrompt(with message: String, action: @escaping () -> Void) {
         let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        alert.overrideUserInterfaceStyle = .light
         alert.addAction(UIAlertAction(title: "no".translated, style: .cancel, handler: { (_) in
             alert.dismiss(animated: true, completion: nil)
         }))

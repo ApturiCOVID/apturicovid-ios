@@ -92,6 +92,7 @@ class ExposureSetupVC: BaseViewController {
     
     private func presentAnonymousPrompt() {
         let alert = UIAlertController(title: "", message: "anonymous_prompt".translated, preferredStyle: .alert)
+        alert.overrideUserInterfaceStyle = .light
         alert.addAction(UIAlertAction(title: "yes".translated, style: .default, handler: { (_) in
             self.closeAndMarkSeen()
         }))

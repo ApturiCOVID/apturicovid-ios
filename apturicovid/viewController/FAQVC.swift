@@ -1,6 +1,7 @@
 import UIKit
 
 class FAQViewController: BaseViewController {
+    @IBOutlet weak var statusBarBlurView: UIVisualEffectView!
     @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var infoHolder: UIView!
     @IBOutlet weak var viewControllerTitleLabel: UILabel!
@@ -28,13 +29,14 @@ class FAQViewController: BaseViewController {
         
         faqs.forEach { (faq) in
             let questionView = QuestionView()
+            questionView.backgroundColor = .white
             questionView.fillWith(faq: faq)
             mainStackView.addArrangedSubview(questionView)
         }
         
         infoHolder.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 30)
         
-        mainScrollView.contentInsetAdjustmentBehavior = .never
+        mainScrollView.delegate = self
     }
     
     override func translate() {
@@ -48,3 +50,14 @@ class FAQViewController: BaseViewController {
         faqTitleLabel.text = "frequently_asked_questions".translated
     }
 }
+
+//MARK: - UIScrollViewDelegate
+extension FAQViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.y + scrollView.contentInset.top
+        statusBarBlurView.effect = offset > 0 ? UIBlurEffect(style: .light) : nil
+    }
+    
+}
+

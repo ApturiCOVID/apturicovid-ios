@@ -5,7 +5,7 @@ import RxCocoa
 struct LayoutParams {
     let expectedCellCountInRow: Int = UIDevice.current.type == .iPhoneSE ? 1 : 2
     let cellHeightAspectRatio: CGFloat = UIDevice.current.type == .iPhoneSE ? 0.5 : 0.7
-    let contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 30, right: 0)
+    let contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 30, right: 0)
     let sectionInset = UIEdgeInsets(top: 30, left: 0, bottom: 16, right: 0)
     var cellWidthToTotalWidthAspectRatio: CGFloat {
         expectedCellCountInRow == 1 ? 0.9 : 1 / CGFloat(expectedCellCountInRow)
@@ -17,7 +17,8 @@ class StatsVC: BaseViewController {
     @IBOutlet weak var superView: UIView!
     @IBOutlet weak var welcomeHeaderView: WelcomeHeaderView!
     @IBOutlet weak var statsCollectionView: UICollectionView!
-
+    @IBOutlet weak var statusBarBlurView: UIVisualEffectView!
+    
     let params = LayoutParams()
     private let refreshControl = UIRefreshControl()
     
@@ -159,6 +160,16 @@ extension StatsVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return stats == nil ? .zero : params.sectionInset
     }
+}
+
+//MARK: - UIScrollViewDelegate
+extension StatsVC: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.y + scrollView.contentInset.top
+        statusBarBlurView.effect = offset > 0 ? UIBlurEffect(style: .light) : nil
+    }
+    
 }
 
 fileprivate extension Stats {

@@ -96,7 +96,7 @@ extension StatsVC : UICollectionViewDataSource {
             let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                              withReuseIdentifier: StatsFooterView.identifier,
                                                                              for: indexPath) as! StatsFooterView
-            footerView.textLabel.text = "detailed_stats".translated
+            footerView.setup(with: "detailed_stats".translated, linkUrl: URL(string: "https://arkartassituacija.gov.lv/")!)
             return footerView
         default:
             return UICollectionReusableView(frame: .zero)
@@ -138,7 +138,7 @@ extension StatsVC: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return params.sectionInset
+        return stats == nil ? .zero : params.sectionInset
     }
 }
 

@@ -14,6 +14,8 @@ class StatsHeaderView: UICollectionReusableView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    var urlLink: String?
+    
     static var identifier: String { String(describing: self) }
     
     override func prepareForReuse() {
@@ -30,12 +32,32 @@ class StatsHeaderView: UICollectionReusableView {
 //MARK: - StatsHeaderView
 class StatsFooterView: UICollectionReusableView {
     
-    @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var linkButton: UIButton!
+    
+    @IBAction func linkTap(_ sender: Any) {
+        openUrlLink()
+    }
     
     static var identifier: String { String(describing: self) }
+    var linkUrl: URL?
     
     override func prepareForReuse() {
-        textLabel.text = nil
+        linkButton.setTitle(nil, for: .normal)
+        linkUrl = nil
+    }
+    
+    func setup(with text: String, linkUrl: URL){
+        linkButton.setTitle(text, for: .normal)
+        self.linkUrl = linkUrl
+    }
+    
+    private func openUrlLink(){
+        
+        guard let url = linkUrl else { return }
+        
+        if UIApplication.shared.canOpenURL(url){
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
 }
 

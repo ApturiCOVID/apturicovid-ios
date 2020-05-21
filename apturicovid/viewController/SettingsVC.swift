@@ -4,6 +4,10 @@ import RxSwift
 import RxCocoa
 
 class SettingsViewController: BaseViewController {
+    
+    @IBOutlet weak var statusBarBlurView: UIVisualEffectView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var spkcCodeDescriptionLabel: UILabel!
     @IBOutlet weak var submitButton: RoundedButton!
@@ -88,6 +92,8 @@ class SettingsViewController: BaseViewController {
         
         setupPhoneViews()
         
+        scrollView.delegate = self
+        
         reminderSwitch.isOn = LocalStore.shared.exposureStateReminderEnabled
         
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String, let bundleV = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
@@ -117,4 +123,13 @@ class SettingsViewController: BaseViewController {
         submitButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         submitButton.sizeToFit()
     }
+}
+
+extension SettingsViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.y + scrollView.contentInset.top
+        statusBarBlurView.effect = offset > 0 ? UIBlurEffect(style: .light) : nil
+    }
+    
 }

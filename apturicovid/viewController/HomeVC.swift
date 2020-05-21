@@ -32,7 +32,8 @@ class HomeVC: BaseViewController {
     
     var exposureNotificationConstraint: NSLayoutConstraint!
     
-    var stats: [StatCell] { [statTested,statNewCases,statDeceased] }
+    var stats: Stats?
+    var statCells: [StatCell] { [statTested,statNewCases,statDeceased] }
     
     private var exposureNotificationVisible = false {
         didSet {
@@ -71,17 +72,24 @@ class HomeVC: BaseViewController {
     
     private func setExposureStateVisual(animated: Bool = false) {
         
+        func setImage(exposureEnabled: Bool){
+            self.exposureIcon.image = exposureEnabled ? UIImage(named: "detection-on-home") : UIImage(named: "detection-off-home")
+        }
+        
         func setExposureImage(in duration: TimeInterval){
             exposureIcon.layer.removeAllAnimations()
+            
+            guard duration > 0 else {
+                setImage(exposureEnabled: exposureEnabled)
+                return
+            }
             
             UIView.animate(withDuration: duration/2, animations: {
                 self.exposureIcon.alpha = 0
             }) { completed in
 
                 guard completed else { return }
-                
-                self.exposureIcon.image = exposureEnabled ? UIImage(named: "detection-on-home") : UIImage(named: "detection-off-home")
-                
+                setImage(exposureEnabled: exposureEnabled)
                 UIView.animate(withDuration: duration/2){
                     self.exposureIcon.alpha = 1
                 }
@@ -116,7 +124,7 @@ class HomeVC: BaseViewController {
         exposureSwitch.setOffColor(UIColor(named: "offColor")!)
         exposureSwitch.isOn = ExposureManager.shared.enabled
         
-        stats.forEach{ statsStackView.addArrangedSubview($0) }
+        statCells.forEach{ statsStackView.addArrangedSubview($0) }
         
         presentWelcomeIfNeeded()
         
@@ -146,21 +154,33 @@ class HomeVC: BaseViewController {
             })
             .disposed(by: disposeBag)
         
+        NotificationCenter.default.rx
+            .notification(.reachabilityChanged)
+            .subscribe(onNext: { [weak self] notification in
+                guard let `self`  = self, self.stats == nil else { return }
+                if (notification.object as? Reachability.Connection)?.available == true {
+                    self.getData()
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        exposureNotificationConstraint = exposureNotificationView.topAnchor == bottomBackgroundView.topAnchor
+        setExposureNotification(visible: false)
+    }
+    
+    func getData(){
         StatsClient.shared.getStats(ignoreOutdated: true)
         .subscribeOn(SerialDispatchQueueScheduler(qos: .default))
         .observeOn(MainScheduler.instance)
         .share()
         .subscribe(onNext: { [weak self] (stats) in
-            
+            self?.stats = stats
             self?.statTested.updateValue(stats.totalTestsCount)
             self?.statNewCases.updateValue(stats.totalInfectedCount)
             self?.statDeceased.updateValue(stats.totalDeathCount)
             
         }, onError: justPrintError)
         .disposed(by: disposeBag)
-        
-        exposureNotificationConstraint = exposureNotificationView.topAnchor == bottomBackgroundView.topAnchor
-        setExposureNotification(visible: false)
     }
     
     override func viewWillAppear(_ animated: Bool) {

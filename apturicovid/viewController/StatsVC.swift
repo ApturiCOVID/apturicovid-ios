@@ -14,6 +14,8 @@ struct LayoutParams {
 
 class StatsVC: BaseViewController {
 
+    @IBOutlet weak var superView: UIView!
+    @IBOutlet weak var welcomeHeaderView: WelcomeHeaderView!
     @IBOutlet weak var statsCollectionView: UICollectionView!
 
     let params = LayoutParams()
@@ -26,6 +28,13 @@ class StatsVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // On SE screen cell background melds with superview color
+        // Set superview color from welcomeHeaderView fillcolor
+        if UIDevice.current.type == .iPhoneSE {
+            superView.backgroundColor = welcomeHeaderView.fillColor
+            welcomeHeaderView.isHidden = true
+        }
+        
         getData()
 
         statsCollectionView.dataSource = self
@@ -35,6 +44,16 @@ class StatsVC: BaseViewController {
         
         refreshControl.layer.zPosition = -1
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        
+        NotificationCenter.default.rx
+            .notification(.reachabilityChanged)
+            .subscribe(onNext: { [weak self] notification in
+                guard let `self`  = self, self.stats == nil else { return }
+                if (notification.object as? Reachability.Connection)?.available == true {
+                    self.getData(forceApi: true)
+                }
+            })
+            .disposed(by: disposeBag)
     }
 
     @objc func refreshData(){

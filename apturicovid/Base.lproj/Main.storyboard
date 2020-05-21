@@ -1127,7 +1127,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lKY-ey-wJo" customClass="WelcomeHeaderView" customModule="AC_Demo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="627.33333333333337"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
@@ -1438,13 +1438,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Gsd-Ps-qjn">
                                                     <rect key="frame" x="16" y="12.000000000000004" width="366" height="48.333333333333343"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COVID-19 statistika Latvijā" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKw-PG-0JT">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="COVID-19 statistika Latvijā" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKw-PG-0JT">
                                                             <rect key="frame" x="0.0" y="0.0" width="366" height="25.333333333333332"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                                             <color key="textColor" name="darkLabel"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dati atjaunoti: 12.04.2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBT-yE-ReY">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Dati atjaunoti: 12.04.2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBT-yE-ReY">
                                                             <rect key="frame" x="0.0" y="30.333333333333336" width="366" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                             <color key="textColor" name="descriptionText"/>
@@ -1522,7 +1522,7 @@
                             <constraint firstItem="vLx-EX-Xih" firstAttribute="trailing" secondItem="lKY-ey-wJo" secondAttribute="trailing" id="FCC-NF-aSi"/>
                             <constraint firstItem="vLx-EX-Xih" firstAttribute="top" secondItem="3C5-Sy-JXQ" secondAttribute="bottom" id="JbW-j0-moe"/>
                             <constraint firstItem="lKY-ey-wJo" firstAttribute="top" secondItem="5DB-zq-UUV" secondAttribute="top" id="Kep-LN-EJh"/>
-                            <constraint firstItem="lKY-ey-wJo" firstAttribute="height" secondItem="5DB-zq-UUV" secondAttribute="height" multiplier="0.7" id="QQO-3M-YyB"/>
+                            <constraint firstItem="lKY-ey-wJo" firstAttribute="height" secondItem="5DB-zq-UUV" secondAttribute="height" multiplier="0.75" id="QQO-3M-YyB"/>
                             <constraint firstItem="1cq-cO-Bqr" firstAttribute="leading" secondItem="vLx-EX-Xih" secondAttribute="leading" constant="8" id="i5x-Wx-p06"/>
                             <constraint firstItem="3C5-Sy-JXQ" firstAttribute="leading" secondItem="vLx-EX-Xih" secondAttribute="leading" id="sim-jP-A5y"/>
                             <constraint firstItem="vLx-EX-Xih" firstAttribute="trailing" secondItem="1cq-cO-Bqr" secondAttribute="trailing" constant="8" id="z6M-hI-4jZ"/>
@@ -1533,6 +1533,8 @@
                     <tabBarItem key="tabBarItem" title="Statistika" image="statistics" id="deg-8e-BUS"/>
                     <connections>
                         <outlet property="statsCollectionView" destination="1cq-cO-Bqr" id="rbU-1K-wYZ"/>
+                        <outlet property="superView" destination="5DB-zq-UUV" id="qTR-Vl-MzX"/>
+                        <outlet property="welcomeHeaderView" destination="lKY-ey-wJo" id="zDY-PH-cb6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EZ4-KB-QUw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -118,6 +118,7 @@ Kontakta fiksēšana nav izsekošana.";
 "together" = "kopā";
 "yesterday" = "vakar";
 "proportion" = "Īpatsvars";
+"proportion_description" = "saslimušie";
 "detailed_stats" = "Detalizēta statistika";
 
 // TODO: SettingVC below - not in KAI

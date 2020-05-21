@@ -4,16 +4,18 @@ import RxCocoa
 
 struct LayoutParams {
     let expectedCellCountInRow: Int = UIDevice.current.type == .iPhoneSE ? 1 : 2
-    let cellHeightAspectRatio: CGFloat = 1/3*2
+    let cellHeightAspectRatio: CGFloat = UIDevice.current.type == .iPhoneSE ? 0.5 : 0.7
     let contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 30, right: 0)
     let sectionInset = UIEdgeInsets(top: 30, left: 0, bottom: 16, right: 0)
     var cellWidthToTotalWidthAspectRatio: CGFloat {
-        expectedCellCountInRow == 1 ? 0.75 : 1 / CGFloat(expectedCellCountInRow)
+        expectedCellCountInRow == 1 ? 0.9 : 1 / CGFloat(expectedCellCountInRow)
     }
 }
 
 class StatsVC: BaseViewController {
 
+    @IBOutlet weak var superView: UIView!
+    @IBOutlet weak var welcomeHeaderView: WelcomeHeaderView!
     @IBOutlet weak var statsCollectionView: UICollectionView!
 
     let params = LayoutParams()
@@ -26,6 +28,13 @@ class StatsVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // On SE screen cell background melds with superview color
+        // Set superview color from welcomeHeaderView fillcolor
+        if UIDevice.current.type == .iPhoneSE {
+            superView.backgroundColor = welcomeHeaderView.fillColor
+            welcomeHeaderView.isHidden = true
+        }
+        
         getData()
 
         statsCollectionView.dataSource = self
@@ -35,6 +44,16 @@ class StatsVC: BaseViewController {
         
         refreshControl.layer.zPosition = -1
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        
+        NotificationCenter.default.rx
+            .notification(.reachabilityChanged)
+            .subscribe(onNext: { [weak self] notification in
+                guard let `self`  = self, self.stats == nil else { return }
+                if (notification.object as? Reachability.Connection)?.available == true {
+                    self.getData(forceApi: true)
+                }
+            })
+            .disposed(by: disposeBag)
     }
 
     @objc func refreshData(){
@@ -156,8 +175,8 @@ fileprivate extension Stats {
     
     var singleValueFields: [SingleValueField<Double>] {
         [
-            SingleValueField(title: "Last",
-                             field: ValueField(valueTitle: "proportion".translated, value: infectedTestsProportion))
+            SingleValueField(title: "proportion".translated,
+                             field: ValueField(valueTitle: "proportion_description".translated, value: infectedTestsProportion))
         ]
     }
 

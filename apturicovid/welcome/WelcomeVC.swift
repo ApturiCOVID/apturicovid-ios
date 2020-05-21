@@ -9,9 +9,9 @@ class WelcomeVC: BaseViewController {
         var url: URL {
             switch self {
             case .Privacy:
-                return URL(string: "https://apturicovid.lv/privatuma-politika#\(Language.primary.localization)")!
+                return URL(string: "https://apturicovid.lv/privatuma-politika")!
             case .Terms:
-                return URL(string: "https://apturicovid.lv/lietosanas-noteikumi#\(Language.primary.localization)")!
+                return URL(string: "https://apturicovid.lv/lietosanas-noteikumi")!
             }
         }
     }

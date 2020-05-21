@@ -26,7 +26,7 @@
         <!--WelcomeVC-->
         <scene sceneID="6q1-QL-JjL">
             <objects>
-                <viewController id="K37-K7-ayu" customClass="WelcomeVC" customModule="AC_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="K37-K7-ayu" customClass="WelcomeVC" customModule="Apturi_Covid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dpV-1H-kuG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,7 +41,7 @@
                             <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="BKg-Ih-cha">
                                 <rect key="frame" x="0.0" y="410" width="320" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTq-EC-gPP" customClass="RoundedButton" customModule="AC_Demo" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTq-EC-gPP" customClass="RoundedButton" customModule="Apturi_Covid" customModuleProvider="target">
                                         <rect key="frame" x="75" y="0.0" width="170" height="50"/>
                                         <color key="backgroundColor" name="primaryButtonColor"/>
                                         <constraints>
@@ -68,7 +68,7 @@
                                     <constraint firstAttribute="height" priority="250" constant="50" id="dae-vY-sjD"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Az-Ax-oeS" customClass="WelcomeHeaderView" customModule="AC_Demo" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Az-Ax-oeS" customClass="WelcomeHeaderView" customModule="Apturi_Covid" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="191"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="97s-0k-46e">
@@ -187,7 +187,7 @@
         <!--Exposure SetupVC-->
         <scene sceneID="IXm-SY-Xor">
             <objects>
-                <viewController id="Wx0-rH-Fu9" customClass="ExposureSetupVC" customModule="AC_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Wx0-rH-Fu9" customClass="ExposureSetupVC" customModule="Apturi_Covid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="neA-lW-KwZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -213,11 +213,11 @@
                                     <constraint firstAttribute="bottom" secondItem="iIx-kR-6wj" secondAttribute="bottom" constant="10" id="OTL-0n-TDb"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="PUQ-sc-lkh">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PUQ-sc-lkh">
                                 <rect key="frame" x="0.0" y="60" width="320" height="418"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="qv6-Xg-4Qt">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="396.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="343"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JuH-Ge-Xq4">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="289.5"/>
@@ -257,7 +257,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5RY-c7-kn8">
-                                                <rect key="frame" x="0.0" y="289.5" width="320" height="107"/>
+                                                <rect key="frame" x="0.0" y="289.5" width="320" height="53.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5si-hl-vID">
                                                         <rect key="frame" x="30" y="0.0" width="260" height="1"/>
@@ -267,50 +267,40 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KJ0-Hz-UX6">
-                                                        <rect key="frame" x="30" y="106" width="260" height="1"/>
+                                                        <rect key="frame" x="30" y="52.5" width="260" height="1"/>
                                                         <color key="backgroundColor" name="separator"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="4Vs-fr-YL4"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aktivizēt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSG-0A-HKx">
-                                                        <rect key="frame" x="40" y="14" width="171" height="35"/>
+                                                        <rect key="frame" x="40" y="14" width="171" height="25.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                         <color key="textColor" name="darkLabel"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Asq-G0-JLm">
-                                                        <rect key="frame" x="231" y="16" width="51" height="31"/>
+                                                        <rect key="frame" x="231" y="11.5" width="51" height="31"/>
                                                         <color key="onTintColor" red="0.27058823529411763" green="0.54509803921568623" blue="0.47843137254901957" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <connections>
                                                             <action selector="onSwitchChange:" destination="Wx0-rH-Fu9" eventType="valueChanged" id="3Jj-eA-6wA"/>
                                                         </connections>
                                                     </switch>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Šo funkciju vari ieslēgt arī vēlāk. Un izslēgt, kad vien vēlies" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yP-wj-UBv">
-                                                        <rect key="frame" x="40" y="57" width="240" height="36"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <color key="textColor" red="0.41568627450980389" green="0.42745098039215684" blue="0.45882352941176469" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="4yP-wj-UBv" firstAttribute="leading" secondItem="5RY-c7-kn8" secondAttribute="leading" constant="40" id="2fJ-MZ-HgU"/>
                                                     <constraint firstItem="Asq-G0-JLm" firstAttribute="leading" secondItem="dSG-0A-HKx" secondAttribute="trailing" constant="20" id="8ag-q1-SoN"/>
+                                                    <constraint firstItem="KJ0-Hz-UX6" firstAttribute="top" secondItem="dSG-0A-HKx" secondAttribute="bottom" constant="13" id="9uB-hG-2Ly"/>
                                                     <constraint firstAttribute="trailing" secondItem="KJ0-Hz-UX6" secondAttribute="trailing" constant="30" id="DOQ-Wo-Ezr"/>
                                                     <constraint firstItem="5si-hl-vID" firstAttribute="top" secondItem="5RY-c7-kn8" secondAttribute="top" id="EEL-2k-dTs"/>
-                                                    <constraint firstItem="KJ0-Hz-UX6" firstAttribute="top" secondItem="4yP-wj-UBv" secondAttribute="bottom" constant="13" id="FNK-2B-9bo"/>
                                                     <constraint firstItem="5si-hl-vID" firstAttribute="leading" secondItem="5RY-c7-kn8" secondAttribute="leading" constant="30" id="Nt4-MO-7Og"/>
                                                     <constraint firstItem="KJ0-Hz-UX6" firstAttribute="leading" secondItem="5RY-c7-kn8" secondAttribute="leading" constant="30" id="QPi-bK-Ibw"/>
                                                     <constraint firstAttribute="bottom" secondItem="KJ0-Hz-UX6" secondAttribute="bottom" id="T2C-As-S8u"/>
                                                     <constraint firstItem="dSG-0A-HKx" firstAttribute="leading" secondItem="5RY-c7-kn8" secondAttribute="leading" constant="40" id="U7s-v6-Mup"/>
                                                     <constraint firstItem="dSG-0A-HKx" firstAttribute="top" secondItem="5si-hl-vID" secondAttribute="bottom" constant="13" id="YMm-Yz-kIe"/>
-                                                    <constraint firstItem="4yP-wj-UBv" firstAttribute="top" secondItem="dSG-0A-HKx" secondAttribute="bottom" constant="8" symbolic="YES" id="ebp-sl-jej"/>
-                                                    <constraint firstItem="Asq-G0-JLm" firstAttribute="centerY" secondItem="dSG-0A-HKx" secondAttribute="centerY" id="fiV-t7-xWW"/>
                                                     <constraint firstAttribute="trailing" secondItem="Asq-G0-JLm" secondAttribute="trailing" constant="40" id="hBQ-lo-4yl"/>
-                                                    <constraint firstItem="4yP-wj-UBv" firstAttribute="top" secondItem="Asq-G0-JLm" secondAttribute="bottom" constant="10" id="hvQ-Pl-74w"/>
-                                                    <constraint firstAttribute="trailing" secondItem="4yP-wj-UBv" secondAttribute="trailing" constant="40" id="oaG-OY-mKm"/>
                                                     <constraint firstAttribute="trailing" secondItem="5si-hl-vID" secondAttribute="trailing" constant="30" id="pF9-Pl-Td4"/>
+                                                    <constraint firstItem="Asq-G0-JLm" firstAttribute="centerY" secondItem="5RY-c7-kn8" secondAttribute="centerY" id="uJR-ho-gXV"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -324,7 +314,7 @@
                                     <constraint firstItem="qv6-Xg-4Qt" firstAttribute="leading" secondItem="PUQ-sc-lkh" secondAttribute="leading" id="imS-Q5-KVv"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJZ-3g-hia" customClass="RoundedButton" customModule="AC_Demo" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJZ-3g-hia" customClass="RoundedButton" customModule="Apturi_Covid" customModuleProvider="target">
                                 <rect key="frame" x="72.5" y="488" width="175" height="50"/>
                                 <color key="backgroundColor" name="primaryButtonColor"/>
                                 <constraints>
@@ -361,7 +351,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="9l0-T4-7kE"/>
                     <connections>
-                        <outlet property="activateSwitchSubtitle" destination="4yP-wj-UBv" id="U3c-oK-ZBT"/>
                         <outlet property="activateSwitchTitle" destination="dSG-0A-HKx" id="3WL-wY-YYZ"/>
                         <outlet property="contactDescription" destination="J91-SW-O4J" id="1qT-tb-6CF"/>
                         <outlet property="contactTitle" destination="bd2-cG-x0S" id="aQI-zS-tUQ"/>
@@ -373,7 +362,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53r-79-TqK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="890.625" y="144.71830985915494"/>
+            <point key="canvasLocation" x="892" y="145.56650246305421"/>
         </scene>
     </scenes>
     <resources>

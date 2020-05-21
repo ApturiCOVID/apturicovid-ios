@@ -81,7 +81,7 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nyo-WV-M78">
                                                 <rect key="frame" x="182.66666666666666" y="94" width="51" height="31"/>
-                                                <color key="onTintColor" red="0.12156862745098039" green="0.52941176470588236" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="onTintColor" name="homeBottomViewColor"/>
                                                 <connections>
                                                     <action selector="onSwitchTap:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZaW-zM-YUe"/>
                                                 </connections>
@@ -277,9 +277,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5q-h3-66Q">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
-                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="always" translatesAutoresizingMaskIntoConstraints="NO" id="bkZ-Uf-GKW">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <subviews>
@@ -289,6 +286,21 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ufo-28-AED">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="923.33333333333337"/>
                                                 <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4HW-14-wce" customClass="WelcomeHeaderView" customModule="AC_Demo" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="923.33333333333337"/>
+                                                        <color key="backgroundColor" name="headerColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="bottomCurveInset">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exposure-landing" translatesAutoresizingMaskIntoConstraints="NO" id="sqf-cF-3P1">
                                                         <rect key="frame" x="30" y="30" width="140" height="140"/>
                                                         <constraints>
@@ -432,14 +444,18 @@
                                                 <color key="backgroundColor" name="headerColor"/>
                                                 <constraints>
                                                     <constraint firstItem="9w6-Mp-OHi" firstAttribute="top" secondItem="oIR-Vd-5D9" secondAttribute="bottom" constant="20" id="4b6-p8-AYg"/>
+                                                    <constraint firstAttribute="trailing" secondItem="4HW-14-wce" secondAttribute="trailing" id="7db-54-R9J"/>
                                                     <constraint firstItem="sqf-cF-3P1" firstAttribute="leading" secondItem="Ufo-28-AED" secondAttribute="leading" constant="30" id="8ef-Gn-NLF"/>
                                                     <constraint firstAttribute="trailing" secondItem="J3d-4g-Jnc" secondAttribute="trailing" constant="30" id="Fen-nj-QJ6"/>
                                                     <constraint firstItem="J3d-4g-Jnc" firstAttribute="leading" secondItem="Ufo-28-AED" secondAttribute="leading" constant="30" id="Fl6-qe-ERs"/>
                                                     <constraint firstAttribute="trailing" secondItem="GZM-nW-AVZ" secondAttribute="trailing" constant="30" id="ID9-jU-0TL"/>
+                                                    <constraint firstItem="4HW-14-wce" firstAttribute="top" secondItem="Ufo-28-AED" secondAttribute="top" id="LEQ-Oe-B8a"/>
+                                                    <constraint firstItem="4HW-14-wce" firstAttribute="leading" secondItem="Ufo-28-AED" secondAttribute="leading" id="OzA-oI-0ES"/>
                                                     <constraint firstItem="GZM-nW-AVZ" firstAttribute="top" secondItem="9w6-Mp-OHi" secondAttribute="bottom" constant="20" id="YMU-IU-b8Y"/>
                                                     <constraint firstItem="9w6-Mp-OHi" firstAttribute="leading" secondItem="Ufo-28-AED" secondAttribute="leading" constant="30" id="Z3Y-za-CY9"/>
                                                     <constraint firstItem="oIR-Vd-5D9" firstAttribute="leading" secondItem="Ufo-28-AED" secondAttribute="leading" constant="30" id="ZZP-xY-71t"/>
                                                     <constraint firstItem="oIR-Vd-5D9" firstAttribute="top" secondItem="J3d-4g-Jnc" secondAttribute="bottom" constant="10" id="c9h-Lu-Ayk"/>
+                                                    <constraint firstAttribute="bottom" secondItem="4HW-14-wce" secondAttribute="bottom" id="e4y-GU-mvz"/>
                                                     <constraint firstItem="J3d-4g-Jnc" firstAttribute="top" secondItem="sqf-cF-3P1" secondAttribute="bottom" constant="10" id="jCz-7S-rt1"/>
                                                     <constraint firstItem="sqf-cF-3P1" firstAttribute="top" secondItem="Ufo-28-AED" secondAttribute="top" constant="30" id="jWs-AN-TNw"/>
                                                     <constraint firstItem="GZM-nW-AVZ" firstAttribute="leading" secondItem="Ufo-28-AED" secondAttribute="leading" constant="30" id="lSK-Vc-b5d"/>
@@ -458,7 +474,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" name="headerColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="nM3-ch-hLI" secondAttribute="trailing" constant="30" id="3vW-zV-cJe"/>
                                                     <constraint firstAttribute="bottom" secondItem="nM3-ch-hLI" secondAttribute="bottom" constant="20" id="6cT-FZ-ZN9"/>
@@ -467,9 +483,10 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
+                                        <color key="backgroundColor" name="headerColor"/>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" name="headerColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="JrR-wH-xCM" firstAttribute="top" secondItem="bkZ-Uf-GKW" secondAttribute="top" id="52f-bJ-KKc"/>
                                     <constraint firstItem="JrR-wH-xCM" firstAttribute="width" secondItem="bkZ-Uf-GKW" secondAttribute="width" id="76i-NL-X93"/>
@@ -487,19 +504,15 @@
                                 <blurEffect style="regular"/>
                             </visualEffectView>
                         </subviews>
-                        <color key="backgroundColor" name="headerColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="r5q-h3-66Q" firstAttribute="leading" secondItem="4xU-YL-opf" secondAttribute="leading" id="5DS-la-MPR"/>
-                            <constraint firstItem="r5q-h3-66Q" firstAttribute="top" secondItem="0FP-WY-Z83" secondAttribute="top" id="A67-yz-egh"/>
                             <constraint firstItem="0FP-WY-Z83" firstAttribute="trailing" secondItem="XTd-3k-0Sj" secondAttribute="trailing" id="Hwb-Vy-W3B"/>
                             <constraint firstItem="XTd-3k-0Sj" firstAttribute="top" secondItem="4xU-YL-opf" secondAttribute="top" id="Nwb-Xs-79h"/>
                             <constraint firstItem="XTd-3k-0Sj" firstAttribute="leading" secondItem="0FP-WY-Z83" secondAttribute="leading" id="Pzg-9h-xiw"/>
                             <constraint firstItem="0FP-WY-Z83" firstAttribute="top" secondItem="XTd-3k-0Sj" secondAttribute="bottom" id="S8w-Xi-EcN"/>
                             <constraint firstAttribute="trailing" secondItem="bkZ-Uf-GKW" secondAttribute="trailing" id="boo-Uq-8Dm"/>
-                            <constraint firstAttribute="bottom" secondItem="r5q-h3-66Q" secondAttribute="bottom" id="jyg-FV-Hkn"/>
                             <constraint firstItem="bkZ-Uf-GKW" firstAttribute="leading" secondItem="0FP-WY-Z83" secondAttribute="leading" id="ojj-g2-QYi"/>
                             <constraint firstItem="bkZ-Uf-GKW" firstAttribute="top" secondItem="4xU-YL-opf" secondAttribute="top" id="pOF-mQ-cBD"/>
-                            <constraint firstAttribute="trailing" secondItem="r5q-h3-66Q" secondAttribute="trailing" id="xai-Z4-9Xh"/>
                             <constraint firstItem="bkZ-Uf-GKW" firstAttribute="bottom" secondItem="0FP-WY-Z83" secondAttribute="bottom" id="zdI-FL-dPT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0FP-WY-Z83"/>
@@ -586,7 +599,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="OGA-4g-0m3" secondAttribute="trailing" constant="30" id="4LC-GX-Rkz"/>
                                                     <constraint firstItem="JaD-qN-Y2g" firstAttribute="top" secondItem="OGA-4g-0m3" secondAttribute="bottom" constant="20" id="5Bj-Cf-6tv"/>
@@ -735,6 +748,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="49" id="Kd1-EU-HHC"/>
                                                         </constraints>
+                                                        <color key="onTintColor" name="homeBottomViewColor"/>
                                                         <connections>
                                                             <action selector="onReminderSet:" destination="68n-zD-fXe" eventType="valueChanged" id="ovN-yd-CFM"/>
                                                         </connections>

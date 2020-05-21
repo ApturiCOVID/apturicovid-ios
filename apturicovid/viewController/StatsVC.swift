@@ -41,10 +41,10 @@ class StatsVC: BaseViewController {
         statsCollectionView.dataSource = self
         statsCollectionView.delegate = self
         statsCollectionView.contentInset.top = params.contentInset.top
-        statsCollectionView.refreshControl = refreshControl
         
-        refreshControl.layer.zPosition = -1
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        statsCollectionView.refreshControl = refreshControl
+        refreshControl.layer.zPosition = -1
         
         NotificationCenter.default.rx
             .notification(.reachabilityChanged)
@@ -55,6 +55,11 @@ class StatsVC: BaseViewController {
                 }
             })
             .disposed(by: disposeBag)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        refreshControl.endRefreshing()
+        statsCollectionView.setContentOffset(.zero, animated: false)
     }
 
     @objc func refreshData(){

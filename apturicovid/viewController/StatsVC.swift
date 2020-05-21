@@ -4,11 +4,11 @@ import RxCocoa
 
 struct LayoutParams {
     let expectedCellCountInRow: Int = UIDevice.current.type == .iPhoneSE ? 1 : 2
-    let cellHeightAspectRatio: CGFloat = 1/3*2
+    let cellHeightAspectRatio: CGFloat = UIDevice.current.type == .iPhoneSE ? 0.5 : 0.7
     let contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 30, right: 0)
     let sectionInset = UIEdgeInsets(top: 30, left: 0, bottom: 16, right: 0)
     var cellWidthToTotalWidthAspectRatio: CGFloat {
-        expectedCellCountInRow == 1 ? 0.75 : 1 / CGFloat(expectedCellCountInRow)
+        expectedCellCountInRow == 1 ? 0.9 : 1 / CGFloat(expectedCellCountInRow)
     }
 }
 
@@ -175,7 +175,7 @@ fileprivate extension Stats {
     
     var singleValueFields: [SingleValueField<Double>] {
         [
-            SingleValueField(title: "Last",
+            SingleValueField(title: "proportion".translated,
                              field: ValueField(valueTitle: "proportion".translated, value: infectedTestsProportion))
         ]
     }

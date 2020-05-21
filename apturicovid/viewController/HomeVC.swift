@@ -175,9 +175,9 @@ class HomeVC: BaseViewController {
         .share()
         .subscribe(onNext: { [weak self] (stats) in
             self?.stats = stats
-            self?.statTested.updateValue(stats.totalTestsCount)
-            self?.statNewCases.updateValue(stats.totalInfectedCount)
-            self?.statDeceased.updateValue(stats.totalDeathCount)
+            self?.statTested.updateValue(stats.yesterdaysTestsCount)
+            self?.statNewCases.updateValue(stats.yesterdaysInfectedCount)
+            self?.statDeceased.updateValue(stats.yesterdayDeathCount)
             
         }, onError: justPrintError)
         .disposed(by: disposeBag)

@@ -11,6 +11,7 @@ class ExposureSetupVC: BaseViewController {
     @IBOutlet weak var contactTitle: UILabel!
     @IBOutlet weak var contactDescription: UILabel!
     @IBOutlet weak var activateSwitchTitle: UILabel!
+    @IBOutlet weak var activateSwitchSubtitle: UILabel!
     
     var exposureEnabled = false {
         didSet {
@@ -18,6 +19,7 @@ class ExposureSetupVC: BaseViewController {
             if !exposureEnabled {
                 nextButton.isEnabled = true
                 phoneView.phoneInput.text = ""
+                phoneView.phoneInput.endEditing(true)
             }
         }
     }
@@ -29,8 +31,9 @@ class ExposureSetupVC: BaseViewController {
             .observeOn(MainScheduler.instance)
             .subscribe(onCompleted: {
                 self.exposureEnabled = sender.isOn
-                self.scrollToBottom(after: 0.3)
-
+                if sender.isOn {
+                    self.scrollToBottom(after: 0.3)
+                }
             }, onError: { error in
                 justPrintError(error)
                 sender.isOn = ExposureManager.shared.enabled
@@ -49,9 +52,9 @@ class ExposureSetupVC: BaseViewController {
     }
     
     private func promptExposureOffAndClose() {
-        showBasicPrompt(with: "exposure_off_setup_prompt".translated) {
+        showBasicPrompt(with: "exposure_off_setup_prompt".translated, action: {
             self.closeAndMarkSeen()
-        }
+        })
     }
     
     @IBAction func onNextTap(_ sender: Any) {
@@ -159,5 +162,6 @@ class ExposureSetupVC: BaseViewController {
         contactDescription.text = "exposure_setup_description".translated
         activateSwitchTitle.text = "activate".translated
         nextButton.setTitle("continue".translated, for: .normal)
+        activateSwitchSubtitle.text = "exposure_switch_subtitle".translated
     }
 }

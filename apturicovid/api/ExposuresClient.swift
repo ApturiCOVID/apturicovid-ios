@@ -114,9 +114,8 @@ class ExposuresClient: RestClient {
                 
                 let urlsToDownload = nextUrls.map { (url, index) -> [URL] in
                     let binUrl = url.deletingLastPathComponent().appendingPathComponent("\(index).bin")
-//                    let sigUrl = url.deletingLastPathComponent().appendingPathComponent("\(index).sig")
-//                    return [binUrl, sigUrl]
-                    return [binUrl]
+                    let sigUrl = url.deletingLastPathComponent().appendingPathComponent("\(index).sig")
+                    return [binUrl, sigUrl]
                 }
                 .flatMap { $0 }
                 

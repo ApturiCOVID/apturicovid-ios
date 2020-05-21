@@ -176,7 +176,7 @@ fileprivate extension Stats {
     var singleValueFields: [SingleValueField<Double>] {
         [
             SingleValueField(title: "proportion".translated,
-                             field: ValueField(valueTitle: "proportion".translated, value: infectedTestsProportion))
+                             field: ValueField(valueTitle: "proportion_description".translated, value: infectedTestsProportion))
         ]
     }
 

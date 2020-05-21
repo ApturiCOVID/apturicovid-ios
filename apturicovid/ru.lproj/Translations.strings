@@ -116,6 +116,7 @@
 "together" = "в целом";
 "yesterday" = "вчера";
 "proportion" = "Пропорция";
+"proportion_description" = "заболевшие";
 "detailed_stats" = "Подробная статистика";
 
 // TODO: SettingVC below - not in KAI

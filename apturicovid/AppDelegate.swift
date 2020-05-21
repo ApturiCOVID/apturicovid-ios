@@ -12,6 +12,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        Reachability.shared?.begin()
         FirebaseApp.configure()
         DDLog.add(DDOSLogger.sharedInstance)
         DDLog.add(CrashlyticsLogger.sharedInstance)

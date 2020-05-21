@@ -14,6 +14,9 @@
 		602C1841246C745900903458 /* WelcomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C183F246C745900903458 /* WelcomeHeaderView.swift */; };
 		603DC221247130A700AD6217 /* CGPointEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603DC220247130A700AD6217 /* CGPointEx.swift */; };
 		603DC22424715A3C00AD6217 /* UIDeviceEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603DC22324715A3C00AD6217 /* UIDeviceEx.swift */; };
+		606715C02474858100B7D298 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606715BF2474858100B7D298 /* RoundedView.swift */; };
+		606715C22475007600B7D298 /* StatsCollectionViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606715C12475007600B7D298 /* StatsCollectionViewCells.swift */; };
+		606715C32475007600B7D298 /* StatsCollectionViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606715C12475007600B7D298 /* StatsCollectionViewCells.swift */; };
 		60701AFF246D422000BFA1F4 /* LinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60701AFE246D422000BFA1F4 /* LinkLabel.swift */; };
 		60701B01246D46F600BFA1F4 /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60701B00246D46F600BFA1F4 /* NSMutableAttributedString.swift */; };
 		60A3349B246D0C16007BE791 /* NotificationNameEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3349A246D0C16007BE791 /* NotificationNameEx.swift */; };
@@ -21,6 +24,8 @@
 		60A334A7246D22E7007BE791 /* SubmitCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A334A5246D22E7007BE791 /* SubmitCodeVC.swift */; };
 		60A334A8246D22E7007BE791 /* SubmitExposureKeys.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60A334A6246D22E7007BE791 /* SubmitExposureKeys.storyboard */; };
 		60A334AA246D2CCF007BE791 /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60A334A9246D2CCE007BE791 /* Theme.xcassets */; };
+		60A4D0D82475CD3600D13D75 /* StatsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4D0D72475CD3600D13D75 /* StatsClient.swift */; };
+		60A4D0D92475CD3600D13D75 /* StatsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4D0D72475CD3600D13D75 /* StatsClient.swift */; };
 		752479BE2471B23800F9BCCB /* UrlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752479BD2471B23800F9BCCB /* UrlRequest.swift */; };
 		7528B0FB246C016D007D0260 /* Translations.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7528B0FD246C016D007D0260 /* Translations.strings */; };
 		7528B100246C02BC007D0260 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528B0FF246C02BC007D0260 /* String.swift */; };
@@ -202,6 +207,8 @@
 		602C183F246C745900903458 /* WelcomeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeHeaderView.swift; sourceTree = "<group>"; };
 		603DC220247130A700AD6217 /* CGPointEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointEx.swift; sourceTree = "<group>"; };
 		603DC22324715A3C00AD6217 /* UIDeviceEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceEx.swift; sourceTree = "<group>"; };
+		606715BF2474858100B7D298 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		606715C12475007600B7D298 /* StatsCollectionViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCollectionViewCells.swift; sourceTree = "<group>"; };
 		60701AFE246D422000BFA1F4 /* LinkLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkLabel.swift; sourceTree = "<group>"; };
 		60701B00246D46F600BFA1F4 /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
 		60A3349A246D0C16007BE791 /* NotificationNameEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameEx.swift; sourceTree = "<group>"; };
@@ -210,6 +217,7 @@
 		60A334A5246D22E7007BE791 /* SubmitCodeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitCodeVC.swift; sourceTree = "<group>"; };
 		60A334A6246D22E7007BE791 /* SubmitExposureKeys.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SubmitExposureKeys.storyboard; sourceTree = "<group>"; };
 		60A334A9246D2CCE007BE791 /* Theme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Theme.xcassets; sourceTree = "<group>"; };
+		60A4D0D72475CD3600D13D75 /* StatsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsClient.swift; sourceTree = "<group>"; };
 		752479BD2471B23800F9BCCB /* UrlRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlRequest.swift; sourceTree = "<group>"; };
 		7528B0FC246C016D007D0260 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Translations.strings; sourceTree = "<group>"; };
 		7528B0FE246C016E007D0260 /* lv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = lv; path = lv.lproj/Translations.strings; sourceTree = "<group>"; };
@@ -334,6 +342,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		606715C42475008900B7D298 /* collection view cells */ = {
+			isa = PBXGroup;
+			children = (
+				606715C12475007600B7D298 /* StatsCollectionViewCells.swift */,
+			);
+			path = "collection view cells";
+			sourceTree = "<group>";
+		};
 		60A334A4246D22E7007BE791 /* submit */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,6 +455,7 @@
 				BAAED845246D5ECD004C77A6 /* FAQVC.swift */,
 				BAE35754246F410B004C59A9 /* ExposureAlertVC.swift */,
 				BAE3575D246F4B28004C59A9 /* StatsVC.swift */,
+				606715C42475008900B7D298 /* collection view cells */,
 				BA38FFEB2471E81300577DB2 /* StatusBarNotification.swift */,
 				BA38FFEF2471E91E00577DB2 /* SlideViewController.swift */,
 				E99BFA6C2472E749004D779F /* NotificationSentVC.swift */,
@@ -493,6 +510,7 @@
 				60A334A1246D2116007BE791 /* UITextField2.swift */,
 				BABEEC262468718C009D8307 /* CheckboxView.swift */,
 				602C183E246C745900903458 /* RoundedButton.swift */,
+				606715BF2474858100B7D298 /* RoundedView.swift */,
 				60701AFE246D422000BFA1F4 /* LinkLabel.swift */,
 				602C183F246C745900903458 /* WelcomeHeaderView.swift */,
 				BABEEC2A24687397009D8307 /* CheckboxView.xib */,
@@ -519,6 +537,7 @@
 				BAD42221247401D10047E85D /* RestClient.swift */,
 				BAD422232474023F0047E85D /* ApiClient.swift */,
 				BA50D3562469E84E0091DF0E /* ExposuresClient.swift */,
+				60A4D0D72475CD3600D13D75 /* StatsClient.swift */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -848,12 +867,14 @@
 				BAAED84A246D9E7A004C77A6 /* PhoneSetupView.swift in Sources */,
 				E99BFA6D2472E749004D779F /* NotificationSentVC.swift in Sources */,
 				7528B100246C02BC007D0260 /* String.swift in Sources */,
+				606715C22475007600B7D298 /* StatsCollectionViewCells.swift in Sources */,
 				60701B01246D46F600BFA1F4 /* NSMutableAttributedString.swift in Sources */,
 				BA38FFF02471E91E00577DB2 /* SlideViewController.swift in Sources */,
 				BA50D3592469E9A10091DF0E /* NSError.swift in Sources */,
 				BAE3575E246F4B28004C59A9 /* StatsVC.swift in Sources */,
 				60A334A2246D2116007BE791 /* UITextField2.swift in Sources */,
 				BACDE3B5246DBC180075B20E /* CodeEntryVC.swift in Sources */,
+				606715C02474858100B7D298 /* RoundedView.swift in Sources */,
 				BA38FFE32471B3E300577DB2 /* ExposureWrapper.swift in Sources */,
 				60701AFF246D422000BFA1F4 /* LinkLabel.swift in Sources */,
 				BA11213F2469DDC900D975D5 /* DiagnosisKey.swift in Sources */,
@@ -899,6 +920,7 @@
 				BAAED84C246D9FB2004C77A6 /* ExposureSetupVC.swift in Sources */,
 				BA1121412469E27100D975D5 /* EntryView.swift in Sources */,
 				BAD42222247401D10047E85D /* RestClient.swift in Sources */,
+				60A4D0D82475CD3600D13D75 /* StatsClient.swift in Sources */,
 				BAAED83F246C403D004C77A6 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -958,6 +980,7 @@
 				BA38001F2473072700577DB2 /* UserDefault.swift in Sources */,
 				BA3800202473072700577DB2 /* FAQ.swift in Sources */,
 				BA3800212473072700577DB2 /* ExposureUploadRequest.swift in Sources */,
+				606715C32475007600B7D298 /* StatsCollectionViewCells.swift in Sources */,
 				BA3800222473072700577DB2 /* NotificationsScheduler.swift in Sources */,
 				BAD422252474023F0047E85D /* ApiClient.swift in Sources */,
 				BA3800232473072700577DB2 /* WelcomeVC.swift in Sources */,
@@ -974,6 +997,7 @@
 				BA38002E2473072700577DB2 /* CrashlyticsLogger.swift in Sources */,
 				BA38002F2473072700577DB2 /* StatCell.swift in Sources */,
 				BA3800302473072700577DB2 /* ExposuresClient.swift in Sources */,
+				60A4D0D92475CD3600D13D75 /* StatsClient.swift in Sources */,
 				BA3800312473072700577DB2 /* UIDevice.swift in Sources */,
 				BA3800322473072700577DB2 /* ExposureSetupVC.swift in Sources */,
 				BA3800332473072700577DB2 /* EntryView.swift in Sources */,

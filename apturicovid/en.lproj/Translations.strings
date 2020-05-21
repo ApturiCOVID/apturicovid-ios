@@ -113,10 +113,12 @@ Contact detection is not tracking.";
 "invalid_phone_number_error" = "The entered phone number is invalid";
 
 // StatsVC
-"data_renewed" = "Dati atjaunoti: %@";
+"data_renewed" = "Dati atjaunoti: ";
 "latvia_covid_statistics" = "COVID-19 statistika Latvijā";
 "together" = "kopā";
 "yesterday" = "vakar";
+"proportion" = "Proportion";
+"detailed_stats" = "Detailed statistics";
 
 // TODO: SettingVC below - not in KAI
 "if_preferred_specify_phone_number" = "COVID-19 kontakta gadījumā, uz aplikāciju atnāks paziņojums ar norādēm. Ja labāk vēlieties lai ar Jums sazinās pa telefonu, norādiet kontaktu";

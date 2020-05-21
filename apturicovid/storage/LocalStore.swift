@@ -13,6 +13,9 @@ class LocalStore {
     @UserDefault(.stats, defaultValue: nil)
     var stats: Stats?
     
+    @UserDefault(.statsLastFetchTime, defaultValue: Date(timeIntervalSince1970: 0))
+    var lastStatsFetchTime: Date
+    
     @UserDefault(.dateLastPerformedExposureDetection, defaultValue: nil)
     var dateLastPerformedExposureDetection: Date?
     

@@ -23,34 +23,6 @@ class ExposuresClient: RestClient {
             }
     }
     
-    func downloadExposureKeyBatch(url: URL, index: Int) -> Observable<URL?> {
-        return Observable.create { (observer) -> Disposable in
-            let request = URLRequest(url: url)
-
-            let task = URLSession.shared.dataTask(with: request) { (data, _, error) in
-                if let data = data, error == nil {
-                    do {
-                        let localUrl = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!.appendingPathComponent("day-\(index).zip")
-                        try data.write(to: localUrl)
-
-                        LocalStore.shared.lastDownloadedBatchIndex = index
-                        observer.onNext(localUrl)
-                    } catch {
-                        observer.onNext(nil)
-                    }
-                } else {
-                    observer.onNext(nil)
-                }
-            }
-
-            task.resume()
-
-            return Disposables.create {
-                task.cancel()
-            }
-        }
-    }
-    
     func uploadExposures() -> Observable<Bool> {
         guard
             let phone = LocalStore.shared.phoneNumber,
@@ -122,6 +94,9 @@ class ExposuresClient: RestClient {
                 return Observable.zip(urlsToDownload.map({ url -> Observable<URL> in
                     return self.downloadFile(url: url)
                 }))
+                    .do(onNext: { (_) in
+                        LocalStore.shared.lastDownloadedBatchIndex = Int(nextUrls.last?.index ?? "0")!
+                    })
         }
     }
     

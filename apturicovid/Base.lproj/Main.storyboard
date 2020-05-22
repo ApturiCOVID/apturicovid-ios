@@ -137,14 +137,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQ8-KT-HD7" userLabel="Texts">
                                         <rect key="frame" x="30" y="16" width="364" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Ir bijis kontakts ar COVID-19" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QbU-l1-EKf">
-                                                <rect key="frame" x="0.0" y="0.0" width="213.66666666666666" height="25"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Spied šeit, lai uzzinātu kā rīkoties" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="NAl-FB-D6Z">
-                                                <rect key="frame" x="0.0" y="25" width="214" height="25"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="214" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -161,16 +155,12 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="3pa-9c-aut"/>
-                                            <constraint firstItem="QbU-l1-EKf" firstAttribute="top" secondItem="pQ8-KT-HD7" secondAttribute="top" id="EDi-jV-1Ix"/>
                                             <constraint firstItem="ufh-6M-cKo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NAl-FB-D6Z" secondAttribute="trailing" constant="6" id="J8w-1I-1YE"/>
                                             <constraint firstItem="NAl-FB-D6Z" firstAttribute="leading" secondItem="pQ8-KT-HD7" secondAttribute="leading" id="Z3y-gu-9bY"/>
                                             <constraint firstItem="ufh-6M-cKo" firstAttribute="centerY" secondItem="pQ8-KT-HD7" secondAttribute="centerY" id="aUK-Bw-vbc"/>
                                             <constraint firstAttribute="trailing" secondItem="ufh-6M-cKo" secondAttribute="trailing" id="bVf-HA-hc3"/>
-                                            <constraint firstItem="ufh-6M-cKo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QbU-l1-EKf" secondAttribute="trailing" constant="6" id="eXU-4X-dDn"/>
+                                            <constraint firstItem="NAl-FB-D6Z" firstAttribute="top" secondItem="pQ8-KT-HD7" secondAttribute="top" id="cMg-Va-gn9"/>
                                             <constraint firstAttribute="bottom" secondItem="NAl-FB-D6Z" secondAttribute="bottom" id="gt2-9g-fNX"/>
-                                            <constraint firstItem="QbU-l1-EKf" firstAttribute="leading" secondItem="pQ8-KT-HD7" secondAttribute="leading" id="jYl-zi-Fal"/>
-                                            <constraint firstItem="NAl-FB-D6Z" firstAttribute="top" secondItem="QbU-l1-EKf" secondAttribute="bottom" id="ji3-IQ-cSk"/>
-                                            <constraint firstItem="NAl-FB-D6Z" firstAttribute="height" secondItem="QbU-l1-EKf" secondAttribute="height" id="yg0-hN-gQa"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -256,7 +246,6 @@
                         <outlet property="exposureIcon" destination="Ck9-8q-2TR" id="0dz-a6-SsI"/>
                         <outlet property="exposureNotificationView" destination="dfs-tu-Zua" id="G1G-fD-wGZ"/>
                         <outlet property="exposureSwitch" destination="nyo-WV-M78" id="b2b-2q-dPL"/>
-                        <outlet property="exposureTitleLabel" destination="QbU-l1-EKf" id="c7t-mZ-uCl"/>
                         <outlet property="exposureViewButton" destination="ufh-6M-cKo" id="Qhx-s1-4I5"/>
                         <outlet property="shareButton" destination="v6W-7p-lgY" id="xqY-r3-DSX"/>
                         <outlet property="statsStackView" destination="2hr-vA-xw9" id="kSE-iw-L35"/>

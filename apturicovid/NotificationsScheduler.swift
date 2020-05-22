@@ -20,8 +20,8 @@ class NotificationsScheduler {
         guard !LocalStore.shared.exposureNotificationsEnabled && LocalStore.shared.exposureStateReminderEnabled else { return }
         
         let content = UNMutableNotificationContent()
-        content.title = "Ieslēdz Exposure notifications"
-        content.body = "Šis ir atgādinājums par to, ka jāieslēdz exposure notifications"
+        content.title = "exposure_disabled_notification_title".translated
+        content.body = "exposure_disabled_notification_description".translated
         content.sound = UNNotificationSound.default
         
         var dateComponents = DateComponents()
@@ -43,5 +43,39 @@ class NotificationsScheduler {
     func removeExposureStateReminder() {
         notificationCenter.removeAllPendingNotificationRequests()
         DDLogInfo("Pending notification requests removed")
+    }
+    
+    func sendExposureDiscoveredNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "exposure_detected_notification_title".translated
+        content.body = "exposure_detected_notification_description".translated
+        content.sound = UNNotificationSound.default
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+        let request = UNNotificationRequest(identifier: "ExposureNotification", content: content, trigger: trigger)
+        
+        notificationCenter.add(request) { (error) in
+            if let error = error {
+                justPrintError(error)
+                return
+            }
+            DDLogInfo("Scheduled exposure notification")
+        }
+    }
+    
+    class func registerBackgroundTask() -> UIBackgroundTaskIdentifier{
+      var backgroundTask :UIBackgroundTaskIdentifier!
+      backgroundTask = UIApplication.shared.beginBackgroundTask {
+        NotificationsScheduler.endBackgroundTask(&backgroundTask)
+      }
+      assert(backgroundTask != .invalid)
+      return backgroundTask
+    }
+
+    class func endBackgroundTask(_ backgroundTask: inout UIBackgroundTaskIdentifier) {
+      UIApplication.shared.endBackgroundTask(backgroundTask)
+      let log = "End background task \(backgroundTask)"
+      backgroundTask = .invalid
+      DDLogInfo(log)
     }
 }

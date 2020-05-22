@@ -111,7 +111,7 @@ SPKC получит твой номер телефона, только если 
 "exposure_disabled_notification_title" = "Фиксирование контакта выключено";
 "exposure_disabled_notification_description" = "Фиксирование контакта в приложении Apturi Covid сейчас не происходит.";
 "exposure_detected_notification_title" = "Спокойствие, только спокойствие! ";
-"exposure_detected_notification_description" = " У тебя обнаружен контакт с человеком, зараженным Covid-19.";
+"exposure_detected_notification_description" = " У тебя обнаружен контакт с человеком, зараженным Covid-19";
 
 ////////////////////// below not from KAI
 

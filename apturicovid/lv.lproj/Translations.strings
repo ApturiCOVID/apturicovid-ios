@@ -113,7 +113,7 @@ SPKC tavu kontakttālruni ar saskares informāciju saņems tikai tad, ja tev tik
 "exposure_disabled_notification_title" = "Kontakta fiksēšana izslēgusies";
 "exposure_disabled_notification_description" = "Kontakta fiksēšana Apturi Covid lietotnē šobrīd nedarbojas.";
 "exposure_detected_notification_title" = "Mieru, tikai mieru.";
-"exposure_detected_notification_description" = "Tev konstatēta saskare ar Covid-19 saslimušo.";
+"exposure_detected_notification_description" = "Tev konstatēta saskare ar Covid-19 saslimušo";
 
 ////////////////////// below not from KAI
 

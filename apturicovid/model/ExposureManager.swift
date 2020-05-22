@@ -124,7 +124,7 @@ class ExposureManager {
     
     private func getExposureInfo(summary: ENExposureDetectionSummary) -> Observable<[Exposure]> {
         return Observable.create { (observer) -> Disposable in
-            let task = self.manager.getExposureInfo(summary: summary, userExplanation: "some explanation") { (exposures, error) in
+            let task = self.manager.getExposureInfo(summary: summary, userExplanation: "exposure_detected_notification_title".translated + "exposure_detected_notification_description".translated) { (exposures, error) in
                 guard error == nil else {
                     observer.onError(error!)
                     return

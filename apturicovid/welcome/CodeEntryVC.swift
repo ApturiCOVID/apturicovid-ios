@@ -130,6 +130,7 @@ class CodeEntryVC: BaseViewController {
     
     func stylePinInput() {
         pinInput.keyboardType = .numberPad
+        pinInput.textContentType = .oneTimeCode
         pinInput.properties.delegate = self
         pinInput.properties.numberOfCharacters = 8
         pinInput.properties.validCharacters = "0123456789+#"

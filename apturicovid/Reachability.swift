@@ -25,7 +25,7 @@ struct ReachabilityGroup {
 
 class Reachability {
     
-    static let shared: Reachability? = try? Reachability(domainName: baseUrl)
+    static let shared: Reachability? = try? Reachability(domainName: nil)
     
     var allowsCellularConnection = true
 
@@ -55,6 +55,7 @@ class Reachability {
     
     deinit { stopNotifier() }
     
+    /// - Parameter domainName: domain name to track. Use nil in case track global network connectivity
     required init(domainName: String?) throws {
         
         if let domainName = domainName,

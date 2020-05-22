@@ -12,6 +12,7 @@ import ExposureNotification
 import Anchorage
 
 class HomeVC: BaseViewController {
+    
     @IBOutlet weak var bottomBackgroundView: HomeBottomView!
     @IBOutlet weak var exposureSwitch: UISwitch!
     @IBOutlet weak var shareButton: UIButton!
@@ -34,6 +35,8 @@ class HomeVC: BaseViewController {
     
     var stats: Stats?
     var statCells: [StatCell] { [statTested,statNewCases,statDeceased] }
+
+    var connectionWarningView: WarningView?
     
     private var exposureNotificationVisible = false {
         didSet {
@@ -117,6 +120,13 @@ class HomeVC: BaseViewController {
         present(vc, animated: true, completion: nil)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let connection = Reachability.shared?.apiConnection {
+            connectionStateUpdated(connection)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -157,15 +167,25 @@ class HomeVC: BaseViewController {
         NotificationCenter.default.rx
             .notification(.reachabilityChanged)
             .subscribe(onNext: { [weak self] notification in
-                guard let `self`  = self, self.stats == nil else { return }
-                if (notification.object as? Reachability.Connection)?.available == true {
-                    self.getData()
+                guard let `self`  = self else { return }
+                
+                if let connection = notification.object as? Reachability.Connection {
+                    if connection.available && self.stats == nil { self.getData() }
+                    self.connectionStateUpdated(connection)
                 }
             })
             .disposed(by: disposeBag)
         
         exposureNotificationConstraint = exposureNotificationView.topAnchor == bottomBackgroundView.topAnchor
         setExposureNotification(visible: false)
+    }
+    
+    private func connectionStateUpdated(_ connection: Reachability.Connection){
+        if connection == .unavailable {
+            showNetworkWarningBox()
+        } else {
+            hideNetworkWarningBox()
+        }
     }
     
     func getData(){
@@ -233,5 +253,126 @@ class HomeVC: BaseViewController {
         /// Mover exposure notification over bottomBackgroundView
         exposureNotificationConstraint.constant = visible ? -80 : bottomBackgroundView.curveOffset
 
+    }
+}
+
+//MARK: NetworkLossWarning:
+
+typealias AnimationStep = () -> ()
+
+extension HomeVC {
+    
+    @objc func notifyConnectionStateChanged(_ sender: Notification){
+        
+        guard let connection = sender.object as? Reachability.Connection else { return }
+        
+        if connection == .unavailable {
+            showNetworkWarningBox()
+        } else {
+            hideNetworkWarningBox()
+        }
+    }
+    
+    /// Hides "No Internet" warning view.
+    @objc func hideNetworkWarningBox(){
+        animateDisappear(){
+            self.connectionWarningView?.removeFromSuperview()
+            self.connectionWarningView = nil
+        }
+    }
+    
+    /// Shows "No Internet" warning view.
+    fileprivate func showNetworkWarningBox(){
+        
+        if connectionWarningView != nil {return}
+        
+        let warningBoxSize = CGSize(width: view.bounds.width, height: 70)
+        let frame = CGRect(origin: .zero, size: warningBoxSize)
+        
+        let text = "Lietotne šobrīd darbojas bezsaistē"
+    
+        var params = WarningViewParams()
+        params.imageSize = CGSize(width: 30, height: 30)
+        params.alignment = .center
+        params.textAllignment = .center
+        params.imageViewInsets = UIEdgeInsets(top: 0, left: 16, bottom: 16, right: 0)
+        params.textViewInsets  = UIEdgeInsets(top: 0, left: 16, bottom: 20, right: 8)
+        
+        connectionWarningView = WarningView(frame: frame,
+                                            text: text,
+                                            params: params,
+                                            preferedEffect: UIBlurEffect(style: .dark) )
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hideNetworkWarningBox))
+        connectionWarningView?.addGestureRecognizer(tap)
+        animateAppear()
+    }
+    
+    /// Animates appearing of "No Internet" warning view.
+    fileprivate func animateAppear(){
+        guard let connectionWarningView = connectionWarningView else { return }
+        let animations = getAnimationInSteps()
+        animations[0]()
+        view.addSubview(connectionWarningView)
+        setupWarningConstraints()
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            animations[1]()
+        }) { _ in
+            UIView.animate(withDuration: 0.2) {
+                animations[2]()
+            }
+        }
+    }
+    
+    /// Animates disappearing of "No Internet" warning view.
+    fileprivate func animateDisappear(_ completed: @escaping () -> ()){
+        let animations = getAnimationInSteps()
+        UIView.animate(withDuration: 0.2, animations: {
+            animations[1]()
+        }, completion: { _ in
+            UIView.animate(withDuration: 0.3, animations: {
+                animations[0]()
+            }, completion: { _ in completed() })
+        })
+    }
+    
+    fileprivate func getAnimationInSteps() -> [AnimationStep] {
+        return [moveWarningViewToStartPosition,moveWarningViewToMiddlePosition,moveWarningViewToEndPosition]
+    }
+    
+    fileprivate func moveWarningViewToStartPosition(){
+        guard let connectionWarningView = connectionWarningView else { return }
+        connectionWarningView.transform = CGAffineTransform(translationX: 0, y: connectionWarningView.bounds.height * 3)
+    }
+    
+    fileprivate func moveWarningViewToMiddlePosition(){
+        guard let connectionWarningView = connectionWarningView else { return }
+        connectionWarningView.transform = CGAffineTransform(translationX: 0, y: -(connectionWarningView.bounds.height/4))
+    }
+    
+    fileprivate func moveWarningViewToEndPosition(){
+        connectionWarningView?.transform = .identity
+    }
+    
+    fileprivate func setupWarningConstraints(){
+        guard let connectionWarningView = connectionWarningView else { return }
+        connectionWarningView.translatesAutoresizingMaskIntoConstraints = false
+        
+        connectionWarningView.heightAnchor
+            .constraint(equalToConstant: connectionWarningView.bounds.height)
+            .isActive = true
+        
+        connectionWarningView.widthAnchor
+            .constraint(equalToConstant: connectionWarningView.bounds.width)
+            .isActive = true
+        
+        connectionWarningView.centerXAnchor
+            .constraint(equalTo: view.centerXAnchor)
+            .isActive = true
+        
+        connectionWarningView.bottomAnchor
+            .constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant:0)
+            .isActive = true
     }
 }

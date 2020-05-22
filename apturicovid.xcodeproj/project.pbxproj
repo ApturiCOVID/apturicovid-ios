@@ -20,6 +20,8 @@
 		60701AFF246D422000BFA1F4 /* LinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60701AFE246D422000BFA1F4 /* LinkLabel.swift */; };
 		60701B01246D46F600BFA1F4 /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60701B00246D46F600BFA1F4 /* NSMutableAttributedString.swift */; };
 		60815F472476A9EC00580DCA /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606715BF2474858100B7D298 /* RoundedView.swift */; };
+		60815F4924771C2B00580DCA /* VibrantWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60815F4824771C2B00580DCA /* VibrantWarningView.swift */; };
+		60815F4A24771C2B00580DCA /* VibrantWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60815F4824771C2B00580DCA /* VibrantWarningView.swift */; };
 		60A3349B246D0C16007BE791 /* NotificationNameEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3349A246D0C16007BE791 /* NotificationNameEx.swift */; };
 		60A334A2246D2116007BE791 /* UITextField2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A334A1246D2116007BE791 /* UITextField2.swift */; };
 		60A334A7246D22E7007BE791 /* SubmitCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A334A5246D22E7007BE791 /* SubmitCodeVC.swift */; };
@@ -216,6 +218,7 @@
 		606715C12475007600B7D298 /* StatsCollectionViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCollectionViewCells.swift; sourceTree = "<group>"; };
 		60701AFE246D422000BFA1F4 /* LinkLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkLabel.swift; sourceTree = "<group>"; };
 		60701B00246D46F600BFA1F4 /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
+		60815F4824771C2B00580DCA /* VibrantWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibrantWarningView.swift; sourceTree = "<group>"; };
 		60A3349A246D0C16007BE791 /* NotificationNameEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameEx.swift; sourceTree = "<group>"; };
 		60A3349E246D1CB2007BE791 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Translations.strings; sourceTree = "<group>"; };
 		60A334A1246D2116007BE791 /* UITextField2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField2.swift; sourceTree = "<group>"; };
@@ -516,6 +519,7 @@
 			children = (
 				60A334A1246D2116007BE791 /* UITextField2.swift */,
 				BABEEC262468718C009D8307 /* CheckboxView.swift */,
+				60815F4824771C2B00580DCA /* VibrantWarningView.swift */,
 				602C183E246C745900903458 /* RoundedButton.swift */,
 				606715BF2474858100B7D298 /* RoundedView.swift */,
 				60701AFE246D422000BFA1F4 /* LinkLabel.swift */,
@@ -898,6 +902,7 @@
 				602AE9B62473E152008E42F3 /* UISwitchEx.swift in Sources */,
 				BADFAD02247559BE006F61E7 /* ENExposureConfiguration.swift in Sources */,
 				603DC22424715A3C00AD6217 /* UIDeviceEx.swift in Sources */,
+				60815F4924771C2B00580DCA /* VibrantWarningView.swift in Sources */,
 				BA50D35B2469EEB90091DF0E /* DiagnosisUploadRequest.swift in Sources */,
 				BAFA8319246BF3B400E121B4 /* HomeBottomView.swift in Sources */,
 				BAD422242474023F0047E85D /* ApiClient.swift in Sources */,
@@ -982,6 +987,7 @@
 				BADFAD0324755B95006F61E7 /* ENExposureConfiguration.swift in Sources */,
 				BA3800162473072700577DB2 /* UIDeviceEx.swift in Sources */,
 				BA3800172473072700577DB2 /* DiagnosisUploadRequest.swift in Sources */,
+				60815F4A24771C2B00580DCA /* VibrantWarningView.swift in Sources */,
 				BA3800182473072700577DB2 /* HomeBottomView.swift in Sources */,
 				BA3800192473072700577DB2 /* PhoneConfirmationRequest.swift in Sources */,
 				BA38001A2473072700577DB2 /* HomeVC.swift in Sources */,

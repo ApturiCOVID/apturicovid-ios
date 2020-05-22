@@ -182,6 +182,14 @@ class HomeVC: BaseViewController {
             .disposed(by: disposeBag)
         
         NotificationCenter.default.rx
+            .notification(UIApplication.didBecomeActiveNotification)
+            .flatMap({ _ -> Observable<Bool> in
+                return ExposureManager.shared.performExposureDetection()
+            })
+            .subscribe(onError: justPrintError)
+            .disposed(by: disposeBag)
+        
+        NotificationCenter.default.rx
             .notification(.reachabilityChanged)
             .subscribe(onNext: { [weak self] notification in
                 if let connection = notification.object as? Reachability.Connection {

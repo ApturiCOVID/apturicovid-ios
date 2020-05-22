@@ -21,13 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setAppearance()
         
         BGTaskScheduler.shared.register(forTaskWithIdentifier: AppDelegate.backgroundTaskIdentifier, using: .main) { task in
-            
-            LocalStore.shared.bgJobCounter += 1
-            
             let disposable = ExposureManager.shared.performExposureDetection()
                 .observeOn(MainScheduler.instance)
-                .subscribe(onNext: { (exposures) in
-                    print(exposures)
+                .subscribe(onNext: { _ in
                     task.setTaskCompleted(success: true)
                 }, onError: { (error) in
                     task.setTaskCompleted(success: false)

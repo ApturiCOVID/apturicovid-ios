@@ -22,7 +22,6 @@ class HomeVC: BaseViewController {
     @IBOutlet weak var statsView: UIView!
     @IBOutlet weak var contactTracingTitle: UILabel!
     @IBOutlet weak var tracingStateLabel: UILabel!
-    @IBOutlet weak var exposureTitleLabel: UILabel!
     @IBOutlet weak var exposureDescriptionLabel: UILabel!
     @IBOutlet weak var statsTitleLabel: UILabel!
     @IBOutlet weak var exposureViewButton: UIButton!
@@ -50,7 +49,19 @@ class HomeVC: BaseViewController {
     }
     
     @IBAction func onSwitchTap(_ sender: UISwitch) {
-        ExposureManager.shared.toggleExposureNotifications(enabled: sender.isOn)
+        if !sender.isOn {
+            showBasicPrompt(with: "exposure_off_prompt".translated, action: {
+                self.toggleExposure(enabled: false)
+            }, cancelAction: {
+                self.exposureSwitch.isOn = true
+            }, confirmTitle: "yes".translated, cancelTitle: "cancel".translated)
+        } else {
+            toggleExposure(enabled: sender.isOn)
+        }
+    }
+    
+    private func toggleExposure(enabled: Bool) {
+        ExposureManager.shared.toggleExposureNotifications(enabled: enabled)
             .subscribe(onCompleted: {
                 self.setExposureStateVisual(animated: true)
             }, onError: { (error) in
@@ -212,7 +223,6 @@ class HomeVC: BaseViewController {
     override func translate() {
         contactTracingTitle.text = "contact_tracing".translated
         tracingStateLabel.text = "currently_active".translated
-        exposureTitleLabel.text  = "exposure_detected_title".translated
         exposureDescriptionLabel.text = "exposure_detected_subtitle".translated
         statsTitleLabel.text = "stats_title".translated
         

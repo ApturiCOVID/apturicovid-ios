@@ -2,6 +2,7 @@ import UIKit
 import RxSwift
 import SVProgressHUD
 import KAPinField
+import CocoaLumberjack
 
 enum CodeEntryMode {
     case sms
@@ -159,8 +160,15 @@ class CodeEntryVC: BaseViewController {
         SVProgressHUD.show()
         
         ApiClient.shared.requestPhoneVerification(phoneNumber: phoneNo)
-            .subscribe(onNext: { _ in
+            .subscribe(onNext: { response in
                 SVProgressHUD.dismiss()
+                
+                guard let response = response else {
+                    DDLogError("Response empty after sms request")
+                    return
+                }
+                
+                self.requestResponse = response
             },onError: { error in
                 SVProgressHUD.dismiss()
                 justPrintError(error)

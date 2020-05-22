@@ -170,9 +170,13 @@ class HomeVC: BaseViewController {
         NotificationCenter.default.rx
             .notification(UIApplication.didBecomeActiveNotification)
             .flatMap({ _ -> Observable<Bool> in
+                guard LocalStore.shared.hasSeenIntro else { return Observable.just(true) }
                 return ExposureManager.shared.performExposureDetection()
             })
-            .subscribe(onError: justPrintError)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { _ in
+                self.setExposureNotification(visible: true)
+            }, onError: justPrintError)
             .disposed(by: disposeBag)
         
         NotificationCenter.default.rx

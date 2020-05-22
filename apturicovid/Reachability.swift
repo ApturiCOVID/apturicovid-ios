@@ -25,7 +25,7 @@ struct ReachabilityGroup {
 
 class Reachability {
     
-    static let shared: Reachability? = try? Reachability(domainName: baseUrl)
+    static let shared: Reachability? = try? Reachability(domainName: nil)
     
     var allowsCellularConnection = true
 
@@ -39,7 +39,7 @@ class Reachability {
         didSet { if flags != oldValue { notifyReachabilityChanged() } }
     }
     
-    var apiConnection: Connection {
+    var connection: Connection {
         if flags == nil { try? setReachabilityFlags() }
         
         switch flags?.connection {
@@ -55,6 +55,7 @@ class Reachability {
     
     deinit { stopNotifier() }
     
+    /// - Parameter domainName: domain name to track. Use nil in case track global network connectivity
     required init(domainName: String?) throws {
         
         if let domainName = domainName,
@@ -96,7 +97,7 @@ class Reachability {
     func notifyReachabilityChanged() {
         let notification = { [weak self] in
             guard let `self` = self else { return }
-            NotificationCenter.default.post(name: .reachabilityChanged, object: self.apiConnection)
+            NotificationCenter.default.post(name: .reachabilityChanged, object: self.connection)
         }
         notificationQueue.async(execute: notification)
     }

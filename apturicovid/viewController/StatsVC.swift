@@ -51,7 +51,7 @@ class StatsVC: BaseViewController {
             .subscribe(onNext: { [weak self] notification in
                 guard let `self`  = self, self.stats == nil else { return }
                 if (notification.object as? Reachability.Connection)?.available == true {
-                    self.getData(forceApi: true)
+                    self.refreshData()
                 }
             })
             .disposed(by: disposeBag)
@@ -67,7 +67,7 @@ class StatsVC: BaseViewController {
     }
     
     func getData(forceApi: Bool = false){
-        StatsClient.shared.getStats()
+        StatsClient.shared.getStats(forceFromApi: forceApi)
         .subscribeOn(SerialDispatchQueueScheduler(qos: .default))
         .observeOn(MainScheduler.instance)
             .share()

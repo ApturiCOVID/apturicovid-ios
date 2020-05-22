@@ -83,6 +83,14 @@ class BaseViewController: UIViewController {
         }))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake && debugMenuEnabled {
+            if let vc = UIStoryboard(name: "DebugMenu", bundle: nil).instantiateInitialViewController() {
+                self.present(vc, animated: true, completion: nil)
+            }
+        }
+    }
 }
 
 //MARK: NetworkLossWarning:

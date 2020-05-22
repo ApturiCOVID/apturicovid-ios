@@ -13,30 +13,37 @@ class FAQViewController: BaseViewController {
     @IBOutlet weak var thirdBulletPointLabel: UILabel!
     @IBOutlet weak var fourthBulletPointLabel: UILabel!
     @IBOutlet weak var faqTitleLabel: UILabel!
+    @IBOutlet weak var questionsStackView: UIStackView!
     
-    let faqs = [
-        FAQ(title: "faq_question_1", description: "faq_answer_1"),
-        FAQ(title: "faq_question_2", description: "faq_answer_2"),
-        FAQ(title: "faq_question_3", description: "faq_answer_3"),
-        FAQ(title: "faq_question_4", description: "faq_answer_4"),
-        FAQ(title: "faq_question_5", description: "faq_answer_5"),
-        FAQ(title: "faq_question_6", description: "faq_answer_6"),
-        FAQ(title: "faq_question_7", description: "faq_answer_7")
-    ]
+    var faqs: [FAQ] {
+        return [
+            FAQ(title: "faq_question_1", description: "faq_answer_1"),
+            FAQ(title: "faq_question_2", description: "faq_answer_2"),
+            FAQ(title: "faq_question_3", description: "faq_answer_3"),
+            FAQ(title: "faq_question_4", description: "faq_answer_4"),
+            FAQ(title: "faq_question_5", description: "faq_answer_5"),
+            FAQ(title: "faq_question_6", description: "faq_answer_6"),
+            FAQ(title: "faq_question_7", description: "faq_answer_7"),
+            FAQ(title: "faq_question_8", description: "faq_answer_8")
+        ]
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        infoHolder.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 30)
+        
+        mainScrollView.delegate = self
+    }
+    
+    private func setupQuestionsView() {
+        questionsStackView.subviews.forEach { $0.removeFromSuperview() }
         faqs.forEach { (faq) in
             let questionView = QuestionView()
             questionView.backgroundColor = Colors.headerColor
             questionView.fillWith(faq: faq)
-            mainStackView.addArrangedSubview(questionView)
+            questionsStackView.addArrangedSubview(questionView)
         }
-        
-        infoHolder.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 30)
-        
-        mainScrollView.delegate = self
     }
     
     override func translate() {
@@ -48,6 +55,7 @@ class FAQViewController: BaseViewController {
         thirdBulletPointLabel.text = "anonymous_identity".translated
         fourthBulletPointLabel.text = "gpc_tracking_not_performed".translated
         faqTitleLabel.text = "frequently_asked_questions".translated
+        setupQuestionsView()
     }
 }
 

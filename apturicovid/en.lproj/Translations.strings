@@ -14,7 +14,7 @@
 
 // WelcomeVC
 "welcome_title" = "Help break the virus chain!";
-"welcome_app_description" = "This is the fastest way to find out if you have been exposed to Covid-19. And take action to stop it.";
+"welcome_app_description" = "This is the fastest way to find out if you have been exposed to COVID-19. And take action to stop it.";
 "welcome_privacy_link" = "Privacy policy";
 "welcome_terms_link" = "App Terms of Use";
 "welcome_privacy_note" = "I accept App Terms of Use, and have read the Privacy policy";
@@ -22,7 +22,7 @@
 // ExposureSetupVC
 "activate" = "Switch on";
 "contact_detection" = "Contact detection";
-"exposure_setup_description" = "Contact: 2-4 m proximity for 15+ minutes.
+"exposure_setup_description" = "Contact: up to 4 m proximity for 15+ minutes.
 Detection: a code kept on phone for 14 days, then deleted.
 
 Contact detection is not tracking.";
@@ -33,11 +33,9 @@ Contact detection is not tracking.";
 
 // PhoneInfoVC
 "why_submit_a_phone_number" = "Reasons to provide a number";
-"why_submit_a_phone_number_explanation" = "If SPKC is able to contact you, they can assess your risk and officially recognize you as a COVID contact if applicable. That will give you access to a range of support options – like your family doctor providing a sick leave note.
-
-SPKC will receive your number with contact information only if and when it is established that you have been exposed to Covid-19. Noone else will find out anything about you.
-";
-"data_privacy_and_protection_policy" = "SPKC will receive your number only if and when it is established that you have been exposed to Covid-19. Noone else will find out anything about you.";
+"why_submit_a_phone_number_explanation" = "If SPKC is able to contact you, they can assess your risk and officially recognize you as a COVID-19 contact if applicable. That will give you access to a range of support options – like your general practitioner providing a sick leave note.
+SPKC will receive your number with contact information only if and when it is established that you have been exposed to Covid-19. No one else will find out anything about you.";
+"data_privacy_and_protection_policy" = "SPKC will receive your number only if and when it is established that you have been exposed to COVID-19. Noone else will find out anything about you.";
 
 // CodeEntryVC Phone validation
 "phone_confirmation_title" = "Number verification";
@@ -51,7 +49,7 @@ SPKC will receive your number with contact information only if and when it is es
 "contact_tracing" = "Contact detection";
 "currently_active" = "Is switched on";
 "currently_inactive" = "Is switched off";
-"exposure_detected_subtitle" = "Don’t panic. You have been exposed to Covid-19.";
+"exposure_detected_subtitle" = "Don’t panic. You have been exposed to COVID-19.";
 "exposure_off_prompt" = "Are you sure you want to disable exposure notifications?";
 "stats_title" = "In the last 24 hours";
 "share" = "Share app";
@@ -60,32 +58,30 @@ SPKC will receive your number with contact information only if and when it is es
 "deceased" = "Deceased";
 
 // ExposureAlertVC
-"exposure_with_covid" = "Covid-19 contact detected";
-"you_had_exposure" = "In the last 14 days you have been in the proximity of someone infected with Covid-19.";
+"exposure_with_covid" = "COVID-19 contact detected";
+"you_had_exposure" = "In the last 14 days you have been in the proximity of someone infected with COVID-19.";
 "how_to_proceed" = "What’s next?";
-"self_isolate" = "Self-isolate";
-"wait_for_a_call_from_spkc" = "Wait for a call from SPKC";
-"contact_your_family_doctor" = "Contact your family doctor";
+"self_isolate" = "Stay home, limit contact with others";
+"wait_for_a_call_from_spkc" = "Wait for SPKC to call you";
+"contact_your_family_doctor" = "Got symptoms? Contact your general practitioner";
+"severe_case" = "Severe symptoms? Call 133";
 "observe_symptoms" = "Monitor symptoms";
 "exposure_handling_description_phone_specified" = "Please note that being exposed does not mean you are infected. Please keep calm, be cautious and follow medics' directions. Waiting for that SPKC call can feel like eternity. Please be patient.";
-"exposure_handling_description_phone_not_specified" = "Please note that being exposed does not mean you are infected. Please stay calm and be cautious. Perhaps you would like to provide your phone number now for the SPKC to contact you?";
+"exposure_handling_description_phone_not_specified" = "Please note that being exposed does not mean you are infected. Please keep calm, be cautious and follow medics' directions. Perhaps you would like to provide your phone number now for the SPKC to contact you?";
 
 // FaqVC
 "what_is_contact_tracing" = "How does contact detection work?";
-"contact_detection_explanation" = "When two smartphones are in 2-4 m proximity, they directly exchange a code, and each device keeps it for 14 days. If a phone user marks themselves as infected, all phones keeping the respective code receive a notification.";
+"contact_detection_explanation" = "When two smartphones are in up to 4 m proximity, they directly exchange a code, and each device keeps it for 14 days. If a phone user marks themselves as infected, all phones keeping the respective code receive a notification.";
 "what_about_my_privacy" = "What about my privacy?";
 "data_is_kept_on_device_only" = "Data is kept on device only";
-"data_is_automatically_deleted" = "It is automatically deleted";
+"data_is_automatically_deleted" = "Data is automatically deleted";
 "anonymous_identity" = "No other user will know your identity";
 "gpc_tracking_not_performed" = "The app does not record GPS data even if GPS is switched on";
 
 "frequently_asked_questions" = "Frequently asked questions";
-"how_is_data_processed" = "";
-// TODO: šobrīd tiek apkopoti
-
 // CodeEntryVC SPKC
 "spkc_data_send" = "Notify detected contacts";
-"spkc_data_description" = "If you are infected, you can send an automatic notification to all contacts detected in the last 14 days. That will help warn your loved ones, coworkers, friends, neighbours and complete strangers that they may be exposed to COVID-19. The notification will not disclose any information about you. It can only be sent by entering a code provided by SPKC. The code is active for 30 minutes from issuing.";
+"spkc_data_description" = "If you are infected, here’s where you can enter a code from SPKC and automatically notify detected contacts at risk to be infected – from loved ones to complete strangers. The notification will not disclose any information about you. Code is valid for 30 minutes.";
 
 // NotificationSentVC
 "notification_sent_title" = "Thank you! Notification sent!";
@@ -103,7 +99,7 @@ SPKC will receive your number with contact information only if and when it is es
 
 // PhoneSettingsVC
 "specify_a_phone_number_title" = "Provide a contact number";
-"specify_a_phone_number_description" = "Provide a contact number for SPKC to call you if you have been exposed to Covid-19.";
+"specify_a_phone_number_description" = "Provide a contact number for SPKC to call you if you have been exposed to COVID-19.";
 "why_specify_a_phone_number" = "Reasons to provide a number";
 "specified_phone_number_is_of_another_person" = "Number belongs to someone close to me";
 "remain_anonymous" = "I will not provide a number";
@@ -111,16 +107,16 @@ SPKC will receive your number with contact information only if and when it is es
 
 // Notifications
 "exposure_disabled_notification_title" = "Contact detection is switched off";
-"exposure_disabled_notification_description" = "Contact tracing with Apturi Covid app is currently off.";
+"exposure_disabled_notification_description" = "Contact tracing with Apturi COVID app is currently off.";
 "exposure_detected_notification_title" = "Don’t panic";
-"exposure_detected_notification_description" = "You have been exposed a Covid-19 case";
+"exposure_detected_notification_description" = "You have been exposed a COVID-19 case";
 
 ////////////////////// below not from KAI
 
 // Error
 "error" = "Error";
 "continue" = "Continue";
-"invalid_phone_number_error" = "The entered phone number is invalid";
+"invalid_phone_number_error" = "Number format incompatible";
 "connectivity_offline" = "App now in offline mode";
 "no_internet_connection" = "No internet access";
 

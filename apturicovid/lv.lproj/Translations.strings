@@ -14,7 +14,7 @@
 
 // WelcomeVC
 "welcome_title" = "Palīdzi pārraut vīrusa ķēdi!";
-"welcome_app_description" = "Šis ir ātrākais veids, kā vari uzzināt, ka tev bijusi saskare ar Covid-19. Un rīkoties, lai to apturētu.";
+"welcome_app_description" = "Šis ir ātrākais veids, kā vari uzzināt, ka tev bijusi saskare ar COVID-19. Un rīkoties, lai to apturētu.";
 "welcome_privacy_link" = "Privātuma politiku";
 "welcome_terms_link" = "Lietotnes noteikumiem";
 "welcome_privacy_note" = "Piekrītu Lietotnes noteikumiem, ar Privātuma politiku iepazinos";
@@ -22,7 +22,7 @@
 // ExposureSetupVC
 "activate" = "Ieslēgt";
 "contact_detection" = "Kontakta fiksēšana";
-"exposure_setup_description" = "Kontakts: 15+ minūšu klātbūtne 2–4 m tuvumā.
+"exposure_setup_description" = "Kontakts: 15+ minūšu klātbūtne līdz 4 m tuvumā.
 Fiksēšana: šifrs, ko tālrunis glabā 14 dienas, tad dzēš.
 
 Kontakta fiksēšana nav izsekošana.";
@@ -35,9 +35,9 @@ Kontakta fiksēšana nav izsekošana.";
 "why_submit_a_phone_number" = "Kāpēc norādīt tālruni?";
 "why_submit_a_phone_number_explanation" = "Ja SPKC varēs ar tevi sazināties, būs iespējams novērtēt tavu risku, un, ja nepieciešams, atzīt tevi par kontaktpersonu. Tad tev kļūs pieejams atbalsta iespēju tīkls – piemēram, ģimenes ārsts varēs izrakstīt darba nespējas lapu.
 
-SPKC tavu kontakttālruni ar saskares informāciju saņems tikai tad, ja tev tiks konstatēta saskare ar Covid-19, un ne mirkli agrāk. Nevienam citam nekādi dati par tevi zināmi nebūs vispār.
+SPKC tavu kontakttālruni ar saskares informāciju saņems tikai tad, ja tev tiks konstatēta saskare ar COVID-19, un ne mirkli agrāk. Nevienam citam nekādi dati par tevi zināmi nebūs vispār.
 ";
-"data_privacy_and_protection_policy" = "SPKC tavu kontakttālruni saņems tikai tad, ja tev tiks konstatēta saskare ar Covid-19, un ne mirkli agrāk. Nevienam citam nekādi dati par tevi zināmi nebūs vispār.";
+"data_privacy_and_protection_policy" = "SPKC tavu kontakttālruni saņems tikai tad, ja tev tiks konstatēta saskare ar COVID-19, un ne mirkli agrāk. Nevienam citam nekādi dati par tevi zināmi nebūs vispār.";
 
 // CodeEntryVC Phone validation
 "phone_confirmation_title" = "Numura apstiprinājums";
@@ -51,8 +51,8 @@ SPKC tavu kontakttālruni ar saskares informāciju saņems tikai tad, ja tev tik
 "contact_tracing" = "Kontakta fiksēšana";
 "currently_active" = "Šobrīd ieslēgta";
 "currently_inactive" = "Šobrīd izslēgta";
-"exposure_detected_subtitle" = "Mieru, tikai mieru. Tev konstatēta saskare ar Covid-19 saslimušo.";
-"exposure_off_prompt" = "Vai tiešām vēlies izslēgt kontakta fiksēšanu?";
+"exposure_detected_subtitle" = "Mieru, tikai mieru. Tev konstatēta saskare ar COVID-19 saslimušo.";
+"exposure_off_prompt" = "Vai tiešām turpināt ar izslēgtu kontakta fiksēšanu?";
 "stats_title" = "Iepriekšējā diennaktī";
 "share" = "Uzaicini";
 "tested" = "Testēti";
@@ -60,13 +60,14 @@ SPKC tavu kontakttālruni ar saskares informāciju saņems tikai tad, ja tev tik
 "deceased" = "Miruši";
 
 // ExposureAlertVC
-"exposure_with_covid" = "Fiksēts kontakts ar Covid-19";
-"you_had_exposure" = "Tev pēdējo 14 dienu laikā ir bijusi saskare ar Covid-19 inficētu cilvēku.";
+"exposure_with_covid" = "Fiksēts kontakts ar COVID-19";
+"you_had_exposure" = "Tev pēdējo 14 dienu laikā ir bijusi saskare ar COVID-19 inficētu cilvēku.";
 "how_to_proceed" = "Ko tagad darīt?";
-"self_isolate" = "Pašizolēties";
-"wait_for_a_call_from_spkc" = "Gaidīt ziņu no SPKC";
-"contact_your_family_doctor" = "Sazināties ar ģimenes ārstu";
-"observe_symptoms" = "Vērot simptomus";
+"self_isolate" = "Paliec mājās, ierobežo saskarsmi";
+"wait_for_a_call_from_spkc" = "Gaidi ziņu no SPKC";
+"contact_your_family_doctor" = "Ir simptomi? Sazinies ar ģimenes ārstu";
+"observe_symptoms" = "Vēro simptomus";
+"severe_case" = "Smagi simptomi? Zvani 113";
 "exposure_handling_description_phone_specified" = "Ņem vērā, ka kontakta fiksēšana nenozīmē, ka tev ir infekcija. Šobrīd galvenais – saglabāt rāmu garu, ievērot piesardzību un klausīt mediķus. Iespējams, ka laiks līdz SPKC zvanam vilksies kā mūžība. Lūdzu, bruņojies ar pacietību.";
 "exposure_handling_description_phone_not_specified" = "Ņem vērā, ka kontakta fiksēšana nenozīmē, ka tev ir infekcija. Šobrīd galvenais – saglabāt rāmu garu un ievērot piesardzību. Varbūt tagad vēlies norādīt savu tālruni, lai SPKC ar tevi sazinātos?";
 
@@ -85,7 +86,7 @@ SPKC tavu kontakttālruni ar saskares informāciju saņems tikai tad, ja tev tik
 
 // CodeEntryVC SPKC
 "spkc_data_send" = "Sūtīt ziņu fiksētajiem kontaktiem";
-"spkc_data_description" = "Ja esi inficēts, šeit vari nosūtīt automātisku paziņojumu ikvienam pēdējās 14 dienās fiksētajam kontaktam. Tā tu palīdzēsi brīdināt tuviniekus, kolēģus, draugus, kaimiņus un arī pilnīgi svešus cilvēkus par saskari ar Covid-19. Paziņojums neatklās informāciju par tevi pašu. Paziņojumu nosūtīt var tikai ar SPKC izsniegtu kodu. Tas darbojas 30 minūtes no izsniegšanas brīža.";
+"spkc_data_description" = "Ja esi inficēts, šeit vari nosūtīt automātisku paziņojumu ikvienam pēdējās 14 dienās fiksētajam kontaktam. Tā tu palīdzēsi brīdināt tuviniekus, kolēģus, draugus, kaimiņus un arī pilnīgi svešus cilvēkus par saskari ar COVID-19. Paziņojums neatklās informāciju par tevi pašu. Paziņojumu nosūtīt var tikai ar SPKC izsniegtu kodu. Tas darbojas 30 minūtes no izsniegšanas brīža.";
 
 // NotificationSentVC
 "notification_sent_title" = "Paldies! Paziņojums nosūtīts!";
@@ -103,7 +104,7 @@ SPKC tavu kontakttālruni ar saskares informāciju saņems tikai tad, ja tev tik
 
 // PhoneSettingsVC
 "specify_a_phone_number_title" = "Norādīt kontaktu";
-"specify_a_phone_number_description" = "Norādi kontakttālruni, pa kuru Covid-19 saskares gadījumā SPKC ar tevi sazināties. ";
+"specify_a_phone_number_description" = "Norādi kontakttālruni, pa kuru COVID-19 saskares gadījumā SPKC ar tevi sazināties. ";
 "why_specify_a_phone_number" = "Kāpēc ir vērts norādīt tālruni?";
 "specified_phone_number_is_of_another_person" = "Norādīts tuvinieka tālrunis";
 "remain_anonymous" = "Nevēlos norādīt tālruni";
@@ -111,16 +112,16 @@ SPKC tavu kontakttālruni ar saskares informāciju saņems tikai tad, ja tev tik
 
 // Notifications
 "exposure_disabled_notification_title" = "Kontakta fiksēšana izslēgusies";
-"exposure_disabled_notification_description" = "Kontakta fiksēšana Apturi Covid lietotnē šobrīd nedarbojas.";
+"exposure_disabled_notification_description" = "Kontakta fiksēšana Apturi COVID lietotnē šobrīd nedarbojas.";
 "exposure_detected_notification_title" = "Mieru, tikai mieru.";
-"exposure_detected_notification_description" = "Tev konstatēta saskare ar Covid-19 saslimušo";
+"exposure_detected_notification_description" = "Tev konstatēta saskare ar COVID-19 saslimušo";
 
 ////////////////////// below not from KAI
 
 // Error
 "error" = "Kļūda";
 "continue" = "Turpināt";
-"invalid_phone_number_error" = "Ievadītais telefona numurs nav derīgs";
+"invalid_phone_number_error" = "Neatbilstošs numura formāts";
 "connectivity_offline" = "Lietotne šobrīd darbojas bezsaistē";
 "no_internet_connection" = "Nav interneta savienojuma";
 

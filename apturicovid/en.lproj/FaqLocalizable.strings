@@ -1,32 +1,26 @@
-"faq_question_1" = "Kāpēc nepieciešams izmantot lietotni?";
-"faq_answer_1" = "Lietotne ir risinājums, lai palīdzētuvalstī ierobežot vīrusaizplatību un ātrākuzzinātu, vai neesi bijis kontaktā ar COVID-19 vīrusainficēto.Tādējādi, izmantojot lietotni, varēsisavlaicīgākizolēties, lai neapdraudētu savu ģimeni,kolēģus, draugus un pārējosiedzīvotājus,kāarīpievērstuzmanībuslimības simptomiem un ātrākuzsāktārstēšanos, ja nepieciešams.
+"faq_question_1" = "Why use this app?";
+"faq_answer_1" = "To help limit the spread of coronavirus in Latvia and find out faster if you have been exposed to COVID-19. This app enables you to make the decision to self-isolate faster to help keep your friends, family and the general public safe, as well as monitor symptoms and seek help faster if needed.";
 
-Saskaņā ar epidemiologu un zinātniekuaplēsēm, pat ja tikai 10–20% iedzīvotāju izmantos lietotni, tas jau būs liels atbalsts infekcijas ierobežošanai. Tomēr, jo vairākiedzīvotāju to izmantos, jo lielāks efekts.";
+"faq_question_2" = "How many users does the app need to be effective?";
+"faq_answer_2" = "According to calculations by epidemiologists and experts, even if the app is used just by 20% of residents of Latvia, it will already help identify risks and limit the spread of infection going forward. However, the more people use it, the more effective it will be. ";
 
-"faq_question_2" = "Kā darbojas lietotne?";
-"faq_answer_2" = "Lietotni iedzīvotāji izmanto brīvprātīgi.Tā ir balstīta uz Eiropas, tai skaitāarī Latvijas, zinātniekuizstrādātumetodoloģiju. Lietotne anonīmi ar Bluetoothtehnoloģijupiefiksētuvumā (aptuveni 2-4 metriem un ilgāk par 15 minutēm) esošos viedtālruņus, kuri arīizmanto šo lietotni. Piefiksētāinformācijaglabājaslietotājaviedtālrunī un ik pēc 14 dienāmautomātiskidzēšas.
+"faq_question_3" = "How does the app work?";
+"faq_answer_3" = "t anonymously detects nearby smartphones that also have this app installed (up to 4 m proximity, for 15+ minutes). This information is only kept on device, and automatically deleted after 14 days. If a user is confirmed to be a COVID-19 case, SPKC will send them a code. When entered in the app, an anonymous notification will be sent to detected contacts that have been at risk to be infected. Sender’s identity is not disclosed to recipients. Likewise, the infected individual does not know who the recipients are.";
 
-Neatkarīgi no tā vai izmanto vai neizmanto lietotni, SPKC sazinās ar iedzīvotājiem, kam analīzēs ir apstiprināta saslimšana ar COVID-19. Šo informāciju SPKC saņem nevis no lietotnes, bet no citāminstitūcijāmsaskaņā ar normatīvajiem aktiem epidemioloģiskāsdrošībasjomā. Ja inficētaisiedzīvotājs izmanto lietotni, SPKC nosūtīs tam speciālu kodu, ko varēsievadītlietotnē.Tādāveidālietotnē tiek aktivizētaanonīmapaziņojumanosūtīšanacitiem viedtālruņiem ar šo lietotni, kas pēdējo 14 dienu laikā ir bijuši piefiksētituvākontaktā.Paziņojumasaņēmējam netiek atklātainficētās personas identitāte, kas aktivizēpaziņojumaizsūtīšanu.Tāpatinficētajai personai nav pieejama informācija, kas ir paziņojumasaņēmēji.";
+"faq_question_4" = "What information is used in the app?";
+"faq_answer_4" = "Contacts detected via Bluetooth are kept on device only, encrypted with random generated key, and are not disclosed to the user or developers of this app. Data is deleted after 14 days.
+If you provide your phone number, SPKC will only receive it if and when you are notified about exposure to COVID-19. SPKC will have access to this data: phone number, contact date, signal strength, contact duration.
+The app does not access or store information about the location of the user or the exact time of contact.";
 
-"faq_question_3" = "Kādainformācija tiek izmantota lietotnē?";
-"faq_answer_3" = "Lietotnes darbībabalstās uz šifrētiem datiem, kāarībrīvprātīgas lietošanas principu. Caur Bluetoothpiefiksēto kontaktu dati glabājaskāšifrēti kodi tikai lietotājaviedtālrunī un nav pieejami ne pašam lietotājam, ne citiem lietotnes izmantotājiem, nedz SPKC. Tie tiek dzēstipēcattiecīgā 14 dienu perioda. Dati var būt pieejami SPKC tikai ar lietotāja piekrišanu.
+"faq_question_5" = "What should I do if I receive a notification that I have been exposed to COVID-19?";
+"faq_answer_5" = "To make sure you do not infect others SPKC recommends to self-isolate and monitor your symptoms for the onset of COVID-19. Only SPKC can get you official close contact status. If you have provided your phone number in the app, SPKC will get in touch and inform about further actions.";
 
-Lietotne nesaņem un neglabāinformāciju par lietotājuatrašanās vietu.
+"faq_question_6" = "Is it safe to use the app?";
+"faq_answer_6" = "The app is developed in cooperation with Cert.lv and the Data State Inspectorate, in compliance with European data protection principles and security regulations.
+For improved security, we recommend regularly updating your smartphone software and the app.";
 
-Lietotnēvarēspēcizvēlesnorādīt savu kontakttālruni. To SPKC saņems tikai tad, ja persona lietotnēbūssaņēmusipaziņojumu par iespējamo Covid-19 kontaktu. Norādot savu kontakttālruni, SPKC būsiespējasazināties ar lietotāju, tostarp par nepieciešamībuizolētiesvai meklēt papildu medicīnisko atbalstu, ja tiek konstatētikādi simptomi. ";
+"faq_question_7" = "How does Bluetooth work?";
+"faq_answer_7" = "Bluetooth is a short range wireless communication technology used in smartphones, wireless headphones and smart watches. Most of the world’s contact tracing apps are based on it as it allows encrypted tracing. For improved efficiency and battery life, also Apple and Google use Bluetooth optimisation in their software. To use the app, Bluetooth functionality has to be switched on. Otherwise the app will not be operational.";
 
-"faq_question_4" = "Ko darīt, ja saņemulietotnēinformāciju, ka biju tuvākontaktā ar COVID-19 inficēto?";
-"faq_answer_4" = "Saņemot paziņojumu lietotnē, ka ir bijis tuvs kontakts ar kādu no COVID-19 inficētajām personām, rīcība ir tāda pati kā tiem, kuri nelieto lietotni. Lai pārliecinātos, ka neesi inficējies un nevari inficēt citus, SPKC iesaka pašizolāciju un vērot, vai neparādās COVID-19 saslimšanas simptomi, taču tuvas kontaktpersonas statusu var piešķirt tikai SPKC. Ja lietotnē esi norādījis telefona numuru, SPKC sazināsies un izstāstīs par tālāko rīcību. Ja nē, tad vajadzētu pašam sazināties ar SPKC.";
-
-"faq_question_5" = "Vai ir droši izmantot lietotni?";
-"faq_answer_5" = "Lietotnes izstrāde un attīstība notiek sadarbībā ar Cert.lv un Datu Valsts Inspekciju, ievērojot Eiropas personas datu aizsardzības un drošības regulējumu.
-
-Papildu drošībai iesakām veikt gan viedtālruņa programmatūras, gan lietotnes atjauninājumus, kad tādi ir pieejami.";
-
-"faq_question_6" = "Kā darbojas Bluetooth?";
-"faq_answer_6" = "Bluetooth ir neliela rādiusa bezvadu saziņas tehnoloģija, ko izmanto viedtālruņos. To mūsdienās plaši pielieto bezvadu austiņu un viedpulksteņu lietošanai. Lai izmantotu lietotni, Bluetooth ir jābūt ieslēgtam viedtālrunī un bez tā lietotne nedarbosies.
-
-Tagad Bluetooth ir risinājums arī lielākajai daļai pasaules kontaktu fiksēšanas lietotnēm, jo ļauj to izdarīt šifrētā veidā. Lai to darītu efektīvāk un ar mazāku noslodzi uz ierīču bateriju, arī viedtālruņu programmatūras izstrādātāji Apple un Google optimizē Bluetooth izmantošanu.";
-
-"faq_question_7" = "Vai lietotne darbosies arī citās valstīs?";
-"faq_answer_7" = "Sadarbībā ar starptautiskajiem zinātniekiem un izstrādātājiem tiek pētīts kā šādas kontaktu fiksēšanas lietotnes varētu izmantot arī viesojoties ārzemēs. Pagaidām Apple un Google lietotnēm ir noteikuši ierobežojumus, ka katru kontaktu fiksēšanas lietotni var izmantot tikai attiecīgajā valsti.";
+"faq_question_8" = "Will the app work in other countries?";
+"faq_answer_8" = "Not yet. Together with international partners we are investigating how such contact tracing apps could be also used when travelling abroad. Currently, Apple and Google have imposed certain limitations to only allow using each tracing app in its respective country. It also applies to users in Latvia who use smartphone profiles registered to other countries.";

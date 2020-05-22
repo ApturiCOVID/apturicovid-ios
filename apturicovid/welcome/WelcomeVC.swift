@@ -112,7 +112,7 @@ class WelcomeVC: BaseViewController {
     
     override func translate() {
         headingLabel.text = "welcome_title".translated
-        nextButton.setTitle("continue".translated, for: .normal)
+        nextButton.setTitle("next".translated, for: .normal)
         
         // Body attributed text
         bodyLabel.attributedText =

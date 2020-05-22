@@ -30,16 +30,7 @@ class CodeEntryVC: BaseViewController {
     var uploadInprogress = false
     
     @IBAction func onBackTap(_ sender: Any) {
-        
-        switch returnMode {
-        case .pop:
-            if let navigationController = self.navigationController {
-                navigationController.popViewController(animated: true)
-            } else { fallthrough }
-        case .dismiss:
-            self.dismiss(animated: true, completion: nil)
-        }
-
+        navigationController?.popViewController(animated: true)
     }
     
     var requestResponse: PhoneVerificationRequestResponse?

@@ -46,8 +46,8 @@ class QuestionView: UIView {
     var labelTouchDisposable: Disposable?
     
     func fillWith(faq: FAQ) {
-        messageLabel.text = NSLocalizedString(faq.title, tableName: "FaqLocalizable", comment: "")
-        descriptionLabel.text = NSLocalizedString(faq.description, tableName: "FaqLocalizable", comment: "")
+        messageLabel.text = faq.title.translate(table: "FaqLocalizable")
+        descriptionLabel.text = faq.description.translate(table: "FaqLocalizable")
     }
     
     init() {

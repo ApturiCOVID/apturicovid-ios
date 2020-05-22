@@ -1,32 +1,26 @@
-"faq_question_1" = "Kāpēc nepieciešams izmantot lietotni?";
-"faq_answer_1" = "Lietotne ir risinājums, lai palīdzētuvalstī ierobežot vīrusaizplatību un ātrākuzzinātu, vai neesi bijis kontaktā ar COVID-19 vīrusainficēto.Tādējādi, izmantojot lietotni, varēsisavlaicīgākizolēties, lai neapdraudētu savu ģimeni,kolēģus, draugus un pārējosiedzīvotājus,kāarīpievērstuzmanībuslimības simptomiem un ātrākuzsāktārstēšanos, ja nepieciešams.
+"faq_question_1" = "Зачем мне это приложение?";
+"faq_answer_1" = "Чтобы ограничить распространение вируса в Латвии и узнать, был ли у тебя контакт с COVID-19. С приложением ты сможешь своевременно изолироваться, не подвергать риску семью, коллег и других людей, а также отслеживать симптомы заболевания, чтобы при необходимости быстрее обратиться за помощью.";
 
-Saskaņā ar epidemiologu un zinātniekuaplēsēm, pat ja tikai 10–20% iedzīvotāju izmantos lietotni, tas jau būs liels atbalsts infekcijas ierobežošanai. Tomēr, jo vairākiedzīvotāju to izmantos, jo lielāks efekts.";
+"faq_question_2" = "Сколько надо пользователей для эффективной работы приложения?";
+"faq_answer_2" = "По расчетам эпидемиологов и ученых, даже если 20% населения Латвии начнут использовать приложение, это будет большим подспорьем в определении рисков и дальнейшем сдерживании инфекции. Чем больше жителей будут пользоваться приложением, тем значительнее будет эффект.";
 
-"faq_question_2" = "Kā darbojas lietotne?";
-"faq_answer_2" = "Lietotni iedzīvotāji izmanto brīvprātīgi.Tā ir balstīta uz Eiropas, tai skaitāarī Latvijas, zinātniekuizstrādātumetodoloģiju. Lietotne anonīmi ar Bluetoothtehnoloģijupiefiksētuvumā (aptuveni 2-4 metriem un ilgāk par 15 minutēm) esošos viedtālruņus, kuri arīizmanto šo lietotni. Piefiksētāinformācijaglabājaslietotājaviedtālrunī un ik pēc 14 dienāmautomātiskidzēšas.
+"faq_question_3" = "Как работает приложение?";
+"faq_answer_3" = "Приложение анонимно, по Bluetooth, фиксирует те смартфоны поблизости (до 4 метров, 15+ минут), на которых оно тоже установлено. Эта информация хранится только на смартфоне и через 14 дней автоматически стирается. Если у пользователя будет подтвержден COVID-19, SPKC отправит код, которым можно активизировать рассылку анонимного сообщения контактам, у которых есть риск инфицирования. Адресатам не раскрывается личность отправителя. Заболевшему также не доступна информация о получателях.";
 
-Neatkarīgi no tā vai izmanto vai neizmanto lietotni, SPKC sazinās ar iedzīvotājiem, kam analīzēs ir apstiprināta saslimšana ar COVID-19. Šo informāciju SPKC saņem nevis no lietotnes, bet no citāminstitūcijāmsaskaņā ar normatīvajiem aktiem epidemioloģiskāsdrošībasjomā. Ja inficētaisiedzīvotājs izmanto lietotni, SPKC nosūtīs tam speciālu kodu, ko varēsievadītlietotnē.Tādāveidālietotnē tiek aktivizētaanonīmapaziņojumanosūtīšanacitiem viedtālruņiem ar šo lietotni, kas pēdējo 14 dienu laikā ir bijuši piefiksētituvākontaktā.Paziņojumasaņēmējam netiek atklātainficētās personas identitāte, kas aktivizēpaziņojumaizsūtīšanu.Tāpatinficētajai personai nav pieejama informācija, kas ir paziņojumasaņēmēji.";
+"faq_question_4" = "Какую информацию использует приложение?";
+"faq_answer_4" = "Контакты, зафиксированные по Bluetooth, хранятся как зашифрованные коды только в устройстве и не доступны ни пользователю, ни разработчикам. Они удаляются через 14 дней.
+Если укажешь номер телефона, SPKC получит его только когда тебе придет оповещение о контакте с COVID-19. У SPKC будет доступ к номеру телефона, дате контакта, мощности сигнала и длительности контакта.
+Приложение не получает информацию о местонахождении пользователей и точном времени контакта.";
 
-"faq_question_3" = "Kādainformācija tiek izmantota lietotnē?";
-"faq_answer_3" = "Lietotnes darbībabalstās uz šifrētiem datiem, kāarībrīvprātīgas lietošanas principu. Caur Bluetoothpiefiksēto kontaktu dati glabājaskāšifrēti kodi tikai lietotājaviedtālrunī un nav pieejami ne pašam lietotājam, ne citiem lietotnes izmantotājiem, nedz SPKC. Tie tiek dzēstipēcattiecīgā 14 dienu perioda. Dati var būt pieejami SPKC tikai ar lietotāja piekrišanu.
+"faq_question_5" = "Что делать, если получено сообщение приложения о контакте с заболевшим COVID-19?";
+"faq_answer_5" = "Чтобы не инфицировать других, SPKC рекомендует самоизолироваться и наблюдать, не проявятся ли симптомы COVID-19. Статус близкого контактного лица присваивает только SPKC. Если в приложении указан номер телефона, SPKC свяжется с тобой и расскажет о дальнейших действиях.";
 
-Lietotne nesaņem un neglabāinformāciju par lietotājuatrašanās vietu.
+"faq_question_6" = "Безопасно ли использовать приложение?";
+"faq_answer_6" = "Приложение разработано в сотрудничестве с Cert.lv и Государственной инспекцией данных, с соблюдением европейских принципов защиты данных и норм безопасности.
+Для большей безопасности рекомендуем регулярно обновлять приложение и программное обеспечение телефона.";
 
-Lietotnēvarēspēcizvēlesnorādīt savu kontakttālruni. To SPKC saņems tikai tad, ja persona lietotnēbūssaņēmusipaziņojumu par iespējamo Covid-19 kontaktu. Norādot savu kontakttālruni, SPKC būsiespējasazināties ar lietotāju, tostarp par nepieciešamībuizolētiesvai meklēt papildu medicīnisko atbalstu, ja tiek konstatētikādi simptomi. ";
+"faq_question_7" = "Как работает Bluetooth?";
+"faq_answer_7" = "Bluetooth – это технология беспроводной связи малого радиуса действия для смартфонов, беспроводных наушников, смарт-часов и др. Bluetooth используется во многих приложениях для фиксации контактов, т.к. позволяет шифровать данные. Чтобы повысить эффективность и снизить нагрузку на аккумулятор, Apple и Google оптимизирует использование Bluetooth. Для работы приложения Bluetooth должен быть обязательно включен.";
 
-"faq_question_4" = "Ko darīt, ja saņemulietotnēinformāciju, ka biju tuvākontaktā ar COVID-19 inficēto?";
-"faq_answer_4" = "Saņemot paziņojumu lietotnē, ka ir bijis tuvs kontakts ar kādu no COVID-19 inficētajām personām, rīcība ir tāda pati kā tiem, kuri nelieto lietotni. Lai pārliecinātos, ka neesi inficējies un nevari inficēt citus, SPKC iesaka pašizolāciju un vērot, vai neparādās COVID-19 saslimšanas simptomi, taču tuvas kontaktpersonas statusu var piešķirt tikai SPKC. Ja lietotnē esi norādījis telefona numuru, SPKC sazināsies un izstāstīs par tālāko rīcību. Ja nē, tad vajadzētu pašam sazināties ar SPKC.";
-
-"faq_question_5" = "Vai ir droši izmantot lietotni?";
-"faq_answer_5" = "Lietotnes izstrāde un attīstība notiek sadarbībā ar Cert.lv un Datu Valsts Inspekciju, ievērojot Eiropas personas datu aizsardzības un drošības regulējumu.
-
-Papildu drošībai iesakām veikt gan viedtālruņa programmatūras, gan lietotnes atjauninājumus, kad tādi ir pieejami.";
-
-"faq_question_6" = "Kā darbojas Bluetooth?";
-"faq_answer_6" = "Bluetooth ir neliela rādiusa bezvadu saziņas tehnoloģija, ko izmanto viedtālruņos. To mūsdienās plaši pielieto bezvadu austiņu un viedpulksteņu lietošanai. Lai izmantotu lietotni, Bluetooth ir jābūt ieslēgtam viedtālrunī un bez tā lietotne nedarbosies.
-
-Tagad Bluetooth ir risinājums arī lielākajai daļai pasaules kontaktu fiksēšanas lietotnēm, jo ļauj to izdarīt šifrētā veidā. Lai to darītu efektīvāk un ar mazāku noslodzi uz ierīču bateriju, arī viedtālruņu programmatūras izstrādātāji Apple un Google optimizē Bluetooth izmantošanu.";
-
-"faq_question_7" = "Vai lietotne darbosies arī citās valstīs?";
-"faq_answer_7" = "Sadarbībā ar starptautiskajiem zinātniekiem un izstrādātājiem tiek pētīts kā šādas kontaktu fiksēšanas lietotnes varētu izmantot arī viesojoties ārzemēs. Pagaidām Apple un Google lietotnēm ir noteikuši ierobežojumus, ka katru kontaktu fiksēšanas lietotni var izmantot tikai attiecīgajā valsti. ";
+"faq_question_8" = "Будет ли приложение работать и в других странах?";
+"faq_answer_8" = "Пока нет. В рамках международного сотрудничества изучается возможность использования приложения  за границей. В настоящее время Apple и Google установили ограничения, и каждое приложение фиксации контактов может быть использовано только в своей стране. Это относится и к пользователям, использующим в Латвии профили смартфонов, зарегистрированные в др. странах.";

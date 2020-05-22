@@ -627,8 +627,8 @@
 				BA38FFF32473072700577DB2 /* Sources */,
 				BA3800352473072700577DB2 /* Frameworks */,
 				BA3800372473072700577DB2 /* Resources */,
-				BA38004A2473072700577DB2 /* Initialize Crashlytics */,
 				4C69841407222933F407BE2B /* [CP] Embed Pods Frameworks */,
+				BA38004A2473072700577DB2 /* Initialize Crashlytics */,
 			);
 			buildRules = (
 			);

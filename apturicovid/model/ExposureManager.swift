@@ -1,6 +1,3 @@
-// Adapted Apple Exposure Manager
-// https://developer.apple.com/documentation/exposurenotification/building_an_app_to_notify_users_of_covid-19_exposure
-
 import Foundation
 import ExposureNotification
 import RxSwift
@@ -39,7 +36,7 @@ class ExposureManager {
         LocalStore.shared.exposureNotificationsEnabled = enabled
     }
     
-    func toggleExposureNotifications(enabled: Bool) -> Completable {
+    func toggleExposureNotifications(enabled: Bool, toggleNotifications: Bool = true) -> Completable {
         return Completable.create { (completable) -> Disposable in
             self.manager.setExposureNotificationEnabled(enabled) { (error) in
                 guard error == nil else {
@@ -143,7 +140,7 @@ class ExposureManager {
     }
     
     func performExposureDetection() -> Observable<Bool> {
-        return ExposuresClient.shared.downloadDiagnosisBatches(startAt: LocalStore.shared.lastDownloadedBatchIndex)
+        return ExposuresClient.shared.downloadDiagnosisBatches(startAt: 0)
             .flatMap { (urls) -> Observable<ENExposureDetectionSummary?> in
                 return ExposuresClient.shared.getExposuresConfiguration()
                     .flatMap { (config) -> Observable<ENExposureDetectionSummary?> in
@@ -162,9 +159,6 @@ class ExposureManager {
             }
             .do(onNext: { exposures in
                 LocalStore.shared.exposures += exposures.map { ExposureWrapper(uuid: UUID().uuidString, exposure: $0, uploadetAt: nil) }
-                if exposures.count > 0 {
-                    NotificationsScheduler.shared.sendExposureDiscoveredNotification()
-                }
                 ExposureManager.reset()
             }, onError: { (_) in
                 ExposureManager.reset()
@@ -172,35 +166,5 @@ class ExposureManager {
             .flatMap { (exposures) -> Observable<Bool> in
                 return ExposuresClient.shared.uploadExposures()
         }
-    }
-    
-    func performTestDetection() {
-//        let binBase64 = "RUsgRXhwb3J0IHYxICAgIBoDMzEwIAEoATI7Ch9sdi5zcGtjLmdvdi5hcHR1cmljb3ZpZC5zdGFnaW5nGgJ2MSIDMzEwKg9TSEEyNTZ3aXRoRUNEU0E6HAoQlMC3Szc3u2qi0HTLQY5NYhAAGJDdoQEgkAE6HAoQd4WO3RUs+CWyYqOjnxKBGhAAGPDaoQEgkAE6HAoQOeRWKutEf2uR3OQBjK6NLBAAGIDcoQEgkAE="
-//
-//        let sigBase64 = "dGVzdA=="
-//
-//        let path = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
-//
-//        try? Data(base64Encoded: binBase64)!.write(to: path.appendingPathComponent("1.bin"))
-//        try? Data(base64Encoded: sigBase64)!.write(to: path.appendingPathComponent("1.sig"))
-//
-////        let binPath = Bundle.main.url(forResource: "1", withExtension: "bin")!
-////        let sigPath = Bundle.main.url(forResource: "1", withExtension: "sig")!
-////
-//        self.detectExposures(localUrls: [path.appendingPathComponent("1.bin"), path.appendingPathComponent("1.sig")]).subscribe(onNext: { exposures in
-//            print(exposures)
-//        }, onError: justPrintError)
-//    }
-        
-//        Observable.zip(
-//            ExposuresClient.shared.downloadFile(url: URL(string: "https://s3.us-east-1.amazonaws.com/apturicovid-development/dkfs/v1/2.bin")!),
-//            ExposuresClient.shared.downloadFile(url: URL(string: "https://s3.us-east-1.amazonaws.com/apturicovid-development/dkfs/v1/2.sig")!)
-//        )
-//            .flatMap({ (urls) -> Observable<ENExposureDetectionSummary?> in
-//                return ExposureManager.shared.detectExposures(localUrls: [urls.0])
-//            })
-//            .subscribe(onNext: { (summary) in
-//                print(summary)
-//            }, onError: justPrintError)
     }
 }

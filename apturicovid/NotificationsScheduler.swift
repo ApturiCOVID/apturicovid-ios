@@ -44,38 +44,4 @@ class NotificationsScheduler {
         notificationCenter.removeAllPendingNotificationRequests()
         DDLogInfo("Pending notification requests removed")
     }
-    
-    func sendExposureDiscoveredNotification() {
-        let content = UNMutableNotificationContent()
-        content.title = "Exposure detected!"
-        content.body = "We have detected you have been exposed to COVID-19"
-        content.sound = UNNotificationSound.default
-        
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
-        let request = UNNotificationRequest(identifier: "ExposureNotification", content: content, trigger: trigger)
-        
-        notificationCenter.add(request) { (error) in
-            if let error = error {
-                justPrintError(error)
-                return
-            }
-            DDLogInfo("Scheduled exposure notification")
-        }
-    }
-    
-    class func registerBackgroundTask() -> UIBackgroundTaskIdentifier{
-      var backgroundTask :UIBackgroundTaskIdentifier!
-      backgroundTask = UIApplication.shared.beginBackgroundTask {
-        NotificationsScheduler.endBackgroundTask(&backgroundTask)
-      }
-      assert(backgroundTask != .invalid)
-      return backgroundTask
-    }
-
-    class func endBackgroundTask(_ backgroundTask: inout UIBackgroundTaskIdentifier) {
-      UIApplication.shared.endBackgroundTask(backgroundTask)
-      let log = "End background task \(backgroundTask)"
-      backgroundTask = .invalid
-      DDLogInfo(log)
-    }
 }

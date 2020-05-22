@@ -79,6 +79,7 @@ class WelcomeVC: BaseViewController {
     private func setupLanguageSelector(){
         langViews.forEach { langView in
             
+            langView.isSelected = langView.language.isPrimary
             langaugesStack.addArrangedSubview(langView)
             
             langView.translatesAutoresizingMaskIntoConstraints = false

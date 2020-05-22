@@ -53,6 +53,7 @@ class SettingsViewController: BaseViewController {
     private func setupLanguageSelector(){
         langViews.forEach { langView in
             
+            langView.isSelected = langView.language.isPrimary
             languagesStack.addArrangedSubview(langView)
             
             langView.translatesAutoresizingMaskIntoConstraints = false

@@ -1,5 +1,5 @@
 import Foundation
 
-let baseUrl = "https://apturicovid-staging-api.spkc.gov.lv/api/v1"
-let filesBaseUrl = "https://apturicovid-staging-files.spkc.gov.lv"
+let baseUrl = "https://apturicovid-api.spkc.gov.lv/api/v1"
+let filesBaseUrl = "https://apturicovid-files.spkc.gov.lv"
 let exposureFilesBaseUrl = "\(filesBaseUrl)/dkfs/v1"

@@ -46,6 +46,12 @@ class ExposureManager {
                 
                 self.enabled = enabled
                 LocalStore.shared.exposureNotificationsEnabled = enabled
+                
+                if !toggleNotifications {
+                    completable(.completed)
+                    return
+                }
+                
                 if !self.enabled {
                     NotificationsScheduler.shared.scheduleExposureStateNotification()
                 } else {

@@ -1,7 +1,7 @@
 import CocoaLumberjack
 
 let justPrintError: ((Error) -> Void) = { error in
-    DDLogInfo(error.localizedDescription)
+    DDLogError(error.localizedDescription)
 }
 
 let justPrintCompleted: (() -> Void) = {

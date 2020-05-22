@@ -121,6 +121,8 @@ SPKC tavu kontakttālruni ar saskares informāciju saņems tikai tad, ja tev tik
 "error" = "Kļūda";
 "continue" = "Turpināt";
 "invalid_phone_number_error" = "Ievadītais telefona numurs nav derīgs";
+"connectivity_offline" = "Lietotne šobrīd darbojas bezsaistē";
+"no_internet_connection" = "Nav interneta savienojuma";
 
 // StatsVC
 "data_renewed" = "Dati atjaunoti: ";

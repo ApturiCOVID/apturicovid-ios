@@ -23,7 +23,10 @@ class StatsVC: BaseViewController {
     private let refreshControl = UIRefreshControl()
     
     var stats: Stats? {
-        didSet { statsCollectionView.reloadData() }
+        didSet {
+            statsCollectionView.reloadData()
+            
+        }
     }
     
     override func viewDidLoad() {
@@ -35,8 +38,6 @@ class StatsVC: BaseViewController {
             superView.backgroundColor = welcomeHeaderView.fillColor
             welcomeHeaderView.isHidden = true
         }
-        
-        getData()
 
         statsCollectionView.dataSource = self
         statsCollectionView.delegate = self
@@ -49,12 +50,22 @@ class StatsVC: BaseViewController {
         NotificationCenter.default.rx
             .notification(.reachabilityChanged)
             .subscribe(onNext: { [weak self] notification in
-                guard let `self`  = self, self.stats == nil else { return }
                 if (notification.object as? Reachability.Connection)?.available == true {
-                    self.refreshData()
+                    self?.loadData()
                 }
             })
             .disposed(by: disposeBag)
+        
+        NotificationCenter.default.rx
+        .notification(UIApplication.didBecomeActiveNotification)
+        .subscribe(onNext: { [weak self] (_) in
+            self?.loadData()
+        })
+        .disposed(by: disposeBag)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        loadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -63,16 +74,16 @@ class StatsVC: BaseViewController {
     }
 
     @objc func refreshData(){
-        getData(forceApi: true)
+        loadData(forceApi: true)
     }
     
-    func getData(forceApi: Bool = false){
+    func loadData(forceApi: Bool = false){
         StatsClient.shared.getStats(forceFromApi: forceApi)
         .subscribeOn(SerialDispatchQueueScheduler(qos: .default))
         .observeOn(MainScheduler.instance)
             .share()
             .subscribe(onNext: { [weak self] (stats) in
-                self?.stats = stats
+                if self?.stats != stats { self?.stats = stats }
                 },onError: {  [weak self] error in
                     justPrintError(error)
                     self?.refreshControl.endRefreshing()

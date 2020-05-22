@@ -13,6 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        window?.tintColor = Colors.globalTintColor
+        
         Reachability.shared?.begin()
         FirebaseApp.configure()
         DDLog.add(DDOSLogger.sharedInstance)

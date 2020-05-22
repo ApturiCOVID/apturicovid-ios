@@ -72,9 +72,11 @@ class ExposureSetupVC: BaseViewController {
                             self.navigationController?.pushViewController(vc, animated: true)
                         }
                     }
-                }, onError: { error in
+                }, onError: { [weak self] error in
                     SVProgressHUD.dismiss()
                     justPrintError(error)
+                    guard let `self` = self else { return }
+                    Reachability.shared?.warnOfflineIfRequired(in: self)
                 })
                 .disposed(by: disposeBag)
         } else {

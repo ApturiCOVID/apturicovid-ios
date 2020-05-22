@@ -8,7 +8,7 @@
 
 import SystemConfiguration
 import CFNetwork
-import Foundation
+import UIKit
 
 public enum ReachabilityError: Error {
     case failedToCreateWithAddress(sockaddr, Int32)
@@ -119,6 +119,23 @@ class Reachability {
             }
         }
         return nil
+    }
+}
+
+extension Reachability {
+    
+    func warnOfflineIfRequired(in vc: UIViewController){
+        
+        guard !connection.available else { return }
+        
+        let alert = UIAlertController(title: "error".translated,
+                                      message: "no_internet_connection".translated,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "continue".translated, style: .default))
+        
+        DispatchQueue.main.async {
+            vc.present(alert, animated: true, completion: nil)
+        }
     }
 }
 

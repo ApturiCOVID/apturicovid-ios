@@ -32,7 +32,14 @@ class HomeVC: BaseViewController {
     
     var exposureNotificationConstraint: NSLayoutConstraint!
     
-    var stats: Stats?
+    var stats: Stats? {
+        didSet {
+            statTested.updateValue(stats?.yesterdaysTestsCount)
+            statNewCases.updateValue(stats?.yesterdaysInfectedCount)
+            statDeceased.updateValue(stats?.yesterdayDeathCount)
+        }
+    }
+    
     var statCells: [StatCell] { [statTested,statNewCases,statDeceased] }
 
     var connectionWarningView: WarningView?
@@ -133,6 +140,7 @@ class HomeVC: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         showConnectivityWarningIfRequired()
+        loadData()
     }
     
     override func viewDidLoad() {
@@ -171,6 +179,7 @@ class HomeVC: BaseViewController {
                 self?.setExposureStateVisual()
                 self?.exposureNotificationVisible = LocalStore.shared.exposures.count > 0
                 self?.showConnectivityWarningIfRequired()
+                self?.loadData()
             })
             .disposed(by: disposeBag)
         
@@ -179,14 +188,13 @@ class HomeVC: BaseViewController {
             .subscribe(onNext: { [weak self] notification in
                 self?.showConnectivityWarningIfRequired()
                 if let connection = notification.object as? Reachability.Connection {
-                    if connection.available && self?.stats == nil { self?.getData() }
+                    if connection.available && self?.stats == nil { self?.loadData() }
                 }
             })
             .disposed(by: disposeBag)
         
         exposureNotificationConstraint = exposureNotificationView.topAnchor == bottomBackgroundView.topAnchor
         setExposureNotification(visible: false)
-        getData()
     }
     
     private func showConnectivityWarningIfRequired(){
@@ -198,17 +206,15 @@ class HomeVC: BaseViewController {
         }
     }
     
-    func getData(){
+    func loadData(){
+        stats = nil
+        
         StatsClient.shared.getStats(ignoreOutdated: true)
         .subscribeOn(SerialDispatchQueueScheduler(qos: .default))
         .observeOn(MainScheduler.instance)
         .share()
         .subscribe(onNext: { [weak self] (stats) in
             self?.stats = stats
-            self?.statTested.updateValue(stats.yesterdaysTestsCount)
-            self?.statNewCases.updateValue(stats.yesterdaysInfectedCount)
-            self?.statDeceased.updateValue(stats.yesterdayDeathCount)
-            
         }, onError: justPrintError)
         .disposed(by: disposeBag)
     }
@@ -297,8 +303,6 @@ extension HomeVC {
         
         let warningBoxSize = CGSize(width: view.bounds.width, height: 70)
         let frame = CGRect(origin: .zero, size: warningBoxSize)
-        
-        let text = "Lietotne šobrīd darbojas bezsaistē"
     
         var params = WarningViewParams()
         params.imageSize = CGSize(width: 30, height: 30)
@@ -308,7 +312,7 @@ extension HomeVC {
         params.textViewInsets  = UIEdgeInsets(top: 0, left: 16, bottom: 20, right: 8)
         
         connectionWarningView = WarningView(frame: frame,
-                                            text: text,
+                                            text: "connectivity_offline".translated,
                                             params: params,
                                             preferedEffect: UIBlurEffect(style: .dark) )
         

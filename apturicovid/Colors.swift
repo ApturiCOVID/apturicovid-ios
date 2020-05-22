@@ -1,6 +1,7 @@
 import UIKit
 
 struct Colors {
+    static let globalTintColor = UIColor(named: "primaryButton")
     static let disabled = UIColor(named: "offColor")
     static let headerColor = UIColor(named: "headerColor")
     static let darkGreen = UIColor(hex: "003D2B")

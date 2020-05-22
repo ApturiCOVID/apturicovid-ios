@@ -1,6 +1,6 @@
 import Foundation
 
-class Stats: Codable {
+struct Stats: Codable, Equatable {
     
     static let dateDecodingFormater: DateFormatter = {
         let formater = DateFormatter()

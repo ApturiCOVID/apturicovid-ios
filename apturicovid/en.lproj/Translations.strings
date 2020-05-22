@@ -121,6 +121,8 @@ SPKC will receive your number with contact information only if and when it is es
 "error" = "Error";
 "continue" = "Continue";
 "invalid_phone_number_error" = "The entered phone number is invalid";
+"connectivity_offline" = "App now in offline mode";
+"no_internet_connection" = "No internet access";
 
 // StatsVC
 "data_renewed" = "Information updated: ";

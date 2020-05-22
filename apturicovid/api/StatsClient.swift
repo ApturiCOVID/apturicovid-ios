@@ -12,7 +12,7 @@ import RxSwift
 class StatsClient: RestClient {
     
     /// Specifies how long stats data is valid from .updatedAt
-    private static let statTtlInterval: TimeInterval = 24 * 60 * 60 // 24 hours
+    private static let statTtlInterval: TimeInterval = 2 * 24 * 60 * 60 // 2 days
     
     private static let fetchThrottleWifi: TimeInterval = 5 * 60 // 5 min
     private static let fetchThrottleCellular: TimeInterval = 10 * 60 // 10 min
@@ -32,8 +32,9 @@ class StatsClient: RestClient {
                 if let stats = LocalStore.shared.stats {
                     
                     // Skip outdated if required data
-                    if ignoreOutdated && stats.updatedAt.distance(to: Date()) < StatsClient.statTtlInterval {
-                        observer.onNext(stats)
+                    if ignoreOutdated {
+                        let outdated = stats.updatedAt.distance(to: Date()) > StatsClient.statTtlInterval
+                        if !outdated { observer.onNext(stats) }
                     } else {
                         observer.onNext(stats)
                     }

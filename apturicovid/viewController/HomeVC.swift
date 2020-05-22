@@ -39,8 +39,7 @@ class HomeVC: BaseViewController {
     
     private var exposureNotificationVisible = false {
         didSet {
-            setExposureNotification(visible:
-                exposureNotificationVisible)
+            setExposureNotification(visible: exposureNotificationVisible)
         }
     }
     
@@ -133,14 +132,13 @@ class HomeVC: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let connection = Reachability.shared?.apiConnection {
-            connectionStateUpdated(connection)
-        }
+        showConnectivityWarningIfRequired()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(LocalStore.shared.exposures.count)
         exposureSwitch.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
         exposureSwitch.setOffColor(UIColor(named: "offColor")!)
         exposureSwitch.isOn = ExposureManager.shared.enabled
@@ -153,8 +151,8 @@ class HomeVC: BaseViewController {
             .rx
             .tapGesture()
             .when(.recognized)
-            .subscribe(onNext: { (_) in
-                self.presentExposureAlertVC()
+            .subscribe(onNext: { [weak self] (_) in
+                self?.presentExposureAlertVC()
             })
             .disposed(by: disposeBag)
         
@@ -162,40 +160,41 @@ class HomeVC: BaseViewController {
             .rx
             .tapGesture()
             .when(.recognized)
-            .subscribe(onNext: { (_) in
-                self.presentExposureAlertVC()
+            .subscribe(onNext: { [weak self] (_) in
+                self?.presentExposureAlertVC()
             })
             .disposed(by: disposeBag)
         
         NotificationCenter.default.rx
             .notification(UIApplication.didBecomeActiveNotification)
-            .subscribe(onNext: { (_) in
-                self.setExposureStateVisual()
-                self.exposureNotificationVisible = LocalStore.shared.exposures.count > 0
+            .subscribe(onNext: { [weak self] (_) in
+                self?.setExposureStateVisual()
+                self?.exposureNotificationVisible = LocalStore.shared.exposures.count > 0
+                self?.showConnectivityWarningIfRequired()
             })
             .disposed(by: disposeBag)
         
         NotificationCenter.default.rx
             .notification(.reachabilityChanged)
             .subscribe(onNext: { [weak self] notification in
-                guard let `self`  = self else { return }
-                
+                self?.showConnectivityWarningIfRequired()
                 if let connection = notification.object as? Reachability.Connection {
-                    if connection.available && self.stats == nil { self.getData() }
-                    self.connectionStateUpdated(connection)
+                    if connection.available && self?.stats == nil { self?.getData() }
                 }
             })
             .disposed(by: disposeBag)
         
         exposureNotificationConstraint = exposureNotificationView.topAnchor == bottomBackgroundView.topAnchor
         setExposureNotification(visible: false)
+        getData()
     }
     
-    private func connectionStateUpdated(_ connection: Reachability.Connection){
-        if connection == .unavailable {
-            showNetworkWarningBox()
-        } else {
+    private func showConnectivityWarningIfRequired(){
+        guard let connection = Reachability.shared?.connection else { return }
+        if connection.available {
             hideNetworkWarningBox()
+        } else {
+            showNetworkWarningBox()
         }
     }
     

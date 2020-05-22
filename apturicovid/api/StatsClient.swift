@@ -11,8 +11,11 @@ import RxSwift
 
 class StatsClient: RestClient {
     
-    private static let fetchThrottle: TimeInterval = 5 * 60 // 5 min
+    /// Specifies how long stats data is valid from .updatedAt
     private static let statTtlInterval: TimeInterval = 24 * 60 * 60 // 24 hours
+    
+    private static let fetchThrottleWifi: TimeInterval = 5 * 60 // 5 min
+    private static let fetchThrottleCellular: TimeInterval = 10 * 60 // 10 min
     
     static let shared = StatsClient()
     private override init() { }
@@ -36,9 +39,16 @@ class StatsClient: RestClient {
                     }
                 }
             }
+
+            let throttle: TimeInterval = {
+                switch Reachability.shared?.connection {
+                case .cellular: return StatsClient.fetchThrottleCellular
+                default:        return StatsClient.fetchThrottleWifi
+                }
+            }()
             
-            // Complete if recently got new stats
-            guard LocalStore.shared.lastStatsFetchTime.distance(to: Date()) > StatsClient.fetchThrottle else {
+            // Complete if recently got new stats && !forced
+            guard forceFromApi || LocalStore.shared.lastStatsFetchTime.distance(to: Date()) > throttle else {
                 observer.onCompleted()
                 return disposable
             }
@@ -56,6 +66,7 @@ class StatsClient: RestClient {
                     LocalStore.shared.stats = stats
                     LocalStore.shared.lastStatsFetchTime = Date()
                     observer.onNext(stats)
+                    observer.onCompleted()
                 }, onError: {
                     observer.onError($0)
                 }, onCompleted: {

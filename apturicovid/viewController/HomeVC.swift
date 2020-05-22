@@ -64,20 +64,6 @@ class HomeVC: BaseViewController {
         }
     }
     
-    private func toggleExposure(enabled: Bool) {
-        ExposureManager.shared.toggleExposureNotifications(enabled: enabled)
-            .subscribe(onCompleted: {
-                self.setExposureStateVisual(animated: true)
-            }, onError: { (error) in
-                justPrintError(error)
-                if let enError = error as? ENError, enError.code == ENError.Code.notAuthorized {
-                    UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
-                }
-                self.setExposureStateVisual()
-            })
-            .disposed(by: disposeBag)
-    }
-    
     private func presentShareController() {
         let someText = "Dalies ar lietotni"
         let objectsToShare = URL(string: "http://www.apturicovid.lv")!
@@ -267,3 +253,18 @@ class HomeVC: BaseViewController {
 
     }
 }
+
+extension HomeVC: ContactDetectionToggleProvider {
+    
+    func contactDetectionProvider(exposureDidBecomeEnabled enabled: Bool) {
+        exposureSwitch.isOn = enabled
+        setExposureStateVisual(animated: true)
+    }
+    
+    func contactDetectionProvider(didReceiveError error: Error) {
+        justPrintError(error)
+        self.setExposureStateVisual(animated: false)
+    }
+    
+}
+

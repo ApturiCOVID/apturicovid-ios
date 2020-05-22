@@ -1,6 +1,7 @@
 import UIKit
 import RxSwift
 import SVProgressHUD
+import ExposureNotification
 
 class ExposureSetupVC: BaseViewController {
     @IBOutlet weak var scrollview: UIScrollView!
@@ -13,6 +14,8 @@ class ExposureSetupVC: BaseViewController {
     @IBOutlet weak var activateSwitchTitle: UILabel!
     @IBOutlet weak var activateSwitchSubtitle: UILabel!
     
+    @IBOutlet weak var exposureEnableSwitch: UISwitch!
+    
     var exposureEnabled = false {
         didSet {
             phoneView.isHidden = !exposureEnabled
@@ -23,23 +26,11 @@ class ExposureSetupVC: BaseViewController {
             }
         }
     }
-    
+
     let phoneView = PhoneSetupView().fromNib() as! PhoneSetupView
     
     @IBAction func onSwitchChange(_ sender: UISwitch) {
-        ExposureManager.shared.toggleExposureNotifications(enabled: sender.isOn)
-            .observeOn(MainScheduler.instance)
-            .subscribe(onCompleted: {
-                self.exposureEnabled = sender.isOn
-                if sender.isOn {
-                    self.scrollToBottom(after: 0.3)
-                }
-            }, onError: { error in
-                justPrintError(error)
-                sender.isOn = ExposureManager.shared.enabled
-                self.exposureEnabled = ExposureManager.shared.enabled
-            })
-            .disposed(by: disposeBag)
+        toggleExposure(enabled: sender.isOn)
     }
     
     @IBAction func onBackTap(_ sender: Any) {
@@ -59,26 +50,7 @@ class ExposureSetupVC: BaseViewController {
     
     @IBAction func onNextTap(_ sender: Any) {
         if exposureEnabled {
-            SVProgressHUD.show()
-            ApiClient.shared.requestPhoneVerification(phoneNumber: phoneView.getPhoneNumber().number)
-                .subscribe(onNext: { (response) in
-                    SVProgressHUD.dismiss()
-                    if let response = response {
-                        DispatchQueue.main.async {
-                            guard let vc = UIStoryboard(name: "CodeEntry", bundle: nil).instantiateInitialViewController() as? CodeEntryVC else { return }
-                            vc.requestResponse = response
-                            vc.phoneNumber = self.phoneView.getPhoneNumber()
-                            vc.mode = .sms
-                            self.navigationController?.pushViewController(vc, animated: true)
-                        }
-                    }
-                }, onError: { [weak self] error in
-                    SVProgressHUD.dismiss()
-                    justPrintError(error)
-                    guard let `self` = self else { return }
-                    Reachability.shared?.warnOfflineIfRequired(in: self)
-                })
-                .disposed(by: disposeBag)
+            validatePhoneNumber(phoneView.getPhoneNumber(), onCompleted: .dismiss)
         } else {
             promptExposureOffAndClose()
         }
@@ -167,4 +139,22 @@ class ExposureSetupVC: BaseViewController {
         nextButton.setTitle("continue".translated, for: .normal)
         activateSwitchSubtitle.text = "exposure_switch_subtitle".translated
     }
+}
+
+extension ExposureSetupVC: ContactDetectionToggleProvider, PhoneVerificationProvider {
+    
+    func phoneVerificationProvider(validationFinishedWith error: Error?) {
+        
+    }
+    
+    func contactDetectionProvider(exposureDidBecomeEnabled enabled: Bool) {
+        exposureEnableSwitch.isOn = enabled
+        exposureEnabled = enabled
+        if enabled { self.scrollToBottom(after: 0.3) }
+    }
+    
+    func contactDetectionProvider(didReceiveError error: Error) {
+        justPrintError(error)
+    }
+    
 }

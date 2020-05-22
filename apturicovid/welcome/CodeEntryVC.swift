@@ -9,6 +9,9 @@ enum CodeEntryMode {
 }
 
 class CodeEntryVC: BaseViewController {
+    
+    enum ReturnMode { case dismiss, pop }
+    
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
@@ -26,27 +29,35 @@ class CodeEntryVC: BaseViewController {
     var uploadInprogress = false
     
     @IBAction func onBackTap(_ sender: Any) {
-        if let navigationController = self.navigationController {
-            navigationController.popViewController(animated: true)
-        } else {
+        
+        switch returnMode {
+        case .pop:
+            if let navigationController = self.navigationController {
+                navigationController.popViewController(animated: true)
+            } else { fallthrough }
+        case .dismiss:
             self.dismiss(animated: true, completion: nil)
         }
+
     }
     
     var requestResponse: PhoneVerificationRequestResponse?
     var phoneNumber: PhoneNumber?
     
     var mode: CodeEntryMode!
-    var presentedFromSettings = false
+    var returnMode: ReturnMode = .pop
+    
     
     private func close() {
         LocalStore.shared.hasSeenIntro = true
         LocalStore.shared.setMobilephoneAndScheduleUpload(phone: phoneNumber)
         
         DispatchQueue.main.async {
-            if self.presentedFromSettings {
+            
+            switch self.returnMode {
+                case .pop:
                 self.navigationController?.popToRootViewController(animated: true)
-            } else {
+            case .dismiss:
                 self.dismiss(animated: true, completion: nil)
             }
         }

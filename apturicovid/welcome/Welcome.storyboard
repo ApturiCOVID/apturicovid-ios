@@ -365,6 +365,7 @@
                         <outlet property="activateSwitchTitle" destination="dSG-0A-HKx" id="3WL-wY-YYZ"/>
                         <outlet property="contactDescription" destination="J91-SW-O4J" id="1qT-tb-6CF"/>
                         <outlet property="contactTitle" destination="bd2-cG-x0S" id="aQI-zS-tUQ"/>
+                        <outlet property="exposureEnableSwitch" destination="Asq-G0-JLm" id="3TN-ra-cad"/>
                         <outlet property="mainStackView" destination="qv6-Xg-4Qt" id="4rA-CP-YhT"/>
                         <outlet property="nextButton" destination="tJZ-3g-hia" id="dhQ-hv-nqR"/>
                         <outlet property="scrollViewBottomConstraint" destination="Jgf-lF-HVe" id="Hbq-qI-Nz6"/>

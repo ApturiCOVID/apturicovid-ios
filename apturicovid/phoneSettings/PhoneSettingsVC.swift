@@ -1,8 +1,7 @@
 import UIKit
-import SVProgressHUD
 import RxSwift
 
-class PhoneSettingsVC: BaseViewController {
+class PhoneSettingsVC: BaseViewController, PhoneVerificationProvider {
     @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var nextButton: RoundedButton!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
@@ -15,32 +14,12 @@ class PhoneSettingsVC: BaseViewController {
     }
     
     @IBAction func onNextButtonTap(_ sender: Any) {
-        SVProgressHUD.show()
         nextButton.isEnabled = false
-        
-        ApiClient.shared.requestPhoneVerification(phoneNumber: phoneView.getPhoneNumber().number)
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { (response) in
-                SVProgressHUD.dismiss()
-                self.nextButton.isEnabled = true
-                
-                if let response = response {
-                    guard let vc = UIStoryboard(name: "CodeEntry", bundle: nil).instantiateInitialViewController() as? CodeEntryVC else { return }
-                    vc.requestResponse = response
-                    vc.phoneNumber = self.phoneView.getPhoneNumber()
-                    vc.mode = .sms
-                    vc.presentedFromSettings = true
-                    self.navigationController?.pushViewController(vc, animated: true)
-                } else {
-                    self.presentErrorAlert(with: "invalid_phone_number_error")
-                }
-            }, onError: { error in
-                SVProgressHUD.dismiss()
-                self.presentErrorAlert(with: "invalid_phone_number_error")
-                justPrintError(error)
-                self.nextButton.isEnabled = true
-            })
-            .disposed(by: disposeBag)
+        validatePhoneNumber(phoneView.getPhoneNumber(), onCompleted: .pop)
+    }
+    
+    func phoneVerificationProvider(validationFinishedWith error: Error?) {
+        nextButton.isEnabled = true
     }
     
     private func deletePhoneAndClose() {

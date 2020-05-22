@@ -34,6 +34,7 @@ class WarningView: UIView {
     
     var warningBlurEffectView :UIVisualEffectView!
     var vibrancyEffectView :UIVisualEffectView!
+    var warningLabel: UILabel!
     
     private var text = ""
     private var preferedImage :UIImage?
@@ -46,6 +47,10 @@ class WarningView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    func setText(_ text: String){
+        warningLabel.text = text
     }
     
     /**
@@ -83,15 +88,15 @@ class WarningView: UIView {
         let warningImage = UIImageView(image: preferedImage ?? UIImage(systemName: "exclamationmark.circle"))
         warningImage.contentMode = .scaleToFill
         
-        let warningText = UILabel()
-        warningText.font = .systemFont(ofSize: params.textSize , weight: .medium)
-        warningText.numberOfLines = 1
-        warningText.minimumScaleFactor = 0.1
-        warningText.adjustsFontSizeToFitWidth = true
-        warningText.textAlignment = params.textAllignment
-        warningText.text = text
+        warningLabel = UILabel()
+        warningLabel.font = .systemFont(ofSize: params.textSize , weight: .medium)
+        warningLabel.numberOfLines = 1
+        warningLabel.minimumScaleFactor = 0.1
+        warningLabel.adjustsFontSizeToFitWidth = true
+        warningLabel.textAlignment = params.textAllignment
+        warningLabel.text = text.translated
         
-        vibrancyEffectView.contentView.addSubview(warningText)
+        vibrancyEffectView.contentView.addSubview(warningLabel)
         vibrancyEffectView.contentView.addSubview(warningImage)
         
         warningBlurEffectView.contentView.addSubview(vibrancyEffectView!)

@@ -65,8 +65,8 @@ class HomeVC: BaseViewController {
     }
     
     private func presentShareController() {
-        let someText = "Dalies ar lietotni"
-        let objectsToShare = URL(string: "http://www.apturicovid.lv")!
+        let someText = "share".translated
+        let objectsToShare = URL(string: "https://www.apturicovid.lv")!
         let sharedObjects:[AnyObject] = [objectsToShare as AnyObject, someText as AnyObject]
         let activityViewController = UIActivityViewController(activityItems : sharedObjects, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
@@ -175,7 +175,7 @@ class HomeVC: BaseViewController {
             })
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { _ in
-                self.setExposureNotification(visible: true)
+                self.exposureNotificationVisible = LocalStore.shared.exposures.count > 0
             }, onError: justPrintError)
             .disposed(by: disposeBag)
         

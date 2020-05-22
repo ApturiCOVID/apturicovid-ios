@@ -166,6 +166,10 @@ class ExposureManager {
                     return Observable.just([])
                 }
                 
+                guard summary.matchedKeyCount > 0 else {
+                    return Observable.just([])
+                }
+                
                 return self.getExposureInfo(summary: summary)
             }
             .do(onNext: { exposures in

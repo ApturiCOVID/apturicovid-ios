@@ -5,7 +5,7 @@
 "faq_answer_2" = "According to calculations by epidemiologists and experts, even if the app is used just by 20% of residents of Latvia, it will already help identify risks and limit the spread of infection going forward. However, the more people use it, the more effective it will be. ";
 
 "faq_question_3" = "How does the app work?";
-"faq_answer_3" = "t anonymously detects nearby smartphones that also have this app installed (up to 4 m proximity, for 15+ minutes). This information is only kept on device, and automatically deleted after 14 days. If a user is confirmed to be a COVID-19 case, SPKC will send them a code. When entered in the app, an anonymous notification will be sent to detected contacts that have been at risk to be infected. Sender’s identity is not disclosed to recipients. Likewise, the infected individual does not know who the recipients are.";
+"faq_answer_3" = "It anonymously detects nearby smartphones that also have this app installed (up to 4 m proximity, for 15+ minutes). This information is only kept on device, and automatically deleted after 14 days. If a user is confirmed to be a COVID-19 case, SPKC will send them a code. When entered in the app, an anonymous notification will be sent to detected contacts that have been at risk to be infected. Sender’s identity is not disclosed to recipients. Likewise, the infected individual does not know who the recipients are.";
 
 "faq_question_4" = "What information is used in the app?";
 "faq_answer_4" = "Contacts detected via Bluetooth are kept on device only, encrypted with random generated key, and are not disclosed to the user or developers of this app. Data is deleted after 14 days.

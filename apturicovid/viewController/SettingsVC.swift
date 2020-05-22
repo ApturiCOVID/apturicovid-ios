@@ -17,7 +17,6 @@ class SettingsViewController: BaseViewController {
     @IBOutlet weak var specifyButton: UIButton!
     @IBOutlet weak var contactDescriptionLabel: UILabel!
     @IBOutlet weak var notifyMeLabel: UILabel!
-    @IBOutlet weak var deleteDataLabel: UILabel!
     @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var phoneView: UIView!
     @IBOutlet weak var setupPhoneView: UIView!
@@ -25,7 +24,6 @@ class SettingsViewController: BaseViewController {
     @IBOutlet weak var reminderSwitch: UISwitch!
     @IBOutlet weak var languagesStack: UIStackView!
     @IBOutlet weak var versionLabel: UILabel!
-    @IBOutlet weak var deleteDataView: UIView!
 
     let langViews = Language.allCases.map{ LanguageView.create($0) }
     
@@ -98,16 +96,8 @@ class SettingsViewController: BaseViewController {
         reminderSwitch.isOn = LocalStore.shared.exposureStateReminderEnabled
         
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String, let bundleV = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
-               versionLabel.text = "v\(version) (\(bundleV))"
+               versionLabel.text = "v \(version) (\(bundleV))"
            }
-        
-        deleteDataView.rx
-            .tapGesture()
-            .when(.recognized)
-            .subscribe(onNext: { _ in
-                self.deleteData()
-            })
-            .disposed(by: disposeBag)
     }
     
     override func translate() {
@@ -121,7 +111,6 @@ class SettingsViewController: BaseViewController {
         changeButton.setTitle("change".translated, for: .normal)
         contactDescriptionLabel.text = "not_specified_phone_number_limitations".translated
         notifyMeLabel.text = "notify_if_tracking_isnt_working".translated
-        deleteDataLabel.text = "delete_all_stored_data".translated
         submitButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         submitButton.sizeToFit()
     }

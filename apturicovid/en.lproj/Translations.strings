@@ -108,7 +108,7 @@ SPKC will receive your number with contact information only if and when it is es
 // Notifications
 "exposure_disabled_notification_title" = "Contact detection is switched off";
 "exposure_disabled_notification_description" = "Contact tracing with Apturi COVID app is currently off.";
-"exposure_detected_notification_title" = "Don’t panic";
+"exposure_detected_notification_title" = "Don’t panic.";
 "exposure_detected_notification_description" = "You have been exposed a COVID-19 case";
 
 ////////////////////// below not from KAI

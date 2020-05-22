@@ -546,7 +546,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5am-yJ-TDy">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="617.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="557.66666666666663"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiC-yq-fa0" customClass="WelcomeHeaderView" customModule="AC_Demo" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="198"/>
@@ -767,38 +767,11 @@
                                                     <constraint firstItem="JML-81-jPv" firstAttribute="centerY" secondItem="Ckp-UG-RBC" secondAttribute="centerY" id="stW-Zh-66I"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x3K-cp-y1H">
-                                                <rect key="frame" x="0.0" y="507.66666666666674" width="414" height="60"/>
-                                                <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bin" translatesAutoresizingMaskIntoConstraints="NO" id="mLe-fB-KTg">
-                                                        <rect key="frame" x="30" y="29.999999999999943" width="20" height="20"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="20" id="EYB-uc-f8j"/>
-                                                            <constraint firstAttribute="width" constant="20" id="PPo-Ma-qQe"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dzēst visus uzkrātos datus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQV-SD-ppm">
-                                                        <rect key="frame" x="60" y="30.999999999999943" width="324" height="18"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <color key="textColor" red="0.85490196078431369" green="0.396078431372549" blue="0.396078431372549" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                <constraints>
-                                                    <constraint firstItem="BQV-SD-ppm" firstAttribute="leading" secondItem="mLe-fB-KTg" secondAttribute="trailing" constant="10" id="A9c-kA-RBh"/>
-                                                    <constraint firstItem="BQV-SD-ppm" firstAttribute="centerY" secondItem="mLe-fB-KTg" secondAttribute="centerY" id="CJc-jy-e7u"/>
-                                                    <constraint firstItem="mLe-fB-KTg" firstAttribute="leading" secondItem="x3K-cp-y1H" secondAttribute="leading" constant="30" id="dcQ-Lx-Xfl"/>
-                                                    <constraint firstAttribute="trailing" secondItem="BQV-SD-ppm" secondAttribute="trailing" constant="30" id="oyG-T8-f9a"/>
-                                                    <constraint firstItem="mLe-fB-KTg" firstAttribute="top" secondItem="x3K-cp-y1H" secondAttribute="top" constant="30" id="sfU-Lq-jWc"/>
-                                                    <constraint firstAttribute="bottom" secondItem="mLe-fB-KTg" secondAttribute="bottom" constant="10" id="yHG-5T-oil"/>
-                                                </constraints>
-                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OhX-mr-Q9m">
-                                                <rect key="frame" x="0.0" y="567.66666666666663" width="414" height="50"/>
+                                                <rect key="frame" x="0.0" y="507.66666666666674" width="414" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Versija nr.:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZR-Sr-M6T">
-                                                        <rect key="frame" x="30" y="18" width="354" height="17"/>
+                                                        <rect key="frame" x="30" y="17.999999999999943" width="354" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -859,8 +832,6 @@
                         <outlet property="changeButton" destination="NIZ-HV-Nq1" id="tp8-YU-wX6"/>
                         <outlet property="communicationContactLabel" destination="A6a-yE-IpD" id="LNs-UC-LAi"/>
                         <outlet property="contactDescriptionLabel" destination="nEz-kk-eNU" id="sBy-au-C5S"/>
-                        <outlet property="deleteDataLabel" destination="BQV-SD-ppm" id="Bee-TR-z8N"/>
-                        <outlet property="deleteDataView" destination="x3K-cp-y1H" id="jNb-HX-Rkh"/>
                         <outlet property="languagesStack" destination="OGA-4g-0m3" id="ZZX-sN-zTh"/>
                         <outlet property="mainStackView" destination="5am-yJ-TDy" id="PHi-7A-AqV"/>
                         <outlet property="notSpecifiedLabel" destination="xR3-LL-bZr" id="uKe-jb-SWq"/>
@@ -1606,7 +1577,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bin" width="12" height="16"/>
         <image name="dot" width="5" height="5"/>
         <image name="exposure-alert" width="129" height="117"/>
         <image name="exposure-landing" width="140" height="134"/>

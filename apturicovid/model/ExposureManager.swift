@@ -116,7 +116,12 @@ class ExposureManager {
         return Observable.create { (observer) -> Disposable in
             let task = self.manager.detectExposures(configuration: configuration, diagnosisKeyURLs: localUrls) { (summary, error) in
                 guard error == nil else {
-                    observer.onError(error!)
+                    guard let err = error as? NSError else {
+                        observer.onError(error!)
+                        return
+                    }
+                    
+                    observer.onError(err)
                     return
                 }
                 

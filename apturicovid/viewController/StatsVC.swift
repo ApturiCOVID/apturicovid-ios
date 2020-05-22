@@ -62,9 +62,11 @@ class StatsVC: BaseViewController {
             self?.loadData()
         })
         .disposed(by: disposeBag)
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        showConnectivityWarningIfRequired()
         loadData()
     }
     

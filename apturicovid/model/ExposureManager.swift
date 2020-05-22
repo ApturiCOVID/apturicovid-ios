@@ -140,7 +140,7 @@ class ExposureManager {
     }
     
     func performExposureDetection() -> Observable<Bool> {
-        return ExposuresClient.shared.downloadDiagnosisBatches(startAt: 0)
+        return ExposuresClient.shared.downloadDiagnosisBatches(startAt: LocalStore.shared.lastDownloadedBatchIndex)
             .flatMap { (urls) -> Observable<ENExposureDetectionSummary?> in
                 return ExposuresClient.shared.getExposuresConfiguration()
                     .flatMap { (config) -> Observable<ENExposureDetectionSummary?> in

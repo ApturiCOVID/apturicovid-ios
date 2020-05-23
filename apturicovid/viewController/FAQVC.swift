@@ -14,6 +14,8 @@ class FAQViewController: BaseViewController {
     @IBOutlet weak var fourthBulletPointLabel: UILabel!
     @IBOutlet weak var faqTitleLabel: UILabel!
     @IBOutlet weak var questionsStackView: UIStackView!
+    @IBOutlet weak var privacyButton: UIButton!
+    @IBOutlet weak var useTerms: UIButton!
     
     var faqs: [FAQ] {
         return [
@@ -34,6 +36,28 @@ class FAQViewController: BaseViewController {
         infoHolder.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 30)
         
         mainScrollView.delegate = self
+        
+        privacyButton
+            .rx
+            .tapGesture()
+            .when(.recognized)
+            .subscribe(onNext: { _ in
+                if UIApplication.shared.canOpenURL(Link.Privacy.url){
+                    UIApplication.shared.open(Link.Privacy.url, options: [:], completionHandler: nil)
+                }
+            }, onError: justPrintError)
+            .disposed(by: disposeBag)
+        
+        useTerms
+            .rx
+            .tapGesture()
+            .when(.recognized)
+            .subscribe(onNext: { _ in
+                if UIApplication.shared.canOpenURL(Link.Terms.url){
+                    UIApplication.shared.open(Link.Terms.url, options: [:], completionHandler: nil)
+                }
+            }, onError: justPrintError)
+            .disposed(by: disposeBag)
     }
     
     private func setupQuestionsView() {
@@ -55,6 +79,10 @@ class FAQViewController: BaseViewController {
         thirdBulletPointLabel.text = "anonymous_identity".translated
         fourthBulletPointLabel.text = "gpc_tracking_not_performed".translated
         faqTitleLabel.text = "frequently_asked_questions".translated
+        
+        privacyButton.setTitle("user_privacy".translated, for: .normal)
+        useTerms.setTitle("user_terms".translated, for: .normal)
+        
         setupQuestionsView()
     }
 }

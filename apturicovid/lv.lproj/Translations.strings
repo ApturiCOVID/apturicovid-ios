@@ -81,8 +81,8 @@ SPKC tavu kontakttālruni ar saskares informāciju saņems tikai tad, ja tev tik
 "gpc_tracking_not_performed" = "GPS datus lietotne nefiksē, pat ja GPS ir ieslēgts";
 
 "frequently_asked_questions" = "Biežāk uzdotie jautājumi";
-"how_is_data_processed" = "";
-// TODO: šobrīd tiek apkopoti
+"user_privacy" = "Privātuma politika";
+"user_terms" = "Lietotnes noteikumi";
 
 // CodeEntryVC SPKC
 "spkc_data_send" = "Sūtīt ziņu fiksētajiem kontaktiem";

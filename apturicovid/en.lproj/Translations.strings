@@ -77,8 +77,10 @@ SPKC will receive your number with contact information only if and when it is es
 "data_is_automatically_deleted" = "Data is automatically deleted";
 "anonymous_identity" = "No other user will know your identity";
 "gpc_tracking_not_performed" = "The app does not record GPS data even if GPS is switched on";
-
 "frequently_asked_questions" = "Frequently asked questions";
+"user_privacy" = "Frequently asked questions";
+"user_terms" = "Privacy policy";
+
 // CodeEntryVC SPKC
 "spkc_data_send" = "Notify detected contacts";
 "spkc_data_description" = "If you are infected, here’s where you can enter a code from SPKC and automatically notify detected contacts at risk to be infected – from loved ones to complete strangers. The notification will not disclose any information about you. Code is valid for 30 minutes.";

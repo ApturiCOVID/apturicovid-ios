@@ -270,7 +270,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="JrR-wH-xCM">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1191.3333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1321.3333333333333"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ufo-28-AED">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="923.33333333333337"/>
@@ -474,6 +474,35 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="gYh-ak-pxo">
                                                 <rect key="frame" x="0.0" y="991.33333333333348" width="414" height="200"/>
                                             </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iLH-yI-tg6">
+                                                <rect key="frame" x="0.0" y="1191.3333333333333" width="414" height="130"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="7df-CF-nDY">
+                                                        <rect key="frame" x="30" y="10" width="354" height="30"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleColor" name="linkColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="23P-iA-YIt">
+                                                        <rect key="frame" x="30" y="50" width="354" height="50"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleColor" name="linkColor"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" name="headerColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="23P-iA-YIt" secondAttribute="bottom" constant="30" id="8qV-fx-2of"/>
+                                                    <constraint firstAttribute="trailing" secondItem="7df-CF-nDY" secondAttribute="trailing" constant="30" id="9yu-6y-9RR"/>
+                                                    <constraint firstItem="23P-iA-YIt" firstAttribute="top" secondItem="7df-CF-nDY" secondAttribute="bottom" constant="10" id="ATN-Pa-cc7"/>
+                                                    <constraint firstItem="7df-CF-nDY" firstAttribute="leading" secondItem="iLH-yI-tg6" secondAttribute="leading" constant="30" id="Jjp-z8-LrE"/>
+                                                    <constraint firstItem="7df-CF-nDY" firstAttribute="top" secondItem="iLH-yI-tg6" secondAttribute="top" constant="10" id="TDV-fJ-d6Z"/>
+                                                    <constraint firstItem="23P-iA-YIt" firstAttribute="leading" secondItem="iLH-yI-tg6" secondAttribute="leading" constant="30" id="lhh-p3-5YK"/>
+                                                    <constraint firstAttribute="trailing" secondItem="23P-iA-YIt" secondAttribute="trailing" constant="30" id="vni-h1-8bu"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" name="headerColor"/>
                                     </stackView>
@@ -517,11 +546,13 @@
                         <outlet property="infoHolder" destination="Ufo-28-AED" id="q6K-o7-HKw"/>
                         <outlet property="mainScrollView" destination="bkZ-Uf-GKW" id="CHE-xU-ty6"/>
                         <outlet property="mainStackView" destination="JrR-wH-xCM" id="thi-cE-JKa"/>
+                        <outlet property="privacyButton" destination="7df-CF-nDY" id="3lH-Yq-B0Z"/>
                         <outlet property="questionsStackView" destination="gYh-ak-pxo" id="C4T-h4-0p8"/>
                         <outlet property="secondBulletPointLabel" destination="kur-7z-uKM" id="8NX-xt-1FE"/>
                         <outlet property="stackViewTitleLabel" destination="9w6-Mp-OHi" id="v4b-TK-sRZ"/>
                         <outlet property="statusBarBlurView" destination="XTd-3k-0Sj" id="ODf-tl-ypd"/>
                         <outlet property="thirdBulletPointLabel" destination="gKH-m5-M2s" id="w1T-jq-XoU"/>
+                        <outlet property="useTerms" destination="23P-iA-YIt" id="r7m-h8-beU"/>
                         <outlet property="viewControllerDescriptionLabel" destination="oIR-Vd-5D9" id="ZFU-Ud-58C"/>
                         <outlet property="viewControllerTitleLabel" destination="J3d-4g-Jnc" id="opO-7e-u2H"/>
                     </connections>
@@ -1601,6 +1632,12 @@
         </namedColor>
         <namedColor name="homeBottomViewColor">
             <color red="0.13333333333333333" green="0.44705882352941179" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="linkColor">
+            <color red="0.27058823529411763" green="0.54509803921568623" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="linkColor">
+            <color red="0.27058823529411763" green="0.54509803921568623" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="primaryButton">
             <color red="0.0" green="0.38039215686274508" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

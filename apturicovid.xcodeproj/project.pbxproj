@@ -183,6 +183,8 @@
 		BACDE3BD246E72DE0075B20E /* UploadKeyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDE3BC246E72DE0075B20E /* UploadKeyResponse.swift */; };
 		BACDE3BF246E9A5F0075B20E /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDE3BE246E9A5F0075B20E /* PhoneNumber.swift */; };
 		BACDE3C1246EA4400075B20E /* NotificationsScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDE3C0246EA4400075B20E /* NotificationsScheduler.swift */; };
+		BAD13BE6247927BC00354123 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD13BE5247927BC00354123 /* Link.swift */; };
+		BAD13BE7247927BC00354123 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD13BE5247927BC00354123 /* Link.swift */; };
 		BAD4221B2473B3820047E85D /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD422192473B37F0047E85D /* Stats.swift */; };
 		BAD4221C2473B3820047E85D /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD422192473B37F0047E85D /* Stats.swift */; };
 		BAD4221D2473E9460047E85D /* UISwitchEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602AE9B52473E152008E42F3 /* UISwitchEx.swift */; };
@@ -305,6 +307,7 @@
 		BACDE3BC246E72DE0075B20E /* UploadKeyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadKeyResponse.swift; sourceTree = "<group>"; };
 		BACDE3BE246E9A5F0075B20E /* PhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
 		BACDE3C0246EA4400075B20E /* NotificationsScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsScheduler.swift; sourceTree = "<group>"; };
+		BAD13BE5247927BC00354123 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		BAD422192473B37F0047E85D /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		BAD42221247401D10047E85D /* RestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
 		BAD422232474023F0047E85D /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
@@ -414,6 +417,7 @@
 		BA366CBE2465AC3D00A35CA8 /* apturicovid */ = {
 			isa = PBXGroup;
 			children = (
+				BAD13BE4247927A400354123 /* helpers */,
 				BAB79775247815D2002D64F9 /* debug */,
 				BAD422202474017D0047E85D /* api */,
 				BA9BEF4B24751CCF00D5D947 /* apturicovid.entitlements */,
@@ -564,6 +568,14 @@
 				E95CD9FD2471BD8C00DAC588 /* PhoneTextField.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		BAD13BE4247927A400354123 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BAD13BE5247927BC00354123 /* Link.swift */,
+			);
+			path = helpers;
 			sourceTree = "<group>";
 		};
 		BAD422202474017D0047E85D /* api */ = {
@@ -925,6 +937,7 @@
 				60DC15172477F76D00FAD185 /* ExposureNotificationToggleProvider.swift in Sources */,
 				BA19B89A24715F9F003C5025 /* Data.swift in Sources */,
 				BAFA8315246AD48F00E121B4 /* LocalStore.swift in Sources */,
+				BAD13BE6247927BC00354123 /* Link.swift in Sources */,
 				BA8CD87A2475477C00B068A5 /* ExposureConfiguration.swift in Sources */,
 				BACDE3B9246DC5EF0075B20E /* PhoneConfirmationResponse.swift in Sources */,
 				602AE9B62473E152008E42F3 /* UISwitchEx.swift in Sources */,
@@ -1013,6 +1026,7 @@
 				60DC15182477F76D00FAD185 /* ExposureNotificationToggleProvider.swift in Sources */,
 				BA3800142473072700577DB2 /* LocalStore.swift in Sources */,
 				BA8CD87B2475477C00B068A5 /* ExposureConfiguration.swift in Sources */,
+				BAD13BE7247927BC00354123 /* Link.swift in Sources */,
 				BA3800152473072700577DB2 /* PhoneConfirmationResponse.swift in Sources */,
 				BAD4221D2473E9460047E85D /* UISwitchEx.swift in Sources */,
 				BADFAD0324755B95006F61E7 /* ENExposureConfiguration.swift in Sources */,

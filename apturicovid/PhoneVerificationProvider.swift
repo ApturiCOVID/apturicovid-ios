@@ -39,6 +39,7 @@ extension PhoneVerificationProvider {
                 self.phoneVerificationProvider(validationFinishedWith: nil)
             }, onError: { [weak self] error in
                 SVProgressHUD.dismiss()
+                justPrintError(error)
                 
                 guard let `self` = self else { return }
                 

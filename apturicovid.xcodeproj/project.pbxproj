@@ -185,6 +185,10 @@
 		BACDE3C1246EA4400075B20E /* NotificationsScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDE3C0246EA4400075B20E /* NotificationsScheduler.swift */; };
 		BAD13BE6247927BC00354123 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD13BE5247927BC00354123 /* Link.swift */; };
 		BAD13BE7247927BC00354123 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD13BE5247927BC00354123 /* Link.swift */; };
+		BAD13BE924795C3400354123 /* DebugActionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD13BE824795C3400354123 /* DebugActionsVC.swift */; };
+		BAD13BEA24795C3400354123 /* DebugActionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD13BE824795C3400354123 /* DebugActionsVC.swift */; };
+		BAD13BEC24795E0100354123 /* ExposureConfigurationInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD13BEB24795E0100354123 /* ExposureConfigurationInfoVC.swift */; };
+		BAD13BED24795E0100354123 /* ExposureConfigurationInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD13BEB24795E0100354123 /* ExposureConfigurationInfoVC.swift */; };
 		BAD4221B2473B3820047E85D /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD422192473B37F0047E85D /* Stats.swift */; };
 		BAD4221C2473B3820047E85D /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD422192473B37F0047E85D /* Stats.swift */; };
 		BAD4221D2473E9460047E85D /* UISwitchEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602AE9B52473E152008E42F3 /* UISwitchEx.swift */; };
@@ -308,6 +312,8 @@
 		BACDE3BE246E9A5F0075B20E /* PhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
 		BACDE3C0246EA4400075B20E /* NotificationsScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsScheduler.swift; sourceTree = "<group>"; };
 		BAD13BE5247927BC00354123 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
+		BAD13BE824795C3400354123 /* DebugActionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugActionsVC.swift; sourceTree = "<group>"; };
+		BAD13BEB24795E0100354123 /* ExposureConfigurationInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureConfigurationInfoVC.swift; sourceTree = "<group>"; };
 		BAD422192473B37F0047E85D /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		BAD42221247401D10047E85D /* RestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
 		BAD422232474023F0047E85D /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
@@ -526,6 +532,8 @@
 			children = (
 				BAB797762478175B002D64F9 /* DebugMenu.storyboard */,
 				BAB7977824781913002D64F9 /* ExposureLogs.swift */,
+				BAD13BE824795C3400354123 /* DebugActionsVC.swift */,
+				BAD13BEB24795E0100354123 /* ExposureConfigurationInfoVC.swift */,
 			);
 			path = debug;
 			sourceTree = "<group>";
@@ -904,6 +912,7 @@
 				BAB7977924781913002D64F9 /* ExposureLogs.swift in Sources */,
 				BA3800572473090500577DB2 /* env-production.swift in Sources */,
 				7528B10A246C27A0007D0260 /* Colors.swift in Sources */,
+				BAD13BEC24795E0100354123 /* ExposureConfigurationInfoVC.swift in Sources */,
 				BAAED846246D5ECD004C77A6 /* FAQVC.swift in Sources */,
 				BAE35753246F3034004C59A9 /* PhoneSettingsVC.swift in Sources */,
 				BA38FFE92471DFBD00577DB2 /* BackgroundManager.swift in Sources */,
@@ -926,6 +935,7 @@
 				60A334A2246D2116007BE791 /* UITextField2.swift in Sources */,
 				BACDE3B5246DBC180075B20E /* CodeEntryVC.swift in Sources */,
 				606715C02474858100B7D298 /* RoundedView.swift in Sources */,
+				BAD13BE924795C3400354123 /* DebugActionsVC.swift in Sources */,
 				BA38FFE32471B3E300577DB2 /* ExposureWrapper.swift in Sources */,
 				BADFAD082476DEB4006F61E7 /* MainTabController.swift in Sources */,
 				60701AFF246D422000BFA1F4 /* LinkLabel.swift in Sources */,
@@ -993,6 +1003,7 @@
 				BAB7977A24781913002D64F9 /* ExposureLogs.swift in Sources */,
 				BA38FFF82473072700577DB2 /* Colors.swift in Sources */,
 				BA38FFF92473072700577DB2 /* FAQVC.swift in Sources */,
+				BAD13BED24795E0100354123 /* ExposureConfigurationInfoVC.swift in Sources */,
 				BA38FFFA2473072700577DB2 /* PhoneSettingsVC.swift in Sources */,
 				BA38FFFB2473072700577DB2 /* BackgroundManager.swift in Sources */,
 				BA38FFFC2473072700577DB2 /* StatView.swift in Sources */,
@@ -1015,6 +1026,7 @@
 				BA38000B2473072700577DB2 /* CodeEntryVC.swift in Sources */,
 				BA38000C2473072700577DB2 /* ExposureWrapper.swift in Sources */,
 				BA38000D2473072700577DB2 /* LinkLabel.swift in Sources */,
+				BAD13BEA24795C3400354123 /* DebugActionsVC.swift in Sources */,
 				BA38000E2473072700577DB2 /* DiagnosisKey.swift in Sources */,
 				BADFAD092476DEB4006F61E7 /* MainTabController.swift in Sources */,
 				BA38000F2473072700577DB2 /* printers.swift in Sources */,
@@ -1239,14 +1251,14 @@
 				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovidDebug.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = K673TD5NRS;
 				INFOPLIST_FILE = apturicovid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.8;
+				MARKETING_VERSION = 1.2.9;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid;
 				PRODUCT_NAME = "Apturi Covid";
 				PROVISIONING_PROFILE_SPECIFIER = "DEV Production";
@@ -1263,14 +1275,14 @@
 				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovid.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = K673TD5NRS;
 				INFOPLIST_FILE = apturicovid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.8;
+				MARKETING_VERSION = 1.2.9;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid;
 				PRODUCT_NAME = "Apturi Covid";
 				PROVISIONING_PROFILE_SPECIFIER = "DEV Production";
@@ -1287,14 +1299,14 @@
 				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovidDebug.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = K673TD5NRS;
 				INFOPLIST_FILE = "$(SRCROOT)/apturicovid/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.7;
+				MARKETING_VERSION = 1.2.9;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid.staging;
 				PRODUCT_NAME = "AC Demo";
 				PROVISIONING_PROFILE_SPECIFIER = "DEV Staging";
@@ -1311,14 +1323,14 @@
 				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovid.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = K673TD5NRS;
 				INFOPLIST_FILE = "$(SRCROOT)/apturicovid/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.7;
+				MARKETING_VERSION = 1.2.9;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid.staging;
 				PRODUCT_NAME = "AC Demo";
 				PROVISIONING_PROFILE_SPECIFIER = "DEV Staging";

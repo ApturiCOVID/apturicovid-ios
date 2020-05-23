@@ -101,6 +101,10 @@ class ExposuresClient: RestClient {
     }
     
     func uploadDiagnosis(token: String, keys: [ENTemporaryExposureKey]) -> Observable<Data> {
+        guard keys.count > 0 else {
+            return Observable.error(NSError.make("no_daily_key_error".translated))
+        }
+        
         let uploadBody = DiagnosisUploadRequest(token: token, diagnosisKeys: keys.map{ DiagnosisKey(from: $0) })
         
         let encoder = JSONEncoder.init()

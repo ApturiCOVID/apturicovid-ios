@@ -34,7 +34,7 @@
                                     <rect key="frame" x="0.0" y="5" width="216" height="20"/>
                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                     <state key="normal" title="Kāpēc ievadīt telefona numuru?">
-                                        <color key="titleColor" red="0.96078431372549022" green="0.46666666666666667" blue="0.1764705882352941" alpha="0.9409936179577465" colorSpace="calibratedRGB"/>
+                                        <color key="titleColor" name="linkColor"/>
                                     </state>
                                 </button>
                             </subviews>
@@ -151,6 +151,9 @@
         <image name="chevron-right" width="6" height="9"/>
         <namedColor name="descriptionText">
             <color red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="linkColor">
+            <color red="0.27058823529411763" green="0.54509803921568623" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="separator">
             <color red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

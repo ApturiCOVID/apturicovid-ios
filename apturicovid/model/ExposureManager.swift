@@ -152,30 +152,31 @@ class ExposureManager {
     
     func performExposureDetection() -> Observable<Bool> {
         return ExposuresClient.shared.downloadDiagnosisBatches(startAt: LocalStore.shared.lastDownloadedBatchIndex)
-            .flatMap { (urls) -> Observable<ENExposureDetectionSummary?> in
+            .flatMap { (urls) -> Observable<[Exposure]> in
                 return ExposuresClient.shared.getExposuresConfiguration()
-                    .flatMap { (config) -> Observable<ENExposureDetectionSummary?> in
+                    .flatMap { (config) -> Observable<[Exposure]> in
                         guard let configuration = config else {
                             return Observable.error(NSError.make("Unable to fetch exposure configuration"))
                         }
                         return self.detectExposures(localUrls: urls, configuration: configuration)
+                            .flatMap { (summary) -> Observable<[Exposure]> in
+                                guard let summary = summary else {
+                                    return Observable.error(NSError.make("Returned empty summary from exposure detector"))
+                                }
+                                
+                                guard summary.matchedKeyCount > 0 && summary.maximumRiskScore >= configuration.minimumRiskScore else {
+                                    return Observable.just([])
+                                }
+                                
+                                return self.getExposureInfo(summary: summary)
+                            }
                 }
-            }
-            .flatMap { (summary) -> Observable<[Exposure]> in
-                guard let summary = summary else {
-                    return Observable.just([])
-                }
-                
-                guard summary.matchedKeyCount > 0 else {
-                    return Observable.just([])
-                }
-                
-                return self.getExposureInfo(summary: summary)
             }
             .do(onNext: { exposures in
                 LocalStore.shared.exposures += exposures.map { ExposureWrapper(uuid: UUID().uuidString, exposure: $0, uploadetAt: nil) }
                 ExposureManager.reset()
-            }, onError: { (_) in
+            }, onError: { (error) in
+                justPrintError(error)
                 ExposureManager.reset()
             })
             .flatMap { (exposures) -> Observable<Bool> in

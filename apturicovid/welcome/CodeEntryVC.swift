@@ -103,7 +103,7 @@ class CodeEntryVC: BaseViewController {
 
                 return ExposureManager.shared.getAndPostDiagnosisKeys(token: response.token)
                     .do(onError: { (err) in
-                        self.showBasicAlert(message: "diagnosis_key_upload_error".translated)
+                        self.showBasicAlert(message: err.localizedDescription)
                     })
             })
             .subscribe(onNext: { (data) in

@@ -160,22 +160,16 @@ class HomeVC: BaseViewController {
         
         NotificationCenter.default.rx
             .notification(UIApplication.didBecomeActiveNotification)
-            .subscribe(onNext: { [weak self] (_) in
-                self?.setExposureStateVisual()
-                self?.exposureNotificationVisible = LocalStore.shared.exposures.count > 0
-                self?.loadData()
-            })
-            .disposed(by: disposeBag)
-        
-        NotificationCenter.default.rx
-            .notification(UIApplication.didBecomeActiveNotification)
             .flatMap({ _ -> Observable<Bool> in
                 guard LocalStore.shared.hasSeenIntro else { return Observable.just(true) }
                 return ExposureManager.shared.performExposureDetection()
             })
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { _ in
-                self.exposureNotificationVisible = LocalStore.shared.exposures.count > 0
+            .retry()
+            .subscribe(onNext: { [weak self] (_) in
+                self?.setExposureStateVisual()
+                self?.exposureNotificationVisible = LocalStore.shared.exposures.count > 0
+                self?.loadData()
             }, onError: justPrintError)
             .disposed(by: disposeBag)
         

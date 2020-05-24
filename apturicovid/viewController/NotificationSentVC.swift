@@ -23,4 +23,9 @@ class NotificationSentVC: BaseViewController {
     @IBAction func onCloseTapped(_ sender: UIButton) {
         self.navigationController?.popToRootViewController(animated: true)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UINotificationFeedbackGenerator().notificationOccurred(.success)
+    }
 }

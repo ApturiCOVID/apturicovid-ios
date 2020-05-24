@@ -41,6 +41,7 @@ class CodeEntryVC: BaseViewController {
     var mode: CodeEntryMode!
     var returnMode: ReturnMode = .pop
     
+    let generator = UINotificationFeedbackGenerator()
     
     private func close() {
         LocalStore.shared.hasSeenIntro = true
@@ -64,6 +65,7 @@ class CodeEntryVC: BaseViewController {
         ApiClient.shared.requestPhoneConfirmation(token: response.token, code: pin)
             .subscribe(onNext: { (result) in
                 SVProgressHUD.dismiss()
+                self.generator.notificationOccurred(.success)
                 if result?.status == true {
                     self.phoneNumber?.token = response.token
                     self.close()
@@ -80,6 +82,7 @@ class CodeEntryVC: BaseViewController {
     
     private func showError(_ show: Bool, with message: String) {
         DispatchQueue.main.async {
+            self.generator.notificationOccurred(.error)
             self.errorView.isHidden = !show
             self.errorLabel.text = message.translated
         }

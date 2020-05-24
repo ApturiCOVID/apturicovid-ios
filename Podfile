@@ -11,6 +11,7 @@ def common_pods
   pod 'Anchorage'
   pod 'SVProgressHUD'
   pod 'KAPinField'
+  pod 'LicensePlist'
 end
 
 target 'apturicovid' do

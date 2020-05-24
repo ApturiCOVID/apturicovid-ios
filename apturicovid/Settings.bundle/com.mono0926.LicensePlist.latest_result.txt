@@ -1,0 +1,211 @@
+name: Anchorage, nameSpecified: 
+body: The MIT License (MIT…
+version: 4.4.0
+
+name: Anchorage, nameSpecified: 
+body: The MIT License (MIT…
+version: 4.4.0
+
+name: CocoaLumberjack, nameSpecified: 
+body: BSD 3-Clause License…
+version: 3.6.1
+
+name: CocoaLumberjack, nameSpecified: 
+body: BSD 3-Clause License…
+version: 3.6.1
+
+name: Firebase, nameSpecified: 
+body: 
+                   …
+version: 6.24.0
+
+name: Firebase, nameSpecified: 
+body: 
+                   …
+version: 6.24.0
+
+name: FirebaseAnalyticsInterop, nameSpecified: 
+body: 
+                   …
+version: 1.5.0
+
+name: FirebaseAnalyticsInterop, nameSpecified: 
+body: 
+                   …
+version: 1.5.0
+
+name: FirebaseCore, nameSpecified: 
+body: 
+                   …
+version: 6.7.0
+
+name: FirebaseCore, nameSpecified: 
+body: 
+                   …
+version: 6.7.0
+
+name: FirebaseCoreDiagnostics, nameSpecified: 
+body: 
+                   …
+version: 1.3.0
+
+name: FirebaseCoreDiagnostics, nameSpecified: 
+body: 
+                   …
+version: 1.3.0
+
+name: FirebaseCoreDiagnosticsInterop, nameSpecified: 
+body: 
+                   …
+version: 1.2.0
+
+name: FirebaseCoreDiagnosticsInterop, nameSpecified: 
+body: 
+                   …
+version: 1.2.0
+
+name: FirebaseCrashlytics, nameSpecified: 
+body: 
+                   …
+version: 4.1.0
+
+name: FirebaseCrashlytics, nameSpecified: 
+body: 
+                   …
+version: 4.1.0
+
+name: FirebaseInstallations, nameSpecified: 
+body: 
+                   …
+version: 1.2.0
+
+name: FirebaseInstallations, nameSpecified: 
+body: 
+                   …
+version: 1.2.0
+
+name: GoogleDataTransport, nameSpecified: 
+body: 
+                   …
+version: 6.1.0
+
+name: GoogleDataTransport, nameSpecified: 
+body: 
+                   …
+version: 6.1.0
+
+name: GoogleDataTransportCCTSupport, nameSpecified: 
+body: 
+                   …
+version: 3.1.0
+
+name: GoogleDataTransportCCTSupport, nameSpecified: 
+body: 
+                   …
+version: 3.1.0
+
+name: GoogleUtilities, nameSpecified: 
+body: 
+                   …
+version: 6.6.0
+
+name: GoogleUtilities, nameSpecified: 
+body: 
+                   …
+version: 6.6.0
+
+name: KAPinField, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 5.0.1
+
+name: KAPinField, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 5.0.1
+
+name: LicensePlist, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 2.15.1
+
+name: LicensePlist, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 2.15.1
+
+name: nanopb, nameSpecified: 
+body: Copyright (c) 2011 P…
+version: 1.30905.0
+
+name: nanopb, nameSpecified: 
+body: Copyright (c) 2011 P…
+version: 1.30905.0
+
+name: PromisesObjC, nameSpecified: 
+body: 
+                   …
+version: 1.2.8
+
+name: PromisesObjC, nameSpecified: 
+body: 
+                   …
+version: 1.2.8
+
+name: RxCocoa, nameSpecified: 
+body: **The MIT License**
+…
+version: 5.1.1
+
+name: RxCocoa, nameSpecified: 
+body: **The MIT License**
+…
+version: 5.1.1
+
+name: RxGesture, nameSpecified: 
+body: Copyright (c) RxSwif…
+version: 3.0.2
+
+name: RxGesture, nameSpecified: 
+body: Copyright (c) RxSwif…
+version: 3.0.2
+
+name: RxRelay, nameSpecified: 
+body: **The MIT License**
+…
+version: 5.1.1
+
+name: RxRelay, nameSpecified: 
+body: **The MIT License**
+…
+version: 5.1.1
+
+name: RxSwift, nameSpecified: 
+body: **The MIT License**
+…
+version: 5.1.1
+
+name: RxSwift, nameSpecified: 
+body: **The MIT License**
+…
+version: 5.1.1
+
+name: SVProgressHUD, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 2.2.5
+
+name: SVProgressHUD, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 2.2.5
+
+add-version-numbers: false
+
+LicensePlist Version: 2.15.0

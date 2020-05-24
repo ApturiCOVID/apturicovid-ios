@@ -189,6 +189,8 @@
 		BAD13BEA24795C3400354123 /* DebugActionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD13BE824795C3400354123 /* DebugActionsVC.swift */; };
 		BAD13BEC24795E0100354123 /* ExposureConfigurationInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD13BEB24795E0100354123 /* ExposureConfigurationInfoVC.swift */; };
 		BAD13BED24795E0100354123 /* ExposureConfigurationInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD13BEB24795E0100354123 /* ExposureConfigurationInfoVC.swift */; };
+		BAD13BF1247AEF0900354123 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BAD13BF0247AEF0900354123 /* Settings.bundle */; };
+		BAD13BF2247AEF0900354123 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BAD13BF0247AEF0900354123 /* Settings.bundle */; };
 		BAD4221B2473B3820047E85D /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD422192473B37F0047E85D /* Stats.swift */; };
 		BAD4221C2473B3820047E85D /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD422192473B37F0047E85D /* Stats.swift */; };
 		BAD4221D2473E9460047E85D /* UISwitchEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602AE9B52473E152008E42F3 /* UISwitchEx.swift */; };
@@ -314,6 +316,7 @@
 		BAD13BE5247927BC00354123 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		BAD13BE824795C3400354123 /* DebugActionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugActionsVC.swift; sourceTree = "<group>"; };
 		BAD13BEB24795E0100354123 /* ExposureConfigurationInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureConfigurationInfoVC.swift; sourceTree = "<group>"; };
+		BAD13BF0247AEF0900354123 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		BAD422192473B37F0047E85D /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		BAD42221247401D10047E85D /* RestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
 		BAD422232474023F0047E85D /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
@@ -452,6 +455,7 @@
 				60DC15162477F76C00FAD185 /* ExposureNotificationToggleProvider.swift */,
 				60A4D0DA24765B9D00D13D75 /* Reachability.swift */,
 				E99BFA742472FEE1004D779F /* FaqLocalizable.strings */,
+				BAD13BF0247AEF0900354123 /* Settings.bundle */,
 			);
 			path = apturicovid;
 			sourceTree = "<group>";
@@ -655,8 +659,8 @@
 				BA366CB82465AC3D00A35CA8 /* Sources */,
 				BA366CB92465AC3D00A35CA8 /* Frameworks */,
 				BA366CBA2465AC3D00A35CA8 /* Resources */,
-				BAFA8307246AB5E500E121B4 /* Initialize Crashlytics */,
 				C1C3193F69351DDDB701BD11 /* [CP] Embed Pods Frameworks */,
+				BAFA8307246AB5E500E121B4 /* Initialize Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -740,6 +744,7 @@
 				7528B0FB246C016D007D0260 /* Translations.strings in Resources */,
 				BABEEC2F246879C8009D8307 /* LanguageView.xib in Resources */,
 				BA19B89C247173BA003C5025 /* GoogleService-Info.plist in Resources */,
+				BAD13BF1247AEF0900354123 /* Settings.bundle in Resources */,
 				BA366CC92465AC3E00A35CA8 /* Assets.xcassets in Resources */,
 				BA366CC72465AC3D00A35CA8 /* Main.storyboard in Resources */,
 				BAAED83B246C30BD004C77A6 /* StatCell.xib in Resources */,
@@ -766,6 +771,7 @@
 				BA3800402473072700577DB2 /* Translations.strings in Resources */,
 				BA3800412473072700577DB2 /* LanguageView.xib in Resources */,
 				BA3800522473088D00577DB2 /* GoogleService-Info.plist in Resources */,
+				BAD13BF2247AEF0900354123 /* Settings.bundle in Resources */,
 				BA3800432473072700577DB2 /* Assets.xcassets in Resources */,
 				BA3800442473072700577DB2 /* Main.storyboard in Resources */,
 				BA3800452473072700577DB2 /* StatCell.xib in Resources */,
@@ -1251,14 +1257,14 @@
 				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovidDebug.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = K673TD5NRS;
 				INFOPLIST_FILE = apturicovid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.9;
+				MARKETING_VERSION = 1.2.12;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid;
 				PRODUCT_NAME = "Apturi Covid";
 				PROVISIONING_PROFILE_SPECIFIER = "DEV Production";
@@ -1275,14 +1281,14 @@
 				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovid.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = K673TD5NRS;
 				INFOPLIST_FILE = apturicovid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.9;
+				MARKETING_VERSION = 1.2.12;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid;
 				PRODUCT_NAME = "Apturi Covid";
 				PROVISIONING_PROFILE_SPECIFIER = "DEV Production";
@@ -1299,14 +1305,14 @@
 				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovidDebug.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = K673TD5NRS;
 				INFOPLIST_FILE = "$(SRCROOT)/apturicovid/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.9;
+				MARKETING_VERSION = 1.2.12;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid.staging;
 				PRODUCT_NAME = "AC Demo";
 				PROVISIONING_PROFILE_SPECIFIER = "DEV Staging";
@@ -1323,14 +1329,14 @@
 				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovid.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = K673TD5NRS;
 				INFOPLIST_FILE = "$(SRCROOT)/apturicovid/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.9;
+				MARKETING_VERSION = 1.2.12;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid.staging;
 				PRODUCT_NAME = "AC Demo";
 				PROVISIONING_PROFILE_SPECIFIER = "DEV Staging";

@@ -45,6 +45,7 @@ PODS:
   - GoogleUtilities/UserDefaults (6.6.0):
     - GoogleUtilities/Logger
   - KAPinField (5.0.1)
+  - LicensePlist (2.15.1)
   - nanopb (1.30905.0):
     - nanopb/decode (= 1.30905.0)
     - nanopb/encode (= 1.30905.0)
@@ -67,6 +68,7 @@ DEPENDENCIES:
   - CocoaLumberjack/Swift
   - Firebase/Crashlytics
   - KAPinField
+  - LicensePlist
   - RxCocoa (~> 5.1)
   - RxGesture (~> 3.0.1)
   - RxSwift (~> 5.1)
@@ -87,6 +89,7 @@ SPEC REPOS:
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
     - KAPinField
+    - LicensePlist
     - nanopb
     - PromisesObjC
     - RxCocoa
@@ -109,6 +112,7 @@ SPEC CHECKSUMS:
   GoogleDataTransportCCTSupport: d70a561f7d236af529fee598835caad5e25f6d3d
   GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
   KAPinField: 24d85205115c1bb6aef8ff809944f41ac8c2785f
+  LicensePlist: 9fb7c521b431f94ea665046c15ed5f392583afbd
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
@@ -117,6 +121,6 @@ SPEC CHECKSUMS:
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 543fbffb5afc2f8bac94a0213b16837622e40c0b
+PODFILE CHECKSUM: fffc55fb058954277b4885b0c2ff8c4f7a270144
 
 COCOAPODS: 1.9.1

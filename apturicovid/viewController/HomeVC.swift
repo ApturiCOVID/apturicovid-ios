@@ -130,7 +130,6 @@ class HomeVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(LocalStore.shared.exposures.count)
         exposureSwitch.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
         exposureSwitch.setOffColor(UIColor(named: "offColor")!)
         exposureSwitch.isOn = ExposureManager.shared.enabled

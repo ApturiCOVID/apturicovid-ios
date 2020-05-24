@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         do {
             try BGTaskScheduler.shared.submit(taskRequest)
         } catch {
-            print("Unable to schedule background task: \(error)")
+            DDLogError("Unable to schedule background task: \(error)")
         }
     }
     

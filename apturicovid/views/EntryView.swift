@@ -56,10 +56,6 @@ class EntryView: UIView {
         }
     }
     
-    @objc func textFieldDidChange(_ textField: UITextField) {
-        print(textField)
-    }
-    
     private func autoFill(text: String) {
         for (index, input) in textFields.enumerated() {
             let charIndex = text.index(text.startIndex, offsetBy: index)

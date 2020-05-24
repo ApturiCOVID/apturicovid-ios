@@ -10,23 +10,6 @@ public enum SlideControllerDirection {
 class SlideViewController: UIViewController {
     
     var parentNavigationController: UINavigationController?
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(onLanguageChange), name: NSNotification.Name("languageChange"), object: nil)
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(onLanguageChange), name: NSNotification.Name("languageChange"), object: nil)
-    }
-    
-    @objc func onLanguageChange() {
-        print("Language did change (in base VC)")
-        // Override point
-    }
     
     func addBackground() {
         UIView.animateKeyframes(withDuration: 0.2, delay: 0.2, animations: {

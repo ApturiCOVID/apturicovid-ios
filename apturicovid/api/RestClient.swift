@@ -14,13 +14,18 @@ class RestClient {
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             request.httpMethod = method
             request.httpBody = body
-            print("Curl: \(request.curlString)")
+            
+            #if DEBUG
+                print("Curl: \(request.curlString)")
+            #endif
             
             let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, urlResponse, error) in
-
-                data.map {
-                    print("Response: \(String(data: $0, encoding: .utf8) ?? "")")
-                }
+                
+                #if DEBUG
+                    data.map {
+                        print("Response: \(String(data: $0, encoding: .utf8) ?? "")")
+                    }
+                #endif
 
                 guard let response = urlResponse as? HTTPURLResponse else {
                     observer.onError(NSError.make("Error parsing response"))

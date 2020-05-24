@@ -100,7 +100,7 @@ class ExposureSetupVC: BaseViewController {
                     let keyboardFrame: CGRect = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect
                     else { return }
                 
-                self.scrollViewBottomConstraint.constant = keyboardFrame.height - 20
+                self.scrollViewBottomConstraint.constant = keyboardFrame.height + 5
                 
                 self.scrollview.scrollRectToVisible(self.phoneView.bounds, animated: true)
                 }, onError: justPrintError)

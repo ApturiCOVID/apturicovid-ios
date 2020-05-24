@@ -31,12 +31,12 @@ class ExposureManager {
         manager.invalidate()
     }
     
-    func refresh() {
+    func refreshState() {
         enabled = ENManager.authorizationStatus == .authorized && LocalStore.shared.exposureNotificationsEnabled
         LocalStore.shared.exposureNotificationsEnabled = enabled
     }
     
-    func toggleExposureNotifications(enabled: Bool, toggleNotifications: Bool = true) -> Completable {
+    func toggleExposureNotifications(enabled: Bool) -> Completable {
         return Completable.create { (completable) -> Disposable in
             self.manager.setExposureNotificationEnabled(enabled) { (error) in
                 guard error == nil else {
@@ -47,7 +47,7 @@ class ExposureManager {
                 self.enabled = enabled
                 LocalStore.shared.exposureNotificationsEnabled = enabled
                 
-                if !toggleNotifications {
+                guard LocalStore.shared.exposureStateReminderEnabled else {
                     completable(.completed)
                     return
                 }
@@ -158,7 +158,7 @@ class ExposureManager {
                         guard let configuration = config else {
                             return Observable.error(NSError.make("Unable to fetch exposure configuration"))
                         }
-                        return self.detectExposures(localUrls: urls, configuration: configuration)
+                        return self.detectExposures(localUrls: urls.urls, configuration: configuration)
                             .flatMap { (summary) -> Observable<[Exposure]> in
                                 guard let summary = summary else {
                                     return Observable.error(NSError.make("Returned empty summary from exposure detector"))
@@ -170,6 +170,11 @@ class ExposureManager {
                                 
                                 return self.getExposureInfo(summary: summary)
                             }
+                            .do(onNext: { _ in
+                                if let index = urls.lastIndex {
+                                    LocalStore.shared.lastDownloadedBatchIndex = index
+                                }
+                            })
                 }
             }
             .do(onNext: { exposures in

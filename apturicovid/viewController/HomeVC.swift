@@ -160,6 +160,10 @@ class HomeVC: BaseViewController {
         
         NotificationCenter.default.rx
             .notification(UIApplication.didBecomeActiveNotification)
+            .do(onNext: { _ in
+                ExposureManager.shared.refreshState()
+                self.setExposureStateVisual()
+            })
             .flatMap({ _ -> Observable<Bool> in
                 guard LocalStore.shared.hasSeenIntro else { return Observable.just(true) }
                 return ExposureManager.shared.performExposureDetection()
@@ -167,7 +171,6 @@ class HomeVC: BaseViewController {
             .observeOn(MainScheduler.instance)
             .retry()
             .subscribe(onNext: { [weak self] (_) in
-                self?.setExposureStateVisual()
                 self?.exposureNotificationVisible = LocalStore.shared.exposures.count > 0
                 self?.loadData()
             }, onError: justPrintError)

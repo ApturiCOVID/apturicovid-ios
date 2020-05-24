@@ -73,16 +73,16 @@ class ExposuresClient: RestClient {
             }
     }
     
-    func downloadDiagnosisBatches(startAt index: Int) -> Observable<[URL]> {
+    func downloadDiagnosisBatches(startAt index: Int) -> Observable<(urls: [URL], lastIndex: Int?)> {
         return getDiagnosisBatchUrls()
-            .flatMap { (urls) -> Observable<[URL]> in
+            .flatMap { (urls) -> Observable<(urls: [URL], lastIndex: Int?)> in
                 let lastIndex = index
                 
                 let nextUrls = urls.filter { (url, index) -> Bool in
                     return Int(index) ?? 0 > lastIndex
                 }
                 
-                if nextUrls.isEmpty { return Observable.just([]) }
+                if nextUrls.isEmpty { return Observable.just((urls: [], lastIndex: nil)) }
                 
                 let urlsToDownload = nextUrls.map { (url, index) -> [URL] in
                     let binUrl = url.deletingLastPathComponent().appendingPathComponent("\(index).bin")
@@ -94,9 +94,9 @@ class ExposuresClient: RestClient {
                 return Observable.zip(urlsToDownload.map({ url -> Observable<URL> in
                     return self.downloadFile(url: url)
                 }))
-                    .do(onNext: { (_) in
-                        LocalStore.shared.lastDownloadedBatchIndex = Int(nextUrls.last?.index ?? "0")!
-                    })
+                    .map { (urls) -> (urls: [URL], lastIndex: Int?) in
+                        return (urls: urls, lastIndex: nextUrls.last?.index != nil ? Int(nextUrls.last?.index ?? "0")! : nil)
+                    }
         }
     }
     

@@ -11,7 +11,6 @@ import RxSwift
 import ExposureNotification
 
 protocol ContactDetectionToggleProvider : class {
-    
     var disposeBag: DisposeBag {get}
     func toggleExposure(enabled: Bool)
     func contactDetectionProvider(exposureDidBecomeEnabled enabled: Bool)

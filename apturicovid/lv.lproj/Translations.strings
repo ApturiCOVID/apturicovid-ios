@@ -125,6 +125,7 @@ SPKC tavu kontakttālruni ar saskares informāciju saņems tikai tad, ja tev tik
 "connectivity_offline" = "Lietotne šobrīd darbojas bezsaistē";
 "no_internet_connection" = "Nav interneta savienojuma";
 "no_daily_key_error" = "Lietotne vēl nav uzģenerējusi nevienu dienas atslēgu. Augšupielādi var veikt tikai 24 stundas pēc pirmās palaišanas";
+"sms_timeout_error" = "Lūdzu, uzgaidi %02d sekundes, lai kodu nosūtītu atkārtoti";
 
 // StatsVC
 "data_renewed" = "Dati atjaunoti: ";

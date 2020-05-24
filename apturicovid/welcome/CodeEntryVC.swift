@@ -29,6 +29,8 @@ class CodeEntryVC: BaseViewController {
     
     var uploadInprogress = false
     
+    var lastCodeRequestTime: Date?
+    
     @IBAction func onBackTap(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
@@ -148,6 +150,17 @@ class CodeEntryVC: BaseViewController {
     
     @objc private func resendCode() {
         guard let phoneNo = phoneNumber?.number else { return }
+        
+        if lastCodeRequestTime != nil {
+            let secondsPassed = Int(Date().timeIntervalSince(lastCodeRequestTime!))
+            if secondsPassed < 60 {
+                showBasicAlert(message: String(format: "sms_timeout_error".translated, 60 - secondsPassed))
+                return
+            }
+        }
+        
+        lastCodeRequestTime = Date()
+        
         SVProgressHUD.show()
         
         ApiClient.shared.requestPhoneVerification(phoneNumber: phoneNo)

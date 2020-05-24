@@ -122,6 +122,7 @@ SPKC will receive your number with contact information only if and when it is es
 "connectivity_offline" = "App now in offline mode";
 "no_internet_connection" = "No internet access";
 "no_daily_key_error" = "Application hasn't generated a single daily key yet. You can perform the upload only 24h after your first installation";
+"sms_timeout_error" = "Please wait %02d seconds to resend code";
 
 // StatsVC
 "data_renewed" = "Information updated: ";

@@ -103,7 +103,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6W-7p-lgY" customClass="RoundedButton" customModule="AC_Demo" customModuleProvider="target">
                                         <rect key="frame" x="321" y="60" width="77" height="30"/>
                                         <color key="backgroundColor" name="shareColor"/>
-                                        <state key="normal" title="Share" image="share-1">
+                                        <state key="normal" title="Share" image="share">
                                             <color key="titleColor" name="headerColor"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -1644,7 +1644,7 @@
         <image name="home" width="24" height="24"/>
         <image name="next-button" width="30" height="30"/>
         <image name="setting-toolbar" width="24" height="24"/>
-        <image name="share-1" width="30" height="30"/>
+        <image name="share" width="30" height="30"/>
         <image name="statistics" width="20" height="22"/>
         <namedColor name="darkLabel">
             <color red="0.0" green="0.23921568627450981" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

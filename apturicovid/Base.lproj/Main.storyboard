@@ -900,7 +900,7 @@
                                 </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="veF-lx-kuH">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="802"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HT1-47-aNg">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1232.6666666666667"/>
@@ -1049,7 +1049,7 @@
                                                         <rect key="frame" x="0.0" y="627.33333333333326" width="354" height="128"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="KPG-4i-HCc">
-                                                                <rect key="frame" x="10" y="61.666666666666629" width="5" height="5"/>
+                                                                <rect key="frame" x="10" y="61.666666666666742" width="5" height="5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="5" id="gqv-JS-AEo"/>
                                                                     <constraint firstAttribute="height" constant="5" id="kEF-5q-FCa"/>
@@ -1101,7 +1101,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="onContinueTap:" destination="n0E-B4-lil" eventType="touchUpInside" id="WZU-oi-CJ3"/>
+                                                            <action selector="onPhoneInputTap:" destination="n0E-B4-lil" eventType="touchUpInside" id="gJS-3g-pU7"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -1139,26 +1139,51 @@
                                     <constraint firstItem="HT1-47-aNg" firstAttribute="leading" secondItem="veF-lx-kuH" secondAttribute="leading" id="Y4M-Vm-Ma7"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lVD-Qe-NpJ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="94"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CV6-O3-ZOF">
+                                        <rect key="frame" x="30" y="54" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="FXe-fB-XVt"/>
+                                            <constraint firstAttribute="width" constant="30" id="RD2-wo-lV9"/>
+                                        </constraints>
+                                        <state key="normal" image="arrow-back"/>
+                                        <connections>
+                                            <action selector="onBackTap:" destination="n0E-B4-lil" eventType="touchUpInside" id="AD7-vq-m3y"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="CV6-O3-ZOF" firstAttribute="leading" secondItem="lVD-Qe-NpJ" secondAttribute="leading" constant="30" id="dKa-2h-hur"/>
+                                    <constraint firstAttribute="bottom" secondItem="CV6-O3-ZOF" secondAttribute="bottom" constant="10" id="vxC-19-S5d"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="lVD-Qe-NpJ" firstAttribute="top" secondItem="yTC-Qb-xGK" secondAttribute="top" id="4EK-yq-6TG"/>
                             <constraint firstAttribute="trailing" secondItem="veF-lx-kuH" secondAttribute="trailing" id="9Nl-Gl-IHm"/>
                             <constraint firstAttribute="bottom" secondItem="YVr-cc-uYK" secondAttribute="bottom" id="J1M-sB-7by"/>
+                            <constraint firstItem="lVD-Qe-NpJ" firstAttribute="leading" secondItem="Dq0-aQ-MDe" secondAttribute="leading" id="Qmg-Ta-Bc1"/>
                             <constraint firstItem="veF-lx-kuH" firstAttribute="width" secondItem="yTC-Qb-xGK" secondAttribute="width" id="cgT-yH-tBy"/>
                             <constraint firstItem="Dq0-aQ-MDe" firstAttribute="trailing" secondItem="YVr-cc-uYK" secondAttribute="trailing" id="ckj-or-HA7"/>
                             <constraint firstItem="veF-lx-kuH" firstAttribute="bottom" secondItem="yTC-Qb-xGK" secondAttribute="bottom" id="gLu-A2-qEi"/>
-                            <constraint firstItem="veF-lx-kuH" firstAttribute="top" secondItem="Dq0-aQ-MDe" secondAttribute="top" id="rkU-ER-OkU"/>
+                            <constraint firstItem="veF-lx-kuH" firstAttribute="top" secondItem="lVD-Qe-NpJ" secondAttribute="bottom" id="p3d-0C-v7y"/>
+                            <constraint firstItem="CV6-O3-ZOF" firstAttribute="top" secondItem="Dq0-aQ-MDe" secondAttribute="top" constant="10" id="tuQ-P0-Msc"/>
                             <constraint firstItem="veF-lx-kuH" firstAttribute="leading" secondItem="Dq0-aQ-MDe" secondAttribute="leading" id="wDf-6m-a3B"/>
+                            <constraint firstItem="lVD-Qe-NpJ" firstAttribute="trailing" secondItem="Dq0-aQ-MDe" secondAttribute="trailing" id="yoK-fD-1f9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dq0-aQ-MDe"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="faq" id="AUx-s6-aPa"/>
                     <connections>
-                        <outlet property="continueButton" destination="RvG-R6-97x" id="Qjv-dh-vYJ"/>
                         <outlet property="exposedLabel" destination="fmt-5q-Mc4" id="hp1-Un-Jml"/>
                         <outlet property="familyDoctorLabel" destination="IHm-iR-eQQ" id="bUQ-0L-JIE"/>
                         <outlet property="handlingDescription" destination="aY0-D4-LEh" id="Jl6-lG-mwn"/>
                         <outlet property="howToProceedLabel" destination="9Rf-6l-WUp" id="fqa-Yk-uwB"/>
+                        <outlet property="phoneInputButton" destination="RvG-R6-97x" id="J0t-4H-WbI"/>
                         <outlet property="selfIsolateLabel" destination="dWu-fb-3F0" id="WKU-DM-E2P"/>
                         <outlet property="spkcCallLabel" destination="jEz-Di-5hH" id="PKT-VU-XLQ"/>
                         <outlet property="symptomsLabel" destination="vPS-jo-ypV" id="mFp-Lz-3qZ"/>
@@ -1610,6 +1635,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow-back" width="20" height="16"/>
         <image name="dot" width="5" height="5"/>
         <image name="exposure-alert" width="129" height="117"/>
         <image name="exposure-landing" width="140" height="134"/>
@@ -1634,9 +1660,6 @@
         </namedColor>
         <namedColor name="homeBottomViewColor">
             <color red="0.13333333333333333" green="0.44705882352941179" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="linkColor">
-            <color red="0.27058823529411763" green="0.54509803921568623" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="linkColor">
             <color red="0.27058823529411763" green="0.54509803921568623" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

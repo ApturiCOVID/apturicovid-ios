@@ -10,10 +10,15 @@ class ExposureAlertVC: BaseViewController {
     @IBOutlet weak var symptomsLabel: UILabel!
     @IBOutlet weak var waitSPKCCallLabel: UILabel!
     @IBOutlet weak var handlingDescription: UILabel!
-    @IBOutlet weak var continueButton: RoundedButton!
+    @IBOutlet weak var phoneInputButton: RoundedButton!
     
-    @IBAction func onContinueTap(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+    @IBAction func onPhoneInputTap(_ sender: Any) {
+        if let vc = UIStoryboard(name: "PhoneSettings", bundle: nil).instantiateInitialViewController() {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    @IBAction func onBackTap(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func translate() {
@@ -33,6 +38,12 @@ class ExposureAlertVC: BaseViewController {
         handlingDescription.text =  isPhoneSpecified ? "exposure_handling_description_phone_specified".translated : "exposure_handling_description_phone_not_specified".translated
         
         
-        continueButton.setTitle("continue".translated, for: .normal)
+        phoneInputButton.setTitle("specify".translated, for: .normal)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        phoneInputButton.isHidden = LocalStore.shared.phoneNumber != nil
     }
 }

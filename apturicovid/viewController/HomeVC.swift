@@ -118,7 +118,7 @@ class HomeVC: BaseViewController {
     
     private func presentExposureAlertVC() {
         guard let vc = self.storyboard?.instantiateViewController(identifier: "ExposureAlertVC") else { return }
-        present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     override func viewDidAppear(_ animated: Bool) {

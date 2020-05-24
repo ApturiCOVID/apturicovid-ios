@@ -24,6 +24,10 @@ class ExposureSetupVC: BaseViewController {
                 phoneView.phoneInput.text = ""
                 phoneView.phoneInput.endEditing(true)
             }
+            
+            if exposureEnabled {
+                nextButton.isEnabled = false
+            }
         }
     }
 

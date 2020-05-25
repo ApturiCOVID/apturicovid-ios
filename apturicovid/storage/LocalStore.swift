@@ -4,6 +4,23 @@ import ExposureNotification
 class LocalStore {
     static let shared = LocalStore()
     
+    //MARK: Keychain:
+    @KeychainValue(.phoneNumber, defaultValue: nil)
+    var phoneNumber: PhoneNumber?
+    
+    func clearPrivateDataOnFirstLaunch(){
+        guard isFirstAppLaunch else { return }
+        clearPrivateData()
+    }
+    
+    func clearPrivateData(){
+        KeychainGlobalKey.allCases.forEach{
+            KeychainService.removeData(key: $0.stringValue)
+        }
+    }
+    
+    //MARK: User Defaults:
+    
     @UserDefault(.lastDownloadedBatchIndex, defaultValue: 0)
     var lastDownloadedBatchIndex: Int
     
@@ -28,8 +45,9 @@ class LocalStore {
     @UserDefault(.hasSeenIntro, defaultValue: false)
     var hasSeenIntro: Bool
     
-    @UserDefault(.phoneNumber, defaultValue: nil)
-    var phoneNumber: PhoneNumber?
+    var isFirstAppLaunch: Bool {
+        return !hasSeenIntro
+    }
     
     @UserDefault(.exposureStateReminderEnabled, defaultValue: false)
     var exposureStateReminderEnabled: Bool

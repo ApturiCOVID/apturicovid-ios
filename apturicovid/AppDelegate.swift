@@ -13,6 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        LocalStore.shared.clearPrivateDataOnFirstLaunch()
+        
         window?.tintColor = Colors.globalTintColor
         
         Reachability.shared?.begin()

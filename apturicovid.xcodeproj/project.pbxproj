@@ -201,6 +201,8 @@
 		BAD13BED24795E0100354123 /* ExposureConfigurationInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD13BEB24795E0100354123 /* ExposureConfigurationInfoVC.swift */; };
 		BAD13BF1247AEF0900354123 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BAD13BF0247AEF0900354123 /* Settings.bundle */; };
 		BAD13BF2247AEF0900354123 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BAD13BF0247AEF0900354123 /* Settings.bundle */; };
+		BAD13BFF247BF91E00354123 /* Trustkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD13BFD247BF91E00354123 /* Trustkit.swift */; };
+		BAD13C00247C01B200354123 /* Trustkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD13BFD247BF91E00354123 /* Trustkit.swift */; };
 		BAD4221B2473B3820047E85D /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD422192473B37F0047E85D /* Stats.swift */; };
 		BAD4221C2473B3820047E85D /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD422192473B37F0047E85D /* Stats.swift */; };
 		BAD4221D2473E9460047E85D /* UISwitchEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602AE9B52473E152008E42F3 /* UISwitchEx.swift */; };
@@ -332,6 +334,7 @@
 		BAD13BE824795C3400354123 /* DebugActionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugActionsVC.swift; sourceTree = "<group>"; };
 		BAD13BEB24795E0100354123 /* ExposureConfigurationInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureConfigurationInfoVC.swift; sourceTree = "<group>"; };
 		BAD13BF0247AEF0900354123 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		BAD13BFD247BF91E00354123 /* Trustkit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trustkit.swift; sourceTree = "<group>"; };
 		BAD422192473B37F0047E85D /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		BAD42221247401D10047E85D /* RestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
 		BAD422232474023F0047E85D /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
@@ -612,6 +615,7 @@
 		BAD422202474017D0047E85D /* api */ = {
 			isa = PBXGroup;
 			children = (
+				BAD13BFD247BF91E00354123 /* Trustkit.swift */,
 				BAD42221247401D10047E85D /* RestClient.swift */,
 				BAD422232474023F0047E85D /* ApiClient.swift */,
 				BA50D3562469E84E0091DF0E /* ExposuresClient.swift */,
@@ -973,6 +977,7 @@
 				BA366CC42465AC3D00A35CA8 /* ViewController.swift in Sources */,
 				BAAED844246D42DA004C77A6 /* QuestionView.swift in Sources */,
 				60DC151D247BBE4E00FAD185 /* DesignableSwitch.swift in Sources */,
+				BAD13C00247C01B200354123 /* Trustkit.swift in Sources */,
 				60DC15172477F76D00FAD185 /* ExposureNotificationToggleProvider.swift in Sources */,
 				BA19B89A24715F9F003C5025 /* Data.swift in Sources */,
 				BAFA8315246AD48F00E121B4 /* LocalStore.swift in Sources */,
@@ -1069,6 +1074,7 @@
 				BA380054247308A100577DB2 /* env-staging.swift in Sources */,
 				BA3800132473072700577DB2 /* Data.swift in Sources */,
 				60DC151E247BBE4E00FAD185 /* DesignableSwitch.swift in Sources */,
+				BAD13BFF247BF91E00354123 /* Trustkit.swift in Sources */,
 				60DC15182477F76D00FAD185 /* ExposureNotificationToggleProvider.swift in Sources */,
 				BA3800142473072700577DB2 /* LocalStore.swift in Sources */,
 				BA8CD87B2475477C00B068A5 /* ExposureConfiguration.swift in Sources */,

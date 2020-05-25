@@ -4,6 +4,7 @@ import CocoaLumberjack
 import ExposureNotification
 import BackgroundTasks
 import RxSwift
+import TrustKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -43,6 +44,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         self.scheduleBackgroundTaskIfNeeded()
+        
+        TrustKit.initSharedInstance(withConfiguration: trustKitConfig)
+        
         return true
     }
     

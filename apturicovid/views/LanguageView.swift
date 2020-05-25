@@ -3,7 +3,7 @@ import UIKit
 final class LanguageView: UIView {
     
     @IBOutlet weak var languageTextView: UILabel!
-    @IBOutlet weak var highlightIndicator: UIImageView!
+    @IBOutlet weak var highlightIndicator: RoundedView!
     
     private var onSelectedListener: ((Bool) -> Void)?
     

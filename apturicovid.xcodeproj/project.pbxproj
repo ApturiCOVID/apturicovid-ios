@@ -19,6 +19,10 @@
 		606715C32475007600B7D298 /* StatsCollectionViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606715C12475007600B7D298 /* StatsCollectionViewCells.swift */; };
 		60701AFF246D422000BFA1F4 /* LinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60701AFE246D422000BFA1F4 /* LinkLabel.swift */; };
 		60701B01246D46F600BFA1F4 /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60701B00246D46F600BFA1F4 /* NSMutableAttributedString.swift */; };
+		607C678D247BF92900D5DADC /* UIEdgeInsetsEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607C678C247BF92900D5DADC /* UIEdgeInsetsEx.swift */; };
+		607C678E247BF92900D5DADC /* UIEdgeInsetsEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607C678C247BF92900D5DADC /* UIEdgeInsetsEx.swift */; };
+		607C6790247BF96700D5DADC /* CGRectEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607C678F247BF96700D5DADC /* CGRectEx.swift */; };
+		607C6791247BF96700D5DADC /* CGRectEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607C678F247BF96700D5DADC /* CGRectEx.swift */; };
 		60815F472476A9EC00580DCA /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606715BF2474858100B7D298 /* RoundedView.swift */; };
 		60815F4924771C2B00580DCA /* VibrantWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60815F4824771C2B00580DCA /* VibrantWarningView.swift */; };
 		60815F4A24771C2B00580DCA /* VibrantWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60815F4824771C2B00580DCA /* VibrantWarningView.swift */; };
@@ -35,6 +39,8 @@
 		60DC15182477F76D00FAD185 /* ExposureNotificationToggleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DC15162477F76C00FAD185 /* ExposureNotificationToggleProvider.swift */; };
 		60DC151A2477FD8300FAD185 /* PhoneVerificationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DC15192477FD8300FAD185 /* PhoneVerificationProvider.swift */; };
 		60DC151B2477FD8300FAD185 /* PhoneVerificationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DC15192477FD8300FAD185 /* PhoneVerificationProvider.swift */; };
+		60DC151D247BBE4E00FAD185 /* DesignableSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DC151C247BBE4E00FAD185 /* DesignableSwitch.swift */; };
+		60DC151E247BBE4E00FAD185 /* DesignableSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DC151C247BBE4E00FAD185 /* DesignableSwitch.swift */; };
 		752479BE2471B23800F9BCCB /* UrlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752479BD2471B23800F9BCCB /* UrlRequest.swift */; };
 		7528B0FB246C016D007D0260 /* Translations.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7528B0FD246C016D007D0260 /* Translations.strings */; };
 		7528B100246C02BC007D0260 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528B0FF246C02BC007D0260 /* String.swift */; };
@@ -234,6 +240,8 @@
 		606715C12475007600B7D298 /* StatsCollectionViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCollectionViewCells.swift; sourceTree = "<group>"; };
 		60701AFE246D422000BFA1F4 /* LinkLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkLabel.swift; sourceTree = "<group>"; };
 		60701B00246D46F600BFA1F4 /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
+		607C678C247BF92900D5DADC /* UIEdgeInsetsEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsEx.swift; sourceTree = "<group>"; };
+		607C678F247BF96700D5DADC /* CGRectEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRectEx.swift; sourceTree = "<group>"; };
 		60815F4824771C2B00580DCA /* VibrantWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibrantWarningView.swift; sourceTree = "<group>"; };
 		60A3349A246D0C16007BE791 /* NotificationNameEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameEx.swift; sourceTree = "<group>"; };
 		60A3349E246D1CB2007BE791 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Translations.strings; sourceTree = "<group>"; };
@@ -245,6 +253,7 @@
 		60A4D0DA24765B9D00D13D75 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		60DC15162477F76C00FAD185 /* ExposureNotificationToggleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureNotificationToggleProvider.swift; sourceTree = "<group>"; };
 		60DC15192477FD8300FAD185 /* PhoneVerificationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationProvider.swift; sourceTree = "<group>"; };
+		60DC151C247BBE4E00FAD185 /* DesignableSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableSwitch.swift; sourceTree = "<group>"; };
 		752479BD2471B23800F9BCCB /* UrlRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlRequest.swift; sourceTree = "<group>"; };
 		7528B0FC246C016D007D0260 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Translations.strings; sourceTree = "<group>"; };
 		7528B0FE246C016E007D0260 /* lv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = lv; path = lv.lproj/Translations.strings; sourceTree = "<group>"; };
@@ -510,9 +519,11 @@
 				7528B103246C1338007D0260 /* UIColor.swift */,
 				60701B00246D46F600BFA1F4 /* NSMutableAttributedString.swift */,
 				603DC22324715A3C00AD6217 /* UIDeviceEx.swift */,
+				607C678C247BF92900D5DADC /* UIEdgeInsetsEx.swift */,
 				602AE9B52473E152008E42F3 /* UISwitchEx.swift */,
 				60A3349A246D0C16007BE791 /* NotificationNameEx.swift */,
 				603DC220247130A700AD6217 /* CGPointEx.swift */,
+				607C678F247BF96700D5DADC /* CGRectEx.swift */,
 				BA366CDD2465F98F00A35CA8 /* View.swift */,
 				BA19B89924715F9F003C5025 /* Data.swift */,
 				752479BD2471B23800F9BCCB /* UrlRequest.swift */,
@@ -558,6 +569,7 @@
 			isa = PBXGroup;
 			children = (
 				60A334A1246D2116007BE791 /* UITextField2.swift */,
+				60DC151C247BBE4E00FAD185 /* DesignableSwitch.swift */,
 				BABEEC262468718C009D8307 /* CheckboxView.swift */,
 				60815F4824771C2B00580DCA /* VibrantWarningView.swift */,
 				602C183E246C745900903458 /* RoundedButton.swift */,
@@ -941,6 +953,7 @@
 				60A334A2246D2116007BE791 /* UITextField2.swift in Sources */,
 				BACDE3B5246DBC180075B20E /* CodeEntryVC.swift in Sources */,
 				606715C02474858100B7D298 /* RoundedView.swift in Sources */,
+				607C678D247BF92900D5DADC /* UIEdgeInsetsEx.swift in Sources */,
 				BAD13BE924795C3400354123 /* DebugActionsVC.swift in Sources */,
 				BA38FFE32471B3E300577DB2 /* ExposureWrapper.swift in Sources */,
 				BADFAD082476DEB4006F61E7 /* MainTabController.swift in Sources */,
@@ -950,6 +963,7 @@
 				BACDE3BD246E72DE0075B20E /* UploadKeyResponse.swift in Sources */,
 				BA366CC42465AC3D00A35CA8 /* ViewController.swift in Sources */,
 				BAAED844246D42DA004C77A6 /* QuestionView.swift in Sources */,
+				60DC151D247BBE4E00FAD185 /* DesignableSwitch.swift in Sources */,
 				60DC15172477F76D00FAD185 /* ExposureNotificationToggleProvider.swift in Sources */,
 				BA19B89A24715F9F003C5025 /* Data.swift in Sources */,
 				BAFA8315246AD48F00E121B4 /* LocalStore.swift in Sources */,
@@ -972,6 +986,7 @@
 				BAFA8313246AD42D00E121B4 /* UserDefault.swift in Sources */,
 				BA366CD82465F57200A35CA8 /* FAQ.swift in Sources */,
 				BA38FFE52471BA5900577DB2 /* ExposureUploadRequest.swift in Sources */,
+				607C6790247BF96700D5DADC /* CGRectEx.swift in Sources */,
 				BACDE3C1246EA4400075B20E /* NotificationsScheduler.swift in Sources */,
 				BABEEC2D246876C0009D8307 /* WelcomeVC.swift in Sources */,
 				602C183D246C740C00903458 /* Language.swift in Sources */,
@@ -1032,6 +1047,7 @@
 				BA38000B2473072700577DB2 /* CodeEntryVC.swift in Sources */,
 				BA38000C2473072700577DB2 /* ExposureWrapper.swift in Sources */,
 				BA38000D2473072700577DB2 /* LinkLabel.swift in Sources */,
+				607C678E247BF92900D5DADC /* UIEdgeInsetsEx.swift in Sources */,
 				BAD13BEA24795C3400354123 /* DebugActionsVC.swift in Sources */,
 				BA38000E2473072700577DB2 /* DiagnosisKey.swift in Sources */,
 				BADFAD092476DEB4006F61E7 /* MainTabController.swift in Sources */,
@@ -1041,6 +1057,7 @@
 				BA3800122473072700577DB2 /* QuestionView.swift in Sources */,
 				BA380054247308A100577DB2 /* env-staging.swift in Sources */,
 				BA3800132473072700577DB2 /* Data.swift in Sources */,
+				60DC151E247BBE4E00FAD185 /* DesignableSwitch.swift in Sources */,
 				60DC15182477F76D00FAD185 /* ExposureNotificationToggleProvider.swift in Sources */,
 				BA3800142473072700577DB2 /* LocalStore.swift in Sources */,
 				BA8CD87B2475477C00B068A5 /* ExposureConfiguration.swift in Sources */,
@@ -1063,6 +1080,7 @@
 				BA3800212473072700577DB2 /* ExposureUploadRequest.swift in Sources */,
 				606715C32475007600B7D298 /* StatsCollectionViewCells.swift in Sources */,
 				BA3800222473072700577DB2 /* NotificationsScheduler.swift in Sources */,
+				607C6791247BF96700D5DADC /* CGRectEx.swift in Sources */,
 				BAD422252474023F0047E85D /* ApiClient.swift in Sources */,
 				BA3800232473072700577DB2 /* WelcomeVC.swift in Sources */,
 				BA3800242473072700577DB2 /* Language.swift in Sources */,

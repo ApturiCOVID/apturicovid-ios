@@ -14,7 +14,7 @@ import Anchorage
 class HomeVC: BaseViewController {
     
     @IBOutlet weak var bottomBackgroundView: HomeBottomView!
-    @IBOutlet weak var exposureSwitch: UISwitch!
+    @IBOutlet weak var exposureSwitch: DesignableSwitch!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var statsStackView: UIStackView!
     @IBOutlet weak var exposureIcon: UIImageView!
@@ -54,12 +54,13 @@ class HomeVC: BaseViewController {
         presentShareController()
     }
     
-    @IBAction func onSwitchTap(_ sender: UISwitch) {
+    @IBAction func onSwitchTap(_ sender: DesignableSwitch) {
+        
         if !sender.isOn {
             showBasicPrompt(with: "exposure_off_prompt".translated, action: {
                 self.setExposureTracking(enabled: false)
             }, cancelAction: {
-                self.exposureSwitch.setOn(true, animated: true)
+                sender.setOn(true, animated: true)
             }, confirmTitle: "yes".translated, cancelTitle: "cancel".translated)
         } else {
             setExposureTracking(enabled: sender.isOn)
@@ -102,7 +103,7 @@ class HomeVC: BaseViewController {
         }
         
         let exposureEnabled = ExposureManager.shared.enabled
-        exposureSwitch.isOn = exposureEnabled
+        exposureSwitch.setOn(exposureEnabled, animated: false)
         tracingStateLabel.text = exposureEnabled ? "currently_active".translated : "currently_inactive".translated
         tracingStateLabel.textColor = exposureEnabled ? Colors.darkGreen : Colors.disabled
         setExposureImage(in: animated ? 0.3 : 0)
@@ -135,9 +136,7 @@ class HomeVC: BaseViewController {
         setupAnchorConstraints()
         setExposureNotification(visible: false)
 
-        exposureSwitch.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-        exposureSwitch.setOffColor(UIColor(named: "offColor")!)
-        exposureSwitch.isOn = ExposureManager.shared.enabled
+        exposureSwitch.setOn(ExposureManager.shared.enabled, animated: false)
         
         statCells.forEach{ statsStackView.addArrangedSubview($0) }
         

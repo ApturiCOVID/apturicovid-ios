@@ -204,24 +204,31 @@ fileprivate extension Stats {
     
     var singleValueFields: [SingleValueField<Double>] {
         [
-            SingleValueField(title: "proportion".translated,
-                             field: ValueField(valueTitle: "proportion_description".translated, value: infectedTestsProportion))
+            SingleValueField(title: "proportion".translated.capitalized,
+                             field: ValueField(valueTitle: "proportion_description".translated.capitalized,
+                                               value: infectedTestsProportion))
         ]
     }
 
     var doubleValueFields: [DoubleValueField<Int>] {
         [
-            DoubleValueField(title: "tested".translated,
-                             field1: ValueField(valueTitle: "together".translated, value: totalTestsCount),
-                             field2: ValueField(valueTitle: "yesterday".translated, value: yesterdaysTestsCount)),
+            DoubleValueField(title: "tested".translated.capitalized,
+                             field1: ValueField(valueTitle: "together".translated.capitalized,
+                                                value: totalTestsCount),
+                             field2: ValueField(valueTitle: "yesterday".translated.capitalized,
+                                                value: yesterdaysTestsCount)),
             
-            DoubleValueField(title: "new_cases".translated,
-                             field1: ValueField(valueTitle: "together".translated, value: totalInfectedCount),
-                             field2: ValueField(valueTitle: "yesterday".translated, value: yesterdaysInfectedCount)),
+            DoubleValueField(title: "new_cases".translated.capitalized,
+                             field1: ValueField(valueTitle: "together".translated.capitalized,
+                                                value: totalInfectedCount),
+                             field2: ValueField(valueTitle: "yesterday".translated.capitalized,
+                                                value: yesterdaysInfectedCount)),
             
-            DoubleValueField(title: "deceased".translated,
-                             field1: ValueField(valueTitle: "together".translated, value: totalDeathCount),
-                             field2: ValueField(valueTitle: "yesterday".translated, value: yesterdayDeathCount))
+            DoubleValueField(title: "deceased".translated.uppercased(),
+                             field1: ValueField(valueTitle: "together".translated.capitalized,
+                                                value: totalDeathCount),
+                             field2: ValueField(valueTitle: "yesterday".translated.capitalized,
+                                                value: yesterdayDeathCount))
         ]
     }
 }

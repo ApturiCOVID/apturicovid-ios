@@ -12,14 +12,14 @@ import ExposureNotification
 
 protocol ContactDetectionToggleProvider : class {
     var disposeBag: DisposeBag {get}
-    func toggleExposure(enabled: Bool)
+    func setExposureTracking(enabled: Bool)
     func contactDetectionProvider(exposureDidBecomeEnabled enabled: Bool)
     func contactDetectionProvider(didReceiveError error: Error)
 }
 
 extension ContactDetectionToggleProvider {
     
-    func toggleExposure(enabled: Bool) {
+    func setExposureTracking(enabled: Bool) {
         ExposureManager.shared.toggleExposureNotifications(enabled: enabled)
             .subscribe(onCompleted: { [weak self] in
                 self?.contactDetectionProvider(exposureDidBecomeEnabled: ExposureManager.shared.enabled )

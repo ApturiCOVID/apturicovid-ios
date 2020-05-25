@@ -36,5 +36,15 @@ extension CGPoint {
     static func -= (lhs:inout CGPoint, rhs:CGPoint) {
         lhs = lhs + rhs
     }
+    
+    func distance(to: CGPoint) -> CGFloat {
+        
+        let deltaX = self.x - to.x
+        let deltaY = self.y - to.y
+        
+        let touchHypo = sqrt( pow(abs(deltaX), 2) + pow(abs(deltaY), 2))
+        
+        return touchHypo
+    }
 }
 

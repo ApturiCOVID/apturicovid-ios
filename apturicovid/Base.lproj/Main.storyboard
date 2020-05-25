@@ -74,29 +74,60 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Šobrīd darbojās" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Qr5-2d-GVo">
-                                                <rect key="frame" x="136.66666666666666" y="51" width="140.99999999999997" height="23"/>
+                                                <rect key="frame" x="136.66666666666666" y="47" width="140.99999999999997" height="23"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nyo-WV-M78">
-                                                <rect key="frame" x="182.66666666666666" y="94" width="51" height="31"/>
-                                                <color key="onTintColor" name="homeBottomViewColor"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e7L-VU-v3S" customClass="DesignableSwitch" customModule="AC_Demo" customModuleProvider="target">
+                                                <rect key="frame" x="174.66666666666666" y="88.666666666666629" width="65" height="36.333333333333343"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="65" id="FRG-Sv-qyx"/>
+                                                    <constraint firstAttribute="width" secondItem="e7L-VU-v3S" secondAttribute="height" multiplier="1.8:1" id="TpC-kF-NNV"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOn" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="offTintColor">
+                                                        <color key="value" name="offColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="onTintColor">
+                                                        <color key="value" name="homeBottomViewColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="thumbShadowColor">
+                                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="thumbShadowOffset">
+                                                        <size key="value" width="0.0" height="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="thumbShaddowOppacity">
+                                                        <real key="value" value="0.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="thumbShaddowRadius">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="thumbSize">
+                                                        <size key="value" width="40" height="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="onSwitchTap:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZaW-zM-YUe"/>
+                                                    <action selector="onSwitchTap:" destination="BYZ-38-t0r" eventType="valueChanged" id="B8G-6l-U1U"/>
                                                 </connections>
-                                            </switch>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="nyo-WV-M78" secondAttribute="bottom" id="9FB-LL-OAt"/>
                                             <constraint firstItem="5UA-a0-5b6" firstAttribute="top" secondItem="wtf-bd-JBm" secondAttribute="top" id="Kj6-ic-8Ki"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5UA-a0-5b6" secondAttribute="trailing" constant="8" id="KnW-xo-Lsi"/>
                                             <constraint firstItem="5UA-a0-5b6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wtf-bd-JBm" secondAttribute="leading" constant="8" id="Oht-dd-6ra"/>
-                                            <constraint firstItem="nyo-WV-M78" firstAttribute="centerX" secondItem="wtf-bd-JBm" secondAttribute="centerX" id="SBG-Qk-MmJ"/>
                                             <constraint firstAttribute="height" constant="125" id="UAK-Xl-ntt"/>
+                                            <constraint firstAttribute="bottom" secondItem="e7L-VU-v3S" secondAttribute="bottom" id="ZO5-dO-Ktt"/>
                                             <constraint firstItem="Qr5-2d-GVo" firstAttribute="centerX" secondItem="wtf-bd-JBm" secondAttribute="centerX" id="ZkE-tS-hpj"/>
-                                            <constraint firstItem="Qr5-2d-GVo" firstAttribute="centerY" secondItem="wtf-bd-JBm" secondAttribute="centerY" id="hZz-aa-Owr"/>
+                                            <constraint firstItem="e7L-VU-v3S" firstAttribute="centerX" secondItem="wtf-bd-JBm" secondAttribute="centerX" id="gBK-RZ-yFI"/>
+                                            <constraint firstItem="Qr5-2d-GVo" firstAttribute="centerY" secondItem="wtf-bd-JBm" secondAttribute="centerY" constant="-4" id="hZz-aa-Owr"/>
                                             <constraint firstItem="5UA-a0-5b6" firstAttribute="centerX" secondItem="wtf-bd-JBm" secondAttribute="centerX" id="o7J-MT-8JO"/>
                                         </constraints>
                                     </view>
@@ -246,7 +277,7 @@
                         <outlet property="exposureDescriptionLabel" destination="NAl-FB-D6Z" id="UeM-bY-q3w"/>
                         <outlet property="exposureIcon" destination="Ck9-8q-2TR" id="0dz-a6-SsI"/>
                         <outlet property="exposureNotificationView" destination="dfs-tu-Zua" id="G1G-fD-wGZ"/>
-                        <outlet property="exposureSwitch" destination="nyo-WV-M78" id="b2b-2q-dPL"/>
+                        <outlet property="exposureSwitch" destination="e7L-VU-v3S" id="ryC-bF-WFh"/>
                         <outlet property="exposureViewButton" destination="ufh-6M-cKo" id="Qhx-s1-4I5"/>
                         <outlet property="shareButton" destination="v6W-7p-lgY" id="xqY-r3-DSX"/>
                         <outlet property="statsStackView" destination="2hr-vA-xw9" id="kSE-iw-L35"/>
@@ -1665,6 +1696,9 @@
         </namedColor>
         <namedColor name="linkColor">
             <color red="0.27058823529411763" green="0.54509803921568623" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="offColor">
+            <color red="0.94117647058823528" green="0.36078431372549019" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="primaryButton">
             <color red="0.0" green="0.38039215686274508" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

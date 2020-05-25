@@ -34,7 +34,7 @@ class ExposureSetupVC: BaseViewController {
     let phoneView = PhoneSetupView().fromNib() as! PhoneSetupView
     
     @IBAction func onSwitchChange(_ sender: UISwitch) {
-        toggleExposure(enabled: sender.isOn)
+        setExposureTracking(enabled: sender.isOn)
     }
     
     @IBAction func onBackTap(_ sender: Any) {

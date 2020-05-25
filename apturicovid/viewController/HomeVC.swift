@@ -26,11 +26,13 @@ class HomeVC: BaseViewController {
     @IBOutlet weak var statsTitleLabel: UILabel!
     @IBOutlet weak var exposureViewButton: UIButton!
     
+    fileprivate let layoutConfig = HomeLayoutConfig.defaultConfig
+    var bottomViewHeightAnchor: NSLayoutConstraint!
+    var exposureNotificationTopAnchor: NSLayoutConstraint!
+    
     private let statTested   = StatCell.create(item: "tested".translated)
     private let statNewCases = StatCell.create(item: "new_cases".translated)
     private let statDeceased = StatCell.create(item: "deceased".translated)
-    
-    var exposureNotificationConstraint: NSLayoutConstraint!
     
     var stats: Stats? {
         didSet {
@@ -44,7 +46,7 @@ class HomeVC: BaseViewController {
     
     private var exposureNotificationVisible = false {
         didSet {
-            setExposureNotification(visible: exposureNotificationVisible)
+            setExposureNotification(visible: exposureNotificationVisible, animated: true)
         }
     }
     
@@ -55,12 +57,12 @@ class HomeVC: BaseViewController {
     @IBAction func onSwitchTap(_ sender: UISwitch) {
         if !sender.isOn {
             showBasicPrompt(with: "exposure_off_prompt".translated, action: {
-                self.toggleExposure(enabled: false)
+                self.setExposureTracking(enabled: false)
             }, cancelAction: {
-                self.exposureSwitch.isOn = true
+                self.exposureSwitch.setOn(true, animated: true)
             }, confirmTitle: "yes".translated, cancelTitle: "cancel".translated)
         } else {
-            toggleExposure(enabled: sender.isOn)
+            setExposureTracking(enabled: sender.isOn)
         }
     }
     
@@ -121,15 +123,18 @@ class HomeVC: BaseViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        super.viewDidAppear(animated)
         showConnectivityWarningIfRequired()
-
         loadData()
+        checkExposureStatus()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupAnchorConstraints()
+        setExposureNotification(visible: false)
+
         exposureSwitch.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
         exposureSwitch.setOffColor(UIColor(named: "offColor")!)
         exposureSwitch.isOn = ExposureManager.shared.enabled
@@ -169,8 +174,8 @@ class HomeVC: BaseViewController {
             .observeOn(MainScheduler.instance)
             .retry()
             .subscribe(onNext: { [weak self] (_) in
-                self?.exposureNotificationVisible = LocalStore.shared.exposures.count > 0
                 self?.loadData()
+                self?.checkExposureStatus()
             }, onError: justPrintError)
             .disposed(by: disposeBag)
         
@@ -183,10 +188,16 @@ class HomeVC: BaseViewController {
             })
             .disposed(by: disposeBag)
         
-        exposureNotificationConstraint = exposureNotificationView.topAnchor == bottomBackgroundView.topAnchor
-        setExposureNotification(visible: false)
     }
     
+    func checkExposureStatus(){
+        exposureNotificationVisible = LocalStore.shared.exposures.count > 0
+    }
+    
+    func setupAnchorConstraints(){
+        bottomViewHeightAnchor = bottomBackgroundView.heightAnchor == layoutConfig.minimizedBottomBackgroundHeight
+        exposureNotificationTopAnchor = exposureNotificationView.topAnchor == bottomBackgroundView.topAnchor
+    }
     
     func loadData(){
         stats = nil
@@ -200,12 +211,6 @@ class HomeVC: BaseViewController {
         }, onError: justPrintError)
         .disposed(by: disposeBag)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        exposureNotificationVisible = LocalStore.shared.exposures.count > 0
-    }
-    
     
     override func translate() {
         contactTracingTitle.text = "contact_tracing".translated
@@ -224,31 +229,38 @@ class HomeVC: BaseViewController {
         setExposureStateVisual()
     }
     
-    private func setExposureNotification(visible: Bool) {
-
-        let thisIsSmallScreen = UIDevice.smallScreenSizeModels.contains(UIDevice.current.type)
-
-        if thisIsSmallScreen && visible {
-            /// Adjust bottomBackgroundView height to fit content
-            let bestBackgroundHeight: CGFloat = UIDevice.current.type == .iPhoneSE ? 0 : 150
-            bottomBackgroundView.heightAnchor
-                .constraint(equalToConstant: bestBackgroundHeight)
-                .isActive = true
-
-            /// Hide statsView for SE screen otherwise exposureIcon will not become too small
-            statsView.isHidden = UIDevice.current.type == .iPhoneSE
-        } else {
-
-            /// For large screens display both stats and exposure notification
-            bottomBackgroundView.heightAnchor
-                .constraint(equalToConstant: 180)
-                .isActive = true
-
-            statsView.isHidden = false
-        }
+    private func setExposureNotification(visible: Bool, animated: Bool = false) {
         
         /// Mover exposure notification over bottomBackgroundView
-        exposureNotificationConstraint.constant = visible ? -80 : bottomBackgroundView.curveOffset
+        let offset = layoutConfig.exporureNotificationYOffset
+        exposureNotificationTopAnchor.constant = visible ? -offset : offset
+        
+        /// Adjust bottomBackgroundView height to fit content
+        let minH = layoutConfig.minimizedBottomBackgroundHeight
+        let maxH = layoutConfig.maximizedBottomBackgroundHeight
+        bottomViewHeightAnchor.constant = visible ? minH : maxH
+        
+        let animationBlock: () -> Void = { [weak self] in
+            guard let `self` = self else { return }
+            
+            let curveInsets = UIEdgeInsets(top: self.bottomBackgroundView.curveOffset,
+                                                left: 0,
+                                                bottom: 0,
+                                                right: 0)
+            self.view.layoutIfNeeded()
+            
+            let backgroundHeight = self.bottomBackgroundView.bounds.inset(by: curveInsets).height
+            let statsViewHeight = self.statsView.bounds.height
+            
+            self.statsView.alpha = backgroundHeight < statsViewHeight ? 0 : 1
+        }
+        
+        if animated {
+            view.layer.removeAllAnimations()
+            UIView.animate(withDuration: 0.3, animations: animationBlock)
+        } else {
+            animationBlock()
+        }
 
     }
 }
@@ -256,13 +268,38 @@ class HomeVC: BaseViewController {
 extension HomeVC: ContactDetectionToggleProvider {
     
     func contactDetectionProvider(exposureDidBecomeEnabled enabled: Bool) {
-        exposureSwitch.isOn = enabled
+        exposureSwitch.setOn(enabled, animated: true)
         setExposureStateVisual(animated: true)
     }
     
     func contactDetectionProvider(didReceiveError error: Error) {
         justPrintError(error)
         self.setExposureStateVisual(animated: false)
+    }
+    
+}
+
+fileprivate extension HomeVC {
+    
+    struct HomeLayoutConfig{
+        var maximizedBottomBackgroundHeight: CGFloat
+        var minimizedBottomBackgroundHeight: CGFloat
+        var exporureNotificationYOffset: CGFloat
+        
+        static let defaultConfig: HomeLayoutConfig = {
+            
+            let maxH: CGFloat = 180
+            let minH: CGFloat = {
+                guard UIDevice.smallScreenSizeModels.contains(UIDevice.current.type) else { return maxH }
+                return UIDevice.current.type == .iPhoneSE ? 0 : 150
+            }()
+            
+            return HomeLayoutConfig(
+                maximizedBottomBackgroundHeight: maxH,
+                minimizedBottomBackgroundHeight: minH,
+                exporureNotificationYOffset: 80)
+            
+        }()
     }
     
 }

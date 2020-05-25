@@ -30,7 +30,7 @@ class HomeVC: BaseViewController {
     private let statNewCases = StatCell.create(item: "new_cases".translated)
     private let statDeceased = StatCell.create(item: "deceased".translated)
     
-    var exposureNotificationConstraint: NSLayoutConstraint!
+    var exposureNotificationTopConstraint: NSLayoutConstraint!
     
     var stats: Stats? {
         didSet {
@@ -44,7 +44,7 @@ class HomeVC: BaseViewController {
     
     private var exposureNotificationVisible = false {
         didSet {
-            setExposureNotification(visible: exposureNotificationVisible)
+            setExposureNotification(visible: exposureNotificationVisible, animated: true)
         }
     }
     
@@ -130,6 +130,9 @@ class HomeVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        exposureNotificationTopConstraint = exposureNotificationView.topAnchor == bottomBackgroundView.topAnchor - bottomBackgroundView.curveOffset
+        setExposureNotification(visible: false)
+
         exposureSwitch.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
         exposureSwitch.setOffColor(UIColor(named: "offColor")!)
         exposureSwitch.isOn = ExposureManager.shared.enabled
@@ -183,10 +186,14 @@ class HomeVC: BaseViewController {
             })
             .disposed(by: disposeBag)
         
-        exposureNotificationConstraint = exposureNotificationView.topAnchor == bottomBackgroundView.topAnchor
-        setExposureNotification(visible: false)
+        testAnimation()
     }
     
+    func testAnimation(){
+        Timer.scheduledTimer(withTimeInterval: 4 , repeats: true){ [weak self] _ in
+            self?.exposureNotificationVisible.toggle()
+        }.fire()
+    }
     
     func loadData(){
         stats = nil
@@ -224,31 +231,35 @@ class HomeVC: BaseViewController {
         setExposureStateVisual()
     }
     
-    private func setExposureNotification(visible: Bool) {
+    private func setExposureNotification(visible: Bool, animated: Bool = false) {
 
         let thisIsSmallScreen = UIDevice.smallScreenSizeModels.contains(UIDevice.current.type)
+        
+        let bestBackgroundHeight: CGFloat = thisIsSmallScreen ? UIDevice.current.type == .iPhoneSE ? 0 : 150 : 180
 
         if thisIsSmallScreen && visible {
             /// Adjust bottomBackgroundView height to fit content
-            let bestBackgroundHeight: CGFloat = UIDevice.current.type == .iPhoneSE ? 0 : 150
+            
             bottomBackgroundView.heightAnchor
                 .constraint(equalToConstant: bestBackgroundHeight)
                 .isActive = true
 
-            /// Hide statsView for SE screen otherwise exposureIcon will not become too small
-            statsView.isHidden = UIDevice.current.type == .iPhoneSE
         } else {
 
             /// For large screens display both stats and exposure notification
             bottomBackgroundView.heightAnchor
                 .constraint(equalToConstant: 180)
                 .isActive = true
-
-            statsView.isHidden = false
         }
         
         /// Mover exposure notification over bottomBackgroundView
-        exposureNotificationConstraint.constant = visible ? -80 : bottomBackgroundView.curveOffset
+        exposureNotificationTopConstraint.constant = visible ? -80 : bottomBackgroundView.curveOffset
+        
+        UIView.animate(withDuration: animated ? 0.3 : 0) { [weak self] in
+            guard let `self` = self else { return }
+            self.statsView.alpha = bestBackgroundHeight < self.statsView.bounds.height && visible ? 0 : 1
+            self.view.layoutIfNeeded()
+        }
 
     }
 }

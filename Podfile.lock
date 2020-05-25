@@ -62,6 +62,7 @@ PODS:
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
   - SVProgressHUD (2.2.5)
+  - TrustKit (1.6.5)
 
 DEPENDENCIES:
   - Anchorage
@@ -73,6 +74,7 @@ DEPENDENCIES:
   - RxGesture (~> 3.0.1)
   - RxSwift (~> 5.1)
   - SVProgressHUD
+  - TrustKit
 
 SPEC REPOS:
   trunk:
@@ -97,6 +99,7 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - SVProgressHUD
+    - TrustKit
 
 SPEC CHECKSUMS:
   Anchorage: d7f02c4f9425b537053237aab11ae97e59b55f36
@@ -120,7 +123,8 @@ SPEC CHECKSUMS:
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  TrustKit: 073855e3adecd317417bda4ac9e9ac54a2e3b9f2
 
-PODFILE CHECKSUM: fffc55fb058954277b4885b0c2ff8c4f7a270144
+PODFILE CHECKSUM: c66d0b25c2e49a681363722bb16cca19cbe7b4c6
 
 COCOAPODS: 1.9.1

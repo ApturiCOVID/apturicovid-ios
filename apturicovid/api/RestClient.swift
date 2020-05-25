@@ -9,6 +9,7 @@ class RestClient {
                     observer.onError(NSError.make("Error creating url"))
                     return Disposables.create()
             }
+            let session = URLSession(configuration: URLSessionConfiguration.ephemeral, delegate: NSURLSessionPinningDelegate(), delegateQueue: nil)
             
             var request = URLRequest(url: url)
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -19,7 +20,7 @@ class RestClient {
                 print("Curl: \(request.curlString)")
             #endif
             
-            let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, urlResponse, error) in
+            let task = session.dataTask(with: request, completionHandler: { (data, urlResponse, error) in
                 
                 #if DEBUG
                     data.map {

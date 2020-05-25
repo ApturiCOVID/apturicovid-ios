@@ -140,7 +140,7 @@ class ExposureSetupVC: BaseViewController {
         contactTitle.text  = "contact_detection".translated
         contactDescription.text = "exposure_setup_description".translated
         activateSwitchTitle.text = "activate".translated
-        nextButton.setTitle("continue".translated, for: .normal)
+        nextButton.setTitle("next".translated, for: .normal)
         activateSwitchSubtitle.text = "exposure_switch_subtitle".translated
     }
 }

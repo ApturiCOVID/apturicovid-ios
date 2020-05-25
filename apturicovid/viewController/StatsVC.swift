@@ -213,19 +213,19 @@ fileprivate extension Stats {
     var doubleValueFields: [DoubleValueField<Int>] {
         [
             DoubleValueField(title: "tested".translated.capitalized,
-                             field1: ValueField(valueTitle: "together".translated.capitalized,
+                             field1: ValueField(valueTitle: "total".translated.capitalized,
                                                 value: totalTestsCount),
                              field2: ValueField(valueTitle: "yesterday".translated.capitalized,
                                                 value: yesterdaysTestsCount)),
             
             DoubleValueField(title: "new_cases".translated.capitalized,
-                             field1: ValueField(valueTitle: "together".translated.capitalized,
+                             field1: ValueField(valueTitle: "total".translated.capitalized,
                                                 value: totalInfectedCount),
                              field2: ValueField(valueTitle: "yesterday".translated.capitalized,
                                                 value: yesterdaysInfectedCount)),
             
-            DoubleValueField(title: "deceased".translated.uppercased(),
-                             field1: ValueField(valueTitle: "together".translated.capitalized,
+            DoubleValueField(title: "deceased".translated.capitalized,
+                             field1: ValueField(valueTitle: "total".translated.capitalized,
                                                 value: totalDeathCount),
                              field2: ValueField(valueTitle: "yesterday".translated.capitalized,
                                                 value: yesterdayDeathCount))

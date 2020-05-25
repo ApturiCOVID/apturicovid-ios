@@ -10,34 +10,77 @@ import UIKit
 @IBDesignable
 public class DesignableSwitch: UIControl {
     
-    //MARK: Touch Properties
-    fileprivate lazy var touchStartState = isOn
-    fileprivate var valueDidChangeDuringTouchEvent = false
-    fileprivate var touchEndState: Bool { isOn }
-    fileprivate var touchEventIsActive = false {
-        didSet { if touchEventIsActive { touchStartState = isOn } }
+    private var _thumbCornerRadius: CGFloat = 0.5 {
+        didSet { layoutSubviews() }
     }
-
-    // MARK: Public properties
-    public var animationDelay: Double = 0
-    public var animationSpriteWithDamping = CGFloat(0.7)
-    public var animationDuration: Double = 0.5
-    public var initialSpringVelocity = CGFloat(0.5)
     
-    public var animationOptions: UIView.AnimationOptions = [
+    private var _cornerRadius: CGFloat = 0.5 {
+        didSet { layoutSubviews() }
+    }
+    
+    var labelOff = UILabel()
+    var labelOn = UILabel()
+    
+    var areLabelsShown: Bool = false {
+        didSet { setupUI() }
+    }
+    var thumbView = DeisgnableThumbView(frame: .zero)
+    var onPoint = CGPoint.zero
+    var offPoint = CGPoint.zero
+    var isAnimating = false
+    
+    var animationDelay: Double = 0
+    var animationSpriteWithDamping = CGFloat(0.7)
+    var animationDuration: Double = 0.5
+    var initialSpringVelocity = CGFloat(0.5)
+    
+    var animationOptions: UIView.AnimationOptions = [
         .curveEaseOut,
         .beginFromCurrentState,
         .allowUserInteraction
     ]
     
-    @IBInspectable private (set) var isOn: Bool = true {
+    //MARK: Touch Properties
+    fileprivate lazy var touchStartValue = isOn
+    fileprivate var touchEndValue: Bool { isOn }
+    fileprivate var valueDidSwitchDuringCurrentTouchEvent = false
+    fileprivate var touchEventIsActive = false {
         didSet {
-            if oldValue != isOn {
-                valueDidChangeDuringTouchEvent = touchEventIsActive
+            if touchEventIsActive {
+                valueDidSwitchDuringCurrentTouchEvent = false
+                touchStartValue = isOn
             }
         }
     }
     
+    //MARK: On/Off switch
+    @IBInspectable var isOn: Bool {
+        get { _isOn }
+        set { setOn(newValue, animated: false) }
+    }
+    
+    private var _isOn: Bool = true {
+        didSet {
+            if oldValue != isOn {
+                valueDidSwitchDuringCurrentTouchEvent = true
+            }
+        }
+    }
+    
+    func setOn(_ on: Bool, animated: Bool) {
+        
+        guard _isOn != on else { return }
+        
+        if animated {
+            animateTransitionToState(isOn: on)
+        } else {
+            self._isOn = on
+            setupViewsOnAction()
+            completeAction()
+        }
+    }
+    
+    //MARK: Designables
     @IBInspectable public var padding: CGFloat = 1 {
         didSet { layoutSubviews() }
     }
@@ -54,10 +97,6 @@ public class DesignableSwitch: UIControl {
         get { _cornerRadius }
         set { _cornerRadius = max(0, min(0.5, newValue) ) } // 0..0.5
     }
-
-    private var _cornerRadius: CGFloat = 0.5 {
-        didSet { layoutSubviews() }
-    }
     
     //MARK: Thumb properties
     @IBInspectable public var thumbTintColor: UIColor = .white {
@@ -65,21 +104,15 @@ public class DesignableSwitch: UIControl {
     }
     
     @IBInspectable public var thumbCornerRadius: CGFloat {
-        get {
-            return _thumbCornerRadius
-        }
+        get { _thumbCornerRadius }
         set {
-            if newValue > 0.5 || newValue < 0.0 {
+            let alowedRange: ClosedRange<CGFloat> = 0...0.5
+            guard !(alowedRange ~= newValue) else {
                 _thumbCornerRadius = 0.5
-            } else {
-                _thumbCornerRadius = newValue
+                return
             }
+            _thumbCornerRadius = newValue
         }
-        
-    }
-    
-    private var _thumbCornerRadius: CGFloat = 0.5 {
-        didSet { layoutSubviews() }
     }
     
     @IBInspectable public var thumbSize: CGSize = CGSize.zero {
@@ -90,20 +123,6 @@ public class DesignableSwitch: UIControl {
         didSet {
             guard let image = thumbImage else { return }
             thumbView.thumbImageView.image = image
-        }
-    }
-    
-    public var onImage: UIImage? {
-        didSet {
-            onImageView.image = onImage
-            layoutSubviews()
-        }
-    }
-    
-    public var offImage: UIImage? {
-        didSet {
-            offImageView.image = offImage
-            layoutSubviews()
         }
     }
     
@@ -123,22 +142,8 @@ public class DesignableSwitch: UIControl {
         didSet { thumbView.layer.shadowOpacity = thumbShaddowOppacity }
     }
     
-    //MARK: Labels
-    public var labelOff = UILabel()
-    public var labelOn = UILabel()
     
-    public var areLabelsShown: Bool = false {
-        didSet { setupUI() }
-    }
-    
-    var thumbView = DeisgnableThumbView(frame: .zero)
-    
-    public var onImageView = UIImageView(frame: .zero)
-    public var offImageView = UIImageView(frame: .zero)
-    public var onPoint = CGPoint.zero
-    public var offPoint = CGPoint.zero
-    public var isAnimating = false
-    
+    //MARK: Init:
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupUI()
@@ -152,35 +157,43 @@ public class DesignableSwitch: UIControl {
 
 //MARK: TouchEvents:
 extension DesignableSwitch {
-   
-       override open func beginTracking(_ touch: UITouch,
-                                        with event: UIEvent?) -> Bool{
-           touchEventIsActive = true
-           setIsOn(from: touch)
-           return  shouldContinueTracking(for: touch)
-       }
-       
-       override open func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-           setIsOn(from: touch)
-           return shouldContinueTracking(for: touch)
-       }
-       
+    
+    func startTouchEvent(){
+        touchEventIsActive = true
+    }
+    
+    func finishTouchEvent(){
+        if touchStartValue != touchEndValue {
+            sendActions(for: .valueChanged)
+        }
+        touchEventIsActive = false
+    }
+    
+    override open func beginTracking(_ touch: UITouch,
+                                     with event: UIEvent?) -> Bool{
+        startTouchEvent()
+        calculateIsOn(from: touch)
+        return shouldContinueTracking(for: touch)
+    }
+    
+    override open func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        calculateIsOn(from: touch)
+        return shouldContinueTracking(for: touch)
+    }
+    
     override open func endTracking(_ touch: UITouch?, with event: UIEvent?) {
-        print("end tracking")
-        
-        if !valueDidChangeDuringTouchEvent {
-            setOn(!isOn, animated: true)
+ 
+        if !valueDidSwitchDuringCurrentTouchEvent { // Handle as tap event
+            setOnWithFeedback(!isOn)
         } else {
-            setIsOn(from: touch)
+            calculateIsOn(from: touch)
         }
         
-        touchEventIsActive = false
-        completeAction(withTouch: true)
-       
+        finishTouchEvent()
         super.endTracking(touch, with: event)
     }
     
-    private func setIsOn(from touch: UITouch?){
+    private func calculateIsOn(from touch: UITouch?){
         
         let sensetivityTreshhold = bounds.width / 2
         let sensetivityDeadzoneX: ClosedRange<CGFloat> = bounds.midX - sensetivityTreshhold/2 ... bounds.midX + sensetivityTreshhold/2
@@ -194,17 +207,17 @@ extension DesignableSwitch {
     }
     
     private func shouldContinueTracking(for touch: UITouch) -> Bool {
-        let shouldContinue = touch.location(in: self).distance(to: bounds.center) < (valueDidChangeDuringTouchEvent ? 300 : 150)
-        if !shouldContinue {
-            touchEventIsActive = false
-            completeAction(withTouch: true)
-        }
+        
+        guard !valueDidSwitchDuringCurrentTouchEvent else { return true }
+        let shouldContinue = touch.location(in: self).distance(to: bounds.center) < 200
+        if !shouldContinue { finishTouchEvent() }
         return shouldContinue
     }
 }
 
 // MARK: Private methods
 extension DesignableSwitch {
+    
     fileprivate func setupUI() {
         
         clear()
@@ -220,9 +233,7 @@ extension DesignableSwitch {
         
         backgroundColor = isOn ? onTintColor : offTintColor
         
-        addSubview(self.thumbView)
-        addSubview(self.onImageView)
-        addSubview(self.offImageView)
+        addSubview(thumbView)
         
         setupLabels()
     }
@@ -237,22 +248,13 @@ extension DesignableSwitch {
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
     }
     
-    func setOn(_ on: Bool, animated: Bool) {
-        
-        guard isOn != on else { return }
-        
-        if animated {
-            animate(isOn: on)
-        } else {
-            self.isOn = on
-            setupViewsOnAction()
-            completeAction()
-        }
+    func completeAction(){
+        isAnimating = false
     }
     
-    fileprivate func animate(isOn: Bool? = nil) {
+    fileprivate func animateTransitionToState(isOn: Bool? = nil) {
         
-        self.isOn = isOn ?? !self.isOn
+        self._isOn = isOn ?? !self._isOn
         
         isAnimating = true
         
@@ -267,29 +269,13 @@ extension DesignableSwitch {
                         self.setupViewsOnAction()
                         
         }, completion: { [weak self] _ in
-            self?.completeAction()
+            self?.isAnimating = false
         })
     }
     
     private func setupViewsOnAction() {
         thumbView.frame.origin.x = isOn ? onPoint.x : offPoint.x
         backgroundColor = isOn ? onTintColor : offTintColor
-        setOnOffImageFrame()
-    }
-
-    private func completeAction(withTouch: Bool = false) {
-        isAnimating = false
-        if !touchEventIsActive {
-            if withTouch {
-                if touchStartState != touchEndState {
-                    sendActions(for: .valueChanged)
-                }
-            } else {
-                 //sendActions(for: .valueChanged)
-            }
-            
-            
-        }
     }
     
 }
@@ -324,30 +310,6 @@ extension DesignableSwitch {
                 labelOn.frame = CGRect(x: 0, y: 0, width: labelWidth, height: frame.height)
                 labelOff.frame = CGRect(x: frame.width - labelWidth, y: 0, width: labelWidth, height: frame.height)
             }
-            
-            // on/off images
-            //set to preserve aspect ratio of image in thumbView
-            
-            guard onImage != nil && offImage != nil else { return }
-            
-            let frameSize = thumbSize.width > thumbSize.height ? thumbSize.height * 0.7 : thumbSize.width * 0.7
-            
-            let onOffImageSize = CGSize(width: frameSize, height: frameSize)
-            
-            
-            onImageView.frame.size = onOffImageSize
-            offImageView.frame.size = onOffImageSize
-            
-            onImageView.center = CGPoint(x: onPoint.x + thumbView.frame.size.width / 2,
-                                         y: thumbView.center.y)
-            
-            offImageView.center = CGPoint(x: offPoint.x + thumbView.frame.size.width / 2,
-                                          y: thumbView.center.y)
-            
-            
-            onImageView.alpha = isOn ? 1.0 : 0.0
-            offImageView.alpha = isOn ? 0.0 : 1.0
-            
         }
     }
 }
@@ -387,20 +349,6 @@ extension DesignableSwitch {
     
 }
 
-//MARK: Animating on/off images
-extension DesignableSwitch {
-    
-    fileprivate func setOnOffImageFrame() {
-        
-        guard onImage != nil && offImage != nil else { return }
-        
-        onImageView.center.x = isOn ? onPoint.x + thumbView.frame.size.width / 2 : frame.width
-        offImageView.center.x = isOn ? 0 : offPoint.x + thumbView.frame.size.width / 2
-        onImageView.alpha = isOn ? 1.0 : 0.0
-        offImageView.alpha = isOn ? 0.0 : 1.0
-    }
-}
-
 final class DeisgnableThumbView: UIView {
     
     private(set) var thumbImageView = UIImageView(frame: .zero)
@@ -425,6 +373,3 @@ final class DeisgnableThumbView: UIView {
     }
 
 }
-
-
-

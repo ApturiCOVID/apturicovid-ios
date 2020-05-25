@@ -136,7 +136,7 @@ class HomeVC: BaseViewController {
         setupAnchorConstraints()
         setExposureNotification(visible: false)
 
-        exposureSwitch.setOn(ExposureManager.shared.enabled, animated: false)
+        exposureSwitch.isOn = ExposureManager.shared.enabled
         
         statCells.forEach{ statsStackView.addArrangedSubview($0) }
         

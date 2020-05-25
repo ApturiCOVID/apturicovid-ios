@@ -15,10 +15,8 @@ import UIKit
     @IBInspectable var fillColor: UIColor = .white
     
     override func draw(_ rect: CGRect) {
-        backgroundColor = .clear
         fillColor.setFill()
         getPath(in: bounds).fill()
- 
     }
     
     func getPath(in rect: CGRect) -> UIBezierPath {

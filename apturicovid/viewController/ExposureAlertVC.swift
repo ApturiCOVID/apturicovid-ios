@@ -12,6 +12,9 @@ class ExposureAlertVC: BaseViewController {
     @IBOutlet weak var handlingDescription: UILabel!
     @IBOutlet weak var phoneInputButton: RoundedButton!
     
+    @IBOutlet weak var backButton: RoundedButton!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBAction func onPhoneInputTap(_ sender: Any) {
         if let vc = UIStoryboard(name: "PhoneSettings", bundle: nil).instantiateInitialViewController() {
             self.navigationController?.pushViewController(vc, animated: true)
@@ -45,5 +48,18 @@ class ExposureAlertVC: BaseViewController {
         super.viewDidLoad()
         
         phoneInputButton.isHidden = LocalStore.shared.phoneNumber != nil
+        scrollView.delegate = self
     }
+}
+
+extension ExposureAlertVC : UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
+        backButton.updateShadowOpacity(fromContentOffset: scrollView.contentOffset,
+                                       shadowApplyBeginOffset: 0,
+                                       shadowApplyIntensity: 800,
+                                       shadowMaxOpasity: 0.3)
+    }
+    
 }

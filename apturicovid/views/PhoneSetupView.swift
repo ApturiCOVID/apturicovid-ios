@@ -48,6 +48,16 @@ class PhoneSetupView: UIView {
         stackView.setCustomSpacing(20, after: checkboxView)
         phoneInputView.layer.cornerRadius = 5
         
+        
+        checkboxView.checkBox
+            .rx
+            .controlEvent(.valueChanged)
+            .subscribe(onNext: { [weak self] in
+                guard let `self` = self else { return }
+                LocalStore.shared.phoneNumber?.otherParty = self.checkboxView.isChecked
+            })
+            .disposed(by: disposeBag)
+        
         anonymousButtonView
             .rx
             .tapGesture()

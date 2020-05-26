@@ -16,30 +16,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9kb-z7-hD3">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="124"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="Qfk-av-Be8">
-                                <rect key="frame" x="0.0" y="124" width="414" height="738"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cG9-a4-j1A">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="738"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="olB-9d-VUH">
-                                                <rect key="frame" x="0.0" y="186.66666666666669" width="414" height="365.00000000000006"/>
+                                                <rect key="frame" x="0.0" y="226.33333333333334" width="414" height="365.33333333333326"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KNq-aG-hpu">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="200.33333333333334"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numura apstiprinājums" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LY-46-h5u">
-                                                                <rect key="frame" x="30" y="112.66666666666663" width="354" height="21.666666666666657"/>
+                                                                <rect key="frame" x="30" y="113" width="354" height="21.666666666666657"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uz jūsu norādīto telefona numuru 28 345 678 tika nosūtīts kods. Ievadiet to zemāk" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KD7-f6-9OV">
-                                                                <rect key="frame" x="30" y="144.33333333333331" width="354" height="40.666666666666657"/>
+                                                                <rect key="frame" x="30" y="144.66666666666669" width="354" height="40.666666666666657"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" name="descriptionText"/>
                                                                 <nil key="highlightedColor"/>
@@ -58,10 +54,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="inR-2y-Fbc">
-                                                        <rect key="frame" x="0.0" y="200" width="414" height="90"/>
+                                                        <rect key="frame" x="0.0" y="200.33333333333337" width="414" height="90"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ievadi kodu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dea-tK-RbJ">
-                                                                <rect key="frame" x="30" y="14.999999999999943" width="354" height="18"/>
+                                                                <rect key="frame" x="30" y="15" width="354" height="18"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -86,7 +82,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rC4-dO-tJb">
-                                                        <rect key="frame" x="0.0" y="289.99999999999994" width="414" height="55"/>
+                                                        <rect key="frame" x="0.0" y="290.33333333333331" width="414" height="55"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ievadīts nepareizs kods" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ct2-xa-tUa">
                                                                 <rect key="frame" x="0.0" y="15" width="414" height="40"/>
@@ -106,7 +102,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SlT-Fx-zDs">
-                                                        <rect key="frame" x="0.0" y="289.99999999999994" width="414" height="75"/>
+                                                        <rect key="frame" x="0.0" y="290.33333333333331" width="414" height="75"/>
                                                         <subviews>
                                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nosūtīt kodu atkārtoti" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wm6-YX-ibS">
                                                                 <rect key="frame" x="30" y="0.0" width="354" height="75"/>
@@ -146,13 +142,25 @@
                                     <constraint firstAttribute="trailing" secondItem="cG9-a4-j1A" secondAttribute="trailing" id="yg8-nN-Dau"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mv3-du-raa">
-                                <rect key="frame" x="30" y="74" width="50" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mv3-du-raa" customClass="RoundedButton" customModule="AC_Demo" customModuleProvider="target">
+                                <rect key="frame" x="26" y="70" width="50" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ZBR-mU-2l7"/>
                                     <constraint firstAttribute="width" constant="50" id="btQ-6U-Zyi"/>
                                 </constraints>
                                 <state key="normal" image="arrow-back"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="2.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="onBackTap:" destination="q60-eJ-jP6" eventType="touchUpInside" id="7Z7-tH-utR"/>
                                 </connections>
@@ -160,16 +168,12 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="9kb-z7-hD3" firstAttribute="leading" secondItem="Z0Q-Ta-gYK" secondAttribute="leading" id="6yr-Q0-Wwo"/>
                             <constraint firstItem="Qfk-av-Be8" firstAttribute="leading" secondItem="Z0Q-Ta-gYK" secondAttribute="leading" id="KVo-Bi-whW"/>
-                            <constraint firstItem="Z0Q-Ta-gYK" firstAttribute="trailing" secondItem="9kb-z7-hD3" secondAttribute="trailing" id="LOz-aj-jWW"/>
-                            <constraint firstItem="mv3-du-raa" firstAttribute="leading" secondItem="Z0Q-Ta-gYK" secondAttribute="leading" constant="30" id="QbV-Tj-TvR"/>
-                            <constraint firstItem="mv3-du-raa" firstAttribute="bottom" secondItem="9kb-z7-hD3" secondAttribute="bottom" id="RRU-Xq-EJh"/>
-                            <constraint firstItem="Qfk-av-Be8" firstAttribute="top" secondItem="9kb-z7-hD3" secondAttribute="bottom" id="Sx3-lM-a8w"/>
+                            <constraint firstItem="mv3-du-raa" firstAttribute="leading" secondItem="Z0Q-Ta-gYK" secondAttribute="leading" constant="26" id="QbV-Tj-TvR"/>
                             <constraint firstItem="Z0Q-Ta-gYK" firstAttribute="bottom" secondItem="Qfk-av-Be8" secondAttribute="bottom" id="bDM-pv-FR0"/>
-                            <constraint firstItem="9kb-z7-hD3" firstAttribute="top" secondItem="jgQ-JW-TPe" secondAttribute="top" id="dLW-zN-bND"/>
+                            <constraint firstItem="Qfk-av-Be8" firstAttribute="top" secondItem="Z0Q-Ta-gYK" secondAttribute="top" id="cTA-Ti-Ru3"/>
                             <constraint firstItem="Z0Q-Ta-gYK" firstAttribute="trailing" secondItem="Qfk-av-Be8" secondAttribute="trailing" id="uc6-hE-gCH"/>
-                            <constraint firstItem="mv3-du-raa" firstAttribute="top" secondItem="Z0Q-Ta-gYK" secondAttribute="top" constant="30" id="y0c-Rd-ufH"/>
+                            <constraint firstItem="mv3-du-raa" firstAttribute="top" secondItem="Z0Q-Ta-gYK" secondAttribute="top" constant="26" id="y0c-Rd-ufH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Z0Q-Ta-gYK"/>
                     </view>

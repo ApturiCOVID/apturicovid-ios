@@ -82,7 +82,9 @@ class StatsVC: BaseViewController {
     
     func resetRefreshControl(){
         refreshControl.endRefreshing()
-        statsCollectionView.resetScrollToInsts(animated: true)
+        let offset = CGPoint(x: 0, y: view.safeAreaInsets.top)
+        print(offset)
+        statsCollectionView.resetScrollToInsts(animated: true, aditinalOffset: offset)
     }
 
     @objc func refreshData(){

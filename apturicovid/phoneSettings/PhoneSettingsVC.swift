@@ -6,6 +6,9 @@ class PhoneSettingsVC: BaseViewController, PhoneVerificationProvider {
     @IBOutlet weak var nextButton: RoundedButton!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var backButton: RoundedButton!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var statusBarBlurView: UIVisualEffectView!
     
     let phoneView = PhoneSetupView().fromNib() as! PhoneSetupView
     
@@ -42,6 +45,7 @@ class PhoneSettingsVC: BaseViewController, PhoneVerificationProvider {
     override func viewDidLoad() {
         super.viewDidLoad()
         nextButton.isEnabled = false
+        scrollView.delegate = self
         
         mainStackView.addArrangedSubview(phoneView)
         
@@ -97,3 +101,19 @@ class PhoneSettingsVC: BaseViewController, PhoneVerificationProvider {
         nextButton.setTitle("next".translated, for: .normal)
     }
 }
+
+extension PhoneSettingsVC : UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let offset = scrollView.contentOffset.y + scrollView.contentInset.top
+        statusBarBlurView.effect = offset > 0 ? UIBlurEffect(style: .light) : nil
+
+        backButton.updateShadowOpacity(fromContentOffset: scrollView.contentOffset,
+                                       shadowApplyBeginOffset: 0,
+                                       shadowApplyIntensity: 800,
+                                       shadowMaxOpasity: 0.3)
+    }
+    
+}
+

@@ -48,7 +48,7 @@ public class KeychainService: NSObject {
         }
         
         do {
-            let encodedData = try encoder.encode(data)
+            let encodedData = try encoder.encode([data])
 
             let keychainQuery = NSMutableDictionary(
                 objects: [kSecClassGenericPasswordValue, service, key, encodedData],
@@ -62,7 +62,6 @@ public class KeychainService: NSObject {
             if (status != errSecSuccess) {    // Always check the status
                 if let err = SecCopyErrorMessageString(status, nil) {
                     print("Keychain save failed: \(err)")
-                    removeData(key: key)
                 }
             }
         } catch {
@@ -83,7 +82,7 @@ public class KeychainService: NSObject {
         )
         
         do {
-            let encodedData = try encoder.encode(data)
+            let encodedData = try encoder.encode([data])
             
             let status = SecItemUpdate(keychainQuery as CFDictionary, [kSecValueDataValue:encodedData] as CFDictionary)
             
@@ -116,7 +115,7 @@ public class KeychainService: NSObject {
         
         do {
             if let data = dataTypeRef as? Data {
-                return try decoder.decode(type, from: data)
+                return try decoder.decode([T].self, from: data).first
             } else {
                 return nil
             }

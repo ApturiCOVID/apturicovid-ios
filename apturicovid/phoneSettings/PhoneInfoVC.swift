@@ -5,6 +5,9 @@ class PhoneInfoVC: BaseViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var privacyProtectionLabel: UILabel!
     @IBOutlet weak var closeButton: RoundedButton!
+    @IBOutlet weak var backButton: RoundedButton!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var statusBarBlurView: UIVisualEffectView!
     
     @IBAction func onBackTap(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -16,4 +19,24 @@ class PhoneInfoVC: BaseViewController {
         privacyProtectionLabel.text = "data_privacy_and_protection_policy".translated
         closeButton.setTitle("close".translated, for: .normal)
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        scrollView.delegate = self
+    }
+}
+
+extension PhoneInfoVC : UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
+        let offset = scrollView.contentOffset.y + scrollView.contentInset.top
+        statusBarBlurView.effect = offset > 0 ? UIBlurEffect(style: .light) : nil
+        
+        backButton.updateShadowOpacity(fromContentOffset: scrollView.contentOffset,
+                                       shadowApplyBeginOffset: 0,
+                                       shadowApplyIntensity: 800,
+                                       shadowMaxOpasity: 0.3)
+    }
+    
 }

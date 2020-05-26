@@ -28,12 +28,7 @@ class SettingsViewController: BaseViewController {
     let langViews = Language.allCases.map{ LanguageView.create($0) }
     
     @IBAction func onReminderSet(_ sender: UISwitch) {
-        LocalStore.shared.exposureStateReminderEnabled = sender.isOn
-        if sender.isOn {
-            NotificationsScheduler.shared.scheduleExposureStateNotification()
-        } else {
-            NotificationsScheduler.shared.removeExposureStateReminder()
-        }
+        enableNotifications(sender.isOn, referenceSwitch: sender, animated: true)
     }
     
     @IBAction func changePhone(_ sender: Any) {
@@ -95,6 +90,14 @@ class SettingsViewController: BaseViewController {
         
         reminderSwitch.isOn = LocalStore.shared.exposureStateReminderEnabled
         
+        if reminderSwitch.isOn {
+            NotificationsScheduler.checkAuthorizationStatus { [weak self] (status) in
+                if status != .authorized {
+                    self?.enableNotifications(false, referenceSwitch: self?.reminderSwitch, animated: false)
+                }
+            }
+        }
+        
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String, let bundleV = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
                versionLabel.text = "v \(version) (\(bundleV))"
            }
@@ -113,6 +116,46 @@ class SettingsViewController: BaseViewController {
         notifyMeLabel.text = "notify_if_tracking_isnt_working".translated
         submitButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         submitButton.sizeToFit()
+    }
+    
+    private func enableNotifications(_ enable: Bool, referenceSwitch: UISwitch? , animated: Bool = true){
+        
+        func setOff(){
+            DispatchQueue.main.async {
+                LocalStore.shared.exposureStateReminderEnabled = false
+                NotificationsScheduler.shared.removeExposureStateReminder()
+                referenceSwitch?.setOn(false, animated: animated)
+            }
+        }
+        
+        func authorize(goToSettingsIfUnauthorized: Bool){
+            NotificationsScheduler.requestAuthorization { (allowed, error) in
+                DispatchQueue.main.async {
+                    if allowed {
+                        LocalStore.shared.exposureStateReminderEnabled = enable
+                        NotificationsScheduler.shared.scheduleExposureStateNotification()
+                    } else {
+                        setOff()
+                        if goToSettingsIfUnauthorized { UIApplication.openSettings() }
+                    }
+                }
+            }
+        }
+        
+        guard enable else {
+            setOff()
+            return
+        }
+        
+        NotificationsScheduler.checkAuthorizationStatus { (status) in
+            
+            switch status {
+            case .notDetermined:
+                authorize(goToSettingsIfUnauthorized: false)
+            default:
+                authorize(goToSettingsIfUnauthorized: true)
+            }
+        }
     }
 }
 

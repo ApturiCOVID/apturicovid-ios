@@ -6,6 +6,7 @@ class ExposureManager {
     static let authorizationStatusChangeNotification = Notification.Name("ExposureManagerAuthorizationStatusChangedNotification")
     
     static var shared = ExposureManager()
+    static var authorizationStatus: ENAuthorizationStatus { ENManager.authorizationStatus }
     
     static func reset() {
         Self.shared = ExposureManager()
@@ -19,7 +20,7 @@ class ExposureManager {
     
     init() {
         manager.activate { error in
-            if ENManager.authorizationStatus == .authorized && !self.manager.exposureNotificationEnabled {
+            if ExposureManager.authorizationStatus == .authorized && !self.manager.exposureNotificationEnabled {
                 self.manager.setExposureNotificationEnabled(true) { error in
                     if let err = error { justPrintError(err) }
                 }

@@ -68,7 +68,7 @@ class HomeVC: BaseViewController {
     }
     
     private func presentShareController() {
-        let urlToShare = URL(string: "https://www.apturicovid.lv")!
+        let urlToShare = URL(string: "https://www.apturicovid.lv#\(Language.primary.localization)")!
         let sharedObjects = [urlToShare as AnyObject]
         let activityViewController = UIActivityViewController(activityItems : sharedObjects, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view

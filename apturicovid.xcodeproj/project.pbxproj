@@ -45,6 +45,8 @@
 		60DC151B2477FD8300FAD185 /* PhoneVerificationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DC15192477FD8300FAD185 /* PhoneVerificationProvider.swift */; };
 		60DC151D247BBE4E00FAD185 /* DesignableSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DC151C247BBE4E00FAD185 /* DesignableSwitch.swift */; };
 		60DC151E247BBE4E00FAD185 /* DesignableSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DC151C247BBE4E00FAD185 /* DesignableSwitch.swift */; };
+		60F61D4D247CF06900501F21 /* UIScrollViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F61D4C247CF06900501F21 /* UIScrollViewEx.swift */; };
+		60F61D4E247CF06900501F21 /* UIScrollViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F61D4C247CF06900501F21 /* UIScrollViewEx.swift */; };
 		752479BE2471B23800F9BCCB /* UrlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752479BD2471B23800F9BCCB /* UrlRequest.swift */; };
 		7528B0FB246C016D007D0260 /* Translations.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7528B0FD246C016D007D0260 /* Translations.strings */; };
 		7528B100246C02BC007D0260 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528B0FF246C02BC007D0260 /* String.swift */; };
@@ -262,6 +264,7 @@
 		60DC15162477F76C00FAD185 /* ExposureNotificationToggleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureNotificationToggleProvider.swift; sourceTree = "<group>"; };
 		60DC15192477FD8300FAD185 /* PhoneVerificationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationProvider.swift; sourceTree = "<group>"; };
 		60DC151C247BBE4E00FAD185 /* DesignableSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableSwitch.swift; sourceTree = "<group>"; };
+		60F61D4C247CF06900501F21 /* UIScrollViewEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollViewEx.swift; sourceTree = "<group>"; };
 		752479BD2471B23800F9BCCB /* UrlRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlRequest.swift; sourceTree = "<group>"; };
 		7528B0FC246C016D007D0260 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Translations.strings; sourceTree = "<group>"; };
 		7528B0FE246C016E007D0260 /* lv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = lv; path = lv.lproj/Translations.strings; sourceTree = "<group>"; };
@@ -536,6 +539,7 @@
 				607C678F247BF96700D5DADC /* CGRectEx.swift */,
 				BA366CDD2465F98F00A35CA8 /* View.swift */,
 				BA19B89924715F9F003C5025 /* Data.swift */,
+				60F61D4C247CF06900501F21 /* UIScrollViewEx.swift */,
 				752479BD2471B23800F9BCCB /* UrlRequest.swift */,
 				E99BFA6A24720404004D779F /* UIDevice.swift */,
 				BADFAD01247559BE006F61E7 /* ENExposureConfiguration.swift */,
@@ -987,6 +991,7 @@
 				602AE9B62473E152008E42F3 /* UISwitchEx.swift in Sources */,
 				BADFAD02247559BE006F61E7 /* ENExposureConfiguration.swift in Sources */,
 				603DC22424715A3C00AD6217 /* UIDeviceEx.swift in Sources */,
+				60F61D4D247CF06900501F21 /* UIScrollViewEx.swift in Sources */,
 				60815F4924771C2B00580DCA /* VibrantWarningView.swift in Sources */,
 				BA50D35B2469EEB90091DF0E /* DiagnosisUploadRequest.swift in Sources */,
 				BAFA8319246BF3B400E121B4 /* HomeBottomView.swift in Sources */,
@@ -1084,6 +1089,7 @@
 				BADFAD0324755B95006F61E7 /* ENExposureConfiguration.swift in Sources */,
 				BA3800162473072700577DB2 /* UIDeviceEx.swift in Sources */,
 				BA3800172473072700577DB2 /* DiagnosisUploadRequest.swift in Sources */,
+				60F61D4E247CF06900501F21 /* UIScrollViewEx.swift in Sources */,
 				60815F4A24771C2B00580DCA /* VibrantWarningView.swift in Sources */,
 				BA3800182473072700577DB2 /* HomeBottomView.swift in Sources */,
 				BA3800192473072700577DB2 /* PhoneConfirmationRequest.swift in Sources */,

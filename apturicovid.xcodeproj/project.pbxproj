@@ -164,6 +164,8 @@
 		BA50D3572469E84E0091DF0E /* ExposuresClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50D3562469E84E0091DF0E /* ExposuresClient.swift */; };
 		BA50D3592469E9A10091DF0E /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50D3582469E9A10091DF0E /* NSError.swift */; };
 		BA50D35B2469EEB90091DF0E /* DiagnosisUploadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50D35A2469EEB90091DF0E /* DiagnosisUploadRequest.swift */; };
+		BA65551E247D30820024D6CC /* trustkit-prod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA65551D247D30820024D6CC /* trustkit-prod.swift */; };
+		BA655520247D30E50024D6CC /* trustkit-staging.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA65551F247D30E50024D6CC /* trustkit-staging.swift */; };
 		BA8CD87A2475477C00B068A5 /* ExposureConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8CD8792475477C00B068A5 /* ExposureConfiguration.swift */; };
 		BA8CD87B2475477C00B068A5 /* ExposureConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8CD8792475477C00B068A5 /* ExposureConfiguration.swift */; };
 		BAAC0D1E24730C9A00D898EF /* FaqLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E99BFA742472FEE1004D779F /* FaqLocalizable.strings */; };
@@ -305,6 +307,8 @@
 		BA50D3562469E84E0091DF0E /* ExposuresClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposuresClient.swift; sourceTree = "<group>"; };
 		BA50D3582469E9A10091DF0E /* NSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSError.swift; sourceTree = "<group>"; };
 		BA50D35A2469EEB90091DF0E /* DiagnosisUploadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisUploadRequest.swift; sourceTree = "<group>"; };
+		BA65551D247D30820024D6CC /* trustkit-prod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "trustkit-prod.swift"; sourceTree = "<group>"; };
+		BA65551F247D30E50024D6CC /* trustkit-staging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "trustkit-staging.swift"; sourceTree = "<group>"; };
 		BA8CD8792475477C00B068A5 /* ExposureConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureConfiguration.swift; sourceTree = "<group>"; };
 		BA9BEF4B24751CCF00D5D947 /* apturicovid.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = apturicovid.entitlements; sourceTree = "<group>"; };
 		BAAED838246C309D004C77A6 /* StatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCell.swift; sourceTree = "<group>"; };
@@ -552,6 +556,7 @@
 			children = (
 				BA3800512473088D00577DB2 /* GoogleService-Info.plist */,
 				BA380053247308A100577DB2 /* env-staging.swift */,
+				BA65551F247D30E50024D6CC /* trustkit-staging.swift */,
 			);
 			path = staging;
 			sourceTree = "<group>";
@@ -652,6 +657,7 @@
 			children = (
 				BA19B89B247173B9003C5025 /* GoogleService-Info.plist */,
 				BA380055247308B500577DB2 /* env-production.swift */,
+				BA65551D247D30820024D6CC /* trustkit-prod.swift */,
 			);
 			path = production;
 			sourceTree = "<group>";
@@ -1028,6 +1034,7 @@
 				BA1121412469E27100D975D5 /* EntryView.swift in Sources */,
 				BAD42222247401D10047E85D /* RestClient.swift in Sources */,
 				60A4D0D82475CD3600D13D75 /* StatsClient.swift in Sources */,
+				BA65551E247D30820024D6CC /* trustkit-prod.swift in Sources */,
 				BAAED83F246C403D004C77A6 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1113,6 +1120,7 @@
 				BA3800272473072700577DB2 /* UIColor.swift in Sources */,
 				BA3800282473072700577DB2 /* UploadKeyVerificationRequest.swift in Sources */,
 				BA3800292473072700577DB2 /* PhoneTextField.swift in Sources */,
+				BA655520247D30E50024D6CC /* trustkit-staging.swift in Sources */,
 				60DC151B2477FD8300FAD185 /* PhoneVerificationProvider.swift in Sources */,
 				BA38002A2473072700577DB2 /* PhoneNumber.swift in Sources */,
 				BA38002B2473072700577DB2 /* PhoneInfoVC.swift in Sources */,
@@ -1299,14 +1307,14 @@
 				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovidDebug.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 26;
 				DEVELOPMENT_TEAM = K673TD5NRS;
 				INFOPLIST_FILE = apturicovid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.14;
+				MARKETING_VERSION = 1.2.16;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid;
 				PRODUCT_NAME = "Apturi Covid";
 				PROVISIONING_PROFILE_SPECIFIER = "DEV Production";
@@ -1323,14 +1331,14 @@
 				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovid.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 26;
 				DEVELOPMENT_TEAM = K673TD5NRS;
 				INFOPLIST_FILE = apturicovid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.14;
+				MARKETING_VERSION = 1.2.16;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid;
 				PRODUCT_NAME = "Apturi Covid";
 				PROVISIONING_PROFILE_SPECIFIER = "DEV Production";
@@ -1347,14 +1355,14 @@
 				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovidDebug.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 26;
 				DEVELOPMENT_TEAM = K673TD5NRS;
 				INFOPLIST_FILE = "$(SRCROOT)/apturicovid/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.14;
+				MARKETING_VERSION = 1.2.16;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid.staging;
 				PRODUCT_NAME = "AC Demo";
 				PROVISIONING_PROFILE_SPECIFIER = "DEV Staging";
@@ -1371,14 +1379,14 @@
 				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovid.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 26;
 				DEVELOPMENT_TEAM = K673TD5NRS;
 				INFOPLIST_FILE = "$(SRCROOT)/apturicovid/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.14;
+				MARKETING_VERSION = 1.2.16;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid.staging;
 				PRODUCT_NAME = "AC Demo";
 				PROVISIONING_PROFILE_SPECIFIER = "DEV Staging";

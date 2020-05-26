@@ -1,27 +1,6 @@
 import Foundation
 import TrustKit
 
-let trustKitConfig = [
-    kTSKPinnedDomains: [
-        baseDomain: [
-            kTSKIncludeSubdomains: NSNumber(value: true),
-            kTSKEnforcePinning: NSNumber(value: true),
-            kTSKPublicKeyHashes: [
-                "Vjs8r4z+80wjNcr1YKepWQboSIRi63WsWXhIMN+eWys=",
-                "C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M="
-            ]
-        ],
-        filesBaseDomain: [
-            kTSKIncludeSubdomains: NSNumber(value: true),
-            kTSKEnforcePinning: NSNumber(value: true),
-            kTSKPublicKeyHashes: [
-                "Vjs8r4z+80wjNcr1YKepWQboSIRi63WsWXhIMN+eWys=",
-                "C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M="
-            ]
-        ]
-    ]
-]
-
 class TrustCheck {
     static func isServerCertValid(_ challenge: URLAuthenticationChallenge, session: URLSession) -> Bool {
         guard let serverTrust = challenge.protectionSpace.serverTrust else {

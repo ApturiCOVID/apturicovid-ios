@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="124"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qfk-av-Be8">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="Qfk-av-Be8">
                                 <rect key="frame" x="0.0" y="124" width="414" height="738"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cG9-a4-j1A">

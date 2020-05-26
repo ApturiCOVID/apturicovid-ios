@@ -37,7 +37,7 @@
                                     <constraint firstItem="95F-Rv-2Ba" firstAttribute="leading" secondItem="B6v-1c-PYu" secondAttribute="leading" constant="40" id="sFx-y4-gRr"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QpX-Yl-NVE">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="QpX-Yl-NVE">
                                 <rect key="frame" x="0.0" y="94" width="414" height="678"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="S3n-mh-Q2P">

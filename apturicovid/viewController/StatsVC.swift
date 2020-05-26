@@ -81,8 +81,8 @@ class StatsVC: BaseViewController {
     }
     
     func resetRefreshControl(){
-        statsCollectionView.resetScrollToInsts(animated: true)
         refreshControl.endRefreshing()
+        statsCollectionView.resetScrollToInsts(animated: true)
     }
 
     @objc func refreshData(){

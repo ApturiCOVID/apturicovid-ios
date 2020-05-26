@@ -8,7 +8,7 @@ class ExposureSetupVC: BaseViewController {
     @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var nextButton: RoundedButton!
-    
+    @IBOutlet weak var backButton: RoundedButton!
     @IBOutlet weak var contactTitle: UILabel!
     @IBOutlet weak var contactDescription: UILabel!
     @IBOutlet weak var activateSwitchTitle: UILabel!
@@ -87,6 +87,7 @@ class ExposureSetupVC: BaseViewController {
         
         mainStackView.addArrangedSubview(phoneView)
         phoneView.isHidden = true
+        scrollview.delegate = self
         
         super.viewDidLoad()
         
@@ -162,3 +163,15 @@ extension ExposureSetupVC: ContactDetectionToggleProvider, PhoneVerificationProv
     }
     
 }
+
+extension ExposureSetupVC : UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        backButton.updateShadowOpacity(fromContentOffset: scrollView.contentOffset,
+                                       shadowApplyBeginOffset: 100,
+                                       shadowApplyIntensity: 1000,
+                                       shadowMaxOpasity: 0.3)
+    }
+}
+
+

@@ -124,10 +124,9 @@ class HomeVC: BaseViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        showConnectivityWarningIfRequired()
         loadData()
         checkExposureStatus()
+        showConnectivityWarningIfRequired()
     }
     
     override func viewDidLoad() {

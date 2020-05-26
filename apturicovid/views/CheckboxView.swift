@@ -46,6 +46,7 @@ class CheckBox: UIButton {
     var isChecked: Bool = false {
         didSet {
             self.setImage( isChecked ? checkedImage : uncheckedImage, for: .normal)
+            sendActions(for: .valueChanged)
         }
     }
 

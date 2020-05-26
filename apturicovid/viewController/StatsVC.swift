@@ -24,8 +24,7 @@ class StatsVC: BaseViewController {
     
     var stats: Stats? {
         didSet {
-            statsCollectionView.reloadData()
-            
+            if oldValue != stats { statsCollectionView.reloadData() }
         }
     }
     
@@ -62,6 +61,13 @@ class StatsVC: BaseViewController {
             self?.loadData()
         })
         .disposed(by: disposeBag)
+        
+        NotificationCenter.default.rx
+        .notification(UIApplication.willResignActiveNotification)
+        .subscribe(onNext: { [weak self] (_) in
+            self?.resetRefreshControl()
+        })
+        .disposed(by: disposeBag)
 
     }
     
@@ -71,8 +77,12 @@ class StatsVC: BaseViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        resetRefreshControl()
+    }
+    
+    func resetRefreshControl(){
         refreshControl.endRefreshing()
-        statsCollectionView.setContentOffset(.zero, animated: false)
+        statsCollectionView.resetScrollToInsts(animated: true)
     }
 
     @objc func refreshData(){
@@ -85,7 +95,7 @@ class StatsVC: BaseViewController {
         .observeOn(MainScheduler.instance)
             .share()
             .subscribe(onNext: { [weak self] (stats) in
-                if self?.stats != stats { self?.stats = stats }
+                self?.stats = stats
                 },onError: {  [weak self] error in
                     justPrintError(error)
                     self?.refreshControl.endRefreshing()

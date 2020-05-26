@@ -78,8 +78,8 @@ SPKC will receive your number with contact information only if and when it is es
 "anonymous_identity" = "No other user will know your identity";
 "gpc_tracking_not_performed" = "The app does not record GPS data even if GPS is switched on";
 "frequently_asked_questions" = "Frequently asked questions";
-"user_privacy" = "Frequently asked questions";
-"user_terms" = "Privacy policy";
+"user_privacy" = "Privacy policy";
+"user_terms" = "App Terms of Use";
 
 // CodeEntryVC SPKC
 "spkc_data_send" = "Notify detected contacts";

@@ -4,14 +4,27 @@ import CocoaLumberjack
 
 class NotificationsScheduler {
     static let shared = NotificationsScheduler()
+    static let authorizationOptions: UNAuthorizationOptions = [.alert, .sound, .badge]
+    
+    static func checkAuthorizationStatus(completionHandler: @escaping (UNAuthorizationStatus) -> Void) {
+        UNUserNotificationCenter
+            .current()
+            .getNotificationSettings(){ completionHandler($0.authorizationStatus) }
+    }
+    
+    static func requestAuthorization(options: UNAuthorizationOptions = authorizationOptions,
+                                     completionHandler: @escaping (Bool, Error?) -> Void) {
+        UNUserNotificationCenter
+            .current()
+            .requestAuthorization(options: options,completionHandler: completionHandler)
+    }
     
     let notificationCenter: UNUserNotificationCenter
     
     init() {
         notificationCenter = UNUserNotificationCenter.current()
-        
-        let options: UNAuthorizationOptions = [.alert, .sound, .badge]
-        notificationCenter.requestAuthorization(options: options) { (allowed, error) in
+
+        NotificationsScheduler.requestAuthorization { (_, error) in
             if let error = error { justPrintError(error) }
         }
     }

@@ -15,26 +15,13 @@ class ExposureSetupVC: BaseViewController {
     @IBOutlet weak var activateSwitchSubtitle: UILabel!
     
     @IBOutlet weak var exposureEnableSwitch: UISwitch!
-    
-    var exposureEnabled = false {
-        didSet {
-            phoneView.isHidden = !exposureEnabled
-            if !exposureEnabled {
-                nextButton.isEnabled = true
-                phoneView.phoneInput.text = ""
-                phoneView.phoneInput.endEditing(true)
-            }
-            
-            if exposureEnabled {
-                nextButton.isEnabled = false
-            }
-        }
-    }
 
     let phoneView = PhoneSetupView().fromNib() as! PhoneSetupView
     
+    var exposureEnabled: Bool { exposureEnableSwitch.isOn }
+    
     @IBAction func onSwitchChange(_ sender: UISwitch) {
-        setExposureTracking(enabled: sender.isOn)
+        setExposureTracking(enabled: sender.isOn, referenceSwitch: sender, animated: true)
     }
     
     @IBAction func onBackTap(_ sender: Any) {
@@ -91,7 +78,22 @@ class ExposureSetupVC: BaseViewController {
         
         super.viewDidLoad()
         
-        exposureEnabled = false
+        exposureEnableSwitch
+            .rx
+            .isOn
+            .changed
+            .asObservable()
+            .subscribe(onNext: { [weak self] _ in
+                self?.updateViewAppearance()
+            })
+            .disposed(by: disposeBag)
+        
+        NotificationCenter.default.rx
+            .notification(UIApplication.didBecomeActiveNotification)
+            .subscribe(onNext: { [weak self] (_) in
+            self?.updateViewAppearance()
+        }, onError: justPrintError)
+        .disposed(by: disposeBag)
         
         NotificationCenter.default.rx
             .notification(UIResponder.keyboardWillShowNotification)
@@ -144,24 +146,35 @@ class ExposureSetupVC: BaseViewController {
         nextButton.setTitle("next".translated, for: .normal)
         activateSwitchSubtitle.text = "exposure_switch_subtitle".translated
     }
+    
+    func updateViewAppearance(){
+        self.phoneView.isHidden = !self.exposureEnableSwitch.isOn
+        if !self.exposureEnabled {
+            self.nextButton.isEnabled = true
+            self.phoneView.phoneInput.text = ""
+            self.phoneView.phoneInput.endEditing(true)
+        }
+        
+        if self.exposureEnabled {
+            self.nextButton.isEnabled = false
+        }
+    }
 }
 
 extension ExposureSetupVC: ContactDetectionToggleProvider, PhoneVerificationProvider {
     
     func phoneVerificationProvider(validationFinishedWith error: Error?) {
-        
+        updateViewAppearance()
     }
     
     func contactDetectionProvider(exposureDidBecomeEnabled enabled: Bool) {
-        exposureEnableSwitch.isOn = enabled
-        exposureEnabled = enabled
+        exposureEnableSwitch.rx.isOn.onNext(enabled)
         if enabled { self.scrollToBottom(after: 0.3) }
     }
     
     func contactDetectionProvider(didReceiveError error: Error) {
         justPrintError(error)
     }
-    
 }
 
 extension ExposureSetupVC : UIScrollViewDelegate {

@@ -58,12 +58,12 @@ class HomeVC: BaseViewController {
         
         if !sender.isOn {
             showBasicPrompt(with: "exposure_off_prompt".translated, action: {
-                self.setExposureTracking(enabled: false)
+                self.setExposureTracking(enabled: false, referenceSwitch: sender, animated: true)
             }, cancelAction: {
-                sender.setOn(true, animated: true)
+                self.setExposureTracking(enabled: true, referenceSwitch: sender, animated: true)
             }, confirmTitle: "yes".translated, cancelTitle: "cancel".translated)
         } else {
-            setExposureTracking(enabled: sender.isOn)
+            setExposureTracking(enabled: sender.isOn, referenceSwitch: sender, animated: true)
         }
     }
     

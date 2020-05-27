@@ -14,5 +14,6 @@ extension ENExposureConfiguration {
         attenuationWeight = Double(configuration.attenuationWeight)
         daysSinceLastExposureWeight = Double(configuration.daysSinceLastExposureWeight)
         durationWeight = Double(configuration.durationWeight)
+        transmissionRiskWeight = Double(configuration.transmissionRiskWeight)
     }
 }

@@ -22,7 +22,7 @@
 // ExposureSetupVC
 "activate" = "Ieslēgt";
 "contact_detection" = "Kontakta fiksēšana";
-"exposure_setup_description" = "Kontakts: 15+ minūšu klātbūtne līdz 4 m tuvumā.
+"exposure_setup_description" = "Kontakts: 15+ minūšu klātbūtne līdz ~2 m tuvumā.
 Fiksēšana: šifrs, ko tālrunis glabā 14 dienas, tad dzēš.
 
 Kontakta fiksēšana nav izsekošana.";
@@ -73,7 +73,7 @@ SPKC tavu kontakttālruni ar saskares informāciju saņems tikai tad, ja tev tik
 
 // FaqVC
 "what_is_contact_tracing" = "Kā darbojas kontakta fiksēšana?";
-"contact_detection_explanation" = "Kad divi viedtālruņi atrodas līdz 4 m tuvumā, tie pa tiešo apmainās ar šifru, un katrs to glabā 14 dienas. Ja tālruņa saimnieks atzīmē, ka ir inficēts, tie tālruņi, kuros tajā brīdī ir šifrs, saņem paziņojumu.";
+"contact_detection_explanation" = "Kad divi viedtālruņi atrodas līdz ~2 m tuvumā, tie pa tiešo apmainās ar šifru, un katrs to glabā 14 dienas. Ja tālruņa saimnieks atzīmē, ka ir inficēts, tie tālruņi, kuros tajā brīdī ir šifrs, saņem paziņojumu.";
 "what_about_my_privacy" = "Un kā ar manu privātumu?";
 "data_is_kept_on_device_only" = "Dati glabājas tikai tālrunī";
 "data_is_automatically_deleted" = "Tie tiek automātiski dzēsti";

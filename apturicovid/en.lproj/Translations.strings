@@ -22,7 +22,7 @@
 // ExposureSetupVC
 "activate" = "Switch on";
 "contact_detection" = "Contact detection";
-"exposure_setup_description" = "Contact: up to 4 m proximity for 15+ minutes.
+"exposure_setup_description" = "Contact: up to ~2 m proximity for 15+ minutes.
 Detection: a code kept on phone for 14 days, then deleted.
 
 Contact detection is not tracking.";
@@ -71,7 +71,7 @@ SPKC will receive your number with contact information only if and when it is es
 
 // FaqVC
 "what_is_contact_tracing" = "How does contact detection work?";
-"contact_detection_explanation" = "When two smartphones are in up to 4 m proximity, they directly exchange a code, and each device keeps it for 14 days. If a phone user marks themselves as infected, all phones keeping the respective code receive a notification.";
+"contact_detection_explanation" = "When two smartphones are in up to ~2 m proximity, they directly exchange a code, and each device keeps it for 14 days. If a phone user marks themselves as infected, all phones keeping the respective code receive a notification.";
 "what_about_my_privacy" = "What about my privacy?";
 "data_is_kept_on_device_only" = "Data is kept on device only";
 "data_is_automatically_deleted" = "Data is automatically deleted";

@@ -5,7 +5,7 @@
 "faq_answer_2" = "Saskaņā ar epidemiologu un zinātnieku aplēsēm, pat ja tikai 20 % Latvijas iedzīvotāju izmantos lietotni, tas jau būs nozīmīgs atbalsts riska identificēšanai un turpmākai infekcijas ierobežošanai sabiedrībā. Tomēr, jo vairāk iedzīvotāju to izmantos, jo lielāks efekts.";
 
 "faq_question_3" = "Kā darbojas lietotne?";
-"faq_answer_3" = "Tā anonīmi ar Bluetooth piefiksē tuvumā (līdz 4 metriem, 15+ minūtes) esošos viedtālruņus, kuros arī darbojas šī lietotne. Fiksētā informācija glabājas tikai viedtālrunī un pēc 14 dienām automātiski dzēšas. Ja lietotājam tiek apstiprināta saslimšana ar Covid-19, SPKC nosūtīs kodu. To ievadot lietotnē, varēs aktivizēt anonīma paziņojuma nosūtīšanu fiksētajiem kontaktiem, kam bijis inficēšanās risks. Paziņojuma saņēmējam netiek atklāta tā izsūtītāja identitāte. Tāpat saslimušais neuzzina, kas ir paziņojuma saņēmēji.";
+"faq_answer_3" = "Tā anonīmi ar Bluetooth piefiksē tuvumā (līdz ~2 metriem, 15+ minūtes) esošos viedtālruņus, kuros arī darbojas šī lietotne. Fiksētā informācija glabājas tikai viedtālrunī un pēc 14 dienām automātiski dzēšas. Ja lietotājam tiek apstiprināta saslimšana ar Covid-19, SPKC nosūtīs kodu. To ievadot lietotnē, varēs aktivizēt anonīma paziņojuma nosūtīšanu fiksētajiem kontaktiem, kam bijis inficēšanās risks. Paziņojuma saņēmējam netiek atklāta tā izsūtītāja identitāte. Tāpat saslimušais neuzzina, kas ir paziņojuma saņēmēji.";
 
 "faq_question_4" = "Kāda informācija tiek izmantota lietotnē?";
 "faq_answer_4" = "Ar Bluetooth fiksētie kontakti glabājas tikai ierīcē kā šifrēti kodi un nav pieejami ne pašam lietotājam, ne lietotnes izstrādātājiem. Tie tiek dzēsti pēc attiecīgā 14 dienu perioda.

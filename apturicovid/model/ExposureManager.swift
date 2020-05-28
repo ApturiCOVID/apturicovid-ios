@@ -175,10 +175,12 @@ class ExposureManager {
             }
             .do(onNext: { exposures in
                 LocalStore.shared.exposures += exposures.map { ExposureWrapper(uuid: UUID().uuidString, exposure: $0, uploadetAt: nil) }
+                LocalStore.shared.cleanExpiredExposures()
                 ExposureManager.reset()
             }, onError: { (error) in
                 justPrintError(error)
                 ExposureManager.reset()
+                LocalStore.shared.cleanExpiredExposures()
             })
             .flatMap { (exposures) -> Observable<Bool> in
                 return ExposuresClient.shared.uploadExposures()

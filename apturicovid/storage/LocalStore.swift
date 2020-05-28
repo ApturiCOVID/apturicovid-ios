@@ -64,4 +64,11 @@ class LocalStore {
         phoneNumber = phone
         BackgroundManager.shared.scheduleExposureUploadTask()
     }
+    
+    func cleanExpiredExposures() {
+        exposures = exposures.filter({ (exposureWrapper) -> Bool in
+            let exposureDate = Date(timeIntervalSince1970: exposureWrapper.exposure.date)
+            return Date().timeIntervalSince(exposureDate) <= 14 * 24 * 60 * 60
+        })
+    }
 }

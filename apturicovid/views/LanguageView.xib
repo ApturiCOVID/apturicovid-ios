@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="FA4-qx-Q8v" customClass="LanguageView" customModule="AC_Demo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LV" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9s-AJ-KWW">
+                    <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                    <color key="textColor" name="languageSelector"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CcS-U8-Tjv" customClass="RoundedView" customModule="AC_Demo" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                            <real key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                            <color key="value" name="languageSelector"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="CcS-U8-Tjv" firstAttribute="top" secondItem="FA4-qx-Q8v" secondAttribute="top" id="7Ho-nm-msO"/>
+                <constraint firstItem="Tln-en-M52" firstAttribute="trailing" secondItem="i9s-AJ-KWW" secondAttribute="trailing" id="EpO-jf-P2P"/>
+                <constraint firstItem="i9s-AJ-KWW" firstAttribute="top" secondItem="FA4-qx-Q8v" secondAttribute="top" id="XEM-NH-pzt"/>
+                <constraint firstItem="CcS-U8-Tjv" firstAttribute="trailing" secondItem="Tln-en-M52" secondAttribute="trailing" id="Yzb-K3-xb5"/>
+                <constraint firstItem="CcS-U8-Tjv" firstAttribute="leading" secondItem="Tln-en-M52" secondAttribute="leading" id="a3h-cp-mRY"/>
+                <constraint firstItem="i9s-AJ-KWW" firstAttribute="leading" secondItem="Tln-en-M52" secondAttribute="leading" id="eOx-Tz-haa"/>
+                <constraint firstItem="CcS-U8-Tjv" firstAttribute="bottom" secondItem="Tln-en-M52" secondAttribute="bottom" id="pBc-eC-rBu"/>
+                <constraint firstItem="Tln-en-M52" firstAttribute="bottom" secondItem="i9s-AJ-KWW" secondAttribute="bottom" id="xqg-fk-Co3"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Tln-en-M52"/>
+            <connections>
+                <outlet property="highlightIndicator" destination="CcS-U8-Tjv" id="ikr-gy-Mg1"/>
+                <outlet property="languageTextView" destination="i9s-AJ-KWW" id="maN-Hf-nqt"/>
+            </connections>
+            <point key="canvasLocation" x="-253.62318840579712" y="-145.3125"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="languageSelector">
+            <color red="0.27058823529411763" green="0.54117647058823526" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,145 @@
+// Common
+"understood" = "Понял";
+"cancel" = "Отменить";
+"yes" = "Да";
+"no" = "Нет";
+"close" = "Закрыть";
+"next" = "Дальше";
+"app_settings" = "Настройки";
+
+// TabBar
+"home" = "Начало";
+"statistics" = "Статистика";
+"information" = "Информация";
+"settings" = "Настройки";
+
+// WelcomeVC
+"welcome_title" = "Помоги прервать цепочку заражений!";
+"welcome_app_description" = "Это самый быстрый способ узнать, был ли у тебя контакт с COVID-19. И действовать, чтобы его остановить.";
+"welcome_privacy_link" = "Политикой конфиденциальности";
+"welcome_terms_link" = "Правилами использования приложения";
+"welcome_privacy_note" = "Я согласен(-а) с Правилами использования приложения и ознакомился(-ась) с Политикой конфиденциальности";
+
+// ExposureSetupVC
+"activate" = "Включить";
+"contact_detection" = "Обнаружение контакта";
+"exposure_setup_description" = "Контакт: присутствие не менее 15 мин. на расстоянии до ~2 м.
+Обнаружение: шифр, который хранится в телефоне 14 дней, затем удаляется.
+
+Обнаружение контакта – это не отслеживание местонахождения.";
+"exposure_switch_subtitle" = "Эту функцию можно включить позже или отключить по желанию.";
+
+// ExposureSetup Validations
+"exposure_off_setup_prompt" = "Действительно хочешь продолжить, не включая обнаружение контакта?";
+
+// PhoneInfoVC
+"why_submit_a_phone_number" = "Зачем указывать номер телефона?";
+"why_submit_a_phone_number_explanation" = "Если у SPKC будет возможность связаться с тобой, можно будет оценить твои риски и, если необходимо, признать контактным лицом. Тогда тебе будет доступна сеть поддержки – например, семейный врач сможет выписать тебе больничный.";
+"data_privacy_and_protection_policy" = "SPKC получит твой номер телефона, только если у тебя будет констатирован контакт с COVID-19, и ни минутой раньше. Никаким другим лицам информация о тебе не будет доступна.";
+
+// CodeEntryVC Phone validation
+"phone_confirmation_title" = "Подтверждение номера";
+"phone_confirmation_description" = "На указанный номер телефона %@ выслан код.";
+"enter_code" = "Введи код здесь:";
+"didnt_receive_code" = "Не получил код, выслать повторно";
+"resend_code" = "Выслать код повторно";
+"input_code_invalid" = "Введен неправильный код";
+
+// HomeVC
+"contact_tracing" = "Обнаружение контакта";
+"currently_active" = "Сейчас включено";
+"currently_inactive" = "Сейчас выключено";
+"exposure_detected_subtitle" = "Спокойствие, только спокойствие. У тебя констатирован контакт с COVID-19.";
+"exposure_off_prompt" = "Действительно хочешь продолжить с выключенным обнаружением контактов?";
+"stats_title" = "За прошедшие сутки";
+"share" = "Поделись";
+"tested" = "Тестов";
+"new_cases" = "Заболело";
+"deceased" = "Умерло";
+
+// ExposureAlertVC
+"exposure_with_covid" = "Обнаружен контакт с COVID-19";
+"you_had_exposure" = "У тебя обнаружен контакт с человеком, заболевшим COVID-19.";
+"how_to_proceed" = "Что теперь делать?";
+"self_isolate" = "Оставайся дома, ограничив контакты с окружающими";
+"observe_symptoms" = "Наблюдай за симптомами";
+"contact_your_family_doctor" = "Есть симптомы? Свяжись с семейным врачом";
+"severe_case" = "Тяжелые симптомы? Звони 113!";
+"wait_for_a_call_from_spkc" = "Жди звонка из SPKC";
+"exposure_handling_description_phone_specified" = "Помни! Констатация контакта еще не означает, что ты  инфицирован(-на). Сейчас главное – сохранять спокойствие, соблюдать осторожность и следовать указаниям медиков. Возможно, мгновения до звонка SPKC покажутся вечностью – запасись терпением!";
+"exposure_handling_description_phone_not_specified" = "Помни! Зафиксированный контакт не означает, что ты инфицирован(-на). Сейчас главное – сохранять спокойствие, соблюдать осторожность и следовать указаниям медиков.  Возможно, теперь ты хочешь указать свой номер телефона, чтобы с тобой связался SPKC?";
+
+// FaqVC
+"what_is_contact_tracing" = "Как констатируется контакт?";
+"contact_detection_explanation" = "Когда два смартфона находятся на расстоянии до ~2 м, они напрямую обмениваются кодом, который хранится в каждом телефоне 14 дней. Если пользователь отметит, что он инфицирован, на телефоны с этим же кодом приходит уведомление.";
+"what_about_my_privacy" = "Что с моей конфиденциальностью?";
+"data_is_kept_on_device_only" = "Данные хранятся только в телефоне ";
+"data_is_automatically_deleted" = "Данные автоматически удаляются ";
+"anonymous_identity" = "Другие пользователи не могут тебя идентифицировать";
+"gpc_tracking_not_performed" = "Приложение не фиксирует данные GPS, даже если GPS включен";
+"frequently_asked_questions" = "Часто задаваемые вопросы";
+"user_privacy" = "Политика конфиденциальности";
+"user_terms" = "Правила использования приложения";
+
+// CodeEntryVC SPKC
+"spkc_data_send" = "Отправить сообщение констатированным контактам";
+"spkc_data_description" = "Если ты инфицирован, можешь с помощью присвоенного SPKC кода разослать автоматическое сообщение тем зафиксированным контактам, у которых есть риск заражения – как близким, так и незнакомым людям. Сообщение не будет содержать какой-либо информации о тебе. Код действителен 30 минут.";
+
+// NotificationSentVC
+"notification_sent_title" = "Спасибо! Сообщение отправлено!";
+"notification_sent_description" = "Большое спасибо за твой вклад в общественное здоровье! Этот небольшой шаг поможет защитить других и более эффективно прервать цепочку заражений";
+
+// SettingsVC
+"enter_spkc_code" = "Если SPKC присвоил тебе код, введи его здесь:";
+"go_to_spkc_code_entry" = "Ввести код SPKC";
+"communication_contact" = "Номер контактного телефона";
+"not_specified" = "Не указан";
+"specify" = "Указать";
+"change" = "Изменить";
+"not_specified_phone_number_limitations" = "В случае обнаружения контакта ты получишь уведомление только в этом приложении, и возможности поддержки для тебя будут ограничены.";
+"notify_if_tracking_isnt_working" = "Показать мне уведомление, если обнаружение контакта выключилось";
+
+// PhoneSettingsVC
+"specify_a_phone_number_title" = "Указать номер";
+"specify_a_phone_number_description" = "Укажи номер телефона, чтобы у SPKC была возможность связаться с тобой в случае контакта с COVID-19.";
+"why_specify_a_phone_number" = "Почему стоит указать номер телефона?";
+"specified_phone_number_is_of_another_person" = "Указан номер близкого человека";
+"remain_anonymous" = "Не желаю указывать номер телефона";
+"anonymous_prompt" = "В случае обнаружения контакта ты получишь уведомление только в этом приложении, и возможности поддержки для тебя будут ограничены. Хочешь продолжить, не указывая номер телефона?";
+
+// Notifications
+"exposure_disabled_notification_title" = "Фиксирование контакта выключено";
+"exposure_disabled_notification_description" = "Фиксирование контакта в приложении Apturi COVID сейчас не происходит.";
+"exposure_detected_notification_title" = "Спокойствие, только спокойствие! ";
+"exposure_detected_notification_description" = " У тебя обнаружен контакт с человеком, зараженным COVID-19";
+
+// Error
+"error" = "Ошибка";
+"continue" = "Продолжить";
+"invalid_phone_number_error" = "Недействительный формат номера";
+"connectivity_offline" = "Приложение работает в режиме офлайн";
+"no_internet_connection" = "Отсутствует интернет соединение";
+"no_daily_key_error" = "Нет данных для отправки, кажется, ты использовал приложение недостаточно долго.";
+"sms_timeout_error" = "Пожалуйста, подожди %02d сек., чтобы отправить код повторно.";
+
+"ble_off_error" = "Bluetooth выключен";
+"ble_usage_description" = "Включите Bluetooth в настройках системы, чтобы включить обнаружение контактов.";
+
+"exposure_notifications_off_error" = "Уведомления о контакте с COVID-19 выключены в настройках системы";
+"exposure_notifications_usage_description" = "Включите уведомления о контакте с COVID-19 в настройках системы, чтобы продолжить.";
+
+"notifications_off_error" = "Уведомления выключены в настройках системы";
+"notifications_usage_description" = "Включите уведомления в настройках системы, чтобы продолжить.";
+
+
+// StatsVC
+"data_renewed" = "Данные обновлены: ";
+"latvia_covid_statistics" = "Статистика COVID-19 в Латвии";
+"total" = "Всего";
+"yesterday" = "Вчера";
+"proportion" = "Соотношение";
+"proportion_description" = "заболевшие";
+"detailed_stats" = "Подробная статистика";
+
+"if_preferred_specify_phone_number" = "COVID-19 kontakta gadījumā, uz aplikāciju atnāks paziņojums ar norādēm. Ja labāk vēlieties lai ar Jums sazinās pa telefonu, norādiet kontaktu";
+"delete_all_stored_data" = "Удалить все сохраненные данные";

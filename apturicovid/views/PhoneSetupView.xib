@@ -27,14 +27,38 @@
                             <color key="textColor" name="descriptionText"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Kāpēc ievadīt telefona numuru?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Muq-ix-IiQ">
-                            <rect key="frame" x="0.0" y="64.5" width="354" height="20.5"/>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                            <color key="textColor" name="linkColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cc7-lP-GiG">
-                            <rect key="frame" x="0.0" y="107" width="354" height="40"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zc1-Lf-WXp" userLabel="phone Explain View">
+                            <rect key="frame" x="0.0" y="58.5" width="354" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Kāpēc ievadīt telefona numuru?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Muq-ix-IiQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="251.5" height="50"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                    <color key="textColor" name="linkColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bbz-Qs-Wdy">
+                                    <rect key="frame" x="251.5" y="16.5" width="20" height="17"/>
+                                    <color key="tintColor" name="linkColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="Bbz-Qs-Wdy" secondAttribute="height" id="xy5-g7-2JZ"/>
+                                    </constraints>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font">
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                    </preferredSymbolConfiguration>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="Muq-ix-IiQ" secondAttribute="bottom" id="5uY-dO-hfl"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Bbz-Qs-Wdy" secondAttribute="trailing" constant="16" id="DIX-bU-hsK"/>
+                                <constraint firstItem="Bbz-Qs-Wdy" firstAttribute="leading" secondItem="Muq-ix-IiQ" secondAttribute="trailing" id="JZm-bO-bGL"/>
+                                <constraint firstItem="Bbz-Qs-Wdy" firstAttribute="centerY" secondItem="zc1-Lf-WXp" secondAttribute="centerY" id="PYh-L2-2wU"/>
+                                <constraint firstItem="Muq-ix-IiQ" firstAttribute="top" secondItem="zc1-Lf-WXp" secondAttribute="top" id="X12-1j-E2f"/>
+                                <constraint firstItem="Muq-ix-IiQ" firstAttribute="leading" secondItem="zc1-Lf-WXp" secondAttribute="leading" id="dSI-k9-ZAi"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cc7-lP-GiG" userLabel="phone Input">
+                            <rect key="frame" x="0.0" y="124.5" width="354" height="40"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="QTM-Fb-cuS">
                                     <rect key="frame" x="16" y="0.0" width="338" height="40"/>
@@ -72,21 +96,24 @@
                                 <constraint firstItem="QTM-Fb-cuS" firstAttribute="leading" secondItem="cc7-lP-GiG" secondAttribute="leading" constant="16" id="zOh-YA-qZE"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rej-Pr-jhU">
-                            <rect key="frame" x="0.0" y="169" width="354" height="50"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rej-Pr-jhU" userLabel="anonymous View">
+                            <rect key="frame" x="0.0" y="180.5" width="354" height="38.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Palikt anonīmam" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWu-PV-DP0">
-                                    <rect key="frame" x="0.0" y="0.0" width="131.5" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="131.5" height="38.5"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                    <color key="textColor" red="0.38039215686274508" green="0.40000000000000002" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="v5h-8t-PNd">
-                                    <rect key="frame" x="141.5" y="17" width="20" height="16.5"/>
-                                    <color key="tintColor" name="descriptionText"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v5h-8t-PNd">
+                                    <rect key="frame" x="131.5" y="11" width="20" height="17"/>
+                                    <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="v5h-8t-PNd" secondAttribute="height" id="Zae-Sy-sqQ"/>
                                     </constraints>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font">
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                    </preferredSymbolConfiguration>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -94,7 +121,7 @@
                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="v5h-8t-PNd" secondAttribute="trailing" constant="16" id="CCT-ED-lJl"/>
                                 <constraint firstItem="v5h-8t-PNd" firstAttribute="centerY" secondItem="pWu-PV-DP0" secondAttribute="centerY" id="Hfg-F0-fAj"/>
                                 <constraint firstItem="pWu-PV-DP0" firstAttribute="top" secondItem="rej-Pr-jhU" secondAttribute="top" id="KtC-Hl-3LB"/>
-                                <constraint firstItem="v5h-8t-PNd" firstAttribute="leading" secondItem="pWu-PV-DP0" secondAttribute="trailing" constant="10" id="MkI-Ym-GXU"/>
+                                <constraint firstItem="v5h-8t-PNd" firstAttribute="leading" secondItem="pWu-PV-DP0" secondAttribute="trailing" id="MkI-Ym-GXU"/>
                                 <constraint firstItem="pWu-PV-DP0" firstAttribute="leading" secondItem="rej-Pr-jhU" secondAttribute="leading" id="h0P-0t-ccL"/>
                                 <constraint firstAttribute="bottom" secondItem="pWu-PV-DP0" secondAttribute="bottom" id="j1g-ay-43D"/>
                             </constraints>

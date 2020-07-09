@@ -248,43 +248,74 @@
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aktivizēt" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSG-0A-HKx">
-                                                                <rect key="frame" x="40" y="14" width="265" height="33"/>
+                                                                <rect key="frame" x="40" y="14" width="75" height="33"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Asq-G0-JLm">
-                                                                <rect key="frame" x="325" y="15" width="51" height="31"/>
-                                                                <color key="onTintColor" red="0.27058823529411763" green="0.54509803921568623" blue="0.47843137254901957" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <connections>
-                                                                    <action selector="onSwitchChange:" destination="Wx0-rH-Fu9" eventType="valueChanged" id="3Jj-eA-6wA"/>
-                                                                </connections>
-                                                            </switch>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Šo funkciju vari ieslēgt arī vēlāk. Un izslēgt, kad vien vēlies" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yP-wj-UBv">
                                                                 <rect key="frame" x="40" y="57" width="334" height="42.5"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZS-po-x1N" customClass="DesignableSwitch" customModule="AC_Demo" customModuleProvider="target">
+                                                                <rect key="frame" x="321" y="15.5" width="55" height="30"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="ZN6-a5-DkR"/>
+                                                                    <constraint firstAttribute="width" constant="55" id="fq1-68-PJA"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOn" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="offTintColor">
+                                                                        <color key="value" name="offColor"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="onTintColor">
+                                                                        <color key="value" name="homeBottomViewColor"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="thumbShadowColor">
+                                                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="size" keyPath="thumbShadowOffset">
+                                                                        <size key="value" width="0.0" height="0.0"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="thumbShaddowOppacity">
+                                                                        <real key="value" value="0.5"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="thumbShaddowRadius">
+                                                                        <real key="value" value="3"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="size" keyPath="thumbSize">
+                                                                        <size key="value" width="32" height="32"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                                                        <real key="value" value="0.0"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="onSwitchTap:" destination="Wx0-rH-Fu9" eventType="valueChanged" id="awV-aw-nzH"/>
+                                                                </connections>
+                                                            </view>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
                                                             <constraint firstItem="4yP-wj-UBv" firstAttribute="leading" secondItem="5RY-c7-kn8" secondAttribute="leading" constant="40" id="2fJ-MZ-HgU"/>
-                                                            <constraint firstItem="Asq-G0-JLm" firstAttribute="leading" secondItem="dSG-0A-HKx" secondAttribute="trailing" constant="20" id="8ag-q1-SoN"/>
+                                                            <constraint firstItem="tZS-po-x1N" firstAttribute="centerY" secondItem="dSG-0A-HKx" secondAttribute="centerY" id="CIF-NK-aEf"/>
                                                             <constraint firstAttribute="trailing" secondItem="KJ0-Hz-UX6" secondAttribute="trailing" constant="30" id="DOQ-Wo-Ezr"/>
                                                             <constraint firstItem="5si-hl-vID" firstAttribute="top" secondItem="5RY-c7-kn8" secondAttribute="top" id="EEL-2k-dTs"/>
                                                             <constraint firstItem="KJ0-Hz-UX6" firstAttribute="top" secondItem="4yP-wj-UBv" secondAttribute="bottom" constant="13" id="FNK-2B-9bo"/>
                                                             <constraint firstItem="5si-hl-vID" firstAttribute="leading" secondItem="5RY-c7-kn8" secondAttribute="leading" constant="30" id="Nt4-MO-7Og"/>
                                                             <constraint firstItem="KJ0-Hz-UX6" firstAttribute="leading" secondItem="5RY-c7-kn8" secondAttribute="leading" constant="30" id="QPi-bK-Ibw"/>
                                                             <constraint firstAttribute="bottom" secondItem="KJ0-Hz-UX6" secondAttribute="bottom" id="T2C-As-S8u"/>
+                                                            <constraint firstItem="4yP-wj-UBv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="tZS-po-x1N" secondAttribute="bottom" constant="10" id="U17-SA-equ"/>
                                                             <constraint firstItem="dSG-0A-HKx" firstAttribute="leading" secondItem="5RY-c7-kn8" secondAttribute="leading" constant="40" id="U7s-v6-Mup"/>
                                                             <constraint firstItem="dSG-0A-HKx" firstAttribute="top" secondItem="5si-hl-vID" secondAttribute="bottom" constant="13" id="YMm-Yz-kIe"/>
+                                                            <constraint firstAttribute="trailing" secondItem="tZS-po-x1N" secondAttribute="trailing" constant="38" id="Ylp-ia-UHN"/>
                                                             <constraint firstItem="4yP-wj-UBv" firstAttribute="top" secondItem="dSG-0A-HKx" secondAttribute="bottom" constant="10" id="ebp-sl-jej"/>
-                                                            <constraint firstItem="Asq-G0-JLm" firstAttribute="centerY" secondItem="dSG-0A-HKx" secondAttribute="centerY" id="fiV-t7-xWW"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Asq-G0-JLm" secondAttribute="trailing" constant="40" id="hBQ-lo-4yl"/>
-                                                            <constraint firstItem="4yP-wj-UBv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Asq-G0-JLm" secondAttribute="bottom" constant="10" id="hvQ-Pl-74w"/>
                                                             <constraint firstAttribute="trailing" secondItem="4yP-wj-UBv" secondAttribute="trailing" constant="40" id="oaG-OY-mKm"/>
                                                             <constraint firstAttribute="trailing" secondItem="5si-hl-vID" secondAttribute="trailing" constant="30" id="pF9-Pl-Td4"/>
+                                                            <constraint firstItem="tZS-po-x1N" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dSG-0A-HKx" secondAttribute="trailing" constant="16" id="u5p-PF-AwF"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -384,7 +415,7 @@
                         <outlet property="contactDescription" destination="J91-SW-O4J" id="1qT-tb-6CF"/>
                         <outlet property="contactTitle" destination="bd2-cG-x0S" id="aQI-zS-tUQ"/>
                         <outlet property="exposureActivateContainer" destination="5RY-c7-kn8" id="snn-VU-rO5"/>
-                        <outlet property="exposureEnableSwitch" destination="Asq-G0-JLm" id="3TN-ra-cad"/>
+                        <outlet property="exposureEnableSwitch" destination="tZS-po-x1N" id="8ol-74-gc2"/>
                         <outlet property="fadeView" destination="hzh-LA-acb" id="dm8-Nt-mCs"/>
                         <outlet property="mainStackView" destination="qv6-Xg-4Qt" id="4rA-CP-YhT"/>
                         <outlet property="nextButton" destination="tJZ-3g-hia" id="dhQ-hv-nqR"/>
@@ -403,6 +434,12 @@
         <image name="welcome-logo" width="165" height="73"/>
         <namedColor name="headerColor">
             <color red="0.94901960784313721" green="0.95294117647058818" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="homeBottomViewColor">
+            <color red="0.13333333333333333" green="0.44705882352941179" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="offColor">
+            <color red="0.94117647058823528" green="0.36078431372549019" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="primaryButtonColor">
             <color red="0.0" green="0.38039215686274508" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

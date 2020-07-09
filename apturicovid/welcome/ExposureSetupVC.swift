@@ -12,7 +12,7 @@ class ExposureSetupVC: BaseViewController {
     @IBOutlet weak var contactDescription: UILabel!
     @IBOutlet weak var activateSwitchTitle: UILabel!
     @IBOutlet weak var activateSwitchSubtitle: UILabel!
-    @IBOutlet weak var exposureEnableSwitch: UISwitch!
+    @IBOutlet weak var exposureEnableSwitch: DesignableSwitch!
     @IBOutlet weak var fadeView: FadeView!
     @IBOutlet weak var exposureActivateContainer: UIView!
     
@@ -22,7 +22,7 @@ class ExposureSetupVC: BaseViewController {
     var phoneNumberHasValidFormat = false
     var exposureEnabled: Bool { exposureEnableSwitch.isOn }
     
-    @IBAction func onSwitchChange(_ sender: UISwitch) {
+    @IBAction func onSwitchTap(_ sender: DesignableSwitch) {
         setExposureTracking(enabled: sender.isOn, referenceSwitch: sender, animated: true)
     }
     

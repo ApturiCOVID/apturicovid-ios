@@ -8,7 +8,7 @@ class PhoneSetupView: UIView {
     @IBOutlet weak var phoneInput: PhoneTextField!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var anonymousButtonView: UIView!
-    @IBOutlet weak var phoneExplanationButton: UIButton!
+    @IBOutlet weak var phoneExplanationLabel: UILabel!
     @IBOutlet weak var stayAnonymousLabel: UILabel!
     
     let checkboxView = CheckboxView.create(text: "specified_phone_number_is_of_another_person".translated, isChecked: false)
@@ -89,7 +89,7 @@ class PhoneSetupView: UIView {
             .disposed(by: disposeBag)
         
         phoneExplanationTapDisposable?.dispose()
-        phoneExplanationTapDisposable = phoneExplanationButton
+        phoneExplanationTapDisposable = phoneExplanationLabel
             .rx.tapGesture()
             .when(.recognized)
             .subscribe(onNext: { [weak self] (_) in
@@ -99,7 +99,7 @@ class PhoneSetupView: UIView {
     
     private func translate() {
         descriptionLabel.text = "specify_a_phone_number_description".translated
-        phoneExplanationButton.setTitle("why_specify_a_phone_number".translated, for: .normal)
         stayAnonymousLabel.text = "remain_anonymous".translated
+        phoneExplanationLabel.text = "why_specify_a_phone_number".translated
     }
 }

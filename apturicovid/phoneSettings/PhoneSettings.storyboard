@@ -37,7 +37,7 @@
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Norādīt kontaktu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LY9-QA-sGG">
                                                                 <rect key="frame" x="30" y="225" width="354" height="43"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                 <color key="textColor" name="darkLabel"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -116,8 +116,9 @@
                                 <color key="backgroundColor" name="primaryButton"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="r9Z-nQ-CoZ"/>
-                                    <constraint firstAttribute="width" constant="175" id="s69-Wb-NGb"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="175" id="s69-Wb-NGb"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Next">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -197,22 +198,22 @@
                                                                     <constraint firstAttribute="height" constant="130" id="wJe-Av-D8F"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kāpēc ievadīt numuru?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kvw-vF-XhJ">
-                                                                <rect key="frame" x="30" y="225" width="354" height="33"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kāpēc ievadīt numuru?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kvw-vF-XhJ">
+                                                                <rect key="frame" x="30" y="225" width="354" height="24.5"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                 <color key="textColor" name="darkLabel"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AV-xa-ILL">
-                                                                <rect key="frame" x="30" y="278" width="354" height="81.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AV-xa-ILL">
+                                                                <rect key="frame" x="30" y="269.5" width="354" height="86.5"/>
                                                                 <string key="text">Šo telefona numuru izmantos medicīnas darbinieki,lai tevi informētu gadījumā, ja būsi saskāries ar COVID - 19 inficētu personu un sniegs tālākus norādījumus.</string>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <color key="textColor" name="descriptionText"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datu privātuma un aizsardzības politika - skaidrojums cik ļoti svarīgi un primāri mums ir nodrošināt lietotāja privātumu." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bh1-n4-Bkg">
-                                                                <rect key="frame" x="30" y="379.5" width="354" height="61"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datu privātuma un aizsardzības politika - skaidrojums cik ļoti svarīgi un primāri mums ir nodrošināt lietotāja privātumu." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bh1-n4-Bkg">
+                                                                <rect key="frame" x="30" y="376" width="354" height="64.5"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <color key="textColor" name="descriptionText"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -297,8 +298,9 @@
                                 <color key="backgroundColor" name="primaryButton"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="hji-Hm-Kme"/>
-                                    <constraint firstAttribute="width" constant="175" id="ybZ-8O-S7m"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="175" id="ybZ-8O-S7m"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Aizvērt">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>

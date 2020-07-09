@@ -1,8 +1,19 @@
 {
   "images" : [
     {
-      "filename" : "spkc-logo.pdf",
-      "idiom" : "universal"
+      "filename" : "spkc-logo.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "spkc-logo@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "spkc-logo@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

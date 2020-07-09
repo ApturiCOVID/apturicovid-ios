@@ -171,11 +171,11 @@ class ExposureSetupVC: BaseViewController {
     }
     
     override func translate() {
-        contactTitle.text  = "contact_detection".translated
+        contactTitle.text = "contact_detection".translated
         contactDescription.text = "exposure_setup_description".translated
         activateSwitchTitle.text = "activate".translated
-        nextButton.setTitle("next".translated, for: .normal)
         activateSwitchSubtitle.text = "exposure_switch_subtitle".translated
+        nextButton.setText("next".translated)
     }
     
     func updateViewAppearance(){

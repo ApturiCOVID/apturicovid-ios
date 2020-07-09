@@ -52,6 +52,7 @@ import UIKit
                  font: UIFont = .preferredFont(forTextStyle: .body ),
                  insets: UIEdgeInsets? = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)){
         
+        setTitle(text, for: .normal)
         titleLabel?.font = font
         contentEdgeInsets = insets ?? .zero
         sizeToFit()

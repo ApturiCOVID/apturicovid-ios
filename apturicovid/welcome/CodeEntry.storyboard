@@ -28,15 +28,15 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KNq-aG-hpu">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="200.33333333333334"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numura apstiprinājums" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LY-46-h5u">
-                                                                <rect key="frame" x="30" y="112.99999999999997" width="354" height="21.666666666666657"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numura apstiprinājums" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LY-46-h5u">
+                                                                <rect key="frame" x="30" y="106.66666666666666" width="354" height="26.333333333333343"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uz jūsu norādīto telefona numuru 28 345 678 tika nosūtīts kods. Ievadiet to zemāk" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KD7-f6-9OV">
-                                                                <rect key="frame" x="30" y="144.66666666666666" width="354" height="40.666666666666657"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uz jūsu norādīto telefona numuru 28 345 678 tika nosūtīts kods. Ievadiet to zemāk" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KD7-f6-9OV">
+                                                                <rect key="frame" x="30" y="142.99999999999997" width="354" height="42.333333333333343"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <color key="textColor" name="descriptionText"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -56,9 +56,9 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="inR-2y-Fbc">
                                                         <rect key="frame" x="0.0" y="200.33333333333334" width="414" height="91.000000000000028"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ievadi kodu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dea-tK-RbJ">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ievadi kodu" textAlignment="center" lineBreakMode="wordWrap" minimumScaleFactor="0.10000000000000001" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dea-tK-RbJ">
                                                                 <rect key="frame" x="30" y="15" width="354" height="18"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -81,29 +81,29 @@
                                                             <constraint firstAttribute="trailing" secondItem="3Sm-Mf-AAs" secondAttribute="trailing" id="vPW-n9-56a"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ievadīts nepareizs kods" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ct2-xa-tUa">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ievadīts nepareizs kods" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ct2-xa-tUa">
                                                         <rect key="frame" x="0.0" y="291.33333333333326" width="414" height="55"/>
                                                         <color key="backgroundColor" red="0.95294117647058818" green="0.95686274509803915" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="55" id="fhb-R1-61J"/>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="fhb-R1-61J"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SlT-Fx-zDs">
                                                         <rect key="frame" x="0.0" y="346.33333333333326" width="414" height="75"/>
                                                         <subviews>
-                                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nosūtīt kodu atkārtoti" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wm6-YX-ibS">
+                                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nosūtīt kodu atkārtoti" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wm6-YX-ibS">
                                                                 <rect key="frame" x="30" y="0.0" width="354" height="75"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                                                 <color key="textColor" name="linkColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="75" id="0rJ-sy-WjE"/>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="75" id="0rJ-sy-WjE"/>
                                                             <constraint firstItem="Wm6-YX-ibS" firstAttribute="top" secondItem="SlT-Fx-zDs" secondAttribute="top" id="2KL-JA-dnD"/>
                                                             <constraint firstItem="Wm6-YX-ibS" firstAttribute="leading" secondItem="SlT-Fx-zDs" secondAttribute="leading" constant="30" id="DCj-uR-jn8"/>
                                                             <constraint firstAttribute="trailing" secondItem="Wm6-YX-ibS" secondAttribute="trailing" constant="30" id="Uul-oz-1cx"/>
@@ -221,16 +221,16 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Hj-Yx-1hH">
                                                 <rect key="frame" x="0.0" y="130" width="414" height="210"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paldies! Paziņojums nosūtīts!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfR-Uw-Slh">
-                                                        <rect key="frame" x="30" y="15.000000000000002" width="354" height="21.666666666666671"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paldies! Paziņojums nosūtīts!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfR-Uw-Slh">
+                                                        <rect key="frame" x="30" y="14.999999999999998" width="354" height="26.333333333333329"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjU-24-I5L">
-                                                        <rect key="frame" x="30" y="46.666666666666679" width="354" height="81.333333333333314"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjU-24-I5L">
+                                                        <rect key="frame" x="30" y="51.333333333333307" width="354" height="86.333333333333314"/>
                                                         <string key="text">Liels paldies par līdzdarbošanos sabiedrības veselības labā! Nelielā darbība, ko tikko veici, būtiski palīdzēs pasargāt citus un efektīvāk pārraut vīrusa ķēdi.</string>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <color key="textColor" name="descriptionText"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -253,8 +253,9 @@
                                                         <color key="backgroundColor" name="primaryButton"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="Pwf-DC-6PE"/>
-                                                            <constraint firstAttribute="width" constant="175" id="qY8-53-Wb7"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="175" id="qY8-53-Wb7"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <state key="normal" title="Aizvērt">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>

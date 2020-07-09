@@ -197,23 +197,23 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="349.5"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exposure-landing" translatesAutoresizingMaskIntoConstraints="NO" id="DVo-gm-sUf">
-                                                                <rect key="frame" x="142" y="60" width="130" height="130"/>
+                                                                <rect key="frame" x="30" y="60" width="130" height="130"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="130" id="KjU-gy-g4N"/>
                                                                     <constraint firstAttribute="width" constant="130" id="OOm-x8-MPI"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kontakta fiksēšana" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bd2-cG-x0S">
-                                                                <rect key="frame" x="30" y="198" width="354" height="20.5"/>
-                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                                <color key="textColor" name="darkLabel"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kontakta fiksēšana" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bd2-cG-x0S">
+                                                                <rect key="frame" x="30" y="198" width="354" height="33.5"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                                <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J91-SW-O4J">
-                                                                <rect key="frame" x="30" y="228.5" width="354" height="105"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J91-SW-O4J">
+                                                                <rect key="frame" x="30" y="241.5" width="354" height="92"/>
                                                                 <string key="text">Īss, vispārējs praksts par to kas tas ir, kā tas strādā, kāpēc vajadzīgs, datu drošības atrunas u.t.t. Protams, pēc iespējas īsāk</string>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                <color key="textColor" name="descriptionText"/>
+                                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -221,9 +221,9 @@
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="J91-SW-O4J" secondAttribute="trailing" constant="30" id="3j2-Ok-NMg"/>
                                                             <constraint firstItem="bd2-cG-x0S" firstAttribute="top" secondItem="DVo-gm-sUf" secondAttribute="bottom" constant="8" id="3y4-r4-Frr"/>
-                                                            <constraint firstItem="DVo-gm-sUf" firstAttribute="centerX" secondItem="JuH-Ge-Xq4" secondAttribute="centerX" id="4JT-wH-8Hl"/>
                                                             <constraint firstAttribute="bottom" secondItem="J91-SW-O4J" secondAttribute="bottom" constant="16" id="IeC-ke-ac7"/>
                                                             <constraint firstAttribute="trailing" secondItem="bd2-cG-x0S" secondAttribute="trailing" constant="30" id="Njr-sf-2Nj"/>
+                                                            <constraint firstItem="DVo-gm-sUf" firstAttribute="leading" secondItem="bd2-cG-x0S" secondAttribute="leading" id="RxV-z2-c3Q"/>
                                                             <constraint firstItem="DVo-gm-sUf" firstAttribute="top" secondItem="JuH-Ge-Xq4" secondAttribute="top" constant="60" id="YdZ-Xc-IjI"/>
                                                             <constraint firstItem="bd2-cG-x0S" firstAttribute="leading" secondItem="JuH-Ge-Xq4" secondAttribute="leading" constant="30" id="i7c-Be-tC6"/>
                                                             <constraint firstItem="J91-SW-O4J" firstAttribute="top" secondItem="bd2-cG-x0S" secondAttribute="bottom" constant="10" id="oiW-hB-O6v"/>
@@ -249,8 +249,8 @@
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aktivizēt" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSG-0A-HKx">
                                                                 <rect key="frame" x="40" y="14" width="265" height="33"/>
-                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                                <color key="textColor" name="darkLabel"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                                <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Asq-G0-JLm">
@@ -263,7 +263,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Šo funkciju vari ieslēgt arī vēlāk. Un izslēgt, kad vien vēlies" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yP-wj-UBv">
                                                                 <rect key="frame" x="40" y="57" width="334" height="42.5"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                <color key="textColor" red="0.41568627450980389" green="0.42745098039215684" blue="0.45882352941176469" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -401,12 +401,6 @@
         <image name="exposure-landing" width="140" height="134"/>
         <image name="spkc-logo" width="120" height="103"/>
         <image name="welcome-logo" width="165" height="73"/>
-        <namedColor name="darkLabel">
-            <color red="0.0" green="0.23921568627450981" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="descriptionText">
-            <color red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
         <namedColor name="headerColor">
             <color red="0.94901960784313721" green="0.95294117647058818" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

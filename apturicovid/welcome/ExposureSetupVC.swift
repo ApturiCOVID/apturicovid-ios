@@ -207,8 +207,8 @@ extension ExposureSetupVC : UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         backButton.updateShadowOpacity(fromContentOffset: scrollView.contentOffset,
-                                       shadowApplyBeginOffset: 100,
-                                       shadowApplyIntensity: 1000,
+                                       shadowApplyBeginOffset: 0,
+                                       shadowApplyIntensity: 1500,
                                        shadowMaxOpasity: 0.3)
     }
 }

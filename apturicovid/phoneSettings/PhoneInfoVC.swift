@@ -18,10 +18,7 @@ class PhoneInfoVC: BaseViewController {
         titleLabel.text = "why_submit_a_phone_number".translated
         descriptionLabel.text = "why_submit_a_phone_number_explanation".translated
         privacyProtectionLabel.text = "data_privacy_and_protection_policy".translated
-        closeButton.setTitle("close".translated, for: .normal)
-        closeButton.titleLabel?.font = .preferredFont(forTextStyle: .body)
-        closeButton.contentEdgeInsets = .init(top: 0, left: 16, bottom: 0, right: 16)
-        closeButton.sizeToFit()
+        closeButton.setText("close".translated)
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -18,7 +18,7 @@ class PhoneInfoVC: BaseViewController {
         titleLabel.text = "why_submit_a_phone_number".translated
         descriptionLabel.text = "why_submit_a_phone_number_explanation".translated
         privacyProtectionLabel.text = "data_privacy_and_protection_policy".translated
-        closeButton.setTitle("close".translated, for: .normal)
+        closeButton.setText("close".translated)
     }
     
     override func viewDidAppear(_ animated: Bool) {

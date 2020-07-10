@@ -12,7 +12,7 @@ class ExposureSetupVC: BaseViewController {
     @IBOutlet weak var contactDescription: UILabel!
     @IBOutlet weak var activateSwitchTitle: UILabel!
     @IBOutlet weak var activateSwitchSubtitle: UILabel!
-    @IBOutlet weak var exposureEnableSwitch: UISwitch!
+    @IBOutlet weak var exposureEnableSwitch: DesignableSwitch!
     @IBOutlet weak var fadeView: FadeView!
     @IBOutlet weak var exposureActivateContainer: UIView!
     
@@ -22,7 +22,7 @@ class ExposureSetupVC: BaseViewController {
     var phoneNumberHasValidFormat = false
     var exposureEnabled: Bool { exposureEnableSwitch.isOn }
     
-    @IBAction func onSwitchChange(_ sender: UISwitch) {
+    @IBAction func onSwitchTap(_ sender: DesignableSwitch) {
         setExposureTracking(enabled: sender.isOn, referenceSwitch: sender, animated: true)
     }
     
@@ -171,11 +171,11 @@ class ExposureSetupVC: BaseViewController {
     }
     
     override func translate() {
-        contactTitle.text  = "contact_detection".translated
+        contactTitle.text = "contact_detection".translated
         contactDescription.text = "exposure_setup_description".translated
         activateSwitchTitle.text = "activate".translated
-        nextButton.setTitle("next".translated, for: .normal)
         activateSwitchSubtitle.text = "exposure_switch_subtitle".translated
+        nextButton.setText("next".translated)
     }
     
     func updateViewAppearance(){
@@ -207,8 +207,8 @@ extension ExposureSetupVC : UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         backButton.updateShadowOpacity(fromContentOffset: scrollView.contentOffset,
-                                       shadowApplyBeginOffset: 100,
-                                       shadowApplyIntensity: 1000,
+                                       shadowApplyBeginOffset: 0,
+                                       shadowApplyIntensity: 1500,
                                        shadowMaxOpasity: 0.3)
     }
 }

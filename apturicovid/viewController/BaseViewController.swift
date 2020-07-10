@@ -20,6 +20,11 @@ class BaseViewController: UIViewController {
         translate()
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        translate()
+    }
+    
     func translate() {
         // override this to translate VC labels
     }

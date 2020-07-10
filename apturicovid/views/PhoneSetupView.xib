@@ -15,112 +15,115 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PhoneSetupView" customModule="AC_Demo" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="182"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="239"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="buT-C0-ccM">
-                    <rect key="frame" x="30" y="20" width="354" height="162"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="buT-C0-ccM">
+                    <rect key="frame" x="30" y="20" width="354" height="219"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Norādiet kontakttālruni, uz kuru ar Jums sazināties COVID-19 kontakta gadījumā" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMC-a8-BtJ">
-                            <rect key="frame" x="0.0" y="0.0" width="354" height="52"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" name="descriptionText"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Norādiet kontakttālruni, uz kuru ar Jums sazināties COVID-19 kontakta gadījumā" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMC-a8-BtJ">
+                            <rect key="frame" x="0.0" y="0.0" width="354" height="42.5"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1F2-hs-pz6">
-                            <rect key="frame" x="0.0" y="52" width="354" height="40"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zc1-Lf-WXp" userLabel="phone Explain View">
+                            <rect key="frame" x="0.0" y="58.5" width="354" height="50"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Nrp-uD-E6r">
-                                    <rect key="frame" x="0.0" y="5" width="216" height="20"/>
-                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                    <state key="normal" title="Kāpēc ievadīt telefona numuru?">
-                                        <color key="titleColor" name="linkColor"/>
-                                    </state>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="40" id="2A3-5k-zFW"/>
-                                <constraint firstItem="Nrp-uD-E6r" firstAttribute="top" secondItem="1F2-hs-pz6" secondAttribute="top" constant="5" id="sdG-KD-TW7"/>
-                                <constraint firstAttribute="bottom" secondItem="Nrp-uD-E6r" secondAttribute="bottom" constant="15" id="vH4-xN-dy7"/>
-                                <constraint firstItem="Nrp-uD-E6r" firstAttribute="leading" secondItem="1F2-hs-pz6" secondAttribute="leading" id="vX1-lo-kEV"/>
-                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Nrp-uD-E6r" secondAttribute="trailing" id="yNp-hU-3J5"/>
-                            </constraints>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cc7-lP-GiG">
-                            <rect key="frame" x="0.0" y="92" width="354" height="40"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ool-BV-ezS">
-                                    <rect key="frame" x="0.0" y="0.0" width="64" height="40"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+371" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37m-tA-H8h">
-                                            <rect key="frame" x="15" y="0.0" width="34" height="40"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" red="0.61568627450980395" green="0.61568627450980395" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstItem="37m-tA-H8h" firstAttribute="top" secondItem="ool-BV-ezS" secondAttribute="top" id="0dx-NU-yJL"/>
-                                        <constraint firstAttribute="bottom" secondItem="37m-tA-H8h" secondAttribute="bottom" id="DeU-z1-bNg"/>
-                                        <constraint firstAttribute="trailing" secondItem="37m-tA-H8h" secondAttribute="trailing" constant="15" id="PNF-jE-KRu"/>
-                                        <constraint firstItem="37m-tA-H8h" firstAttribute="leading" secondItem="ool-BV-ezS" secondAttribute="leading" constant="15" id="dHW-IS-k01"/>
-                                    </constraints>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mkl-C3-gsh">
-                                    <rect key="frame" x="64" y="0.0" width="1" height="40"/>
-                                    <color key="backgroundColor" name="separator"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="1" id="7g2-GU-tin"/>
-                                    </constraints>
-                                </view>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Axo-97-MFn" customClass="PhoneTextField" customModule="AC_Demo" customModuleProvider="target">
-                                    <rect key="frame" x="75" y="0.0" width="279" height="40"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
-                                </textField>
-                            </subviews>
-                            <color key="backgroundColor" red="0.94901960784313721" green="0.95294117647058818" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="40" id="0KS-rH-bCO"/>
-                                <constraint firstAttribute="bottom" secondItem="ool-BV-ezS" secondAttribute="bottom" id="0l1-jO-PSB"/>
-                                <constraint firstItem="mkl-C3-gsh" firstAttribute="top" secondItem="cc7-lP-GiG" secondAttribute="top" id="2cd-7y-wbD"/>
-                                <constraint firstItem="mkl-C3-gsh" firstAttribute="leading" secondItem="ool-BV-ezS" secondAttribute="trailing" id="3co-Pj-7DU"/>
-                                <constraint firstItem="Axo-97-MFn" firstAttribute="top" secondItem="cc7-lP-GiG" secondAttribute="top" id="E1p-iz-NDt"/>
-                                <constraint firstAttribute="bottom" secondItem="Axo-97-MFn" secondAttribute="bottom" id="KqA-P2-LD1"/>
-                                <constraint firstAttribute="bottom" secondItem="mkl-C3-gsh" secondAttribute="bottom" id="X7p-tO-ks6"/>
-                                <constraint firstItem="Axo-97-MFn" firstAttribute="leading" secondItem="mkl-C3-gsh" secondAttribute="trailing" constant="10" id="fZ7-W4-xdr"/>
-                                <constraint firstItem="ool-BV-ezS" firstAttribute="leading" secondItem="cc7-lP-GiG" secondAttribute="leading" id="grj-9h-rlG"/>
-                                <constraint firstItem="ool-BV-ezS" firstAttribute="top" secondItem="cc7-lP-GiG" secondAttribute="top" id="spZ-FM-NYg"/>
-                                <constraint firstAttribute="trailing" secondItem="Axo-97-MFn" secondAttribute="trailing" id="uqz-CJ-vAN"/>
-                            </constraints>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rej-Pr-jhU">
-                            <rect key="frame" x="0.0" y="132" width="354" height="30"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Palikt anonīmam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWu-PV-DP0">
-                                    <rect key="frame" x="0.0" y="0.0" width="106" height="30"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <color key="textColor" red="0.38039215686274508" green="0.40000000000000002" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Kāpēc ievadīt telefona numuru?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Muq-ix-IiQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="251.5" height="50"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                    <color key="textColor" name="linkColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron-right" translatesAutoresizingMaskIntoConstraints="NO" id="v5h-8t-PNd">
-                                    <rect key="frame" x="116" y="10" width="10" height="10"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bbz-Qs-Wdy">
+                                    <rect key="frame" x="251.5" y="16.5" width="20" height="17"/>
+                                    <color key="tintColor" name="linkColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" secondItem="v5h-8t-PNd" secondAttribute="height" id="Zae-Sy-sqQ"/>
+                                        <constraint firstAttribute="width" secondItem="Bbz-Qs-Wdy" secondAttribute="height" id="xy5-g7-2JZ"/>
                                     </constraints>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font">
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                    </preferredSymbolConfiguration>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
+                                <constraint firstAttribute="bottom" secondItem="Muq-ix-IiQ" secondAttribute="bottom" id="5uY-dO-hfl"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Bbz-Qs-Wdy" secondAttribute="trailing" constant="16" id="DIX-bU-hsK"/>
+                                <constraint firstItem="Bbz-Qs-Wdy" firstAttribute="leading" secondItem="Muq-ix-IiQ" secondAttribute="trailing" id="JZm-bO-bGL"/>
+                                <constraint firstItem="Bbz-Qs-Wdy" firstAttribute="centerY" secondItem="zc1-Lf-WXp" secondAttribute="centerY" id="PYh-L2-2wU"/>
+                                <constraint firstItem="Muq-ix-IiQ" firstAttribute="top" secondItem="zc1-Lf-WXp" secondAttribute="top" id="X12-1j-E2f"/>
+                                <constraint firstItem="Muq-ix-IiQ" firstAttribute="leading" secondItem="zc1-Lf-WXp" secondAttribute="leading" id="dSI-k9-ZAi"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cc7-lP-GiG" userLabel="phone Input">
+                            <rect key="frame" x="0.0" y="124.5" width="354" height="40"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="QTM-Fb-cuS">
+                                    <rect key="frame" x="16" y="0.0" width="338" height="40"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+371" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37m-tA-H8h">
+                                            <rect key="frame" x="0.0" y="0.0" width="36" height="40"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                            <color key="textColor" red="0.61568627450980395" green="0.61568627450980395" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mkl-C3-gsh">
+                                            <rect key="frame" x="52" y="0.0" width="1" height="40"/>
+                                            <color key="backgroundColor" name="separator"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="1" id="7g2-GU-tin"/>
+                                            </constraints>
+                                        </view>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Axo-97-MFn" customClass="PhoneTextField" customModule="AC_Demo" customModuleProvider="target">
+                                            <rect key="frame" x="69" y="0.0" width="269" height="40"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="37m-tA-H8h" firstAttribute="height" secondItem="Axo-97-MFn" secondAttribute="height" id="gPu-Lq-2aZ"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" red="0.94901960784313721" green="0.95294117647058818" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="0KS-rH-bCO"/>
+                                <constraint firstAttribute="bottom" secondItem="QTM-Fb-cuS" secondAttribute="bottom" id="dtK-g0-vbj"/>
+                                <constraint firstAttribute="trailing" secondItem="QTM-Fb-cuS" secondAttribute="trailing" id="kzu-LZ-INy"/>
+                                <constraint firstItem="QTM-Fb-cuS" firstAttribute="top" secondItem="cc7-lP-GiG" secondAttribute="top" id="vYC-IB-Irz"/>
+                                <constraint firstItem="QTM-Fb-cuS" firstAttribute="leading" secondItem="cc7-lP-GiG" secondAttribute="leading" constant="16" id="zOh-YA-qZE"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rej-Pr-jhU" userLabel="anonymous View">
+                            <rect key="frame" x="0.0" y="180.5" width="354" height="38.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Palikt anonīmam" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWu-PV-DP0">
+                                    <rect key="frame" x="0.0" y="0.0" width="131.5" height="38.5"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                    <color key="textColor" name="linkColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v5h-8t-PNd">
+                                    <rect key="frame" x="131.5" y="11" width="20" height="17"/>
+                                    <color key="tintColor" name="linkColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="v5h-8t-PNd" secondAttribute="height" id="Zae-Sy-sqQ"/>
+                                    </constraints>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font">
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                    </preferredSymbolConfiguration>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="v5h-8t-PNd" secondAttribute="trailing" constant="16" id="CCT-ED-lJl"/>
+                                <constraint firstItem="v5h-8t-PNd" firstAttribute="centerY" secondItem="pWu-PV-DP0" secondAttribute="centerY" id="Hfg-F0-fAj"/>
                                 <constraint firstItem="pWu-PV-DP0" firstAttribute="top" secondItem="rej-Pr-jhU" secondAttribute="top" id="KtC-Hl-3LB"/>
-                                <constraint firstAttribute="bottom" secondItem="v5h-8t-PNd" secondAttribute="bottom" constant="10" id="M5p-fG-zeQ"/>
-                                <constraint firstItem="v5h-8t-PNd" firstAttribute="leading" secondItem="pWu-PV-DP0" secondAttribute="trailing" constant="10" id="MkI-Ym-GXU"/>
-                                <constraint firstAttribute="height" constant="30" id="aVc-cA-bw5"/>
+                                <constraint firstItem="v5h-8t-PNd" firstAttribute="leading" secondItem="pWu-PV-DP0" secondAttribute="trailing" id="MkI-Ym-GXU"/>
                                 <constraint firstItem="pWu-PV-DP0" firstAttribute="leading" secondItem="rej-Pr-jhU" secondAttribute="leading" id="h0P-0t-ccL"/>
                                 <constraint firstAttribute="bottom" secondItem="pWu-PV-DP0" secondAttribute="bottom" id="j1g-ay-43D"/>
-                                <constraint firstItem="v5h-8t-PNd" firstAttribute="top" secondItem="rej-Pr-jhU" secondAttribute="top" constant="10" id="oWg-1L-Sud"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -138,20 +141,17 @@
             <connections>
                 <outlet property="anonymousButtonView" destination="rej-Pr-jhU" id="cK8-L0-dWl"/>
                 <outlet property="descriptionLabel" destination="yMC-a8-BtJ" id="hjg-7J-NB7"/>
-                <outlet property="phoneExplanationButton" destination="Nrp-uD-E6r" id="vDT-YR-QLN"/>
+                <outlet property="phoneExplanationLabel" destination="Muq-ix-IiQ" id="AvJ-IN-k1g"/>
                 <outlet property="phoneInput" destination="Axo-97-MFn" id="4ev-Bd-s3i"/>
                 <outlet property="phoneInputView" destination="cc7-lP-GiG" id="2x6-eB-wGg"/>
                 <outlet property="stackView" destination="buT-C0-ccM" id="nAt-bd-TkO"/>
                 <outlet property="stayAnonymousLabel" destination="pWu-PV-DP0" id="Leq-CS-2Ol"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="-109.82142857142857"/>
+            <point key="canvasLocation" x="92.753623188405811" y="-56.584821428571423"/>
         </view>
     </objects>
     <resources>
-        <image name="chevron-right" width="6" height="9"/>
-        <namedColor name="descriptionText">
-            <color red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
         <namedColor name="linkColor">
             <color red="0.27058823529411763" green="0.54509803921568623" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

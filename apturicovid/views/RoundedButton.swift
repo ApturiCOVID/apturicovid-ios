@@ -47,4 +47,14 @@ import UIKit
         let opasity = min(shadowMaxOpasity, max(0,shadowScollOpasity))
         self.shadowOpacity = opasity
     }
+    
+    func setText(_ text: String,
+                 font: UIFont = .preferredFont(forTextStyle: .body ),
+                 insets: UIEdgeInsets? = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)){
+        
+        setTitle(text, for: .normal)
+        titleLabel?.font = font
+        contentEdgeInsets = insets ?? .zero
+        sizeToFit()
+    }
 }

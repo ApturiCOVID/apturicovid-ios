@@ -16,7 +16,7 @@ class WelcomeVC: BaseViewController {
     let langViews = Language.allCases.map{ LanguageView.create($0) }
     
     //MARK: Text attributes:
-    let linkFont = UIFont.systemFont(ofSize: 14, weight: .medium)
+    var linkFont:UIFont { UIFont.preferredFont(forTextStyle: .body)}
     
     let paragraphStyleBody: NSMutableParagraphStyle = {
         let p = NSMutableParagraphStyle()
@@ -31,20 +31,19 @@ class WelcomeVC: BaseViewController {
         return p
     }()
     
-    lazy var bodyAttributes: NSStringAttributes = {
+    var bodyAttributes: NSStringAttributes {
         [
-            .font : UIFont.systemFont(ofSize: 15, weight: .thin),
+            .font : UIFont.preferredFont(forTextStyle: .body),
             .paragraphStyle : paragraphStyleBody
         ]
-    }()
+    }
     
-    lazy var privacyAndTermsAttributes: NSStringAttributes = {
+    var privacyAndTermsAttributes: NSStringAttributes {
         [
-            .font : UIFont.systemFont(ofSize: 14, weight: .light),
+            .font : UIFont.preferredFont(forTextStyle: .body),
             .paragraphStyle : paragraphStylePrivacy
         ]
-    }()
-    
+    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -59,14 +58,6 @@ class WelcomeVC: BaseViewController {
         super.viewDidLoad()
         setupLanguageSelector()
         setupPrivacyAndTermsCheckBox()
-        
-        privacyAndTermsCheckboxView.translatesAutoresizingMaskIntoConstraints = false
-        privacyAndTermsCheckboxView.heightAnchor.constraint(equalToConstant: 120).isActive = true
-        
-        mainStack.setContentHuggingPriority(.defaultHigh, for: .vertical)
-        nextButton.setContentHuggingPriority(.defaultLow, for: .vertical)
-        
-        bodyLabel.textAlignment = .center
     }
     
     private func setupLanguageSelector(){
@@ -91,7 +82,7 @@ class WelcomeVC: BaseViewController {
     
     private func setupPrivacyAndTermsCheckBox(){
         nextButton.isEnabled = false
-        mainStack.addArrangedSubview(privacyAndTermsCheckboxView)
+        mainStack.insertArrangedSubview(privacyAndTermsCheckboxView, at: mainStack.arrangedSubviews.count - 2)
         
         // Enable next button when terms accepted
         privacyAndTermsCheckboxView.checkBox.rx.tap
@@ -105,7 +96,7 @@ class WelcomeVC: BaseViewController {
     
     override func translate() {
         headingLabel.text = "welcome_title".translated
-        nextButton.setTitle("next".translated, for: .normal)
+        nextButton.setText("next".translated)
         
         // Body attributed text
         bodyLabel.attributedText =

@@ -123,8 +123,11 @@ class HomeVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { (_) in
+            self.exposureNotificationVisible.toggle()
+        }.fire()
         
-        setupAnchorConstraints()
         setExposureNotification(visible: false)
         
         statCells.enumerated().forEach{ item in
@@ -195,8 +198,17 @@ class HomeVC: BaseViewController {
         exposureNotificationVisible = LocalStore.shared.exposures.count > 0
     }
     
-    func setupAnchorConstraints(){
-        bottomViewHeightAnchor = bottomBackgroundView.heightAnchor == layoutConfig.minimizedBottomBackgroundHeight
+    func setupAnchorConstraints(dynamicHeight dynamic: Bool){
+
+        bottomViewHeightAnchor?.isActive = false
+        exposureNotificationTopAnchor?.isActive = false
+
+        if dynamic {
+            bottomViewHeightAnchor = bottomBackgroundView.heightAnchor >= layoutConfig.minimizedBottomBackgroundHeight
+        } else {
+            bottomViewHeightAnchor = bottomBackgroundView.heightAnchor == layoutConfig.minimizedBottomBackgroundHeight
+        }
+       
         exposureNotificationTopAnchor = exposureNotificationView.topAnchor == bottomBackgroundView.topAnchor
     }
     
@@ -233,6 +245,8 @@ class HomeVC: BaseViewController {
     }
     
     private func setExposureNotification(visible: Bool, animated: Bool = false) {
+        let isSE = UIDevice.current.type == .iPhoneSE
+        setupAnchorConstraints(dynamicHeight: isSE ? !visible : true)
         
         /// Mover exposure notification over bottomBackgroundView
         let offset = layoutConfig.exporureNotificationYOffset
@@ -244,18 +258,8 @@ class HomeVC: BaseViewController {
         bottomViewHeightAnchor.constant = visible ? minH : maxH
         
         let animationBlock: () -> Void = { [weak self] in
-            guard let `self` = self else { return }
-            
-            let curveInsets = UIEdgeInsets(top: self.bottomBackgroundView.curveOffset,
-                                                left: 0,
-                                                bottom: 0,
-                                                right: 0)
-            self.view.layoutIfNeeded()
-            
-            let backgroundHeight = self.bottomBackgroundView.bounds.inset(by: curveInsets).height
-            let statsViewHeight = self.statsView.bounds.height
-            
-            self.statsView.alpha = backgroundHeight < statsViewHeight ? 0 : 1
+            self?.statsView.alpha = isSE && visible ? 0 : 1
+            self?.view.layoutIfNeeded()
         }
         
         if animated {

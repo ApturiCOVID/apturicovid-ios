@@ -7,7 +7,7 @@ class HomeVC: BaseViewController {
     
     @IBOutlet weak var bottomBackgroundView: HomeBottomView!
     @IBOutlet weak var exposureSwitch: DesignableSwitch!
-    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var shareButton: RoundedButton!
     @IBOutlet weak var statsStackView: UIStackView!
     @IBOutlet weak var exposureIcon: UIImageView!
     @IBOutlet weak var exposureNotificationView: UIView!
@@ -127,7 +127,10 @@ class HomeVC: BaseViewController {
         setupAnchorConstraints()
         setExposureNotification(visible: false)
         
-        statCells.forEach{ statsStackView.addArrangedSubview($0) }
+        statCells.enumerated().forEach{ item in
+            item.element.spacer.isHidden = item.offset == statCells.count-1
+            statsStackView.addArrangedSubview(item.element)
+        }
         
         //MARK: Exposure tracking enabled
         

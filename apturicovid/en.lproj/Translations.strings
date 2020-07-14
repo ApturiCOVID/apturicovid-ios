@@ -1,6 +1,5 @@
 // Common
 "understood" = "Ok";
-"cancel" = "Cancel";
 "yes" = "Yes";
 "no" = "No";
 "close" = "Close";
@@ -15,7 +14,7 @@
 
 // WelcomeVC
 "welcome_title" = "Help break the virus chain!";
-"welcome_app_description" = "This is the fastest way to find out if you have been exposed to COVID-19. And take action to stop it.";
+"welcome_app_description" = "Anonymously and with no location data register on your device when you are close to others. Provide your number for SPKC if you want to.";
 "welcome_privacy_link" = "Privacy policy";
 "welcome_terms_link" = "App Terms of Use";
 "welcome_privacy_note" = "I accept App Terms of Use, and have read the Privacy policy";
@@ -35,7 +34,7 @@ Contact detection is not tracking.";
 // PhoneInfoVC
 "why_submit_a_phone_number" = "Reasons to provide a number";
 "why_submit_a_phone_number_explanation" = "If SPKC is able to contact you, they can assess your risk and officially recognize you as a COVID-19 contact if applicable. That will give you access to a range of support options – like your general practitioner providing a sick leave note.";
-"data_privacy_and_protection_policy" = "SPKC will receive your number only if and when it is established that you have been exposed to COVID-19. Noone else will find out anything about you.";
+"data_privacy_and_protection_policy" = "SPKC will receive your number with contact information only if and when it is established that you have been exposed to COVID-19. No one else will find out anything about you.";
 
 // CodeEntryVC Phone validation
 "phone_confirmation_title" = "Number verification";
@@ -55,7 +54,7 @@ Contact detection is not tracking.";
 "share" = "Share app";
 "tested" = "Tested";
 "new_cases" = "New cases";
-"deceased" = "Deceased";
+"deaths" = "Deaths";
 
 // ExposureAlertVC
 "exposure_with_covid" = "COVID-19 contact detected";

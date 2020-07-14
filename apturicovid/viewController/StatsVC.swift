@@ -230,7 +230,7 @@ fileprivate extension Stats {
                              field2: ValueField(valueTitle: "yesterday".translated.capitalized,
                                                 value: yesterdaysInfectedCount)),
             
-            DoubleValueField(title: "deceased".translated.capitalized,
+            DoubleValueField(title: "deaths".translated.capitalized,
                              field1: ValueField(valueTitle: "total".translated.capitalized,
                                                 value: totalDeathCount),
                              field2: ValueField(valueTitle: "yesterday".translated.capitalized,

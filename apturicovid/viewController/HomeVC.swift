@@ -24,7 +24,7 @@ class HomeVC: BaseViewController {
     
     private let statTested   = StatCell.create(item: "tested".translated)
     private let statNewCases = StatCell.create(item: "new_cases".translated)
-    private let statDeceased = StatCell.create(item: "deceased".translated)
+    private let statDeceased = StatCell.create(item: "deaths".translated)
     
     var stats: Stats? {
         didSet {
@@ -55,7 +55,7 @@ class HomeVC: BaseViewController {
                             action: self.setExposureTracking(enabled: false, referenceSwitch: sender, animated: true),
                             cancelAction: sender.setOn(ExposureManager.shared.trackingIsWorking, animated: true),
                             confirmTitle: "yes".translated,
-                            cancelTitle: "cancel".translated)
+                            cancelTitle: "no".translated)
         }
     }
     
@@ -218,7 +218,7 @@ class HomeVC: BaseViewController {
         
         statTested.updateTitle("tested".translated)
         statNewCases.updateTitle("new_cases".translated)
-        statDeceased.updateTitle("deceased".translated)
+        statDeceased.updateTitle("deaths".translated)
         
         shareButton.setTitle("share".translated, for: .normal)
         shareButton.titleLabel?.lineBreakMode = .byClipping

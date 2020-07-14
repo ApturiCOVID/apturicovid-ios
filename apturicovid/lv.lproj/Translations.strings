@@ -1,6 +1,5 @@
 // Common
 "understood" = "Sapratu";
-"cancel" = "Atcelt";
 "yes" = "Jā";
 "no" = "Nē";
 "close" = "Aizvērt";
@@ -15,7 +14,7 @@
 
 // WelcomeVC
 "welcome_title" = "Palīdzi pārraut vīrusa ķēdi!";
-"welcome_app_description" = "Šis ir ātrākais veids, kā vari uzzināt, ka tev bijusi saskare ar Covid-19. Un rīkoties, lai to apturētu.";
+"welcome_app_description" = "Anonīmi un bez atrašanās vietas datiem savā ierīcē fiksē brīžus, kad esi kopā ar citiem. Ja vēlies, norādi tālruni saziņai ar SPKC.";
 "welcome_privacy_link" = "Privātuma politiku";
 "welcome_terms_link" = "Lietotnes noteikumiem";
 "welcome_privacy_note" = "Piekrītu Lietotnes noteikumiem, ar Privātuma politiku iepazinos";
@@ -35,7 +34,7 @@ Kontakta fiksēšana nav izsekošana.";
 // PhoneInfoVC
 "why_submit_a_phone_number" = "Kāpēc norādīt tālruni?";
 "why_submit_a_phone_number_explanation" = "Ja SPKC varēs ar tevi sazināties, būs iespējams novērtēt tavu risku, un, ja nepieciešams, atzīt tevi par kontaktpersonu. Tad tev kļūs pieejams atbalsta iespēju tīkls – piemēram, ģimenes ārsts varēs izrakstīt darba nespējas lapu.";
-"data_privacy_and_protection_policy" = "SPKC tavu kontakttālruni saņems tikai tad, ja tev tiks konstatēta saskare ar Covid-19, un ne mirkli agrāk. Nevienam citam nekādi dati par tevi zināmi nebūs vispār.";
+"data_privacy_and_protection_policy" = "SPKC tavu kontakttālruni ar saskares informāciju saņems tikai tad, ja tev tiks konstatēta saskare ar Covid-19, un ne mirkli agrāk. Nevienam citam nekādi dati par tevi zināmi nebūs vispār.";
 
 // CodeEntryVC Phone validation
 "phone_confirmation_title" = "Numura apstiprinājums";
@@ -55,7 +54,7 @@ Kontakta fiksēšana nav izsekošana.";
 "share" = "Uzaicini";
 "tested" = "Testēti";
 "new_cases" = "Saslimuši";
-"deceased" = "Miruši";
+"deaths" = "Miruši";
 
 // ExposureAlertVC
 "exposure_with_covid" = "Fiksēts kontakts ar Covid-19";
@@ -84,7 +83,7 @@ Kontakta fiksēšana nav izsekošana.";
 
 // CodeEntryVC SPKC
 "spkc_data_send" = "Sūtīt ziņu fiksētajiem kontaktiem";
-"spkc_data_description" = "Ja esi inficēts, šeit vari nosūtīt automātisku paziņojumu ikvienam pēdējās 14 dienās fiksētajam kontaktam. Tā tu palīdzēsi brīdināt tuviniekus, kolēģus, draugus, kaimiņus un arī pilnīgi svešus cilvēkus par saskari ar Covid-19. Paziņojums neatklās informāciju par tevi pašu. Paziņojumu nosūtīt var tikai ar SPKC izsniegtu kodu. Tas darbojas 30 minūtes no izsniegšanas brīža.";
+"spkc_data_description" = "Ja esi inficēts, ar SPKC izsniegtu kodu šeit vari nosūtīt automātisku paziņojumu fiksētajiem kontaktiem, kam bijis inficēšanās risks – brīdināt gan savējos, gan arī svešos līdzcilvēkus. Paziņojums neatklās informāciju par tevi pašu. Kods ir derīgs 30 minūtes.";
 
 // NotificationSentVC
 "notification_sent_title" = "Paldies! Paziņojums nosūtīts!";

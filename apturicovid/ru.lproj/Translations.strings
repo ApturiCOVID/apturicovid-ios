@@ -55,6 +55,7 @@
 "tested" = "Тестов";
 "new_cases" = "Заболело";
 "deaths" = "Умерло";
+"recovered" = "Выздоровело";
 
 // ExposureAlertVC
 "exposure_with_covid" = "Обнаружен контакт с COVID-19";
@@ -136,6 +137,4 @@
 "latvia_covid_statistics" = "Статистика COVID-19 в Латвии";
 "total" = "Всего";
 "yesterday" = "Вчера";
-"proportion" = "Соотношение";
-"proportion_description" = "заболевшие";
 "detailed_stats" = "Подробная статистика";

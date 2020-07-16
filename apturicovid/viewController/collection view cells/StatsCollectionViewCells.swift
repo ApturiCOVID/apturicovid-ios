@@ -54,7 +54,7 @@ class StatsFooterView: UICollectionReusableView {
 }
 
 //MARK: - StatsSingleValueCollectionViewCell
-class StatsSingleValueCollectionViewCell: StatsCollectionViewCell<SingleValueField<Double>> {
+class StatsSingleValueCollectionViewCell: StatsCollectionViewCell<SingleValueField<Int>> {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var fieldTitleLabel: UILabel!
@@ -70,11 +70,11 @@ class StatsSingleValueCollectionViewCell: StatsCollectionViewCell<SingleValueFie
         ].forEach{ $0?.text = nil }
     }
     
-    override func setupData(with field: SingleValueField<Double>){
+    override func setupData(with field: SingleValueField<Int>){
         titleLabel.text = field.title
         fieldTitleLabel.text = field.field1.valueTitle
         if let value = field.field1.value {
-            self.fieldValueLabel.text = "\(value) %"
+            self.fieldValueLabel.text = "\(value)"
         } else {
             self.fieldValueLabel.text = "-"
         }

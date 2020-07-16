@@ -130,7 +130,6 @@
 		BA38003A2473072700577DB2 /* PhoneSetupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAED847246D9B4A004C77A6 /* PhoneSetupView.xib */; };
 		BA38003B2473072700577DB2 /* BuildFile in Resources */ = {isa = PBXBuildFile; };
 		BA38003C2473072700577DB2 /* StatusBarNotification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA38FFED2471E83900577DB2 /* StatusBarNotification.storyboard */; };
-		BA38003D2473072700577DB2 /* StatView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE35759246F48A6004C59A9 /* StatView.xib */; };
 		BA38003E2473072700577DB2 /* CodeEntry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BACDE3B2246DBABA0075B20E /* CodeEntry.storyboard */; };
 		BA38003F2473072700577DB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA366CCA2465AC3E00A35CA8 /* LaunchScreen.storyboard */; };
 		BA3800402473072700577DB2 /* Translations.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7528B0FD246C016D007D0260 /* Translations.strings */; };
@@ -158,7 +157,6 @@
 		BA38FFF92473072700577DB2 /* FAQVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAED845246D5ECD004C77A6 /* FAQVC.swift */; };
 		BA38FFFA2473072700577DB2 /* PhoneSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE35752246F3034004C59A9 /* PhoneSettingsVC.swift */; };
 		BA38FFFB2473072700577DB2 /* BackgroundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA38FFE82471DFBD00577DB2 /* BackgroundManager.swift */; };
-		BA38FFFC2473072700577DB2 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE3575B246F4A6E004C59A9 /* StatView.swift */; };
 		BA38FFFD2473072700577DB2 /* WelcomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C183F246C745900903458 /* WelcomeHeaderView.swift */; };
 		BA38FFFE2473072700577DB2 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA366CDD2465F98F00A35CA8 /* View.swift */; };
 		BA38FFFF2473072700577DB2 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C183E246C745900903458 /* RoundedButton.swift */; };
@@ -224,8 +222,6 @@
 		BAE35753246F3034004C59A9 /* PhoneSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE35752246F3034004C59A9 /* PhoneSettingsVC.swift */; };
 		BAE35755246F410B004C59A9 /* ExposureAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE35754246F410B004C59A9 /* ExposureAlertVC.swift */; };
 		BAE35757246F4444004C59A9 /* PhoneInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE35756246F4444004C59A9 /* PhoneInfoVC.swift */; };
-		BAE3575A246F48A6004C59A9 /* StatView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE35759246F48A6004C59A9 /* StatView.xib */; };
-		BAE3575C246F4A6E004C59A9 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE3575B246F4A6E004C59A9 /* StatView.swift */; };
 		BAE3575E246F4B28004C59A9 /* StatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE3575D246F4B28004C59A9 /* StatsVC.swift */; };
 		BAFA830E246ABA1600E121B4 /* CrashlyticsLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA830D246ABA1600E121B4 /* CrashlyticsLogger.swift */; };
 		BAFA8310246AD14600E121B4 /* printers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA830F246AD14600E121B4 /* printers.swift */; };
@@ -355,8 +351,6 @@
 		BAE35752246F3034004C59A9 /* PhoneSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSettingsVC.swift; sourceTree = "<group>"; };
 		BAE35754246F410B004C59A9 /* ExposureAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureAlertVC.swift; sourceTree = "<group>"; };
 		BAE35756246F4444004C59A9 /* PhoneInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneInfoVC.swift; sourceTree = "<group>"; };
-		BAE35759246F48A6004C59A9 /* StatView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatView.xib; sourceTree = "<group>"; };
-		BAE3575B246F4A6E004C59A9 /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
 		BAE3575D246F4B28004C59A9 /* StatsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsVC.swift; sourceTree = "<group>"; };
 		BAFA830D246ABA1600E121B4 /* CrashlyticsLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsLogger.swift; sourceTree = "<group>"; };
 		BAFA830F246AD14600E121B4 /* printers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = printers.swift; sourceTree = "<group>"; };
@@ -598,8 +592,6 @@
 				BAAED843246D42DA004C77A6 /* QuestionView.swift */,
 				BAAED847246D9B4A004C77A6 /* PhoneSetupView.xib */,
 				BAAED849246D9E7A004C77A6 /* PhoneSetupView.swift */,
-				BAE35759246F48A6004C59A9 /* StatView.xib */,
-				BAE3575B246F4A6E004C59A9 /* StatView.swift */,
 				BA38FFED2471E83900577DB2 /* StatusBarNotification.storyboard */,
 				E95CD9FD2471BD8C00DAC588 /* PhoneTextField.swift */,
 			);
@@ -773,7 +765,6 @@
 				BAAED848246D9B4A004C77A6 /* PhoneSetupView.xib in Resources */,
 				75B1DAA5246BF63E00601F69 /* BuildFile in Resources */,
 				BA38FFEE2471E83900577DB2 /* StatusBarNotification.storyboard in Resources */,
-				BAE3575A246F48A6004C59A9 /* StatView.xib in Resources */,
 				E99BFA722472FEE1004D779F /* FaqLocalizable.strings in Resources */,
 				BACDE3B3246DBABA0075B20E /* CodeEntry.storyboard in Resources */,
 				BA366CCC2465AC3E00A35CA8 /* LaunchScreen.storyboard in Resources */,
@@ -800,7 +791,6 @@
 				BA38003A2473072700577DB2 /* PhoneSetupView.xib in Resources */,
 				BA38003B2473072700577DB2 /* BuildFile in Resources */,
 				BA38003C2473072700577DB2 /* StatusBarNotification.storyboard in Resources */,
-				BA38003D2473072700577DB2 /* StatView.xib in Resources */,
 				BAAC0D1E24730C9A00D898EF /* FaqLocalizable.strings in Resources */,
 				BA38003E2473072700577DB2 /* CodeEntry.storyboard in Resources */,
 				BA38003F2473072700577DB2 /* LaunchScreen.storyboard in Resources */,
@@ -959,7 +949,6 @@
 				BAAED846246D5ECD004C77A6 /* FAQVC.swift in Sources */,
 				BAE35753246F3034004C59A9 /* PhoneSettingsVC.swift in Sources */,
 				BA38FFE92471DFBD00577DB2 /* BackgroundManager.swift in Sources */,
-				BAE3575C246F4A6E004C59A9 /* StatView.swift in Sources */,
 				602C1841246C745900903458 /* WelcomeHeaderView.swift in Sources */,
 				BA366CDE2465F98F00A35CA8 /* View.swift in Sources */,
 				602C1840246C745900903458 /* RoundedButton.swift in Sources */,
@@ -1058,7 +1047,6 @@
 				BAD13BED24795E0100354123 /* ExposureConfigurationInfoVC.swift in Sources */,
 				BA38FFFA2473072700577DB2 /* PhoneSettingsVC.swift in Sources */,
 				BA38FFFB2473072700577DB2 /* BackgroundManager.swift in Sources */,
-				BA38FFFC2473072700577DB2 /* StatView.swift in Sources */,
 				BA38FFFD2473072700577DB2 /* WelcomeHeaderView.swift in Sources */,
 				BA38FFFE2473072700577DB2 /* View.swift in Sources */,
 				BA38FFFF2473072700577DB2 /* RoundedButton.swift in Sources */,

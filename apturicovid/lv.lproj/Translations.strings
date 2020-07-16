@@ -22,8 +22,8 @@
 // ExposureSetupVC
 "activate" = "Ieslēgt";
 "contact_detection" = "Kontakta fiksēšana";
-"exposure_setup_description" = "Kontakts: 15+ minūšu klātbūtne līdz ~2 m tuvumā.
-Fiksēšana: šifrs, ko tālrunis glabā 14 dienas, tad dzēš.
+"exposure_setup_description" = "Kontakts: 15+\U00A0minūšu klātbūtne līdz ~2\U00A0m tuvumā.
+Fiksēšana: šifrs, ko tālrunis glabā 14\U00A0dienas, tad dzēš.
 
 Kontakta fiksēšana nav izsekošana.";
 "exposure_switch_subtitle" = "Šo funkciju vari ieslēgt arī vēlāk. Un izslēgt, kad vien vēlies.";
@@ -58,7 +58,7 @@ Kontakta fiksēšana nav izsekošana.";
 
 // ExposureAlertVC
 "exposure_with_covid" = "Fiksēts kontakts ar Covid-19";
-"you_had_exposure" = "Tev pēdējo 14 dienu laikā ir bijusi saskare ar Covid-19 inficētu cilvēku.";
+"you_had_exposure" = "Tev pēdējo 14\U00A0dienu laikā ir bijusi saskare ar Covid-19 inficētu cilvēku.";
 "how_to_proceed" = "Ko tagad darīt?";
 "self_isolate" = "Paliec mājās, ierobežo saskarsmi";
 "wait_for_a_call_from_spkc" = "Gaidi ziņu no SPKC";
@@ -70,7 +70,7 @@ Kontakta fiksēšana nav izsekošana.";
 
 // FaqVC
 "what_is_contact_tracing" = "Kā darbojas kontakta fiksēšana?";
-"contact_detection_explanation" = "Kad divi viedtālruņi atrodas līdz ~2 m tuvumā, tie pa tiešo apmainās ar šifru, un katrs to glabā 14 dienas. Ja tālruņa saimnieks atzīmē, ka ir inficēts, tie tālruņi, kuros tajā brīdī ir šifrs, saņem paziņojumu.";
+"contact_detection_explanation" = "Kad divi viedtālruņi atrodas līdz ~2\U00A0m tuvumā, tie pa tiešo apmainās ar šifru, un katrs to glabā 14\U00A0dienas. Ja tālruņa saimnieks atzīmē, ka ir inficēts, tie tālruņi, kuros tajā brīdī ir šifrs, saņem paziņojumu.";
 "what_about_my_privacy" = "Un kā ar manu privātumu?";
 "data_is_kept_on_device_only" = "Dati glabājas tikai tālrunī";
 "data_is_automatically_deleted" = "Tie tiek automātiski dzēsti";
@@ -83,7 +83,7 @@ Kontakta fiksēšana nav izsekošana.";
 
 // CodeEntryVC SPKC
 "spkc_data_send" = "Sūtīt ziņu fiksētajiem kontaktiem";
-"spkc_data_description" = "Ja esi inficēts, ar SPKC izsniegtu kodu šeit vari nosūtīt automātisku paziņojumu fiksētajiem kontaktiem, kam bijis inficēšanās risks – brīdināt gan savējos, gan arī svešos līdzcilvēkus. Paziņojums neatklās informāciju par tevi pašu. Kods ir derīgs 30 minūtes.";
+"spkc_data_description" = "Ja esi inficēts, ar SPKC izsniegtu kodu šeit vari nosūtīt automātisku paziņojumu fiksētajiem kontaktiem, kam bijis inficēšanās risks – brīdināt gan savējos, gan arī svešos līdzcilvēkus. Paziņojums neatklās informāciju par tevi pašu. Kods ir derīgs 30\U00A0minūtes.";
 
 // NotificationSentVC
 "notification_sent_title" = "Paldies! Paziņojums nosūtīts!";
@@ -122,7 +122,7 @@ Kontakta fiksēšana nav izsekošana.";
 "connectivity_offline" = "Lietotne šobrīd darbojas bezsaistē";
 "no_internet_connection" = "Nav interneta savienojuma";
 "no_daily_key_error" = "Nav, ko nosūtīt – neesi izmantojis lietotni pietiekami ilgi.";
-"sms_timeout_error" = "Lūdzu, uzgaidi %02d sekundes, lai kodu nosūtītu atkārtoti";
+"sms_timeout_error" = "Lūdzu, uzgaidi %02d\U00A0sekundes, lai kodu nosūtītu atkārtoti";
 
 "ble_off_error" = "Bluetooth ir izslēgts";
 "ble_usage_description" = "Ieslēdziet Bluetooth sistēmas iestatījumos, lai ieslēgtu kontakta fiksēšanu.";
@@ -141,7 +141,3 @@ Kontakta fiksēšana nav izsekošana.";
 "proportion" = "Īpatsvars";
 "proportion_description" = "saslimušie";
 "detailed_stats" = "Detalizēta statistika";
-
-// TODO: SettingVC below - not in KAI
-"if_preferred_specify_phone_number" = "Covid-19 kontakta gadījumā, uz aplikāciju atnāks paziņojums ar norādēm. Ja labāk vēlieties lai ar Jums sazinās pa telefonu, norādiet kontaktu";
-"delete_all_stored_data" = "Dzēst visus uzkrātos datus";

@@ -22,8 +22,8 @@
 // ExposureSetupVC
 "activate" = "Switch on";
 "contact_detection" = "Contact detection";
-"exposure_setup_description" = "Contact: up to ~2 m proximity for 15+ minutes.
-Detection: a code kept on phone for 14 days, then deleted.
+"exposure_setup_description" = "Contact: up to ~2\U00A0m proximity for 15+\U00A0minutes.
+Detection: a code kept on phone for 14\U00A0days, then deleted.
 
 Contact detection is not tracking.";
 "exposure_switch_subtitle" = "This function can be switched on later. And switched off at any time.";
@@ -50,7 +50,7 @@ Contact detection is not tracking.";
 "currently_inactive" = "Is switched off";
 "exposure_detected_subtitle" = "Don’t panic. You have been exposed to COVID-19.";
 "exposure_off_prompt" = "Continue with contact detection switched off?";
-"stats_title" = "In the last 24 hours";
+"stats_title" = "In the last 24\U00A0hours";
 "share" = "Share app";
 "tested" = "Tested";
 "new_cases" = "New cases";
@@ -58,7 +58,7 @@ Contact detection is not tracking.";
 
 // ExposureAlertVC
 "exposure_with_covid" = "COVID-19 contact detected";
-"you_had_exposure" = "In the last 14 days you have been in the proximity of someone infected with COVID-19.";
+"you_had_exposure" = "In the last 14\U00A0days you have been in the proximity of someone infected with COVID-19.";
 "how_to_proceed" = "What’s next?";
 "self_isolate" = "Stay home, limit contact with others";
 "wait_for_a_call_from_spkc" = "Wait for SPKC to call you";
@@ -70,7 +70,7 @@ Contact detection is not tracking.";
 
 // FaqVC
 "what_is_contact_tracing" = "How does contact detection work?";
-"contact_detection_explanation" = "When two smartphones are in up to ~2 m proximity, they directly exchange a code, and each device keeps it for 14 days. If a phone user marks themselves as infected, all phones keeping the respective code receive a notification.";
+"contact_detection_explanation" = "When two smartphones are in up to ~2\U00A0m proximity, they directly exchange a code, and each device keeps it for 14\U00A0days. If a phone user marks themselves as infected, all phones keeping the respective code receive a notification.";
 "what_about_my_privacy" = "What about my privacy?";
 "data_is_kept_on_device_only" = "Data is kept on device only";
 "data_is_automatically_deleted" = "Data is automatically deleted";
@@ -82,7 +82,7 @@ Contact detection is not tracking.";
 
 // CodeEntryVC SPKC
 "spkc_data_send" = "Notify detected contacts";
-"spkc_data_description" = "If you are infected, here’s where you can enter a code from SPKC and automatically notify detected contacts at risk to be infected – from loved ones to complete strangers. The notification will not disclose any information about you. Code is valid for 30 minutes.";
+"spkc_data_description" = "If you are infected, here’s where you can enter a code from SPKC and automatically notify detected contacts at risk to be infected – from loved ones to complete strangers. The notification will not disclose any information about you. Code is valid for 30\U00A0minutes.";
 
 // NotificationSentVC
 "notification_sent_title" = "Thank you! Notification sent!";
@@ -121,7 +121,7 @@ Contact detection is not tracking.";
 "connectivity_offline" = "App now in offline mode";
 "no_internet_connection" = "No internet access";
 "no_daily_key_error" = "Nothing to send – looks like you haven't used the app long enough.";
-"sms_timeout_error" = "Please wait %02d seconds to resend code";
+"sms_timeout_error" = "Please wait %02d\U00A0seconds to resend code";
 
 "ble_off_error" = "Bluetooth is powered off";
 "ble_usage_description" = "Power on Bluetooth in system settings to enable contact detection.";
@@ -140,7 +140,3 @@ Contact detection is not tracking.";
 "proportion" = "Proportion";
 "proportion_description" = "infected";
 "detailed_stats" = "Detailed statistics";
-
-// TODO: SettingVC below - not in KAI
-"if_preferred_specify_phone_number" = "COVID-19 kontakta gadījumā, uz aplikāciju atnāks paziņojums ar norādēm. Ja labāk vēlieties lai ar Jums sazinās pa telefonu, norādiet kontaktu";
-"delete_all_stored_data" = "Delete all stored data";

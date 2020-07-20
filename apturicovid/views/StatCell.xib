@@ -21,16 +21,16 @@
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="QEA-28-i8f">
-                    <rect key="frame" x="0.0" y="0.0" width="97" height="62"/>
+                    <rect key="frame" x="6" y="0.0" width="88" height="62"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" text="1920" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.10000000000000001" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rj2-VP-AYf">
-                            <rect key="frame" x="0.0" y="0.0" width="97" height="35.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="88" height="35.5"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Testēti" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.10000000000000001" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HIM-eR-Jcn">
-                            <rect key="frame" x="0.0" y="41.5" width="97" height="20.5"/>
+                            <rect key="frame" x="0.0" y="41.5" width="88" height="20.5"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -42,10 +42,10 @@
                 <constraint firstItem="ucq-Vs-lYU" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" id="1LY-db-gip"/>
                 <constraint firstItem="ucq-Vs-lYU" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="DNf-RX-ceZ"/>
                 <constraint firstItem="ucq-Vs-lYU" firstAttribute="centerY" secondItem="rj2-VP-AYf" secondAttribute="centerY" priority="750" id="HQF-Vw-42Q"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="QEA-28-i8f" secondAttribute="trailing" constant="3" id="MOO-B2-AAK"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="QEA-28-i8f" secondAttribute="trailing" constant="6" id="MOO-B2-AAK"/>
                 <constraint firstItem="ucq-Vs-lYU" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" id="TMO-tU-Ylb"/>
                 <constraint firstItem="QEA-28-i8f" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nuz-um-0gR"/>
-                <constraint firstItem="QEA-28-i8f" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rL5-ni-F1q"/>
+                <constraint firstItem="QEA-28-i8f" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="6" id="rL5-ni-F1q"/>
                 <constraint firstItem="rj2-VP-AYf" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" id="tQX-V2-YLb"/>
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="QEA-28-i8f" secondAttribute="bottom" id="z0i-At-WQF"/>
             </constraints>

@@ -115,6 +115,20 @@ class HomeVC: BaseViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    private func updateTrackingIconVisibility(){
+        exposureIcon.alpha = exposureIcon.bounds.height < 100 ? 0 : 1
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        translate()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        updateTrackingIconVisibility()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         loadData()
         checkExposureStatus()
@@ -123,10 +137,6 @@ class HomeVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { (_) in
-            self.exposureNotificationVisible.toggle()
-        }.fire()
         
         setExposureNotification(visible: false)
         
@@ -234,11 +244,7 @@ class HomeVC: BaseViewController {
         statTested.updateTitle("tested".translated)
         statNewCases.updateTitle("new_cases".translated)
         statDeceased.updateTitle("deaths".translated)
-        
-        shareButton.setTitle("share".translated, for: .normal)
-        shareButton.titleLabel?.lineBreakMode = .byClipping
-        shareButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 6, bottom: 0, right: 10)
-        shareButton.sizeToFit()
+        shareButton.setText("share".translated)
  
         setExposureStateVisual(forState: ExposureManager.shared.trackingIsWorking, animated: false)
         
@@ -260,6 +266,7 @@ class HomeVC: BaseViewController {
         let animationBlock: () -> Void = { [weak self] in
             self?.statsView.alpha = isSE && visible ? 0 : 1
             self?.view.layoutIfNeeded()
+            self?.updateTrackingIconVisibility()
         }
         
         if animated {

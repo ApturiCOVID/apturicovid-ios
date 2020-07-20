@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E37B0C71DD35E40800A4A80 /* Pods_apturicovid_staging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E3E9033C66576ACDE916B3 /* Pods_apturicovid_staging.framework */; };
 		602AE9B62473E152008E42F3 /* UISwitchEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602AE9B52473E152008E42F3 /* UISwitchEx.swift */; };
 		602C183D246C740C00903458 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C183C246C740C00903458 /* Language.swift */; };
 		602C1840246C745900903458 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C183E246C745900903458 /* RoundedButton.swift */; };
@@ -55,14 +54,15 @@
 		60F61D4E247CF06900501F21 /* UIScrollViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F61D4C247CF06900501F21 /* UIScrollViewEx.swift */; };
 		60F61D50247D2AA100501F21 /* UIApplicationEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F61D4F247D2AA100501F21 /* UIApplicationEx.swift */; };
 		60F61D51247D2AA100501F21 /* UIApplicationEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F61D4F247D2AA100501F21 /* UIApplicationEx.swift */; };
+		73E188D1482431BFBF8E3800 /* Pods_apturicovid_staging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21B5B9A70E7AF0816B7959B /* Pods_apturicovid_staging.framework */; };
 		752479BE2471B23800F9BCCB /* UrlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752479BD2471B23800F9BCCB /* UrlRequest.swift */; };
 		7528B0FB246C016D007D0260 /* Translations.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7528B0FD246C016D007D0260 /* Translations.strings */; };
 		7528B100246C02BC007D0260 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528B0FF246C02BC007D0260 /* String.swift */; };
 		7528B104246C1338007D0260 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528B103246C1338007D0260 /* UIColor.swift */; };
 		7528B10A246C27A0007D0260 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528B109246C27A0007D0260 /* Colors.swift */; };
 		75B1DAA1246BE91100601F69 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B1DAA0246BE91100601F69 /* SettingsVC.swift */; };
-		75B1DAA5246BF63E00601F69 /* (null) in Resources */ = {isa = PBXBuildFile; };
-		954637C58BD4082189E0F437 /* Pods_apturicovid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62EAEFA409F5A2716D34FD6B /* Pods_apturicovid.framework */; };
+		75B1DAA5246BF63E00601F69 /* BuildFile in Resources */ = {isa = PBXBuildFile; };
+		B71B7210668F0F9460DA3432 /* Pods_apturicovid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37776EF1208162B826784A67 /* Pods_apturicovid.framework */; };
 		BA11213F2469DDC900D975D5 /* DiagnosisKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11213E2469DDC900D975D5 /* DiagnosisKey.swift */; };
 		BA1121412469E27100D975D5 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1121402469E27100D975D5 /* EntryView.swift */; };
 		BA19B89824709EEB003C5025 /* Exposure.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19B89724709EEB003C5025 /* Exposure.swift */; };
@@ -128,7 +128,7 @@
 		BA3800382473072700577DB2 /* PhoneSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAE35750246F2EB4004C59A9 /* PhoneSettings.storyboard */; };
 		BA3800392473072700577DB2 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BABEEC2324686B7D009D8307 /* Welcome.storyboard */; };
 		BA38003A2473072700577DB2 /* PhoneSetupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAED847246D9B4A004C77A6 /* PhoneSetupView.xib */; };
-		BA38003B2473072700577DB2 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		BA38003B2473072700577DB2 /* BuildFile in Resources */ = {isa = PBXBuildFile; };
 		BA38003C2473072700577DB2 /* StatusBarNotification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA38FFED2471E83900577DB2 /* StatusBarNotification.storyboard */; };
 		BA38003E2473072700577DB2 /* CodeEntry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BACDE3B2246DBABA0075B20E /* CodeEntry.storyboard */; };
 		BA38003F2473072700577DB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA366CCA2465AC3E00A35CA8 /* LaunchScreen.storyboard */; };
@@ -234,7 +234,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		31E3E9033C66576ACDE916B3 /* Pods_apturicovid_staging.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_apturicovid_staging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18E24DC50ED8466EE46813D6 /* Pods-apturicovid-staging.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apturicovid-staging.release.xcconfig"; path = "Target Support Files/Pods-apturicovid-staging/Pods-apturicovid-staging.release.xcconfig"; sourceTree = "<group>"; };
+		2A202E52C94092CC727BFE56 /* Pods-apturicovid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apturicovid.release.xcconfig"; path = "Target Support Files/Pods-apturicovid/Pods-apturicovid.release.xcconfig"; sourceTree = "<group>"; };
+		37776EF1208162B826784A67 /* Pods_apturicovid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_apturicovid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4603BE1EE53CFA1C5419AAB8 /* Pods-apturicovid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apturicovid.debug.xcconfig"; path = "Target Support Files/Pods-apturicovid/Pods-apturicovid.debug.xcconfig"; sourceTree = "<group>"; };
 		602AE9B52473E152008E42F3 /* UISwitchEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISwitchEx.swift; sourceTree = "<group>"; };
 		602C183C246C740C00903458 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		602C183E246C745900903458 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -266,8 +269,6 @@
 		60DC151C247BBE4E00FAD185 /* DesignableSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableSwitch.swift; sourceTree = "<group>"; };
 		60F61D4C247CF06900501F21 /* UIScrollViewEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollViewEx.swift; sourceTree = "<group>"; };
 		60F61D4F247D2AA100501F21 /* UIApplicationEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationEx.swift; sourceTree = "<group>"; };
-		62EAEFA409F5A2716D34FD6B /* Pods_apturicovid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_apturicovid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6D6B84654720FCA59DDDD42E /* Pods-apturicovid-staging.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apturicovid-staging.release.xcconfig"; path = "Target Support Files/Pods-apturicovid-staging/Pods-apturicovid-staging.release.xcconfig"; sourceTree = "<group>"; };
 		752479BD2471B23800F9BCCB /* UrlRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlRequest.swift; sourceTree = "<group>"; };
 		7528B0FC246C016D007D0260 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Translations.strings; sourceTree = "<group>"; };
 		7528B0FE246C016E007D0260 /* lv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = lv; path = lv.lproj/Translations.strings; sourceTree = "<group>"; };
@@ -275,7 +276,7 @@
 		7528B103246C1338007D0260 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		7528B109246C27A0007D0260 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		75B1DAA0246BE91100601F69 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
-		B46E755D651D0BEF253A3292 /* Pods-apturicovid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apturicovid.release.xcconfig"; path = "Target Support Files/Pods-apturicovid/Pods-apturicovid.release.xcconfig"; sourceTree = "<group>"; };
+		B21B5B9A70E7AF0816B7959B /* Pods_apturicovid_staging.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_apturicovid_staging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA0FAFEE249223A100A3CD51 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BA11213E2469DDC900D975D5 /* DiagnosisKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisKey.swift; sourceTree = "<group>"; };
 		BA1121402469E27100D975D5 /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
@@ -356,13 +357,12 @@
 		BAFA8312246AD42D00E121B4 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		BAFA8314246AD48F00E121B4 /* LocalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
 		BAFA8318246BF3B400E121B4 /* HomeBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomView.swift; sourceTree = "<group>"; };
+		DFB1363C23EDBEB55F912D7F /* Pods-apturicovid-staging.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apturicovid-staging.debug.xcconfig"; path = "Target Support Files/Pods-apturicovid-staging/Pods-apturicovid-staging.debug.xcconfig"; sourceTree = "<group>"; };
 		E95CD9FD2471BD8C00DAC588 /* PhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextField.swift; sourceTree = "<group>"; };
 		E99BFA6C2472E749004D779F /* NotificationSentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSentVC.swift; sourceTree = "<group>"; };
 		E99BFA732472FEE1004D779F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/FaqLocalizable.strings; sourceTree = "<group>"; };
 		E99BFA752472FEE6004D779F /* lv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = lv; path = lv.lproj/FaqLocalizable.strings; sourceTree = "<group>"; };
 		E99BFA762472FEEA004D779F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/FaqLocalizable.strings; sourceTree = "<group>"; };
-		EE7138D4FB532F6EC8FC92B5 /* Pods-apturicovid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apturicovid.debug.xcconfig"; path = "Target Support Files/Pods-apturicovid/Pods-apturicovid.debug.xcconfig"; sourceTree = "<group>"; };
-		F6B1D7A3949588D2A4A708FA /* Pods-apturicovid-staging.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apturicovid-staging.debug.xcconfig"; path = "Target Support Files/Pods-apturicovid-staging/Pods-apturicovid-staging.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -370,7 +370,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				954637C58BD4082189E0F437 /* Pods_apturicovid.framework in Frameworks */,
+				B71B7210668F0F9460DA3432 /* Pods_apturicovid.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,13 +378,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E37B0C71DD35E40800A4A80 /* Pods_apturicovid_staging.framework in Frameworks */,
+				73E188D1482431BFBF8E3800 /* Pods_apturicovid_staging.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09ECEA2265130B3A42306139 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37776EF1208162B826784A67 /* Pods_apturicovid.framework */,
+				B21B5B9A70E7AF0816B7959B /* Pods_apturicovid_staging.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		606715C42475008900B7D298 /* collection view cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,10 +414,10 @@
 		8FDBA0C6C4BB4E19B88C1614 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EE7138D4FB532F6EC8FC92B5 /* Pods-apturicovid.debug.xcconfig */,
-				B46E755D651D0BEF253A3292 /* Pods-apturicovid.release.xcconfig */,
-				F6B1D7A3949588D2A4A708FA /* Pods-apturicovid-staging.debug.xcconfig */,
-				6D6B84654720FCA59DDDD42E /* Pods-apturicovid-staging.release.xcconfig */,
+				4603BE1EE53CFA1C5419AAB8 /* Pods-apturicovid.debug.xcconfig */,
+				2A202E52C94092CC727BFE56 /* Pods-apturicovid.release.xcconfig */,
+				DFB1363C23EDBEB55F912D7F /* Pods-apturicovid-staging.debug.xcconfig */,
+				18E24DC50ED8466EE46813D6 /* Pods-apturicovid-staging.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -421,7 +430,7 @@
 				BA366CBD2465AC3D00A35CA8 /* Products */,
 				BA366CBE2465AC3D00A35CA8 /* apturicovid */,
 				BAFA8308246AB87400E121B4 /* environments */,
-				C6CDF9BFD85FD0BCDFD12F54 /* Frameworks */,
+				09ECEA2265130B3A42306139 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -667,15 +676,6 @@
 			path = storage;
 			sourceTree = "<group>";
 		};
-		C6CDF9BFD85FD0BCDFD12F54 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				62EAEFA409F5A2716D34FD6B /* Pods_apturicovid.framework */,
-				31E3E9033C66576ACDE916B3 /* Pods_apturicovid_staging.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -683,12 +683,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA366CD02465AC3E00A35CA8 /* Build configuration list for PBXNativeTarget "apturicovid" */;
 			buildPhases = (
-				7CF6D1C2D9294BDEB4B97878 /* [CP] Check Pods Manifest.lock */,
+				CF0BDA87C89648ECE96DD8D0 /* [CP] Check Pods Manifest.lock */,
 				BA366CB82465AC3D00A35CA8 /* Sources */,
 				BA366CB92465AC3D00A35CA8 /* Frameworks */,
 				BA366CBA2465AC3D00A35CA8 /* Resources */,
 				BAFA8307246AB5E500E121B4 /* Initialize Crashlytics */,
-				D4CB0F72CBB840C51BFCBD9C /* [CP] Embed Pods Frameworks */,
+				F6C81A7C85AA304E727CDB25 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -703,12 +703,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA38004B2473072700577DB2 /* Build configuration list for PBXNativeTarget "apturicovid-staging" */;
 			buildPhases = (
-				9B28BEB5A5D73F9021457AD7 /* [CP] Check Pods Manifest.lock */,
+				AE71384F9F64B343CDBF7C0A /* [CP] Check Pods Manifest.lock */,
 				BA38FFF32473072700577DB2 /* Sources */,
 				BA3800352473072700577DB2 /* Frameworks */,
 				BA3800372473072700577DB2 /* Resources */,
 				BA38004A2473072700577DB2 /* Initialize Crashlytics */,
-				621459FEE45B671A8824EDE8 /* [CP] Embed Pods Frameworks */,
+				21E0059894D33E06FEA2ADD7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -763,7 +763,7 @@
 				BAE35751246F2EB4004C59A9 /* PhoneSettings.storyboard in Resources */,
 				BABEEC2424686B7E009D8307 /* Welcome.storyboard in Resources */,
 				BAAED848246D9B4A004C77A6 /* PhoneSetupView.xib in Resources */,
-				75B1DAA5246BF63E00601F69 /* (null) in Resources */,
+				75B1DAA5246BF63E00601F69 /* BuildFile in Resources */,
 				BA38FFEE2471E83900577DB2 /* StatusBarNotification.storyboard in Resources */,
 				E99BFA722472FEE1004D779F /* FaqLocalizable.strings in Resources */,
 				BACDE3B3246DBABA0075B20E /* CodeEntry.storyboard in Resources */,
@@ -789,7 +789,7 @@
 				BA3800382473072700577DB2 /* PhoneSettings.storyboard in Resources */,
 				BA3800392473072700577DB2 /* Welcome.storyboard in Resources */,
 				BA38003A2473072700577DB2 /* PhoneSetupView.xib in Resources */,
-				BA38003B2473072700577DB2 /* (null) in Resources */,
+				BA38003B2473072700577DB2 /* BuildFile in Resources */,
 				BA38003C2473072700577DB2 /* StatusBarNotification.storyboard in Resources */,
 				BAAC0D1E24730C9A00D898EF /* FaqLocalizable.strings in Resources */,
 				BA38003E2473072700577DB2 /* CodeEntry.storyboard in Resources */,
@@ -811,7 +811,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		621459FEE45B671A8824EDE8 /* [CP] Embed Pods Frameworks */ = {
+		21E0059894D33E06FEA2ADD7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -828,29 +828,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-apturicovid-staging/Pods-apturicovid-staging-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7CF6D1C2D9294BDEB4B97878 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-apturicovid-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9B28BEB5A5D73F9021457AD7 /* [CP] Check Pods Manifest.lock */ = {
+		AE71384F9F64B343CDBF7C0A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -912,7 +890,29 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
-		D4CB0F72CBB840C51BFCBD9C /* [CP] Embed Pods Frameworks */ = {
+		CF0BDA87C89648ECE96DD8D0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-apturicovid-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6C81A7C85AA304E727CDB25 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1293,20 +1293,20 @@
 		};
 		BA366CD12465AC3E00A35CA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE7138D4FB532F6EC8FC92B5 /* Pods-apturicovid.debug.xcconfig */;
+			baseConfigurationReference = 4603BE1EE53CFA1C5419AAB8 /* Pods-apturicovid.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovidDebug.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_TEAM = K673TD5NRS;
 				INFOPLIST_FILE = apturicovid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.4;
+				MARKETING_VERSION = 1.3.6;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid;
 				PRODUCT_NAME = "Apturi Covid";
 				PROVISIONING_PROFILE_SPECIFIER = "DEV Production";
@@ -1317,20 +1317,20 @@
 		};
 		BA366CD22465AC3E00A35CA8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B46E755D651D0BEF253A3292 /* Pods-apturicovid.release.xcconfig */;
+			baseConfigurationReference = 2A202E52C94092CC727BFE56 /* Pods-apturicovid.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovid.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_TEAM = K673TD5NRS;
 				INFOPLIST_FILE = apturicovid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.4;
+				MARKETING_VERSION = 1.3.6;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid;
 				PRODUCT_NAME = "Apturi Covid";
 				PROVISIONING_PROFILE_SPECIFIER = "DEV Production";
@@ -1341,20 +1341,20 @@
 		};
 		BA38004C2473072700577DB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F6B1D7A3949588D2A4A708FA /* Pods-apturicovid-staging.debug.xcconfig */;
+			baseConfigurationReference = DFB1363C23EDBEB55F912D7F /* Pods-apturicovid-staging.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovidDebug.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_TEAM = K673TD5NRS;
 				INFOPLIST_FILE = "$(SRCROOT)/apturicovid/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.4;
+				MARKETING_VERSION = 1.3.6;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid.staging;
 				PRODUCT_NAME = "AC Demo";
 				PROVISIONING_PROFILE_SPECIFIER = "DEV Staging";
@@ -1365,20 +1365,20 @@
 		};
 		BA38004D2473072700577DB2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6D6B84654720FCA59DDDD42E /* Pods-apturicovid-staging.release.xcconfig */;
+			baseConfigurationReference = 18E24DC50ED8466EE46813D6 /* Pods-apturicovid-staging.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovid.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_TEAM = K673TD5NRS;
 				INFOPLIST_FILE = "$(SRCROOT)/apturicovid/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.4;
+				MARKETING_VERSION = 1.3.6;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid.staging;
 				PRODUCT_NAME = "AC Demo";
 				PROVISIONING_PROFILE_SPECIFIER = "DEV Staging";

@@ -55,6 +55,7 @@ Contact detection is not tracking.";
 "tested" = "Tested";
 "new_cases" = "New cases";
 "deaths" = "Deaths";
+"recovered" = "Recovered";
 
 // ExposureAlertVC
 "exposure_with_covid" = "COVID-19 contact detected";
@@ -137,6 +138,4 @@ Contact detection is not tracking.";
 "latvia_covid_statistics" = "COVID-19 statistics in Latvia";
 "total" = "Total";
 "yesterday" = "yesterday";
-"proportion" = "Proportion";
-"proportion_description" = "infected";
 "detailed_stats" = "Detailed statistics";

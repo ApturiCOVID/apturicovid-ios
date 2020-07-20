@@ -214,11 +214,11 @@ fileprivate extension Stats {
                          description: "data_renewed".translated + dateString)
     }
     
-    var singleValueFields: [SingleValueField<Double>] {
+    var singleValueFields: [SingleValueField<Int>] {
         [
-            SingleValueField(title: "proportion".translated.capitalized,
-                             field: ValueField(valueTitle: "proportion_description".translated.capitalized,
-                                               value: infectedTestsProportion))
+            SingleValueField(title: "recovered".translated.capitalized,
+                             field: ValueField(valueTitle: "total".translated.capitalized,
+                                               value: totalRecoveredCount))
         ]
     }
 

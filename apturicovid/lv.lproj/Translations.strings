@@ -55,6 +55,7 @@ Kontakta fiksēšana nav izsekošana.";
 "tested" = "Testēti";
 "new_cases" = "Saslimuši";
 "deaths" = "Miruši";
+"recovered" = "Izveseļojušies";
 
 // ExposureAlertVC
 "exposure_with_covid" = "Fiksēts kontakts ar Covid-19";
@@ -138,6 +139,4 @@ Kontakta fiksēšana nav izsekošana.";
 "latvia_covid_statistics" = "Covid-19 statistika Latvijā";
 "total" = "kopā";
 "yesterday" = "vakar";
-"proportion" = "Īpatsvars";
-"proportion_description" = "saslimušie";
 "detailed_stats" = "Detalizēta statistika";

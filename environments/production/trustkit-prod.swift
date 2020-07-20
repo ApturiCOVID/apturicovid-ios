@@ -1,6 +1,6 @@
 import TrustKit
 
-let trustKitConfig = [
+let trustKitConfig: [String: Any] = [
     kTSKPinnedDomains: [
         baseDomain: [
             kTSKIncludeSubdomains: NSNumber(value: true),
@@ -22,5 +22,6 @@ let trustKitConfig = [
                 "gVxo9q/ofaPErOFjlBfYGUlX4RPMYwFIcpCPKMWX3aM="
             ]
         ]
-    ]
+    ],
+    kTSKDisableDefaultReportUri: true
 ]

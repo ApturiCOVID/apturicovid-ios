@@ -61,7 +61,7 @@
 		7528B104246C1338007D0260 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528B103246C1338007D0260 /* UIColor.swift */; };
 		7528B10A246C27A0007D0260 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528B109246C27A0007D0260 /* Colors.swift */; };
 		75B1DAA1246BE91100601F69 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B1DAA0246BE91100601F69 /* SettingsVC.swift */; };
-		75B1DAA5246BF63E00601F69 /* BuildFile in Resources */ = {isa = PBXBuildFile; };
+		75B1DAA5246BF63E00601F69 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		9432445CFF2E323E50EDE6D0 /* Pods_apturicovid_staging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BEFC99E1FF4F90A42016214 /* Pods_apturicovid_staging.framework */; };
 		BA11213F2469DDC900D975D5 /* DiagnosisKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11213E2469DDC900D975D5 /* DiagnosisKey.swift */; };
 		BA1121412469E27100D975D5 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1121402469E27100D975D5 /* EntryView.swift */; };
@@ -128,7 +128,7 @@
 		BA3800382473072700577DB2 /* PhoneSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAE35750246F2EB4004C59A9 /* PhoneSettings.storyboard */; };
 		BA3800392473072700577DB2 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BABEEC2324686B7D009D8307 /* Welcome.storyboard */; };
 		BA38003A2473072700577DB2 /* PhoneSetupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAED847246D9B4A004C77A6 /* PhoneSetupView.xib */; };
-		BA38003B2473072700577DB2 /* BuildFile in Resources */ = {isa = PBXBuildFile; };
+		BA38003B2473072700577DB2 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		BA38003C2473072700577DB2 /* StatusBarNotification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA38FFED2471E83900577DB2 /* StatusBarNotification.storyboard */; };
 		BA38003E2473072700577DB2 /* CodeEntry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BACDE3B2246DBABA0075B20E /* CodeEntry.storyboard */; };
 		BA38003F2473072700577DB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA366CCA2465AC3E00A35CA8 /* LaunchScreen.storyboard */; };
@@ -763,7 +763,7 @@
 				BAE35751246F2EB4004C59A9 /* PhoneSettings.storyboard in Resources */,
 				BABEEC2424686B7E009D8307 /* Welcome.storyboard in Resources */,
 				BAAED848246D9B4A004C77A6 /* PhoneSetupView.xib in Resources */,
-				75B1DAA5246BF63E00601F69 /* BuildFile in Resources */,
+				75B1DAA5246BF63E00601F69 /* (null) in Resources */,
 				BA38FFEE2471E83900577DB2 /* StatusBarNotification.storyboard in Resources */,
 				E99BFA722472FEE1004D779F /* FaqLocalizable.strings in Resources */,
 				BACDE3B3246DBABA0075B20E /* CodeEntry.storyboard in Resources */,
@@ -789,7 +789,7 @@
 				BA3800382473072700577DB2 /* PhoneSettings.storyboard in Resources */,
 				BA3800392473072700577DB2 /* Welcome.storyboard in Resources */,
 				BA38003A2473072700577DB2 /* PhoneSetupView.xib in Resources */,
-				BA38003B2473072700577DB2 /* BuildFile in Resources */,
+				BA38003B2473072700577DB2 /* (null) in Resources */,
 				BA38003C2473072700577DB2 /* StatusBarNotification.storyboard in Resources */,
 				BAAC0D1E24730C9A00D898EF /* FaqLocalizable.strings in Resources */,
 				BA38003E2473072700577DB2 /* CodeEntry.storyboard in Resources */,
@@ -1299,14 +1299,14 @@
 				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovidDebug.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = K673TD5NRS;
 				INFOPLIST_FILE = apturicovid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.4;
+				MARKETING_VERSION = 1.3.5;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid;
 				PRODUCT_NAME = "Apturi Covid";
 				PROVISIONING_PROFILE_SPECIFIER = "DEV Production";
@@ -1323,14 +1323,14 @@
 				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovid.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = K673TD5NRS;
 				INFOPLIST_FILE = apturicovid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.4;
+				MARKETING_VERSION = 1.3.5;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid;
 				PRODUCT_NAME = "Apturi Covid";
 				PROVISIONING_PROFILE_SPECIFIER = "DEV Production";
@@ -1347,14 +1347,14 @@
 				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovidDebug.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = K673TD5NRS;
 				INFOPLIST_FILE = "$(SRCROOT)/apturicovid/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.4;
+				MARKETING_VERSION = 1.3.5;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid.staging;
 				PRODUCT_NAME = "AC Demo";
 				PROVISIONING_PROFILE_SPECIFIER = "DEV Staging";
@@ -1371,14 +1371,14 @@
 				CODE_SIGN_ENTITLEMENTS = apturicovid/apturicovid.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = K673TD5NRS;
 				INFOPLIST_FILE = "$(SRCROOT)/apturicovid/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.4;
+				MARKETING_VERSION = 1.3.5;
 				PRODUCT_BUNDLE_IDENTIFIER = lv.spkc.gov.apturicovid.staging;
 				PRODUCT_NAME = "AC Demo";
 				PROVISIONING_PROFILE_SPECIFIER = "DEV Staging";

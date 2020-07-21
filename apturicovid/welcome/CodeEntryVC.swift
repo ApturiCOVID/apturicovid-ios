@@ -324,7 +324,7 @@ extension CodeEntryVC : UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         backButton.updateShadowOpacity(fromContentOffset: scrollView.contentOffset,
                                        shadowApplyBeginOffset: 0,
-                                       shadowApplyIntensity: 1000,
+                                       shadowApplyIntensity: 200,
                                        shadowMaxOpasity: 0.3)
     }
 }

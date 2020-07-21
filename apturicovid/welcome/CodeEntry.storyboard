@@ -119,7 +119,7 @@
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="olB-9d-VUH" secondAttribute="bottom" constant="8" id="Emy-Uo-UVJ"/>
                                             <constraint firstAttribute="trailing" secondItem="olB-9d-VUH" secondAttribute="trailing" id="LQ2-ey-n4K"/>
                                             <constraint firstItem="olB-9d-VUH" firstAttribute="leading" secondItem="cG9-a4-j1A" secondAttribute="leading" id="gqI-3Q-bgD"/>
-                                            <constraint firstItem="olB-9d-VUH" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cG9-a4-j1A" secondAttribute="top" constant="8" id="y4G-et-OMr"/>
+                                            <constraint firstItem="olB-9d-VUH" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cG9-a4-j1A" secondAttribute="top" constant="76" id="y4G-et-OMr"/>
                                         </constraints>
                                     </view>
                                 </subviews>

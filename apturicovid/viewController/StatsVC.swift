@@ -131,17 +131,14 @@ extension StatsVC : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        if let header = self.collectionView(collectionView, viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader, at: IndexPath(row: 0, section: section)) as? StatsHeaderView {
+        if let headerView = self.collectionView(collectionView, viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader, at: IndexPath(row: 0, section: section)) as? StatsHeaderView {
             
-            let titleLabelSize = header.titleLabel.sizeThatFits(CGSize(width: collectionView.frame.width, height: .greatestFiniteMagnitude))
-            let descriptionLabelSize = header.descriptionLabel.sizeThatFits(CGSize(width: collectionView.frame.width, height: .greatestFiniteMagnitude))
-            
-            let height = titleLabelSize.height + header.titleLabelTopConstraint.constant + descriptionLabelSize.height + header.descriptionLabelTopConstraint.constant
-                        
-            return CGSize(width: collectionView.frame.width, height: height)
+            return headerView.systemLayoutSizeFitting(CGSize(width: collectionView.frame.width, height: UIView.layoutFittingCompressedSize.height),
+                                                      withHorizontalFittingPriority: .required,
+                                                      verticalFittingPriority: .fittingSizeLevel)
+        } else {
+            return CGSize(width: 1, height: 1)
         }
-        
-        return CGSize(width: 1, height: 1)
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

@@ -1596,9 +1596,7 @@
                                     </constraints>
                                     <connections>
                                         <outlet property="descriptionLabel" destination="DBT-yE-ReY" id="pU4-Z7-Zo2"/>
-                                        <outlet property="descriptionLabelTopConstraint" destination="gJD-2B-PWp" id="ksx-xl-oaA"/>
                                         <outlet property="titleLabel" destination="gKw-PG-0JT" id="oag-Nq-lSm"/>
-                                        <outlet property="titleLabelTopConstraint" destination="haK-uB-AJ8" id="PSI-5h-6pg"/>
                                     </connections>
                                 </collectionReusableView>
                                 <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StatsFooterView" id="tsg-GJ-unh" customClass="StatsFooterView" customModule="AC_Demo" customModuleProvider="target">

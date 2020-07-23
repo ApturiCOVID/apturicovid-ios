@@ -7,7 +7,7 @@ class HomeVC: BaseViewController {
     
     @IBOutlet weak var bottomBackgroundView: HomeBottomView!
     @IBOutlet weak var exposureSwitch: DesignableSwitch!
-    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var shareButton: RoundedButton!
     @IBOutlet weak var statsStackView: UIStackView!
     @IBOutlet weak var exposureIcon: UIImageView!
     @IBOutlet weak var exposureNotificationView: UIView!
@@ -115,6 +115,20 @@ class HomeVC: BaseViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    private func updateTrackingIconVisibility(){
+        exposureIcon.alpha = exposureIcon.bounds.height < 100 ? 0 : 1
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        translate()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        updateTrackingIconVisibility()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         loadData()
         checkExposureStatus()
@@ -124,10 +138,12 @@ class HomeVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupAnchorConstraints()
         setExposureNotification(visible: false)
         
-        statCells.forEach{ statsStackView.addArrangedSubview($0) }
+        statCells.enumerated().forEach{ item in
+            item.element.spacer.isHidden = item.offset == statCells.count-1
+            statsStackView.addArrangedSubview(item.element)
+        }
         
         //MARK: Exposure tracking enabled
         
@@ -192,8 +208,17 @@ class HomeVC: BaseViewController {
         exposureNotificationVisible = LocalStore.shared.exposures.count > 0
     }
     
-    func setupAnchorConstraints(){
-        bottomViewHeightAnchor = bottomBackgroundView.heightAnchor == layoutConfig.minimizedBottomBackgroundHeight
+    func setupAnchorConstraints(dynamicHeight dynamic: Bool){
+
+        bottomViewHeightAnchor?.isActive = false
+        exposureNotificationTopAnchor?.isActive = false
+
+        if dynamic {
+            bottomViewHeightAnchor = bottomBackgroundView.heightAnchor >= layoutConfig.minimizedBottomBackgroundHeight
+        } else {
+            bottomViewHeightAnchor = bottomBackgroundView.heightAnchor == layoutConfig.minimizedBottomBackgroundHeight
+        }
+       
         exposureNotificationTopAnchor = exposureNotificationView.topAnchor == bottomBackgroundView.topAnchor
     }
     
@@ -219,17 +244,15 @@ class HomeVC: BaseViewController {
         statTested.updateTitle("tested".translated)
         statNewCases.updateTitle("new_cases".translated)
         statDeceased.updateTitle("deaths".translated)
-        
-        shareButton.setTitle("share".translated, for: .normal)
-        shareButton.titleLabel?.lineBreakMode = .byClipping
-        shareButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 6, bottom: 0, right: 10)
-        shareButton.sizeToFit()
+        shareButton.setText("share".translated)
  
         setExposureStateVisual(forState: ExposureManager.shared.trackingIsWorking, animated: false)
         
     }
     
     private func setExposureNotification(visible: Bool, animated: Bool = false) {
+        let isSE = UIDevice.current.type == .iPhoneSE
+        setupAnchorConstraints(dynamicHeight: isSE ? !visible : true)
         
         /// Mover exposure notification over bottomBackgroundView
         let offset = layoutConfig.exporureNotificationYOffset
@@ -241,18 +264,9 @@ class HomeVC: BaseViewController {
         bottomViewHeightAnchor.constant = visible ? minH : maxH
         
         let animationBlock: () -> Void = { [weak self] in
-            guard let `self` = self else { return }
-            
-            let curveInsets = UIEdgeInsets(top: self.bottomBackgroundView.curveOffset,
-                                                left: 0,
-                                                bottom: 0,
-                                                right: 0)
-            self.view.layoutIfNeeded()
-            
-            let backgroundHeight = self.bottomBackgroundView.bounds.inset(by: curveInsets).height
-            let statsViewHeight = self.statsView.bounds.height
-            
-            self.statsView.alpha = backgroundHeight < statsViewHeight ? 0 : 1
+            self?.statsView.alpha = isSE && visible ? 0 : 1
+            self?.view.layoutIfNeeded()
+            self?.updateTrackingIconVisibility()
         }
         
         if animated {

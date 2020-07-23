@@ -10,42 +10,53 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="StatCell" customModule="AC_Demo" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <rect key="frame" x="0.0" y="0.0" width="100" height="71"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1920" textAlignment="center" lineBreakMode="clip" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="rj2-VP-AYf">
-                    <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Testēti" textAlignment="center" lineBreakMode="clip" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HIM-eR-Jcn">
-                    <rect key="frame" x="0.0" y="80" width="100" height="20"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ucq-Vs-lYU">
+                    <rect key="frame" x="97" y="0.0" width="3" height="35.5"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="20" id="eiQ-bM-Ooq"/>
+                        <constraint firstAttribute="width" constant="3" id="yJW-Hh-vvU"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </label>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="QEA-28-i8f">
+                    <rect key="frame" x="6" y="0.0" width="88" height="62"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" text="1920" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.10000000000000001" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rj2-VP-AYf">
+                            <rect key="frame" x="0.0" y="0.0" width="88" height="35.5"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Testēti" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.10000000000000001" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HIM-eR-Jcn">
+                            <rect key="frame" x="0.0" y="41.5" width="88" height="20.5"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </label>
+                    </subviews>
+                </stackView>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="rj2-VP-AYf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2c9-w2-M9t"/>
-                <constraint firstItem="HIM-eR-Jcn" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Swa-J7-Asd"/>
-                <constraint firstItem="HIM-eR-Jcn" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="c9h-H9-oLS"/>
-                <constraint firstItem="rj2-VP-AYf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mdW-tZ-eB7"/>
-                <constraint firstItem="HIM-eR-Jcn" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="o8V-Xn-TF5"/>
-                <constraint firstItem="HIM-eR-Jcn" firstAttribute="top" secondItem="rj2-VP-AYf" secondAttribute="bottom" id="qMh-Wz-ATu"/>
-                <constraint firstAttribute="trailing" secondItem="rj2-VP-AYf" secondAttribute="trailing" id="qRY-xW-OkZ"/>
+                <constraint firstItem="ucq-Vs-lYU" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" id="1LY-db-gip"/>
+                <constraint firstItem="ucq-Vs-lYU" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="DNf-RX-ceZ"/>
+                <constraint firstItem="ucq-Vs-lYU" firstAttribute="centerY" secondItem="rj2-VP-AYf" secondAttribute="centerY" priority="750" id="HQF-Vw-42Q"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="QEA-28-i8f" secondAttribute="trailing" constant="6" id="MOO-B2-AAK"/>
+                <constraint firstItem="ucq-Vs-lYU" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" id="TMO-tU-Ylb"/>
+                <constraint firstItem="QEA-28-i8f" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nuz-um-0gR"/>
+                <constraint firstItem="QEA-28-i8f" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="6" id="rL5-ni-F1q"/>
+                <constraint firstItem="rj2-VP-AYf" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" id="tQX-V2-YLb"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="QEA-28-i8f" secondAttribute="bottom" id="z0i-At-WQF"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="itemName" destination="HIM-eR-Jcn" id="NzM-GR-2Vc"/>
                 <outlet property="numberLabel" destination="rj2-VP-AYf" id="3Lp-cR-iPf"/>
+                <outlet property="spacer" destination="ucq-Vs-lYU" id="eiU-uX-4KV"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="148.66071428571428"/>
+            <point key="canvasLocation" x="107" y="172"/>
         </view>
     </objects>
 </document>

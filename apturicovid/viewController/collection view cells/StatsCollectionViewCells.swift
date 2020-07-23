@@ -4,7 +4,9 @@ import UIKit
 class StatsHeaderView: UICollectionReusableView {
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabelTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var descriptionLabelTopConstraint: NSLayoutConstraint!
     
     var urlLink: String?
     

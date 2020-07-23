@@ -3,13 +3,19 @@ import RxSwift
 import RxCocoa
 
 struct LayoutParams {
-    let expectedCellCountInRow: Int = UIDevice.current.type == .iPhoneSE ? 1 : 2
+    let expectedCellCountInRow: Int = UIDevice.current.type == .iPhoneSE || hasUserIncreasedContentSize() ? 1 : 2
     let cellHeightAspectRatio: CGFloat = UIDevice.current.type == .iPhoneSE ? 0.5 : 0.7
     let contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 30, right: 0)
     let sectionInset = UIEdgeInsets(top: 30, left: 0, bottom: 16, right: 0)
     var cellWidthToTotalWidthAspectRatio: CGFloat {
         expectedCellCountInRow == 1 ? 0.9 : 1 / CGFloat(expectedCellCountInRow)
     }
+}
+
+fileprivate func hasUserIncreasedContentSize() -> Bool {
+    let isDisplayZoomEnabled = UIScreen.main.scale < UIScreen.main.nativeScale
+    let largeSizes: [UIContentSizeCategory] = [.large, .extraLarge, .extraExtraLarge, .extraExtraExtraLarge, .accessibilityMedium, .accessibilityLarge, .accessibilityExtraLarge, .accessibilityExtraExtraLarge, .accessibilityExtraExtraExtraLarge]
+    return isDisplayZoomEnabled || largeSizes.contains(UIApplication.shared.preferredContentSizeCategory)
 }
 
 class StatsVC: BaseViewController {
@@ -122,6 +128,20 @@ extension StatsVC : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         stats?.totalItemCount ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if let header = self.collectionView(collectionView, viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader, at: IndexPath(row: 0, section: section)) as? StatsHeaderView {
+            
+            let titleLabelSize = header.titleLabel.sizeThatFits(CGSize(width: collectionView.frame.width, height: .greatestFiniteMagnitude))
+            let descriptionLabelSize = header.descriptionLabel.sizeThatFits(CGSize(width: collectionView.frame.width, height: .greatestFiniteMagnitude))
+            
+            let height = titleLabelSize.height + header.titleLabelTopConstraint.constant + descriptionLabelSize.height + header.descriptionLabelTopConstraint.constant
+                        
+            return CGSize(width: collectionView.frame.width, height: height)
+        }
+        
+        return CGSize(width: 1, height: 1)
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

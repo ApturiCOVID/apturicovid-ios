@@ -4,9 +4,7 @@ import UIKit
 class StatsHeaderView: UICollectionReusableView {
     
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var titleLabelTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var descriptionLabelTopConstraint: NSLayoutConstraint!
     
     var urlLink: String?
     
@@ -25,8 +23,8 @@ class StatsHeaderView: UICollectionReusableView {
 
 //MARK: - StatsHeaderView
 class StatsFooterView: UICollectionReusableView {
-    
-    @IBOutlet weak var linkButton: UIButton!
+
+    @IBOutlet weak var linkButton: AutoLayoutButton!
     
     @IBAction func linkTap(_ sender: Any) {
         openUrlLink()

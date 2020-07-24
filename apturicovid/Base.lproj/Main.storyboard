@@ -1327,8 +1327,10 @@
                                                             <constraints>
                                                                 <constraint firstItem="0t6-Mu-d3T" firstAttribute="leading" secondItem="NHV-ws-6nj" secondAttribute="leading" constant="20" id="3DV-aR-cbd"/>
                                                                 <constraint firstItem="0t6-Mu-d3T" firstAttribute="centerY" secondItem="NHV-ws-6nj" secondAttribute="centerY" id="DEe-IK-9pe"/>
+                                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="0t6-Mu-d3T" secondAttribute="bottom" constant="8" id="Nnq-7a-se2"/>
                                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0t6-Mu-d3T" secondAttribute="trailing" constant="20" id="iCm-kI-fOF"/>
-                                                                <constraint firstAttribute="height" constant="40" id="iyx-kU-ypH"/>
+                                                                <constraint firstAttribute="height" priority="500" constant="40" id="iyx-kU-ypH"/>
+                                                                <constraint firstItem="0t6-Mu-d3T" firstAttribute="top" relation="greaterThanOrEqual" secondItem="NHV-ws-6nj" secondAttribute="top" constant="8" id="n6s-mb-1vW"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
@@ -1441,7 +1443,9 @@
                                                                 <constraint firstItem="LTP-JQ-xqv" firstAttribute="leading" secondItem="Qct-Io-LTd" secondAttribute="leading" constant="20" id="7xx-Ug-cMU"/>
                                                                 <constraint firstItem="LTP-JQ-xqv" firstAttribute="centerY" secondItem="Qct-Io-LTd" secondAttribute="centerY" id="CrS-Rd-DeN"/>
                                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LTP-JQ-xqv" secondAttribute="trailing" constant="20" id="PS5-IB-Oyu"/>
-                                                                <constraint firstAttribute="height" constant="40" id="mwj-cF-pIF"/>
+                                                                <constraint firstItem="LTP-JQ-xqv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Qct-Io-LTd" secondAttribute="top" constant="8" id="Pre-PG-ZIT"/>
+                                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="LTP-JQ-xqv" secondAttribute="bottom" constant="8" id="hhT-jl-frm"/>
+                                                                <constraint firstAttribute="height" priority="500" constant="40" id="mwj-cF-pIF"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1aG-qX-tdV" userLabel="leftContainer">

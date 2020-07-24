@@ -32,20 +32,16 @@ class StatsVC: BaseViewController {
     
     var stats: Stats? {
         didSet {
-            if oldValue != stats { statsCollectionView.reloadData() }
+            if oldValue != stats {
+                statsCollectionView.reloadData()
+                updateBackground()
+            }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // On SE screen cell background melds with superview color
-        // Set superview color from welcomeHeaderView fillcolor
-        if UIDevice.current.type == .iPhoneSE {
-            superView.backgroundColor = welcomeHeaderView.fillColor
-            welcomeHeaderView.isHidden = true
-        }
-
         statsCollectionView.dataSource = self
         statsCollectionView.delegate = self
         statsCollectionView.contentInset.top = params.contentInset.top
@@ -119,11 +115,19 @@ class StatsVC: BaseViewController {
     
     override func translate() {
         statsCollectionView.reloadData()
+        updateBackground()
+    }
+    
+    private func updateBackground() {
+        let shouldBeSolidBackground = (statsCollectionView.collectionViewLayout.collectionViewContentSize.height > welcomeHeaderView.bounds.height)
+        superView.backgroundColor = shouldBeSolidBackground ? welcomeHeaderView.fillColor : Colors.headerColor
+        welcomeHeaderView.isHidden = shouldBeSolidBackground
     }
     
     @objc func preferredContentSizeChanged(_ notification: Notification) {
         DispatchQueue.main.async {
             self.statsCollectionView.collectionViewLayout.invalidateLayout()
+            self.updateBackground()
         }
     }
 }

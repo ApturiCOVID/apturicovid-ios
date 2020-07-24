@@ -1281,7 +1281,7 @@
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" sectionInsetReference="safeArea" id="ISp-fv-wBQ">
                                     <size key="itemSize" width="196" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="55"/>
-                                    <size key="footerReferenceSize" width="50" height="50"/>
+                                    <size key="footerReferenceSize" width="0.0" height="50"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
@@ -1549,50 +1549,33 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StatsHeaderView" id="yAm-uv-j0G" customClass="StatsHeaderView" customModule="AC_Demo" customModuleProvider="target">
+                                <collectionReusableView key="sectionHeaderView" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StatsHeaderView" id="yAm-uv-j0G" customClass="StatsHeaderView" customModule="AC_Demo" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="398" height="55"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Man-dw-LrL" userLabel="background" customClass="RoundedView" customModule="AC_Demo" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="398" height="55"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="COVID-19 statistika Latvijā" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="11" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gKw-PG-0JT">
-                                                    <rect key="frame" x="16" y="5" width="366" height="25"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                    <color key="textColor" name="darkLabel"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Dati atjaunoti: 12.04.2020" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DBT-yE-ReY">
-                                                    <rect key="frame" x="16" y="37" width="366" height="18"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                    <color key="textColor" name="descriptionText"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="COVID-19 statistika Latvijā" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="11" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gKw-PG-0JT">
+                                            <rect key="frame" x="16" y="8" width="366" height="24"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstItem="DBT-yE-ReY" firstAttribute="leading" secondItem="Man-dw-LrL" secondAttribute="leading" constant="16" id="0yn-gn-PH9"/>
-                                                <constraint firstAttribute="trailing" secondItem="DBT-yE-ReY" secondAttribute="trailing" constant="16" id="2BM-qL-d6u"/>
-                                                <constraint firstAttribute="trailing" secondItem="gKw-PG-0JT" secondAttribute="trailing" constant="16" id="HUB-QL-EzL"/>
-                                                <constraint firstAttribute="bottom" secondItem="DBT-yE-ReY" secondAttribute="bottom" id="Hve-jE-fSi"/>
-                                                <constraint firstItem="gKw-PG-0JT" firstAttribute="leading" secondItem="Man-dw-LrL" secondAttribute="leading" constant="16" id="MvK-qD-ZUv"/>
-                                                <constraint firstItem="DBT-yE-ReY" firstAttribute="top" secondItem="gKw-PG-0JT" secondAttribute="bottom" constant="7" id="gJD-2B-PWp"/>
-                                                <constraint firstItem="gKw-PG-0JT" firstAttribute="top" secondItem="Man-dw-LrL" secondAttribute="top" constant="5" id="haK-uB-AJ8"/>
-                                            </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="14"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </view>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <color key="textColor" name="darkLabel"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Dati atjaunoti: 12.04.2020" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DBT-yE-ReY">
+                                            <rect key="frame" x="16" y="37" width="366" height="18"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <color key="textColor" name="descriptionText"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Man-dw-LrL" firstAttribute="top" secondItem="yAm-uv-j0G" secondAttribute="top" id="DIY-1o-wOc"/>
-                                        <constraint firstAttribute="trailing" secondItem="Man-dw-LrL" secondAttribute="trailing" id="Je4-eU-Bb5"/>
-                                        <constraint firstAttribute="bottom" secondItem="Man-dw-LrL" secondAttribute="bottom" id="ZTB-Qd-ck4"/>
-                                        <constraint firstItem="Man-dw-LrL" firstAttribute="leading" secondItem="yAm-uv-j0G" secondAttribute="leading" id="oZy-6d-IcF"/>
+                                        <constraint firstItem="gKw-PG-0JT" firstAttribute="top" secondItem="yAm-uv-j0G" secondAttribute="topMargin" id="BCI-HL-AjW"/>
+                                        <constraint firstItem="gKw-PG-0JT" firstAttribute="leading" secondItem="yAm-uv-j0G" secondAttribute="leading" constant="16" id="fg3-bc-yFq"/>
+                                        <constraint firstAttribute="bottom" secondItem="DBT-yE-ReY" secondAttribute="bottom" id="myA-oO-Tpq"/>
+                                        <constraint firstItem="DBT-yE-ReY" firstAttribute="top" secondItem="gKw-PG-0JT" secondAttribute="bottom" priority="750" constant="5" id="qW4-xo-lUA"/>
+                                        <constraint firstAttribute="trailing" secondItem="DBT-yE-ReY" secondAttribute="trailing" priority="750" constant="16" id="qub-lX-7mb"/>
+                                        <constraint firstItem="DBT-yE-ReY" firstAttribute="leading" secondItem="yAm-uv-j0G" secondAttribute="leading" constant="16" id="t3b-Ir-dlp"/>
+                                        <constraint firstAttribute="trailing" secondItem="gKw-PG-0JT" secondAttribute="trailing" priority="750" constant="16" id="ytv-Il-0A3"/>
                                     </constraints>
                                     <connections>
                                         <outlet property="descriptionLabel" destination="DBT-yE-ReY" id="pU4-Z7-Zo2"/>
@@ -1603,8 +1586,8 @@
                                     <rect key="frame" x="0.0" y="355" width="398" height="50"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIJ-Bp-PWd">
-                                            <rect key="frame" x="24" y="8" width="57" height="34"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="sIJ-Bp-PWd" customClass="AutoLayoutButton" customModule="AC_Demo" customModuleProvider="target">
+                                            <rect key="frame" x="24" y="8" width="350" height="34"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <state key="normal" title="Detailed">
                                                 <color key="titleColor" name="linkColor"/>
@@ -1616,14 +1599,13 @@
                                     </subviews>
                                     <color key="tintColor" name="shareColor"/>
                                     <constraints>
-                                        <constraint firstItem="sIJ-Bp-PWd" firstAttribute="centerY" secondItem="tsg-GJ-unh" secondAttribute="centerY" id="37W-f1-sZS"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="sIJ-Bp-PWd" secondAttribute="bottom" id="3iF-ja-Lyc"/>
                                         <constraint firstItem="sIJ-Bp-PWd" firstAttribute="top" secondItem="tsg-GJ-unh" secondAttribute="topMargin" id="9K2-am-5pW"/>
-                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="sIJ-Bp-PWd" secondAttribute="trailing" constant="16" id="Gis-wM-5rz"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="sIJ-Bp-PWd" secondAttribute="trailing" priority="750" constant="16" id="Gis-wM-5rz"/>
                                         <constraint firstItem="sIJ-Bp-PWd" firstAttribute="leading" secondItem="tsg-GJ-unh" secondAttribute="leadingMargin" constant="16" id="jZp-Jl-zg6"/>
                                     </constraints>
                                     <connections>
-                                        <outlet property="linkButton" destination="sIJ-Bp-PWd" id="iXJ-9f-uBm"/>
+                                        <outlet property="linkButton" destination="sIJ-Bp-PWd" id="Cpb-kx-ex3"/>
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>

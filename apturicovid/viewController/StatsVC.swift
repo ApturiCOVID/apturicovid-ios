@@ -50,7 +50,12 @@ class StatsVC: BaseViewController {
         statsCollectionView.refreshControl = refreshControl
         refreshControl.layer.zPosition = -1
         
-        NotificationCenter.default.addObserver(self, selector: #selector(preferredContentSizeChanged(_:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
+        NotificationCenter.default.rx
+            .notification(UIContentSizeCategory.didChangeNotification)
+            .subscribe(onNext: { [weak self] (_) in
+                self?.preferredContentSizeChanged()
+            })
+            .disposed(by: disposeBag)
 
         NotificationCenter.default.rx
             .notification(.reachabilityChanged)
@@ -124,7 +129,7 @@ class StatsVC: BaseViewController {
         welcomeHeaderView.isHidden = shouldBeSolidBackground
     }
     
-    @objc func preferredContentSizeChanged(_ notification: Notification) {
+    @objc func preferredContentSizeChanged() {
         DispatchQueue.main.async {
             self.statsCollectionView.collectionViewLayout.invalidateLayout()
             self.updateBackground()

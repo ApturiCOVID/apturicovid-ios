@@ -1318,7 +1318,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NHV-ws-6nj" userLabel="headerBackground">
                                                             <rect key="frame" x="0.0" y="0.0" width="188" height="40"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proportion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0t6-Mu-d3T">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proportion" textAlignment="natural" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0t6-Mu-d3T">
                                                                     <rect key="frame" x="20" y="8" width="85" height="24"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="textColor" name="headerColor"/>
@@ -1434,7 +1434,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qct-Io-LTd" userLabel="headerBackground">
                                                             <rect key="frame" x="0.0" y="0.0" width="188" height="40"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tested" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LTP-JQ-xqv">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tested" textAlignment="natural" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LTP-JQ-xqv">
                                                                     <rect key="frame" x="20" y="8" width="54" height="24"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="textColor" name="headerColor"/>

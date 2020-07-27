@@ -113,6 +113,7 @@ class StatsVC: BaseViewController {
             .share()
             .subscribe(onNext: { [weak self] (stats) in
                 self?.stats = stats
+                self?.refreshControl.endRefreshing()
                 },onError: {  [weak self] error in
                     justPrintError(error)
                     self?.refreshControl.endRefreshing()

@@ -23,8 +23,8 @@ class StatsHeaderView: UICollectionReusableView {
 
 //MARK: - StatsHeaderView
 class StatsFooterView: UICollectionReusableView {
-    
-    @IBOutlet weak var linkButton: UIButton!
+
+    @IBOutlet weak var linkButton: AutoLayoutButton!
     
     @IBAction func linkTap(_ sender: Any) {
         openUrlLink()

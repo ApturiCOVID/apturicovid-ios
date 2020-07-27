@@ -25,6 +25,10 @@ struct Stats: Codable, Equatable {
     let yesterdayDeathCount: Int
     let updatedAt: Date
     
+    var isOutdated: Bool {
+        updatedAt.distance(to: Date()) > StatsClient.statTtlInterval
+    }
+    
     var dateString: String {
         Stats.datePreviewFormater.string(from: updatedAt)
     }

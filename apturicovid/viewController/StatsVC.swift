@@ -92,7 +92,7 @@ class StatsVC: BaseViewController {
     }
     
     func loadData(forceApi: Bool = false){
-        StatsClient.shared.getStats(forceFromApi: forceApi)
+        StatsClient.shared.getStats(from: forceApi ? .Api : .Auto)
         .subscribeOn(SerialDispatchQueueScheduler(qos: .default))
         .observeOn(MainScheduler.instance)
             .share()

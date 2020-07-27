@@ -40,6 +40,7 @@ class RestClient {
                 
                 if let responseData = data, error == nil {
                     observer.onNext(responseData)
+                    observer.onCompleted()
                 } else {
                     observer.onError(error ?? NSError.make("No Data Received"))
                 }

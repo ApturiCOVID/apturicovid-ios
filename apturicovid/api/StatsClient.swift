@@ -24,7 +24,7 @@ class StatsClient: RestClient {
         case .Api:
             statsObservable = getStatsFromApi(forced: true)
         case .Auto:
-            statsObservable = Observable.concat([getStatsFromLocalStorage(),getStatsFromApi(forced: false)])
+            statsObservable = getStatsFromLocalStorage().concat(getStatsFromApi(forced: false))
         case .Local:
             statsObservable = getStatsFromLocalStorage()
         }
@@ -83,14 +83,7 @@ class StatsClient: RestClient {
     }
     
     private func getStatsFromLocalStorage() -> Observable<Stats> {
-        
-        Observable<Stats>.create { observer -> Disposable in
-            if let stats = LocalStore.shared.stats {
-                observer.onNext(stats)
-            }
-            observer.onCompleted()
-            return Disposables.create()
-        }
+        LocalStore.shared.stats.map(Observable.just) ?? Observable.empty()
     }
     
 }

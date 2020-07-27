@@ -2,6 +2,7 @@
 "understood" = "Sapratu";
 "yes" = "Jā";
 "no" = "Nē";
+"ok" = "Labi";
 "close" = "Aizvērt";
 "next" = "Tālāk";
 "app_settings" = "Iestatījumi";
@@ -59,10 +60,9 @@ Kontakta fiksēšana nav izsekošana.";
 
 // ExposureAlertVC
 "exposure_with_covid" = "Fiksēts kontakts ar Covid-19";
-"you_had_exposure" = "Tev pēdējo 14\U00A0dienu laikā ir bijusi saskare ar Covid-19 inficētu cilvēku.";
+"you_had_exposure" = "Tev ir bijusi saskare ar Covid-19 saslimušo.";
 "how_to_proceed" = "Ko tagad darīt?";
 "self_isolate" = "Paliec mājās, ierobežo saskarsmi";
-"wait_for_a_call_from_spkc" = "Gaidi ziņu no SPKC";
 "contact_your_family_doctor" = "Ir simptomi? Sazinies ar ģimenes ārstu";
 "observe_symptoms" = "Vēro simptomus";
 "severe_case" = "Smagi simptomi? Zvani 113";

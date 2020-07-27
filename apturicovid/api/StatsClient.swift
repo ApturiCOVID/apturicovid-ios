@@ -52,7 +52,7 @@ class StatsClient: RestClient {
     
     private func getStatsFromApi(forced: Bool) -> Observable<Stats> {
         
-        guard !forced && !shouldFetchFromApi() else {
+        guard !forced || !shouldFetchFromApi() else {
             return Observable.empty()
         }
 

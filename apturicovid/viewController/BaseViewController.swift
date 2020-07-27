@@ -64,7 +64,7 @@ class BaseViewController: UIViewController {
     func presentErrorAlert(with message: String) {
         let alert = UIAlertController(title: "error".translated, message: message.translated, preferredStyle: .alert)
         alert.overrideUserInterfaceStyle = .light
-        alert.addAction(UIAlertAction(title: "continue".translated, style: .cancel, handler: { (_) in
+        alert.addAction(UIAlertAction(title: "ok".translated, style: .cancel, handler: { (_) in
             alert.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)

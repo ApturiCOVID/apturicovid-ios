@@ -16,7 +16,7 @@ struct LayoutParams {
 
 fileprivate func hasUserIncreasedContentSize() -> Bool {
     let isDisplayZoomEnabled = UIScreen.main.scale < UIScreen.main.nativeScale
-    let largeSizes: [UIContentSizeCategory] = [.large, .extraLarge, .extraExtraLarge, .extraExtraExtraLarge, .accessibilityMedium, .accessibilityLarge, .accessibilityExtraLarge, .accessibilityExtraExtraLarge, .accessibilityExtraExtraExtraLarge]
+    let largeSizes: [UIContentSizeCategory] = [.accessibilityMedium, .accessibilityLarge, .accessibilityExtraLarge, .accessibilityExtraExtraLarge, .accessibilityExtraExtraExtraLarge]
     return isDisplayZoomEnabled || largeSizes.contains(UIApplication.shared.preferredContentSizeCategory)
 }
 
@@ -54,7 +54,10 @@ class StatsVC: BaseViewController {
             .notification(UIContentSizeCategory.didChangeNotification)
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] (_) in
-                self?.preferredContentSizeChanged()
+                self?.view.setNeedsLayout()
+                self?.view.layoutIfNeeded()
+                self?.statsCollectionView.collectionViewLayout.invalidateLayout()
+                self?.updateBackground()
             })
             .disposed(by: disposeBag)
 
@@ -128,11 +131,6 @@ class StatsVC: BaseViewController {
         let shouldBeSolidBackground = (statsCollectionView.collectionViewLayout.collectionViewContentSize.height > welcomeHeaderView.bounds.height)
         superView.backgroundColor = shouldBeSolidBackground ? welcomeHeaderView.fillColor : Colors.headerColor
         welcomeHeaderView.isHidden = shouldBeSolidBackground
-    }
-    
-    @objc func preferredContentSizeChanged() {
-        statsCollectionView.collectionViewLayout.invalidateLayout()
-        updateBackground()
     }
 }
 

@@ -55,7 +55,7 @@ class StatsFooterView: UICollectionReusableView {
 
 //MARK: - StatsSingleValueCollectionViewCell
 class StatsSingleValueCollectionViewCell: StatsCollectionViewCell<SingleValueField<Int>> {
-    
+    @IBOutlet weak var headerViewHeight: NSLayoutConstraint!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var fieldTitleLabel: UILabel!
     @IBOutlet weak var fieldValueLabel: UILabel!
@@ -78,12 +78,15 @@ class StatsSingleValueCollectionViewCell: StatsCollectionViewCell<SingleValueFie
         } else {
             self.fieldValueLabel.text = "-"
         }
+        
+        let labelSize = titleLabel.sizeThatFits(CGSize(width: frame.width, height: frame.height))
+        headerViewHeight.constant = max(40, labelSize.height + 16)
     }
 }
 
 //MARK: - StatsDoubleValueCollectionViewCell
 class StatsDoubleValueCollectionViewCell: StatsCollectionViewCell<DoubleValueField<Int>> {
-    
+    @IBOutlet weak var headerViewHeight: NSLayoutConstraint!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var field1TitleLabel: UILabel!
     @IBOutlet weak var field1ValueLabel: UILabel!
@@ -121,8 +124,9 @@ class StatsDoubleValueCollectionViewCell: StatsCollectionViewCell<DoubleValueFie
             self.field2ValueLabel.text = "-"
         }
         
+        let labelSize = titleLabel.sizeThatFits(CGSize(width: frame.width, height: frame.height))
+        headerViewHeight.constant = max(40, labelSize.height + 16)
     }
-        
 }
 
 //MARK: - StatsCollectionViewCell

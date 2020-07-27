@@ -3,13 +3,21 @@ import RxSwift
 import RxCocoa
 
 struct LayoutParams {
-    let expectedCellCountInRow: Int = UIDevice.current.type == .iPhoneSE ? 1 : 2
+    var expectedCellCountInRow: Int {
+        UIDevice.current.type == .iPhoneSE || hasUserIncreasedContentSize() ? 1 : 2
+    }
     let cellHeightAspectRatio: CGFloat = UIDevice.current.type == .iPhoneSE ? 0.5 : 0.7
     let contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 30, right: 0)
     let sectionInset = UIEdgeInsets(top: 30, left: 0, bottom: 16, right: 0)
     var cellWidthToTotalWidthAspectRatio: CGFloat {
         expectedCellCountInRow == 1 ? 0.9 : 1 / CGFloat(expectedCellCountInRow)
     }
+}
+
+fileprivate func hasUserIncreasedContentSize() -> Bool {
+    let isDisplayZoomEnabled = UIScreen.main.scale < UIScreen.main.nativeScale
+    let largeSizes: [UIContentSizeCategory] = [.accessibilityMedium, .accessibilityLarge, .accessibilityExtraLarge, .accessibilityExtraExtraLarge, .accessibilityExtraExtraExtraLarge]
+    return isDisplayZoomEnabled || largeSizes.contains(UIApplication.shared.preferredContentSizeCategory)
 }
 
 class StatsVC: BaseViewController {
@@ -24,20 +32,16 @@ class StatsVC: BaseViewController {
     
     var stats: Stats? {
         didSet {
-            if oldValue != stats { statsCollectionView.reloadData() }
+            if oldValue != stats {
+                statsCollectionView.reloadData()
+                updateBackground()
+            }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // On SE screen cell background melds with superview color
-        // Set superview color from welcomeHeaderView fillcolor
-        if UIDevice.current.type == .iPhoneSE {
-            superView.backgroundColor = welcomeHeaderView.fillColor
-            welcomeHeaderView.isHidden = true
-        }
-
         statsCollectionView.dataSource = self
         statsCollectionView.delegate = self
         statsCollectionView.contentInset.top = params.contentInset.top
@@ -46,6 +50,17 @@ class StatsVC: BaseViewController {
         statsCollectionView.refreshControl = refreshControl
         refreshControl.layer.zPosition = -1
         
+        NotificationCenter.default.rx
+            .notification(UIContentSizeCategory.didChangeNotification)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] (_) in
+                self?.view.setNeedsLayout()
+                self?.view.layoutIfNeeded()
+                self?.statsCollectionView.collectionViewLayout.invalidateLayout()
+                self?.updateBackground()
+            })
+            .disposed(by: disposeBag)
+
         NotificationCenter.default.rx
             .notification(.reachabilityChanged)
             .subscribe(onNext: { [weak self] notification in
@@ -109,6 +124,13 @@ class StatsVC: BaseViewController {
     
     override func translate() {
         statsCollectionView.reloadData()
+        updateBackground()
+    }
+    
+    private func updateBackground() {
+        let shouldBeSolidBackground = (statsCollectionView.collectionViewLayout.collectionViewContentSize.height > welcomeHeaderView.bounds.height)
+        superView.backgroundColor = shouldBeSolidBackground ? welcomeHeaderView.fillColor : Colors.headerColor
+        welcomeHeaderView.isHidden = shouldBeSolidBackground
     }
 }
 
@@ -122,6 +144,29 @@ extension StatsVC : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         stats?.totalItemCount ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if let headerView = self.collectionView(collectionView, viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader, at: IndexPath(row: 0, section: section)) as? StatsHeaderView {
+            
+            return headerView.systemLayoutSizeFitting(CGSize(width: collectionView.frame.width, height: UIView.layoutFittingCompressedSize.height),
+                                                      withHorizontalFittingPriority: .required,
+                                                      verticalFittingPriority: .fittingSizeLevel)
+        } else {
+            return CGSize(width: 1, height: 1)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        if let footerView = self.collectionView(collectionView, viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionFooter, at: IndexPath(row: 0, section: section)) as? StatsFooterView {
+            
+            footerView.translatesAutoresizingMaskIntoConstraints = false
+            return footerView.systemLayoutSizeFitting(CGSize(width: collectionView.frame.width, height: UIView.layoutFittingCompressedSize.height),
+                                                      withHorizontalFittingPriority: .required,
+                                                      verticalFittingPriority: .fittingSizeLevel)
+        } else {
+            return CGSize(width: 1, height: 1)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

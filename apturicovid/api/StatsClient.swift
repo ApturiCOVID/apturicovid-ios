@@ -52,34 +52,17 @@ class StatsClient: RestClient {
     
     private func getStatsFromApi(forced: Bool) -> Observable<Stats> {
         
-        if forced || shouldFetchFromApi() {
-            return Observable<Stats>.create { observer -> Disposable in
-                // Fetch data from api
-                let apiFetch = self.request(urlString: "\(filesBaseUrl)/stats/v1/covid-stats.json", body: nil, method: "GET")
-                    .compactMap{ (data) -> Stats? in
-                        do {
-                            return try Stats.decoder.decode(Stats.self, from: data)
-                        } catch {
-                            observer.onError(error)
-                            return nil
-                        }
-                    }.subscribe(onNext: { stats in
-                        LocalStore.shared.stats = stats
-                        LocalStore.shared.lastStatsFetchTime = Date()
-                        observer.onNext(stats)
-                    }, onError: {
-                        observer.onError($0)
-                    }, onCompleted: {
-                        observer.onCompleted()
-                    })
-
-                return Disposables.create {
-                    apiFetch.dispose()
-                }
-            }
-        } else {
+        guard !forced && !shouldFetchFromApi() else {
             return Observable.empty()
         }
+
+        return self.request(urlString: "\(filesBaseUrl)/stats/v1/covid-stats.json", body: nil, method: "GET")
+        .compactMap { try? Stats.decoder.decode(Stats.self, from: $0) }
+        .do(onNext: { stats in
+            LocalStore.shared.stats = stats
+            LocalStore.shared.lastStatsFetchTime = Date()
+        })
+        
     }
     
     private func getStatsFromLocalStorage() -> Observable<Stats> {

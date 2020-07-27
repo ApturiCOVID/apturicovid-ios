@@ -40,8 +40,13 @@ class StatsClient: RestClient {
                 }
             }()
             
+            
+            var statsOutdated: Bool {
+                LocalStore.shared.stats == nil || LocalStore.shared.lastStatsFetchTime.distance(to: Date()) > throttle
+            }
+            
             // Complete if recently got new stats && !forced
-            guard forceFromApi || LocalStore.shared.lastStatsFetchTime.distance(to: Date()) > throttle else {
+            guard forceFromApi || statsOutdated else {
                 observer.onCompleted()
                 return disposable
             }

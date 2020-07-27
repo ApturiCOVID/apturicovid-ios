@@ -52,6 +52,7 @@ class StatsVC: BaseViewController {
         
         NotificationCenter.default.rx
             .notification(UIContentSizeCategory.didChangeNotification)
+            .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] (_) in
                 self?.preferredContentSizeChanged()
             })
@@ -130,10 +131,8 @@ class StatsVC: BaseViewController {
     }
     
     @objc func preferredContentSizeChanged() {
-        DispatchQueue.main.async {
-            self.statsCollectionView.collectionViewLayout.invalidateLayout()
-            self.updateBackground()
-        }
+        statsCollectionView.collectionViewLayout.invalidateLayout()
+        updateBackground()
     }
 }
 

@@ -949,7 +949,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HT1-47-aNg">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1204.6666666666667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1357.6666666666667"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exposure-alert" translatesAutoresizingMaskIntoConstraints="NO" id="aw7-Te-grS">
                                                 <rect key="frame" x="30" y="70" width="140" height="140"/>
@@ -965,7 +965,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pWu-Yn-6Ki">
-                                                <rect key="frame" x="30" y="272.66666666666674" width="354" height="789"/>
+                                                <rect key="frame" x="30" y="272.66666666666674" width="354" height="942"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jums nesen ir bijs kontakts ar COVID-19 inficētu personu" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmt-5q-Mc4">
                                                         <rect key="frame" x="0.0" y="0.0" width="354" height="36"/>
@@ -1091,8 +1091,36 @@
                                                             <constraint firstItem="jEz-Di-5hH" firstAttribute="top" secondItem="3mF-Wa-U7M" secondAttribute="top" constant="6" id="zjh-du-Ffa"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9pP-0E-FBI">
+                                                        <rect key="frame" x="0.0" y="717.33333333333326" width="354" height="128"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="Obb-oP-T74">
+                                                                <rect key="frame" x="10" y="61.666666666666742" width="5" height="5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="5" id="53s-3T-ZJe"/>
+                                                                    <constraint firstAttribute="width" constant="5" id="aCl-PD-xKd"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gaidīt ziņu no SPKC" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugr-q3-JDJ">
+                                                                <rect key="frame" x="25" y="6" width="136" height="116"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <color key="textColor" red="0.30588235289999999" green="0.30588235289999999" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="Obb-oP-T74" firstAttribute="leading" secondItem="9pP-0E-FBI" secondAttribute="leading" constant="10" id="Ex2-oE-2Kf"/>
+                                                            <constraint firstItem="ugr-q3-JDJ" firstAttribute="leading" secondItem="Obb-oP-T74" secondAttribute="trailing" constant="10" id="OZP-U9-oQF"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ugr-q3-JDJ" secondAttribute="trailing" constant="5" id="TWi-sS-xI4"/>
+                                                            <constraint firstItem="Obb-oP-T74" firstAttribute="centerY" secondItem="9pP-0E-FBI" secondAttribute="centerY" id="aKy-cx-aAS"/>
+                                                            <constraint firstAttribute="bottom" secondItem="ugr-q3-JDJ" secondAttribute="bottom" constant="6" id="hoq-Qq-eRl"/>
+                                                            <constraint firstItem="ugr-q3-JDJ" firstAttribute="top" secondItem="9pP-0E-FBI" secondAttribute="top" constant="6" id="jx4-3i-Ilj"/>
+                                                            <constraint firstItem="ugr-q3-JDJ" firstAttribute="centerY" secondItem="9pP-0E-FBI" secondAttribute="centerY" id="oCe-AE-DeK"/>
+                                                        </constraints>
+                                                    </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aY0-D4-LEh">
-                                                        <rect key="frame" x="0.0" y="717.33333333333326" width="354" height="71.666666666666629"/>
+                                                        <rect key="frame" x="0.0" y="870.33333333333326" width="354" height="71.666666666666629"/>
                                                         <string key="text">Saglabājiet mieru, kontakts ar COVID-19 nenozīmē, ka esiet inficēts. Ievērojiet piesardzības pasākumus, sazinieties ar ārstu u.t.t. paskaidrojošais teksts, kas var būt salīdzinoši garāks.</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.1529411765" green="0.1529411765" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
@@ -1104,7 +1132,7 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVc-gO-rBp" userLabel="end">
-                                                <rect key="frame" x="0.0" y="1076.6666666666667" width="414" height="128"/>
+                                                <rect key="frame" x="0.0" y="1229.6666666666667" width="414" height="128"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RvG-R6-97x" customClass="RoundedButton" customModule="AC_Demo" customModuleProvider="target">
                                                         <rect key="frame" x="119.66666666666669" y="39" width="175" height="50"/>
@@ -1225,6 +1253,8 @@
                         <outlet property="statusBarBlurView" destination="zaZ-ar-BmD" id="d74-ah-zyL"/>
                         <outlet property="symptomsLabel" destination="vPS-jo-ypV" id="mFp-Lz-3qZ"/>
                         <outlet property="titleLabel" destination="C0a-wB-cEp" id="Ljx-ba-rCz"/>
+                        <outlet property="waitSPKCCallLabel" destination="ugr-q3-JDJ" id="N5r-7F-9SM"/>
+                        <outlet property="waitSPKCCallView" destination="9pP-0E-FBI" id="NaW-d0-6fa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yhm-c2-CgJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -63,6 +63,7 @@ Contact detection is not tracking.";
 "you_had_exposure" = "You have been in the proximity of someone infected with COVID-19.";
 "how_to_proceed" = "What’s next?";
 "self_isolate" = "Stay home, limit contact with others";
+"wait_for_a_call_from_spkc" = "Wait for SPKC to call you";
 "contact_your_family_doctor" = "Got symptoms? Contact your general practitioner";
 "severe_case" = "Severe symptoms? Call 113";
 "observe_symptoms" = "Monitor symptoms";

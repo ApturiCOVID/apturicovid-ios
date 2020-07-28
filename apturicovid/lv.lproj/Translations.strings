@@ -63,6 +63,7 @@ Kontakta fiksēšana nav izsekošana.";
 "you_had_exposure" = "Tev ir bijusi saskare ar Covid-19 saslimušo.";
 "how_to_proceed" = "Ko tagad darīt?";
 "self_isolate" = "Paliec mājās, ierobežo saskarsmi";
+"wait_for_a_call_from_spkc" = "Gaidi ziņu no SPKC";
 "contact_your_family_doctor" = "Ir simptomi? Sazinies ar ģimenes ārstu";
 "observe_symptoms" = "Vēro simptomus";
 "severe_case" = "Smagi simptomi? Zvani 113";

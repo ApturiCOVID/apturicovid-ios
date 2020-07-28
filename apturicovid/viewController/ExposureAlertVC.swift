@@ -8,6 +8,8 @@ class ExposureAlertVC: BaseViewController {
     @IBOutlet weak var spkcCallLabel: UILabel!
     @IBOutlet weak var familyDoctorLabel: UILabel!
     @IBOutlet weak var symptomsLabel: UILabel!
+    @IBOutlet weak var waitSPKCCallView: UIView!
+    @IBOutlet weak var waitSPKCCallLabel: UILabel!
     @IBOutlet weak var handlingDescription: UILabel!
     @IBOutlet weak var phoneInputButton: RoundedButton!
     @IBOutlet weak var phoneButtonContainerHeight: NSLayoutConstraint!
@@ -36,7 +38,9 @@ class ExposureAlertVC: BaseViewController {
         symptomsLabel.text = "observe_symptoms".translated
         familyDoctorLabel.text = "contact_your_family_doctor".translated
         spkcCallLabel.text = "severe_case".translated
-        
+        waitSPKCCallLabel.text = "wait_for_a_call_from_spkc".translated
+
+        waitSPKCCallView.isHidden = !isPhoneSpecified
         handlingDescription.text =  isPhoneSpecified ? "exposure_handling_description_phone_specified".translated : "exposure_handling_description_phone_not_specified".translated
         
         

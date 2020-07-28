@@ -26,6 +26,10 @@ import UIKit
         didSet{ layer.shadowColor = shadowColor.cgColor }
     }
     
+    @IBInspectable var numberOfLines: Int = 0 {
+        didSet{ titleLabel?.numberOfLines = numberOfLines }
+    }
+    
     private var shadowEnabled: Bool {shadowOpacity != 0}
     
     private func applyShadow(_ enabled: Bool){

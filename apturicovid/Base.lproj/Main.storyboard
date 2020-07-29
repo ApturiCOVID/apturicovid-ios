@@ -938,7 +938,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exposure-view-corner" translatesAutoresizingMaskIntoConstraints="NO" id="YVr-cc-uYK">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exposure-view-corner" translatesAutoresizingMaskIntoConstraints="NO" id="YVr-cc-uYK">
                                 <rect key="frame" x="181" y="766" width="233" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="LF6-wk-9Um"/>

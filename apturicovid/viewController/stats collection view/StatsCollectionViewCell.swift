@@ -42,21 +42,21 @@ class StatsCollectionViewCell: UICollectionViewCell {
         ].forEach{ $0?.text = nil }
     }
     
-    func setupData(with field: DoubleValueField<Int>){
+    func setupData(with data: DoubleValueField<Int>){
         
-        self.titleLabel.text = field.title
+        self.titleLabel.text = data.title
         
-        self.field1TitleLabel.text = field.fieldTotal.valueTitle
-        if let value = field.fieldTotal.value {
+        self.field1TitleLabel.text = data.fieldTotal.valueTitle
+        if let value = data.fieldTotal.value {
             self.field1ValueLabel.text = "\(value)"
         } else {
             self.field1ValueLabel.text = "-"
         }
         
-        self.field2TitleLabel.text = field.fieldYesterday.valueTitle
-        if let value = field.fieldYesterday.value {
+        self.field2TitleLabel.text = data.fieldYesterday.valueTitle
+        if let value = data.fieldYesterday.value {
             self.field2ValueLabel.text = "\(value)"
-        } else if field.fieldYesterday.valueTitle == "" {
+        } else if data.fieldYesterday.valueTitle == "" {
             self.field2ValueLabel.text = ""
         } else {
             self.field2ValueLabel.text = "-"

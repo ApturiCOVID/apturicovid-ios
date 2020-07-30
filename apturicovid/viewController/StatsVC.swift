@@ -185,12 +185,11 @@ extension StatsVC : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let index = indexPath.section + indexPath.row
         
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: StatsCollectionViewCell.identifier,
                                                        for: indexPath) as! StatsCollectionViewCell
             
-        cell.setupData(with: stats!.valueFields[index])
+        cell.setupData(with: stats!.valueFields[indexPath.row])
             
         return cell
     }

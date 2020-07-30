@@ -9,13 +9,13 @@ struct ValueField<T> {
 //MARK: - DoubleValueField
 class DoubleValueField<T> {
     let title: String
-    let field1: ValueField<T>
-    let field2: ValueField<T>
+    let fieldTotal: ValueField<T>
+    let fieldYesterday: ValueField<T>
     
-    init(title: String, field1: ValueField<T>, field2: ValueField<T>) {
+    init(title: String, fieldTotal: ValueField<T>, fieldYesterday: ValueField<T>) {
         self.title = title
-        self.field1 = field1
-        self.field2 = field2
+        self.fieldTotal = fieldTotal
+        self.fieldYesterday = fieldYesterday
     }
 }
 
@@ -46,17 +46,17 @@ class StatsCollectionViewCell: UICollectionViewCell {
         
         self.titleLabel.text = field.title
         
-        self.field1TitleLabel.text = field.field1.valueTitle
-        if let value = field.field1.value {
+        self.field1TitleLabel.text = field.fieldTotal.valueTitle
+        if let value = field.fieldTotal.value {
             self.field1ValueLabel.text = "\(value)"
         } else {
             self.field1ValueLabel.text = "-"
         }
         
-        self.field2TitleLabel.text = field.field2.valueTitle
-        if let value = field.field2.value {
+        self.field2TitleLabel.text = field.fieldYesterday.valueTitle
+        if let value = field.fieldYesterday.value {
             self.field2ValueLabel.text = "\(value)"
-        } else if field.field2.valueTitle == "" {
+        } else if field.fieldYesterday.valueTitle == "" {
             self.field2ValueLabel.text = ""
         } else {
             self.field2ValueLabel.text = "-"

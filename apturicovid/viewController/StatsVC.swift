@@ -238,27 +238,27 @@ fileprivate extension Stats {
     var valueFields: [DoubleValueField<Int>] {
         [
             DoubleValueField(title: "new_cases".translated.capitalized,
-                             field1: ValueField(valueTitle: "total".translated.capitalized,
-                                                value: totalInfectedCount),
-                             field2: ValueField(valueTitle: "yesterday".translated.capitalized,
+                             fieldTotal: ValueField(valueTitle: "total".translated.capitalized,
+                                                    value: totalInfectedCount),
+                             fieldYesterday: ValueField(valueTitle: "yesterday".translated.capitalized,
                                                 value: yesterdaysInfectedCount)),
             
             DoubleValueField(title: "deaths".translated.capitalized,
-                             field1: ValueField(valueTitle: "total".translated.capitalized,
+                             fieldTotal: ValueField(valueTitle: "total".translated.capitalized,
                                                 value: totalDeathCount),
-                             field2: ValueField(valueTitle: "yesterday".translated.capitalized,
+                             fieldYesterday: ValueField(valueTitle: "yesterday".translated.capitalized,
                                                 value: yesterdayDeathCount)),
             
             DoubleValueField(title: "tested".translated.capitalized,
-                             field1: ValueField(valueTitle: "total".translated.capitalized,
+                             fieldTotal: ValueField(valueTitle: "total".translated.capitalized,
                                                 value: totalTestsCount),
-                             field2: ValueField(valueTitle: "yesterday".translated.capitalized,
+                             fieldYesterday: ValueField(valueTitle: "yesterday".translated.capitalized,
                                                 value: yesterdaysTestsCount)),
             
             DoubleValueField(title: "recovered".translated.capitalized,
-                             field1: ValueField(valueTitle: "total".translated.capitalized,
+                             fieldTotal: ValueField(valueTitle: "total".translated.capitalized,
                                                 value: totalRecoveredCount),
-                             field2: ValueField(valueTitle: "", value: nil))
+                             fieldYesterday: ValueField(valueTitle: "", value: nil))
         ]
     }
 }

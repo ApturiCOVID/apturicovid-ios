@@ -53,39 +53,8 @@ class StatsFooterView: UICollectionReusableView {
     }
 }
 
-//MARK: - StatsSingleValueCollectionViewCell
-class StatsSingleValueCollectionViewCell: StatsCollectionViewCell<SingleValueField<Int>> {
-    @IBOutlet weak var headerViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var fieldTitleLabel: UILabel!
-    @IBOutlet weak var fieldValueLabel: UILabel!
-    
-    static var identifier: String { String(describing: self) }
-    
-    override func prepareForReuse() {
-        [
-            titleLabel,
-            fieldTitleLabel,
-            fieldValueLabel
-        ].forEach{ $0?.text = nil }
-    }
-    
-    override func setupData(with field: SingleValueField<Int>){
-        titleLabel.text = field.title
-        fieldTitleLabel.text = field.field1.valueTitle
-        if let value = field.field1.value {
-            self.fieldValueLabel.text = "\(value)"
-        } else {
-            self.fieldValueLabel.text = "-"
-        }
-        
-        let labelSize = titleLabel.sizeThatFits(CGSize(width: frame.width, height: frame.height))
-        headerViewHeight.constant = max(40, labelSize.height + 16)
-    }
-}
-
-//MARK: - StatsDoubleValueCollectionViewCell
-class StatsDoubleValueCollectionViewCell: StatsCollectionViewCell<DoubleValueField<Int>> {
+//MARK: - StatsCollectionViewCell
+class StatsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var headerViewHeight: NSLayoutConstraint!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var field1TitleLabel: UILabel!
@@ -94,6 +63,8 @@ class StatsDoubleValueCollectionViewCell: StatsCollectionViewCell<DoubleValueFie
     @IBOutlet weak var field2ValueLabel: UILabel!
     
     static var identifier: String { String(describing: self) }
+    
+    var stat: DoubleValueField<Int>!
     
     override func prepareForReuse() {
         [
@@ -105,8 +76,7 @@ class StatsDoubleValueCollectionViewCell: StatsCollectionViewCell<DoubleValueFie
         ].forEach{ $0?.text = nil }
     }
     
-    
-    override func setupData(with field: DoubleValueField<Int>){
+    func setupData(with field: DoubleValueField<Int>){
         
         self.titleLabel.text = field.title
         
@@ -120,6 +90,8 @@ class StatsDoubleValueCollectionViewCell: StatsCollectionViewCell<DoubleValueFie
         self.field2TitleLabel.text = field.field2.valueTitle
         if let value = field.field2.value {
             self.field2ValueLabel.text = "\(value)"
+        } else if field.field2.valueTitle == "" {
+            self.field2ValueLabel.text = ""
         } else {
             self.field2ValueLabel.text = "-"
         }
@@ -129,42 +101,27 @@ class StatsDoubleValueCollectionViewCell: StatsCollectionViewCell<DoubleValueFie
     }
 }
 
-//MARK: - StatsCollectionViewCell
-class StatsCollectionViewCell<T> : UICollectionViewCell {
-    var stat: T!
-    func setupData(with field: T){
-        fatalError("Not Implemented")
-    }
-}
-
 //MARK: - ValueField
 struct ValueField<T> {
     let valueTitle: String
     let value: T?
 }
 
-//MARK: - SingleValueField
-class SingleValueField<T> {
+//MARK: - DoubleValueField
+class DoubleValueField<T> {
     let title: String
     let field1: ValueField<T>
-    init(title: String, field: ValueField<T>) {
-        self.title = title
-        self.field1 = field
-    }
-}
-
-//MARK: - DoubleValueField
-class DoubleValueField<T>: SingleValueField<T> {
     let field2: ValueField<T>
     
     init(title: String, field1: ValueField<T>, field2: ValueField<T>) {
+        self.title = title
+        self.field1 = field1
         self.field2 = field2
-        super.init(title: title, field: field1)
     }
 }
 
-//MARK: - DoubleValueField
-struct HeaderValueField{
+//MARK: - HeaderValueField
+struct HeaderValueField {
     let title: String
     let description: String
 }

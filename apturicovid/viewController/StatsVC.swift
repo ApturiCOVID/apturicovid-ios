@@ -3,27 +3,22 @@ import RxSwift
 import RxCocoa
 
 struct LayoutParams {
-    var expectedCellCountInRow: Int {
-        UIDevice.current.type == .iPhoneSE || hasUserIncreasedContentSize() ? 1 : 2
+    var cellHeightAspectRatio: CGFloat {
+        switch UIApplication.shared.preferredContentSizeCategory {
+        case .accessibilityExtraLarge, .accessibilityExtraExtraLarge, .accessibilityExtraExtraExtraLarge:
+            return 0.6
+        case .accessibilityMedium, .accessibilityLarge:
+            return 0.5
+        default:
+            return 0.4
+        }
     }
-    let cellHeightAspectRatio: CGFloat = UIDevice.current.type == .iPhoneSE ? 0.5 : 0.7
     let contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 30, right: 0)
     let sectionInset = UIEdgeInsets(top: 30, left: 0, bottom: 16, right: 0)
-    var cellWidthToTotalWidthAspectRatio: CGFloat {
-        expectedCellCountInRow == 1 ? 0.9 : 1 / CGFloat(expectedCellCountInRow)
-    }
-}
-
-fileprivate func hasUserIncreasedContentSize() -> Bool {
-    let isDisplayZoomEnabled = UIScreen.main.scale < UIScreen.main.nativeScale
-    let largeSizes: [UIContentSizeCategory] = [.accessibilityMedium, .accessibilityLarge, .accessibilityExtraLarge, .accessibilityExtraExtraLarge, .accessibilityExtraExtraExtraLarge]
-    return isDisplayZoomEnabled || largeSizes.contains(UIApplication.shared.preferredContentSizeCategory)
 }
 
 class StatsVC: BaseViewController {
 
-    @IBOutlet weak var superView: UIView!
-    @IBOutlet weak var welcomeHeaderView: WelcomeHeaderView!
     @IBOutlet weak var statsCollectionView: UICollectionView!
     @IBOutlet weak var statusBarBlurView: UIVisualEffectView!
     
@@ -34,7 +29,6 @@ class StatsVC: BaseViewController {
         didSet {
             if oldValue != stats {
                 statsCollectionView.reloadData()
-                updateBackground()
             }
         }
     }
@@ -57,7 +51,6 @@ class StatsVC: BaseViewController {
                 self?.view.setNeedsLayout()
                 self?.view.layoutIfNeeded()
                 self?.statsCollectionView.collectionViewLayout.invalidateLayout()
-                self?.updateBackground()
             })
             .disposed(by: disposeBag)
 
@@ -124,26 +117,18 @@ class StatsVC: BaseViewController {
     
     override func translate() {
         statsCollectionView.reloadData()
-        updateBackground()
-    }
-    
-    private func updateBackground() {
-        let shouldBeSolidBackground = (statsCollectionView.collectionViewLayout.collectionViewContentSize.height > welcomeHeaderView.bounds.height)
-        superView.backgroundColor = shouldBeSolidBackground ? welcomeHeaderView.fillColor : Colors.headerColor
-        welcomeHeaderView.isHidden = shouldBeSolidBackground
     }
 }
 
 //MARK: - Datasource
 extension StatsVC : UICollectionViewDataSource {
     
-
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        stats?.totalItemCount ?? 0
+        stats?.valueFields.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -200,20 +185,13 @@ extension StatsVC : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let index = indexPath.section * params.expectedCellCountInRow + indexPath.row
         
-        if index < stats!.doubleValueFields.count {
-            let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: StatsDoubleValueCollectionViewCell.identifier,
-                                                           for: indexPath) as! StatsDoubleValueCollectionViewCell
+        let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: StatsCollectionViewCell.identifier,
+                                                       for: indexPath) as! StatsCollectionViewCell
             
-            cell.setupData(with: stats!.doubleValueFields[index])
-            return cell
-        } else {
-            let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: StatsSingleValueCollectionViewCell.identifier,
-                                                           for: indexPath) as! StatsSingleValueCollectionViewCell
-            cell.setupData(with: stats!.singleValueFields[index - stats!.doubleValueFields.count])
-            return cell
-        }
+        cell.setupData(with: stats!.valueFields[indexPath.row])
+            
+        return cell
     }
 }
 
@@ -223,10 +201,10 @@ extension StatsVC: UICollectionViewDelegateFlowLayout {
     func availableWidth(in collectionView: UICollectionView) -> CGFloat {
         collectionView.bounds.width - collectionView.contentInset.left - collectionView.contentInset.right
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let cellWidth = params.cellWidthToTotalWidthAspectRatio * availableWidth(in: collectionView)
+        let cellWidth = availableWidth(in: collectionView)
         let cellHeight = cellWidth * params.cellHeightAspectRatio
         
         return CGSize(width: cellWidth, height: cellHeight)
@@ -248,9 +226,7 @@ extension StatsVC: UIScrollViewDelegate {
 }
 
 fileprivate extension Stats {
-    
-    var totalItemCount: Int { singleValueFields.count + doubleValueFields.count }
-    
+        
     static let defaultHeaderField = HeaderValueField(title: "latvia_covid_statistics".translated,
                                                      description: "data_renewed".translated + "-")
     
@@ -258,34 +234,31 @@ fileprivate extension Stats {
         HeaderValueField(title: "latvia_covid_statistics".translated,
                          description: "data_renewed".translated + dateString)
     }
-    
-    var singleValueFields: [SingleValueField<Int>] {
-        [
-            SingleValueField(title: "recovered".translated.capitalized,
-                             field: ValueField(valueTitle: "total".translated.capitalized,
-                                               value: totalRecoveredCount))
-        ]
-    }
 
-    var doubleValueFields: [DoubleValueField<Int>] {
+    var valueFields: [DoubleValueField<Int>] {
         [
             DoubleValueField(title: "new_cases".translated.capitalized,
-                             field1: ValueField(valueTitle: "total".translated.capitalized,
-                                                value: totalInfectedCount),
-                             field2: ValueField(valueTitle: "yesterday".translated.capitalized,
+                             fieldTotal: ValueField(valueTitle: "total".translated.capitalized,
+                                                    value: totalInfectedCount),
+                             fieldYesterday: ValueField(valueTitle: "yesterday".translated.capitalized,
                                                 value: yesterdaysInfectedCount)),
             
             DoubleValueField(title: "deaths".translated.capitalized,
-                             field1: ValueField(valueTitle: "total".translated.capitalized,
+                             fieldTotal: ValueField(valueTitle: "total".translated.capitalized,
                                                 value: totalDeathCount),
-                             field2: ValueField(valueTitle: "yesterday".translated.capitalized,
+                             fieldYesterday: ValueField(valueTitle: "yesterday".translated.capitalized,
                                                 value: yesterdayDeathCount)),
             
             DoubleValueField(title: "tested".translated.capitalized,
-                             field1: ValueField(valueTitle: "total".translated.capitalized,
+                             fieldTotal: ValueField(valueTitle: "total".translated.capitalized,
                                                 value: totalTestsCount),
-                             field2: ValueField(valueTitle: "yesterday".translated.capitalized,
-                                                value: yesterdaysTestsCount))
+                             fieldYesterday: ValueField(valueTitle: "yesterday".translated.capitalized,
+                                                value: yesterdaysTestsCount)),
+            
+            DoubleValueField(title: "recovered".translated.capitalized,
+                             fieldTotal: ValueField(valueTitle: "total".translated.capitalized,
+                                                value: totalRecoveredCount),
+                             fieldYesterday: ValueField(valueTitle: "", value: nil))
         ]
     }
 }

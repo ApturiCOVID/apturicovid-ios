@@ -1,6 +1,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SafariServices
 
 struct LayoutParams {
     var cellHeightAspectRatio: CGFloat {
@@ -176,7 +177,11 @@ extension StatsVC : UICollectionViewDataSource {
             let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                              withReuseIdentifier: StatsFooterView.identifier,
                                                                              for: indexPath) as! StatsFooterView
-            footerView.setup(with: "detailed_stats".translated, linkUrl: URL(string: "https://arkartassituacija.gov.lv/")!)
+            footerView.setup(with: "detailed_stats".translated) { [weak self] in
+                let safariViewController = SFSafariViewController(url: URL(string: "https://arkartassituacija.gov.lv/")!)
+                self?.present(safariViewController, animated: true)
+            }
+            
             return footerView
         default:
             return UICollectionReusableView(frame: .zero)

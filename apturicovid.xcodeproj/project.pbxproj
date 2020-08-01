@@ -443,7 +443,9 @@
 				BAFA8308246AB87400E121B4 /* environments */,
 				09ECEA2265130B3A42306139 /* Frameworks */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		BA366CBD2465AC3D00A35CA8 /* Products */ = {
 			isa = PBXGroup;

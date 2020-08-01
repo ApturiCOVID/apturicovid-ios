@@ -53,7 +53,7 @@ class FAQViewController: BaseViewController {
             .tapGesture()
             .when(.recognized)
             .subscribe(onNext: { [weak self] _ in
-                let termsSafariVC = SFSafariViewController(url: Link.Privacy.url)
+                let termsSafariVC = SFSafariViewController(url: Link.Terms.url)
                 self?.present(termsSafariVC, animated: true)
             }, onError: justPrintError)
             .disposed(by: disposeBag)

@@ -1,5 +1,4 @@
 import UIKit
-import SafariServices
 
 class FAQViewController: BaseViewController {
     @IBOutlet weak var statusBarBlurView: UIVisualEffectView!
@@ -42,9 +41,10 @@ class FAQViewController: BaseViewController {
             .rx
             .tapGesture()
             .when(.recognized)
-            .subscribe(onNext: { [weak self] _ in
-                let privacySafariVC = SFSafariViewController(url: Link.Privacy.url)
-                self?.present(privacySafariVC, animated: true)
+            .subscribe(onNext: { _ in
+                if UIApplication.shared.canOpenURL(Link.Privacy.url){
+                    UIApplication.shared.open(Link.Privacy.url, options: [:], completionHandler: nil)
+                }
             }, onError: justPrintError)
             .disposed(by: disposeBag)
         
@@ -52,9 +52,10 @@ class FAQViewController: BaseViewController {
             .rx
             .tapGesture()
             .when(.recognized)
-            .subscribe(onNext: { [weak self] _ in
-                let termsSafariVC = SFSafariViewController(url: Link.Privacy.url)
-                self?.present(termsSafariVC, animated: true)
+            .subscribe(onNext: { _ in
+                if UIApplication.shared.canOpenURL(Link.Terms.url){
+                    UIApplication.shared.open(Link.Terms.url, options: [:], completionHandler: nil)
+                }
             }, onError: justPrintError)
             .disposed(by: disposeBag)
     }

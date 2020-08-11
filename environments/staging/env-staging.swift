@@ -1,7 +1,7 @@
 import Foundation
 
-let baseDomain = "apturicovid-staging-api.spkc.gov.lv"
-let filesBaseDomain = "apturicovid-staging-files.spkc.gov.lv"
+let baseDomain = "your-base-domain-here"
+let filesBaseDomain = "your-files-base-domain-here"
 
 let baseUrl = "https://\(baseDomain)/api/v1"
 let filesBaseUrl = "https://\(filesBaseDomain)"

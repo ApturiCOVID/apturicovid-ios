@@ -1,4 +1,5 @@
 import UIKit
+import SafariServices
 
 //MARK: - StatsHeaderView
 class StatsFooterView: UICollectionReusableView {
@@ -6,28 +7,18 @@ class StatsFooterView: UICollectionReusableView {
     @IBOutlet weak var linkButton: AutoLayoutButton!
     
     @IBAction func linkTap(_ sender: Any) {
-        openUrlLink()
+        openURL?()
     }
     
     static var identifier: String { String(describing: self) }
-    var linkUrl: URL?
+    var openURL: (() -> Void)?
     
     override func prepareForReuse() {
         linkButton.setTitle(nil, for: .normal)
-        linkUrl = nil
     }
     
-    func setup(with text: String, linkUrl: URL){
+    func setup(with text: String, _ openURL: @escaping () -> Void) {
         linkButton.setTitle(text, for: .normal)
-        self.linkUrl = linkUrl
-    }
-    
-    private func openUrlLink(){
-        
-        guard let url = linkUrl else { return }
-        
-        if UIApplication.shared.canOpenURL(url){
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        }
+        self.openURL = openURL
     }
 }

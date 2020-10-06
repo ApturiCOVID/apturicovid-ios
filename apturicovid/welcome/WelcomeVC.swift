@@ -5,7 +5,7 @@ import RxCocoa
 class WelcomeVC: BaseViewController {
     
     @IBOutlet weak var spkcHeightConstaint: NSLayoutConstraint!
-    @IBOutlet weak var langaugesStack: UIStackView!
+    @IBOutlet weak var languageStackHolder: UIView!
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
     @IBOutlet weak var nextButton: RoundedButton!
@@ -13,7 +13,7 @@ class WelcomeVC: BaseViewController {
     @IBOutlet weak var spkcLogo: UIImageView!
     
     let privacyAndTermsCheckboxView = CheckboxView.create(text: "", isChecked: false)
-    let langViews = Language.allCases.map{ LanguageView.create($0) }
+    let langaugeStack = LanguageStack()
     
     //MARK: Text attributes:
     var linkFont:UIFont { UIFont.preferredFont(forTextStyle: .body)}
@@ -56,28 +56,8 @@ class WelcomeVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupLanguageSelector()
         setupPrivacyAndTermsCheckBox()
-    }
-    
-    private func setupLanguageSelector(){
-        langViews.forEach { langView in
-            
-            langView.isSelected = langView.language.isPrimary
-            langaugesStack.addArrangedSubview(langView)
-            
-            langView.translatesAutoresizingMaskIntoConstraints = false
-            langView.widthAnchor.constraint(equalTo:langaugesStack.heightAnchor).isActive = true
-            langView.heightAnchor.constraint(equalTo:langaugesStack.heightAnchor).isActive = true
-           
-            langView.onSelected(){ [weak self] selected in
-                guard selected else { return }
-                Language.primary = langView.language
-                self?.langViews
-                    .filter{ $0.language != langView.language }
-                    .forEach{ $0.isSelected = false }
-            }
-        }
+        languageStackHolder.addSubviewWithInsets(langaugeStack)
     }
     
     private func setupPrivacyAndTermsCheckBox(){

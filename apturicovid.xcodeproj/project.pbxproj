@@ -158,6 +158,8 @@
 		BA38FFFD2473072700577DB2 /* WelcomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C183F246C745900903458 /* WelcomeHeaderView.swift */; };
 		BA38FFFE2473072700577DB2 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA366CDD2465F98F00A35CA8 /* View.swift */; };
 		BA38FFFF2473072700577DB2 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C183E246C745900903458 /* RoundedButton.swift */; };
+		BA453955252CB21500061B8E /* LanguageStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA453954252CB21500061B8E /* LanguageStack.swift */; };
+		BA453956252CB21500061B8E /* LanguageStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA453954252CB21500061B8E /* LanguageStack.swift */; };
 		BA50D3552469E6220091DF0E /* ExposureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50D3542469E6220091DF0E /* ExposureManager.swift */; };
 		BA50D3572469E84E0091DF0E /* ExposuresClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50D3562469E84E0091DF0E /* ExposuresClient.swift */; };
 		BA50D3592469E9A10091DF0E /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50D3582469E9A10091DF0E /* NSError.swift */; };
@@ -308,6 +310,7 @@
 		BA38FFEB2471E81300577DB2 /* StatusBarNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarNotification.swift; sourceTree = "<group>"; };
 		BA38FFED2471E83900577DB2 /* StatusBarNotification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatusBarNotification.storyboard; sourceTree = "<group>"; };
 		BA38FFEF2471E91E00577DB2 /* SlideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
+		BA453954252CB21500061B8E /* LanguageStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageStack.swift; sourceTree = "<group>"; };
 		BA50D3542469E6220091DF0E /* ExposureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureManager.swift; sourceTree = "<group>"; };
 		BA50D3562469E84E0091DF0E /* ExposuresClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposuresClient.swift; sourceTree = "<group>"; };
 		BA50D3582469E9A10091DF0E /* NSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSError.swift; sourceTree = "<group>"; };
@@ -617,6 +620,7 @@
 				BA38FFED2471E83900577DB2 /* StatusBarNotification.storyboard */,
 				E95CD9FD2471BD8C00DAC588 /* PhoneTextField.swift */,
 				E936DBF124CAF9BF00366CF6 /* AutoLayoutButton.swift */,
+				BA453954252CB21500061B8E /* LanguageStack.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1016,6 +1020,7 @@
 				75B1DAA1246BE91100601F69 /* SettingsVC.swift in Sources */,
 				E972A55B24D2E32500AE639C /* StatsHeaderView.swift in Sources */,
 				BABEEC3124687A98009D8307 /* LanguageView.swift in Sources */,
+				BA453955252CB21500061B8E /* LanguageStack.swift in Sources */,
 				BA366CC02465AC3D00A35CA8 /* AppDelegate.swift in Sources */,
 				BA19B89824709EEB003C5025 /* Exposure.swift in Sources */,
 				BAFA8313246AD42D00E121B4 /* UserDefault.swift in Sources */,
@@ -1118,6 +1123,7 @@
 				BA38001C2473072700577DB2 /* LanguageView.swift in Sources */,
 				BA38001D2473072700577DB2 /* AppDelegate.swift in Sources */,
 				E972A55C24D2E32500AE639C /* StatsHeaderView.swift in Sources */,
+				BA453956252CB21500061B8E /* LanguageStack.swift in Sources */,
 				BA38001E2473072700577DB2 /* Exposure.swift in Sources */,
 				BA38001F2473072700577DB2 /* UserDefault.swift in Sources */,
 				BA3800202473072700577DB2 /* FAQ.swift in Sources */,

@@ -139,3 +139,10 @@
 "total" = "Всего";
 "yesterday" = "Вчера";
 "detailed_stats" = "Подробная статистика";
+
+// Terms Acceptance
+"europe_support_title" = "";
+"europe_support_description" = "";
+"v2_terms_label" = "";
+"v2_terms_link" = "";
+"v2_privacy_link" = "";

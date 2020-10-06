@@ -110,6 +110,17 @@ class HomeVC: BaseViewController {
         self.present(vc!, animated: true, completion: nil)
     }
     
+    private func presentAcceptanceIfNeeded() {
+        guard
+            !LocalStore.shared.acceptanceV2Confirmed,
+            LocalStore.shared.hasSeenIntro,
+            let vc = UIStoryboard(name: "TermsAcceptance", bundle: nil).instantiateInitialViewController() else { return }
+        
+        
+        vc.isModalInPresentation = true
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     private func presentExposureAlertVC() {
         guard let vc = self.storyboard?.instantiateViewController(identifier: "ExposureAlertVC") else { return }
         self.navigationController?.pushViewController(vc, animated: true)
@@ -156,6 +167,7 @@ class HomeVC: BaseViewController {
             .disposed(by: disposeBag)
 
         presentWelcomeIfNeeded()
+        presentAcceptanceIfNeeded()
         
         //MARK: Tap on exposure view
         exposureNotificationView

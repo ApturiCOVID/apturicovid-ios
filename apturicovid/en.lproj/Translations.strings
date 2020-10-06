@@ -140,3 +140,10 @@ Contact detection is not tracking.";
 "total" = "Total";
 "yesterday" = "yesterday";
 "detailed_stats" = "Detailed statistics";
+
+// Terms Acceptance
+"europe_support_title" = "Europe-wide contact detection!";
+"europe_support_description" = "Contact detection apps in Europe now work together as one. See privacy policy for list of countries.";
+"v2_terms_label" = "I accept new App Terms of Use, and have read the new Privacy policy";
+"v2_terms_link" = "new App Terms of Use";
+"v2_privacy_link" = "new Privacy policy";

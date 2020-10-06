@@ -43,7 +43,14 @@ class LocalStore {
     var exposureNotificationsEnabled: Bool
     
     @UserDefault(.hasSeenIntro, defaultValue: false)
-    var hasSeenIntro: Bool
+    var hasSeenIntro: Bool {
+        didSet {
+            // Auto accept V2 Terms on new intro flow
+            if hasSeenIntro {
+                acceptanceV2Confirmed = true
+            }
+        }
+    }
     
     var isFirstAppLaunch: Bool {
         return !hasSeenIntro
@@ -54,6 +61,9 @@ class LocalStore {
     
     @UserDefault(.notificationIdentifier, defaultValue: nil)
     var notificationIdentifier: String?
+    
+    @UserDefault(.acceptanceV2Confirmed, defaultValue: false)
+    var acceptanceV2Confirmed: Bool
     
     func setMobilephoneAndScheduleUpload(phone: PhoneNumber?) {
         guard phone != nil else {

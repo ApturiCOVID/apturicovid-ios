@@ -59,4 +59,5 @@ public enum UserDefaultKey: String {
     case phoneNumber
     case exposureStateReminderEnabled
     case notificationIdentifier
+    case acceptanceV2Confirmed
 }

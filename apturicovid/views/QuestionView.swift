@@ -51,8 +51,8 @@ class QuestionView: UIView {
         }
     }
     
-    var labelTouchDisposable: Disposable?
-    var linkTouchDisposable: Disposable?
+    private var labelTouchDisposable: Disposable?
+    private var linkTouchDisposable: Disposable?
     
     var bottomLink: URL?
     

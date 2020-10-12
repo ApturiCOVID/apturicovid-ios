@@ -22,10 +22,10 @@ class SettingsViewController: BaseViewController {
     @IBOutlet weak var setupPhoneView: UIView!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var reminderSwitch: UISwitch!
-    @IBOutlet weak var languagesStack: UIStackView!
     @IBOutlet weak var versionLabel: UILabel!
-
-    let langViews = Language.allCases.map{ LanguageView.create($0) }
+    @IBOutlet weak var languageStackHolder: UIView!
+    
+    let languageStack = LanguageStack()
     
     @IBAction func onReminderSet(_ sender: UISwitch) {
         enableNotifications(sender.isOn, referenceSwitch: sender, animated: true)
@@ -44,23 +44,7 @@ class SettingsViewController: BaseViewController {
     }
     
     private func setupLanguageSelector(){
-        langViews.forEach { langView in
-            
-            langView.isSelected = langView.language.isPrimary
-            languagesStack.addArrangedSubview(langView)
-            
-            langView.translatesAutoresizingMaskIntoConstraints = false
-            langView.widthAnchor.constraint(equalTo:languagesStack.heightAnchor).isActive = true
-            langView.heightAnchor.constraint(equalTo:languagesStack.heightAnchor).isActive = true
-           
-            langView.onSelected(){ [weak self] selected in
-                guard selected else { return }
-                Language.primary = langView.language
-                self?.langViews
-                    .filter{ $0.language != langView.language }
-                    .forEach{ $0.isSelected = false }
-            }
-        }
+        languageStackHolder.addSubviewWithInsets(languageStack)
     }
     
     private func setupPhoneViews() {

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vml-lL-S86">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vml-lL-S86">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -70,7 +70,7 @@
                                         <rect key="frame" x="16" y="388" width="382" height="120"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Kontaktu Meklēšana" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.10000000000000001" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5UA-a0-5b6">
-                                                <rect key="frame" x="68.666666666666686" y="0.0" width="245" height="33.666666666666664"/>
+                                                <rect key="frame" x="68.666666666666671" y="0.0" width="244.66666666666663" height="33.666666666666664"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -345,7 +345,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIR-Vd-5D9">
-                                                        <rect key="frame" x="30" y="211.66666666666666" width="347.66666666666669" height="71.666666666666657"/>
+                                                        <rect key="frame" x="30" y="211.66666666666666" width="347.33333333333331" height="71.666666666666657"/>
                                                         <string key="text">Aplikācija uztver citus aplikācijas lietotājus ar kuriem Jums ir bijis kontakts. Gadījumā kad esiet bijis kontaktā ar COVID-19 inficētu personu, par to saņemsiet paziņojumu un norādes kā rīkoties</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
@@ -498,7 +498,7 @@
                                                 <rect key="frame" x="0.0" y="923.33333333333337" width="414" height="68"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Biežāk uzdotie jautājumi" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nM3-ch-hLI">
-                                                        <rect key="frame" x="29.999999999999986" y="24" width="203.66666666666663" height="24"/>
+                                                        <rect key="frame" x="30.000000000000014" y="24" width="203.33333333333337" height="24"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                         <color key="textColor" red="0.0" green="0.23921568627450979" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -623,13 +623,15 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiC-yq-fa0" customClass="WelcomeHeaderView" customModule="AC_Demo" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="198"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OGA-4g-0m3">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uIc-Dx-Xq5">
                                                         <rect key="frame" x="384" y="10" width="0.0" height="43"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="43" id="Bql-YU-3TO"/>
-                                                            <constraint firstAttribute="width" priority="250" id="DF7-87-zB1"/>
+                                                            <constraint firstAttribute="width" priority="250" id="Dg9-MJ-5nG"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" id="apg-lE-FnB"/>
+                                                            <constraint firstAttribute="height" constant="43" id="sxg-hN-0eq"/>
                                                         </constraints>
-                                                    </stackView>
+                                                    </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Iestatījumi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6E-N9-2F7">
                                                         <rect key="frame" x="30" y="16" width="92" height="25"/>
                                                         <constraints>
@@ -666,17 +668,16 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="OGA-4g-0m3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="h6E-N9-2F7" secondAttribute="trailing" id="2Em-aJ-2wy"/>
-                                                    <constraint firstAttribute="trailing" secondItem="OGA-4g-0m3" secondAttribute="trailing" constant="30" id="4LC-GX-Rkz"/>
-                                                    <constraint firstItem="JaD-qN-Y2g" firstAttribute="top" secondItem="OGA-4g-0m3" secondAttribute="bottom" constant="20" id="5Bj-Cf-6tv"/>
+                                                    <constraint firstItem="uIc-Dx-Xq5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="h6E-N9-2F7" secondAttribute="trailing" id="5Av-yG-i7C"/>
                                                     <constraint firstItem="h6E-N9-2F7" firstAttribute="top" secondItem="MiC-yq-fa0" secondAttribute="top" constant="16" id="6RD-L8-jqy"/>
+                                                    <constraint firstItem="uIc-Dx-Xq5" firstAttribute="top" secondItem="MiC-yq-fa0" secondAttribute="top" constant="10" id="AOu-QU-MoX"/>
+                                                    <constraint firstAttribute="trailing" secondItem="uIc-Dx-Xq5" secondAttribute="trailing" constant="30" id="F2Y-QL-3Iz"/>
                                                     <constraint firstItem="cCl-2X-223" firstAttribute="leading" secondItem="MiC-yq-fa0" secondAttribute="leading" constant="30" id="ImX-BP-mE1"/>
                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cCl-2X-223" secondAttribute="trailing" constant="30" id="TEF-pC-kn6"/>
                                                     <constraint firstAttribute="bottom" secondItem="cCl-2X-223" secondAttribute="bottom" constant="32" id="Taw-aC-SbM"/>
                                                     <constraint firstItem="h6E-N9-2F7" firstAttribute="leading" secondItem="MiC-yq-fa0" secondAttribute="leading" constant="30" id="VOC-VI-KCP"/>
                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JaD-qN-Y2g" secondAttribute="trailing" constant="16" id="Xa8-qj-hEX"/>
                                                     <constraint firstItem="JaD-qN-Y2g" firstAttribute="leading" secondItem="MiC-yq-fa0" secondAttribute="leading" constant="30" id="cA6-do-krG"/>
-                                                    <constraint firstItem="OGA-4g-0m3" firstAttribute="top" secondItem="MiC-yq-fa0" secondAttribute="top" constant="10" id="g6A-h3-Lwe"/>
                                                     <constraint firstItem="JaD-qN-Y2g" firstAttribute="top" secondItem="h6E-N9-2F7" secondAttribute="bottom" constant="32" id="mw2-UW-vRB"/>
                                                     <constraint firstItem="cCl-2X-223" firstAttribute="top" secondItem="JaD-qN-Y2g" secondAttribute="bottom" constant="32" id="w6I-ja-P0Z"/>
                                                 </constraints>
@@ -807,7 +808,7 @@
                                                 <rect key="frame" x="0.0" y="429.33333333333331" width="414" height="78.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paziņot, ja kontaktu meklēšana šobrīd nedarbojās" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjk-w5-EJV">
-                                                        <rect key="frame" x="30" y="20.000000000000004" width="234" height="38.333333333333343"/>
+                                                        <rect key="frame" x="29.999999999999986" y="20.000000000000004" width="233.66666666666663" height="38.333333333333343"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                         <color key="textColor" name="descriptionText"/>
                                                         <nil key="highlightedColor"/>
@@ -909,7 +910,7 @@
                         <outlet property="changeButton" destination="NIZ-HV-Nq1" id="tp8-YU-wX6"/>
                         <outlet property="communicationContactLabel" destination="A6a-yE-IpD" id="LNs-UC-LAi"/>
                         <outlet property="contactDescriptionLabel" destination="nEz-kk-eNU" id="sBy-au-C5S"/>
-                        <outlet property="languagesStack" destination="OGA-4g-0m3" id="ZZX-sN-zTh"/>
+                        <outlet property="languageStackHolder" destination="uIc-Dx-Xq5" id="cwz-z7-ORa"/>
                         <outlet property="mainStackView" destination="5am-yJ-TDy" id="PHi-7A-AqV"/>
                         <outlet property="notSpecifiedLabel" destination="xR3-LL-bZr" id="uKe-jb-SWq"/>
                         <outlet property="notifyMeLabel" destination="tjk-w5-EJV" id="k1M-jH-tS6"/>
@@ -959,7 +960,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kontakts ar COVID-19" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0a-wB-cEp">
-                                                <rect key="frame" x="30" y="235" width="236" height="27.666666666666686"/>
+                                                <rect key="frame" x="29.999999999999986" y="235" width="235.66666666666663" height="27.666666666666686"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                                 <color key="textColor" red="0.086274509799999996" green="0.1058823529" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>

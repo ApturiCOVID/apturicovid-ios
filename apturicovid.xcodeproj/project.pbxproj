@@ -158,6 +158,12 @@
 		BA38FFFD2473072700577DB2 /* WelcomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C183F246C745900903458 /* WelcomeHeaderView.swift */; };
 		BA38FFFE2473072700577DB2 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA366CDD2465F98F00A35CA8 /* View.swift */; };
 		BA38FFFF2473072700577DB2 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C183E246C745900903458 /* RoundedButton.swift */; };
+		BA45394B252CAE9600061B8E /* TermsAcceptance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA45394A252CAE9600061B8E /* TermsAcceptance.storyboard */; };
+		BA45394C252CAE9600061B8E /* TermsAcceptance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA45394A252CAE9600061B8E /* TermsAcceptance.storyboard */; };
+		BA453950252CB05200061B8E /* TermsConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA45394F252CB05200061B8E /* TermsConfirmationVC.swift */; };
+		BA453951252CB05200061B8E /* TermsConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA45394F252CB05200061B8E /* TermsConfirmationVC.swift */; };
+		BA453955252CB21500061B8E /* LanguageStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA453954252CB21500061B8E /* LanguageStack.swift */; };
+		BA453956252CB21500061B8E /* LanguageStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA453954252CB21500061B8E /* LanguageStack.swift */; };
 		BA50D3552469E6220091DF0E /* ExposureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50D3542469E6220091DF0E /* ExposureManager.swift */; };
 		BA50D3572469E84E0091DF0E /* ExposuresClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50D3562469E84E0091DF0E /* ExposuresClient.swift */; };
 		BA50D3592469E9A10091DF0E /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50D3582469E9A10091DF0E /* NSError.swift */; };
@@ -308,6 +314,9 @@
 		BA38FFEB2471E81300577DB2 /* StatusBarNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarNotification.swift; sourceTree = "<group>"; };
 		BA38FFED2471E83900577DB2 /* StatusBarNotification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatusBarNotification.storyboard; sourceTree = "<group>"; };
 		BA38FFEF2471E91E00577DB2 /* SlideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
+		BA45394A252CAE9600061B8E /* TermsAcceptance.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermsAcceptance.storyboard; sourceTree = "<group>"; };
+		BA45394F252CB05200061B8E /* TermsConfirmationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsConfirmationVC.swift; sourceTree = "<group>"; };
+		BA453954252CB21500061B8E /* LanguageStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageStack.swift; sourceTree = "<group>"; };
 		BA50D3542469E6220091DF0E /* ExposureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureManager.swift; sourceTree = "<group>"; };
 		BA50D3562469E84E0091DF0E /* ExposuresClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposuresClient.swift; sourceTree = "<group>"; };
 		BA50D3582469E9A10091DF0E /* NSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSError.swift; sourceTree = "<group>"; };
@@ -459,6 +468,7 @@
 		BA366CBE2465AC3D00A35CA8 /* apturicovid */ = {
 			isa = PBXGroup;
 			children = (
+				BA453949252CAE7200061B8E /* termsAcceptance */,
 				BAD13BE4247927A400354123 /* helpers */,
 				BAB79775247815D2002D64F9 /* debug */,
 				BAD422202474017D0047E85D /* api */,
@@ -568,6 +578,15 @@
 			path = staging;
 			sourceTree = "<group>";
 		};
+		BA453949252CAE7200061B8E /* termsAcceptance */ = {
+			isa = PBXGroup;
+			children = (
+				BA45394A252CAE9600061B8E /* TermsAcceptance.storyboard */,
+				BA45394F252CB05200061B8E /* TermsConfirmationVC.swift */,
+			);
+			path = termsAcceptance;
+			sourceTree = "<group>";
+		};
 		BAB79775247815D2002D64F9 /* debug */ = {
 			isa = PBXGroup;
 			children = (
@@ -617,6 +636,7 @@
 				BA38FFED2471E83900577DB2 /* StatusBarNotification.storyboard */,
 				E95CD9FD2471BD8C00DAC588 /* PhoneTextField.swift */,
 				E936DBF124CAF9BF00366CF6 /* AutoLayoutButton.swift */,
+				BA453954252CB21500061B8E /* LanguageStack.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -777,6 +797,7 @@
 				BAE35751246F2EB4004C59A9 /* PhoneSettings.storyboard in Resources */,
 				BABEEC2424686B7E009D8307 /* Welcome.storyboard in Resources */,
 				BAAED848246D9B4A004C77A6 /* PhoneSetupView.xib in Resources */,
+				BA45394B252CAE9600061B8E /* TermsAcceptance.storyboard in Resources */,
 				75B1DAA5246BF63E00601F69 /* (null) in Resources */,
 				BA38FFEE2471E83900577DB2 /* StatusBarNotification.storyboard in Resources */,
 				E99BFA722472FEE1004D779F /* FaqLocalizable.strings in Resources */,
@@ -803,6 +824,7 @@
 				BA3800382473072700577DB2 /* PhoneSettings.storyboard in Resources */,
 				BA3800392473072700577DB2 /* Welcome.storyboard in Resources */,
 				BA38003A2473072700577DB2 /* PhoneSetupView.xib in Resources */,
+				BA45394C252CAE9600061B8E /* TermsAcceptance.storyboard in Resources */,
 				BA38003B2473072700577DB2 /* (null) in Resources */,
 				BA38003C2473072700577DB2 /* StatusBarNotification.storyboard in Resources */,
 				BAAC0D1E24730C9A00D898EF /* FaqLocalizable.strings in Resources */,
@@ -983,6 +1005,7 @@
 				BACDE3B5246DBC180075B20E /* CodeEntryVC.swift in Sources */,
 				606715C02474858100B7D298 /* RoundedView.swift in Sources */,
 				607C678D247BF92900D5DADC /* UIEdgeInsetsEx.swift in Sources */,
+				BA453950252CB05200061B8E /* TermsConfirmationVC.swift in Sources */,
 				BAD13BE924795C3400354123 /* DebugActionsVC.swift in Sources */,
 				BA38FFE32471B3E300577DB2 /* ExposureWrapper.swift in Sources */,
 				BADFAD082476DEB4006F61E7 /* MainTabController.swift in Sources */,
@@ -1016,6 +1039,7 @@
 				75B1DAA1246BE91100601F69 /* SettingsVC.swift in Sources */,
 				E972A55B24D2E32500AE639C /* StatsHeaderView.swift in Sources */,
 				BABEEC3124687A98009D8307 /* LanguageView.swift in Sources */,
+				BA453955252CB21500061B8E /* LanguageStack.swift in Sources */,
 				BA366CC02465AC3D00A35CA8 /* AppDelegate.swift in Sources */,
 				BA19B89824709EEB003C5025 /* Exposure.swift in Sources */,
 				BAFA8313246AD42D00E121B4 /* UserDefault.swift in Sources */,
@@ -1085,6 +1109,7 @@
 				BA38000B2473072700577DB2 /* CodeEntryVC.swift in Sources */,
 				BA38000C2473072700577DB2 /* ExposureWrapper.swift in Sources */,
 				BA38000D2473072700577DB2 /* LinkLabel.swift in Sources */,
+				BA453951252CB05200061B8E /* TermsConfirmationVC.swift in Sources */,
 				607C678E247BF92900D5DADC /* UIEdgeInsetsEx.swift in Sources */,
 				BAD13BEA24795C3400354123 /* DebugActionsVC.swift in Sources */,
 				BA38000E2473072700577DB2 /* DiagnosisKey.swift in Sources */,
@@ -1118,6 +1143,7 @@
 				BA38001C2473072700577DB2 /* LanguageView.swift in Sources */,
 				BA38001D2473072700577DB2 /* AppDelegate.swift in Sources */,
 				E972A55C24D2E32500AE639C /* StatsHeaderView.swift in Sources */,
+				BA453956252CB21500061B8E /* LanguageStack.swift in Sources */,
 				BA38001E2473072700577DB2 /* Exposure.swift in Sources */,
 				BA38001F2473072700577DB2 /* UserDefault.swift in Sources */,
 				BA3800202473072700577DB2 /* FAQ.swift in Sources */,

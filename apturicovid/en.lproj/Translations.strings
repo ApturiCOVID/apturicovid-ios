@@ -84,7 +84,8 @@ Contact detection is not tracking.";
 
 // CodeEntryVC SPKC
 "spkc_data_send" = "Notify detected contacts";
-"spkc_data_description" = "If you are infected, here’s where you can enter a code from SPKC and automatically notify detected contacts at risk to be infected – from loved ones to complete strangers. The notification will not disclose any information about you. Code is valid for 30\U00A0minutes.";
+"spkc_data_description" = "If you are infected, here’s where you can enter a code from SPKC and automatically notify detected contacts at risk to be infected – from loved ones to complete strangers, in Latvia and in Europe. The notification will not disclose any information about you. Code is valid for 30 minutes.";
+"country_list" = "List of countries";
 
 // NotificationSentVC
 "notification_sent_title" = "Thank you! Notification sent!";

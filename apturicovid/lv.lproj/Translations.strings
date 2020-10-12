@@ -85,7 +85,8 @@ Kontakta fiksēšana nav izsekošana.";
 
 // CodeEntryVC SPKC
 "spkc_data_send" = "Sūtīt ziņu fiksētajiem kontaktiem";
-"spkc_data_description" = "Ja esi inficēts, ar SPKC izsniegtu kodu šeit vari nosūtīt automātisku paziņojumu fiksētajiem kontaktiem, kam bijis inficēšanās risks – brīdināt gan savējos, gan arī svešos līdzcilvēkus. Paziņojums neatklās informāciju par tevi pašu. Kods ir derīgs 30\U00A0minūtes.";
+"spkc_data_description" = "Ja esi inficēts, ar SPKC izsniegtu kodu šeit vari nosūtīt automātisku paziņojumu fiksētajiem kontaktiem, kam bijis inficēšanās risks – brīdināt gan savējos, gan arī svešos līdzcilvēkus Latvijā un Eiropā. Paziņojums neatklās informāciju par tevi pašu. Kods ir derīgs 30 minūtes.";
+"country_list" = "Valstu saraksts";
 
 // NotificationSentVC
 "notification_sent_title" = "Paldies! Paziņojums nosūtīts!";

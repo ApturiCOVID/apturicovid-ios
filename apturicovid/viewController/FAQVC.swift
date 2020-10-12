@@ -27,7 +27,10 @@ class FAQViewController: BaseViewController {
             FAQ(title: "faq_question_5", description: "faq_answer_5"),
             FAQ(title: "faq_question_6", description: "faq_answer_6"),
             FAQ(title: "faq_question_7", description: "faq_answer_7"),
-            FAQ(title: "faq_question_8", description: "faq_answer_8")
+            FAQ(title: "faq_question_8", description: "faq_answer_8",
+                bottomLinkTitle: "faq_link_8",
+                bottomLinkUrl: InteropInfoUrlHelper.getLocalizedUrl()
+            )
         ]
     }
     

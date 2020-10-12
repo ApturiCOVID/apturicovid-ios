@@ -23,4 +23,5 @@ For improved security, we recommend regularly updating your smartphone software 
 "faq_answer_7" = "Bluetooth is a short range wireless communication technology used in smartphones, wireless headphones and smart watches. Most of the world’s contact tracing apps are based on it as it allows encrypted tracing. For improved efficiency and battery life, also Apple and Google use Bluetooth optimisation in their software. To use the app, Bluetooth functionality has to be switched on. Otherwise the app will not be operational.";
 
 "faq_question_8" = "Will the app work in other countries?";
-"faq_answer_8" = "Not yet. Together with international partners we are investigating how such contact tracing apps could be also used when travelling abroad. Currently, Apple and Google have imposed certain limitations to only allow using each tracing app in its respective country. It also applies to users in Latvia who use smartphone profiles registered to other countries.";
+"faq_answer_8" = "The latest version of the app works together with several other apps in Europe that are based on the Apple and Google framework. This means that Apturi Covid sends encrypted data for checking against the keys on other devices, and receives the same from other countries – just the same as it previously did only in Latvia.";
+"faq_link_8" = "Find the latest list of countries here.";

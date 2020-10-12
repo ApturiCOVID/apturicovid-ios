@@ -178,7 +178,7 @@ extension StatsVC : UICollectionViewDataSource {
                                                                              withReuseIdentifier: StatsFooterView.identifier,
                                                                              for: indexPath) as! StatsFooterView
             footerView.setup(with: "detailed_stats".translated) { [weak self] in
-                let safariViewController = SFSafariViewController(url: URL(string: "https://arkartassituacija.gov.lv/")!)
+                let safariViewController = SFSafariViewController(url: URL(string: "https://www.spkc.gov.lv/lv/aktualitates-par-covid-19")!)
                 self?.present(safariViewController, animated: true)
             }
             

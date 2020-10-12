@@ -34,6 +34,14 @@ class QuestionView: UIView {
         return view
     }()
     
+    let linkLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+        label.textColor = Colors.lightGreen
+        return label
+    }()
+    
     let titleRow = UIView()
     let descriptionHolder = UIView()
     
@@ -43,11 +51,16 @@ class QuestionView: UIView {
         }
     }
     
-    var labelTouchDisposable: Disposable?
+    private var labelTouchDisposable: Disposable?
+    private var linkTouchDisposable: Disposable?
+    
+    var bottomLink: URL?
     
     func fillWith(faq: FAQ) {
         messageLabel.text = faq.title.translate(table: "FaqLocalizable")
         descriptionLabel.text = faq.description.translate(table: "FaqLocalizable")
+        linkLabel.text = faq.bottomLinkTitle?.translate(table: "FaqLocalizable")
+        bottomLink = faq.bottomLinkUrl
     }
     
     init() {
@@ -105,7 +118,20 @@ class QuestionView: UIView {
             $0.heightAnchor == 15
         }
         
-        descriptionHolder.addSubviewWithInsets(descriptionLabel, insets: UIEdgeInsets(top: 10, left: 30, bottom: 20, right: 30))
+        descriptionHolder.addSubview(descriptionLabel) {
+            $0.topAnchor == $1.topAnchor - 10
+            $0.leftAnchor == $1.leftAnchor + 30
+            $0.rightAnchor == $1.rightAnchor - 30
+            $0.bottomAnchor == $1.bottomAnchor - 20 ~ .low
+        }
+        
+        descriptionHolder.addSubview(linkLabel) {
+            $0.topAnchor == descriptionLabel.bottomAnchor + 10
+            $0.leftAnchor == $1.leftAnchor + 30
+            $0.rightAnchor == $1.rightAnchor - 30
+            $0.bottomAnchor == $1.bottomAnchor - 20
+        }
+        
         stackView.addArrangedSubview(descriptionHolder)
         
         expandImage.rotate(angle: -90)
@@ -118,6 +144,17 @@ class QuestionView: UIView {
             .when(.recognized)
             .subscribe(onNext: { (_) in
                 self.descriptionVisible = !self.descriptionVisible
+            }, onError: justPrintError)
+        
+        linkTouchDisposable = linkLabel
+            .rx
+            .tapGesture()
+            .when(.recognized)
+            .subscribe(onNext: { (_) in
+                guard let link = self.bottomLink,
+                      UIApplication.shared.canOpenURL(link) else { return }
+                
+                UIApplication.shared.open(link, options: [:], completionHandler: nil)
             }, onError: justPrintError)
     }
 }

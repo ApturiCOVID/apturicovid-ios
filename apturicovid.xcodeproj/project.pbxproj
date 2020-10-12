@@ -186,6 +186,8 @@
 		BAB7977924781913002D64F9 /* ExposureLogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB7977824781913002D64F9 /* ExposureLogs.swift */; };
 		BAB7977A24781913002D64F9 /* ExposureLogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB7977824781913002D64F9 /* ExposureLogs.swift */; };
 		BAB7977B24781C2B002D64F9 /* DebugMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAB797762478175B002D64F9 /* DebugMenu.storyboard */; };
+		BAB8460125347B3700C28B6E /* InteropInfoUrlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8460025347B3700C28B6E /* InteropInfoUrlHelper.swift */; };
+		BAB8460225347B3700C28B6E /* InteropInfoUrlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8460025347B3700C28B6E /* InteropInfoUrlHelper.swift */; };
 		BABEEC2424686B7E009D8307 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BABEEC2324686B7D009D8307 /* Welcome.storyboard */; };
 		BABEEC272468718C009D8307 /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABEEC262468718C009D8307 /* CheckboxView.swift */; };
 		BABEEC2B24687397009D8307 /* CheckboxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BABEEC2A24687397009D8307 /* CheckboxView.xib */; };
@@ -336,6 +338,7 @@
 		BAAED851246DB04D004C77A6 /* PhoneVerificationRequestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationRequestResponse.swift; sourceTree = "<group>"; };
 		BAB797762478175B002D64F9 /* DebugMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DebugMenu.storyboard; sourceTree = "<group>"; };
 		BAB7977824781913002D64F9 /* ExposureLogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureLogs.swift; sourceTree = "<group>"; };
+		BAB8460025347B3700C28B6E /* InteropInfoUrlHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteropInfoUrlHelper.swift; sourceTree = "<group>"; };
 		BABEEC2324686B7D009D8307 /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		BABEEC262468718C009D8307 /* CheckboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
 		BABEEC2A24687397009D8307 /* CheckboxView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckboxView.xib; sourceTree = "<group>"; };
@@ -645,6 +648,7 @@
 			isa = PBXGroup;
 			children = (
 				BAD13BE5247927BC00354123 /* Link.swift */,
+				BAB8460025347B3700C28B6E /* InteropInfoUrlHelper.swift */,
 			);
 			path = helpers;
 			sourceTree = "<group>";
@@ -1019,6 +1023,7 @@
 				BAD13C00247C01B200354123 /* Trustkit.swift in Sources */,
 				60DC15172477F76D00FAD185 /* ExposureNotificationToggleProvider.swift in Sources */,
 				BA19B89A24715F9F003C5025 /* Data.swift in Sources */,
+				BAB8460125347B3700C28B6E /* InteropInfoUrlHelper.swift in Sources */,
 				E972A55824D2E31600AE639C /* StatsCollectionViewCell.swift in Sources */,
 				BAFA8315246AD48F00E121B4 /* LocalStore.swift in Sources */,
 				BAD13BE6247927BC00354123 /* Link.swift in Sources */,
@@ -1123,6 +1128,7 @@
 				60DC151E247BBE4E00FAD185 /* DesignableSwitch.swift in Sources */,
 				BAD13BFF247BF91E00354123 /* Trustkit.swift in Sources */,
 				60DC15182477F76D00FAD185 /* ExposureNotificationToggleProvider.swift in Sources */,
+				BAB8460225347B3700C28B6E /* InteropInfoUrlHelper.swift in Sources */,
 				BA3800142473072700577DB2 /* LocalStore.swift in Sources */,
 				E972A55924D2E31600AE639C /* StatsCollectionViewCell.swift in Sources */,
 				BA8CD87B2475477C00B068A5 /* ExposureConfiguration.swift in Sources */,

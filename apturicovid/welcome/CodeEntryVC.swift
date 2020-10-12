@@ -23,7 +23,8 @@ class CodeEntryVC: BaseViewController {
     @IBOutlet weak var resendCodeView: UIView!
     @IBOutlet weak var resendCodeLabel: UILabel!
     @IBOutlet weak var backButton: RoundedButton!
-        
+    @IBOutlet weak var descriptionLink: UIButton!
+    
     var pinInput = PinField()
     
     let offsetFromKeyboard: CGFloat = 8
@@ -34,6 +35,15 @@ class CodeEntryVC: BaseViewController {
     @IBAction func onBackTap(_ sender: Any) {
         SVProgressHUD.dismiss()
         navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func onDescriptionTap(_ sender: Any) {
+        guard let url = InteropInfoUrlHelper.getLocalizedUrl(),
+              UIApplication.shared.canOpenURL(url) else {
+            return
+        }
+        
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
     deinit { SVProgressHUD.dismiss() }
@@ -205,6 +215,7 @@ class CodeEntryVC: BaseViewController {
         errorLabel.text = "input_code_invalid".translated
         inputCodeLabel.text = "enter_code".translated
         resendCodeLabel.text = errorView.isHidden ? "didnt_receive_code".translated : "resend_code".translated
+        descriptionLink.setTitle("country_list".translated, for: .normal)
     }
     
     func stylePinInput() {
@@ -269,6 +280,8 @@ class CodeEntryVC: BaseViewController {
         
         resendCodeLabel.isHidden = mode == .spkc
         resendCodeLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(resendCode)))
+        
+        descriptionLink.isHidden = mode == .sms
         
         //MARK: KeyboardWillShow
         NotificationCenter.default.rx

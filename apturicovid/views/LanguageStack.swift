@@ -26,9 +26,8 @@ class LanguageStack: UIView {
             langView.isSelected = langView.language.isPrimary
             stackView.addArrangedSubview(langView)
             
-            langView.translatesAutoresizingMaskIntoConstraints = false
-            langView.widthAnchor.constraint(equalTo:stackView.heightAnchor).isActive = true
-            langView.heightAnchor.constraint(equalTo:stackView.heightAnchor).isActive = true
+            langView.widthAnchor == stackView.heightAnchor
+            langView.heightAnchor == stackView.heightAnchor
            
             langView.onSelected() { [weak self] selected in
                 guard selected else { return }

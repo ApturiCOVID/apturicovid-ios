@@ -63,5 +63,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>ENAPIVersion</key>
+    <string>1</string>
+    <key>ENDeveloperRegion</key>
+    <string>LV</string>
 </dict>
 </plist>

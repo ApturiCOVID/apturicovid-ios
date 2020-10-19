@@ -37,6 +37,7 @@ class TermsConfirmationVC: BaseViewController {
     override func translate() {
         titleLabel.text = "europe_support_title".translated
         descriptionLabel.text = "europe_support_description".translated
+        nextButton.setTitle("next".translated, for: .normal)
         
         // Privacy & Terms attributed text
         let privacyAttributedString =

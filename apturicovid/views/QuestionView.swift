@@ -38,7 +38,7 @@ class QuestionView: UIView {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
-        label.textColor = Colors.lightGreen
+        label.textColor = Colors.mintGreen
         return label
     }()
     
